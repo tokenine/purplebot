@@ -2,7 +2,7 @@ import { Share } from "react-native";
 import { supportLog, supportLogValue } from "@/features/support/model/support-log";
 import { isIOS } from "@/shared/lib/platform";
 
-const DOWNLOAD_URL = "https://openbot.run/download";
+const DOWNLOAD_URL = "https://github.com/tokenine/purplebot/releases";
 
 export function shareOpenBot(): void {
   Share.share(isIOS ? { url: DOWNLOAD_URL } : { message: DOWNLOAD_URL }).catch((error: unknown) => {

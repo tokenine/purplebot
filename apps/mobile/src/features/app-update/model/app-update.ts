@@ -21,9 +21,9 @@ export type AppUpdate = { kind: "ready"; id: string } | { kind: "store"; id: str
 const IOS_STORE_URL = "itms-apps://apps.apple.com/app/id6807024266";
 const IOS_STORE_WEB_URL = "https://apps.apple.com/app/id6807024266";
 const ANDROID_STORE_URL = "market://details?id=run.openbot.mobile";
-const ANDROID_STORE_WEB_URL = "https://openbot.run/download/android";
+const ANDROID_STORE_WEB_URL = "https://github.com/tokenine/purplebot/releases";
 
-export const MOBILE_CHANGELOG_URL = "https://openbot.run/changelog?platform=mobile";
+export const MOBILE_CHANGELOG_URL = "https://github.com/tokenine/purplebot/releases";
 const NOTES_TIMEOUT_MS = 10_000;
 const NOTES_STALE_MS = 10 * 60_000;
 

@@ -116,8 +116,7 @@ async function redeemMobileConnectSession(value: string): Promise<MobileSession>
 }
 
 function mobileAccountApiUrl(): string {
-  const override = process.env.EXPO_PUBLIC_OPENBOT_API_URL;
-  return (override && __DEV__ && normalizeAccountApiUrl(override)) || OPENBOT_CONTROL_PLANE_ORIGIN;
+  return normalizeAccountApiUrl(process.env.EXPO_PUBLIC_OPENBOT_API_URL ?? "") ?? OPENBOT_CONTROL_PLANE_ORIGIN;
 }
 
 export interface MobileEmailChallenge {

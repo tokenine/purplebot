@@ -8,7 +8,15 @@ const { join } = require("node:path");
 const GOOGLE_SERVICES_FILE = "./google-services.json";
 
 /** @param {{ config: import('expo/config').ExpoConfig }} context */
-module.exports = ({ config }) =>
-  existsSync(join(__dirname, GOOGLE_SERVICES_FILE))
+module.exports = ({ config }) => {
+  let result = existsSync(join(__dirname, GOOGLE_SERVICES_FILE))
     ? { ...config, android: { ...config.android, googleServicesFile: GOOGLE_SERVICES_FILE } }
     : config;
+  // A self-host build (EXPO_PUBLIC_OPENBOT_API_URL set) must not contact the update server of the
+  // hosted service, so it ships without the `updates` configuration and expo-updates stays off.
+  if (process.env.EXPO_PUBLIC_OPENBOT_API_URL) {
+    const { updates: _updates, ...rest } = result;
+    result = rest;
+  }
+  return result;
+};

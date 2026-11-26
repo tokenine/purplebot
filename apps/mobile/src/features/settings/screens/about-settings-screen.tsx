@@ -14,6 +14,7 @@ import { nativeBuildVersion } from "@/shared/lib/native-application";
 import { useText } from "@/shared/lib/text";
 
 const PRODUCT_NAME = "PurpleBot";
+const WEBSITE_URL = process.env.EXPO_PUBLIC_OPENBOT_API_URL ?? "https://openbot.run";
 
 export function AboutSettingsScreen() {
   const { t } = useText();
@@ -29,10 +30,10 @@ export function AboutSettingsScreen() {
   return (
     <SettingsContent>
       <SettingsSection title={t("mobile.settings.about.resources")}>
-        <SettingsRow onPress={() => open("https://openbot.run")}>
+        <SettingsRow onPress={() => open(WEBSITE_URL)}>
           <Typography.Paragraph>{t("mobile.settings.about.website")}</Typography.Paragraph>
         </SettingsRow>
-        <SettingsRow onPress={() => open("https://openbot.run/privacy-policy")}>
+        <SettingsRow onPress={() => open(new URL("/privacy-policy", WEBSITE_URL).toString())}>
           <Typography.Paragraph>{t("mobile.settings.about.privacy")}</Typography.Paragraph>
         </SettingsRow>
         {error ? <SettingsNote>{error}</SettingsNote> : null}

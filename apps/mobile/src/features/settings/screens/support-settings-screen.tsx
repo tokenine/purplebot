@@ -15,10 +15,6 @@ import { supportLog } from "@/features/support/model/support-log";
 import { clearSupportLog, phoneFeedback, supportLogFileText } from "@/features/support/model/support-log-capture";
 import { useText } from "@/shared/lib/text";
 
-const DISCORD_URL = "https://discord.openbot.run";
-const SUPPORT_X_HANDLE = "@OpenBot_";
-const SUPPORT_X_URL = "https://x.com/OpenBot_";
-
 export function SupportSettingsScreen() {
   const { t } = useText();
   const entries = useSyncExternalStore(supportLog.subscribe, supportLog.entries);
@@ -64,14 +60,8 @@ export function SupportSettingsScreen() {
   return (
     <SettingsContent>
       <SettingsSection title={t("mobile.settings.support.help")} footer={t("mobile.settings.support.helpFooter")}>
-        <SettingsRow onPress={() => open(DISCORD_URL)} supportingText={t("mobile.settings.support.discordHint")}>
-          <Typography.Paragraph>{t("mobile.settings.support.discord")}</Typography.Paragraph>
-        </SettingsRow>
         <SettingsRow onPress={() => open(mobileBugReportFormUrl({}, phoneFeedback()))}>
           <Typography.Paragraph>{t("mobile.settings.support.issues")}</Typography.Paragraph>
-        </SettingsRow>
-        <SettingsRow onPress={() => open(SUPPORT_X_URL)} supportingText={SUPPORT_X_HANDLE}>
-          <Typography.Paragraph>{t("mobile.settings.support.message")}</Typography.Paragraph>
         </SettingsRow>
         {linkError ? <SettingsNote>{linkError}</SettingsNote> : null}
       </SettingsSection>

@@ -5,6 +5,10 @@
   `openbot.run`. `selfhost/README.md` has the steps.
 - A way to sign a server in without a mailbox: make a claim at the account service and give it to
   `purplebot login --claim`.
+- A build of the phone app for a self-hosted instance: build it with
+  `EXPO_PUBLIC_OPENBOT_API_URL=https://your-account-service.example` and the app signs in at that
+  account service instead of the one of upstream, and it ships without the update check of
+  upstream (`updates.openbot.run`), so it never contacts their systems.
 
 ### Changed
 
