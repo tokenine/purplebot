@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createOpenBotLogger, toLogValue } from "@openbot/logging";
@@ -18,12 +18,11 @@ const environmentArgs = cloudflareEnvironment ? ["--env", cloudflareEnvironment]
 
 async function main(): Promise<void> {
   if (!cloudflareEnvironment) {
-    requiredSecret("OPENPANEL_CLIENT_ID");
-    requiredSecret("OPENPANEL_CLIENT_SECRET");
     assertLandingBeam();
   }
   assertFcmServiceAccount();
-  await putRequiredSecret("EMAIL_SMTP_PASSWORD");
+  // Wrangler refuses the deploy when a secret in `secrets.required` of the config is missing.
+  await putOptionalSecret("EMAIL_SMTP_PASSWORD");
   await putRequiredSecret("SKILLS_ADMIN_TOKEN");
   await putRequiredSecret("SITE_REPORT_HASH_SECRET");
   await putRequiredSecret("REMOTE_TICKET_PRIVATE_JWK");
@@ -49,8 +48,8 @@ async function main(): Promise<void> {
     await putOptionalSecret("HOSTED_SERVERS_DEVELOPER_KEY");
   }
   if (!cloudflareEnvironment) {
-    await putRequiredSecret("OPENPANEL_CLIENT_ID");
-    await putRequiredSecret("OPENPANEL_CLIENT_SECRET");
+    await putOptionalSecret("OPENPANEL_CLIENT_ID");
+    await putOptionalSecret("OPENPANEL_CLIENT_SECRET");
   }
   await putOptionalSecretSet("APNS_PRIVATE_KEY", "APNS_KEY_ID");
   await putOptionalSecret("FCM_SERVICE_ACCOUNT");
@@ -68,9 +67,15 @@ async function main(): Promise<void> {
     });
   }
   if (!cloudflareEnvironment) {
-    await run(wranglerExecutable, ["deploy", "--config", "wrangler.email-relay.jsonc"], {
-      label: "Email relay deployment",
-    });
+    if (process.env.DEPLOY_EMAIL_RELAY?.trim() === "1") {
+      await run(wranglerExecutable, ["deploy", "--config", prepareEmailRelayConfig()], {
+        label: "Email relay deployment",
+      });
+    } else {
+      logger.info(
+        "DEPLOY_EMAIL_RELAY is not 1. The Worker sends mail with its own SMTP client. Set DEPLOY_EMAIL_RELAY=1 to deploy the relay.",
+      );
+    }
   }
   await run(wranglerExecutable, ["deploy", "--keep-vars", ...environmentArgs], {
     label: "Auth API deployment",
@@ -80,9 +85,21 @@ async function main(): Promise<void> {
 function assertLandingBeam(): void {
   const port = join(apiRoot, "src", "vendor", "laser-flow", "LandingLaserFlow.tsx");
   if (existsSync(port)) return;
-  throw new Error(
-    "The home page beam is missing. Clone nightly-labs/openbot-laser-flow into apps/auth-api/src/vendor/laser-flow.",
+  logger.info(
+    "The home page beam is missing. The home page keeps its plain look. Clone nightly-labs/openbot-laser-flow into apps/auth-api/src/vendor/laser-flow to add it.",
   );
+}
+
+// The relay Worker runs best in the colo next to the mail host. Write a config with the
+// placement host from EMAIL_RELAY_PLACEMENT_HOST, or the config default.
+function prepareEmailRelayConfig(): "wrangler.email-relay.jsonc" | "wrangler.email-relay.generated.jsonc" {
+  const host = process.env.EMAIL_RELAY_PLACEMENT_HOST?.trim();
+  if (!host) return "wrangler.email-relay.jsonc";
+  const source = readFileSync(join(apiRoot, "wrangler.email-relay.jsonc"), "utf8");
+  const generated = source.replace(/"host":\s*"[^"]*"/u, `"host": ${JSON.stringify(host)}`);
+  const path = join(apiRoot, "wrangler.email-relay.generated.jsonc");
+  writeFileSync(path, generated);
+  return "wrangler.email-relay.generated.jsonc";
 }
 
 function requiredSecret(name: string): string {

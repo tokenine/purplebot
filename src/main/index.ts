@@ -323,7 +323,7 @@ if (commandLineUserDataDirectory) {
     ),
   );
 }
-app.setName("OpenBot");
+app.setName("PurpleBot");
 const systemTimezone =
   serverMode || hostedServer || localServerChild
     ? applyServerTimezone(join(app.getPath("userData"), SERVER_TIMEZONE_PREFERENCE_FILE), process.env)
@@ -734,6 +734,7 @@ function registerIpcHandlers({
   setupFile,
   analyticsPreferences,
   analyticsInstallId,
+  analyticsDisabled,
   updatePreferenceFile,
   requestedUpdate,
   idleRestart,
@@ -865,6 +866,7 @@ function registerIpcHandlers({
       appVariant,
       analyticsCaptureUrl,
       analyticsInstallId,
+      analyticsDisabled,
       dynamicIslandAvailable: dynamicIsland.available,
       getMainWindow: getDialogParent,
       isMainWindow: (sender) => {

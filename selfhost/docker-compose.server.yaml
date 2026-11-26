@@ -1,0 +1,23 @@
+# PurpleBot server. deploy.sh server writes selfhost/.env.server and runs this file
+# on your Linux server. The same by hand:
+#   docker compose -f selfhost/docker-compose.server.yaml --env-file selfhost/.env.server up -d
+# Keep the seccomp profile: it lets the Electron sandbox stay on inside the container.
+services:
+  purplebot:
+    image: ${PURPLEBOT_IMAGE:-ghcr.io/tokenine/purplebot:latest}
+    container_name: purplebot
+    restart: unless-stopped
+    security_opt:
+      - seccomp=./seccomp.json
+      - no-new-privileges:true
+    shm_size: 1g
+    stop_grace_period: 60s
+    environment:
+      OPENBOT_AUTH_API_URL: ${OPENBOT_AUTH_API_URL:?OPENBOT_AUTH_API_URL is required}
+      OPENBOT_REMOTE_SIGNAL_URL: ${OPENBOT_REMOTE_SIGNAL_URL:?OPENBOT_REMOTE_SIGNAL_URL is required}
+      OPENBOT_DISPLAY_SIZE: ${OPENBOT_DISPLAY_SIZE:-1920x1080}
+    volumes:
+      - purplebot-data:/data
+
+volumes:
+  purplebot-data:

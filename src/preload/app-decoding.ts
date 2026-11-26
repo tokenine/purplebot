@@ -188,6 +188,7 @@ export function decodeAppInfo(value: unknown): AppInfo {
     variant,
     analyticsCaptureUrl,
     analyticsInstallId,
+    analyticsDisabled,
     softwareRendering,
     hourCycle,
     aboveAppsSupport,
@@ -199,6 +200,7 @@ export function decodeAppInfo(value: unknown): AppInfo {
     throw new Error("Invalid analytics capture URL.");
   if (analyticsInstallId !== undefined && !isString(analyticsInstallId))
     throw new Error("Invalid analytics install ID.");
+  if (analyticsDisabled !== undefined && !isBoolean(analyticsDisabled)) throw new Error("Invalid analytics flag.");
   if (softwareRendering !== undefined && !isBoolean(softwareRendering))
     throw new Error("Invalid software rendering flag.");
   if (hourCycle !== undefined && !isOneOf(["h12", "h23"] as const, hourCycle)) throw new Error("Invalid hour cycle.");
@@ -216,6 +218,7 @@ export function decodeAppInfo(value: unknown): AppInfo {
     variant,
     ...(analyticsCaptureUrl === undefined ? {} : { analyticsCaptureUrl }),
     ...(analyticsInstallId === undefined ? {} : { analyticsInstallId }),
+    ...(analyticsDisabled === undefined ? {} : { analyticsDisabled }),
     ...(softwareRendering === undefined ? {} : { softwareRendering }),
     ...(hourCycle === undefined ? {} : { hourCycle }),
     ...(aboveAppsSupport === undefined ? {} : { aboveAppsSupport }),

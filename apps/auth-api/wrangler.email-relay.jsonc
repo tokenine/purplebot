@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "openbot-email-relay",
+  "name": "purplebot-email-relay",
   "compatibility_date": "2026-08-18",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/email-relay-entry.ts",
@@ -10,6 +10,6 @@
     "enabled": false
   },
   "placement": {
-    "host": "mail.privateemail.com:465"
+    "host": "smtp.mx.cloudflare.net:465"
   }
 }

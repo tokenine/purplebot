@@ -726,6 +726,7 @@ export interface ApplicationServices {
   setupFile: string;
   analyticsPreferences: AnalyticsPreferenceService;
   analyticsInstallId: string | null;
+  analyticsDisabled: boolean;
   updatePreferenceFile: string;
   approvalAutomation: ApprovalAutomation;
   agentAdminSettings: AgentAdminSettingsService;
@@ -3700,7 +3701,12 @@ export async function createApplicationServices({
     throw new Error(`Unsupported analytics platform: ${analyticsPlatform}`);
   }
   performance.mark("openbot:services.remote-desktop");
-  const analyticsEnabled = (app.isPackaged && appVariant === "production") || analyticsCaptureUrl !== null;
+  // A self-hosted account service (OPENBOT_AUTH_API_URL) sends nothing to the analytics of upstream.
+  const selfHosted = selfHostedApiOrigin(centralAuthApiUrl()) !== undefined;
+  const analyticsEnabled =
+    analyticsCaptureUrl !== null || (app.isPackaged && appVariant === "production" && !selfHosted);
+  // The renderer sends its own events and error reports, so it gets the same answer.
+  const analyticsDisabled = selfHosted && analyticsCaptureUrl === null;
   const analyticsInstallId = analyticsEnabled
     ? await Effect.runPromise(
         readAnalyticsInstallId(join(app.getPath("userData"), ANALYTICS_INSTALL_ID_FILE), Date.now()),
@@ -4516,6 +4522,7 @@ export async function createApplicationServices({
     setupFile,
     analyticsPreferences,
     analyticsInstallId,
+    analyticsDisabled,
     updatePreferenceFile,
     approvalAutomation,
     agentAdminSettings,

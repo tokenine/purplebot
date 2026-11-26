@@ -17,6 +17,7 @@ export interface AppInfo {
   variant: AppVariant;
   analyticsCaptureUrl?: string;
   analyticsInstallId?: string;
+  analyticsDisabled?: boolean;
   softwareRendering?: boolean;
   hourCycle?: HourCycle;
   aboveAppsSupport?: AboveAppsSupport;

@@ -154,7 +154,7 @@ export function macHostOperations(): HostManagerOperations {
       await verifySharedAppParent();
       await verifyBundleTree(SHARED_APP, true);
       await verifySignature(SHARED_APP);
-      const response = await fetch("https://api.github.com/repos/nightly-labs/openbot/releases/latest", {
+      const response = await fetch("https://api.github.com/repos/tokenine/purplebot/releases/latest", {
         signal: AbortSignal.timeout(30_000),
         headers: { Accept: "application/vnd.github+json" },
       });
@@ -167,7 +167,7 @@ export function macHostOperations(): HostManagerOperations {
       await ensureHostDirectory(STAGING, 0o700);
       const dmg = join(PRIVATE, "release.dmg");
       await rm(dmg, { force: true });
-      const url = `https://github.com/nightly-labs/openbot/releases/download/${release.tag_name}/OpenBot-${version}-arm64.dmg`;
+      const url = `https://github.com/tokenine/purplebot/releases/download/${release.tag_name}/PurpleBot-${version}-arm64.dmg`;
       await command(
         "/usr/bin/curl",
         [

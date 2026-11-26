@@ -1,6 +1,6 @@
 {
-  "name": "openbot",
-  "productName": "OpenBot",
+  "name": "purplebot",
+  "productName": "PurpleBot",
   "desktopName": "openbot.desktop",
   "version": "0.79.0",
   "description": "A local-first multi-agent desktop workspace for Codex, Claude, and Grok.",
@@ -11,12 +11,12 @@
   "license": "PolyForm-Noncommercial-1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nightly-labs/openbot.git"
+    "url": "git+https://github.com/tokenine/purplebot.git"
   },
   "bugs": {
-    "url": "https://github.com/nightly-labs/openbot/issues"
+    "url": "https://github.com/tokenine/purplebot/issues"
   },
-  "homepage": "https://github.com/nightly-labs/openbot#readme",
+  "homepage": "https://github.com/tokenine/purplebot#readme",
   "keywords": [
     "ai-agents",
     "bun",

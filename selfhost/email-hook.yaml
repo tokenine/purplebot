@@ -1,0 +1,37 @@
+# Email delivery webhook receiver. It runs next to Signal and sends each sign-in
+# code with the curl command from the Cloudflare SMTP guide. Its address is the
+# EMAIL_DELIVERY_WEBHOOK_URL of the account service. deploy.sh auth writes
+# selfhost/.env.email-hook. Port 2053 is one of the HTTPS ports a Worker can call.
+#   docker compose -f selfhost/email-hook.yaml --env-file selfhost/.env.email-hook up -d --build
+name: purplebot-email-hook
+
+services:
+  email-hook:
+    build:
+      context: .
+      dockerfile: Dockerfile.email-hook
+    container_name: purplebot-email-hook
+    restart: unless-stopped
+    command: bun /app/email-hook.ts
+    ports:
+      - "2053:8444"
+    environment:
+      PORT: "8444"
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:?WEBHOOK_SECRET is required}
+      EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:?EMAIL_SMTP_HOST is required}
+      EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-465}
+      EMAIL_SMTP_USERNAME: ${EMAIL_SMTP_USERNAME:?EMAIL_SMTP_USERNAME is required}
+      EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:?EMAIL_SMTP_PASSWORD is required}
+      EMAIL_FROM: ${EMAIL_FROM:?EMAIL_FROM is required}
+      TLS_CERT: /certs/certificates/${SIGNAL_DOMAIN}.crt
+      TLS_KEY: /certs/certificates/${SIGNAL_DOMAIN}.key
+    group_add:
+      - "2000"
+    volumes:
+      - ./email-hook.ts:/app/email-hook.ts:ro
+      - ./certs:/certs:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true

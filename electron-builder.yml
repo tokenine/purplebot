@@ -1,8 +1,8 @@
-appId: app.openbot.desktop
-productName: OpenBot
+appId: app.purplebot.desktop
+productName: PurpleBot
 copyright: Copyright © 2026 Synthetify Labs spółka z ograniczoną odpowiedzialnością
 protocols:
-  - name: OpenBot invitations
+  - name: PurpleBot invitations
     schemes:
       - openbot
 asar: true
@@ -20,8 +20,8 @@ electronFuses:
   grantFileProtocolExtraPrivileges: false
 publish:
   provider: github
-  owner: nightly-labs
-  repo: openbot
+  owner: tokenine
+  repo: purplebot
 files:
   - out/**/*
   - package.json
@@ -149,6 +149,8 @@ nsis:
 linux:
   category: Development
   icon: build/icon-production.png
+  # The hosting scripts start /opt/OpenBot/app/openbot by this name.
+  executableName: openbot
   synopsis: A local-first multi-agent desktop workspace.
   extraResources:
     - from: build/linux/openbot.apparmor

@@ -11,15 +11,15 @@ type NixSources = typeof NixSources.Type;
 const decodePackageJson = Schema.decodeUnknownSync(Schema.fromJsonString(Schema.Struct({ version: Schema.String })));
 const decodeSources = Schema.decodeUnknownSync(Schema.fromJsonString(NixSources));
 
-const repository = process.env.GITHUB_REPOSITORY ?? "nightly-labs/openbot";
+const repository = process.env.GITHUB_REPOSITORY ?? "tokenine/purplebot";
 const root = resolve(import.meta.dir, "..");
 const sourcesPath = resolve(root, "nix/sources.json");
 
 const assetNames: Record<string, (version: string) => string> = {
-  "x86_64-linux": (version) => `OpenBot-${version}-x86_64.AppImage`,
-  "aarch64-linux": (version) => `OpenBot-${version}-arm64.AppImage`,
-  "x86_64-darwin": (version) => `OpenBot-${version}-x64.zip`,
-  "aarch64-darwin": (version) => `OpenBot-${version}-arm64.zip`,
+  "x86_64-linux": (version) => `PurpleBot-${version}-x86_64.AppImage`,
+  "aarch64-linux": (version) => `PurpleBot-${version}-arm64.AppImage`,
+  "x86_64-darwin": (version) => `PurpleBot-${version}-x64.zip`,
+  "aarch64-darwin": (version) => `PurpleBot-${version}-arm64.zip`,
 };
 
 function parseChecksums(text: string): Map<string, string> {

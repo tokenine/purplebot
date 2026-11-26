@@ -135,6 +135,7 @@ export interface AppIpcDependencies {
   appVariant: AppVariant;
   analyticsCaptureUrl: string | null;
   analyticsInstallId: string | null;
+  analyticsDisabled: boolean;
   dynamicIslandAvailable: boolean;
   getMainWindow: () => BrowserWindow | null;
   isMainWindow: (sender: WebContents) => boolean;
@@ -172,6 +173,7 @@ export function appIpcHandlers({
   appVariant,
   analyticsCaptureUrl,
   analyticsInstallId,
+  analyticsDisabled,
   dynamicIslandAvailable,
   getMainWindow,
   isMainWindow,
@@ -199,6 +201,7 @@ export function appIpcHandlers({
           variant: appVariant,
           ...(analyticsCaptureUrl ? { analyticsCaptureUrl } : {}),
           ...(analyticsInstallId ? { analyticsInstallId } : {}),
+          ...(analyticsDisabled ? { analyticsDisabled } : {}),
           ...(softwareRendering ? { softwareRendering } : {}),
           ...(hourCycle ? { hourCycle } : {}),
           ...(aboveAppsSupport ? { aboveAppsSupport } : {}),

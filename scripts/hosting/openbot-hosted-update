@@ -4,7 +4,7 @@ export LC_ALL=C DEBIAN_FRONTEND=noninteractive
 umask 022
 
 INSTALL=/opt/OpenBot
-RELEASES=https://github.com/nightly-labs/openbot/releases
+RELEASES=https://github.com/tokenine/purplebot/releases
 LOCK=/run/openbot-update.lock
 SCRATCH=/var/tmp
 RESTORE=/var/lib/ascii-lazy
@@ -358,7 +358,7 @@ stage() {
   sha512=$(sed -n 's/^sha512: *//p' <<<"$manifest" | head -n 1)
   size=$(sed -n 's/^ *size: *//p' <<<"$manifest" | head -n 1)
   [[ $version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || fail "The release manifest has no valid version."
-  [ "$path" = "OpenBot-$version-$architecture.AppImage" ] || fail "The release manifest names another file."
+  [ "$path" = "PurpleBot-$version-$architecture.AppImage" ] || fail "The release manifest names another file."
   [[ $sha512 =~ ^[A-Za-z0-9+/]{86}==$ ]] || fail "The release manifest has no valid SHA-512."
   if [ "$(staged_version)" != "$version" ]; then rm -rf "$INSTALL/staged" "$INSTALL/staged.ready"; fi
   current=$(version_of "$INSTALL/app")
@@ -368,11 +368,11 @@ stage() {
   echo "Staging OpenBot $version (installed: ${current:-unknown})."
   work=$(mktemp -d "$SCRATCH/openbot-update.XXXXXX")
   trap 'rm -rf "$work"; rm -f "$STATE"' EXIT
-  download "$RELEASES/download/v$version/$path" "$work/OpenBot.AppImage" "$size"
+  download "$RELEASES/download/v$version/$path" "$work/PurpleBot.AppImage" "$size"
   set_state preparing
-  [ "$(openssl dgst -sha512 -binary "$work/OpenBot.AppImage" | openssl base64 -A)" = "$sha512" ] ||
+  [ "$(openssl dgst -sha512 -binary "$work/PurpleBot.AppImage" | openssl base64 -A)" = "$sha512" ] ||
     fail "The AppImage does not match the release manifest."
-  unpack "$work/OpenBot.AppImage"
+  unpack "$work/PurpleBot.AppImage"
   [ "$(version_of "$work/squashfs-root")" = "$version" ] || fail "The AppImage has another version."
   local file
   for file in "${RELEASE_FILES[@]}"; do

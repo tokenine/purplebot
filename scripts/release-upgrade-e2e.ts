@@ -34,7 +34,7 @@ declare global {
 }
 
 const logger = createOpenBotLogger("release-upgrade-e2e");
-const REPOSITORY = "nightly-labs/openbot";
+const REPOSITORY = "tokenine/purplebot";
 const OUT = resolve(import.meta.dirname, "../.openbot-build/release-upgrade-e2e");
 const LAUNCH_LIMIT_MS = 5 * 60_000;
 const TURN_LIMIT_MS = 2 * 60_000;
@@ -185,9 +185,9 @@ function previousTag(ageDays?: number): string {
 }
 
 function artifactName(version: string): string {
-  if (target === "macos") return `OpenBot-${version}-${process.arch === "arm64" ? "arm64" : "x64"}.zip`;
-  if (target === "windows") return `OpenBot-${version}-x64.exe`;
-  return `OpenBot-${version}-${target === "linux" ? "x86_64" : "arm64"}.AppImage`;
+  if (target === "macos") return `PurpleBot-${version}-${process.arch === "arm64" ? "arm64" : "x64"}.zip`;
+  if (target === "windows") return `PurpleBot-${version}-x64.exe`;
+  return `PurpleBot-${version}-${target === "linux" ? "x86_64" : "arm64"}.AppImage`;
 }
 
 async function sha256(path: string): Promise<string> {
@@ -241,7 +241,7 @@ async function newArtifact(): Promise<string> {
 const macApplications = join(root, "Applications");
 const macBundle = join(macApplications, "OpenBot.app");
 const windowsFolder = join(process.env.LOCALAPPDATA ?? "", "Programs", "OpenBot");
-const linuxAppImage = "/opt/OpenBot/OpenBot.AppImage";
+const linuxAppImage = "/opt/OpenBot/PurpleBot.AppImage";
 
 function executablePath(): string {
   if (target === "macos") return join(macBundle, "Contents", "MacOS", "OpenBot");

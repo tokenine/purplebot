@@ -170,8 +170,10 @@ await assertElfMachine(executablePath);
 
 const appImages = existsSync("dist") ? await findAppImages() : [];
 for (const appImage of appImages) {
-  if (!appImage.startsWith(`OpenBot-${packageJson.version}-`)) {
-    throw new Error(`Unexpected AppImage name: ${appImage} (expected OpenBot-${packageJson.version}-<arch>.AppImage)`);
+  if (!appImage.startsWith(`PurpleBot-${packageJson.version}-`)) {
+    throw new Error(
+      `Unexpected AppImage name: ${appImage} (expected PurpleBot-${packageJson.version}-<arch>.AppImage)`,
+    );
   }
 }
 

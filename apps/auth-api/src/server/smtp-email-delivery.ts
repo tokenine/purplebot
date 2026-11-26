@@ -578,7 +578,9 @@ const writeCommand = Effect.fn("SmtpEmail.writeCommand")(
 function validateConfig(config: SmtpEmailConfig): void {
   if (!isValidHostname(config.host)) throw new Error("smtp_invalid_host");
   if (config.port !== 465) throw new Error("smtp_port_must_be_465");
-  validateEmail(config.username, "username");
+  // The SMTP user name is a credential, not a mail header. Cloudflare SMTP uses
+  // the fixed name "api_token", so an email pattern does not apply here.
+  if (!config.username || hasHeaderBreak(config.username)) throw new Error("smtp_invalid_username");
   validateEmail(config.from, "sender");
   if (!config.password || hasHeaderBreak(config.password)) throw new Error("smtp_invalid_password");
 }
