@@ -224,9 +224,7 @@ function WorkflowAppWindow(props: { children: JSX.Element }) {
             onOpenWhatsNew={fn()}
             onOpenChangelog={fn()}
             onOpenGuides={fn()}
-            onOpenDiscord={fn()}
             onReportProblem={fn()}
-            onSendFeedback={fn()}
           />
         }
       />

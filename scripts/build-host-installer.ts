@@ -48,17 +48,17 @@ async function build(): Promise<void> {
     await command("/usr/libexec/PlistBuddy", [
       "-c",
       "Print CFBundleShortVersionString",
-      "dist/mac-arm64/OpenBot.app/Contents/Info.plist",
+      "dist/mac-arm64/PurpleBot.app/Contents/Info.plist",
     ])
   ).trim();
-  if (appVersion !== version) throw new Error("OpenBot.app and Host package versions differ.");
+  if (appVersion !== version) throw new Error("PurpleBot.app and Host package versions differ.");
   const temp = await mkdtemp(join(tmpdir(), "openbot-host-build-"));
   const payload = join(temp, "payload");
   const installerScripts = join(temp, "scripts");
-  const destination = resolve(`dist/OpenBot-Host-${version}-arm64.pkg`);
+  const destination = resolve(`dist/PurpleBot-Host-${version}-arm64.pkg`);
   try {
     await mkdir(join(payload, HOST_MANAGER_DIRECTORY), { recursive: true });
-    for (const name of ["host-manager", "openbot-host"]) {
+    for (const name of ["host-manager", "purplebot-host"]) {
       await command("bun", [
         "build",
         `scripts/${name}.ts`,
@@ -106,7 +106,7 @@ async function build(): Promise<void> {
       ]);
     }
     for (const [source, target] of [
-      ["openbot-host", "/usr/local/bin/openbot-host"],
+      ["purplebot-host", "/usr/local/bin/purplebot-host"],
       ["openbot-relaunch.sh", `${HOST_MANAGER_DIRECTORY}/openbot-relaunch.sh`],
       ["app.openbot.host-manager.plist", "/Library/LaunchDaemons/app.openbot.host-manager.plist"],
       ["app.openbot.desktop.relaunch.plist", "/Library/LaunchAgents/app.openbot.desktop.relaunch.plist"],

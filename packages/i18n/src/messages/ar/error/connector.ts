@@ -2,30 +2,30 @@ import type { PartialTranslation } from "../../../message";
 import type { messages as source } from "../../en/error/connector";
 
 export const messages = {
-  "error.connector.githubUnavailable": "لا يتضمن إصدار OpenBot هذا GitHub App.",
+  "error.connector.githubUnavailable": "لا يتضمن إصدار PurpleBot هذا GitHub App.",
   "error.connector.githubDenied": "تم رفض تسجيل الدخول إلى GitHub.",
   "error.connector.githubCodeExpired": "انتهت صلاحية رمز GitHub. اتصل بـ GitHub مرة أخرى.",
   "error.connector.githubDeviceFlowDisabled": "لا يسمح GitHub App بتسجيل الدخول عبر الجهاز.",
   "error.connector.githubClientUnknown": "لا يعرف GitHub معرّف Client ID لهذا GitHub App.",
   "error.connector.githubUnexpected": "أرسل GitHub إجابة غير متوقعة: {detail}",
-  "error.connector.githubUnreachable": "لا يمكن لـ OpenBot الوصول إلى GitHub: {detail}",
+  "error.connector.githubUnreachable": "لا يمكن لـ PurpleBot الوصول إلى GitHub: {detail}",
   "error.connector.githubOffline":
-    "لا يمكن لـ OpenBot الوصول إلى GitHub. تحقق من اتصال الإنترنت وإعدادات DNS في الكمبيوتر أو الخادم الذي يشغّل OpenBot، ثم حاول مرة أخرى.",
+    "لا يمكن لـ PurpleBot الوصول إلى GitHub. تحقق من اتصال الإنترنت وإعدادات DNS في الكمبيوتر أو الخادم الذي يشغّل PurpleBot، ثم حاول مرة أخرى.",
   "error.connector.githubExpired": "انتهت صلاحية الاتصال بـ GitHub. اتصل بـ GitHub مرة أخرى.",
   "error.connector.githubFileUnreadable": "ملف اتصال GitHub غير قابل للقراءة.",
   "error.connector.githubFileTooLarge": "ملف اتصال GitHub كبير جدًا.",
   "error.connector.linkDenied": "تم رفض تسجيل الدخول إلى Link.",
   "error.connector.linkCodeExpired": "انتهت صلاحية تسجيل الدخول إلى Link. اتصل بـ Link مرة أخرى.",
   "error.connector.linkUnexpected": "أرسل Link إجابة غير متوقعة: {detail}",
-  "error.connector.linkUnreachable": "لا يمكن لـ OpenBot الوصول إلى Link: {detail}",
+  "error.connector.linkUnreachable": "لا يمكن لـ PurpleBot الوصول إلى Link: {detail}",
   "error.connector.linkExpired": "انتهت صلاحية الاتصال بـ Link. اتصل بـ Link مرة أخرى.",
   "error.connector.linkNotConnected": "Link غير متصل. اربطه في إعدادات الخادم > الخزنة > البطاقات.",
   "error.connector.linkNoCard": "لا يحتوي حساب Link على بطاقة. أضف بطاقة في Link.",
   "error.connector.linkFileUnreadable": "ملف اتصال Link غير قابل للقراءة.",
   "error.connector.linkFileTooLarge": "ملف اتصال Link كبير جدًا.",
-  "error.connector.nearSignIn": "سجّل الدخول إلى OpenBot لاستخدام محفظة العملات المشفرة.",
+  "error.connector.nearSignIn": "سجّل الدخول إلى PurpleBot لاستخدام محفظة العملات المشفرة.",
   "error.connector.nearServiceUnavailable": "خدمة محفظة العملات المشفرة غير متاحة. حاول مرة أخرى لاحقًا.",
-  "error.connector.nearWalletNotFound": "هذه المحفظة لا تنتمي إلى حساب OpenBot هذا أو إلى هذا الخادم.",
+  "error.connector.nearWalletNotFound": "هذه المحفظة لا تنتمي إلى حساب PurpleBot هذا أو إلى هذا الخادم.",
   "error.connector.nearWalletLimit": "محافظ جديدة كثيرة جدًا اليوم. حاول مرة أخرى غدًا.",
   "error.connector.nearProviderBusy": "لا يستجيب NEAR Intents حاليًا. حاول مرة أخرى بعد بضع دقائق.",
   "error.connector.nearNoWallet": "لم يتم إعداد أي محفظة عملات مشفرة. أعدّها في إعدادات الخادم > الخزنة > كريبتو.",
@@ -35,13 +35,13 @@ export const messages = {
   "error.connector.nearAgentNotAllowed":
     "لا يمكن لهذا الوكيل الدفع من محفظة العملات المشفرة. فعّل ذلك في إعدادات الخادم > الخزنة > كريبتو.",
   "error.connector.nearGrantExpired":
-    "لا يملك OpenBot إذن دفع لمحفظة العملات المشفرة. جدّده في إعدادات الخادم > الخزنة > كريبتو.",
+    "لا يملك PurpleBot إذن دفع لمحفظة العملات المشفرة. جدّده في إعدادات الخادم > الخزنة > كريبتو.",
   "error.connector.nearUnknownAsset": "لا يوجد في محفظة العملات المشفرة أصل {asset}.",
   "error.connector.nearAmountInvalid": "{amount} ليس مبلغًا صالحًا من {asset}.",
   "error.connector.nearRecipientInvalid": "{recipient} ليس حساب NEAR ولا chain:address.",
   "error.connector.nearRefused": "رفضت NEAR Intents Agent API الطلب: {detail}",
   "error.connector.nearUnexpected": "أرسلت NEAR Intents Agent API إجابة غير متوقعة: {detail}",
-  "error.connector.nearUnreachable": "لا يمكن لـ OpenBot الوصول إلى NEAR Intents Agent API: {detail}",
+  "error.connector.nearUnreachable": "لا يمكن لـ PurpleBot الوصول إلى NEAR Intents Agent API: {detail}",
   "error.connector.nearFileUnreadable": "ملف محفظة العملات المشفرة غير قابل للقراءة.",
   "error.connector.nearFileTooLarge": "ملف محفظة العملات المشفرة كبير جدًا.",
   "error.connector.nearSigningCanceled": "أُلغي التوقيع.",
@@ -52,42 +52,42 @@ export const messages = {
   "error.connector.nearPolicyPending": "لم يكتمل تغيير السياسة. حاول مرة أخرى بعد بضع دقائق.",
   "error.connector.nearDeclined": "رفض المالك الدفع.",
   "error.connector.nearUncertain":
-    "لا يعرف OpenBot إن كان الدفع قد أُرسل. لا تدفع مرة أخرى. يمكن للمالك التحقق من سجل المحفظة.",
+    "لا يعرف PurpleBot إن كان الدفع قد أُرسل. لا تدفع مرة أخرى. يمكن للمالك التحقق من سجل المحفظة.",
   "error.connector.nearPaymentFailed": "فشل الدفع: {detail}",
   "error.connector.nearPaymentUnknown": "لم يعد هذا الدفع ينتظر ردًا.",
   "error.connector.nearRuleFull": "يمكن أن تحتوي قاعدة الدفع على {limit} مستلمين كحد أقصى.",
   "error.connector.nearRulesFull": "يمكن أن تحتوي المحفظة على {limit} قواعد دفع كحد أقصى.",
   "error.connector.onePasswordCliMissing":
-    "لا يمكن لـ OpenBot العثور على 1Password CLI. ثبّته وفعّل تكامله في تطبيق 1Password، أو استخدم رمز حساب خدمة.",
+    "لا يمكن لـ PurpleBot العثور على 1Password CLI. ثبّته وفعّل تكامله في تطبيق 1Password، أو استخدم رمز حساب خدمة.",
   "error.connector.onePasswordCliInstallFailed":
-    "تعذّر على OpenBot تثبيت 1Password CLI. تحقق من الاتصال بالإنترنت، ثم حاول مرة أخرى.",
+    "تعذّر على PurpleBot تثبيت 1Password CLI. تحقق من الاتصال بالإنترنت، ثم حاول مرة أخرى.",
   "error.connector.onePasswordCliSignedOut":
     "لم يتم تسجيل الدخول إلى 1Password CLI. فعّل تكامله في تطبيق 1Password، ثم اتصل مرة أخرى.",
   "error.connector.onePasswordAppUnreachable":
-    "لا يستطيع OpenBot الوصول إلى تطبيق 1Password. افتح 1Password وافتح قفله. في Settings > Developer، تأكد من تشغيل «Integrate with 1Password CLI». ثم حاول مرة أخرى.",
+    "لا يستطيع PurpleBot الوصول إلى تطبيق 1Password. افتح 1Password وافتح قفله. في Settings > Developer، تأكد من تشغيل «Integrate with 1Password CLI». ثم حاول مرة أخرى.",
   "error.connector.onePasswordCliFailed": "فشل 1Password CLI: {detail}",
   "error.connector.onePasswordCliForbidden":
     "لا يسمح لك حساب 1Password بإنشاء الخزنة المشتركة أو حساب خدمة. اطلب هذا الإذن من مالك الحساب أو مسؤوله، أو اطلب منه رمز حساب خدمة وانقر «استخدام رمز».",
   "error.connector.onePasswordUnexpected": "أرسل 1Password إجابة غير متوقعة: {detail}",
   "error.connector.onePasswordTokenRejected": "لم يقبل 1Password رمز حساب الخدمة.",
   "error.connector.onePasswordUnreachable":
-    "تعذّر على OpenBot الاتصال بـ 1Password. تحقق من الاتصال بالإنترنت، ثم حاول مرة أخرى.",
+    "تعذّر على PurpleBot الاتصال بـ 1Password. تحقق من الاتصال بالإنترنت، ثم حاول مرة أخرى.",
   "error.connector.onePasswordRateLimited": "تلقّى 1Password طلبات كثيرة جدًا. انتظر بضع دقائق، ثم حاول مرة أخرى.",
   "error.connector.onePasswordNoVault": "لا يمكن لحساب الخدمة قراءة أي خزنة. امنحه الوصول إلى خزنة، ثم حاول مرة أخرى.",
   "error.connector.onePasswordReadFailed":
-    "لا يستطيع OpenBot قراءة بيانات تسجيل الدخول في 1Password. اقطع اتصال 1Password، ثم اتصل به مرة أخرى.",
+    "لا يستطيع PurpleBot قراءة بيانات تسجيل الدخول في 1Password. اقطع اتصال 1Password، ثم اتصل به مرة أخرى.",
   "error.connector.onePasswordFileUnreadable": "ملف اتصال 1Password غير قابل للقراءة.",
   "error.connector.onePasswordFileTooLarge": "ملف اتصال 1Password كبير جدًا.",
   "error.connector.bitwardenFailed":
-    "تعذّرت قراءة Bitwarden. ثبّت bw CLI، وسجّل الدخول، وافتح قفله، وأنشئ مجلدًا واحدًا باسم Shared with OpenBot. اتصل بمفتاح جلسة جديد.",
+    "تعذّرت قراءة Bitwarden. ثبّت bw CLI، وسجّل الدخول، وافتح قفله، وأنشئ مجلدًا واحدًا باسم Shared with PurpleBot. اتصل بمفتاح جلسة جديد.",
   "error.connector.bitwardenCliMissing":
-    "لا يجد OpenBot واجهة سطر أوامر Bitwarden. ثبّت bw وتأكد أنه يعمل في طرفية جديدة، ثم اتصل مرة أخرى.",
+    "لا يجد PurpleBot واجهة سطر أوامر Bitwarden. ثبّت bw وتأكد أنه يعمل في طرفية جديدة، ثم اتصل مرة أخرى.",
   "error.connector.bitwardenFolderMissing":
-    "يجب أن يحتوي Bitwarden على مجلد واحد فقط باسم Shared with OpenBot. أنشئه أو احذف المجلد الزائد، ثم اتصل مرة أخرى.",
+    "يجب أن يحتوي Bitwarden على مجلد واحد فقط باسم Shared with PurpleBot. أنشئه أو احذف المجلد الزائد، ثم اتصل مرة أخرى.",
   "error.connector.bitwardenHostInput":
     "أدخل عنوان خادم HTTPS، وclient_id وclient_secret لمفتاح API، وكلمة المرور الرئيسية.",
   "error.connector.bitwardenHostFailed":
-    "تعذّر فتح Bitwarden على هذا الخادم. تحقق من عنوان الخادم ومفتاح API وكلمة المرور الرئيسية، وتأكد من وجود مجلد واحد باسم Shared with OpenBot. ثم اتصل مرة أخرى.",
+    "تعذّر فتح Bitwarden على هذا الخادم. تحقق من عنوان الخادم ومفتاح API وكلمة المرور الرئيسية، وتأكد من وجود مجلد واحد باسم Shared with PurpleBot. ثم اتصل مرة أخرى.",
   "error.connector.bitwardenHostSignInFailed":
     "تعذّر تسجيل الدخول إلى Bitwarden على هذا الخادم. تحقق من عنوان الخادم ومفتاح API، ثم اتصل مرة أخرى.",
   "error.connector.bitwardenHostUnlockFailed":
@@ -95,7 +95,7 @@ export const messages = {
   "error.connector.bitwardenCliInstallFailed":
     "تعذّر تثبيت Bitwarden CLI على هذا الخادم. تحقق من اتصاله بالشبكة، ثم اتصل مرة أخرى.",
   "error.connector.bitwardenFileUnreadable": "ملف اتصال Bitwarden غير قابل للقراءة.",
-  "error.connector.passwordManagerUnknown": "لا يعرف OpenBot مدير كلمات المرور هذا.",
+  "error.connector.passwordManagerUnknown": "لا يعرف PurpleBot مدير كلمات المرور هذا.",
   "error.connector.passwordManagerMethod": "لا يمكن توصيل مدير كلمات المرور هذا بهذه الطريقة.",
   "error.connector.passwordManagerNoSignIn": "لا توجد صفحة تسجيل دخول مفتوحة. اتصل مرة أخرى.",
   "error.connector.protonPassFailed": "تعذّر توصيل Proton Pass. اتصل مرة أخرى.",
@@ -111,5 +111,5 @@ export const messages = {
   "error.connector.protonPassFileUnreadable": "ملف اتصال Proton Pass غير قابل للقراءة.",
   "error.connector.protonPassSignInTimeout": "استغرق تسجيل الدخول إلى Proton وقتًا طويلاً. اتصل مرة أخرى.",
   "error.connector.protonPassSetupFailed":
-    "تعذّر إنشاء الخزنة Shared with OpenBot أو مفتاح الوصول الخاص بها في Proton Pass. اتصل مرة أخرى.",
+    "تعذّر إنشاء الخزنة Shared with PurpleBot أو مفتاح الوصول الخاص بها في Proton Pass. اتصل مرة أخرى.",
 } as const satisfies PartialTranslation<typeof source>;

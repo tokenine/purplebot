@@ -13,7 +13,7 @@ interface SettingLinkEntry {
   words: string;
 }
 
-const APP = "OpenBot Settings";
+const APP = "PurpleBot Settings";
 const AGENT = "agent settings (side panel of the agent's chat)";
 
 const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
@@ -44,7 +44,7 @@ const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
   "general.external-links": {
     title: "Open external links in",
     place: `${APP} > General`,
-    about: "Open links from chats in the OpenBot browser or the default browser of the computer.",
+    about: "Open links from chats in the PurpleBot browser or the default browser of the computer.",
     words: "links browser chrome safari default open url",
   },
   "appearance.theme": {
@@ -56,7 +56,7 @@ const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
   "appearance.language": {
     title: "Language",
     place: `${APP} > Appearance`,
-    about: "The language of the OpenBot menus, buttons and messages.",
+    about: "The language of the PurpleBot menus, buttons and messages.",
     words: "translation locale interface english polish german spanish french",
   },
   "appearance.interface-size": {
@@ -98,7 +98,7 @@ const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
   "appearance.logo-color": {
     title: "Logo color",
     place: `${APP} > Appearance`,
-    about: "The color of the OpenBot icon in the Dock, the taskbar and the Dynamic Island.",
+    about: "The color of the PurpleBot icon in the Dock, the taskbar and the Dynamic Island.",
     words: "app icon dock icon",
   },
   "notifications.desktop": {
@@ -140,7 +140,7 @@ const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
   "voice.read-replies": {
     title: "Read replies aloud",
     place: `${APP} > Voice`,
-    about: "When the user dictates a message, OpenBot reads the agent's reply aloud.",
+    about: "When the user dictates a message, PurpleBot reads the agent's reply aloud.",
     words: "text to speech tts speak voice output read aloud audio say cloud elevenlabs xai api key",
   },
   "voice.speech-voice": {
@@ -172,13 +172,13 @@ const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
   "phones.devices": {
     title: "Your phones",
     place: `${APP} > Mobile Connect`,
-    about: "Connect the OpenBot phone app (iPhone, Android) to this computer, and see the connected phones.",
+    about: "Connect the PurpleBot phone app (iPhone, Android) to this computer, and see the connected phones.",
     words: "mobile iphone android ios app pair qr code",
   },
   "app.launch-at-login": {
-    title: "Launch OpenBot at login",
+    title: "Launch PurpleBot at login",
     place: `${APP} > App behavior`,
-    about: "Open OpenBot when the user signs in to the computer.",
+    about: "Open PurpleBot when the user signs in to the computer.",
     words: "startup autostart boot login items",
   },
   "app.restore-workspace": {
@@ -233,20 +233,20 @@ const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
   "updates.track": {
     title: "Update track",
     place: `${APP} > Updates`,
-    about: "Stable or beta releases of OpenBot.",
+    about: "Stable or beta releases of PurpleBot.",
     words: "beta nightly channel version",
   },
   "updates.auto-install": {
     title: "Install updates automatically",
     place: `${APP} > Updates`,
-    about: "Install new OpenBot versions without a question.",
+    about: "Install new PurpleBot versions without a question.",
     words: "auto update upgrade",
   },
   "credits.explainer": {
     title: "What are credits?",
-    place: "OpenBot > Credits (the credits button in the narrow bar on the left, or Help > What are credits?)",
+    place: "PurpleBot > Credits (the credits button in the narrow bar on the left, or Help > What are credits?)",
     about:
-      "A short explainer of OpenBot credits: they pay for pictures, videos and voices that agents make, chats do not use them, each media model has its own price, and packs of credits can be bought.",
+      "A short explainer of PurpleBot credits: they pay for pictures, videos and voices that agents make, chats do not use them, each media model has its own price, and packs of credits can be bought.",
     words: "credits credit tokens token price prices cost costs pay balance buy pack packs media picture video free",
   },
   "agent.model": {
@@ -354,10 +354,10 @@ const SETTING_LINKS: Record<SettingLinkId, SettingLinkEntry> = {
     words: "plan card confirm before start",
   },
   "agent.builtin-memory": {
-    title: "OpenBot memory",
+    title: "PurpleBot memory",
     place: `${AGENT} > Advanced`,
     about:
-      "Turn off OpenBot memory to use only a memory app that you connect, such as Mem0. The agent then does not read or save OpenBot memories. Saved memories stay.",
+      "Turn off PurpleBot memory to use only a memory app that you connect, such as Mem0. The agent then does not read or save PurpleBot memories. Saved memories stay.",
     words: "memory mem0 openviking provider external remember disable off",
   },
 };
@@ -461,7 +461,7 @@ const SERVER_PLACES: readonly ServerPlaceEntry[] = [
   {
     title: "Add a server",
     place:
-      "On a computer: the server button at the bottom of the narrow bar on the left, below Settings (Open server menu for <server name>) > Add a server, or Add remote server when no plans show. In the Server rail layout, use the + button at the bottom of the server list instead; with plans, it opens Add a server directly. Add a server opens Run OpenBot 24/7 on an external server, with hosted server plans. In it, Other options > New server on another computer gives one install command for a Linux computer or VPS that the user owns (Ubuntu 24.04 or 26.04). When no plans show, New server on another computer is in that menu itself. New server on another computer is only in the desktop app, not in the browser at openbot.run/app. On the phone app: Servers > Add a server, for a hosted server.",
+      "On a computer: the server button at the bottom of the narrow bar on the left, below Settings (Open server menu for <server name>) > Add a server, or Add remote server when no plans show. In the Server rail layout, use the + button at the bottom of the server list instead; with plans, it opens Add a server directly. Add a server opens Run PurpleBot 24/7 on an external server, with hosted server plans. In it, Other options > New server on another computer gives one install command for a Linux computer or VPS that the user owns (Ubuntu 24.04 or 26.04). When no plans show, New server on another computer is in that menu itself. New server on another computer is only in the desktop app, not in the browser at openbot.run/app. On the phone app: Servers > Add a server, for a hosted server.",
     about:
       "A server that runs 24/7 on another computer, so that agents, routines and chat apps such as WhatsApp keep working while this computer is off. The user runs the install command as root on that computer, then opens the new server and connects a provider and apps there. When the user gives the SSH address, create_server_install_command makes the same command for you to run over SSH.",
     words:
@@ -491,7 +491,7 @@ const SERVER_PLACES: readonly ServerPlaceEntry[] = [
     title: "Import",
     place: `On a computer: ${SERVER_SETTINGS} > Import. On the phone app: the server's Server settings > Import agents.`,
     about:
-      "Any member copies agents from another app into this server: Grok Bot (an export agent there makes a .zip file) or Hermes Agent (its folder or an exported .zip file). Owners and admins also see Another OpenBot computer, which opens Transfer. The user sees every item before anything changes.",
+      "Any member copies agents from another app into this server: Grok Bot (an export agent there makes a .zip file) or Hermes Agent (its folder or an exported .zip file). Owners and admins also see Another PurpleBot computer, which opens Transfer. The user sees every item before anything changes.",
     words: "importing grok hermes bot bring",
     foundWithoutServerWord: ["import", "hermes"],
   },
@@ -543,7 +543,7 @@ const CHAT_PLACES: readonly SettingLinkEntry[] = [
     place:
       "On a computer: in the agent's chat, with an empty message box, the voice button in place of Send (Start voice conversation). The voice bar has Mute the microphone, Interrupt, End voice conversation, and How you talk: Open microphone or Push to talk. On the phone app: in a chat with an agent or a channel, with an empty message box, the voice button in place of Send (Start a voice conversation). When the phone has no voice yet, it opens Settings > Voice. The button shows only where voice is available.",
     about:
-      "A continuous spoken conversation with the agent: OpenBot listens, the agent replies aloud, then OpenBot listens again, with no dictation for each message. It uses the voices of Settings > Voice. Codex live voice, an OpenAI voice with a ChatGPT sign-in, is optional, not required.",
+      "A continuous spoken conversation with the agent: PurpleBot listens, the agent replies aloud, then PurpleBot listens again, with no dictation for each message. It uses the voices of Settings > Voice. Codex live voice, an OpenAI voice with a ChatGPT sign-in, is optional, not required.",
     words: "talk talking speak spoken live realtime continuous handsfree hands call microphone listen",
   },
 ];

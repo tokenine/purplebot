@@ -42,7 +42,7 @@ const FILES_BYTES_LIMIT = 50 * 1024 * 1024;
 const FILE_TRANSFER_TIMEOUT_MS = 2 * 60 * 1000;
 const FILES_SECTION_LIMIT = GITHUB_BODY_LIMIT / 2;
 const FILE_NAME_LIMIT = 100;
-const FILES_COMMIT_MESSAGE = "Add files for an OpenBot workflow output [skip ci]";
+const FILES_COMMIT_MESSAGE = "Add files for an PurpleBot workflow output [skip ci]";
 
 interface FileLink {
   name: string;
@@ -158,7 +158,7 @@ export function createGitHubRest(options: GitHubRestOptions): WorkflowGitHubApi 
         headers: {
           Accept: "application/vnd.github+json",
           Authorization: `Bearer ${token}`,
-          "User-Agent": "OpenBot",
+          "User-Agent": "PurpleBot",
           "X-GitHub-Api-Version": "2022-11-28",
           ...(body ? { "Content-Type": "application/json" } : {}),
         },

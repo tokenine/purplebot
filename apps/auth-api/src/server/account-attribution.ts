@@ -1,10 +1,10 @@
 import { FIRST_TOUCH_CAMPAIGN_FIELDS, type FirstTouch, parseFirstTouch } from "@openbot/contracts/first-touch";
 import { Effect, Schema } from "effect";
-import { safeScreenPath } from "../lib/analytics";
 import type { AccountAnalytics, AttributionSource } from "./account-analytics";
 
 const CHECKOUT_ATTRIBUTION_WINDOW_MS = 24 * 60 * 60_000;
 const CHECKOUT_SESSION_PATTERN = /^cs_[A-Za-z0-9_]{1,250}$/u;
+const ENTRY_PAGES: ReadonlySet<string> = new Set(["/", "/join"]);
 
 const CAMPAIGN_COLUMNS = {
   utmSource: "utm_source",
@@ -33,7 +33,7 @@ export class AccountAttributionError extends Schema.TaggedError<AccountAttributi
 
 export function requestFirstTouch(value: unknown): FirstTouch | null {
   const touch = parseFirstTouch(value);
-  return touch && safeScreenPath(touch.landingPage) === touch.landingPage ? touch : null;
+  return touch && ENTRY_PAGES.has(touch.landingPage) ? touch : null;
 }
 
 export class AccountAttribution {

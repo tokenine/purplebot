@@ -1,5 +1,7 @@
 import { Cause, Effect, Exit, Option, Result, Schema } from "effect";
+import { siteOrigin } from "../lib/site-metadata";
 import type { AccountAnalytics, EmailKind, EmailResult } from "./account-analytics";
+import type { EmailSite } from "./email-templates";
 import {
   AMBIGUOUS_DELIVERY_ERRORS,
   AUTOMATED_EMAIL_HEADERS,
@@ -44,6 +46,7 @@ export type EmailDeliveryBindings = Pick<
   | "EMAIL_FALLBACK"
   | "EMAIL_DELIVERY_WEBHOOK_URL"
   | "EMAIL_DELIVERY_WEBHOOK_SECRET"
+  | "SITE_ORIGIN"
 >;
 
 interface EmailSenders {
@@ -52,13 +55,19 @@ interface EmailSenders {
   inbox: string;
 }
 
+function siteOf(smtp: SmtpEmailConfig): EmailSite {
+  return { siteOrigin: smtp.siteOrigin };
+}
+
 export function createEmailCodeDelivery(
   bindings: EmailDeliveryBindings,
   analytics: AccountAnalytics,
 ): EmailCodeDelivery | null {
   const senders = readEmailSenders(bindings);
   if (senders) {
-    return { send: (message) => deliver(analytics, "sign_in_code", senders, prepareEmailCode(message)) };
+    return {
+      send: (message) => deliver(analytics, "sign_in_code", senders, prepareEmailCode(message, siteOf(senders.smtp))),
+    };
   }
 
   const webhookUrl = bindings.EMAIL_DELIVERY_WEBHOOK_URL?.trim();
@@ -90,7 +99,11 @@ export function createTeamInviteEmailDelivery(
   analytics: AccountAnalytics,
 ): TeamInviteEmailDelivery | null {
   const senders = readEmailSenders(bindings);
-  return senders ? { send: (message) => deliver(analytics, "team_invite", senders, prepareTeamInvite(message)) } : null;
+  return senders
+    ? {
+        send: (message) => deliver(analytics, "team_invite", senders, prepareTeamInvite(message, siteOf(senders.smtp))),
+      }
+    : null;
 }
 
 export function createOwnerTransferEmailDelivery(
@@ -99,7 +112,10 @@ export function createOwnerTransferEmailDelivery(
 ): OwnerTransferEmailDelivery | null {
   const senders = readEmailSenders(bindings);
   return senders
-    ? { send: (message) => deliver(analytics, "owner_transfer", senders, prepareOwnerTransferEmail(message)) }
+    ? {
+        send: (message) =>
+          deliver(analytics, "owner_transfer", senders, prepareOwnerTransferEmail(message, siteOf(senders.smtp))),
+      }
     : null;
 }
 
@@ -110,7 +126,8 @@ export function createContactMessageDelivery(
   const senders = readEmailSenders(bindings);
   return senders
     ? {
-        send: (message) => deliver(analytics, "contact", senders, prepareContactMessage(senders.inbox, message)),
+        send: (message) =>
+          deliver(analytics, "contact", senders, prepareContactMessage(senders.inbox, message, siteOf(senders.smtp))),
       }
     : null;
 }
@@ -120,7 +137,11 @@ export function createWelcomeEmailDelivery(
   analytics: AccountAnalytics,
 ): WelcomeEmailDelivery | null {
   const senders = readEmailSenders(bindings);
-  return senders ? { send: (message) => deliver(analytics, "welcome", senders, prepareWelcomeEmail(message)) } : null;
+  return senders
+    ? {
+        send: (message) => deliver(analytics, "welcome", senders, prepareWelcomeEmail(message, siteOf(senders.smtp))),
+      }
+    : null;
 }
 
 export function createLicenseEmailDelivery(
@@ -135,7 +156,10 @@ export function createLicenseEmailDelivery(
     smtp: { ...senders.smtp, from },
     inbox: bindings.EMAIL_LICENSE_REPLY_TO?.trim() || from,
   };
-  return { send: (message) => deliver(analytics, "license", licenseSenders, prepareLicenseEmail(message)) };
+  return {
+    send: (message) =>
+      deliver(analytics, "license", licenseSenders, prepareLicenseEmail(message, siteOf(licenseSenders.smtp))),
+  };
 }
 
 const deliver = Effect.fn("EmailDelivery.deliver")(function* (
@@ -196,7 +220,7 @@ const sendThroughCloudflare = Effect.fn("EmailDelivery.cloudflare")(function* (
   yield* Effect.tryPromise({
     try: () =>
       binding.send({
-        from: { name: "OpenBot", email: from },
+        from: { name: "PurpleBot", email: from },
         to: message.email,
         ...(message.replyTo ? { replyTo: message.replyTo } : {}),
         subject,
@@ -280,6 +304,7 @@ function readSmtpConfig(bindings: EmailDeliveryBindings): SmtpEmailConfig | null
     username: values.username,
     password: values.password,
     from: values.from,
+    ...(siteOrigin(bindings.SITE_ORIGIN) ? { siteOrigin: siteOrigin(bindings.SITE_ORIGIN) } : {}),
     ...(bindings.EMAIL_RELAY ? { relay: bindings.EMAIL_RELAY } : {}),
   };
 }

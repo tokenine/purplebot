@@ -21,7 +21,7 @@ export const HOSTED_RUNTIME_DIRECTORY = "/run/openbot";
 const HOSTED_UPDATE_PATHS: HostedUpdatePaths = {
   requests: HOSTED_RUNTIME_DIRECTORY,
   state: "/run/openbot-update.state",
-  stagedReady: "/opt/OpenBot/staged.ready",
+  stagedReady: "/opt/PurpleBot/staged.ready",
 };
 
 export const CONTAINER_UPDATE_PATHS: HostedUpdatePaths = {

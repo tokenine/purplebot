@@ -118,7 +118,7 @@ const DYNAMIC_TOOLS = [
   {
     type: "namespace",
     name: "openbot",
-    description: "OpenBot tools",
+    description: "PurpleBot tools",
     tools: [
       { type: "function", name: "send_message", description: "Send a message", inputSchema: { type: "object" } },
       { type: "function", name: "tool_call", description: "Call a tool", inputSchema: { type: "object" } },
@@ -127,7 +127,7 @@ const DYNAMIC_TOOLS = [
   {
     type: "namespace",
     name: "openbot_browser",
-    description: "OpenBot browser",
+    description: "PurpleBot browser",
     tools: [{ type: "function", name: "open", description: "Open a page", inputSchema: { type: "object" } }],
   },
 ];
@@ -224,7 +224,7 @@ try {
   assert.deepEqual(
     confined.cards,
     OTHER_CALLS.map((call) => call.title),
-    "Only the requests that are not OpenBot tools or sandboxed commands show a card.",
+    "Only the requests that are not PurpleBot tools or sandboxed commands show a card.",
   );
 
   const unconfined = await run("unconfined", false);
@@ -239,7 +239,7 @@ try {
   assert.deepEqual(
     unconfined.cards,
     [...CONFINED_COMMANDS, ...OTHER_CALLS].map((call) => call.title),
-    "Without Workspace only, OpenBot tools run without a card, and commands and other tools keep their card.",
+    "Without Workspace only, PurpleBot tools run without a card, and commands and other tools keep their card.",
   );
 
   const readAs = {
@@ -249,11 +249,11 @@ try {
   for (const [toolCallId, tool] of Object.entries(readAs)) {
     const item = unconfined.items[toolCallId];
     assert.ok(item, `${toolCallId} has a tool item.`);
-    assert.equal(openBotTool(item), tool, `${toolCallId} is read as the OpenBot tool ${tool}.`);
+    assert.equal(openBotTool(item), tool, `${toolCallId} is read as the PurpleBot tool ${tool}.`);
     assert.deepEqual(
       toolUsage(item),
       { kind: "mcp", server: "openbot", tool, failed: false },
-      `${toolCallId} counts as an OpenBot MCP call, not a command.`,
+      `${toolCallId} counts as an PurpleBot MCP call, not a command.`,
     );
   }
   const browserItem = unconfined.items["agy-browser-title"];
@@ -261,10 +261,10 @@ try {
   assert.equal(toolActivity(browserItem, false), "browsing", "A running Gemini browser call shows as browsing.");
   const metaCall = unconfined.items["agy-meta-call"];
   assert.ok(metaCall, "The tool_call call has a tool item.");
-  assert.equal(openBotTool(metaCall), "send_message", "A Gemini tool_call reads the OpenBot tool that it calls.");
+  assert.equal(openBotTool(metaCall), "send_message", "A Gemini tool_call reads the PurpleBot tool that it calls.");
   const shell = unconfined.items.shell;
   assert.ok(shell, "The shell call has a tool item.");
-  assert.equal(openBotTool(shell), null, "A shell command is not read as an OpenBot tool.");
+  assert.equal(openBotTool(shell), null, "A shell command is not read as an PurpleBot tool.");
 
   const otherUnconfined = await run("other-flavor-unconfined", false, DEFAULT_ACP_FLAVOR);
   report.otherUnconfined = otherUnconfined;
@@ -291,7 +291,7 @@ try {
   report.kimi = kimi;
   assert.equal(kimi.status, "completed", "The confined Kimi turn completes.");
   assert.equal(kimi.outcomes["kimi-bash"], "allow", "A Kimi command runs in the sandbox without a card.");
-  assert.equal(kimi.outcomes["kimi-openbot-tool"], "allow", "A Kimi call of an OpenBot tool runs without a card.");
+  assert.equal(kimi.outcomes["kimi-openbot-tool"], "allow", "A Kimi call of an PurpleBot tool runs without a card.");
   assert.deepEqual(
     kimi.requests,
     [

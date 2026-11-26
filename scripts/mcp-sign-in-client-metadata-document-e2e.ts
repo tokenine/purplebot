@@ -388,7 +388,7 @@ async function main(): Promise<void> {
     const noDocument = await runCase("registration-refused-no-document", true, "access", false);
     check(
       noDocument,
-      noDocument.attempts[0]?.error?.startsWith("The sign-in server does not accept OpenBot as an app yet.") ?? false,
+      noDocument.attempts[0]?.error?.startsWith("The sign-in server does not accept PurpleBot as an app yet.") ?? false,
       `the sign-in said: ${noDocument.attempts[0]?.error}`,
     );
     check(noDocument, noDocument.pageClientIds.length === 0, `the pages named ${noDocument.pageClientIds.join()}`);
@@ -409,7 +409,7 @@ async function main(): Promise<void> {
       );
       check(
         redirect,
-        redirect.attempts[0]?.error?.startsWith("The sign-in server does not accept OpenBot as an app yet.") ?? false,
+        redirect.attempts[0]?.error?.startsWith("The sign-in server does not accept PurpleBot as an app yet.") ?? false,
         `the sign-in said: ${redirect.attempts[0]?.error}`,
       );
       check(redirect, redirect.pageClientIds.length === 0, `the pages named ${redirect.pageClientIds.join()}`);
@@ -421,7 +421,7 @@ async function main(): Promise<void> {
     const stored = await runCase("redirect-refused-stored-document", true, "redirect", true, true);
     check(
       stored,
-      stored.attempts[0]?.error?.startsWith("The sign-in server does not accept OpenBot as an app yet.") ?? false,
+      stored.attempts[0]?.error?.startsWith("The sign-in server does not accept PurpleBot as an app yet.") ?? false,
       `the sign-in said: ${stored.attempts[0]?.error}`,
     );
     check(stored, stored.pageClientIds.length === 0, `the pages named ${stored.pageClientIds.join()}`);

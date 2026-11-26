@@ -9,8 +9,10 @@ import {
   renderWelcomeEmail,
 } from "../../server/email-templates";
 
+const SITE = { siteOrigin: "https://accounts.example.com" };
+
 const INVITE_URL =
-  "https://openbot.run/join?api=https%3A%2F%2Fstudio-mac-k7m4q2pz-host.openbot.run%2F&server=00000000-0000-4000-8000-000000000000&fingerprint=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&invite=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
+  "https://accounts.example.com/join?api=https%3A%2F%2Fstudio-mac-k7m4q2pz-host.example.com%2F&server=00000000-0000-4000-8000-000000000000&fingerprint=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&invite=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
 
 const TEAM_LICENSE: LicenseEmailInput = {
   kind: "welcome",
@@ -130,6 +132,10 @@ export const SignInCodeDark: Story = {
 
 export const SignInCodeMobile: Story = {
   args: { width: 375 },
+};
+
+export const SignInCodeWithSite: Story = {
+  args: { email: renderSignInCodeEmail({ code: "K7M4-Q2PZ", expiresInMinutes: 10 }, SITE) },
 };
 
 export const TeamInvite: Story = {

@@ -90,7 +90,7 @@ export function createSecretStorage(options: { keyPath: string; platform?: NodeJ
     const created = readKey();
     if (!created) throw new Error("The secret storage key file was not made.");
     madeKeyFile = true;
-    logger.warn("The system keyring did not keep the secrets. OpenBot keeps new secrets in its own key file.", {
+    logger.warn("The system keyring did not keep the secrets. PurpleBot keeps new secrets in its own key file.", {
       reason,
       backend: safeStorage.getSelectedStorageBackend(),
     });

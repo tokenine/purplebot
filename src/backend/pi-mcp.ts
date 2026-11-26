@@ -49,7 +49,7 @@ const PI_SEARCH_ONLY_OPENBOT_TOOLS = ["request_api_key", "suggest_marketplace_ap
 
 function piToolSearchNote(): string {
   const openbot = `mcp__${piMcpServerName("local", OPENBOT_DYNAMIC_TOOLS.name)}`;
-  return `This search loads only the tools of the servers in <mcp_servers>. It never finds OpenBot or browser tools: find them with ${openbot}__tool_search, and run them with ${openbot}__tool_call.`;
+  return `This search loads only the tools of the servers in <mcp_servers>. It never finds PurpleBot or browser tools: find them with ${openbot}__tool_search, and run them with ${openbot}__tool_call.`;
 }
 
 function piSkillReadNote(): string {

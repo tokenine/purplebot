@@ -9,7 +9,7 @@
       {
         "type": "added",
         "items": [
-          "Ajanlar OpenBot kredileriyle resim ve video oluşturabilir ve resimlerinizi düzenleyebilir. Onay kartı modeli, fiyatı ve istemi gösterir. İzin vermeden önce başka bir model seçebilirsiniz. Sol şeritteki \"Credits\" öğesi bakiyenizi gösterir. Bir sahip veya yönetici \"Ajanlar kredi kullanabilir\" seçeneğini açabilir veya kapatabilir.",
+          "Ajanlar PurpleBot kredileriyle resim ve video oluşturabilir ve resimlerinizi düzenleyebilir. Onay kartı modeli, fiyatı ve istemi gösterir. İzin vermeden önce başka bir model seçebilirsiniz. Sol şeritteki \"Credits\" öğesi bakiyenizi gösterir. Bir sahip veya yönetici \"Ajanlar kredi kullanabilir\" seçeneğini açabilir veya kapatabilir.",
           "Ajanlar, bir NEAR Intents cüzdanından sitelere kripto ile ödeme yapabilir. Cüzdanı Sunucu ayarları › Vault › Kripto bölümünde geçiş anahtarıyla bağlayın, sonra para yatırın. Her ödeme sohbette onayınızı bekler; ancak o site için \"Her zaman izin ver\" seçeneğini seçerseniz beklemez. Günlük bütçe ajanların harcayabileceği tutarı sınırlar. Cüzdan yalnızca bu bilgisayar içindir ve ödemelerde gerçek para kullanılır.",
           "Her hesap 10 ücretsiz hoş geldin kredisi alır. Ayrıca Credits sayfasında Redeem code ile bir kredi kodunu kullanabilirsiniz.",
           "Bir ajanın tarayıcı sekmesi konumunuzu isteyebilir. Sohbet önce size sorar; Engelle, Her zaman izin ver veya İzin ver seçersiniz. Önceden tarayıcı isteği her zaman engelliyordu.",
@@ -30,8 +30,8 @@
           "Uygulama daha az donar, çoğunlukla Windows'ta. Yavaş denetimlerin sonuçlarını kısa süre tutar ve yavaş işi arka planda yapar.",
           "Bir Claude ajanı plan modunda bir planı bitirdiğinde, sohbet artık planı Onayla ve Stop planning ile gösterir. Önceden onay görünmüyor ve ajan yapmaya başlıyordu.",
           "Başka bir ajanın veya bir rutinin iletisi artık meşgul bir Claude ajanının işini durdurmaz.",
-          "Bir ajanın tarayıcı sekmesindeki bir web sitesinin uyarısı, siz \"Tamam\"a tıklayana kadar OpenBot penceresini kaplamaz. Uyarı kendiliğinden kapanır ve ajan metnini alır.",
-          "Linux X11 masaüstünde, bir ajan başka bir uygulamada Bilgisayar Kullanımı'nı kullandıktan sonra OpenBot'ta yazmak artık durmaz. Yazma zaten durduysa bir kez çıkış yapıp yeniden giriş yapın."
+          "Bir ajanın tarayıcı sekmesindeki bir web sitesinin uyarısı, siz \"Tamam\"a tıklayana kadar PurpleBot penceresini kaplamaz. Uyarı kendiliğinden kapanır ve ajan metnini alır.",
+          "Linux X11 masaüstünde, bir ajan başka bir uygulamada Bilgisayar Kullanımı'nı kullandıktan sonra PurpleBot'ta yazmak artık durmaz. Yazma zaten durduysa bir kez çıkış yapıp yeniden giriş yapın."
         ]
       }
     ]
@@ -60,7 +60,7 @@
       {
         "type": "fixed",
         "items": [
-          "macOS'te Claude için Bağlan ve Hesap ekle artık OpenBot'tan Claude oturum açma sayfasını açar.",
+          "macOS'te Claude için Bağlan ve Hesap ekle artık PurpleBot'tan Claude oturum açma sayfasını açar.",
           "Katıldığınız bir sunucuyla bağlantı veri göndermeyi durdurduğunda uygulama artık kendiliğinden yeniden bağlanır.",
           "Katıldığınız bir sunucuda uzun kanallar daha hızlı açılır ve güncellenir.",
           "Bir iş akışının \"Bildirim\" çıktısı veya onay bekleyen bir adım artık telefona bildirim gönderir.",
@@ -73,19 +73,19 @@
     "version": "0.77.0",
     "date": "2026-11-23",
     "notices": [
-      "Katıldığınız her sunucuyu da bu sürüme güncelleyin. Sunucuda, OpenBot kredi modelleri, duraklatılmış ve dışa aktarılmış iş akışları, WhatsApp salt okunur sohbetleri, konum istekleri ve Signal sunucu seçimi yalnızca sunucu bu sürümdeyse çalışır.",
-      "Bu güncellemeden sonra OpenBot'un eski bir sürümü verilerinizi açamaz."
+      "Katıldığınız her sunucuyu da bu sürüme güncelleyin. Sunucuda, PurpleBot kredi modelleri, duraklatılmış ve dışa aktarılmış iş akışları, WhatsApp salt okunur sohbetleri, konum istekleri ve Signal sunucu seçimi yalnızca sunucu bu sürümdeyse çalışır.",
+      "Bu güncellemeden sonra PurpleBot'un eski bir sürümü verilerinizi açamaz."
     ],
     "groups": [
       {
         "type": "added",
         "items": [
-          "Kendiniz veya bir sunucu için OpenBot kredisi satın alın. Sayfa çubuğundaki \"Credits\" düğmesini veya Ayarlar → Faturalandırma bölümünü kullanın. Ücretli lisans ayrıca her ay ücretsiz kredi verir.",
-          "İş akışındaki resim ve video adımları, kredilerinizin karşıladığı OpenBot modellerini başka bir oturum açma olmadan kullanabilir. Bir adımda Adet ayarını yapın; aynı anda en fazla 4 sonuç alın.",
+          "Kendiniz veya bir sunucu için PurpleBot kredisi satın alın. Sayfa çubuğundaki \"Credits\" düğmesini veya Ayarlar → Faturalandırma bölümünü kullanın. Ücretli lisans ayrıca her ay ücretsiz kredi verir.",
+          "İş akışındaki resim ve video adımları, kredilerinizin karşıladığı PurpleBot modellerini başka bir oturum açma olmadan kullanabilir. Bir adımda Adet ayarını yapın; aynı anda en fazla 4 sonuç alın.",
           "İş akışı menüsünden bir iş akışını duraklatın. Ayrıca bir iş akışını dosyaya aktarabilir ve başka bir bilgisayarda veya sunucuda içe aktarabilirsiniz.",
           "Önceki bir adımdan alan eklemek için bir iş akışı adımına {{ yazın. Zamanlama, GitHub, Discord, Telegram ve Slack tetikleyicileri artık alan da verir.",
           "Bir istek buna ihtiyaç duyduğunda, örneğin \"yakınımdaki restoranlar\" gibi, ajan konumunuzu isteyebilir. Siz yanıt verene kadar hiçbir şey gönderilmez.",
-          "İzin verilen bir WhatsApp kişisini veya grubunu salt okunur yapın. Ajanlarınız sohbeti okuyabilir, OpenBot ise sohbete hiçbir zaman yazmaz."
+          "İzin verilen bir WhatsApp kişisini veya grubunu salt okunur yapın. Ajanlarınız sohbeti okuyabilir, PurpleBot ise sohbete hiçbir zaman yazmaz."
         ]
       },
       {
@@ -93,7 +93,7 @@
         "items": [
           "Bağlamı 200K veya daha fazla token olan boşta bir Claude veya Pi sohbeti, 1 saatlik istem önbelleği dolmadan önce kendini sıkıştırır. Bu, tüm bağlamı yeniden okumaktan daha az maliyetlidir. Bunu Sunucu ayarları → Sağlayıcılar bölümünden kapatın.",
           "Bir sunucunun Signal sunucusunu Sunucu ayarları → Genel bölümünden seçin. \"Otomatik\" en yakın olanı tutar.",
-          "\"Tam erişim\" ile çalışan Gemini ajanları, bellek, tarayıcı ve kanallar gibi OpenBot araçlarını onay kartı olmadan kullanır."
+          "\"Tam erişim\" ile çalışan Gemini ajanları, bellek, tarayıcı ve kanallar gibi PurpleBot araçlarını onay kartı olmadan kullanır."
         ]
       },
       {
@@ -102,7 +102,7 @@
           "Bir Claude ajanı çalışırken ona gönderdiğiniz ileti artık hemen ajana ulaşır; alt ajan veya uzun bir araç çalışırken de.",
           "\"Önce sor\" olarak ayarlanmış bir ChatGPT (Codex) ajanı, artık bir komut çalıştırmadan veya bir dosyayı değiştirmeden önce size sorar.",
           "Yanıt vermeyi bırakan barındırılan veya kendi kendine barındırılan bir sunucu artık 10 dakika sonra kendiliğinden yeniden başlar.",
-          "macOS'te ajan yuvası artık OpenBot'u ve tüm bilgisayarı yavaşlatmaz.",
+          "macOS'te ajan yuvası artık PurpleBot'u ve tüm bilgisayarı yavaşlatmaz.",
           "Uzun sohbetler yumuşak kayar. Önceden 100'den fazla iletisi olan bir sohbet, kaydırırken takılıyordu."
         ]
       }
@@ -112,8 +112,8 @@
     "version": "0.76.0",
     "date": "2026-11-21",
     "notices": [
-      "Katıldığınız her sunucuyu da bu sürüme güncelleyin. Sunucuda, aynı anda çalışan görevler, canlı ses hesabı, OpenBot bellek anahtarı, iş akışı klasörleri, türü tanımlı iş akışı yanıtları ve bir sağlayıcının 10'dan fazla hesabı yalnızca sunucu bu sürümdeyse çalışır.",
-      "Bu güncellemeden sonra OpenBot'un eski bir sürümü verilerinizi açamaz."
+      "Katıldığınız her sunucuyu da bu sürüme güncelleyin. Sunucuda, aynı anda çalışan görevler, canlı ses hesabı, PurpleBot bellek anahtarı, iş akışı klasörleri, türü tanımlı iş akışı yanıtları ve bir sağlayıcının 10'dan fazla hesabı yalnızca sunucu bu sürümdeyse çalışır.",
+      "Bu güncellemeden sonra PurpleBot'un eski bir sürümü verilerinizi açamaz."
     ],
     "groups": [
       {
@@ -152,23 +152,23 @@
     "date": "2026-11-20",
     "notices": [
       "Katıldığınız her sunucuyu da bu sürüme güncelleyin. Sunucuda, iş akışı adım ayarları, Bu adımdan çalıştır, sahiplik devri, Tümünü güncelle düğmesi ve ajanlarla ilgili birçok düzeltme yalnızca sunucu bu sürümdeyse çalışır.",
-      "Bu güncellemeden sonra OpenBot'un eski bir sürümü verilerinizi açamaz."
+      "Bu güncellemeden sonra PurpleBot'un eski bir sürümü verilerinizi açamaz."
     ],
     "groups": [
       {
         "type": "added",
         "items": [
-          "Ajanla Bas konuş ile konuşun. Konuşurken konuşma düğmesini veya konuşma tuşunu basılı tutun. Bıraktığınızda OpenBot söylediklerinizi gönderir. Tuşu Ayarlar > Ses bölümünden değiştirin.",
+          "Ajanla Bas konuş ile konuşun. Konuşurken konuşma düğmesini veya konuşma tuşunu basılı tutun. Bıraktığınızda PurpleBot söylediklerinizi gönderir. Tuşu Ayarlar > Ses bölümünden değiştirin.",
           "Bir iş akışını tek bir adımdan yeniden başlatın. Adım menüsünde Bu adımdan çalıştır seçin. Önceki adımlar yanıtlarını korur ve yeniden çalışmaz.",
           "Bir iş akışı adımının sonucunu oluşturan ayarları ve girdileri görün. Adımda Ayarlar'ı seçin, sonra aynı şekilde yeniden çalıştırmak için Bu ayarları kullan'ı seçin.",
-          "Sunucunuzu başka bir OpenBot hesabına devredin. Sunucu ayarları > Üyeler bölümünde yeni sahibin e-postasını girin. Yeni sahip kabul ettiğinde sunucu el değiştirir.",
+          "Sunucunuzu başka bir PurpleBot hesabına devredin. Sunucu ayarları > Üyeler bölümünde yeni sahibin e-postasını girin. Yeni sahip kabul ettiğinde sunucu el değiştirir.",
           "Tüm sağlayıcıları aynı anda güncelleyin. Ayarlar > Sağlayıcılar, bir veya daha fazla sağlayıcının güncellemesi olduğunda Tümünü güncelle düğmesini gösterir."
         ]
       },
       {
         "type": "changed",
         "items": [
-          "OpenBot, indirdiği sağlayıcı CLI'lerini yeni sürüm varsa her saat günceller. Güncelleme ajanlar boşta olana kadar bekler.",
+          "PurpleBot, indirdiği sağlayıcı CLI'lerini yeni sürüm varsa her saat günceller. Güncelleme ajanlar boşta olana kadar bekler.",
           "Bir ajanın her ileti dizisi, ana sohbetin veya o ajanın başka bir ileti dizisinin açtığı tarayıcı sekmelerini kullanabilir.",
           "Rutinler sekmesi kenar çubuğundan kaldırıldı. Rutinler yine çalışır. Bunları ajan ayarlarında, Zamanlama sayfasında ve Sunucu ayarları > Rutinler bölümünde yönetin."
         ]
@@ -176,7 +176,7 @@
       {
         "type": "fixed",
         "items": [
-          "İndirilmiş bir güncelleme için yeniden başlatma artık ajanlar boşta olana kadar bekler; \"Yeniden başlatmayı iptal et\" seçeneği vardır. Önceden OpenBot hemen kapanır ve ajanın görevini durdururdu.",
+          "İndirilmiş bir güncelleme için yeniden başlatma artık ajanlar boşta olana kadar bekler; \"Yeniden başlatmayı iptal et\" seçeneği vardır. Önceden PurpleBot hemen kapanır ve ajanın görevini durdururdu.",
           "Bir ajan, yeniden başlatmadan ya da kullanım sınırından sonra artık \"Çalışıyor\" durumunda, iletileri beklerken kalmaz. Durdurulan tur Kesildi olarak gösterilir ve bekleyen iletiler başlar.",
           "Çok sayıda ajanı ve bağlı cihazı olan meşgul bir sunucu artık bellek sorunu yaşamaz ve bir sonraki turu seçerken donmaz.",
           "Bir duraklamadan sonra gönderdiğiniz ileti, Claude oturum açıkken artık \"Gönderilmedi\" ve \"Devam etmek için Claude sağlayıcısını bağlayın.\" durumunda kalmaz.",
@@ -190,7 +190,7 @@
     "date": "2026-11-19",
     "notices": [
       "Katıldığınız her sunucuyu da bu sürüme güncelleyin. Sunucuda, iş akışı tuvalindeki resimlerin küçük kopyaları, özel video uzunlukları ve bir isteği \"devam et\" demeden tamamlayan ajanlar yalnızca sunucu bu sürümdeyse çalışır.",
-      "Linux'ta güncellemeden sonra OpenBot hâlâ yavaşsa `~/.config/OpenBot/gpu-crash.json` dosyasını silin ve OpenBot'u yeniden başlatın.",
+      "Linux'ta güncellemeden sonra PurpleBot hâlâ yavaşsa `~/.config/PurpleBot/gpu-crash.json` dosyasını silin ve PurpleBot'u yeniden başlatın.",
       "Bir Mistral ajanı için Sağlayıcı ayarları altında Düşünme seçeneğini ayarladıysanız, Efor menüsünde düzeyi yeniden seçin ve eski Düşünme satırını sıfırlayın."
     ],
     "groups": [
@@ -216,9 +216,9 @@
       {
         "type": "fixed",
         "items": [
-          "Bir Claude veya ChatGPT ajanı, sağlayıcı yanıt vermeyi bıraktığında saatlerce \"Çalışıyor\" durumunda kalmaz. 15 dakika boyunca çıktı gelmezse (bir araç çalışırken 60 dakika), OpenBot turu sonlandırır ve sıradaki iletiler devam eder.",
+          "Bir Claude veya ChatGPT ajanı, sağlayıcı yanıt vermeyi bıraktığında saatlerce \"Çalışıyor\" durumunda kalmaz. 15 dakika boyunca çıktı gelmezse (bir araç çalışırken 60 dakika), PurpleBot turu sonlandırır ve sıradaki iletiler devam eder.",
           "\"Kendi Claude Code kurulumumu kullan\" kapalıyken Claude ajanları artık genel Claude Code talimatlarınızı ve kurallarınızı yüklemez. Her tur daha hızlı çalışır ve daha az maliyet çıkarır. Bunları korumak için \"Kendi Claude Code kurulumumu kullan\" seçeneğini açın.",
-          "OpenBot bir sağlayıcı güncellemesini indirirken ajanlarınız çalışmaya devam eder. Bir dakika boyunca veri gelmeyen bir indirme durur ve tekrar denediğinizde kaldığı yerden devam eder.",
+          "PurpleBot bir sağlayıcı güncellemesini indirirken ajanlarınız çalışmaya devam eder. Bir dakika boyunca veri gelmeyen bir indirme durur ve tekrar denediğinizde kaldığı yerden devam eder.",
           "Ajanlar artık takım arkadaşı ajanlarına doğrudan ileti gönderir. Önceden bir kart her devri onaylamanızı isterdi ve siz onaylayana kadar iş dururdu.",
           "Otomatik yedek modelleri olan bir ajan, daha fazla durumda bir sonraki yedek modele geçer; örneğin hız sınırına takıldığında veya Gemini Google ile bağlantısını kaybettiğinde."
         ]
@@ -229,7 +229,7 @@
     "version": "0.73.0",
     "date": "2026-11-18",
     "notices": [
-      "Bu sürümü kurduktan sonra bu bilgisayarda veya sunucuda OpenBot'un eski bir sürümüne dönemezsiniz. Bu sürüm veritabanını küçültür ve eski bir sürüm onu açamaz.",
+      "Bu sürümü kurduktan sonra bu bilgisayarda veya sunucuda PurpleBot'un eski bir sürümüne dönemezsiniz. Bu sürüm veritabanını küçültür ve eski bir sürüm onu açamaz.",
       "Katıldığınız her sunucuyu da bu sürüme güncelleyin. Sunucuda özel resim boyutları, Sunra ve Higgsfield modelleri ile fiyatları ve çok sayıda ajanın daha hızlı yüklenmesi yalnızca sunucuda bu sürüm varsa çalışır."
     ],
     "groups": [
@@ -240,14 +240,14 @@
           "Kenar çubuğunu arama alanının sonundaki filtre düğmesiyle süzün. Yalnızca ajanları veya kanalları, yalnızca okunmamış sohbetleri veya çalışan ajanları ya da yalnızca seçtiğiniz klasörlerdeki sohbetleri gösterin.",
           "İş akışı tuvalindeki bir Görsel adımına piksel cinsinden özel bir boyut verin ya da 4:5 veya 5:4 en-boy oranını kullanın.",
           "İş akışı tuvali Sunra ve Higgsfield'in tüm görsel ve video modellerini gösterir. Çalıştır düğmesi fiyatı kredi olarak gösterir.",
-          "Yavaş bir bilgisayarda OpenBot'u daha hızlı yapmak için Ayarlar → Görünüm → Hareket bölümünden Arka plan bulanıklığı ile Hareketli ajan yüzleri seçeneklerini kapatın."
+          "Yavaş bir bilgisayarda PurpleBot'u daha hızlı yapmak için Ayarlar → Görünüm → Hareket bölümünden Arka plan bulanıklığı ile Hareketli ajan yüzleri seçeneklerini kapatın."
         ]
       },
       {
         "type": "changed",
         "items": [
           "Birden fazla kişi aynı iş akışını aynı anda düzenleyebilir. Tuval, diğer kişilerin değişikliklerini kaydettikçe ekler.",
-          "OpenBot, birçok ajan çalışırken çok daha az CPU kullanır ve gecikme olmadan yazabilirsiniz.",
+          "PurpleBot, birçok ajan çalışırken çok daha az CPU kullanır ve gecikme olmadan yazabilirsiniz.",
           "Ajanlar, banka 3-D Secure kodu istediğinde ödemeyi tamamlar. Kod, ajanın okuyabildiği bir e-postada ya da SMS'te olduğunda ajan kodu yazar.",
           "Sunucu ayarları → Aktarım → Başka bir sunucuya kopyala artık ajanların iş akışlarını ve rutin akışlarını da kopyalar."
         ]
@@ -255,11 +255,11 @@
       {
         "type": "fixed",
         "items": [
-          "OpenBot veritabanı çok daha az yer kaplar. Güncellemeden sonra OpenBot, eski sohbet iletilerinin kopyalarını küçük adımlarla kaldırır.",
+          "PurpleBot veritabanı çok daha az yer kaplar. Güncellemeden sonra PurpleBot, eski sohbet iletilerinin kopyalarını küçük adımlarla kaldırır.",
           "Windows'ta bir güncelleme ilerlemesini yeniden gösterir.",
           "Katıldığınız, çok sayıda ajanı olan bir sunucu ve büyük bir kanal daha hızlı açılır.",
           "Çok sayıda görsel içeren ya da uzun geçmişi olan Gemini sohbetleri artık durmaz ve yeni bir sohbet başladığında Gemini sizden yeniden oturum açmanızı istemez.",
-          "Masaüstü uygulaması, OpenBot v0.34.1 veya daha eski bir sürümdeki sunucuya yeniden bağlanır."
+          "Masaüstü uygulaması, PurpleBot v0.34.1 veya daha eski bir sürümdeki sunucuya yeniden bağlanır."
         ]
       }
     ]
@@ -285,7 +285,7 @@
       {
         "type": "changed",
         "items": [
-          "Ayarların yeni bir düzeni var. Bölümler etiketli gruplarda yer alır ve Sunucu ayarları'nda yeni Bellek ile Ajan varsayılanları bölümleri vardır. macOS'te OpenBot sistem yazı tipini kullanır.",
+          "Ayarların yeni bir düzeni var. Bölümler etiketli gruplarda yer alır ve Sunucu ayarları'nda yeni Bellek ile Ajan varsayılanları bölümleri vardır. macOS'te PurpleBot sistem yazı tipini kullanır.",
           "Özel MCP sunucularını Pazaryeri → Uygulamalar bölümünden ekleyin ve düzenleyin. Sunucu ayarları'nda artık MCP bölümü yok.",
           "Bir ajanla yaptığınız sohbette balonlarınız artık ajanın avatarının rengini alır. Bunu Ayarlar → Görünüm → Balonlarınız bölümünden değiştirin.",
           "Sesli konuşma artık yan paneli açmaz. Sohbetin üstündeki küçük bir çubuk ses denetimlerini gösterir."
@@ -298,7 +298,7 @@
           "Bir kullanım sınırı ya da bir sağlayıcı hatası bir turu durdurduğunda daha fazla ajan yedek modeline geçer; buna Grok, Hermes ve Claude ajanları da dahildir.",
           "Ajanlar, bir çerçevedeki oturum açma formu gibi daha fazla yerde kayıtlı girişi kullanabilir.",
           "Bir rutin, başarısız bir çalıştırmadan sonra açık kalır; sağlayıcı başlayamadığında vakti gelen bir çalıştırma daha sonra çalışır.",
-          "OpenBot daha az CPU ve pil kullanır: sohbetteki ve gizli tarayıcı sekmelerindeki videolar, siz görmediğinizde duraklatılır."
+          "PurpleBot daha az CPU ve pil kullanır: sohbetteki ve gizli tarayıcı sekmelerindeki videolar, siz görmediğinizde duraklatılır."
         ]
       }
     ]
@@ -336,7 +336,7 @@
           "Claude Code varsayılan modelini değiştirdiğinde bir Claude ajanı profilindeki modeli korur.",
           "Claude bir turu aylık harcama sınırında durdurduğunda, yedek modelleri olan bir ajan bir sonraki modelinde devam eder.",
           "Ajanlar, YouTube videosu gibi altyazılı bir videonun tam dökümünü alır.",
-          "OpenBot daha az CPU kullanır: görmediğiniz tarayıcı sekmeleri yavaşlar ve bir ajanın etkinlik satırındaki hareketli ışık daha hafiftir."
+          "PurpleBot daha az CPU kullanır: görmediğiniz tarayıcı sekmeleri yavaşlar ve bir ajanın etkinlik satırındaki hareketli ışık daha hafiftir."
         ]
       }
     ]
@@ -372,8 +372,8 @@
       {
         "type": "fixed",
         "items": [
-          "Sohbetleriniz uzun olduğunda OpenBot daha hızlı açılır.",
-          "Windows ve Linux'ta, ajanlar çalışırken OpenBot çıkmadan önce sorar. Pencereyi gizleyip ajanların işini bitirmesine izin vermek için Çalışsın'ı seçin.",
+          "Sohbetleriniz uzun olduğunda PurpleBot daha hızlı açılır.",
+          "Windows ve Linux'ta, ajanlar çalışırken PurpleBot çıkmadan önce sorar. Pencereyi gizleyip ajanların işini bitirmesine izin vermek için Çalışsın'ı seçin.",
           "Kurulum sırasında bir cihazın bağlantısı kesildiğinde cihazlar tekrar sunucuya bağlanır. Katılınan bir sunucudaki bir ajanın tarayıcısının canlı görünümü de yavaş bağlantıda açık kalır.",
           "Bir ajandan web sayfasının ekran görüntüsünü istediğinizde, artık görüntüyü yanıtına ekler.",
           "Bir OpenCode Go anahtarı kaydedildiğinde OpenCode ücretsiz modelleri yeniden yanıt verir."
@@ -385,7 +385,7 @@
     "version": "0.69.0",
     "date": "2026-11-12",
     "notices": [
-      "Gizli ajanlar artık çalışmaya devam eder. OpenBot, bu sürümden önce gizlediğiniz ajanların rutinlerini kapattı; bu yüzden istediğiniz rutinleri açın."
+      "Gizli ajanlar artık çalışmaya devam eder. PurpleBot, bu sürümden önce gizlediğiniz ajanların rutinlerini kapattı; bu yüzden istediğiniz rutinleri açın."
     ],
     "groups": [
       {
@@ -406,15 +406,15 @@
           "Bir ajan çalışırken ona gönderdiğiniz mesaj artık çalışan turu yönlendirir. Eskisi gibi kuyruğa almak için Ayarlar → Ajanlar bölümünde Ajanları çalışırken yönlendir seçeneğini kapatın.",
           "Gizli ajan çalışmaya devam eder. Rutinlerini çalıştırır ve yanıtınızı beklediğinde Size ihtiyacı var bölümünde görünür.",
           "Açık sunucu, sayfa çubuğunun altında bir logo olarak görünür. Yeni düğmesi kenar çubuğu arama alanının sonundadır.",
-          "OpenBot, Chromium 156 ile birlikte Electron 45.3.0 kullanır ve ajan tarayıcısında bot denetimi olan daha fazla site yüklenir."
+          "PurpleBot, Chromium 156 ile birlikte Electron 45.3.0 kullanır ve ajan tarayıcısında bot denetimi olan daha fazla site yüklenir."
         ]
       },
       {
         "type": "fixed",
         "items": [
-          "OpenBot daha hızlı açılır, özellikle Windows'ta; yavaş bir bilgisayar açıldıktan sonra da kullanılabilir kalır.",
-          "Çok sayıda görev veya konu olduğunda OpenBot yeniden başlattıktan sonra da yanıt vermeye devam eder.",
-          "Linux ve Windows'ta ana pencereyi kapattığınızda OpenBot kapanışını tamamlar.",
+          "PurpleBot daha hızlı açılır, özellikle Windows'ta; yavaş bir bilgisayar açıldıktan sonra da kullanılabilir kalır.",
+          "Çok sayıda görev veya konu olduğunda PurpleBot yeniden başlattıktan sonra da yanıt vermeye devam eder.",
+          "Linux ve Windows'ta ana pencereyi kapattığınızda PurpleBot kapanışını tamamlar.",
           "Bilgisayarın saati düzeltildikten sonra rutinler zamanında çalışır.",
           "Bir sohbetten kopyaladığınız metnin başında ve sonunda artık boş satır yoktur."
         ]
@@ -466,7 +466,7 @@
         "items": [
           "Gemini, Windows'ta yeniden kurulur ve güncellenir. 0.67.0'da bir bağlantı veya özel dosyayla ilgili bir hatayla duruyordu.",
           "Meşgul bir takım arkadaşına mesaj gönderen bir ajan, mesajın arkadaşının devam eden görevine girip girmediğini artık bilir. Mesaj beklediğinde ajan nedenini size söyleyebilir.",
-          "Bilgisayar Kullanımı sırasında ajanlar artık imlecin kullanılamadığını söylemez. OpenBot, imleci ajanın tıkladığı, kaydırdığı veya hareket ettirdiği yere çizer."
+          "Bilgisayar Kullanımı sırasında ajanlar artık imlecin kullanılamadığını söylemez. PurpleBot, imleci ajanın tıkladığı, kaydırdığı veya hareket ettirdiği yere çizer."
         ]
       }
     ]
@@ -494,7 +494,7 @@
         "items": [
           "Okunmamış yanıtları olan sohbetler önce, Okunmamış grubunda gösterilir. Sırayı değiştirmek için sohbet listesinin menüsünde Sohbetleri sırala'yı seçin.",
           "VPS gibi katılınan bir sunucuda masaüstü uygulaması ve tarayıcı uygulaması artık bu bilgisayarın özelliklerinin çoğuna sahip.",
-          "Ajanlar git commit'lerine OpenBot'u ortak yazar olarak ekler. Yazar siz kalırsınız. Bunu Ayarlarınız → Ajanlar bölümünde kapatın.",
+          "Ajanlar git commit'lerine PurpleBot'u ortak yazar olarak ekler. Yazar siz kalırsınız. Bunu Ayarlarınız → Ajanlar bölümünde kapatın.",
           "Ajanlar tarayıcı görevlerini daha az adımda ve yaklaşık %18 daha az token ile bitirir.",
           "Gemini artık Antigravity CLI üzerinde çalışır. Google oturumunuz korunur."
         ]
@@ -503,8 +503,8 @@
         "type": "fixed",
         "items": [
           "Durdurduğunuz bir Claude ajanı artık yaklaşık 10 saniyede durur ve kuyruktaki mesajları başlar.",
-          "Windows'ta ajanlar, OpenBot penceresi simge durumundayken veya tepsideyken tarayıcıyı kullanabilir.",
-          "macOS'ta Yeniden başlat ve güncelle, OpenBot disk görüntüsünden çalışırken artık OpenBot'u kapatmaz. OpenBot'u Uygulamalar'a taşımanızı söyler.",
+          "Windows'ta ajanlar, PurpleBot penceresi simge durumundayken veya tepsideyken tarayıcıyı kullanabilir.",
+          "macOS'ta Yeniden başlat ve güncelle, PurpleBot disk görüntüsünden çalışırken artık PurpleBot'u kapatmaz. PurpleBot'u Uygulamalar'a taşımanızı söyler.",
           "Sesli bir konuşmada öksürük veya bir tuşa basma artık ajanın yanıtını durdurmaz."
         ]
       }
@@ -523,7 +523,7 @@
           "Windows'ta Dynamic Island ve ajan yuvası, Mac'te olduğu gibi ajanlarınızı gösterir. Ajan yuvası kanalları da tutabilir.",
           "Ajanlar YouTube veya TikTok bağlantıları gibi herkese açık çevrimiçi videoları izleyebilir.",
           "Kitaplık'ta birden çok dosya seçin ve hepsini bir kerede indirin veya silin.",
-          "Ajanlar sizin için OpenBot ekibine bir hata raporu veya özellik fikri gönderebilir."
+          "Ajanlar sizin için PurpleBot ekibine bir hata raporu veya özellik fikri gönderebilir."
         ]
       },
       {
@@ -541,7 +541,7 @@
         "items": [
           "Bir ajanın kuyruğu, ajan kendi sorusunun yanıtını beklerken aynı mesajı artık tekrar tekrar başlatmaz.",
           "Bir ChatGPT ajanı artık tekrar tekrar sıkıştırma yapmaz veya \"Bağlam sıkıştırılıyor\" durumunda sonsuza kadar kalmaz.",
-          "Cursor ve bazı diğer sağlayıcılardaki ajanlar, OpenBot yeniden başladıktan sonra OpenBot araçlarını korur.",
+          "Cursor ve bazı diğer sağlayıcılardaki ajanlar, PurpleBot yeniden başladıktan sonra PurpleBot araçlarını korur.",
           "Ajanlar, n8n gibi oturum açtığınız uzak bir MCP sunucusunu en yeni MCP sürümüyle kullanabilir."
         ]
       }
@@ -567,7 +567,7 @@
         "type": "changed",
         "items": [
           "Ajanlar Claude, Codex, Pi, OpenCode, Grok ve Hermes'te her istekte daha az token kullanır.",
-          "OpenBot tarayıcı sekmeleri, boştaki ajanlar ve uygulama pencereleri için daha az bellek kullanır.",
+          "PurpleBot tarayıcı sekmeleri, boştaki ajanlar ve uygulama pencereleri için daha az bellek kullanır.",
           "Ajan tarayıcı sekmeleri kendiliğinden geçen bot kontrollerini bekler ve kısa görevleri daha az adımda bitirir.",
           "Bildirimlerin görünümü yenilendi."
         ]
@@ -598,7 +598,7 @@
           "Bir kanalın ayarlarından yeni bir konuşma başlatın veya kanalın bağlamını sıkıştırın.",
           "Katılınan bir sunucunun üyeleri kendi MCP sunucularını ekleyebilir ve Trello gibi uygulamaları bağlayabilir.",
           "Bu bilgisayarı uzak masaüstüyle kimlerin kontrol edebileceğini Sunucu ayarları → Uzak masaüstü bölümünde seçin.",
-          "OpenBot'u İbranice kullanın ve Pazaryeri'nde GitLab, Omnisend ve ElevenLabs'i bağlayın."
+          "PurpleBot'u İbranice kullanın ve Pazaryeri'nde GitLab, Omnisend ve ElevenLabs'i bağlayın."
         ]
       },
       {
@@ -616,8 +616,8 @@
           "Slack, Discord, Telegram ve WhatsApp gönderilerindeki bahsetmeler artık ilgili kişiye bildirim gönderir.",
           "Bir sağlayıcının kotası dolduğunda ajan işe ilk hazır yedek modeliyle devam eder.",
           "Her turdan sonra yeniden sıkıştırılan bir sohbet artık art arda 2 sıkıştırmadan sonra otomatik sıkıştırmayı durdurur.",
-          "Bir ajanın tarayıcı işlemi başka bir adrese geçen bir sayfayı beklediğinde OpenBot artık kapanmaz.",
-          "Proton Pass girişleri OpenBot yeniden başladıktan sonra da çalışır."
+          "Bir ajanın tarayıcı işlemi başka bir adrese geçen bir sayfayı beklediğinde PurpleBot artık kapanmaz.",
+          "Proton Pass girişleri PurpleBot yeniden başladıktan sonra da çalışır."
         ]
       }
     ]
@@ -648,7 +648,7 @@
       {
         "type": "fixed",
         "items": [
-          "Claude, OpenBot yeniden başladıktan veya güncellendikten sonra oturumu açık tutar ve Claude ajanları 5 saatlik kullanım penceresinin daha azını kullanır.",
+          "Claude, PurpleBot yeniden başladıktan veya güncellendikten sonra oturumu açık tutar ve Claude ajanları 5 saatlik kullanım penceresinin daha azını kullanır.",
           "Uzun bir sohbette yüklediğiniz eski mesajlar yüklü kalır. Sohbet artık en son mesajlara geri atlamaz.",
           "ChatGPT (Codex), Muse, Pi veya Antigravity sohbetindeki otomatik sıkıştırmalar art arda 2 başarısızlıktan sonra durur, böylece sohbet artık plan limitini tüketmez.",
           "GPT sesi, ajan bir Codex modeli kullandığında da her ajanla çalışır.",
@@ -666,7 +666,7 @@
         "type": "added",
         "items": [
           "Sunucu ayarları → Tarayıcı profilleri bölümünde bir tarayıcı profiline kendi proxy'sini verin veya katılınan bir sunucuda kendi bilgisayarınızı proxy olarak kullanın.",
-          "Pazaryeri'nde Proton Pass'i bağlayın. Tarayıcı, OpenBot ile paylaştığınız kasadaki girişleri doldurur.",
+          "Pazaryeri'nde Proton Pass'i bağlayın. Tarayıcı, PurpleBot ile paylaştığınız kasadaki girişleri doldurur.",
           "Bir ajanın sohbetinde @ yazarak ajanın tarayıcı sekmelerinden veya yan konularından birini etiketleyin.",
           "Ayarlar → Ses bölümünde iki yeni yerel dikte modeli var: Parakeet Unified EN ve Cohere Transcribe.",
           "Ajanın yazdığı ve sizin okumadığınız bir mesaj dizisinde mavi bir nokta görünür.",
@@ -686,9 +686,9 @@
       {
         "type": "fixed",
         "items": [
-          "OpenBot açıkken ve görev yokken daha az enerji kullanır.",
+          "PurpleBot açıkken ve görev yokken daha az enerji kullanır.",
           "Uzun sohbetler takılmadan kayar ve daha hızlı açılır.",
-          "OpenBot açılışta artık \"OpenBot'a bağlanılıyor\" ekranında veya sunucu yükleme ekranında kalmaz.",
+          "PurpleBot açılışta artık \"PurpleBot'a bağlanılıyor\" ekranında veya sunucu yükleme ekranında kalmaz.",
           "Ajan için Bilgisayar Kullanımı açıksa rutin çalıştırmaları onu yeniden kullanabilir."
         ]
       }
@@ -724,9 +724,9 @@
         "type": "fixed",
         "items": [
           "Uzun geçmişi olan bir kanal yeniden hızlı açılır.",
-          "Linux'ta anahtarlık anahtarını tutmadığında OpenBot artık her yeniden başlatmadan sonra yeniden oturum açmanızı istemez.",
+          "Linux'ta anahtarlık anahtarını tutmadığında PurpleBot artık her yeniden başlatmadan sonra yeniden oturum açmanızı istemez.",
           "Windows'ta kanal liderleri mesajları yeniden yönlendirir ve bu bilgisayarda sunucu oluşturabilirsiniz.",
-          "Eski bir OpenBot, daha yeni bir sürümün kaydettiği verileri açtığında en son sürümü yükler."
+          "Eski bir PurpleBot, daha yeni bir sürümün kaydettiği verileri açtığında en son sürümü yükler."
         ]
       }
     ]
@@ -740,8 +740,8 @@
         "type": "added",
         "items": [
           "Ajanlarınızla WhatsApp'tan konuşun. Pazaryeri → Uygulamalar → WhatsApp altında bir numara bağlayın. Ayrı bir numara daha güvenlidir, çünkü WhatsApp otomatik gördüğü numaraları engelleyebilir.",
-          "Biri Slack'te veya bir Telegram grubunda OpenBot'tan bahsettiğinde bir iş akışı başlatın ve sonucunu oraya geri gönderin.",
-          "OpenBot'u Arapça kullanın. Düzen sağdan sola doğru yansır.",
+          "Biri Slack'te veya bir Telegram grubunda PurpleBot'tan bahsettiğinde bir iş akışı başlatın ve sonucunu oraya geri gönderin.",
+          "PurpleBot'u Arapça kullanın. Düzen sağdan sola doğru yansır.",
           "Sunucu ayarları → Sağlayıcılar bölümünde modelleri kapatın. Model seçici önce en yeni modelleri gösterir, eski modeller ise katlanmış bir bölümdedir.",
           "Sunucu ayarlarında üye, rol ve ajan erişimi değişikliklerini gösteren bir Denetim günlüğü var.",
           "Şirket girişi: sunucu sahibi Üyeler → Şirket girişi bölümünde Microsoft Entra ID, Okta, Google Workspace veya başka bir OpenID Connect sağlayıcısını bağlayabilir. Şirket e-postası olan kişiler daha sonra davet olmadan katılır.",
@@ -757,7 +757,7 @@
           "Sohbet mesajları geniş bir pencerede daha fazla alan kullanır.",
           "Sohbetten açtığınız her dosya yan panelde kendi sekmesini alır.",
           "4.000 karakterden uzun bir metin yapıştırması pasted-text.txt eki olur, böylece mesaj metnin tamamını tutar.",
-          "OpenBot kişisel kullanım için ücretsizdir ve ilk açılış bunu belirtir."
+          "PurpleBot kişisel kullanım için ücretsizdir ve ilk açılış bunu belirtir."
         ]
       },
       {
@@ -779,10 +779,10 @@
       {
         "type": "added",
         "items": [
-          "Kimi yeni bir sağlayıcı. OpenBot, Kimi Code CLI'ı indirir ve Kimi Code hesabınızla oturum açarsınız.",
+          "Kimi yeni bir sağlayıcı. PurpleBot, Kimi Code CLI'ı indirir ve Kimi Code hesabınızla oturum açarsınız.",
           "Nous Research'ün Hermes Agent'ını kendi belleklerinizle, becerilerinizle ve oturum açma bilgilerinizle sağlayıcı olarak kullanın.",
-          "Mac'te OpenBot'un menü çubuğunda bir simgesi var. Pencereyi kapattıktan sonra Dock simgesi gizlenir ve görevler çalışmaya devam eder.",
-          "Biri Discord'da OpenBot'tan bahsettiğinde bir iş akışı başlatın ve sonucunu yanıt, gönderi veya tepki olarak geri gönderin.",
+          "Mac'te PurpleBot'un menü çubuğunda bir simgesi var. Pencereyi kapattıktan sonra Dock simgesi gizlenir ve görevler çalışmaya devam eder.",
+          "Biri Discord'da PurpleBot'tan bahsettiğinde bir iş akışı başlatın ve sonucunu yanıt, gönderi veya tepki olarak geri gönderin.",
           "Kenar çubuğu klasörleri üç düzeye kadar klasör içerebilir. Bir sohbeti veya klasörü bir klasöre sürükleyin.",
           "Bir model sunduğunda Yok, Minimum ve Ultra akıl yürütme düzeylerini seçin.",
           "Sabitlenmiş ajanlar ve kanallar bir sunucuya bağlanan her cihazda aynı kalır.",
@@ -803,10 +803,10 @@
       {
         "type": "fixed",
         "items": [
-          "Slack çalışma alanının bulunduğu bilgisayar kapalıyken de Slack bahsetmeleri ve doğrudan mesajlar yeniden OpenBot'a ulaşır.",
+          "Slack çalışma alanının bulunduğu bilgisayar kapalıyken de Slack bahsetmeleri ve doğrudan mesajlar yeniden PurpleBot'a ulaşır.",
           "Bilgisayar uykudan uyandıktan sonra telefonlar ve diğer cihazlar sunucularınıza hemen bağlanabilir.",
           "Bir sohbetteki yükleme artık diğer sohbetlerde Gönder'i engellemez.",
-          "OpenBot'tan kopyaladığınız metin diğer uygulamalara uygulamanın renkleri olmadan yapıştırılır."
+          "PurpleBot'tan kopyaladığınız metin diğer uygulamalara uygulamanın renkleri olmadan yapıştırılır."
         ]
       }
     ]
@@ -820,8 +820,8 @@
         "type": "added",
         "items": [
           "GitHub'dan bir iş akışı başlatın: GitHub tetikleyicisi yeni sorunlarda, yorumlarda, çekme isteklerinde, incelemelerde, başarısız kontrollerde veya @openbotgit bahsetmesinde çalışır.",
-          "Bir iş akışından GitHub'ı değiştirin: OpenBot GitHub App olarak yorum yapın, etiket ekleyin, atayın, inceleyin, bir sorunu kapatın veya oluşturun.",
-          "Pazaryeri'nde QA Tester, PR Shepherd ve Chief of Staff gibi 17 yeni OpenBot ajanı ve bunlar için 15 yeni beceri var.",
+          "Bir iş akışından GitHub'ı değiştirin: PurpleBot GitHub App olarak yorum yapın, etiket ekleyin, atayın, inceleyin, bir sorunu kapatın veya oluşturun.",
+          "Pazaryeri'nde QA Tester, PR Shepherd ve Chief of Staff gibi 17 yeni PurpleBot ajanı ve bunlar için 15 yeni beceri var.",
           "Kullanım, OpenCode Go aylık limitini üçüncü bir çubuk olarak gösterir."
         ]
       },
@@ -896,7 +896,7 @@
       {
         "type": "changed",
         "items": [
-          "Yüklediğiniz CLI, OpenBot'un kopyasıyla aynı sürümde veya daha yeniyse sağlayıcı onu kullanır.",
+          "Yüklediğiniz CLI, PurpleBot'un kopyasıyla aynı sürümde veya daha yeniyse sağlayıcı onu kullanır.",
           "Analiz tercihiniz hesabınızla birlikte diğer cihazlarınıza taşınır. Analizi bu sürümden önce kapattıysanız, burada değiştirene kadar bu bilgisayarda kapalı kalır.",
           "Talimatlar alanını uzatmak için tutamacını sürükleyin."
         ]
@@ -905,7 +905,7 @@
         "type": "fixed",
         "items": [
           "Cloudflare kontrolleri yerleşik tarayıcıda geçer.",
-          "Her sağlayıcı CLI'ı yaklaşık yarı yarıya daha az disk alanı kullanır: OpenBot tek bir sürüm tutar.",
+          "Her sağlayıcı CLI'ı yaklaşık yarı yarıya daha az disk alanı kullanır: PurpleBot tek bir sürüm tutar.",
           "Kullanım limitindeki bir ajana gönderdiğiniz mesaj sağlayıcıyı hemen yeniden dener.",
           "Kenar çubuğunda sürüklediğiniz sohbet, işaretçinin altındaki bölüme düşer."
         ]

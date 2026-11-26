@@ -151,7 +151,7 @@ try {
   assert.deepEqual(
     resumed[0]?.names?.filter((name) => !opened[0]?.names?.includes(name)),
     [],
-    "The resumed session keeps the same OpenBot tools.",
+    "The resumed session keeps the same PurpleBot tools.",
   );
   const prompts = requests.filter((request) => request.method === "session/prompt");
   assert.deepEqual(
@@ -275,7 +275,7 @@ try {
   });
   report.turns.ownRefusedTool = ownRefused;
   assert.equal(ownRefused.status, "failed", "The turn fails.");
-  assert.equal(refusedDrops.length, 1, "No server of OpenBot is left out.");
+  assert.equal(refusedDrops.length, 1, "No server of PurpleBot is left out.");
   const stopped = sourceText("error.provider.antigravityTurnStopped");
   assert.equal(ownRefused.error, stopped, "The turn shows the plain message, not the CLI's text.");
 
@@ -534,19 +534,19 @@ try {
   const onTime = await listAgent("now", { FAKE_OPEN_LIST: "now" });
   const onTimeTurn = await runTurn(onTime.listClient, onTime.threadId, plain);
   report.turns.toolsListedOnTime = onTimeTurn;
-  assert.equal(onTimeTurn.status, "completed", "A turn with OpenBot's tools completes.");
-  assert.equal(onTimeTurn.error, null, "A turn with OpenBot's tools has no error.");
+  assert.equal(onTimeTurn.status, "completed", "A turn with PurpleBot's tools completes.");
+  assert.equal(onTimeTurn.error, null, "A turn with PurpleBot's tools has no error.");
   const onTimeLog = await readJsonl<{ method: string; listed: number | null }>(onTime.log);
   assert.ok(
     onTimeLog.some((entry) => entry.method === "session/new" && (entry.listed ?? 0) > 0),
-    "The fake listed OpenBot's tools over the bridge.",
+    "The fake listed PurpleBot's tools over the bridge.",
   );
 
   const never = await listAgent("never", { FAKE_OPEN_LIST: "never" });
   const missed = await runTurn(never.listClient, never.threadId, plain);
   report.turns.toolsNotListed = missed;
-  assert.equal(missed.status, "failed", "A turn without OpenBot's tools fails.");
-  assert.match(missed.error ?? "", /without OpenBot's tools/u, "The error says that the tools were missing.");
+  assert.equal(missed.status, "failed", "A turn without PurpleBot's tools fails.");
+  assert.match(missed.error ?? "", /without PurpleBot's tools/u, "The error says that the tools were missing.");
   assert.doesNotMatch(missed.error ?? "", /MCP|policy|admin/u, "The error has no protocol words.");
   assert.equal(missed.reply, "OK", "The answer of the turn stays.");
   const missedCause = listCauses.get(never.threadId) ?? null;

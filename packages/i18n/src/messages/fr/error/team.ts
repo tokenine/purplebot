@@ -2,13 +2,13 @@ import type { PartialTranslation } from "../../../message";
 import type { messages as source } from "../../en/error/team";
 
 export const messages = {
-  "error.team.ownerNotLinked": "Cet hôte n’est pas lié à un compte propriétaire OpenBot.",
-  "error.team.ownerEmailRequired": "Connectez-vous avec l’adresse e-mail OpenBot qui a créé cet hôte.",
+  "error.team.ownerNotLinked": "Cet hôte n’est pas lié à un compte propriétaire PurpleBot.",
+  "error.team.ownerEmailRequired": "Connectez-vous avec l’adresse e-mail PurpleBot qui a créé cet hôte.",
   "error.team.hostNotConfigured": "L’hôte de l’équipe n’est pas configuré.",
   "error.team.alreadyConfigured": "Le serveur de l’équipe est déjà configuré.",
   "error.team.identityCreateFailed": "Impossible de créer l’identité de l’équipe.",
   "error.team.accountChangedDuringCreate": "Le compte connecté a changé pendant la création de ce serveur.",
-  "error.team.notConfigured": "Cet OpenBot n’a pas été configuré.",
+  "error.team.notConfigured": "Cet PurpleBot n’a pas été configuré.",
   "error.team.keyRotationMissing": "Aucun changement de clé du serveur n’est en attente.",
   "error.team.serverNotActive": "Ce serveur n’est plus le serveur actif du compte connecté.",
   "error.team.logoInvalid": "Choisissez une image PNG, JPEG ou WebP valide de 512 Ko au maximum.",
@@ -23,9 +23,9 @@ export const messages = {
   "error.team.inviteEmailMismatch": "Cette invitation appartient à une autre adresse e-mail.",
   "error.team.memberDisabled": "Ce membre de l’équipe est désactivé.",
   "error.team.memberLimit": "Un hôte peut avoir au maximum {limit} membres.",
-  "error.team.accountNotMember": "Ce compte OpenBot n’est pas membre de l’équipe.",
+  "error.team.accountNotMember": "Ce compte PurpleBot n’est pas membre de l’équipe.",
   "error.team.usernameTaken": "Ce nom d’utilisateur est déjà utilisé.",
-  "error.team.inviteRequiresAccount": "Cette invitation nécessite un compte OpenBot vérifié.",
+  "error.team.inviteRequiresAccount": "Cette invitation nécessite un compte PurpleBot vérifié.",
   "error.team.loginIncorrect": "Le nom d’utilisateur ou le mot de passe est incorrect.",
   "error.team.currentPasswordIncorrect": "Le mot de passe actuel est incorrect.",
   "error.team.memberNotFound": "Membre de l’équipe introuvable.",
@@ -47,22 +47,22 @@ export const messages = {
     "Le nom d’utilisateur doit contenir de 3 à 32 lettres, chiffres, points, tirets ou traits de soulignement.",
   "error.team.passwordLength": "Le mot de passe doit contenir entre 12 et 256 caractères.",
   "error.team.bindFailed": "Impossible de lier l’API de l’équipe.",
-  "error.team.signInRequired": "Une connexion à OpenBot est requise.",
+  "error.team.signInRequired": "Une connexion à PurpleBot est requise.",
   "error.team.authenticationRequired": "Authentification requise.",
   "error.team.agentNotFound": "Agent introuvable.",
   "error.team.routeNotFound": "Route introuvable.",
   "error.team.requestFailed": "La requête a échoué.",
   "error.team.tooManySignInAttempts": "Trop de tentatives de connexion. Réessayez plus tard.",
-  "error.team.clientUpdateRequired": "Mettez à jour ce client OpenBot avant de vous connecter à cet hôte.",
-  "error.team.hostUpdateRequired": "Mettez à jour OpenBot sur l’hôte avant de vous connecter.",
-  "error.team.serverSafeMode": "Ce serveur est en mode sans échec, car OpenBot ne démarre pas dessus.",
+  "error.team.clientUpdateRequired": "Mettez à jour ce client PurpleBot avant de vous connecter à cet hôte.",
+  "error.team.hostUpdateRequired": "Mettez à jour PurpleBot sur l’hôte avant de vous connecter.",
+  "error.team.serverSafeMode": "Ce serveur est en mode sans échec, car PurpleBot ne démarre pas dessus.",
   "error.team.serverSafeModeNewerDatabase":
-    "OpenBot {version} sur ce serveur ne peut pas ouvrir ses données, car une version plus récente d’OpenBot les a enregistrées. Une version plus récente d’OpenBot sur le serveur corrige ce problème.",
+    "PurpleBot {version} sur ce serveur ne peut pas ouvrir ses données, car une version plus récente d’PurpleBot les a enregistrées. Une version plus récente d’PurpleBot sur le serveur corrige ce problème.",
   "error.team.serverSafeModeStartFailed":
-    "OpenBot {version} sur ce serveur s’est arrêté après de nombreux échecs de démarrage. Une version plus récente d’OpenBot sur le serveur corrige ce problème.",
+    "PurpleBot {version} sur ce serveur s’est arrêté après de nombreux échecs de démarrage. Une version plus récente d’PurpleBot sur le serveur corrige ce problème.",
   "error.team.sidebarLayoutUnavailable": "La disposition de la barre latérale n’est pas disponible.",
   "error.team.providersUnsupported": "Les réglages des fournisseurs ne sont pas pris en charge par cette connexion.",
-  "error.team.providerNotManaged": "OpenBot ne gère pas la CLI de ce fournisseur.",
+  "error.team.providerNotManaged": "PurpleBot ne gère pas la CLI de ce fournisseur.",
   "error.team.channelsUnsupported": "Les discussions de canal ne sont pas prises en charge par cette connexion.",
   "error.team.channelContextUnsupported":
     "Cette connexion ne prend pas en charge une nouvelle conversation ni la compaction dans un canal.",
@@ -107,9 +107,9 @@ export const messages = {
     "Les dossiers de la Bibliothèque ne sont pas pris en charge par cette connexion.",
   "error.team.workflowFoldersUnsupported": "Cette connexion ne prend pas en charge les dossiers de workflows.",
   "error.team.agentNotificationLevelsUnsupported":
-    "Ce serveur ne peut pas garder votre propre niveau de notifications pour chaque agent. Mettez à jour OpenBot sur l’ordinateur qui l’exécute.",
+    "Ce serveur ne peut pas garder votre propre niveau de notifications pour chaque agent. Mettez à jour PurpleBot sur l’ordinateur qui l’exécute.",
   "error.team.sidebarPinsUnsupported":
-    "Ce serveur ne peut pas garder vos discussions épinglées pour tous vos appareils. Mettez à jour OpenBot sur l’ordinateur qui l’exécute.",
+    "Ce serveur ne peut pas garder vos discussions épinglées pour tous vos appareils. Mettez à jour PurpleBot sur l’ordinateur qui l’exécute.",
   "error.team.agentInstructionsUnsupported":
     "La modification des instructions d’agent n’est pas prise en charge par cette connexion.",
   "error.team.agentPublishUnsupported": "La publication d’agents n’est pas prise en charge par cette connexion.",
@@ -125,9 +125,9 @@ export const messages = {
     "La recherche dans les fils annexes n’est pas prise en charge par cette connexion.",
   "error.team.sideQuestionUnsupported": "Les questions annexes ne sont pas prises en charge par cette connexion.",
   "error.team.liveVoiceUnsupported":
-    "Ce serveur ne prend pas en charge la voix en direct Codex. Mettez à jour OpenBot sur l’ordinateur qui l’exécute.",
+    "Ce serveur ne prend pas en charge la voix en direct Codex. Mettez à jour PurpleBot sur l’ordinateur qui l’exécute.",
   "error.team.routineFlowsUnsupported":
-    "Ce serveur ne prend pas en charge les flux de routines. Mettez à jour OpenBot sur l’ordinateur qui l’exécute.",
+    "Ce serveur ne prend pas en charge les flux de routines. Mettez à jour PurpleBot sur l’ordinateur qui l’exécute.",
   "error.team.routineCanvasTooLarge":
     "Ce canevas de routines est trop volumineux pour être envoyé à cet appareil. Raccourcissez les instructions des routines sur l’ordinateur qui exécute le serveur.",
   "error.team.conversationPageTooLarge":
@@ -181,16 +181,17 @@ export const messages = {
   "error.team.browserSessionNotFound": "Session de vue du navigateur introuvable.",
   "error.team.mcpUnsupported": "Les serveurs MCP ne sont pas pris en charge par cette connexion.",
   "error.team.mcpServerListNeedsUpdate":
-    "Mettez à jour OpenBot sur cet appareil pour utiliser plus de {limit} serveurs MCP sur ce serveur.",
+    "Mettez à jour PurpleBot sur cet appareil pour utiliser plus de {limit} serveurs MCP sur ce serveur.",
   "error.team.providerAccountListNeedsUpdate":
-    "Mettez à jour OpenBot sur cet appareil pour utiliser plus de {limit} comptes d’un fournisseur sur ce serveur.",
+    "Mettez à jour PurpleBot sur cet appareil pour utiliser plus de {limit} comptes d’un fournisseur sur ce serveur.",
   "error.team.storageUnsupported": "Le stockage n’est pas pris en charge par cette connexion.",
   "error.team.machineResourcesUnsupported":
     "L’utilisation de la machine n’est pas prise en charge par cette connexion.",
   "error.team.machineAlertMemberInvalid":
     "Seul un propriétaire ou un admin de ce serveur peut recevoir les alertes de la machine.",
   "error.team.hostedSitesUnsupported": "Les sites ne sont pas pris en charge par cette connexion.",
-  "error.team.hostedSitesUnregistered": "Ce serveur n’est pas enregistré auprès d’OpenBot : il n’a donc pas de sites.",
+  "error.team.hostedSitesUnregistered":
+    "Ce serveur n’est pas enregistré auprès d’PurpleBot : il n’a donc pas de sites.",
   "error.team.hostedSiteNotFound": "Site introuvable.",
   "error.team.markUnreadUnsupported": "Ce client ne permet pas de marquer des conversations comme non lues.",
   "error.team.inviteServiceUnavailable": "Le service d’invitation n’est pas disponible.",
@@ -216,12 +217,12 @@ export const messages = {
   "error.team.ownerRequired": "Seul le propriétaire de ce serveur peut faire cela.",
   "error.team.requestTooLarge": "Le corps de la requête est trop volumineux.",
   "error.team.signInRelayUnsupported":
-    "Ce serveur ne peut pas relayer les connexions. Mettez à jour OpenBot sur l’hôte.",
+    "Ce serveur ne peut pas relayer les connexions. Mettez à jour PurpleBot sur l’hôte.",
   "error.team.connectorsUnsupported":
-    "Les connexions de ce serveur ne peuvent pas être gérées d’ici. Mettez à jour OpenBot sur l’hôte.",
+    "Les connexions de ce serveur ne peuvent pas être gérées d’ici. Mettez à jour PurpleBot sur l’hôte.",
   "error.team.discordAccessUnsupported":
-    "Ce serveur ne peut pas définir de rôles Discord. Mettez à jour OpenBot sur ce serveur.",
-  "error.team.connectorPageRefused": "Le serveur a envoyé une page qu’OpenBot n’ouvre pas.",
+    "Ce serveur ne peut pas définir de rôles Discord. Mettez à jour PurpleBot sur ce serveur.",
+  "error.team.connectorPageRefused": "Le serveur a envoyé une page qu’PurpleBot n’ouvre pas.",
   "error.team.signInRelayUnknown": "Cette connexion est terminée ou n’existe pas.",
   "error.team.signInRelayUsed": "Cette connexion a déjà été envoyée.",
   "error.team.signInRelayMismatch": "Cette adresse ne vient pas de cette connexion.",
@@ -240,6 +241,6 @@ export const messages = {
     "Cette connexion ne prend pas en charge l’activation et la désactivation des fournisseurs.",
   "error.team.providerUseInvalid": "Ce fournisseur n’a pas d’interrupteur d’activation.",
   "error.team.mediaApprovalChoiceUnsupported":
-    "Ce serveur ne permet pas de choisir le modèle dans les approbations de médias. Mettez à jour OpenBot sur le serveur.",
+    "Ce serveur ne permet pas de choisir le modèle dans les approbations de médias. Mettez à jour PurpleBot sur le serveur.",
   "error.team.mediaApprovalChoiceInvalid": "Le choix de l'approbation de média n'est pas valide.",
 } as const satisfies PartialTranslation<typeof source>;

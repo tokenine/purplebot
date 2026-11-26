@@ -6,7 +6,7 @@ export const messages = {
   "vault.near.name": "Kripto cüzdan",
   "vault.near.open": "Kripto cüzdanı aç",
   "vault.near.connect": "Bağla",
-  "vault.near.signedOut": "Kripto cüzdanı kurmak için OpenBot'ta oturum açın.",
+  "vault.near.signedOut": "Kripto cüzdanı kurmak için PurpleBot'ta oturum açın.",
   "vault.near.paused": "Duraklatıldı",
   "vault.near.failed": "Kripto cüzdan değiştirilemedi.",
   "vault.near.waiting": "Tarayıcıda imzanız bekleniyor…",
@@ -14,7 +14,7 @@ export const messages = {
   "vault.near.openAgain": "Yeniden aç",
   "vault.near.signature.label": "Tarayıcıdaki imzalar",
   "vault.near.signature.register": "Geçiş anahtarınızı oluşturun",
-  "vault.near.signature.registerDetail": "Yalnızca sizin cihazlarınızda. OpenBot onu asla tutmaz.",
+  "vault.near.signature.registerDetail": "Yalnızca sizin cihazlarınızda. PurpleBot onu asla tutmaz.",
   "vault.near.signature.create": "Yeni cüzdanı onaylayın",
   "vault.near.signature.createDetail":
     "Tüm ajanlar günde en fazla {amount} ödeyebilir. Bunu daha sonra değiştirebilirsiniz.",
@@ -40,7 +40,7 @@ export const messages = {
     "Tarayıcınız bu geçiş anahtarının yedeği olup olmadığını bildirmedi. Geçiş anahtarı yöneticinizin onu eşitlediğinden emin olun.",
   "vault.near.backup.notChecked": "Yedek kontrol edilmedi",
   "vault.near.backup.noCopy":
-    "OpenBot geçiş anahtarınızın bir kopyasını tutmaz. Bu cüzdan için yalnızca siz imza atabilirsiniz.",
+    "PurpleBot geçiş anahtarınızın bir kopyasını tutmaz. Bu cüzdan için yalnızca siz imza atabilirsiniz.",
   "vault.near.backup.checked": "{date} tarihinde kontrol edildi",
   "vault.near.backup.check": "Yedeği kontrol et",
   "vault.near.backup.checkAgain": "Tekrar kontrol et",
@@ -106,7 +106,7 @@ export const messages = {
   "vault.near.disconnect": "Bağlantıyı kes",
   "vault.near.disconnectTitle": "Kripto cüzdanın bağlantısı kesilsin mi?",
   "vault.near.disconnectDescription":
-    "Ajanlar artık bu cüzdandan ödeme yapamaz ve OpenBot onu unutur. Fonlar NEAR Intents'teki cüzdanda kalır.",
+    "Ajanlar artık bu cüzdandan ödeme yapamaz ve PurpleBot onu unutur. Fonlar NEAR Intents'teki cüzdanda kalır.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "Günlük limitin üzerinde",
   "vault.near.approve": "Onayla",

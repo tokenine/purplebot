@@ -105,7 +105,7 @@ describe("support log", () => {
     log.add(
       "info",
       "connection",
-      `${server} host OpenBot 1.9.0, protocol 3-9, capabilities: agents-v1 phone-feedback-v1 channels-v2`,
+      `${server} host PurpleBot 1.9.0, protocol 3-9, capabilities: agents-v1 phone-feedback-v1 channels-v2`,
     );
     log.add("info", "connection", `${server} peer route: host/udp -> relay/udp`);
     log.add("warn", "connection", `${other} attempt 2 failed at signal (5021 ms): Error: ${server} is busy`);
@@ -122,7 +122,7 @@ describe("support log", () => {
     for (const text of [server, other, "Kowalska", "kowalska", "chat text", "4d2a9c1e7b3f5a6088c1d2e3f4a5b6c7"])
       expect(excerpt).not.toContain(text);
     expect(excerpt).not.toContain("console");
-    expect(excerpt).toContain("server-1 host OpenBot 1.9.0, protocol 3-9");
+    expect(excerpt).toContain("server-1 host PurpleBot 1.9.0, protocol 3-9");
     expect(excerpt).not.toContain("capabilities");
     expect(excerpt).toContain("server-1 peer route: host/udp -> relay/udp");
     expect(excerpt).toContain("server-2 attempt 2 failed at signal (5021 ms): Error: server-1 is busy");

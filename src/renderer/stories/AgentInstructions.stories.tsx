@@ -23,7 +23,7 @@ const RULES = `# Chief
 - Tell the user when a refund appears in the export.
 `;
 
-const FOLDER = "/Users/alex/OpenBot/Agents/Chief";
+const FOLDER = "/Users/alex/PurpleBot/Agents/Chief";
 
 function storyCalls(fileName: AgentInstructionFileName, text: string): AgentInstructionsCalls {
   let file: AgentInstructionsFile = { fileName, exists: text !== "", text };

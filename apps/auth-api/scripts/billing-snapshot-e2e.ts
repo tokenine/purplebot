@@ -12,7 +12,12 @@ const MIGRATIONS = join(ROOT, "apps", "auth-api", "migrations");
 const NOW = Date.UTC(2026, 9, 16, 12);
 const DAY = "2026-10-16";
 const EUR_USD = 1.1;
-const BINDINGS = { STRIPE_SECRET_KEY: "sk_test_e2e", OPENPANEL_CLIENT_ID: "client", OPENPANEL_CLIENT_SECRET: "secret" };
+const BINDINGS = {
+  STRIPE_SECRET_KEY: "sk_test_e2e",
+  OPENPANEL_API_URL: "https://analytics.example.com/api",
+  OPENPANEL_CLIENT_ID: "client",
+  OPENPANEL_CLIENT_SECRET: "secret",
+};
 
 const checks: { name: string; passed: boolean; detail?: unknown }[] = [];
 function check(name: string, passed: boolean, detail?: unknown) {

@@ -101,7 +101,7 @@ try {
       managedUnreadable: managedText,
       installed: sourceText("error.provider.nativeNotStarted", { provider: "Pi" }),
     },
-    "OpenBot's copy names a step in the app, and the user's own Pi is named as theirs",
+    "PurpleBot's copy names a step in the app, and the user's own Pi is named as theirs",
   );
 
   report.logLines = logLines;

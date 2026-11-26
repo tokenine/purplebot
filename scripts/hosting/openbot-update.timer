@@ -1,5 +1,5 @@
 [Unit]
-Description=Check for an OpenBot update
+Description=Check for an PurpleBot update
 
 [Timer]
 OnActiveSec=5min

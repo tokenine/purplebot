@@ -14,7 +14,7 @@ const LOAD_WAIT_MS = 15_000;
 const SCREENSHOT_WAIT_MS = 15_000;
 const SEND_WAIT_MS = 20_000;
 const TAB_NOT_ANSWERING =
-  "The tab did not answer in time, so OpenBot stopped this action. The action may have happened: read the page before you try again.";
+  "The tab did not answer in time, so PurpleBot stopped this action. The action may have happened: read the page before you try again.";
 const SNAPSHOT_TEXT = 40_000;
 const SNAPSHOT_ELEMENTS = 400;
 
@@ -283,7 +283,7 @@ async function openTab(url: string, context: CommandContext): Promise<ClientBrow
   if (created.id === undefined) throw new BrowserCommandError("failed", "Chrome did not open the tab.");
   await context.addToGroup(created.id);
   const tab = await waitForLoad(created.id);
-  return result(`Opened ${tab.url ?? url} in a new tab of the OpenBot group.`, tab);
+  return result(`Opened ${tab.url ?? url} in a new tab of the PurpleBot group.`, tab);
 }
 
 async function navigate(

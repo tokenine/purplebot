@@ -1,5 +1,5 @@
 [Unit]
-Description=Back up OpenBot instance %i
+Description=Back up PurpleBot instance %i
 After=docker.service
 
 [Service]

@@ -55,7 +55,7 @@ export type AgentDefaults = Record<AgentDefaultKey, boolean> & {
   commitCoAuthor: boolean;
 };
 
-export const OPENBOT_COMMIT_TRAILER = "Co-authored-by: OpenBot <335604065+openbotgit[bot]@users.noreply.github.com>";
+export const OPENBOT_COMMIT_TRAILER = "Co-authored-by: PurpleBot <335604065+openbotgit[bot]@users.noreply.github.com>";
 
 export const DEFAULT_PLAN_START_AFTER_MS = 10_000;
 export const MIN_PLAN_START_AFTER_MS = 5_000;

@@ -371,7 +371,7 @@ try {
   const refused = await web.evaluate(async () => {
     const response = await fetch("/api/browser/extension/code", {
       method: "POST",
-      headers: { "Content-Type": "application/json", "X-OpenBot-Browser": "1" },
+      headers: { "Content-Type": "application/json", "X-PurpleBot-Browser": "1" },
       body: JSON.stringify({ extensionId: "not-an-extension", clientChallenge: "A".repeat(43) }),
     });
     const body = await response.json();
@@ -668,8 +668,13 @@ try {
   await shot(page, "6b-approval-card");
   await always.click();
   await shareFixture.waitForFunction(() => document.body.dataset.clicked !== undefined, null, { timeout: 180_000 });
-  const group = await waitFor(host.page, "the page is in the OpenBot group", fixtureGroup, (value) => value !== "null");
-  const inOpenBotGroup = JSON.parse(group).title === "OpenBot";
+  const group = await waitFor(
+    host.page,
+    "the page is in the PurpleBot group",
+    fixtureGroup,
+    (value) => value !== "null",
+  );
+  const inOpenBotGroup = JSON.parse(group).title === "PurpleBot";
   const site = new URL(xBase).origin;
   const siteStored = JSON.parse(await readStored(sitesKey))?.[site] === "always";
   await waitFor(
@@ -703,8 +708,8 @@ try {
     siteRevoked,
   };
   assert.ok(onWithoutSwitch, "Sharing is not on by default.");
-  assert.ok(ungroupedBeforeUse, "The page joined the OpenBot group before an agent used it.");
-  assert.ok(inOpenBotGroup, "The page that the agent used is not in the OpenBot group.");
+  assert.ok(ungroupedBeforeUse, "The page joined the PurpleBot group before an agent used it.");
+  assert.ok(inOpenBotGroup, "The page that the agent used is not in the PurpleBot group.");
   assert.ok(siteStored, "Always for this site did not store the site.");
   assert.ok(siteRevoked, "Remove did not forget the site.");
   await shareFixture.close();

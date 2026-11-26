@@ -120,7 +120,7 @@ export function parseCuaDriverLock(value: unknown): CuaDriverLock {
     const pinned = Object.keys(artifact.files).sort();
     const shipped = descriptor.files.map((file) => file.path).sort();
     if (pinned.length !== shipped.length || pinned.some((path, index) => path !== shipped[index])) {
-      throw new Error(`The ${target} cua-driver pin does not list the files OpenBot ships.`);
+      throw new Error(`The ${target} cua-driver pin does not list the files PurpleBot ships.`);
     }
   }
   return lock;

@@ -15,8 +15,8 @@ LOCKS=/run
 LXCFS=/var/lib/lxcfs
 LXCFS_FILES=(proc/cpuinfo proc/stat proc/meminfo proc/swaps)
 LXCFS_DROP_IN=/etc/systemd/system/lxcfs.service.d/openbot.conf
-REQUIRED_FILES=(.config/OpenBot/openbot.db .local/share/keyrings/login.keyring .config/openbot-container/keyring-password)
-SHARED_DATABASE=OpenBot/Shared/Data/agent-data.db
+REQUIRED_FILES=(.config/PurpleBot/openbot.db .local/share/keyrings/login.keyring .config/openbot-container/keyring-password)
+SHARED_DATABASE=PurpleBot/Shared/Data/agent-data.db
 
 fail() {
   echo "$*" >&2
@@ -547,7 +547,7 @@ backup_steps() {
     ! container_running "$CONTAINER" || fail "$CONTAINER did not stop."
     exit_code=$(docker inspect --format '{{.State.ExitCode}}' "$CONTAINER")
     [ "$exit_code" = 0 ] ||
-      echo "OpenBot stopped with exit code $exit_code. SQLite keeps the last complete transaction." >&2
+      echo "PurpleBot stopped with exit code $exit_code. SQLite keeps the last complete transaction." >&2
   fi
 
   echo "Copying $data."
@@ -649,7 +649,7 @@ verify_steps() {
   as_owner sha256sum --check --quiet --strict - <"$backup/required.sha256" ||
     fail "The databases or keys in the archive do not match the files that were copied."
 
-  integrity=$(sqlite "${REQUIRED_FILES[0]}" "PRAGMA integrity_check;") || fail "OpenBot cannot open openbot.db."
+  integrity=$(sqlite "${REQUIRED_FILES[0]}" "PRAGMA integrity_check;") || fail "PurpleBot cannot open openbot.db."
   [ "$integrity" = ok ] || fail "openbot.db is damaged: $(head -n 1 <<<"$integrity")"
   [ -z "$(sqlite "${REQUIRED_FILES[0]}" "PRAGMA foreign_key_check;")" ] ||
     warnings+=("openbot.db has rows whose references are missing.")
@@ -710,11 +710,11 @@ restore() {
   target=$(release_version "$(compose "$name" config --images | head -n 1)")
   if [ -n "$version" ] && [ -n "$target" ] && [ "$version" != "$target" ] &&
     [ "$(printf '%s\n%s\n' "$version" "$target" | sort -V | tail -n 1)" = "$version" ]; then
-    fail "The backup is from OpenBot $version, and the image of $name is $target. Pull a newer image first."
+    fail "The backup is from PurpleBot $version, and the image of $name is $target. Pull a newer image first."
   fi
   [ -n "$target" ] || echo "The version of the image of $name is not known. Pull it with docker compose first." >&2
   [ -n "$version" ] ||
-    echo "The backup has no OpenBot version. Make sure that the image of $name is not older than the backup." >&2
+    echo "The backup has no PurpleBot version. Make sure that the image of $name is not older than the backup." >&2
   if [ -n "$(find "$data" -mindepth 1 -maxdepth 1 ! -name lost+found -print -quit)" ] && [ "$replace" -eq 0 ]; then
     fail "$data has data. Back it up, then add --replace to delete it and restore $backup."
   fi

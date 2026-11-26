@@ -41,7 +41,7 @@ private struct AgentAvatar: View {
 
 @available(iOS 26.0, *)
 struct AgentListSnippetIntent: SnippetIntent {
-  static let title: LocalizedStringResource = "OpenBot Agents"
+  static let title: LocalizedStringResource = "PurpleBot Agents"
   static let isDiscoverable = false
 
   func perform() async throws -> some IntentResult & ShowsSnippetView {
@@ -138,7 +138,7 @@ private struct AgentRow: View {
 /// The result of Send Message, or the reason why a shortcut cannot run.
 @available(iOS 26.0, *)
 struct ShortcutCardSnippetIntent: SnippetIntent {
-  static let title: LocalizedStringResource = "OpenBot Shortcut"
+  static let title: LocalizedStringResource = "PurpleBot Shortcut"
   static let isDiscoverable = false
 
   /// A `ShortcutNotice`.

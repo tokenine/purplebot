@@ -155,7 +155,7 @@ export const WithAction: Story = {
           <Button
             variant="outline"
             onClick={() =>
-              toast.success("OpenBot 0.71.0 is ready", {
+              toast.success("PurpleBot 0.71.0 is ready", {
                 description: "Restart to apply the update.",
                 duration: Number.POSITIVE_INFINITY,
                 action: { label: "Restart to update", onClick: () => setStatus("Restarting.") },

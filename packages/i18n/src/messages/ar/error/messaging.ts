@@ -5,19 +5,19 @@ export const messages = {
   "error.messaging.notConnected": "مساحة عمل Slack هذه غير متصلة.",
   "error.messaging.unsupported": "لا يمكن لهذا الحاسوب الاتصال بـ Slack.",
   "error.messaging.relayUnavailable":
-    "لا يمكن لـ OpenBot استلام أحداث Slack على هذا الحاسوب. سجّل الدخول، وأعطِ هذا الحاسوب اسمًا، ثم أعد المحاولة.",
+    "لا يمكن لـ PurpleBot استلام أحداث Slack على هذا الحاسوب. سجّل الدخول، وأعطِ هذا الحاسوب اسمًا، ثم أعد المحاولة.",
   "error.messaging.discordNotConnected": "خادم Discord هذا غير متصل.",
   "error.messaging.discordUnsupported": "لا يمكن لهذا الحاسوب الاتصال بـ Discord.",
   "error.messaging.discordRelayUnavailable":
-    "لا يمكن لـ OpenBot استلام أحداث Discord على هذا الحاسوب. سجّل الدخول، وأعطِ هذا الحاسوب اسمًا، ثم أعد المحاولة.",
-  "error.messaging.discordRolesUnsupported": "لا يمكن لـ OpenBot عرض أدوار Discord بعد. أعد المحاولة لاحقًا.",
+    "لا يمكن لـ PurpleBot استلام أحداث Discord على هذا الحاسوب. سجّل الدخول، وأعطِ هذا الحاسوب اسمًا، ثم أعد المحاولة.",
+  "error.messaging.discordRolesUnsupported": "لا يمكن لـ PurpleBot عرض أدوار Discord بعد. أعد المحاولة لاحقًا.",
   "error.messaging.telegramNotConnected": "دردشة Telegram هذه غير متصلة.",
   "error.messaging.telegramUnsupported": "لا يمكن لهذا الحاسوب الاتصال بـ Telegram.",
   "error.messaging.telegramRelayUnavailable":
-    "لا يمكن لـ OpenBot الوصول إلى Telegram على هذا الحاسوب. سجّل الدخول، وأعطِ هذا الحاسوب اسمًا، ثم أعد المحاولة.",
+    "لا يمكن لـ PurpleBot الوصول إلى Telegram على هذا الحاسوب. سجّل الدخول، وأعطِ هذا الحاسوب اسمًا، ثم أعد المحاولة.",
   "error.messaging.telegramRelayUnreachable":
-    "لا يستطيع OpenBot الاتصال بخدمته من هذا الكمبيوتر. تحقق من الاتصال بالإنترنت أو الشبكة الافتراضية الخاصة (VPN) أو الوكيل أو جدار الحماية، ثم حاول مرة أخرى.",
-  "error.messaging.telegramServiceUnavailable": "لا يمكن لـ OpenBot ربط Telegram الآن. أعد المحاولة لاحقًا.",
+    "لا يستطيع PurpleBot الاتصال بخدمته من هذا الكمبيوتر. تحقق من الاتصال بالإنترنت أو الشبكة الافتراضية الخاصة (VPN) أو الوكيل أو جدار الحماية، ثم حاول مرة أخرى.",
+  "error.messaging.telegramServiceUnavailable": "لا يمكن لـ PurpleBot ربط Telegram الآن. أعد المحاولة لاحقًا.",
   "error.messaging.whatsappNotConnected": "رقم WhatsApp هذا غير متصل.",
   "error.messaging.whatsappUnsupported": "لا يمكن لهذا الحاسوب الاتصال بـ WhatsApp.",
   "error.messaging.whatsappTooManySenders": "يمكن لرقم WhatsApp أن يسمح بما يصل إلى 200 من جهات الاتصال والمجموعات.",

@@ -203,7 +203,7 @@ async function promptArchive(skill: SkillSpec, license: string, sources: Catalog
   validateSkillMarkdown(skill.slug, markdown);
   const notice =
     skill.source === "openbot"
-      ? "Original Skill instructions by the OpenBot team. Licensed under PolyForm Noncommercial 1.0.0 (LICENSE.txt).\n"
+      ? "Original Skill instructions by the PurpleBot team. Licensed under PolyForm Noncommercial 1.0.0 (LICENSE.txt).\n"
       : createSkillNotice(skill, sources[skill.source]);
   return zipSync(
     {
@@ -297,7 +297,7 @@ function packSkillMarkdown(markdown: string, pack: Pack, folder: string, hasAgen
     (alias) => ` A ${alias.replace(/-$/u, "")} \`<name>\` is \`${prefix}-${alias}<name>\`.`,
   );
   const notes = [
-    `This skill is part of ${prefix}. OpenBot installs each ${prefix} skill as its own skill: the skill \`<name>\` is \`${prefix}-<name>\`.${aliases.join("")} Call a skill with \`$${prefix}-<name>\`.`,
+    `This skill is part of ${prefix}. PurpleBot installs each ${prefix} skill as its own skill: the skill \`<name>\` is \`${prefix}-<name>\`.${aliases.join("")} Call a skill with \`$${prefix}-<name>\`.`,
     ...(hasAgents
       ? [
           'For `subagent_type: "<agent>"`, when your harness does not know that type, start a general subagent. Give it the body of `agents/<agent>.md` first, then the task.',
@@ -308,7 +308,7 @@ function packSkillMarkdown(markdown: string, pack: Pack, folder: string, hasAgen
       : []),
     `The license and notice are in \`../${prefix}/LICENSE\` and \`../${prefix}/NOTICE.md\`.`,
   ];
-  return `${frontmatter}${markdown.slice(end).trimEnd()}\n\n## ${prefix} in OpenBot\n\n${notes.map((note) => `- ${note}`).join("\n")}\n`;
+  return `${frontmatter}${markdown.slice(end).trimEnd()}\n\n## ${prefix} in PurpleBot\n\n${notes.map((note) => `- ${note}`).join("\n")}\n`;
 }
 
 function renamePackReferences(
@@ -363,7 +363,7 @@ function installedPackPath(path: string, pack: Pack): string | null {
 
 function packNotice(notice: string, pack: Pack, upstream: UpstreamSource): string {
   const prefix = pack.spec.slug;
-  return `${notice.trimEnd()}\n\nOpenBot publishes that plugin at commit \`${upstream.commit}\` as the skill \`${prefix}\`, which installs\neach folder of its \`skills/\` as the skill \`${prefix}-<folder>\`. The changes are: names of other ${prefix}\nskills in links, commands and mentions start with \`${prefix}-\`, \`disable-model-invocation\` is removed, the\n\`${prefix} in OpenBot\` section is added to each \`SKILL.md\`, a skill that names a subagent gets \`agents/\`, links\nto files outside the skills go to the upstream commit, and the index \`SKILL.md\` is added.\n`;
+  return `${notice.trimEnd()}\n\nOpenBot publishes that plugin at commit \`${upstream.commit}\` as the skill \`${prefix}\`, which installs\neach folder of its \`skills/\` as the skill \`${prefix}-<folder>\`. The changes are: names of other ${prefix}\nskills in links, commands and mentions start with \`${prefix}-\`, \`disable-model-invocation\` is removed, the\n\`${prefix} in PurpleBot\` section is added to each \`SKILL.md\`, a skill that names a subagent gets \`agents/\`, links\nto files outside the skills go to the upstream commit, and the index \`SKILL.md\` is added.\n`;
 }
 
 function escapeRegExp(value: string): string {
@@ -609,18 +609,18 @@ function parseAgentSpec(value: unknown): AgentSpec {
 }
 
 function createSkillNotice(skill: Extract<SkillSpec, { upstreamSkill: string }>, upstream: UpstreamSource): string {
-  return `OpenBot production catalog\n\nThis skill is an OpenBot-authored derivative of ${skill.upstreamSkill}\nfrom ${upstream.repository} at commit ${upstream.commit}.\n\nThe instructions were modified for brand-neutral use, reduced to prompt-only content,\nand stripped of external service, connector, executable, and package requirements.\n\nUpstream source: ${upstreamSkillUrl(skill, upstream)}\nLicense: Apache License 2.0 (included as LICENSE.txt)\n`;
+  return `PurpleBot production catalog\n\nThis skill is an PurpleBot-authored derivative of ${skill.upstreamSkill}\nfrom ${upstream.repository} at commit ${upstream.commit}.\n\nThe instructions were modified for brand-neutral use, reduced to prompt-only content,\nand stripped of external service, connector, executable, and package requirements.\n\nUpstream source: ${upstreamSkillUrl(skill, upstream)}\nLicense: Apache License 2.0 (included as LICENSE.txt)\n`;
 }
 
 function createUpstreamNotices(spec: CatalogSpec, skills: BuiltSkill[]): string {
   const entries = skills.map((skill) =>
     skill.source.provider === "openbot"
-      ? `- **${skill.slug}** — original OpenBot team instructions; PolyForm Noncommercial 1.0.0.`
+      ? `- **${skill.slug}** — original PurpleBot team instructions; PolyForm Noncommercial 1.0.0.`
       : skill.source.provider === "cursor"
         ? `- **${skill.slug}** — copy of [${skill.source.upstreamSkill}](${skill.source.url}) from cursor commit \`${skill.source.commit}\`, with pstack skill names prefixed; MIT.`
         : `- **${skill.slug}** — derivative of [${skill.source.upstreamSkill}](${skill.source.url}) from ${skill.source.provider} commit \`${skill.source.commit}\`.`,
   );
-  return `# Upstream Notices\n\nThis catalog contains original OpenBot team skills under PolyForm Noncommercial 1.0.0, derivatives from the pinned OpenAI and Anthropic repositories under Apache License 2.0, and the skills of the pinned Cursor pstack plugin, with their names prefixed, under the MIT License. Each bundle includes its applicable license and notice.\n\n${entries.join("\n")}\n\nCatalog version: \`${spec.catalogVersion}\`\n`;
+  return `# Upstream Notices\n\nThis catalog contains original PurpleBot team skills under PolyForm Noncommercial 1.0.0, derivatives from the pinned OpenAI and Anthropic repositories under Apache License 2.0, and the skills of the pinned Cursor pstack plugin, with their names prefixed, under the MIT License. Each bundle includes its applicable license and notice.\n\n${entries.join("\n")}\n\nCatalog version: \`${spec.catalogVersion}\`\n`;
 }
 
 function upstreamSkillUrl(skill: Extract<SkillSpec, { upstreamSkill: string }>, upstream: UpstreamSource): string {

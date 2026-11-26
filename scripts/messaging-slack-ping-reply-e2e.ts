@@ -189,7 +189,7 @@ function event(type: "message" | "app_mention", user: string, threadTs: string, 
 }
 
 function deliver(message: ReturnType<typeof event>): string {
-  assert.ok(message, "The Slack event parser dropped a message that addresses OpenBot.");
+  assert.ok(message, "The Slack event parser dropped a message that addresses PurpleBot.");
   assert.ok(sink, "The Slack transport did not start.");
   sink.message(message);
   return message.dedupKey;
@@ -282,7 +282,7 @@ try {
     dropped = deliver(event("message", OTHER, thread, "nice"));
     assert.equal(delivery(dropped), null, "A reply of a person who was not pinged reached an agent.");
     assert.equal(agents.messaging.store.linkByKey(record.connectionId, CHANNEL, thread), null);
-    assert.deepEqual(calls.slice(before), [], "OpenBot answered a reply that does not address it.");
+    assert.deepEqual(calls.slice(before), [], "PurpleBot answered a reply that does not address it.");
     return { ignored: true };
   });
 
@@ -295,7 +295,7 @@ try {
     assert.equal(link.agentId, orchestrator.agentId, "The reply did not go to the Slack Orchestrator.");
     const origin = mailbox.messagingOrigin(queued.delivery.id);
     assert.deepEqual(origin?.replyTo, {
-      authorName: "OpenBot, a post by your teammate Research",
+      authorName: "PurpleBot, a post by your teammate Research",
       text: `<@${PINGED}> which logo do we ship: A or B?`,
       sentAt: origin?.replyTo?.sentAt,
     });
@@ -309,7 +309,7 @@ try {
     const before = calls.length;
     const ignored = deliver(event("message", OTHER, thread, "Agreed, B."));
     assert.equal(delivery(ignored), null, "A reply of a person who was not pinged reached the linked thread.");
-    assert.deepEqual(calls.slice(before), [], "OpenBot answered a reply that does not address it.");
+    assert.deepEqual(calls.slice(before), [], "PurpleBot answered a reply that does not address it.");
     const again = deliver(event("message", PINGED, thread, "Also make it bigger."));
     const queued = await waitFor("the delivery of the pinged person's second reply", () => delivery(again));
     const origin = mailbox.messagingOrigin(queued.delivery.id);
@@ -335,7 +335,7 @@ try {
     return { replyTo: origin?.replyTo?.authorName };
   });
 
-  await step("a thread reply that mentions OpenBot is left to its app_mention event", async () => {
+  await step("a thread reply that mentions PurpleBot is left to its app_mention event", async () => {
     assert.equal(event("message", PINGED, thread, `<@${BOT}> also make it bigger`), null);
     assert.ok(event("app_mention", PINGED, thread, `<@${BOT}> also make it bigger`));
     return { messageEvent: null, appMention: "kept" };

@@ -109,7 +109,7 @@ const RUNTIME_RELOADED_ON_RESUME: ReadonlySet<AgentProvider> = new Set(["claude"
 export type RuntimeRefreshTiming = "now" | "after-background-work";
 
 type CodexToolApprovals = Array<[string, DynamicRecord]>;
-const SESSION_NAME_PREFIX = "OpenBot · ";
+const SESSION_NAME_PREFIX = "PurpleBot · ";
 
 interface InstructionsFileInPrompt {
   fileName: PromptInstructionsFile["fileName"];
@@ -1202,7 +1202,7 @@ export class ThreadLifecycle {
           ? codexDeferredMcpServers(mcpServers).map((config) => config.name)
           : client.provider === "opencode"
             ? openCodeMcpServers(mcpServers).map((config) => config.name)
-            : // Antigravity 1.5 leaves the tools over its schema budget out (#7427). OpenBot runs the
+            : // Antigravity 1.5 leaves the tools over its schema budget out (#7427). PurpleBot runs the
               client.provider === "antigravity"
               ? mcpServers
                   .filter((config) => mcpFallbackRunsServer(config, agent))

@@ -1,5 +1,5 @@
 name: Mobile app bug report
-description: Report a problem in the OpenBot app for iPhone or Android.
+description: Report a problem in the PurpleBot app for iPhone or Android.
 title: "[Mobile]: "
 labels: [bug, needs-triage]
 body:
@@ -8,7 +8,7 @@ body:
       value: |
         Thanks for reporting a bug in the mobile app. Complete all required fields. We close reports that do not have the app version.
 
-        The easiest way is in the app: tell an agent about the problem in the OpenBot mobile app and select **Send** on its report card. The app then adds its version, your device and the support log. If the app cannot connect, open Settings → Support → "Report a problem on GitHub" in the mobile app: it opens this form with the app version and the device filled in.
+        The easiest way is in the app: tell an agent about the problem in the PurpleBot mobile app and select **Send** on its report card. The app then adds its version, your device and the support log. If the app cannot connect, open Settings → Support → "Report a problem on GitHub" in the mobile app: it opens this form with the app version and the device filled in.
 
         **For a connection or network problem, attach the support log from Settings → Support → "Save log file". We will most probably close a connection or network report that does not have this log.**
 
@@ -28,7 +28,7 @@ body:
     id: app-version
     attributes:
       label: Mobile app version
-      description: "Open Settings → About and copy the full line below the OpenBot name: the version, the build number in parentheses, and the update ID when it shows."
+      description: "Open Settings → About and copy the full line below the PurpleBot name: the version, the build number in parentheses, and the update ID when it shows."
       placeholder: 1.4.0 (212) · a1b2c3d4
     validations:
       required: true
@@ -88,7 +88,7 @@ body:
     id: server-version
     attributes:
       label: Server version
-      description: The OpenBot version of the computer or server that the phone connects to. On the desktop, see Settings → Updates. Write "unknown" when you cannot find it.
+      description: The PurpleBot version of the computer or server that the phone connects to. On the desktop, see Settings → Updates. Write "unknown" when you cannot find it.
       placeholder: 0.42.0
 
   - type: dropdown

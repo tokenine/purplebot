@@ -1,6 +1,6 @@
-# OpenBot Auth API
+# PurpleBot Auth API
 
-This TanStack Start and Solid 2 package is the central OpenBot account API. It
+This TanStack Start and Solid 2 package is the central PurpleBot account API. It
 runs on Cloudflare Workers, stores account and authentication records in D1,
 and stores account avatars in R2. Users sign in with an eight-character
 one-time email code. D1 stores hashes instead of plaintext codes, session tokens,
@@ -144,7 +144,7 @@ not the Stripe test clock.
 The `portal` scenario prints a Customer Portal cancel page and waits until you use it. Then it checks
 that the plan change flow of an old app opens the Portal home, and that the Portal has no plan change. The report goes to `.openbot-build/stripe-flows-e2e.json`.
 
-The `boat` scenario runs only when you name it. It pays for a server, waits until OpenBot in the VM
+The `boat` scenario runs only when you name it. It pays for a server, waits until PurpleBot in the VM
 signs in and publishes the host, restarts the service to check the stored session, and deletes the
 server. It needs the real `BOAT_API_KEY`, a template from `bun run hosting:template` whose
 `--auth-api-url` reaches your Worker (for example a `cloudflared tunnel --url` to its port), and
@@ -178,37 +178,22 @@ bun run env:validate:prod
 Commit the encrypted `.env.production` and `.env.dev` files. Never commit `.env.keys` or local
 state from `.openbot/`.
 
-## Article artwork
+## Pages
 
-The `/news` and `/guides` cards and social images come from a WebGL shader. A
-Worker has no WebGL and a CI runner has no GPU, so the images are drawn on a
-developer's machine and committed in `content-art/`. After you add an article or
-change a title, run this and commit the folder:
+The Worker serves the web client at `/app`, the API routes, and a small set of pages that have no
+navigation menu and no footer:
 
-```bash
-bun run api:images
-```
+- `/` leads to the web client.
+- `/privacy` (alias `/privacy-policy`) and `/terms` show the short legal text in `src/content/`.
+- `/join`, `/discord/connect` and `/slack/connect` finish an invitation or a messaging connection.
 
-It draws only the images whose inputs changed and deletes images that no
-article uses. `content-art/manifest.json` records a hash of the inputs of each
-image. The build compares those hashes with the articles and fails when an image
-is missing, out of date, or belongs to no article.
+Each other page returns 404. The site has no marketing pages, no sitemap and no social images.
+`src/components/bare/` holds the page shell: a header with the PurpleBot mark and name.
 
-## Home page beam
-
-The home page beam is a SolidJS port of
-[LaserFlow from React Bits](https://reactbits.dev/animations/laser-flow). Its license lets the
-website use it, but does not let this public repository contain it. The port is in the private
-`nightly-labs/openbot-laser-flow` repository. Git ignores its path here, and a checkout without it
-builds a home page with no beam. To see the beam locally, clone it into that path:
-
-```bash
-git clone git@github.com:nightly-labs/openbot-laser-flow.git apps/auth-api/src/vendor/laser-flow
-```
-
-CI checks it out with the read-only deploy key in the `LASER_FLOW_DEPLOY_KEY` secret. Pull request
-previews from forks have no beam. A production deploy, from CI or from `bun run deploy`, stops
-before any change when the port is missing. Never copy the file into this repository.
+`SITE_ORIGIN` is the public origin of this deployment, for example `https://accounts.example.com`,
+with no path and no trailing slash. The Worker uses it for the absolute links in emails and in
+`/oauth/mcp-client.json`. Without it, an email has no site link and the metadata uses the origin of
+the request.
 
 ## Email delivery
 
@@ -265,12 +250,13 @@ For a deployed Worker, `bun run api:deploy` decrypts `.env.production`. It sends
 builds and deploys the Worker. Production deployment preserves `HOSTED_SERVER_TEMPLATE`; the
 desktop release workflow owns that setting. Test deployment can still set its own template.
 
-Production also requires `OPENPANEL_CLIENT_ID` and `OPENPANEL_CLIENT_SECRET` from an OpenPanel
-write-only server client. Keep both in the encrypted `.env.production` for local deployment and in
-the `cloudflare-production` GitHub Environment for CI. Both deployment paths check these values
-before remote changes. Test deployments do not send account analytics.
+Account analytics are off. They send only when `OPENPANEL_API_URL`, `OPENPANEL_CLIENT_ID` and
+`OPENPANEL_CLIENT_SECRET` are all set. `OPENPANEL_API_URL` is the base URL of an OpenPanel track API,
+and an empty value sends nothing. Keep the two credentials in the encrypted `.env.production` for
+local deployment and in the `cloudflare-production` GitHub Environment for CI. Test deployments do
+not send account analytics.
 
-`GITHUB_APP_PRIVATE_KEY` is the OpenBot GitHub App's private key as a PKCS #8 PEM. GitHub gives a
+`GITHUB_APP_PRIVATE_KEY` is the PurpleBot GitHub App's private key as a PKCS #8 PEM. GitHub gives a
 PKCS #1 key; convert it with `openssl pkcs8 -topk8 -nocrypt -in <key>.pem`. With the key, the
 Worker gives the desktop installation tokens, so GitHub shows `openbotgit[bot]` as the author of an
 agent's work. The key also lets `POST /v1/feedback` open an approved bug report or feature idea from the app as
@@ -304,7 +290,7 @@ of each archive in `hosted_server_archives`; with another value, no archive can 
 key reads the `openbot-pool-archive-eu` bucket and nothing else. The encrypted `.env.production` has
 all three, and GitHub Actions reads them from the `cloudflare-production` Environment. When you
 change one, change it in both places and deploy the Worker.
-`BROWSER_EXTENSION_IDS` lists the ids of the published OpenBot browser extensions, separated by
+`BROWSER_EXTENSION_IDS` lists the ids of the published PurpleBot browser extensions, separated by
 commas (a Chrome id is 32 letters from `a` to `p`). Only they get a sign-in from the web app: the
 extension opens `/app?extension=<id>&challenge=<c>&state=<s>` in its sign-in window, the person
 allows it, `/api/browser/extension/code` gives a one-time code, and the extension spends it with its
@@ -339,7 +325,7 @@ Worker has.
 Use `bun run api:deploy:test` for the isolated `openbot-auth-api-test` Worker
 and the `openbot-auth-test` D1 database.
 
-As a fallback, set `EMAIL_DELIVERY_WEBHOOK_URL` to an HTTPS endpoint. OpenBot
+As a fallback, set `EMAIL_DELIVERY_WEBHOOK_URL` to an HTTPS endpoint. PurpleBot
 sends this JSON:
 
 ```json
@@ -371,12 +357,12 @@ onboard `openbot.run` in the Cloudflare dashboard under Email Sending, and keep
 `allowed_sender_addresses` equal to `EMAIL_FROM` and `EMAIL_LICENSE_FROM`. The preview and test
 Workers have no fallback.
 
-The contact form on `/contact` posts to `/v1/contact`. The Worker sends each message to
-`EMAIL_REPLY_TO` (or `EMAIL_FROM` when it is empty) through SMTP, with the visitor's address in `Reply-To`, and stores nothing.
-The D1 counter of sign-in allows 3 messages for each IP address and 15 in total in each 15-minute
-window, so the form cannot spend the quota that sign-in codes need. A Cloudflare rate-limit binding
-counts in each location separately, so it cannot hold a total. Without SMTP the route answers 503
-`email_delivery_not_configured`, and the form tells the visitor to write to `hello@openbot.run`.
+`POST /v1/contact` accepts a message from a same-origin request. The site has no contact page. The
+Worker sends each message to `EMAIL_REPLY_TO` (or `EMAIL_FROM` when it is empty) through SMTP, with
+the visitor's address in `Reply-To`, and stores nothing. The D1 counter of sign-in allows 3 messages
+for each IP address and 15 in total in each 15-minute window, so the route cannot spend the quota
+that sign-in codes need. A Cloudflare rate-limit binding counts in each location separately, so it
+cannot hold a total. Without SMTP the route answers 503 `email_delivery_not_configured`.
 
 ## Cloudflare deployment
 
@@ -393,14 +379,15 @@ The service applies limits per email, per IP, per challenge, and per resend.
 
 A deploy replaces every file under `/assets/`. Before a production deploy, CI and `bun run api:deploy`
 run `scripts/keep-previous-assets.ts`. It copies the files of the builds that were live in the last
-24 hours from `https://openbot.run` into the new build, so a tab that is open during a deploy can
-still load code. The site keeps the list of these files in `/asset-history.json`. When the list or a
-file cannot be read, the deploy continues with fewer files, and such a tab reloads when it next loads
-code.
+24 hours from the live site into the new build, so a tab that is open during a deploy can still load
+code. The site is `--origin=<SITE_ORIGIN>` on the command line, or `SITE_ORIGIN` in the environment.
+Without an origin, the script deploys only the files of this build and contacts no site. The site
+keeps the list of these files in `/asset-history.json`. When the list or a file cannot be read, the
+deploy continues with fewer files, and such a tab reloads when it next loads code.
 
 ## Hosted sites
 
-`/v1/sites` takes two optional headers: `OpenBot-Host-Id` and `OpenBot-Host-Token`, the machine token
+`/v1/sites` takes two optional headers: `PurpleBot-Host-Id` and `PurpleBot-Host-Token`, the machine token
 of a registered server. With them, a request sees only that server's sites, and a new site counts
 against the server's limit: a `server_site_limits` row, else its plan's limit, else the account's shared
 pool (3 sites for each license user, else 1), within an account cap of 300. A wrong token gets 401
@@ -486,13 +473,13 @@ To deploy your own copy of this Worker with your own Signal, see
 host to Apple Push Notification service. The host seals the content for the phone, so the Worker
 cannot read it. The Worker checks the host credential and `LIVE_ACTIVITY_RATE_LIMITER`, makes the
 APNs payload itself, and stores and logs nothing. An update that shows an event that notifies the
-member has an `alert` with the sound of the phone and "OpenBot" as its only text (iOS shows the text
+member has an `alert` with the sound of the phone and "PurpleBot" as its only text (iOS shows the text
 on Apple Watch only); a host cannot give the text.
 
 `POST /v2/remote/hosts/:hostId/notification` forwards a sealed iPhone notification in the same way.
 It has its own key in `LIVE_ACTIVITY_RATE_LIMITER`, and it sends nothing for a device session that
 has ended (`RemoteControlPlane.sessionOpen`), because the host does not learn about the end. The
-alert has "OpenBot" as its only text and `mutable-content`; the app opens the sealed bytes.
+alert has "PurpleBot" as its only text and `mutable-content`; the app opens the sealed bytes.
 
 The relay is off until `APNS_PRIVATE_KEY` (the `.p8` key text) and `APNS_KEY_ID` are set. Create
 the key in Apple Developer > Keys with the Apple Push Notifications service, then add both to the

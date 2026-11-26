@@ -646,7 +646,7 @@ export class FakeAgentApi {
       created_at: execution.createdAt,
       updated_at: execution.updatedAt,
       dispatch_committed_at: execution.createdAt,
-      grant: { id: execution.grantId, label: "OpenBot" },
+      grant: { id: execution.grantId, label: "PurpleBot" },
       type: execution.type,
       details: { action: execution.type, approval_id: execution.approvalId },
     };
@@ -718,7 +718,7 @@ export function errorDocument(code: string, layer: string, detail: string, retry
 export function agentView(agent: FakeAgent): JsonObject {
   return {
     id: agent.id,
-    name: "OpenBot",
+    name: "PurpleBot",
     external_user_id: null,
     status: agent.status,
     archived: false,

@@ -43,7 +43,7 @@ export const messages = {
   "mobile.browser.status.offline": "De server is niet verbonden.",
   "mobile.browser.status.noTab": "{name} heeft geen browsertabblad open.",
   "mobile.browser.status.unsupported":
-    "Deze server kan zijn browser niet op een telefoon tonen. Werk OpenBot bij op deze server.",
+    "Deze server kan zijn browser niet op een telefoon tonen. Werk PurpleBot bij op deze server.",
   "mobile.browser.status.off": "De browser is niet beschikbaar in deze versie van de app.",
   "mobile.browser.notice.copied": "Gekopieerd naar je telefoon.",
   "mobile.browser.notice.nothingSelected": "Er is niets geselecteerd op de pagina.",
@@ -100,5 +100,5 @@ export const messages = {
   "mobile.browser.httpSignIn.username": "Gebruikersnaam",
   "mobile.browser.httpSignIn.password": "Wachtwoord",
   "mobile.browser.httpSignIn.submit": "Inloggen",
-  "mobile.browser.httpSignIn.failed": "OpenBot kon de login niet versturen.",
+  "mobile.browser.httpSignIn.failed": "PurpleBot kon de login niet versturen.",
 } as const satisfies PartialTranslation<typeof source>;

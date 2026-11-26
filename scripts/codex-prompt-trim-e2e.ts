@@ -148,7 +148,7 @@ try {
       await runCauseEffect(
         client.request(
           "initialize",
-          { clientInfo: { name: "openbot_e2e", title: "OpenBot E2E", version: "0.0.0" }, capabilities: {} },
+          { clientInfo: { name: "openbot_e2e", title: "PurpleBot E2E", version: "0.0.0" }, capabilities: {} },
           decodeRecordResponse,
         ),
       );

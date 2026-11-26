@@ -68,7 +68,7 @@ export const sendTeamInviteEmail = Effect.fn("TeamInviteEmail.send")(function* (
     .pipe(
       Effect.mapError((error) =>
         isEmailDeliveryFailure(error)
-          ? emailDeliveryFailure(error.message, "OpenBot could not send the invitation.")
+          ? emailDeliveryFailure(error.message, "PurpleBot could not send the invitation.")
           : new AuthOperationError({ message: "Account operation failed." }),
       ),
     );

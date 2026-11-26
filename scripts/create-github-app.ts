@@ -45,7 +45,7 @@ function page(response: ServerResponse, status: number, body: string): void {
     "Cache-Control": "no-store",
     "Referrer-Policy": "no-referrer",
   });
-  response.end(`<!doctype html><meta charset="utf-8"><title>OpenBot GitHub App</title>${body}`);
+  response.end(`<!doctype html><meta charset="utf-8"><title>PurpleBot GitHub App</title>${body}`);
 }
 
 async function convert(code: string): Promise<Conversion> {
@@ -122,7 +122,7 @@ async function main(): Promise<void> {
           200,
           `<form id="manifest" method="post" action="${escapeHtml(`${target}?state=${state}`)}">` +
             `<input type="hidden" name="manifest" value="${escapeHtml(body)}">` +
-            `<p>Sending the OpenBot manifest to GitHub…</p><button type="submit">Continue to GitHub</button></form>` +
+            `<p>Sending the PurpleBot manifest to GitHub…</p><button type="submit">Continue to GitHub</button></form>` +
             `<script>document.getElementById("manifest").submit()</script>`,
         );
       }
@@ -170,7 +170,7 @@ async function main(): Promise<void> {
     process.exitCode = 1;
     return;
   }
-  logger.info(`The secrets are in ${secretsPath} (mode 0600). OpenBot does not use them.`);
+  logger.info(`The secrets are in ${secretsPath} (mode 0600). PurpleBot does not use them.`);
   logger.info("Do these steps in the app settings. A manifest cannot do them:");
   logger.info("  1. General > Identifying and authorizing users: select Enable Device Flow.");
   logger.info("  2. Optional features: opt out of User-to-server token expiration.");

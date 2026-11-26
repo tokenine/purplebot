@@ -26,7 +26,7 @@ export const messages = {
     "Cette licence ne peut pas passer à cette offre. Résiliez-la et achetez la nouvelle offre.",
   "error.billing.noLicense": "Ce compte n'a pas de licence.",
   "error.billing.countryRequired":
-    "Indiquez votre pays de facturation avant de payer. Mettez à jour OpenBot pour le faire, puis réessayez.",
+    "Indiquez votre pays de facturation avant de payer. Mettez à jour PurpleBot pour le faire, puis réessayez.",
   "error.billing.detailsInvalid":
     "Vérifiez le pays et le numéro de TVA. Le numéro de TVA doit être celui du pays choisi.",
   "error.billing.vatIdInvalid":

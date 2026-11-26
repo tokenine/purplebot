@@ -4,7 +4,7 @@ import { useText } from "@openbot/ui/text";
 import { usePlatform } from "../../platform";
 import { useSetup } from "./onboarding-context";
 
-const PRODUCT_NAME = "OpenBot";
+const PRODUCT_NAME = "PurpleBot";
 
 export function SetupReadError() {
   const { t } = useText();

@@ -56,7 +56,7 @@ const startingPhoto: ComposerUploadFile = {
 };
 const failedArchive: ComposerUploadFile = {
   ...uploadingArchive,
-  error: "The connection to OpenBot team closed.",
+  error: "The connection to PurpleBot team closed.",
 };
 
 const named = (text: string, file: DraftAttachment) => `${text} ${serializeAttachmentReference(file.name, file.id)}`;

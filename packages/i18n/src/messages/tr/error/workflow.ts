@@ -7,18 +7,18 @@ export const messages = {
   "error.workflow.annotation": "Metinler, notlar ve şekiller bağlantı içeremez.",
   "error.workflow.port": "Bir adım bu tür girdiyi alamaz.",
   "error.workflow.unknownValue":
-    "Bu OpenBot bir adımın ayarını bilmiyor. OpenBot’u güncelleyin, sonra yeniden deneyin.",
+    "Bu PurpleBot bir adımın ayarını bilmiyor. PurpleBot’u güncelleyin, sonra yeniden deneyin.",
   "error.workflow.branch": "Yalnızca bir koşul evet ve hayır bağlantılarına sahip olabilir.",
   "error.workflow.conditionBranch": "Bir koşuldan çıkan her bağlantı evet veya hayır olmalıdır.",
   "error.workflow.duplicateEdge": "Bu iki adımda bu bağlantı zaten var.",
   "error.workflow.serverTooOld":
-    "Bu sunucu iş akışlarını desteklemiyor. OpenBot'u sunucuyu çalıştıran bilgisayarda güncelleyin.",
+    "Bu sunucu iş akışlarını desteklemiyor. PurpleBot'u sunucuyu çalıştıran bilgisayarda güncelleyin.",
   "error.workflow.newerSteps":
-    "Bu iş akışında daha yeni bir OpenBot sürümünden adımlar var. Değiştirmek için OpenBot'u güncelleyin.",
-  "error.workflow.nodeUnsupported": "OpenBot'un bu sürümü görsel, dosya ve mesaj adımlarını henüz çalıştıramaz.",
-  "error.workflow.interrupted": "Bu adım çalışırken OpenBot durdu. Adımı yeniden çalıştırın.",
+    "Bu iş akışında daha yeni bir PurpleBot sürümünden adımlar var. Değiştirmek için PurpleBot'u güncelleyin.",
+  "error.workflow.nodeUnsupported": "PurpleBot'un bu sürümü görsel, dosya ve mesaj adımlarını henüz çalıştıramaz.",
+  "error.workflow.interrupted": "Bu adım çalışırken PurpleBot durdu. Adımı yeniden çalıştırın.",
   "error.workflow.agentMissing": "Bu adım için bir ajan seçin.",
-  "error.workflow.handoffFailed": "OpenBot bu adımı ajanına gönderemedi.",
+  "error.workflow.handoffFailed": "PurpleBot bu adımı ajanına gönderemedi.",
   "error.workflow.agentStepEnded": "Ajana giden mesaj, ajan yanıt vermeden kaldırıldı.",
   "error.workflow.agentStepStopped": "Ajan bu adımı yanıtlamadan durdu. Adımı yeniden çalıştırın.",
   "error.workflow.conditionUnclear": "Model evet ya da hayır yanıtı vermedi.",
@@ -44,7 +44,7 @@ export const messages = {
   "error.workflow.modelUnavailable": "Bu adımın modeli kullanılamıyor. Bu adım için başka bir model seçin.",
   "error.workflow.providerBusy": "Sağlayıcı meşgul. Birkaç dakika bekleyin, sonra adımı yeniden çalıştırın.",
   "error.workflow.providerOffline":
-    "OpenBot sağlayıcıya ulaşamadı. İnternet bağlantısını kontrol edin, sonra adımı yeniden çalıştırın.",
+    "PurpleBot sağlayıcıya ulaşamadı. İnternet bağlantısını kontrol edin, sonra adımı yeniden çalıştırın.",
   "error.workflow.providerBilling":
     "Hesapta kredi yok ya da plan bu modeli içermiyor. Planı kontrol edin ya da başka bir model seçin.",
   "error.workflow.modelRefused": "Sağlayıcı bu hesap için bu modele izin vermiyor. Başka bir model seçin.",
@@ -75,7 +75,7 @@ export const messages = {
   "error.workflow.noDecision": "Bu adım bir karar beklemiyor.",
   "error.workflow.outputPlaceMissing": "Bu çıktı için bir mesajlaşma yeri seçin.",
   "error.workflow.outputChannelMissing": "Bu çıktı için bir kanal seçin.",
-  "error.workflow.outputChannelFailed": "OpenBot sonucu kanalda paylaşamadı. Adımı yeniden çalıştırın.",
+  "error.workflow.outputChannelFailed": "PurpleBot sonucu kanalda paylaşamadı. Adımı yeniden çalıştırın.",
   "error.workflow.discordNoMessage":
     "Bu çıktı, çalıştırmayı başlatan Discord mesajı üzerinde çalışır. Çalıştırmayı bir Discord anmasından başlatın veya Kanala gönder'i seçin.",
   "error.workflow.slackNoMessage":
@@ -85,7 +85,7 @@ export const messages = {
   "error.workflow.outputConnectionOff":
     "Bu çıktının mesajlaşma bağlantısı kapalı ya da kaldırılmış. Yeniden bir yer seçin.",
   "error.workflow.outputNotRunning": "Mesajlaşma bağlantısı şu anda çalışmıyor. Çalıştığında yeniden deneyin.",
-  "error.workflow.outputRefused": "Yer gönderiyi reddetti. OpenBot'un orada gönderi yapabildiğinden emin olun.",
+  "error.workflow.outputRefused": "Yer gönderiyi reddetti. PurpleBot'un orada gönderi yapabildiğinden emin olun.",
   "error.workflow.outputUncertain":
     "Gönderi yolda durdu. Bir kısmı yerde olabilir. Yeniden denemeden önce kontrol edin.",
   "error.workflow.tooLarge":
@@ -106,12 +106,12 @@ export const messages = {
   "error.workflow.githubChoseNothing": "Model bu depodan hiçbir etiket veya kişi seçmedi.",
   "error.workflow.githubNotConnected": "Bu iş akışını çalıştıran bilgisayarda GitHub'ı bağlayın.",
   "error.workflow.githubNoAccess":
-    "OpenBot GitHub Uygulaması bu depoyu veya öğeyi göremiyor. GitHub'ı açın ve uygulamaya erişim verin.",
+    "PurpleBot GitHub Uygulaması bu depoyu veya öğeyi göremiyor. GitHub'ı açın ve uygulamaya erişim verin.",
   "error.workflow.githubNoWrite":
-    "OpenBot GitHub Uygulaması bu depoyu değiştiremiyor. GitHub'ı açın ve uygulamaya erişim verin.",
+    "PurpleBot GitHub Uygulaması bu depoyu değiştiremiyor. GitHub'ı açın ve uygulamaya erişim verin.",
   "error.workflow.githubLocked": "Bu konuşma GitHub'da kilitli.",
   "error.workflow.githubRefused": "GitHub değişikliği reddetti: {detail}",
-  "error.workflow.githubUnreachable": "OpenBot GitHub'a ulaşamadı. Adımı yeniden çalıştırın.",
+  "error.workflow.githubUnreachable": "PurpleBot GitHub'a ulaşamadı. Adımı yeniden çalıştırın.",
   "error.workflow.githubUncertain":
     "Değişiklik yolda durdu. GitHub'da olabilir. Adımı yeniden çalıştırmadan önce orayı kontrol edin.",
   "error.workflow.githubNoEvent": "GitHub'da bu tetikleyicinin başladığı bir sorun veya çekme isteği yok.",
@@ -124,7 +124,7 @@ export const messages = {
     "Sunra giriş resimlerini yalnızca kişisel hesapla kullanır. Sunra'da kişisel hesabınızı seçin veya resim bağlantılarını kaldırın.",
   "error.workflow.sunraFailed": "Sunra dosyayı oluşturamadı: {reason}",
   "error.workflow.sunraTimeout":
-    "Sunra dosyayı zamanında bitirmedi. Adımı yeniden çalıştırmadan önce sunra.ai üzerindeki OpenBot projesine bakın.",
+    "Sunra dosyayı zamanında bitirmedi. Adımı yeniden çalıştırmadan önce sunra.ai üzerindeki PurpleBot projesine bakın.",
   "error.workflow.higgsfieldSignIn": "Higgsfield modellerini kullanmak için Uygulamalar'da Higgsfield'a giriş yapın.",
   "error.workflow.higgsfieldNoCredits":
     "Higgsfield hesabınızda yeterli kredi yok. higgsfield.ai/pricing adresinden kredi ekleyin, ardından adımı yeniden çalıştırın.",

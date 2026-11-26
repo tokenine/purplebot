@@ -337,7 +337,7 @@ function checkTimerUnits(): { timer: string; service: string } {
   const service = readFileSync(join(HOSTING, "openbot-update.service"), "utf8");
   const interval = timer.match(/^OnUnitActiveSec=(.+)$/mu)?.[1];
   assert.equal(interval, "1h", "openbot-update.timer runs each hour");
-  assert.match(service, /^ExecStart=\/opt\/OpenBot\/hosted\/openbot-hosted-update check$/mu);
+  assert.match(service, /^ExecStart=\/opt\/PurpleBot\/hosted\/openbot-hosted-update check$/mu);
   return { timer: interval, service: "check" };
 }
 

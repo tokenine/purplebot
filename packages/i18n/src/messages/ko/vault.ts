@@ -6,7 +6,7 @@ export const messages = {
   "vault.near.name": "암호화폐 지갑",
   "vault.near.open": "암호화폐 지갑 열기",
   "vault.near.connect": "연결",
-  "vault.near.signedOut": "암호화폐 지갑을 설정하려면 OpenBot에 로그인하세요.",
+  "vault.near.signedOut": "암호화폐 지갑을 설정하려면 PurpleBot에 로그인하세요.",
   "vault.near.paused": "일시 중지됨",
   "vault.near.failed": "암호화폐 지갑을 변경하지 못했어요.",
   "vault.near.waiting": "브라우저에서 서명을 기다리는 중…",
@@ -14,7 +14,7 @@ export const messages = {
   "vault.near.openAgain": "다시 열기",
   "vault.near.signature.label": "브라우저 서명",
   "vault.near.signature.register": "패스키 만들기",
-  "vault.near.signature.registerDetail": "내 기기에만 있어요. OpenBot은 절대 보관하지 않아요.",
+  "vault.near.signature.registerDetail": "내 기기에만 있어요. PurpleBot은 절대 보관하지 않아요.",
   "vault.near.signature.create": "새 지갑 승인",
   "vault.near.signature.createDetail":
     "모든 에이전트가 하루 최대 {amount}까지 결제할 수 있어요. 나중에 변경할 수 있어요.",
@@ -38,7 +38,7 @@ export const messages = {
   "vault.near.backup.unknownDetail":
     "브라우저가 이 패스키의 백업 여부를 알려 주지 않았어요. 패스키 관리자가 이 패스키를 동기화하는지 확인하세요.",
   "vault.near.backup.notChecked": "백업 확인 안 됨",
-  "vault.near.backup.noCopy": "OpenBot은 패스키의 사본을 보관하지 않아요. 이 지갑에는 나만 서명할 수 있어요.",
+  "vault.near.backup.noCopy": "PurpleBot은 패스키의 사본을 보관하지 않아요. 이 지갑에는 나만 서명할 수 있어요.",
   "vault.near.backup.checked": "{date}에 확인함",
   "vault.near.backup.check": "백업 확인",
   "vault.near.backup.checkAgain": "다시 확인",
@@ -104,7 +104,7 @@ export const messages = {
   "vault.near.disconnect": "연결 해제",
   "vault.near.disconnectTitle": "암호화폐 지갑 연결을 해제할까요?",
   "vault.near.disconnectDescription":
-    "에이전트가 더 이상 이 지갑으로 결제할 수 없고, OpenBot은 이 지갑을 잊어요. 자금은 NEAR Intents의 지갑에 그대로 남아요.",
+    "에이전트가 더 이상 이 지갑으로 결제할 수 없고, PurpleBot은 이 지갑을 잊어요. 자금은 NEAR Intents의 지갑에 그대로 남아요.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "일일 한도 초과",
   "vault.near.approve": "승인",

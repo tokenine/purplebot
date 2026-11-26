@@ -141,7 +141,7 @@ function checkSchemaVersion(database: DatabaseSync, mode: AgentDatabaseMode): vo
   if (version > SCHEMA_VERSION) {
     throw new HostFailure(
       "newer-schema",
-      `A newer version of OpenBot made the shared tables file (schema ${version}; this version reads ${SCHEMA_VERSION}). Nothing was read or changed. Install the newer version of OpenBot to use the shared tables.`,
+      `A newer version of PurpleBot made the shared tables file (schema ${version}; this version reads ${SCHEMA_VERSION}). Nothing was read or changed. Install the newer version of PurpleBot to use the shared tables.`,
     );
   }
   if (mode === "write" && version < SCHEMA_VERSION) database.exec(`PRAGMA user_version = ${SCHEMA_VERSION}`);
@@ -256,7 +256,7 @@ function toFailure(error: unknown, request: AgentDatabaseStatement): AgentDataba
     return {
       kind: "sqlite",
       message:
-        "Nothing was saved, because OpenBot does not have permission to change the shared tables file or its Data folder. The user account that runs OpenBot needs permission to change that folder and the files in it.",
+        "Nothing was saved, because PurpleBot does not have permission to change the shared tables file or its Data folder. The user account that runs PurpleBot needs permission to change that folder and the files in it.",
       sqliteCode: code,
     };
   }

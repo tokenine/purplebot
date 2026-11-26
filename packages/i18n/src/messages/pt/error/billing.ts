@@ -22,7 +22,7 @@ export const messages = {
   "error.billing.licensePlanChange": "Esta licença não pode mudar para esse plano. Cancele-a e compre o novo plano.",
   "error.billing.noLicense": "Esta conta não tem licença.",
   "error.billing.countryRequired":
-    "Informe o país de cobrança antes de pagar. Atualize o OpenBot para fazer isso e tente novamente.",
+    "Informe o país de cobrança antes de pagar. Atualize o PurpleBot para fazer isso e tente novamente.",
   "error.billing.detailsInvalid": "Verifique o país e o número de IVA. O número de IVA deve ser do país escolhido.",
   "error.billing.vatIdInvalid":
     "O sistema de IVA da UE não conhece este número de IVA. Verifique o número ou continue sem número de IVA.",

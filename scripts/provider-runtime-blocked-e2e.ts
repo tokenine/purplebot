@@ -175,7 +175,7 @@ try {
   assert.equal(versionAfter, pinnedVersion, "a copy on a blocked version moves back to the pinned one");
   assert.equal(blockedCopyKept, false, "the blocked copy goes after the move back");
   assert.equal(versionAfterRestart, pinnedVersion, "a restart keeps the pinned copy");
-  assert.equal(copyInUseKept, true, "a blocked copy that another OpenBot process stamped stays");
+  assert.equal(copyInUseKept, true, "a blocked copy that another PurpleBot process stamped stays");
   assert.equal(report.blocked.unusedCopyKept, false, "the next check removes a blocked copy that nothing uses");
 
   const notBlocked = await startManager("not-blocked", []);
@@ -199,7 +199,7 @@ try {
     versionAfter: version(userCli.manager),
     blockedCopyKept: await exists(userCli.blockedRoot),
   };
-  assert.equal(report.userCli.versionAfter, BLOCKED_VERSION, "OpenBot leaves OpenCode alone next to a user's CLI");
+  assert.equal(report.userCli.versionAfter, BLOCKED_VERSION, "PurpleBot leaves OpenCode alone next to a user's CLI");
 
   report.passed = true;
 } finally {

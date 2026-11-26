@@ -13,7 +13,7 @@ import {
   rememberExtensionAllowed,
 } from "./web-extension-connect";
 
-const PRODUCT_NAME = "OpenBot";
+const PRODUCT_NAME = "PurpleBot";
 
 interface WebExtensionConnectProps {
   variant: AppVariant;
@@ -37,7 +37,7 @@ export function WebExtensionConnect(props: WebExtensionConnectProps) {
         method: "POST",
         credentials: "same-origin",
         cache: "no-store",
-        headers: { "Content-Type": "application/json", "X-OpenBot-Browser": "1" },
+        headers: { "Content-Type": "application/json", "X-PurpleBot-Browser": "1" },
         body: JSON.stringify({ extensionId: props.request.extensionId, clientChallenge: props.request.challenge }),
       });
       const value = await response.json().catch(() => null);

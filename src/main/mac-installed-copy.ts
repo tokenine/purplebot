@@ -67,7 +67,7 @@ function prepareInstalledCopy(runningBundle: string, currentVersion: string): Ef
       const usable = yield* isSameAppAtLeastAsNew(copyPath, requirement, currentVersion).pipe(
         Effect.catch((error) =>
           Effect.sync(() => {
-            logger.info("An OpenBot copy cannot be used to install the update.", toLogValue(error.cause));
+            logger.info("An PurpleBot copy cannot be used to install the update.", toLogValue(error.cause));
             return false;
           }),
         ),
@@ -78,7 +78,7 @@ function prepareInstalledCopy(runningBundle: string, currentVersion: string): Ef
   }).pipe(
     Effect.catch((error) =>
       Effect.sync(() => {
-        logger.warn("The installed OpenBot copy could not be checked.", toLogValue(error.cause));
+        logger.warn("The installed PurpleBot copy could not be checked.", toLogValue(error.cause));
         return null;
       }),
     ),
@@ -93,7 +93,7 @@ export function restartFromInstalledCopy(
   return prepareInstalledCopy(runningBundle, currentVersion).pipe(
     Effect.map((copyPath) => {
       if (!copyPath) return false;
-      logger.info("OpenBot restarts from its installed copy to install the update.");
+      logger.info("PurpleBot restarts from its installed copy to install the update.");
       app.relaunch({
         execPath: join(copyPath, "Contents", "MacOS", basename(app.getPath("exe"))),
         args: process.argv.slice(1),

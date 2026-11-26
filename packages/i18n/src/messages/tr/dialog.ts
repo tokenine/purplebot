@@ -18,9 +18,9 @@ export const messages = {
   "dialog.saveExportSkill": "Dışa aktarma becerisini kaydet",
   "dialog.saveTransfer": "Aktarım dosyasını kaydet",
   "dialog.chooseTransfer": "Bir aktarım dosyası seçin",
-  "dialog.filter.transfer": "OpenBot aktarım dosyaları",
+  "dialog.filter.transfer": "PurpleBot aktarım dosyaları",
   "dialog.saveWorkflow": "İş akışı dosyasını kaydet",
-  "dialog.filter.workflow": "OpenBot iş akışı dosyaları",
+  "dialog.filter.workflow": "PurpleBot iş akışı dosyaları",
   "dialog.chooseExternalLinkApp": "Tarayıcı seçin",
   "dialog.filter.applications": "Uygulamalar",
 } as const satisfies PartialTranslation<typeof source>;

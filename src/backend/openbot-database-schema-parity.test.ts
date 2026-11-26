@@ -19,7 +19,7 @@ afterEach(async () => {
   await Promise.all(roots.splice(0).map((root) => rm(root, { recursive: true, force: true })));
 });
 
-describe("OpenBot database build paths", () => {
+describe("PurpleBot database build paths", () => {
   it("gives a new install the schema that the recorded history of every migration makes", async () => {
     const fresh = await newInstallDatabase();
     const recorded = new Map<string, string>();
@@ -40,7 +40,7 @@ describe("OpenBot database build paths", () => {
   });
 });
 
-describe("OpenBot database migration history", () => {
+describe("PurpleBot database migration history", () => {
   it("keeps the schema change of every recorded migration", async () => {
     const actual = await schemaChangesByVersion();
 
@@ -65,7 +65,7 @@ const MEASURED_LARGE_TABLE_CHANGES: Record<string, readonly string[]> = {
   "67": ["index thread_messages_ordinal"],
 };
 
-describe("OpenBot database migrations of large tables", () => {
+describe("PurpleBot database migrations of large tables", () => {
   it("lists each migration that changes a large table that exists, so that its cost is measured", () => {
     const history: Record<string, SchemaChanges> = recordedSchemaHistory;
     const existing = new Set<string>();

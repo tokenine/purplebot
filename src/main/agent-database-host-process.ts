@@ -15,7 +15,7 @@ const OUTPUT_TAIL_CHARS = 1_900;
 
 export function spawnAgentDatabaseHost(): AgentDatabaseHostProcess {
   const child = utilityProcess.fork(join(__dirname, "agent-database-host.js"), [], {
-    serviceName: "OpenBot databases",
+    serviceName: "PurpleBot databases",
     stdio: ["ignore", "ignore", "pipe"],
   });
   let output = "";

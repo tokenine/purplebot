@@ -39,8 +39,8 @@ const { OpenBotDatabase } = await import("../src/backend/openbot-database");
 
 const PERSON = { id: "local", name: "Alex" };
 const PACKET_STARTS = [
-  "You have one assignment in a shared OpenBot channel chat.",
-  "You have a new assignment in the same shared OpenBot channel chat.",
+  "You have one assignment in a shared PurpleBot channel chat.",
+  "You have a new assignment in the same shared PurpleBot channel chat.",
 ];
 const CHANNEL_RULE = "Use channel_history for earlier history";
 const SUMMARY_REQUEST = "Summarize shared facts";
@@ -712,7 +712,7 @@ try {
       events.find((event) => event.code === "context_compaction_ineffective" && event.agentId === tester.id),
     );
     pass("The notice gives the share of the window", ineffective.message.includes("76%"), ineffective.message);
-    pass("OpenBot asks for no compaction of the full session", compactions(stuckThread) === 0);
+    pass("PurpleBot asks for no compaction of the full session", compactions(stuckThread) === 0);
     const smaller = await send(channelId, tester.id, "USAGE: report the size.");
     await send(channelId, tester.id, "FULL: report the size.");
     pass(

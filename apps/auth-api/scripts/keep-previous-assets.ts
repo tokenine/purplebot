@@ -7,7 +7,6 @@ import { Option, Schema } from "effect";
 const logger = createOpenBotLogger("keep-previous-assets");
 
 const ASSET_HISTORY_FILE = "asset-history.json";
-const PRODUCTION_ORIGIN = "https://openbot.run";
 const RETENTION_MS = 24 * 60 * 60 * 1000;
 const MAX_KEPT_FILES = 10_000;
 const DOWNLOAD_CONCURRENCY = 16;
@@ -33,7 +32,10 @@ async function keepPreviousAssets(options: { origin: string; clientDir: string }
   const now = Date.now();
   const assetsDir = join(options.clientDir, "assets");
   const built = new Set(await readdir(assetsDir));
-  const history = await readLiveHistory(options.origin, now);
+  if (!options.origin) {
+    logger.info("No site origin is set. Only this build's files are deployed. Pass --origin or set SITE_ORIGIN.");
+  }
+  const history = options.origin ? await readLiveHistory(options.origin, now) : null;
 
   const retired: [name: string, retiredAt: number][] = [];
   for (const [name, retiredAt] of Object.entries(history?.files ?? {})) {
@@ -124,6 +126,9 @@ if (!existsSync(join(clientDir, "assets"))) {
   logger.error(`${clientDir} has no assets directory. Build the Worker first.`);
   process.exit(1);
 }
-const result = await keepPreviousAssets({ origin: argument("origin") ?? PRODUCTION_ORIGIN, clientDir });
+const result = await keepPreviousAssets({
+  origin: argument("origin") ?? process.env.SITE_ORIGIN?.trim() ?? "",
+  clientDir,
+});
 if (result.failed > 0) warn(`${result.failed} code files of earlier builds could not be downloaded.`);
 process.stdout.write(`${JSON.stringify(result)}\n`);

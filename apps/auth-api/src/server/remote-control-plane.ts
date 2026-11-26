@@ -3350,7 +3350,7 @@ export class RemoteControlPlane {
       return yield* new RemoteControlPlaneError(
         409,
         "telegram_chat_taken",
-        "Another OpenBot server answers this Telegram chat. Disconnect it there first.",
+        "Another PurpleBot server answers this Telegram chat. Disconnect it there first.",
       );
     }
     if (route?.host_id === code.host_id) {
@@ -3958,8 +3958,8 @@ const deliverRemoteAuthEvents = Effect.fn("RemoteControlPlane.deliverAuthEvents"
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "OpenBot-Timestamp": timestamp,
-            "OpenBot-Signature": signature,
+            "PurpleBot-Timestamp": timestamp,
+            "PurpleBot-Signature": signature,
           },
           body: payload,
           signal: AbortSignal.any([signal, AbortSignal.timeout(5_000)]),

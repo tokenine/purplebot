@@ -48,7 +48,7 @@ export function preventPanelActivation(window: BrowserWindow): void {
     }
     objc.sendBool(nsWindow, setPreventsActivation, true);
   } catch (error) {
-    logger.warn("Unable to stop the panel from activating OpenBot:", toLogValue(error));
+    logger.warn("Unable to stop the panel from activating PurpleBot:", toLogValue(error));
   }
 }
 
@@ -85,6 +85,6 @@ export function keepPanelThroughAppHide(window: BrowserWindow): void {
     }
     objc.sendBool(nsWindow, setCanHide, false);
   } catch (error) {
-    logger.warn("Unable to keep the panel on screen when OpenBot hides:", toLogValue(error));
+    logger.warn("Unable to keep the panel on screen when PurpleBot hides:", toLogValue(error));
   }
 }

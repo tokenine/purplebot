@@ -159,7 +159,7 @@ async function run(): Promise<void> {
     appendFileSync(transcript, turns("n", 5));
     const added = await start("five new turns");
     assert.equal(added.sentTurns, 6, "the newest earlier turn and the five new turns are sent");
-    assert.ok(answers().includes("Answer n4"), "a turn made while OpenBot was closed imports");
+    assert.ok(answers().includes("Answer n4"), "a turn made while PurpleBot was closed imports");
     assert.equal(added.chatMessages, TURNS + 5);
 
     parent = `a-t${TURNS - 10}-final`;

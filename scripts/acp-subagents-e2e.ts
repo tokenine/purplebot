@@ -125,7 +125,7 @@ try {
     assert.equal((await runTurn(client, thread, { text: "work" })).status, "completed");
     const entries = await readJsonl<{ event: string; childUpdates?: boolean }>(log);
     report.openCodeAskedForChildUpdates = entries.find((entry) => entry.event === "initialize")?.childUpdates ?? null;
-    assert.equal(report.openCodeAskedForChildUpdates, true, "OpenBot asks OpenCode for child session updates.");
+    assert.equal(report.openCodeAskedForChildUpdates, true, "PurpleBot asks OpenCode for child session updates.");
     const cards = save("opencode/work", work.lists);
     assert.deepEqual(cards, [
       {

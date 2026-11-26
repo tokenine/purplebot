@@ -1,6 +1,5 @@
 import { isNewerMobileVersion } from "@openbot/contracts/mobile-features";
 import { ANDROID_APK_FIRST_VERSION, MOBILE_LATEST_VERSIONS } from "../server/mobile-features-config";
-import { OPENBOT_LINKS } from "./landing-links";
 
 export interface AndroidApkRelease {
   tag: string;
@@ -9,12 +8,13 @@ export interface AndroidApkRelease {
 }
 
 const VERSION_PATTERN = /^\d+\.\d+\.\d+$/u;
+const RELEASES_URL = "https://github.com/tokenine/purplebot/releases";
 
 export function androidApkRelease(version: string): AndroidApkRelease {
   if (!VERSION_PATTERN.test(version)) throw new Error(`${version} is not a store version of the Android app.`);
   const tag = `android-v${version}`;
-  const asset = `OpenBot-${version}.apk`;
-  return { tag, asset, url: `${OPENBOT_LINKS.releases}/download/${tag}/${asset}` };
+  const asset = `PurpleBot-${version}.apk`;
+  return { tag, asset, url: `${RELEASES_URL}/download/${tag}/${asset}` };
 }
 
 export function androidApkVersion(

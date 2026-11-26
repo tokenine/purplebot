@@ -19,7 +19,7 @@ export const messages = {
   "error.billing.licenseOneUser": "هذا الترخيص لمستخدم واحد. غيّره إلى Team لإضافة مستخدمين.",
   "error.billing.licensePlanChange": "لا يمكن تغيير هذا الترخيص إلى تلك الخطة. ألغِه واشترِ الخطة الجديدة.",
   "error.billing.noLicense": "لا ترخيص لهذا الحساب.",
-  "error.billing.countryRequired": "حدّد بلد الفوترة قبل الدفع. حدّث OpenBot لتفعل ذلك، ثم أعد المحاولة.",
+  "error.billing.countryRequired": "حدّد بلد الفوترة قبل الدفع. حدّث PurpleBot لتفعل ذلك، ثم أعد المحاولة.",
   "error.billing.detailsInvalid": "تحقّق من البلد ورقم ضريبة القيمة المضافة. يجب أن يكون الرقم للبلد المختار.",
   "error.billing.vatIdInvalid":
     "لا يعرف نظام ضريبة القيمة المضافة في الاتحاد الأوروبي هذا الرقم. تحقّق من الرقم أو تابع بدون رقم ضريبي.",

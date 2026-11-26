@@ -3,19 +3,19 @@ import type { messages as source } from "../en/messaging";
 
 export const messages = {
   "messaging.help.invalid_token":
-    "Slack n’accepte plus OpenBot dans cet espace de travail. Il a peut-être été désinstallé. Connectez à nouveau l’espace de travail.",
+    "Slack n’accepte plus PurpleBot dans cet espace de travail. Il a peut-être été désinstallé. Connectez à nouveau l’espace de travail.",
   "messaging.help.secret_storage_unavailable":
-    "OpenBot ne peut pas lire les jetons enregistrés sur cet ordinateur. Déconnectez l’espace de travail, puis connectez-le à nouveau.",
+    "PurpleBot ne peut pas lire les jetons enregistrés sur cet ordinateur. Déconnectez l’espace de travail, puis connectez-le à nouveau.",
   "messaging.help.relay_unavailable":
-    "OpenBot ne peut pas recevoir les événements Slack sur cet ordinateur. Connectez-vous, donnez un nom à cet ordinateur dans les réglages du serveur et gardez OpenBot ouvert.",
+    "PurpleBot ne peut pas recevoir les événements Slack sur cet ordinateur. Connectez-vous, donnez un nom à cet ordinateur dans les réglages du serveur et gardez PurpleBot ouvert.",
   "messaging.help.not_linked":
     "Cet espace de travail n’est pas lié à ce serveur. Sélectionnez Reconnecter pour le lier.",
   "messaging.discordHelp.invalid_token":
-    "Discord n’accepte plus OpenBot sur ce serveur Discord. Il a peut-être été retiré. Connectez à nouveau le serveur Discord.",
+    "Discord n’accepte plus PurpleBot sur ce serveur Discord. Il a peut-être été retiré. Connectez à nouveau le serveur Discord.",
   "messaging.discordHelp.secret_storage_unavailable":
-    "OpenBot ne peut pas lire les jetons enregistrés sur cet ordinateur. Déconnectez le serveur Discord, puis connectez-le à nouveau.",
+    "PurpleBot ne peut pas lire les jetons enregistrés sur cet ordinateur. Déconnectez le serveur Discord, puis connectez-le à nouveau.",
   "messaging.discordHelp.relay_unavailable":
-    "OpenBot ne peut pas recevoir les événements Discord sur cet ordinateur. Connectez-vous, donnez un nom à cet ordinateur dans les réglages du serveur et gardez OpenBot ouvert.",
+    "PurpleBot ne peut pas recevoir les événements Discord sur cet ordinateur. Connectez-vous, donnez un nom à cet ordinateur dans les réglages du serveur et gardez PurpleBot ouvert.",
   "messaging.discordHelp.not_linked":
-    "Ce serveur Discord n’est pas lié à ce serveur OpenBot. Sélectionnez Reconnecter pour le lier.",
+    "Ce serveur Discord n’est pas lié à ce serveur PurpleBot. Sélectionnez Reconnecter pour le lier.",
 } as const satisfies PartialTranslation<typeof source>;

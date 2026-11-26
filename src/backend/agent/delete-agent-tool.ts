@@ -54,7 +54,7 @@ export const handleDeleteAgentTool = Effect.fn("DeleteAgentTool.handle")(
       );
     if (!options.requestedByPerson)
       return openBotToolFailure(
-        "Only a person's message, in your OpenBot chat or a thread they opened, can delete an agent. Do not retry in this turn: tell the user to send the request there as a new message, or to delete the agent from its menu in the sidebar.",
+        "Only a person's message, in your PurpleBot chat or a thread they opened, can delete an agent. Do not retry in this turn: tell the user to send the request there as a new message, or to delete the agent from its menu in the sidebar.",
       );
     const agents = options.listAgents();
     const targets = agentIds.map((agentId) => {

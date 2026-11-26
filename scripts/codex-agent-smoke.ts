@@ -54,14 +54,14 @@ const TURNS: Array<{ step: string; prompt: string; expect: string[] }> = [
   {
     step: "deferred tool",
     prompt:
-      `Use the OpenBot tool_search tool to find the \`${ECHO_TOOL}\` tool, then run it once with tool_call. ` +
+      `Use the PurpleBot tool_search tool to find the \`${ECHO_TOOL}\` tool, then run it once with tool_call. ` +
       "Reply with the text it returns.",
     expect: ["dynamicToolCall:tool_search", "dynamicToolCall:tool_call"],
   },
   {
     step: "browser tool",
     prompt:
-      "List the tabs of the OpenBot browser with its list_tabs tool. Do not open a page. " +
+      "List the tabs of the PurpleBot browser with its list_tabs tool. Do not open a page. " +
       "Reply with the title of the first tab.",
     expect: ["dynamicToolCall:list_tabs"],
   },
@@ -222,7 +222,7 @@ const failures = [
   ...(commitMessage === "Add hello" ? [] : [`commit: last message is ${JSON.stringify(commitMessage)}`]),
   ...(prompt.requestPluginInstall ? ["the prompt declares request_plugin_install"] : []),
   ...(prompt.webRun ? [] : ["the prompt declares no web__run"]),
-  ...(prompt.catalogWebSearch ? ["the OpenBot catalog names openbot.web_search"] : []),
+  ...(prompt.catalogWebSearch ? ["the PurpleBot catalog names openbot.web_search"] : []),
   ...prompt.unfitSkills.map((skill) => `the prompt lists ${skill}`),
   ...(prompt.skillCreatorListed ? [] : ["the prompt does not list skill-creator"]),
 ];

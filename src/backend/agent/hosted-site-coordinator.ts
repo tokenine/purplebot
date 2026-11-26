@@ -126,7 +126,7 @@ export class HostedSiteCoordinator {
     if (!turnId || !agentId) {
       client.respondError(request.id, {
         code: -32602,
-        message: "OpenBot could not identify this hosted site request.",
+        message: "PurpleBot could not identify this hosted site request.",
       });
       return null;
     }
@@ -228,7 +228,7 @@ export class HostedSiteCoordinator {
   }
 
   #requireHostedSites(): AgentHostedSites {
-    if (!this.#hostedSites) throw new Error("OpenBot site hosting is unavailable.");
+    if (!this.#hostedSites) throw new Error("PurpleBot site hosting is unavailable.");
     return this.#hostedSites;
   }
 

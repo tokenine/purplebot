@@ -5,7 +5,7 @@ import Foundation
   internal import OpenBotShortcuts
 #endif
 
-// The shortcuts of OpenBot: List Agents, Send Message and Open Agent.
+// The shortcuts of PurpleBot: List Agents, Send Message and Open Agent.
 //
 // They run without the JavaScript of the app. iOS runs a shortcut in the background, also when the
 // app is not in memory, and there the app has no window and React Native does not run. List Agents
@@ -37,7 +37,7 @@ enum ShortcutNotice: String {
 struct ListAgentsIntent: AppIntent {
   static let title: LocalizedStringResource = "List Agents"
   static let description = IntentDescription(
-    "Shows your OpenBot agents. A tap on an agent opens its chat. The message button sends a message, and the app does not open."
+    "Shows your PurpleBot agents. A tap on an agent opens its chat. The message button sends a message, and the app does not open."
   )
   static let supportedModes: IntentModes = .background
   static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
@@ -57,7 +57,7 @@ struct ListAgentsIntent: AppIntent {
 struct SendMessageIntent: AppIntent {
   static let title: LocalizedStringResource = "Send Message"
   static let description = IntentDescription(
-    "Sends a message to the agent that you chose in OpenBot Settings > Shortcuts. The app does not open."
+    "Sends a message to the agent that you chose in PurpleBot Settings > Shortcuts. The app does not open."
   )
   static let supportedModes: IntentModes = .background
   static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
@@ -140,7 +140,7 @@ struct MessageAgentIntent: AppIntent {
 struct OpenAgentIntent: AppIntent {
   static let title: LocalizedStringResource = "Open Agent"
   static let description = IntentDescription(
-    "Opens the chat of the agent that you chose in OpenBot Settings > Shortcuts."
+    "Opens the chat of the agent that you chose in PurpleBot Settings > Shortcuts."
   )
   static let supportedModes: IntentModes = .foreground(.immediate)
 
@@ -161,7 +161,7 @@ struct OpenAgentIntent: AppIntent {
 /// its screens show, so it also waits for an app that starts now.
 @available(iOS 26.0, *)
 struct OpenOpenBotIntent: AppIntent {
-  static let title: LocalizedStringResource = "Open OpenBot"
+  static let title: LocalizedStringResource = "Open PurpleBot"
   static let isDiscoverable = false
   static let supportedModes: IntentModes = .foreground(.immediate)
 

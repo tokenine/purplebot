@@ -147,13 +147,13 @@ const valid: [string, (value: unknown) => unknown, unknown][] = [
   [
     "app info",
     decodeAppInfo,
-    { name: "OpenBot", version: "1.0.0", platform: "darwin", variant: "dev" } satisfies AppInfo,
+    { name: "PurpleBot", version: "1.0.0", platform: "darwin", variant: "dev" } satisfies AppInfo,
   ],
   [
     "app info with an install ID",
     decodeAppInfo,
     {
-      name: "OpenBot",
+      name: "PurpleBot",
       version: "1.0.0",
       platform: "darwin",
       variant: "production",
@@ -164,7 +164,7 @@ const valid: [string, (value: unknown) => unknown, unknown][] = [
     "app info drawn on the CPU",
     decodeAppInfo,
     {
-      name: "OpenBot",
+      name: "PurpleBot",
       version: "1.0.0",
       platform: "linux",
       variant: "production",
@@ -175,7 +175,7 @@ const valid: [string, (value: unknown) => unknown, unknown][] = [
     "app info on a Mac set to a 24-hour clock",
     decodeAppInfo,
     {
-      name: "OpenBot",
+      name: "PurpleBot",
       version: "1.0.0",
       platform: "darwin",
       variant: "production",
@@ -186,7 +186,7 @@ const valid: [string, (value: unknown) => unknown, unknown][] = [
     "app info on an X11 desktop with no compositor",
     decodeAppInfo,
     {
-      name: "OpenBot",
+      name: "PurpleBot",
       version: "1.0.0",
       platform: "linux",
       variant: "production",
@@ -197,7 +197,7 @@ const valid: [string, (value: unknown) => unknown, unknown][] = [
     "app info on a server with no Dynamic Island",
     decodeAppInfo,
     {
-      name: "OpenBot",
+      name: "PurpleBot",
       version: "1.0.0",
       platform: "linux",
       variant: "production",
@@ -419,27 +419,27 @@ const malformed: [string, (value: unknown) => unknown, unknown][] = [
   [
     "app info with an install ID that is not text",
     decodeAppInfo,
-    { name: "OpenBot", version: "1.0.0", platform: "darwin", variant: "production", analyticsInstallId: 1 },
+    { name: "PurpleBot", version: "1.0.0", platform: "darwin", variant: "production", analyticsInstallId: 1 },
   ],
   [
     "app info with a software rendering flag that is not a boolean",
     decodeAppInfo,
-    { name: "OpenBot", version: "1.0.0", platform: "linux", variant: "production", softwareRendering: "yes" },
+    { name: "PurpleBot", version: "1.0.0", platform: "linux", variant: "production", softwareRendering: "yes" },
   ],
   [
     "app info with an unknown hour cycle",
     decodeAppInfo,
-    { name: "OpenBot", version: "1.0.0", platform: "darwin", variant: "production", hourCycle: "h24" },
+    { name: "PurpleBot", version: "1.0.0", platform: "darwin", variant: "production", hourCycle: "h24" },
   ],
   [
     "app info with an unknown agent dock screen support",
     decodeAppInfo,
-    { name: "OpenBot", version: "1.0.0", platform: "linux", variant: "production", aboveAppsSupport: "no-composer" },
+    { name: "PurpleBot", version: "1.0.0", platform: "linux", variant: "production", aboveAppsSupport: "no-composer" },
   ],
   [
     "app info with a Dynamic Island availability that is not a boolean",
     decodeAppInfo,
-    { name: "OpenBot", version: "1.0.0", platform: "linux", variant: "production", dynamicIslandUnavailable: "yes" },
+    { name: "PurpleBot", version: "1.0.0", platform: "linux", variant: "production", dynamicIslandUnavailable: "yes" },
   ],
   ["a voice server with its key", decodeVoiceServerSettings, { ...voiceServer, apiKey: "sk-secret" }],
   [
@@ -461,7 +461,7 @@ const malformed: [string, (value: unknown) => unknown, unknown][] = [
   [
     "app info on an unknown platform",
     decodeAppInfo,
-    { name: "OpenBot", version: "1", platform: "aix", variant: "dev" },
+    { name: "PurpleBot", version: "1", platform: "aix", variant: "dev" },
   ],
   [
     "setup state with an unknown provider",

@@ -1,5 +1,5 @@
 [Unit]
-Description=OpenBot hosted server
+Description=PurpleBot hosted server
 Wants=network-online.target openbot-update-apply.service
 After=network-online.target display-manager.service
 ConditionPathExists=!/run/openbot-pre-stop
@@ -10,10 +10,10 @@ User=@SERVICE_USER@
 RuntimeDirectory=openbot
 RuntimeDirectoryMode=0700
 Environment=XDG_RUNTIME_DIR=/run/openbot
-ExecStartPre=-+/opt/OpenBot/hosted/openbot-hosted-update trigger
-ExecStartPre=-+/opt/OpenBot/hosted/openbot-hosted-keyring start
-ExecStart=/opt/OpenBot/hosted/openbot-hosted-server
-ExecStop=/opt/OpenBot/hosted/openbot-hosted-server --stop
+ExecStartPre=-+/opt/PurpleBot/hosted/openbot-hosted-update trigger
+ExecStartPre=-+/opt/PurpleBot/hosted/openbot-hosted-keyring start
+ExecStart=/opt/PurpleBot/hosted/openbot-hosted-server
+ExecStop=/opt/PurpleBot/hosted/openbot-hosted-server --stop
 Restart=always
 RestartSec=10
 RestartPreventExitStatus=78

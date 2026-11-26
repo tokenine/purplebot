@@ -150,7 +150,7 @@ const answer = (message) => {
       const answered = text.includes("This replies to message:") ? /<<REPLY([\\s\\S]*?)REPLY>>/.exec(task) : null;
       const named = answered || /<<CALLS([\\s\\S]*?)CALLS>>/.exec(task);
       const next = /<<NEXT([\\s\\S]*?)NEXT>>/.exec(task);
-      const request = !named && task.includes("TEAMMATE-REQUEST") ? /Message from OpenBot teammate .*? \\(([^()\\s]+)\\)\\.\\nMessage ID: (\\S+)/.exec(task) : null;
+      const request = !named && task.includes("TEAMMATE-REQUEST") ? /Message from PurpleBot teammate .*? \\(([^()\\s]+)\\)\\.\\nMessage ID: (\\S+)/.exec(task) : null;
       const requestReply = request && { tool: "send_message", arguments: { recipientAgentIds: [request[1]], replyToMessageId: request[2], text: "Status: done\\nResult: The build passed.\\nEvidence: none", expectsReply: false } };
       const textOnly = task.includes("TEAMMATE-REQUEST-TEXT");
       const turnCalls = named ? JSON.parse(named[1]) : task.includes("TEAMMATE-REQUEST-NOREPLY") ? [] : textOnly ? [requestReply] : requestReply ? [{ tool: "routine_no_update", arguments: {} }, requestReply, { tool: "routine_no_update", arguments: {} }] : task.includes("TEAMMATE-QUIET") ? [{ tool: "routine_no_update", arguments: {} }] : [];
@@ -604,7 +604,7 @@ try {
   });
   const unansweredDelivery = mailbox.completedDeliveriesOfTurn(checker.id, unanswered.turn.turnId)[0]?.delivery;
   pass(
-    "A teammate request with no reply keeps its answer in the chat after OpenBot sent it to the teammate",
+    "A teammate request with no reply keeps its answer in the chat after PurpleBot sent it to the teammate",
     unanswered.event.type === "turn-completed" &&
       unanswered.event.quiet !== true &&
       unanswered.answers.every((message) => message.itemType !== ROUTINE_QUIET_ANSWER_ITEM_TYPE) &&

@@ -42,7 +42,7 @@ export class ThreadReplay {
     const thread = decodeThreadAgentRow(
       db.prepare("SELECT agent_id FROM projection_threads WHERE thread_id = ?").get(threadId),
     );
-    if (!thread) throw new Error(`Unknown OpenBot thread: ${threadId}`);
+    if (!thread) throw new Error(`Unknown PurpleBot thread: ${threadId}`);
 
     const fold = new ThreadMessageFold(thread.agent_id, threadId);
     const sessions = new Map<string, ProviderSession & { sequence: number }>();

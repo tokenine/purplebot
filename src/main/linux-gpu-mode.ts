@@ -158,7 +158,7 @@ function quitOnGpuRestartLoop(): void {
     }
     quitting = true;
     logger.error(
-      `The GPU process stopped ${GPU_RESTART_LOOP_LIMIT} times in ${GPU_RESTART_LOOP_WINDOW_MS / 1000} s, so OpenBot quits.`,
+      `The GPU process stopped ${GPU_RESTART_LOOP_LIMIT} times in ${GPU_RESTART_LOOP_WINDOW_MS / 1000} s, so PurpleBot quits.`,
     );
     app.quit();
   });

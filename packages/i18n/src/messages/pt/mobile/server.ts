@@ -14,10 +14,10 @@ export const messages = {
   "mobile.server.drawer.hiddenServers": "Servidores ocultos",
   "mobile.server.drawer.hideFailed": "Não foi possível ocultar {name}",
   "mobile.server.drawer.showFailed": "Não foi possível mostrar {name}",
-  "mobile.server.drawer.actionFailed": "O OpenBot não conseguiu concluir esta ação. Tente novamente.",
+  "mobile.server.drawer.actionFailed": "O PurpleBot não conseguiu concluir esta ação. Tente novamente.",
   "mobile.server.drawer.moveUp": "Mover para cima",
   "mobile.server.drawer.moveDown": "Mover para baixo",
-  "mobile.server.drawer.orderHint": "O OpenBot abre no primeiro servidor. A ordem é salva neste dispositivo.",
+  "mobile.server.drawer.orderHint": "O PurpleBot abre no primeiro servidor. A ordem é salva neste dispositivo.",
   "mobile.server.drawer.title": "Servidores",
   "mobile.server.drawer.serverSettings": "Configurações do servidor",
   "mobile.server.drawer.serverListHint": "Mostra ou oculta os servidores",
@@ -38,8 +38,8 @@ export const messages = {
   "mobile.server.drawer.close": "Fechar painel de servidores",
   "mobile.server.invite.noExpiry": "{role} · Não expira",
   "mobile.server.invite.expires": "{role} · Expira em {date}",
-  "mobile.server.invite.loadFailed": "O OpenBot não conseguiu carregar este convite.",
-  "mobile.server.invite.joinFailed": "O OpenBot não conseguiu entrar neste servidor.",
+  "mobile.server.invite.loadFailed": "O PurpleBot não conseguiu carregar este convite.",
+  "mobile.server.invite.joinFailed": "O PurpleBot não conseguiu entrar neste servidor.",
   "mobile.server.invite.checking": "Verificando convite…",
   "mobile.server.invite.unavailable": "Convite indisponível",
   "mobile.server.invite.verifying": "Verificando a identidade do servidor.",
@@ -82,7 +82,7 @@ export const messages = {
   "mobile.server.local.optionHint": "No computador que roda {name}, com seus próprios agentes, conversas e arquivos.",
   "mobile.server.local.title": "Novo servidor",
   "mobile.server.local.description":
-    "O servidor roda no computador que roda {name}, com seus próprios agentes, conversas e arquivos. Ele fica disponível enquanto o OpenBot roda nesse computador.",
+    "O servidor roda no computador que roda {name}, com seus próprios agentes, conversas e arquivos. Ele fica disponível enquanto o PurpleBot roda nesse computador.",
   "mobile.server.local.nameLabel": "Nome do servidor",
   "mobile.server.local.nameTooShort": "Use pelo menos {limit} caracteres.",
   "mobile.server.local.create": "Criar",
@@ -94,26 +94,26 @@ export const messages = {
   "mobile.server.local.createdOn": "{name} roda no mesmo computador que {computer}.",
   "mobile.server.local.waiting": "Aguardando {name} ficar online…",
   "mobile.server.local.notPublished":
-    "{name} está rodando, mas este celular ainda não consegue abri-lo. Verifique se o OpenBot no computador que roda {computer} está conectado à conta e online.",
+    "{name} está rodando, mas este celular ainda não consegue abri-lo. Verifique se o PurpleBot no computador que roda {computer} está conectado à conta e online.",
   "mobile.server.local.open": "Abrir servidor",
   "mobile.server.local.ownerOnly": "Só o proprietário pode criar um servidor neste computador.",
-  "mobile.server.local.unsupported": "Atualize o OpenBot neste computador para criar um servidor aqui.",
+  "mobile.server.local.unsupported": "Atualize o PurpleBot neste computador para criar um servidor aqui.",
   "mobile.server.local.deleteOffline":
-    "Só o computador deste servidor pode excluí-lo. Abra o OpenBot nesse computador e tente de novo.",
+    "Só o computador deste servidor pode excluí-lo. Abra o PurpleBot nesse computador e tente de novo.",
   "mobile.server.hosted.intro.title": "Seus agentes sempre ativos",
   "mobile.server.hosted.intro.description":
-    "Um servidor na nuvem executa seus agentes e rotinas quando o computador está desligado. O OpenBot configura e mantém o servidor funcionando.",
+    "Um servidor na nuvem executa seus agentes e rotinas quando o computador está desligado. O PurpleBot configura e mantém o servidor funcionando.",
   "mobile.server.hosted.planFacts": "{members} · {storage} · {sites} · {speed}",
   "mobile.server.hosted.steps.title": "Adicione no seu computador",
-  "mobile.server.hosted.steps.open": "Abra o OpenBot no seu computador.",
+  "mobile.server.hosted.steps.open": "Abra o PurpleBot no seu computador.",
   "mobile.server.hosted.steps.settings": "Vá em Configurações → Servidores hospedados.",
   "mobile.server.hosted.steps.add": "Selecione Adicionar servidor e escolha um plano.",
   "mobile.server.hosted.plansToggle": "O que cada plano inclui",
   "mobile.server.hosted.computer.add": "Adicionar um servidor na nuvem",
   "mobile.server.hosted.computer.addHint":
-    "No OpenBot, abra Configurações → Servidores hospedados e selecione Adicionar servidor.",
+    "No PurpleBot, abra Configurações → Servidores hospedados e selecione Adicionar servidor.",
   "mobile.server.hosted.computer.change": "Mudar de plano",
-  "mobile.server.hosted.computer.changeHint": "No OpenBot, abra Configurações → Cobrança.",
+  "mobile.server.hosted.computer.changeHint": "No PurpleBot, abra Configurações → Cobrança.",
   "mobile.server.hosted.yourServers": "Seus servidores",
   "mobile.server.hosted.currentPlan": "Seu plano",
   "mobile.server.hosted.soldOut": "Esgotado",
@@ -131,7 +131,7 @@ export const messages = {
   "mobile.server.hosted.paymentTitle": "Aguardando o pagamento",
   "mobile.server.hosted.paymentDescription": "A configuração começa quando o pagamento é confirmado.",
   "mobile.server.hosted.progressTitle": "Configurando {name}",
-  "mobile.server.hosted.progressDescription": "O OpenBot prepara uma máquina privada para você.",
+  "mobile.server.hosted.progressDescription": "O PurpleBot prepara uma máquina privada para você.",
   "mobile.server.hosted.closeHint":
     "Você pode fechar esta janela. A configuração continua, e o servidor aparece na sua lista quando estiver pronto.",
   "mobile.server.hosted.readyTitle": "{name} está pronto",
@@ -140,21 +140,21 @@ export const messages = {
   "mobile.server.hosted.open": "Abrir servidor",
   "mobile.server.hosted.failedTitle": "Não foi possível iniciar o servidor",
   "mobile.server.hosted.failedDescription":
-    "Tente novamente. Se falhar de novo, exclua o servidor em Configurações no OpenBot do seu computador.",
+    "Tente novamente. Se falhar de novo, exclua o servidor em Configurações no PurpleBot do seu computador.",
   "mobile.server.hosted.retrying": "Iniciando…",
   "mobile.server.hosted.expiredTitle": "A página de pagamento expirou",
   "mobile.server.hosted.expiredDescription": "O servidor não foi pago, então foi removido.",
   "mobile.server.hosted.step.payment": "Confirmar o pagamento",
   "mobile.server.hosted.step.create": "Criar a máquina",
-  "mobile.server.hosted.step.start": "Iniciar o OpenBot",
+  "mobile.server.hosted.step.start": "Iniciar o PurpleBot",
   "mobile.server.hosted.step.connect": "Conectar à sua conta",
   "mobile.server.hosted.detail.payment": "Aguardando a Stripe",
   "mobile.server.hosted.detail.reserve": "Reservando uma máquina privada",
-  "mobile.server.hosted.detail.copy": "Copiando o OpenBot para a máquina",
+  "mobile.server.hosted.detail.copy": "Copiando o PurpleBot para a máquina",
   "mobile.server.hosted.detail.key": "Adicionando uma chave de login de uso único",
   "mobile.server.hosted.detail.boot": "Ligando a máquina",
-  "mobile.server.hosted.detail.app": "Iniciando o OpenBot",
-  "mobile.server.hosted.detail.wait": "Aguardando a resposta do OpenBot",
+  "mobile.server.hosted.detail.app": "Iniciando o PurpleBot",
+  "mobile.server.hosted.detail.wait": "Aguardando a resposta do PurpleBot",
   "mobile.server.hosted.detail.signIn": "Entrando com sua conta",
   "mobile.server.hosted.detail.publish": "Adicionando o servidor à sua conta",
   "mobile.server.hosted.detail.check": "Verificando a conexão",
@@ -162,7 +162,7 @@ export const messages = {
   "mobile.server.hosted.stepActive": "em andamento",
   "mobile.server.hosted.stepPending": "não iniciado",
   "mobile.server.hosted.stepFailed": "falhou",
-  "mobile.server.scan.notInvitation": "Este código QR não é um convite do OpenBot.",
+  "mobile.server.scan.notInvitation": "Este código QR não é um convite do PurpleBot.",
   "mobile.server.scan.title": "Ler convite",
   "mobile.server.role.owner": "proprietário",
   "mobile.server.role.admin": "administrador",
@@ -202,7 +202,7 @@ export const messages = {
   "mobile.server.routines.status.paused": "Pausada",
   "mobile.server.routines.status.failed": "Falhou",
   "mobile.server.routines.status.completed": "Concluída",
-  "mobile.server.threads.unsupported": "Este host não oferece suporte a tópicos. Atualize o OpenBot no host.",
+  "mobile.server.threads.unsupported": "Este host não oferece suporte a tópicos. Atualize o PurpleBot no host.",
   "mobile.server.threads.ask": "O que você quer que seja feito?",
   "mobile.server.threads.chooseAgent": "Iniciar o tópico com",
   "mobile.server.threads.agentLabel": "Iniciar o tópico com {name}",
@@ -269,7 +269,7 @@ export const messages = {
     "O servidor para e inicia novamente. Isso leva cerca de um minuto. Os turnos de agentes em andamento param, e os membros perdem a conexão até o servidor voltar. Arquivos e chats são mantidos.",
   "mobile.server.settings.restartConfirm": "Reiniciar",
   "mobile.server.settings.restarted": "{name} está reiniciando",
-  "mobile.server.settings.restartUnsupported": "Atualize o OpenBot neste servidor para reiniciá-lo aqui.",
+  "mobile.server.settings.restartUnsupported": "Atualize o PurpleBot neste servidor para reiniciá-lo aqui.",
   "mobile.server.settings.leaveTitle": "Sair de {name}?",
   "mobile.server.settings.leaveBody": "Você precisará de outro convite para entrar novamente.",
   "mobile.server.settings.leave": "Sair do servidor",
@@ -281,7 +281,7 @@ export const messages = {
   "mobile.server.settings.show": "Mostrar servidor",
   "mobile.server.settings.deleteTitle": "Excluir {name}?",
   "mobile.server.settings.deleteBody":
-    "O OpenBot para o servidor no computador dele e move os agentes, conversas e arquivos para a lixeira desse computador. O servidor sai da lista de servidores em todos os seus dispositivos.",
+    "O PurpleBot para o servidor no computador dele e move os agentes, conversas e arquivos para a lixeira desse computador. O servidor sai da lista de servidores em todos os seus dispositivos.",
   "mobile.server.settings.delete": "Excluir servidor",
   "mobile.server.settings.name": "Nome do servidor",
   "mobile.server.settings.nameLength": "Use de {min} a {max} caracteres.",
@@ -295,7 +295,7 @@ export const messages = {
   "mobile.server.settings.identityNotAllowed":
     "Só um proprietário ou administrador pode alterar o nome e o logotipo do servidor.",
   "mobile.server.settings.identityUnsupported":
-    "Atualize o OpenBot neste servidor para alterar o nome e o logotipo aqui.",
+    "Atualize o PurpleBot neste servidor para alterar o nome e o logotipo aqui.",
   "mobile.server.settings.identityOffline": "Conecte-se a este servidor para alterar o nome e o logotipo.",
   "mobile.server.settings.appearance": "Forma e cor",
   "mobile.server.settings.appearanceShape": "Forma",
@@ -362,7 +362,7 @@ export const messages = {
   "mobile.server.storage.category.caches": "Arquivos do servidor em cache",
   "mobile.server.storage.category.runtimes": "Ambientes de execução dos provedores",
   "mobile.server.storage.category.logs": "Registros",
-  "mobile.server.storage.total": "OpenBot em {name}",
+  "mobile.server.storage.total": "PurpleBot em {name}",
   "mobile.server.storage.used": "Usado",
   "mobile.server.storage.byType": "Armazenamento por tipo",
   "mobile.server.storage.free": "{size} livres neste disco",
@@ -384,10 +384,10 @@ export const messages = {
   "mobile.server.storage.clearTitle.caches": "Limpar arquivos do servidor em cache?",
   "mobile.server.storage.clearTitle.logs": "Limpar registros?",
   "mobile.server.storage.clearBody.caches":
-    "Cópias de arquivos do servidor. O OpenBot as baixa novamente quando você as abre.",
+    "Cópias de arquivos do servidor. O PurpleBot as baixa novamente quando você as abre.",
   "mobile.server.storage.clearBody.logs": "Registros de diagnóstico. Novos registros começam imediatamente.",
   "mobile.server.storage.clearFailed": "Não foi possível limpar os dados",
-  "mobile.server.storage.clearFailedBody": "O OpenBot não conseguiu limpar estes dados no servidor.",
+  "mobile.server.storage.clearFailedBody": "O PurpleBot não conseguiu limpar estes dados no servidor.",
   "mobile.server.storage.noFiles": "Não há arquivos armazenados neste servidor.",
   "mobile.server.library.type.all": "Todos",
   "mobile.server.library.type.images": "Imagens",
@@ -477,7 +477,7 @@ export const messages = {
   "mobile.server.settings.timezoneSaveFailed": "Não foi possível salvar o fuso horário. Tente de novo.",
   "mobile.server.settings.timezoneUnavailable":
     "Conecte-se a este servidor como proprietário ou admin para alterar o fuso horário.",
-  "mobile.server.settings.timezoneUnsupported": "Atualize o OpenBot neste servidor para alterar o fuso horário aqui.",
+  "mobile.server.settings.timezoneUnsupported": "Atualize o PurpleBot neste servidor para alterar o fuso horário aqui.",
   "mobile.server.settings.signalHomeAutomatic": "Automático",
   "mobile.server.settings.signalHomeNearest": "O servidor do Signal mais próximo",
   "mobile.server.settings.signalHomeInUse": "Em uso: {name}",
@@ -486,7 +486,7 @@ export const messages = {
   "mobile.server.settings.signalHomeUnavailable":
     "Conecte-se a este servidor como proprietário ou administrador para mudar o servidor do Signal dele.",
   "mobile.server.settings.signalHomeUnsupported":
-    "Atualize o OpenBot neste servidor para mudar aqui o servidor do Signal dele.",
+    "Atualize o PurpleBot neste servidor para mudar aqui o servidor do Signal dele.",
   "mobile.server.settings.signalHomeDescription":
     "Os membros se conectam a este servidor por meio deste servidor do Signal. Um servidor do Signal com menor latência dá conexões mais rápidas.",
   "mobile.server.settings.signalHomeFallback":
@@ -509,7 +509,7 @@ export const messages = {
   "mobile.server.settings.voiceModelSaveFailed":
     "Não foi possível alterar o modelo de reconhecimento de fala. Tente de novo.",
   "mobile.server.settings.voiceModelUnsupported":
-    "Atualize o OpenBot neste servidor para alterar o reconhecimento de fala aqui.",
+    "Atualize o PurpleBot neste servidor para alterar o reconhecimento de fala aqui.",
   "mobile.server.settings.voiceModelReady": "Pronto",
   "mobile.server.settings.voiceModelDownloading": "Baixando: {percent}",
   "mobile.server.settings.voiceModelSize": "Download de {size}",
@@ -533,7 +533,7 @@ export const messages = {
     "O servidor usa a chave nova. Este app passa para ela quando a lista de servidores carregar de novo.",
   "mobile.server.settings.keyChangeFailed": "Não foi possível alterar a chave do servidor. Tente de novo.",
   "mobile.server.settings.keyOwnerOnly": "Só o proprietário pode alterar a chave do servidor.",
-  "mobile.server.settings.keyUnsupported": "Atualize o OpenBot neste servidor para alterar a chave dele aqui.",
+  "mobile.server.settings.keyUnsupported": "Atualize o PurpleBot neste servidor para alterar a chave dele aqui.",
   "mobile.server.settings.turnLimit": "Tópicos ao mesmo tempo",
   "mobile.server.settings.turnLimitDescription":
     "Quantos tópicos de agentes podem ser executados ao mesmo tempo neste servidor. Mais tópicos usam mais memória.",
@@ -543,7 +543,7 @@ export const messages = {
   "mobile.server.settings.turnLimitsLoadFailed": "Não foi possível carregar os limites de tópicos deste servidor.",
   "mobile.server.settings.turnLimitsSaveFailed": "Não foi possível salvar o limite de tópicos. Tente de novo.",
   "mobile.server.settings.turnLimitsUnsupported":
-    "Atualize o OpenBot neste servidor para alterar o limite de tópicos aqui.",
+    "Atualize o PurpleBot neste servidor para alterar o limite de tópicos aqui.",
   "mobile.server.settings.agentTaskLimit": "Tópicos em paralelo por agente",
   "mobile.server.settings.agentTaskLimitDescription":
     "Quantos tópicos cada agente sem limite próprio pode executar ao mesmo tempo.",
@@ -553,7 +553,7 @@ export const messages = {
   "mobile.server.settings.memoryLimitLoadFailed": "Não foi possível carregar o limite de memórias deste servidor.",
   "mobile.server.settings.memoryLimitSaveFailed": "Não foi possível salvar o limite de memórias. Tente de novo.",
   "mobile.server.settings.memoryLimitUnsupported":
-    "Atualize o OpenBot neste servidor para alterar o limite de memórias aqui.",
+    "Atualize o PurpleBot neste servidor para alterar o limite de memórias aqui.",
   "mobile.server.settings.mediaApprovalCredits": "Perguntar antes de gastar mais de",
   "mobile.server.settings.mediaApprovalCreditsUnit": "créditos",
   "mobile.server.settings.mediaApprovalCreditsLoadFailed":
@@ -561,7 +561,7 @@ export const messages = {
   "mobile.server.settings.mediaApprovalCreditsSaveFailed":
     "Não foi possível salvar o limite de aprovação de créditos. Tente de novo.",
   "mobile.server.settings.mediaApprovalCreditsUnsupported":
-    "Atualize o OpenBot neste servidor para alterar aqui o limite de aprovação de créditos.",
+    "Atualize o PurpleBot neste servidor para alterar aqui o limite de aprovação de créditos.",
   "mobile.server.settings.mediaApprovalAgents": "Os agentes podem usar créditos",
   "mobile.server.settings.mediaApprovalAgentsSaveFailed":
     "Não foi possível alterar o uso de créditos pelos agentes. Tente de novo.",
@@ -588,7 +588,7 @@ export const messages = {
   "mobile.server.settings.browsingMemoryLoadFailed": "Não foi possível carregar a configuração de navegação.",
   "mobile.server.settings.learningSaveFailed": "Não foi possível salvar esta configuração. Tente de novo.",
   "mobile.server.settings.learningUnsupported":
-    "Atualize o OpenBot neste servidor para alterar esta configuração aqui.",
+    "Atualize o PurpleBot neste servidor para alterar esta configuração aqui.",
   "mobile.server.settings.responseStyleDescription":
     "Natural: os agentes enviam atualizações curtas enquanto trabalham, e o chat as mostra. Clássico: os agentes respondem uma vez, ao terminar.",
   "mobile.server.settings.responseStyleNatural": "Natural",
@@ -596,17 +596,17 @@ export const messages = {
   "mobile.server.settings.personalityLoadFailed": "Não foi possível carregar a personalidade do servidor.",
   "mobile.server.settings.personalitySaveFailed": "Não foi possível salvar o estilo de resposta. Tente de novo.",
   "mobile.server.settings.personalityUnsupported":
-    "Atualize o OpenBot neste servidor para alterar o estilo de resposta aqui.",
+    "Atualize o PurpleBot neste servidor para alterar o estilo de resposta aqui.",
   "mobile.server.settings.agentsUnavailable":
     "Conecte-se a este servidor como proprietário ou admin para alterar as configurações dos agentes.",
   "mobile.server.route.browserProfiles": "Perfis do navegador",
   "mobile.server.browserProfiles.unavailable":
     "Só o proprietário ou um administrador de um servidor online pode gerenciar os perfis do navegador dele.",
   "mobile.server.browserProfiles.unsupported":
-    "Atualize o OpenBot neste servidor para gerenciar os perfis do navegador aqui.",
+    "Atualize o PurpleBot neste servidor para gerenciar os perfis do navegador aqui.",
   "mobile.server.browserProfiles.loading": "Carregando perfis do navegador…",
-  "mobile.server.browserProfiles.loadFailed": "O OpenBot não conseguiu carregar os perfis do navegador.",
-  "mobile.server.browserProfiles.saveFailed": "O OpenBot não conseguiu alterar o perfil do navegador.",
+  "mobile.server.browserProfiles.loadFailed": "O PurpleBot não conseguiu carregar os perfis do navegador.",
+  "mobile.server.browserProfiles.saveFailed": "O PurpleBot não conseguiu alterar o perfil do navegador.",
   "mobile.server.browserProfiles.description":
     "Cada perfil guarda seus próprios logins, cookies e dados de sites no computador que executa o servidor. Os agentes que usam o mesmo perfil compartilham os logins.",
   "mobile.server.browserProfiles.shared": "Compartilhado",
@@ -641,13 +641,13 @@ export const messages = {
   "mobile.server.browserProfiles.deleteBody":
     "Isso exclui os logins, cookies e dados de sites do perfil. As abas abertas dele fecham.",
   "mobile.server.browserProfiles.deleteAgents": "Estes agentes passam para o perfil compartilhado: {agents}.",
-  "mobile.server.browserProxies.unsupported": "Atualize o OpenBot neste servidor para gerenciar os proxies aqui.",
+  "mobile.server.browserProxies.unsupported": "Atualize o PurpleBot neste servidor para gerenciar os proxies aqui.",
   "mobile.server.browserProxies.loading": "Carregando proxies…",
-  "mobile.server.browserProxies.loadFailed": "O OpenBot não conseguiu carregar os proxies.",
-  "mobile.server.browserProxies.saveFailed": "O OpenBot não conseguiu alterar o proxy.",
+  "mobile.server.browserProxies.loadFailed": "O PurpleBot não conseguiu carregar os proxies.",
+  "mobile.server.browserProxies.saveFailed": "O PurpleBot não conseguiu alterar o proxy.",
   "mobile.server.browserProxies.title": "Proxies",
   "mobile.server.browserProxies.sectionHint":
-    "Um perfil com proxy abre as páginas por esse proxy. Um membro compartilha um computador pelo app do OpenBot para computador.",
+    "Um perfil com proxy abre as páginas por esse proxy. Um membro compartilha um computador pelo app do PurpleBot para computador.",
   "mobile.server.browserProxies.limit": "Um servidor pode ter no máximo {limit} proxies.",
   "mobile.server.browserProxies.add": "Adicionar proxy",
   "mobile.server.browserProxies.new": "Novo proxy",
@@ -675,7 +675,7 @@ export const messages = {
   "mobile.server.browserProxies.addressInvalid":
     "Este não é um endereço de proxy. Use socks5://host:1080, http://user:password@host:3128 ou host:port:user:password.",
   "mobile.server.browserProxies.computerHint":
-    "As páginas dos perfis que usam este computador saem pela conexão de internet dele enquanto o membro o compartilha pelo app do OpenBot para computador. O computador abre apenas endereços públicos da internet.",
+    "As páginas dos perfis que usam este computador saem pela conexão de internet dele enquanto o membro o compartilha pelo app do PurpleBot para computador. O computador abre apenas endereços públicos da internet.",
   "mobile.server.browserProxies.profilesTitle": "Perfis",
   "mobile.server.browserProxies.delete": "Excluir proxy",
   "mobile.server.browserProxies.deleteHint": "Excluir passa os perfis deste proxy para “Automático”.",
@@ -693,11 +693,11 @@ export const messages = {
   "mobile.server.browserProxies.choiceHint":
     "“Automático” usa as configurações de proxy do computador que executa o servidor. Uma alteração fecha as abas abertas do perfil.",
   "mobile.server.browserProxies.shareHint":
-    "Para usar seu computador, compartilhe-o no app do OpenBot para computador.",
+    "Para usar seu computador, compartilhe-o no app do PurpleBot para computador.",
   "mobile.server.route.connectors": "Conectores",
   "mobile.server.connectors.unavailable":
     "Conecte-se a este servidor como proprietário ou administrador para gerenciar os conectores dele.",
-  "mobile.server.connectors.unsupported": "Atualize o OpenBot neste servidor para gerenciar os conectores dele aqui.",
+  "mobile.server.connectors.unsupported": "Atualize o PurpleBot neste servidor para gerenciar os conectores dele aqui.",
   "mobile.server.connectors.loading": "Carregando conectores…",
   "mobile.server.connectors.localOnly": "Só no app para computador",
   "mobile.server.connectors.statusConnected": "Conectado",
@@ -721,7 +721,7 @@ export const messages = {
   "mobile.server.connectors.bitwarden.description":
     "Preencha logins do navegador em {host} a partir do Bitwarden ou do Vaultwarden.",
   "mobile.server.connectors.bitwarden.howItWorks":
-    "{host} entra com a própria CLI do Bitwarden. No seu cofre, crie uma pasta chamada Shared with OpenBot e coloque nela apenas os logins que os agentes podem usar. No cofre web, abra Configurações › Segurança › Chaves e veja sua chave de API.",
+    "{host} entra com a própria CLI do Bitwarden. No seu cofre, crie uma pasta chamada Shared with PurpleBot e coloque nela apenas os logins que os agentes podem usar. No cofre web, abra Configurações › Segurança › Chaves e veja sua chave de API.",
   "mobile.server.connectors.bitwarden.serverUrl": "Endereço do servidor",
   "mobile.server.connectors.bitwarden.serverUrlHint":
     "Bitwarden, ou o endereço do seu servidor Vaultwarden. {host} precisa acessá-lo por HTTPS.",
@@ -735,7 +735,7 @@ export const messages = {
   "mobile.server.connectors.bitwarden.connectingBody":
     "{host} está entrando no Bitwarden. A primeira entrada pode levar alguns minutos.",
   "mobile.server.connectors.bitwarden.folderTitle": "Pasta compartilhada",
-  "mobile.server.connectors.bitwarden.folderName": "Shared with OpenBot",
+  "mobile.server.connectors.bitwarden.folderName": "Shared with PurpleBot",
   "mobile.server.connectors.bitwarden.folderKind": "Pasta no Bitwarden",
   "mobile.server.connectors.bitwarden.folderFooter":
     "Mova um login para esta pasta no Bitwarden para que os agentes possam usá-lo. Remova-o para parar.",
@@ -746,7 +746,7 @@ export const messages = {
   "mobile.server.connectors.github.title": "GitHub",
   "mobile.server.connectors.github.description":
     "Todos os agentes em {host} podem usar seus repositórios, issues e pull requests do GitHub, além de gh e git.",
-  "mobile.server.connectors.github.unavailable": "O OpenBot neste servidor não consegue conectar o GitHub.",
+  "mobile.server.connectors.github.unavailable": "O PurpleBot neste servidor não consegue conectar o GitHub.",
   "mobile.server.connectors.github.connect": "Conectar GitHub",
   "mobile.server.connectors.github.codeTitle": "Digite este código no GitHub",
   "mobile.server.connectors.github.codeFooter":
@@ -756,12 +756,12 @@ export const messages = {
   "mobile.server.connectors.github.connectedAs": "Conectado como @{login}",
   "mobile.server.connectors.github.chooseRepositories": "Escolher repositórios",
   "mobile.server.connectors.github.repositoriesFooter":
-    "Os agentes só podem usar os repositórios em que o aplicativo OpenBot para GitHub está instalado.",
+    "Os agentes só podem usar os repositórios em que o aplicativo PurpleBot para GitHub está instalado.",
   "mobile.server.connectors.github.repositoriesTitle": "Repositórios",
   "mobile.server.connectors.github.repositoriesLoading": "Lendo os repositórios do GitHub",
-  "mobile.server.connectors.github.repositoriesFailed": "O OpenBot não conseguiu ler os repositórios do GitHub.",
+  "mobile.server.connectors.github.repositoriesFailed": "O PurpleBot não conseguiu ler os repositórios do GitHub.",
   "mobile.server.connectors.github.noRepositories":
-    "O aplicativo OpenBot para GitHub ainda não está instalado em nenhum repositório.",
+    "O aplicativo PurpleBot para GitHub ainda não está instalado em nenhum repositório.",
   "mobile.server.connectors.github.moreRepositories": {
     one: "E mais {count} repositório",
     other: "E mais {count} repositórios",
@@ -775,12 +775,12 @@ export const messages = {
   "mobile.server.connectors.github.disconnect": "Desconectar GitHub",
   "mobile.server.connectors.github.disconnectTitle": "Desconectar GitHub?",
   "mobile.server.connectors.github.disconnectBody":
-    "Isso remove o login de @{login} de {host}, e todos os agentes perdem as ferramentas do GitHub, gh e git. Em seguida, o GitHub abre para você revogar o OpenBot.",
+    "Isso remove o login de @{login} de {host}, e todos os agentes perdem as ferramentas do GitHub, gh e git. Em seguida, o GitHub abre para você revogar o PurpleBot.",
   "mobile.server.connectors.onePassword.title": "1Password",
   "mobile.server.connectors.onePassword.description":
-    "Compartilhe um cofre dedicado do 1Password com o OpenBot em {host} por meio de uma conta de serviço, para que os agentes em {host} possam entrar em sites no navegador dele.",
+    "Compartilhe um cofre dedicado do 1Password com o PurpleBot em {host} por meio de uma conta de serviço, para que os agentes em {host} possam entrar em sites no navegador dele.",
   "mobile.server.connectors.onePassword.howItWorks":
-    "No 1Password.com, crie uma conta de serviço que possa ler apenas o cofre que você compartilha com o OpenBot e cole o token dela aqui. {host} verifica o token e o guarda; este celular não. Os agentes nunca veem uma senha.",
+    "No 1Password.com, crie uma conta de serviço que possa ler apenas o cofre que você compartilha com o PurpleBot e cole o token dela aqui. {host} verifica o token e o guarda; este celular não. Os agentes nunca veem uma senha.",
   "mobile.server.connectors.onePassword.token": "Token da conta de serviço",
   "mobile.server.connectors.onePassword.tokenPlaceholder": "ops_…",
   "mobile.server.connectors.onePassword.connect": "Conectar o 1Password",
@@ -797,9 +797,9 @@ export const messages = {
     "{host} esquece o token. O cofre e a conta de serviço continuam no 1Password; remova-os lá se não precisar mais deles.",
   "mobile.server.connectors.protonPass.title": "Proton Pass",
   "mobile.server.connectors.protonPass.description":
-    "Compartilhe um cofre do Proton Pass com o OpenBot em {host}, para que os agentes em {host} possam entrar em sites no navegador dele.",
+    "Compartilhe um cofre do Proton Pass com o PurpleBot em {host}, para que os agentes em {host} possam entrar em sites no navegador dele.",
   "mobile.server.connectors.protonPass.keyHelp":
-    "No Proton Pass, crie uma chave de acesso que só possa ler o cofre que você compartilha com o OpenBot e cole-a aqui. {host} guarda a chave; este telefone não.",
+    "No Proton Pass, crie uma chave de acesso que só possa ler o cofre que você compartilha com o PurpleBot e cole-a aqui. {host} guarda a chave; este telefone não.",
   "mobile.server.connectors.protonPass.keyPlaceholder": "pst_…",
   "mobile.server.connectors.protonPass.plan":
     "Seu plano Proton não inclui a ferramenta de linha de comando do Proton Pass. Ela precisa de um plano do Proton que inclua o Pass Plus. Outros planos pagos, como o Mail Plus, não a incluem. Mude o plano da sua conta e conecte novamente.",
@@ -840,14 +840,14 @@ export const messages = {
     "{host} exclui a chave de acesso dele. O cofre e os logins dele continuam na sua conta do {name}.",
   "mobile.server.connectors.slack.title": "Slack",
   "mobile.server.connectors.slack.description":
-    "As pessoas mencionam @OpenBot no Slack ou enviam uma mensagem direta para ele. O Orquestrador do Slack consulta o agente certo e responde.",
+    "As pessoas mencionam @PurpleBot no Slack ou enviam uma mensagem direta para ele. O Orquestrador do Slack consulta o agente certo e responde.",
   "mobile.server.connectors.slack.attention": {
     one: "{count} espaço de trabalho precisa de atenção",
     other: "{count} espaços de trabalho precisam de atenção",
   },
   "mobile.server.connectors.slack.connect": "Conectar Slack",
   "mobile.server.connectors.slack.connectFooter":
-    "O Slack abre em um navegador. Selecione o espaço de trabalho no canto superior direito e depois Permitir. O OpenBot instala um aplicativo chamado OpenBot, que entra em todos os canais públicos.",
+    "O Slack abre em um navegador. Selecione o espaço de trabalho no canto superior direito e depois Permitir. O PurpleBot instala um aplicativo chamado PurpleBot, que entra em todos os canais públicos.",
   "mobile.server.connectors.slack.add": "Adicionar espaço de trabalho",
   "mobile.server.connectors.slack.limit": {
     one: "Você pode conectar no máximo {count} espaço de trabalho.",
@@ -855,16 +855,16 @@ export const messages = {
   },
   "mobile.server.connectors.slack.workspaceTitle": "Espaço de trabalho",
   "mobile.server.connectors.slack.workspaceDescription":
-    "As pessoas mencionam @OpenBot ou enviam uma mensagem direta para ele.",
+    "As pessoas mencionam @PurpleBot ou enviam uma mensagem direta para ele.",
   "mobile.server.connectors.slack.missingScopes":
-    "O OpenBot não tem estas permissões no Slack: {scopes}. Desconecte o espaço de trabalho e conecte-o novamente.",
-  "mobile.server.connectors.slack.retryAt": "O Slack pediu para o OpenBot aguardar. Ele tentará novamente às {time}.",
+    "O PurpleBot não tem estas permissões no Slack: {scopes}. Desconecte o espaço de trabalho e conecte-o novamente.",
+  "mobile.server.connectors.slack.retryAt": "O Slack pediu para o PurpleBot aguardar. Ele tentará novamente às {time}.",
   "mobile.server.connectors.slack.helpInvalidToken":
-    "O Slack não aceita mais o OpenBot neste espaço de trabalho. Ele pode ter sido desinstalado. Conecte o espaço de trabalho novamente.",
+    "O Slack não aceita mais o PurpleBot neste espaço de trabalho. Ele pode ter sido desinstalado. Conecte o espaço de trabalho novamente.",
   "mobile.server.connectors.slack.helpSecretStorage":
-    "O OpenBot não consegue ler os tokens salvos em {host}. Desconecte o espaço de trabalho e conecte-o novamente.",
+    "O PurpleBot não consegue ler os tokens salvos em {host}. Desconecte o espaço de trabalho e conecte-o novamente.",
   "mobile.server.connectors.slack.helpRelay":
-    "O OpenBot em {host} não consegue receber eventos do Slack. Em {host}, entre na sua conta, dê um nome ao servidor nas Configurações do servidor e mantenha o OpenBot aberto.",
+    "O PurpleBot em {host} não consegue receber eventos do Slack. Em {host}, entre na sua conta, dê um nome ao servidor nas Configurações do servidor e mantenha o PurpleBot aberto.",
   "mobile.server.connectors.slack.helpNotLinked":
     "Este workspace não está vinculado a {host}. Toque em Reconectar para vinculá-lo.",
   "mobile.server.connectors.slack.orchestratorTitle": "Orquestrador do Slack",
@@ -874,27 +874,27 @@ export const messages = {
     "Adicione o Orquestrador do Slack para que o Slack receba respostas.",
   "mobile.server.connectors.slack.addAgent": "Adicionar Orquestrador do Slack",
   "mobile.server.connectors.slack.note":
-    "O OpenBot entra automaticamente em todos os canais públicos, inclusive nos novos. Para um canal privado, convide-o: /invite @OpenBot.",
+    "O PurpleBot entra automaticamente em todos os canais públicos, inclusive nos novos. Para um canal privado, convide-o: /invite @PurpleBot.",
   "mobile.server.connectors.slack.disconnectTitle": "Desconectar {workspace}?",
   "mobile.server.connectors.slack.disconnectBody":
-    "O OpenBot para de responder em {workspace} e remove o token do Slack de {host}.",
-  "mobile.server.connectors.slack.disconnectKept": "As conversas e o Orquestrador do Slack continuam no OpenBot.",
+    "O PurpleBot para de responder em {workspace} e remove o token do Slack de {host}.",
+  "mobile.server.connectors.slack.disconnectKept": "As conversas e o Orquestrador do Slack continuam no PurpleBot.",
   "mobile.server.connectors.slack.disconnectDeleted":
-    "O Orquestrador do Slack e as conversas dele são excluídos do OpenBot.",
+    "O Orquestrador do Slack e as conversas dele são excluídos do PurpleBot.",
   "mobile.server.connectors.slack.agentPromptTitle": "Adicionar o Orquestrador do Slack?",
   "mobile.server.connectors.slack.agentPromptBody":
-    "Este novo agente responde a tudo que as pessoas enviam para @OpenBot em {workspace}.",
+    "Este novo agente responde a tudo que as pessoas enviam para @PurpleBot em {workspace}.",
   "mobile.server.connectors.slack.installFailed": "O Slack não concluiu a instalação. Tente novamente.",
   "mobile.server.connectors.discord.title": "Discord",
   "mobile.server.connectors.discord.description":
-    "As pessoas mencionam @OpenBot em um canal de um servidor do Discord. O Orquestrador do Discord consulta o agente certo e responde.",
+    "As pessoas mencionam @PurpleBot em um canal de um servidor do Discord. O Orquestrador do Discord consulta o agente certo e responde.",
   "mobile.server.connectors.discord.attention": {
     one: "{count} servidor do Discord precisa de atenção",
     other: "{count} servidores do Discord precisam de atenção",
   },
   "mobile.server.connectors.discord.connect": "Conectar Discord",
   "mobile.server.connectors.discord.connectFooter":
-    "O Discord abre em um navegador. Selecione o servidor do Discord e depois Autorizar. O OpenBot adiciona um bot chamado OpenBot.",
+    "O Discord abre em um navegador. Selecione o servidor do Discord e depois Autorizar. O PurpleBot adiciona um bot chamado PurpleBot.",
   "mobile.server.connectors.discord.add": "Adicionar servidor do Discord",
   "mobile.server.connectors.discord.limit": {
     one: "Você pode conectar no máximo {count} servidor do Discord.",
@@ -902,17 +902,17 @@ export const messages = {
   },
   "mobile.server.connectors.discord.workspaceTitle": "Servidor do Discord",
   "mobile.server.connectors.discord.workspaceDescription":
-    "Mencione @OpenBot em um canal. Responda ao OpenBot para continuar.",
+    "Mencione @PurpleBot em um canal. Responda ao PurpleBot para continuar.",
   "mobile.server.connectors.discord.missingScopes":
-    "O OpenBot não tem estas permissões no Discord: {scopes}. Desconecte o servidor do Discord e conecte-o novamente.",
+    "O PurpleBot não tem estas permissões no Discord: {scopes}. Desconecte o servidor do Discord e conecte-o novamente.",
   "mobile.server.connectors.discord.retryAt":
-    "O Discord pediu para o OpenBot aguardar. Ele tentará novamente às {time}.",
+    "O Discord pediu para o PurpleBot aguardar. Ele tentará novamente às {time}.",
   "mobile.server.connectors.discord.helpInvalidToken":
-    "O Discord não aceita mais o OpenBot neste servidor do Discord. Ele pode ter sido removido. Conecte o servidor do Discord novamente.",
+    "O Discord não aceita mais o PurpleBot neste servidor do Discord. Ele pode ter sido removido. Conecte o servidor do Discord novamente.",
   "mobile.server.connectors.discord.helpSecretStorage":
-    "O OpenBot não consegue ler os tokens salvos em {host}. Desconecte o servidor do Discord e conecte-o novamente.",
+    "O PurpleBot não consegue ler os tokens salvos em {host}. Desconecte o servidor do Discord e conecte-o novamente.",
   "mobile.server.connectors.discord.helpRelay":
-    "O OpenBot em {host} não consegue receber eventos do Discord. Em {host}, entre na sua conta, dê um nome ao servidor nas Configurações do servidor e mantenha o OpenBot aberto.",
+    "O PurpleBot em {host} não consegue receber eventos do Discord. Em {host}, entre na sua conta, dê um nome ao servidor nas Configurações do servidor e mantenha o PurpleBot aberto.",
   "mobile.server.connectors.discord.helpNotLinked":
     "Este servidor do Discord não está vinculado a {host}. Toque em Reconectar para vinculá-lo.",
   "mobile.server.connectors.discord.orchestratorTitle": "Orquestrador do Discord",
@@ -921,20 +921,20 @@ export const messages = {
   "mobile.server.connectors.discord.orchestratorNone":
     "Adicione o Orquestrador do Discord para que o Discord receba respostas.",
   "mobile.server.connectors.discord.addAgent": "Adicionar Orquestrador do Discord",
-  "mobile.server.connectors.discord.note": "O OpenBot vê os canais que a função dele pode visualizar.",
+  "mobile.server.connectors.discord.note": "O PurpleBot vê os canais que a função dele pode visualizar.",
   "mobile.server.connectors.discord.disconnectTitle": "Desconectar {workspace}?",
   "mobile.server.connectors.discord.disconnectBody":
-    "O OpenBot para de responder em {workspace} e remove a conexão do Discord de {host}.",
-  "mobile.server.connectors.discord.disconnectKept": "As conversas e o Orquestrador do Discord continuam no OpenBot.",
+    "O PurpleBot para de responder em {workspace} e remove a conexão do Discord de {host}.",
+  "mobile.server.connectors.discord.disconnectKept": "As conversas e o Orquestrador do Discord continuam no PurpleBot.",
   "mobile.server.connectors.discord.disconnectDeleted":
-    "O Orquestrador do Discord e as conversas dele são excluídos do OpenBot.",
+    "O Orquestrador do Discord e as conversas dele são excluídos do PurpleBot.",
   "mobile.server.connectors.discord.agentPromptTitle": "Adicionar o Orquestrador do Discord?",
   "mobile.server.connectors.discord.agentPromptBody":
-    "Este novo agente responde a tudo que as pessoas enviam para @OpenBot em {workspace}.",
+    "Este novo agente responde a tudo que as pessoas enviam para @PurpleBot em {workspace}.",
   "mobile.server.connectors.discord.installFailed": "O Discord não concluiu a autorização. Tente novamente.",
   "mobile.server.connectors.telegram.title": "Telegram",
   "mobile.server.connectors.telegram.description":
-    "Adicione o bot do OpenBot a um grupo do Telegram ou abra um chat direto com ele. O Orquestrador do Telegram consulta o agente certo e responde.",
+    "Adicione o bot do PurpleBot a um grupo do Telegram ou abra um chat direto com ele. O Orquestrador do Telegram consulta o agente certo e responde.",
   "mobile.server.connectors.telegram.attention": {
     one: "{count} chat precisa de atenção",
     other: "{count} chats precisam de atenção",
@@ -945,15 +945,15 @@ export const messages = {
   "mobile.server.connectors.telegram.directDescription":
     "Todas as mensagens deste chat vão para o Orquestrador do Telegram.",
   "mobile.server.connectors.telegram.helpRemoved":
-    "O bot do OpenBot não está mais neste chat. Desconecte o chat e adicione o bot novamente.",
+    "O bot do PurpleBot não está mais neste chat. Desconecte o chat e adicione o bot novamente.",
   "mobile.server.connectors.telegram.helpRelay":
-    "O OpenBot em {host} não consegue receber mensagens do Telegram. Em {host}, entre na sua conta, dê um nome ao servidor nas Configurações do servidor e mantenha o OpenBot aberto.",
+    "O PurpleBot em {host} não consegue receber mensagens do Telegram. Em {host}, entre na sua conta, dê um nome ao servidor nas Configurações do servidor e mantenha o PurpleBot aberto.",
   "mobile.server.connectors.telegram.helpError":
-    "O OpenBot não consegue acessar este chat. Reconecte ou desconecte o chat.",
+    "O PurpleBot não consegue acessar este chat. Reconecte ou desconecte o chat.",
   "mobile.server.connectors.telegram.helpNotLinked":
     "Este chat não está vinculado a {host}. Toque em Reconectar para vinculá-lo.",
   "mobile.server.connectors.telegram.retryAt":
-    "O Telegram pediu para o OpenBot aguardar. Ele tentará novamente às {time}.",
+    "O Telegram pediu para o PurpleBot aguardar. Ele tentará novamente às {time}.",
   "mobile.server.connectors.telegram.linkTitle": "Vincular um chat",
   "mobile.server.connectors.telegram.linkAnother": "Vincular outro chat",
   "mobile.server.connectors.telegram.linkFooter":
@@ -966,16 +966,17 @@ export const messages = {
   "mobile.server.connectors.telegram.openDirectChat": "Abrir um chat direto",
   "mobile.server.connectors.telegram.orchestratorTitle": "Orquestrador do Telegram",
   "mobile.server.connectors.telegram.orchestratorDescription":
-    "Este agente recebe as mensagens para o OpenBot de todos os seus chats do Telegram. Ele mesmo responde às curtas, encaminha o restante do trabalho ao agente certo e publica a resposta no chat.",
+    "Este agente recebe as mensagens para o PurpleBot de todos os seus chats do Telegram. Ele mesmo responde às curtas, encaminha o restante do trabalho ao agente certo e publica a resposta no chat.",
   "mobile.server.connectors.telegram.orchestratorNone":
     "Adicione o Orquestrador do Telegram para que o Telegram receba respostas.",
   "mobile.server.connectors.telegram.addAgent": "Adicionar Orquestrador do Telegram",
   "mobile.server.connectors.telegram.disconnectTitle": "Desconectar {chat}?",
   "mobile.server.connectors.telegram.disconnectBody":
-    "O bot do OpenBot sai de {chat} e o OpenBot para de responder lá.",
-  "mobile.server.connectors.telegram.disconnectKept": "As conversas e o Orquestrador do Telegram continuam no OpenBot.",
+    "O bot do PurpleBot sai de {chat} e o PurpleBot para de responder lá.",
+  "mobile.server.connectors.telegram.disconnectKept":
+    "As conversas e o Orquestrador do Telegram continuam no PurpleBot.",
   "mobile.server.connectors.telegram.disconnectDeleted":
-    "Este é o último chat, então o Orquestrador do Telegram e as conversas dele são excluídos do OpenBot.",
+    "Este é o último chat, então o Orquestrador do Telegram e as conversas dele são excluídos do PurpleBot.",
   "mobile.server.connectors.whatsapp.title": "WhatsApp",
   "mobile.server.connectors.whatsapp.description":
     "Vincule um número do WhatsApp a este servidor. O Orquestrador do WhatsApp consulta o agente certo e responde.",
@@ -986,30 +987,30 @@ export const messages = {
   "mobile.server.connectors.whatsapp.numbersTitle": "Números",
   "mobile.server.connectors.whatsapp.linkNumber": "Vincular um número",
   "mobile.server.connectors.whatsapp.ownNumberNote":
-    "Seu chat “Mensagem para você mesmo” e as pessoas que você permitir falam com o OpenBot.",
+    "Seu chat “Mensagem para você mesmo” e as pessoas que você permitir falam com o PurpleBot.",
   "mobile.server.connectors.whatsapp.dedicatedNote":
-    "Seu chat “Mensagem para você mesmo” e as pessoas que você permitir falam com o OpenBot. Outras pessoas recebem um código para passar a você.",
+    "Seu chat “Mensagem para você mesmo” e as pessoas que você permitir falam com o PurpleBot. Outras pessoas recebem um código para passar a você.",
   "mobile.server.connectors.whatsapp.helpLoggedOut":
     "O WhatsApp removeu este servidor dos dispositivos conectados. Vincule o número novamente.",
   "mobile.server.connectors.whatsapp.helpError":
-    "O OpenBot não consegue acessar o WhatsApp neste número. Reconecte ou desconecte o número.",
+    "O PurpleBot não consegue acessar o WhatsApp neste número. Reconecte ou desconecte o número.",
   "mobile.server.connectors.whatsapp.helpKeysUnreadable":
-    "O OpenBot não consegue ler as chaves salvas deste número. Vincule o número novamente.",
+    "O PurpleBot não consegue ler as chaves salvas deste número. Vincule o número novamente.",
   "mobile.server.connectors.whatsapp.retryAt":
-    "O WhatsApp pediu para o OpenBot aguardar. Ele tentará novamente às {time}.",
+    "O WhatsApp pediu para o PurpleBot aguardar. Ele tentará novamente às {time}.",
   "mobile.server.connectors.whatsapp.linkAgain": "Vincular de novo",
   "mobile.server.connectors.whatsapp.ownNumber": "Número pessoal",
   "mobile.server.connectors.whatsapp.ownNumberDescription":
-    "Só o seu chat “Mensagem para você mesmo” e as pessoas que você permitir podem escrever. Outras pessoas não recebem resposta. Quando desativado, o OpenBot responde a pessoas desconhecidas com um código.",
+    "Só o seu chat “Mensagem para você mesmo” e as pessoas que você permitir podem escrever. Outras pessoas não recebem resposta. Quando desativado, o PurpleBot responde a pessoas desconhecidas com um código.",
   "mobile.server.connectors.whatsapp.workingMessage": "Mensagem “Trabalhando nisso…”",
   "mobile.server.connectors.whatsapp.workingMessageDescription":
-    "O OpenBot a envia enquanto o agente trabalha e depois a substitui pela resposta. Uma solicitação que espera outra anterior também recebe uma mensagem de espera. Em um número pessoal, só o seu chat “Mensagem para você mesmo” recebe essas mensagens. Desative para enviar só a resposta.",
+    "O PurpleBot a envia enquanto o agente trabalha e depois a substitui pela resposta. Uma solicitação que espera outra anterior também recebe uma mensagem de espera. Em um número pessoal, só o seu chat “Mensagem para você mesmo” recebe essas mensagens. Desative para enviar só a resposta.",
   "mobile.server.connectors.whatsapp.statusReactions": "Reações de status",
   "mobile.server.connectors.whatsapp.statusReactionsDescription":
-    "O OpenBot reage com 👀 quando uma mensagem chega e com ✅ quando a resposta está pronta. Desative para não enviar reações.",
+    "O PurpleBot reage com 👀 quando uma mensagem chega e com ✅ quando a resposta está pronta. Desative para não enviar reações.",
   "mobile.server.connectors.whatsapp.orchestratorTitle": "Orquestrador do WhatsApp",
   "mobile.server.connectors.whatsapp.orchestratorDescription":
-    "Este agente recebe as mensagens para o OpenBot de todos os seus números vinculados. Ele mesmo responde às curtas, encaminha o restante do trabalho ao agente certo e responde no WhatsApp.",
+    "Este agente recebe as mensagens para o PurpleBot de todos os seus números vinculados. Ele mesmo responde às curtas, encaminha o restante do trabalho ao agente certo e responde no WhatsApp.",
   "mobile.server.connectors.whatsapp.orchestratorNone":
     "Adicione o Orquestrador do WhatsApp para que o WhatsApp receba respostas.",
   "mobile.server.connectors.whatsapp.addAgent": "Adicionar o Orquestrador do WhatsApp",
@@ -1019,14 +1020,14 @@ export const messages = {
   "mobile.server.connectors.whatsapp.linkDescription":
     "Selecione o número e depois vincule este servidor pelo WhatsApp no seu celular.",
   "mobile.server.connectors.whatsapp.codeOnly":
-    "No telefone, vincule com um código de pareamento. Para escanear um código QR, use o OpenBot em um computador.",
+    "No telefone, vincule com um código de pareamento. Para escanear um código QR, use o PurpleBot em um computador.",
   "mobile.server.connectors.whatsapp.kindLabel": "Número",
   "mobile.server.connectors.whatsapp.kindPersonal": "Meu número pessoal",
   "mobile.server.connectors.whatsapp.kindPersonalDescription":
-    "O OpenBot responde só ao seu chat “Mensagem para você mesmo” e às pessoas que você permitir. Outras pessoas não recebem resposta.",
-  "mobile.server.connectors.whatsapp.kindDedicated": "Um número só para o OpenBot",
+    "O PurpleBot responde só ao seu chat “Mensagem para você mesmo” e às pessoas que você permitir. Outras pessoas não recebem resposta.",
+  "mobile.server.connectors.whatsapp.kindDedicated": "Um número só para o PurpleBot",
   "mobile.server.connectors.whatsapp.kindDedicatedDescription":
-    "O OpenBot responde deste número a cada pessoa desconhecida com um código para passar a você. Você as aprova aqui.",
+    "O PurpleBot responde deste número a cada pessoa desconhecida com um código para passar a você. Você as aprova aqui.",
   "mobile.server.connectors.whatsapp.phoneLabel": "Número de telefone",
   "mobile.server.connectors.whatsapp.phoneDescription": "Com o código do país, como +44 7700 900123.",
   "mobile.server.connectors.whatsapp.phoneInvalid": "Digite o número de telefone com o código do país.",
@@ -1046,21 +1047,21 @@ export const messages = {
   "mobile.server.connectors.whatsapp.failedBusy":
     "Outra vinculação está em andamento. Aguarde até que ela termine e tente novamente.",
   "mobile.server.connectors.whatsapp.failedUnavailable":
-    "O OpenBot não consegue acessar o WhatsApp. Verifique a conexão com a internet.",
+    "O PurpleBot não consegue acessar o WhatsApp. Verifique a conexão com a internet.",
   "mobile.server.connectors.whatsapp.tryAgain": "Tentar de novo",
   "mobile.server.connectors.whatsapp.agentStepDescription":
-    "Este novo agente responde às mensagens para o OpenBot em {number} e em cada número que você vincular depois.",
-  "mobile.server.connectors.whatsapp.doneTitle": "O OpenBot está vinculado a {number}",
+    "Este novo agente responde às mensagens para o PurpleBot em {number} e em cada número que você vincular depois.",
+  "mobile.server.connectors.whatsapp.doneTitle": "O PurpleBot está vinculado a {number}",
   "mobile.server.connectors.whatsapp.done": "Concluir",
   "mobile.server.connectors.whatsapp.disconnectTitle": "Desconectar {number}?",
   "mobile.server.connectors.whatsapp.disconnectBody":
-    "O OpenBot sai do WhatsApp em {number}. Se o OpenBot estava desligado, remova também o dispositivo em WhatsApp > Dispositivos conectados.",
+    "O PurpleBot sai do WhatsApp em {number}. Se o PurpleBot estava desligado, remova também o dispositivo em WhatsApp > Dispositivos conectados.",
   "mobile.server.connectors.whatsapp.disconnectEffect":
     "Ninguém poderá mais acessar seus agentes por meio de {number}.",
   "mobile.server.connectors.whatsapp.removeEffectKept":
-    "As conversas e o Orquestrador do WhatsApp continuam no OpenBot.",
+    "As conversas e o Orquestrador do WhatsApp continuam no PurpleBot.",
   "mobile.server.connectors.whatsapp.removeEffectDeleted":
-    "Este é o último número, então o Orquestrador do WhatsApp e as conversas dele são excluídos do OpenBot.",
+    "Este é o último número, então o Orquestrador do WhatsApp e as conversas dele são excluídos do PurpleBot.",
   "mobile.server.connectors.whatsapp.keep": "Manter vinculado",
   "mobile.server.connectors.whatsapp.sendersTitle": "Quem pode escrever para {number}",
   "mobile.server.connectors.whatsapp.sendersDescription":
@@ -1073,7 +1074,7 @@ export const messages = {
   "mobile.server.connectors.whatsapp.makeReadOnly": "Tornar somente leitura",
   "mobile.server.connectors.whatsapp.allowWork": "Permitir dar tarefas",
   "mobile.server.connectors.whatsapp.readOnlyDetail":
-    "Somente leitura: os agentes podem ler este chat, e o OpenBot nunca escreve nele.",
+    "Somente leitura: os agentes podem ler este chat, e o PurpleBot nunca escreve nele.",
   "mobile.server.connectors.whatsapp.addContact": "Adicionar contato",
   "mobile.server.connectors.whatsapp.addGroup": "Adicionar grupo",
   "mobile.server.connectors.whatsapp.contactTitle": "Adicionar um contato",
@@ -1088,7 +1089,7 @@ export const messages = {
     "As pessoas deste grupo podem passar trabalho para seus agentes quando mencionam o número ou respondem às mensagens dele.",
   "mobile.server.connectors.whatsapp.groupSearch": "Buscar grupos",
   "mobile.server.connectors.whatsapp.groupsLoading": "Lendo os grupos…",
-  "mobile.server.connectors.whatsapp.groupsLoadFailed": "O OpenBot não conseguiu ler os grupos",
+  "mobile.server.connectors.whatsapp.groupsLoadFailed": "O PurpleBot não conseguiu ler os grupos",
   "mobile.server.connectors.whatsapp.groupsEmpty": "Este número não está em nenhum grupo.",
   "mobile.server.connectors.whatsapp.groupsNoMatch": "Nenhum grupo tem este nome.",
   "mobile.server.connectors.whatsapp.groupAdded": "Adicionado",
@@ -1112,9 +1113,9 @@ export const messages = {
   "mobile.server.providers.runtimesFailed": "Não foi possível carregar os downloads deste servidor.",
   "mobile.server.providers.unavailable":
     "Conecte-se a este servidor como proprietário ou administrador para gerenciar os provedores.",
-  "mobile.server.providers.unsupported": "Atualize o OpenBot neste servidor para gerenciar os provedores aqui.",
+  "mobile.server.providers.unsupported": "Atualize o PurpleBot neste servidor para gerenciar os provedores aqui.",
   "mobile.server.providers.signInUnsupported": "Este servidor não consegue entrar neste provedor pelo celular.",
-  "mobile.server.providers.actionFailed": "O OpenBot não conseguiu concluir esta ação. Tente de novo.",
+  "mobile.server.providers.actionFailed": "O PurpleBot não conseguiu concluir esta ação. Tente de novo.",
   "mobile.server.providers.openFailed": "Não foi possível abrir a página de login.",
   "mobile.server.providers.copyFailed": "Não foi possível copiar o código.",
   "mobile.server.providers.statusLabel": "Status",
@@ -1123,10 +1124,10 @@ export const messages = {
   "mobile.server.providers.connect": "Conectar",
   "mobile.server.providers.reconnect": "Reconectar",
   "mobile.server.providers.connectHint":
-    "O servidor inicia o login. Depois o OpenBot mostra as etapas, e você as conclui neste celular.",
+    "O servidor inicia o login. Depois o PurpleBot mostra as etapas, e você as conclui neste celular.",
   "mobile.server.providers.relayHint":
-    "O OpenBot abre a página de login do provedor neste celular. Se você precisar copiar algo de volta, o OpenBot mostra as etapas antes.",
-  "mobile.server.providers.connectOnComputer": "Conecte este provedor no OpenBot em um computador.",
+    "O PurpleBot abre a página de login do provedor neste celular. Se você precisar copiar algo de volta, o PurpleBot mostra as etapas antes.",
+  "mobile.server.providers.connectOnComputer": "Conecte este provedor no PurpleBot em um computador.",
   "mobile.server.providers.signInTo": "Entrar em {name}",
   "mobile.server.providers.starting": "Iniciando o login no servidor…",
   "mobile.server.providers.openPage": "Abrir página de login",
@@ -1137,15 +1138,15 @@ export const messages = {
     "No ChatGPT em um computador, abra as configurações de segurança e ative o login com código de dispositivo para o Codex. Em uma conta de trabalho, o administrador do workspace ativa isso.",
   "mobile.server.providers.codeStepCopy": "Copie o código.",
   "mobile.server.providers.codeStepEnter": "Abra a página de login e digite o código.",
-  "mobile.server.providers.codeStepReturn": "Volte ao OpenBot. O login termina sozinho.",
+  "mobile.server.providers.codeStepReturn": "Volte ao PurpleBot. O login termina sozinho.",
   "mobile.server.providers.pasteStepSignIn": "Abra a página de login e entre.",
   "mobile.server.providers.pasteStepCopy": "Copie o código que a página mostra.",
-  "mobile.server.providers.pasteStepReturn": "Volte ao OpenBot e cole o código abaixo.",
+  "mobile.server.providers.pasteStepReturn": "Volte ao PurpleBot e cole o código abaixo.",
   "mobile.server.providers.relayStepSignIn": "Abra a página de login e entre.",
   "mobile.server.providers.relayStepBlank": "A última página não carrega. Isso é o esperado.",
   "mobile.server.providers.relayStepCopy": "Toque na barra de endereço e copie o endereço completo.",
-  "mobile.server.providers.relayStepReturn": "Volte ao OpenBot e cole o endereço abaixo.",
-  "mobile.server.providers.linkHint": "Entre na página. O OpenBot continua sozinho.",
+  "mobile.server.providers.relayStepReturn": "Volte ao PurpleBot e cole o endereço abaixo.",
+  "mobile.server.providers.linkHint": "Entre na página. O PurpleBot continua sozinho.",
   "mobile.server.providers.relayWaiting": "Aguardando a página de login do servidor…",
   "mobile.server.providers.code": "Código da página",
   "mobile.server.providers.codePlaceholder": "Cole o código aqui",
@@ -1210,7 +1211,7 @@ export const messages = {
   "mobile.server.providers.accountsPooledHint":
     "Os agentes compartilham estas contas. Uma conta nova entra pela página dela neste celular.",
   "mobile.server.providers.accountsPooledOnComputer":
-    "Os agentes compartilham estas contas. Adicione uma conta no OpenBot em um computador.",
+    "Os agentes compartilham estas contas. Adicione uma conta no PurpleBot em um computador.",
   "mobile.server.providers.inUse": "Em uso",
   "mobile.server.providers.notInPool": "Fora do grupo",
   "mobile.server.providers.leaveOutOfPool": "Tirar do grupo",
@@ -1271,7 +1272,7 @@ export const messages = {
   "mobile.server.providers.disconnect": "Desconectar",
   "mobile.server.providers.disconnectTitle": "Desconectar {name}?",
   "mobile.server.providers.disconnectBody":
-    "O OpenBot encerra a sessão de {provider} no servidor. Os agentes aguardam até você conectar {provider} novamente.",
+    "O PurpleBot encerra a sessão de {provider} no servidor. Os agentes aguardam até você conectar {provider} novamente.",
   "mobile.server.providers.resetUsage": "Redefinir uso",
   "mobile.server.providers.resettingUsage": "Redefinindo…",
   "mobile.server.providers.resetUsageTitle": "Redefinir o uso de {name}?",
@@ -1289,7 +1290,7 @@ export const messages = {
   "mobile.server.providers.sectionRuntime": "Runtime",
   "mobile.server.providers.updateTo": "Atualizar para {version}",
   "mobile.server.providers.versionInstalledByUser": "{version} · instalada por você",
-  "mobile.server.providers.versionDownloaded": "{version} · baixada pelo OpenBot",
+  "mobile.server.providers.versionDownloaded": "{version} · baixada pelo PurpleBot",
   "mobile.server.providers.keyFree": "Grátis",
   "mobile.server.providers.keyOptional": "Opcional. Uma chave adiciona modelos pagos.",
   "mobile.server.providers.geminiKeyInUse":
@@ -1308,18 +1309,18 @@ export const messages = {
   "mobile.server.providers.defaultForNew": "Padrão para novos agentes",
   "mobile.server.providers.startsWith": "Novos agentes começam com {name}.",
   "mobile.server.providers.connectFirst": "Conecte o {name} primeiro.",
-  "mobile.server.mcp.unsupported": "Atualize o OpenBot neste servidor para gerenciar os servidores MCP dele aqui.",
+  "mobile.server.mcp.unsupported": "Atualize o PurpleBot neste servidor para gerenciar os servidores MCP dele aqui.",
   "mobile.server.mcp.unavailable":
     "Conecte-se a este servidor como proprietário ou administrador para gerenciar os servidores MCP dele.",
   "mobile.server.mcp.accessUnsupported":
-    "Atualize o OpenBot neste servidor para escolher quem recebe os servidores MCP dele.",
+    "Atualize o PurpleBot neste servidor para escolher quem recebe os servidores MCP dele.",
   "mobile.server.mcp.loading": "Carregando servidores MCP…",
   "mobile.server.mcp.gone": "Este servidor MCP não está mais neste servidor.",
   "mobile.server.mcp.addTitle": "Adicionar servidor MCP",
   "mobile.server.mcp.addConfirm": "Adicionar",
   "mobile.server.mcp.name": "Nome",
   "mobile.server.mcp.namePlaceholder": "Nome do servidor MCP",
-  "mobile.server.mcp.nameReserved": "O OpenBot já usa o nome {name}.",
+  "mobile.server.mcp.nameReserved": "O PurpleBot já usa o nome {name}.",
   "mobile.server.mcp.transport": "Transporte",
   "mobile.server.mcp.stdio": "Comando (STDIO)",
   "mobile.server.mcp.http": "URL (HTTP)",
@@ -1330,12 +1331,12 @@ export const messages = {
   "mobile.server.mcp.command": "Comando",
   "mobile.server.mcp.commandHint": "Somente o programa. Coloque cada palavra seguinte em Argumentos.",
   "mobile.server.mcp.arguments": "Argumentos",
-  "mobile.server.mcp.argumentsHint": "O OpenBot passa cada argumento ao programa como uma palavra.",
+  "mobile.server.mcp.argumentsHint": "O PurpleBot passa cada argumento ao programa como uma palavra.",
   "mobile.server.mcp.addArgument": "Adicionar argumento",
   "mobile.server.mcp.argument": "Argumento {position}",
   "mobile.server.mcp.removeArgument": "Remover argumento {position}",
   "mobile.server.mcp.environment": "Variáveis de ambiente",
-  "mobile.server.mcp.environmentHint": "O OpenBot passa estas variáveis ao servidor MCP quando ele inicia.",
+  "mobile.server.mcp.environmentHint": "O PurpleBot passa estas variáveis ao servidor MCP quando ele inicia.",
   "mobile.server.mcp.addVariable": "Adicionar variável",
   "mobile.server.mcp.variableKey": "Nome da variável {position}",
   "mobile.server.mcp.variableValue": "Valor da variável {position}",
@@ -1350,7 +1351,7 @@ export const messages = {
   "mobile.server.mcp.url": "URL do servidor",
   "mobile.server.mcp.urlInvalid": "Digite um endereço http ou https.",
   "mobile.server.mcp.headers": "Cabeçalhos",
-  "mobile.server.mcp.headersHint": "O OpenBot envia estes cabeçalhos com cada solicitação.",
+  "mobile.server.mcp.headersHint": "O PurpleBot envia estes cabeçalhos com cada solicitação.",
   "mobile.server.mcp.addHeader": "Adicionar cabeçalho",
   "mobile.server.mcp.headerName": "Nome do cabeçalho {position}",
   "mobile.server.mcp.headerValue": "Valor do cabeçalho {position}",
@@ -1367,7 +1368,7 @@ export const messages = {
   "mobile.server.mcp.testFailed": "O servidor MCP não respondeu.",
   "mobile.server.mcp.connected": { one: "Conectado · {count} ferramenta", other: "Conectado · {count} ferramentas" },
   "mobile.server.mcp.signInOnComputer":
-    "Este servidor MCP pede login. Entre pelo OpenBot em um computador e teste de novo.",
+    "Este servidor MCP pede login. Entre pelo PurpleBot em um computador e teste de novo.",
   "mobile.server.mcp.signIn": "Entrar",
   "mobile.server.mcp.signInHere": "Este servidor MCP pede que você entre. Toque em Entrar e teste de novo.",
   "mobile.server.mcp.signedInDescription": "{server} está conectado a este servidor MCP.",
@@ -1424,8 +1425,8 @@ export const messages = {
   "mobile.server.settings.updates": "Atualizações",
   "mobile.server.settings.updateAvailable": "Atualização disponível",
   "mobile.server.route.updates": "Atualizações",
-  "mobile.server.update.hostTitle": "OpenBot em {name}",
-  "mobile.server.update.version": "OpenBot {version}",
+  "mobile.server.update.hostTitle": "PurpleBot em {name}",
+  "mobile.server.update.version": "PurpleBot {version}",
   "mobile.server.update.status.idle": "Busque atualizações para encontrar a versão mais recente.",
   "mobile.server.update.status.checking": "Buscando atualizações…",
   "mobile.server.update.status.available": "{version} está disponível.",
@@ -1433,28 +1434,28 @@ export const messages = {
   "mobile.server.update.status.downloadingUnknown": "Baixando {version}…",
   "mobile.server.update.status.ready": "{version} foi baixada.",
   "mobile.server.update.status.installing": "{name} está reiniciando para instalar a atualização.",
-  "mobile.server.update.status.upToDate": "O OpenBot está atualizado em {name}.",
+  "mobile.server.update.status.upToDate": "O PurpleBot está atualizado em {name}.",
   "mobile.server.update.status.checkFailed": "{name} não conseguiu buscar atualizações. Tente novamente.",
   "mobile.server.update.status.downloadFailed": "{name} não conseguiu baixar a atualização. Tente novamente.",
   "mobile.server.update.status.installFailed":
-    "{name} não conseguiu instalar a atualização. Verifique se nenhum outro usuário desse computador está executando o OpenBot e tente novamente.",
+    "{name} não conseguiu instalar a atualização. Verifique se nenhum outro usuário desse computador está executando o PurpleBot e tente novamente.",
   "mobile.server.update.releaseCheckFailed":
     "{name} não conseguiu ler o feed de versões. Verifique a conexão de rede do computador anfitrião e tente de novo.",
   "mobile.server.update.releaseUnavailable":
     "A verificação de versões não está disponível nesta compilação. Peça ao administrador do computador anfitrião para buscar uma versão compatível.",
   "mobile.server.update.externalTitle": "O computador anfitrião controla a instalação",
   "mobile.server.update.path.hostManager":
-    "O OpenBot Host Manager instala atualizações quando todos os usuários estão ociosos. Se uma atualização não iniciar, peça ao administrador do computador anfitrião para verificar o status do Host Manager.",
+    "O PurpleBot Host Manager instala atualizações quando todos os usuários estão ociosos. Se uma atualização não iniciar, peça ao administrador do computador anfitrião para verificar o status do Host Manager.",
   "mobile.server.update.path.hosted":
     "O serviço hospedado baixa atualizações em segundo plano. Uma atualização baixada inicia na próxima inicialização do servidor. Aguarde o trabalho ativo terminar antes de parar e retomar o servidor. Se ele continuar em uma versão antiga, contate o administrador do computador anfitrião.",
   "mobile.server.update.path.system":
-    "No computador anfitrião, execute sudo openbot update para instalar a versão mais recente. Este comando interrompe o OpenBot. Aguarde o trabalho ativo terminar primeiro. Downloads automáticos são instalados na próxima inicialização.",
+    "No computador anfitrião, execute sudo purplebot update para instalar a versão mais recente. Este comando interrompe o PurpleBot. Aguarde o trabalho ativo terminar primeiro. Downloads automáticos são instalados na próxima inicialização.",
   "mobile.server.update.path.container":
-    "No computador anfitrião do Docker, baixe a nova imagem do OpenBot e crie o contêiner de novo com os mesmos volumes de dados. Aguarde o trabalho ativo terminar primeiro. Mantenha os volumes existentes para preservar seus dados.",
+    "No computador anfitrião do Docker, baixe a nova imagem do PurpleBot e crie o contêiner de novo com os mesmos volumes de dados. Aguarde o trabalho ativo terminar primeiro. Mantenha os volumes existentes para preservar seus dados.",
   "mobile.server.update.path.manual":
-    "Esta instalação não pode se substituir. Peça ao administrador do computador anfitrião para instalar a versão compatível de github.com/nightly-labs/openbot/releases. Mantenha os dados existentes do OpenBot.",
+    "Esta instalação não pode se substituir. Peça ao administrador do computador anfitrião para instalar a versão compatível de github.com/nightly-labs/openbot/releases. Mantenha os dados existentes do PurpleBot.",
   "mobile.server.update.path.unavailable":
-    "Esta é uma compilação de desenvolvimento. Use uma versão instalada do OpenBot para verificar atualizações.",
+    "Esta é uma compilação de desenvolvimento. Use uma versão instalada do PurpleBot para verificar atualizações.",
   "mobile.server.update.check": "Buscar atualizações",
   "mobile.server.update.start": "Atualizar quando ocioso",
   "mobile.server.update.restartNow": "Reiniciar agora",
@@ -1464,27 +1465,27 @@ export const messages = {
   "mobile.server.update.requestedBy": "{member} solicitou esta atualização.",
   "mobile.server.update.automatic": "{name} instala atualizações automaticamente.",
   "mobile.server.update.autoDownloadTitle": "Baixar atualizações automaticamente",
-  "mobile.server.update.autoDownloadDescription": "{name} baixa cada nova versão do OpenBot quando ela é lançada.",
+  "mobile.server.update.autoDownloadDescription": "{name} baixa cada nova versão do PurpleBot quando ela é lançada.",
   "mobile.server.update.autoInstallTitle": "Instalar atualizações automaticamente",
   "mobile.server.update.autoInstallDescription":
     "{name} reinicia para aplicar uma atualização baixada quando seus agentes estão ociosos. Os membros são desconectados por um breve período e se reconectam automaticamente.",
   "mobile.server.update.waitingFor": "Aguardando {reasons}.",
   "mobile.server.update.disabledTitle": "As atualizações remotas estão desativadas",
   "mobile.server.update.disabledDescription":
-    "O usuário de {name} desativou as atualizações por membros do servidor. Peça que atualize o OpenBot ou que abra Configurações > Atualizações nesse computador e ative “Permitir atualizações por membros do servidor”.",
+    "O usuário de {name} desativou as atualizações por membros do servidor. Peça que atualize o PurpleBot ou que abra Configurações > Atualizações nesse computador e ative “Permitir atualizações por membros do servidor”.",
   "mobile.server.update.managedTitle": "Um Host Manager controla as atualizações",
   "mobile.server.update.managedDescription":
-    "O OpenBot Host Manager atualiza {name}. Entre em contato com o administrador do computador anfitrião.",
+    "O PurpleBot Host Manager atualiza {name}. Entre em contato com o administrador do computador anfitrião.",
   "mobile.server.update.unsupportedTitle": "{name} não pode se atualizar sozinho",
   "mobile.server.update.unsupportedDescription":
-    "Esta compilação do OpenBot não tem um atualizador. Instale uma nova versão em {name}.",
+    "Esta compilação do PurpleBot não tem um atualizador. Instale uma nova versão em {name}.",
   "mobile.server.update.restarting": "Reiniciando…",
   "mobile.server.update.loadFailed": "O status da atualização de {name} não foi carregado.",
-  "mobile.server.update.dialog.offerTitle": "Atualizar {name} para o OpenBot {version}",
+  "mobile.server.update.dialog.offerTitle": "Atualizar {name} para o PurpleBot {version}",
   "mobile.server.update.dialog.offerDescription":
-    "{name} usa o OpenBot {current}. Primeiro ele baixa a atualização e depois reinicia.",
+    "{name} usa o PurpleBot {current}. Primeiro ele baixa a atualização e depois reinicia.",
   "mobile.server.update.dialog.offerReadyDescription":
-    "{name} usa o OpenBot {current}. A atualização foi baixada. {name} reinicia para instalá-la.",
+    "{name} usa o PurpleBot {current}. A atualização foi baixada. {name} reinicia para instalá-la.",
   "mobile.server.update.dialog.waitIdleDescription":
     "A reinicialização aguarda a conclusão dos turnos de agente e das execuções de rotina.",
   "mobile.server.update.dialog.updateNow": "Atualizar agora",
@@ -1500,10 +1501,10 @@ export const messages = {
   "mobile.server.update.reason.fileTransfer": "uma transferência de arquivo",
   "mobile.server.update.reason.browserControl": "controle do navegador por um agente",
   "mobile.server.update.reason.updateOperation": "outra etapa da atualização",
-  "mobile.server.update.reason.initialization": "a inicialização do OpenBot",
+  "mobile.server.update.reason.initialization": "a inicialização do PurpleBot",
   "mobile.server.update.reason.other": "outros trabalhos",
   "mobile.server.update.actionFailed": "A ação do servidor falhou.",
-  "mobile.server.update.unavailable": "Conecte-se a este servidor para ver as atualizações do OpenBot.",
+  "mobile.server.update.unavailable": "Conecte-se a este servidor para ver as atualizações do PurpleBot.",
   "mobile.server.update.loading": "Carregando atualizações…",
   "mobile.server.route.sites": "Sites",
   "mobile.server.settings.sites": "Sites",
@@ -1522,13 +1523,13 @@ export const messages = {
   "mobile.server.sites.deleteDescription": "Este endereço retornará 410 Gone imediatamente.",
   "mobile.server.sites.deleteFailed": "Não foi possível excluir o site.",
   "mobile.server.sites.openFailed": "Não foi possível abrir o site.",
-  "mobile.server.sites.unsupported": "Atualize o OpenBot neste servidor para ver os sites dele aqui.",
+  "mobile.server.sites.unsupported": "Atualize o PurpleBot neste servidor para ver os sites dele aqui.",
   "mobile.server.sites.offline": "Conecte-se a este servidor para ver os sites dele.",
   "mobile.server.route.roles": "Permissões",
   "mobile.server.route.role": "Função",
   "mobile.server.roles.description":
     "Escolha os agentes que os membros podem usar. Proprietários e administradores podem usar todos os agentes.",
-  "mobile.server.roles.unsupported": "Atualize o OpenBot neste servidor para gerenciar funções.",
+  "mobile.server.roles.unsupported": "Atualize o PurpleBot neste servidor para gerenciar funções.",
   "mobile.server.roles.unavailable":
     "Só um proprietário ou administrador de um servidor online pode gerenciar funções.",
   "mobile.server.roles.loading": "Carregando funções…",
@@ -1569,7 +1570,7 @@ export const messages = {
   "mobile.server.route.audit": "Registro de auditoria",
   "mobile.server.audit.description":
     "Alterações nos membros, funções e acesso a agentes deste servidor, das mais recentes para as mais antigas. O host guarda as 500 alterações mais recentes.",
-  "mobile.server.audit.unsupported": "Atualize o OpenBot neste servidor para ver o registro de auditoria.",
+  "mobile.server.audit.unsupported": "Atualize o PurpleBot neste servidor para ver o registro de auditoria.",
   "mobile.server.audit.unavailable":
     "Somente um proprietário ou administrador de um servidor online pode ver o registro de auditoria.",
   "mobile.server.audit.loading": "Carregando alterações…",
@@ -1597,7 +1598,7 @@ export const messages = {
   "mobile.server.audit.agentLevel": "{agent} para {role}: {change}",
   "mobile.server.settings.importAgents": "Importar agentes",
   "mobile.server.route.import": "Importar agentes",
-  "mobile.server.import.unsupported": "Atualize o OpenBot neste servidor para importar agentes aqui.",
+  "mobile.server.import.unsupported": "Atualize o PurpleBot neste servidor para importar agentes aqui.",
   "mobile.server.import.unavailable": "Conecte-se a este servidor para importar agentes.",
   "mobile.server.import.count.agent": { one: "{count} agente", other: "{count} agentes" },
   "mobile.server.import.count.channel": { one: "{count} canal", other: "{count} canais" },
@@ -1607,10 +1608,10 @@ export const messages = {
   "mobile.server.import.count.file": { one: "{count} arquivo", other: "{count} arquivos" },
   "mobile.server.import.sourceTitle": "Onde estão seus agentes agora?",
   "mobile.server.import.sourceLede":
-    "O OpenBot copia os agentes para este servidor. Você vê cada item antes de qualquer alteração.",
+    "O PurpleBot copia os agentes para este servidor. Você vê cada item antes de qualquer alteração.",
   "mobile.server.import.hermesNote": "Exporte um arquivo .zip do Hermes.",
   "mobile.server.import.grokNote": "Na nuvem. Um agente de exportação lá cria um arquivo .zip.",
-  "mobile.server.import.transfer": "Outro servidor OpenBot",
+  "mobile.server.import.transfer": "Outro servidor PurpleBot",
   "mobile.server.import.transferNote": "Use Transferência para mover agentes e configurações juntos.",
   "mobile.server.import.grokLede":
     "Um agente de exportação no Grok Bot reúne nomes, instruções, avatares, habilidades, rotinas, memórias e os arquivos que você incluir em um único arquivo .zip.",
@@ -1673,7 +1674,7 @@ export const messages = {
   "mobile.server.route.transferExport": "Exportar",
   "mobile.server.route.transferImport": "Importar",
   "mobile.server.route.transferCopy": "Copiar para outro servidor",
-  "mobile.server.transfer.unsupported": "Atualize o OpenBot neste servidor para transferi-lo aqui.",
+  "mobile.server.transfer.unsupported": "Atualize o PurpleBot neste servidor para transferi-lo aqui.",
   "mobile.server.transfer.unavailable":
     "Conecte-se a este servidor como proprietário ou administrador para transferi-lo.",
   "mobile.server.transfer.title": "Mover este servidor para outro computador",
@@ -1718,8 +1719,8 @@ export const messages = {
   "mobile.server.transfer.reading": "Lendo o arquivo…",
   "mobile.server.transfer.sending": "Enviando o arquivo… {percent}%",
   "mobile.server.transfer.openFailed": "Não foi possível abrir o arquivo.",
-  "mobile.server.transfer.source": "OpenBot {version} · exportado em {date}",
-  "mobile.server.transfer.sourceNoDate": "OpenBot {version}",
+  "mobile.server.transfer.source": "PurpleBot {version} · exportado em {date}",
+  "mobile.server.transfer.sourceNoDate": "PurpleBot {version}",
   "mobile.server.transfer.importWarnings": "Antes de a importação começar",
   "mobile.server.transfer.importAgents": "Agentes no arquivo",
   "mobile.server.transfer.nameExists": "Nome já usado",
@@ -1762,7 +1763,7 @@ export const messages = {
   "mobile.server.route.ownerTransfer": "Transferir propriedade",
   "mobile.server.ownerTransfer.unavailable":
     "Conecte-se a este servidor como proprietário para transferir a propriedade.",
-  "mobile.server.ownerTransfer.hosted": "O OpenBot hospeda este servidor, então o proprietário não pode mudar.",
+  "mobile.server.ownerTransfer.hosted": "O PurpleBot hospeda este servidor, então o proprietário não pode mudar.",
   "mobile.server.ownerTransfer.lede":
     "O novo proprietário recebe um e-mail e precisa aceitar com a sessão iniciada nesse e-mail. Depois disso, você é removido deste servidor.",
   "mobile.server.ownerTransfer.email": "E-mail do novo proprietário",
@@ -1788,7 +1789,7 @@ export const messages = {
   "mobile.server.ownerTransfer.cancelFailed": "A transferência não foi cancelada.",
   "mobile.server.ownerTransfer.incomingTitle": "Ser proprietário de {server}?",
   "mobile.server.ownerTransfer.incomingBody":
-    "{name} quer tornar você proprietário de {server}. Você terá controle total do servidor, e os agentes, chats, rotinas e logins salvos continuam nele. {name} perde o acesso. Quem ainda consegue entrar no computador que executa o servidor pode usar sua conta OpenBot. Troque as senhas e chaves SSH dele.",
+    "{name} quer tornar você proprietário de {server}. Você terá controle total do servidor, e os agentes, chats, rotinas e logins salvos continuam nele. {name} perde o acesso. Quem ainda consegue entrar no computador que executa o servidor pode usar sua conta PurpleBot. Troque as senhas e chaves SSH dele.",
   "mobile.server.ownerTransfer.accept": "Aceitar",
   "mobile.server.ownerTransfer.decline": "Recusar",
   "mobile.server.ownerTransfer.accepted": "Agora você é proprietário de {server}.",

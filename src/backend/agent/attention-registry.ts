@@ -280,7 +280,7 @@ const TOOL_APPROVAL_METHOD = "openbot/tool-approval";
 const MESSAGING_QUESTION_REFUSED =
   "This conversation is in an external chat, where nobody can answer a question card. Ask the question in your answer: the person replies in the conversation.";
 const MESSAGING_REQUEST_CARD_REFUSED =
-  "This request came from an external chat (Slack, Discord, Telegram or WhatsApp) through another agent, and nobody can answer a card here. Decide on your own and continue. When only the OpenBot user can unblock you, such as a sign-in, a key or a password, stop and say in your answer exactly what the OpenBot user must do in OpenBot.";
+  "This request came from an external chat (Slack, Discord, Telegram or WhatsApp) through another agent, and nobody can answer a card here. Decide on your own and continue. When only the PurpleBot user can unblock you, such as a sign-in, a key or a password, stop and say in your answer exactly what the PurpleBot user must do in PurpleBot.";
 const MCP_TOOL_CONSENT_UNANSWERABLE = {
   action: "cancel",
   content: null,
@@ -294,15 +294,15 @@ const USER_ANSWER_LIMIT_MS = 10 * 60_000;
 const TAKEOVER_ALREADY_WAITING = "A takeover of this tab already waits for the user. Wait for it to return.";
 const VAULT_UNAVAILABLE = "No Vault is available on this computer. Ask the user.";
 const ROUTINE_SAVED_LOGIN_NOT_FILLED =
-  "This is a routine run, so nobody can answer a password card. When this text says how to correct the call, correct it and call submit_secret again with the loginId. Else stop the sign-in and say in your report that the user must sign in, and why OpenBot did not fill the saved login. Do not call submit_secret without loginId or request_takeover.";
+  "This is a routine run, so nobody can answer a password card. When this text says how to correct the call, correct it and call submit_secret again with the loginId. Else stop the sign-in and say in your report that the user must sign in, and why PurpleBot did not fill the saved login. Do not call submit_secret without loginId or request_takeover.";
 const NO_LOGIN_FOR_SITE =
-  "No saved login is for the site of this page. A login fits only the site of a website saved in it, with its subdomains, and a sign-in page can be on a different site than the service. When the user says that a login for this account is saved, tell them what to check. In a password manager: add the address of this sign-in page as a website of the login, and keep the login where they share logins with OpenBot; the page of each password manager in Marketplace shows where. In the OpenBot Vault, a login has one website: save a second login for the address of this sign-in page in Server settings > Vault, and let this agent use the login under Agents. Until then, continue as for a site with no saved login.";
+  "No saved login is for the site of this page. A login fits only the site of a website saved in it, with its subdomains, and a sign-in page can be on a different site than the service. When the user says that a login for this account is saved, tell them what to check. In a password manager: add the address of this sign-in page as a website of the login, and keep the login where they share logins with PurpleBot; the page of each password manager in Marketplace shows where. In the PurpleBot Vault, a login has one website: save a second login for the address of this sign-in page in Server settings > Vault, and let this agent use the login under Agents. Until then, continue as for a site with no saved login.";
 const VAULT_LOGIN_ADD_FIELDS =
   "A new login needs website and password. When you do not have the password, call request_vault_item kind=login.";
 const VAULT_PASSWORD_EXTERNAL_REFUSED =
   "You cannot save a password in an external chat. Ask the user to add it in Server settings > Vault.";
 const VAULT_PASSWORD_PERSON_ONLY =
-  "Only a person's message, in your OpenBot chat or a thread they opened, can save a password or a two-step key. Ask the user to add it in Server settings > Vault.";
+  "Only a person's message, in your PurpleBot chat or a thread they opened, can save a password or a two-step key. Ask the user to add it in Server settings > Vault.";
 const decodePasswordArgument = Schema.decodeUnknownOption(Schema.Struct({ password: Schema.String }));
 const VAULT_TWO_STEP_KEY_INVALID =
   "twoStepKey is not an authenticator setup key. Give the base32 key (at least 16 characters) or the otpauth://totp/ link that the site shows with its QR code.";
@@ -1223,7 +1223,7 @@ export class AttentionRegistry {
       if (this.#takeovers.get(input.requestId) !== pending) return;
       if (outcome === "submitted") {
         const vault = pending.vaultLoginId
-          ? `OpenBot filled saved login ${pending.vaultLoginId}; the user did not type it.`
+          ? `PurpleBot filled saved login ${pending.vaultLoginId}; the user did not type it.`
           : input.saveToVault && secret.request.method === "password"
             ? yield* this.#saveTypedPassword(pending, secret.request.origin, input.secret)
             : undefined;
@@ -1235,7 +1235,7 @@ export class AttentionRegistry {
         const reason = pending.secureInputFailed ? ` ${pending.secureInputFailed}` : "";
         pending.resolve(
           browserTakeoverError(
-            `OpenBot could not finish filling saved login ${pending.vaultLoginId}.${reason} ${ROUTINE_SAVED_LOGIN_NOT_FILLED}`,
+            `PurpleBot could not finish filling saved login ${pending.vaultLoginId}.${reason} ${ROUTINE_SAVED_LOGIN_NOT_FILLED}`,
           ),
         );
         this.#resolveBrowserTakeover(input.requestId, pending, "cancel");
@@ -1610,28 +1610,28 @@ export class AttentionRegistry {
           } else if (getString(args, "loginId") && this.#routines.runsTurn(turnId)) {
             pending.resolve(
               browserTakeoverError(
-                `${pending.vaultSkipped ?? "OpenBot did not fill a saved login: no password manager is connected."} ${ROUTINE_SAVED_LOGIN_NOT_FILLED}`,
+                `${pending.vaultSkipped ?? "PurpleBot did not fill a saved login: no password manager is connected."} ${ROUTINE_SAVED_LOGIN_NOT_FILLED}`,
               ),
             );
             this.#resolveBrowserTakeover(requestId, pending, "cancel");
           } else if (pending.secret?.withCode) {
             pending.resolve(
               browserTakeoverError(
-                `${pending.vaultSkipped ?? "OpenBot did not fill a saved login: no password manager is connected."} Correct the call, or use request_takeover so that the user signs in.`,
+                `${pending.vaultSkipped ?? "PurpleBot did not fill a saved login: no password manager is connected."} Correct the call, or use request_takeover so that the user signs in.`,
               ),
             );
             this.#resolveBrowserTakeover(requestId, pending, "cancel");
           } else if (pending.secret && websiteUrl(pending.secret.request.origin)?.protocol === "http:") {
             pending.resolve(
               browserTakeoverError(
-                `${pending.vaultSkipped ?? "OpenBot did not fill a saved login: no password manager is connected."} On an HTTP page, OpenBot fills only a saved login. Use request_takeover so that the user signs in.`,
+                `${pending.vaultSkipped ?? "PurpleBot did not fill a saved login: no password manager is connected."} On an HTTP page, PurpleBot fills only a saved login. Use request_takeover so that the user signs in.`,
               ),
             );
             this.#resolveBrowserTakeover(requestId, pending, "cancel");
           } else if (pending.request.vaultSkip === "agent-script") {
             pending.resolve(
               browserTakeoverError(
-                `${pending.vaultSkipped} When OpenBot still does not fill the saved login, call submit_secret without loginId so that the user types the password, or use request_takeover.`,
+                `${pending.vaultSkipped} When PurpleBot still does not fill the saved login, call submit_secret without loginId so that the user types the password, or use request_takeover.`,
               ),
             );
             this.#resolveBrowserTakeover(requestId, pending, "cancel");
@@ -1832,7 +1832,7 @@ export class AttentionRegistry {
     if (!wallet?.ready() || !agentId) return browserTakeoverError(NEAR_UNAVAILABLE);
     if (this.#messagingThread(params.threadId) || this.#messagingRequestTurn(agentId, params.turnId))
       return browserTakeoverError(
-        "request_near_payment does not work for a request from a Slack, Discord or Telegram chat. Ask the user to start the payment in the OpenBot chat.",
+        "request_near_payment does not work for a request from a Slack, Discord or Telegram chat. Ask the user to start the payment in the PurpleBot chat.",
       );
     const requestId = String(request.id);
     const plan = yield* Effect.result(wallet.prepare({ agentId, threadId: params.threadId, requestId, ...call.args }));
@@ -1874,7 +1874,7 @@ export class AttentionRegistry {
       result.status === "paid"
         ? "Go back to the site and continue."
         : result.status === "uncertain"
-          ? "Do not pay again. OpenBot finishes this payment; tell the user to check the wallet in Server settings > Vault > Crypto."
+          ? "Do not pay again. PurpleBot finishes this payment; tell the user to check the wallet in Server settings > Vault > Crypto."
           : "Do not try again; tell the user.";
     return {
       success: result.status === "paid",
@@ -2109,7 +2109,7 @@ export class AttentionRegistry {
           connected: true,
           logins,
           unreadable,
-          next: `OpenBot could not read the saved logins of ${unreadable.join(", ")}, so this list can be incomplete. Tell the user which of them could not be read: the page of each password manager in Marketplace shows what to do. Use a listed login only when it is the account for the task; else use submit_secret without loginId.`,
+          next: `PurpleBot could not read the saved logins of ${unreadable.join(", ")}, so this list can be incomplete. Tell the user which of them could not be read: the page of each password manager in Marketplace shows what to do. Use a listed login only when it is the account for the task; else use submit_secret without loginId.`,
         }
       : logins === null
         ? { connected: false, logins: [], next: "No password vault is connected. Use submit_secret without loginId." }
@@ -2139,8 +2139,8 @@ export class AttentionRegistry {
           {
             type: "inputText",
             text: problem
-              ? `OpenBot could not create a user question: ${problem} Correct the arguments and retry.`
-              : "OpenBot could not create a user question.",
+              ? `PurpleBot could not create a user question: ${problem} Correct the arguments and retry.`
+              : "PurpleBot could not create a user question.",
           },
         ],
       });
@@ -2216,7 +2216,7 @@ export class AttentionRegistry {
     if (!threadId || !turnId || !agentId || !publicThreadId || !uiBlock || !validPromptQuestions(questions)) {
       client.respond(request.id, {
         success: false,
-        contentItems: [{ type: "inputText", text: "OpenBot could not show this block." }],
+        contentItems: [{ type: "inputText", text: "PurpleBot could not show this block." }],
       });
       return;
     }
@@ -2690,7 +2690,7 @@ export class AttentionRegistry {
   #respondToMalformedApproval(client: AgentClient, request: AppServerRequest): void {
     client.respond(
       request.id,
-      approvalReply(request.method, request.params, "decline", "OpenBot could not identify this approval."),
+      approvalReply(request.method, request.params, "decline", "PurpleBot could not identify this approval."),
     );
   }
 
@@ -2710,7 +2710,7 @@ export class AttentionRegistry {
       { loginId, card }: { loginId?: string; card?: BrowserVaultSkipReason } = {},
     ) => {
       logger.info("Shared vault fill skipped", { origin: request.origin, method: request.method, loginId, reason });
-      pending.vaultSkipped = `OpenBot did not fill a saved login: ${note}`;
+      pending.vaultSkipped = `PurpleBot did not fill a saved login: ${note}`;
       if (card) pending.request.vaultSkip = card;
       return false;
     };
@@ -2770,7 +2770,7 @@ export class AttentionRegistry {
     );
     if (Result.isFailure(found)) {
       logger.warn("Unable to fill from the shared vault", { error: toLogValue(found.failure.cause) });
-      pending.vaultSkipped = "OpenBot did not fill a saved login: the password manager could not be read.";
+      pending.vaultSkipped = "PurpleBot did not fill a saved login: the password manager could not be read.";
       if (Result.isSuccess(parsed)) pending.request.vaultSkip = "vault-unreadable";
       return false;
     }

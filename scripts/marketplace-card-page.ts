@@ -1,5 +1,5 @@
 import { BloubBot } from "@norbert_bodziony/bloub";
-import { APP_LOGO_CORNER, APP_LOGO_EYE_POINTS, APP_LOGO_SIZE } from "@openbot/brand/app-logo-shape";
+import { APP_LOGO_CORNER, APP_LOGO_FACE, APP_LOGO_SIZE } from "@openbot/brand/app-logo-shape";
 import { bloubAvatarProfile } from "@openbot/brand/bloub-avatar";
 import type { AvatarHue } from "@openbot/contracts/ipc";
 import { render } from "@solidjs/web";
@@ -29,8 +29,8 @@ const FONT_FAMILY = '"Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe
 const CANVAS = "#1a1a1a";
 const PRIMARY = "#ffffff";
 const SECONDARY = "#dcdcdc";
-const LOGO_BACKGROUND = "#d6adf2";
-const LOGO_EYE = "#040007";
+const LOGO_BACKGROUND = "#7c3aed";
+const LOGO_EYE = "#ffffff";
 
 const AVATAR = { x: 24, y: (HEIGHT - 540) / 2, size: 540 };
 const BRAND = { x: 590, y: 96, logo: 48, gap: 14, font: 32 };
@@ -145,10 +145,10 @@ function drawBrand(context: CanvasRenderingContext2D): void {
   drawLogo(context, BRAND.x, BRAND.y, BRAND.logo);
   setFont(context, 600, BRAND.font, -0.02);
   context.fillStyle = PRIMARY;
-  const metrics = context.measureText("OpenBot");
+  const metrics = context.measureText("PurpleBot");
   const textHeight = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent;
   const baseline = BRAND.y + (BRAND.logo - textHeight) / 2 + metrics.fontBoundingBoxAscent;
-  context.fillText("OpenBot", BRAND.x + BRAND.logo + BRAND.gap, baseline);
+  context.fillText("PurpleBot", BRAND.x + BRAND.logo + BRAND.gap, baseline);
 }
 
 function drawLogo(context: CanvasRenderingContext2D, x: number, y: number, size: number): void {
@@ -161,10 +161,10 @@ function drawLogo(context: CanvasRenderingContext2D, x: number, y: number, size:
   context.fill();
   context.clip();
   context.strokeStyle = LOGO_EYE;
-  context.lineWidth = 9.5;
   context.lineCap = "round";
   context.lineJoin = "round";
-  for (const points of [APP_LOGO_EYE_POINTS.left, APP_LOGO_EYE_POINTS.right]) {
+  for (const { points, stroke } of APP_LOGO_FACE) {
+    context.lineWidth = stroke;
     const values = points.split(/\s+/u).map(Number);
     context.beginPath();
     for (let index = 0; index + 1 < values.length; index += 2) {

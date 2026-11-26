@@ -2,14 +2,14 @@ import type { PartialTranslation } from "../../message";
 import type { messages as source } from "../en/webClient";
 
 export const messages = {
-  "webClient.loading": "Загрузка OpenBot…",
+  "webClient.loading": "Загрузка PurpleBot…",
   "webClient.loadingLine.wake": "Будим агентов…",
   "webClient.loadingLine.coffee": "Наливаем агентам кофе…",
   "webClient.loadingLine.tokens": "Считаем токены на пальцах…",
   "webClient.loadingLine.prompts": "Распутываем промпты…",
   "webClient.loadingLine.sleepy": "Вежливо просим самого сонного…",
   "webClient.loadingLine.almost": "Почти готово. Наверное.",
-  "webClient.slowLoad.title": "OpenBot загружается дольше обычного",
+  "webClient.slowLoad.title": "PurpleBot загружается дольше обычного",
   "webClient.slowLoad.body": "Проверьте подключение к интернету, затем перезагрузите страницу.",
   "webClient.slowLoad.reload": "Перезагрузить",
   "webClient.login.failed": "Не удалось войти.",
@@ -21,8 +21,8 @@ export const messages = {
   "webClient.pane.navigation": "Навигация по рабочему пространству",
   "webClient.pane.chat": "Чат",
   "webClient.pane.workspace": "Рабочее пространство",
-  "webClient.phoneApp.title": "Используйте приложение OpenBot",
-  "webClient.phoneApp.description": "На телефоне OpenBot лучше всего работает в приложении. Войдите с той же почтой.",
+  "webClient.phoneApp.title": "Используйте приложение PurpleBot",
+  "webClient.phoneApp.description": "На телефоне PurpleBot лучше всего работает в приложении. Войдите с той же почтой.",
   "webClient.phoneApp.ios": "Скачать для iPhone",
   "webClient.phoneApp.android": "Скачать для Android",
   "webClient.phoneApp.continue": "Продолжить в браузере",
@@ -31,19 +31,19 @@ export const messages = {
   "webClient.notice.hostsFailed": "Не удалось загрузить ваши серверы",
   "webClient.notice.connectComputer": "Подключите сервер",
   "webClient.connect.description":
-    "Запустите OpenBot на своём компьютере, чтобы общаться с агентами из этого браузера. Также можно присоединиться к серверу по приглашению.",
+    "Запустите PurpleBot на своём компьютере, чтобы общаться с агентами из этого браузера. Также можно присоединиться к серверу по приглашению.",
   "webClient.connect.descriptionHosted":
-    "Создайте размещённый сервер, чтобы общаться с агентами из этого браузера. Также можно запустить OpenBot на своём компьютере или присоединиться к серверу по приглашению.",
-  "webClient.connect.stepInstall": "Установите и откройте OpenBot на своём компьютере.",
+    "Создайте размещённый сервер, чтобы общаться с агентами из этого браузера. Также можно запустить PurpleBot на своём компьютере или присоединиться к серверу по приглашению.",
+  "webClient.connect.stepInstall": "Установите и откройте PurpleBot на своём компьютере.",
   "webClient.connect.stepSignIn": "Войдите с помощью адреса электронной почты.",
   "webClient.connect.stepRemote":
-    "В OpenBot откройте Настройки сервера > Участники и включите Опубликовать этот сервер.",
-  "webClient.notice.download": "Скачать OpenBot",
+    "В PurpleBot откройте Настройки сервера > Участники и включите Опубликовать этот сервер.",
+  "webClient.notice.download": "Скачать PurpleBot",
   "webClient.notice.createServer": "Создать облачный сервер",
   "webClient.notice.join": "Войти по приглашению",
   "webClient.notice.refreshHosts": "Обновить серверы",
   "webClient.otherTab.title": "{name} открыт в другой вкладке",
-  "webClient.otherTab.description": "OpenBot может использовать сервер только в одной вкладке одновременно.",
+  "webClient.otherTab.description": "PurpleBot может использовать сервер только в одной вкладке одновременно.",
   "webClient.otherTab.useHere": "Использовать здесь",
   "webClient.agent.modelsFailed": "Не удалось загрузить модели сервера.",
   "webClient.agent.refreshFailed":
@@ -53,7 +53,7 @@ export const messages = {
   "webClient.error.usageOffline": "Подключитесь к серверу, чтобы посмотреть использование.",
   "webClient.error.desktopOnly": "Это действие доступно в приложении для компьютера.",
   "webClient.settings.preferences.title": "Настройки",
-  "webClient.settings.preferences.description": "Выберите язык и звуки OpenBot в этом браузере.",
+  "webClient.settings.preferences.description": "Выберите язык и звуки PurpleBot в этом браузере.",
   "webClient.error.checkConversation": "Проверьте диалог, прежде чем отправлять снова.",
   "webClient.error.hostReported": "Сервер сообщил об ошибке. Проверьте диалог и состояние сервера.",
   "webClient.error.requestFailed": "Запрос не удался.",
@@ -82,7 +82,7 @@ export const messages = {
   "webClient.error.identityChanged": "Идентификатор сервера изменился. Подключение отклонено.",
   "webClient.error.connectionUnavailable": "Подключение к серверу недоступно.",
   "webClient.error.incompatible":
-    "Этот сервер несовместим с веб-версией OpenBot. Обновите сервер и перезагрузите страницу.",
+    "Этот сервер несовместим с веб-версией PurpleBot. Обновите сервер и перезагрузите страницу.",
   "webClient.error.sendUnconfirmed":
     "Доставка сообщения не подтверждена. Обновите страницу, прежде чем отправлять снова.",
   "webClient.error.fileType": "Обновите сервер, чтобы прикреплять файлы этого типа.",
@@ -90,7 +90,7 @@ export const messages = {
   "webClient.error.duplication": "Этот сервер не поддерживает дублирование агентов.",
   "webClient.error.connectServerFirst": "Сначала подключитесь к этому серверу.",
   "webClient.error.agentInstallNotAllowed":
-    "Добавлять агента здесь может только владелец или администратор, а на сервере должна работать актуальная версия OpenBot.",
+    "Добавлять агента здесь может только владелец или администратор, а на сервере должна работать актуальная версия PurpleBot.",
   "webClient.error.linkDesktopOnly": "Эта ссылка открывается только в приложении для компьютера.",
   "webClient.error.saveEndpointOffline": "Подключитесь к серверу, чтобы сохранить эндпоинт.",
   "webClient.error.removeEndpointOffline": "Подключитесь к серверу, чтобы удалить эндпоинт.",

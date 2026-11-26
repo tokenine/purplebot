@@ -3,9 +3,9 @@ import { defineMessages } from "../../message";
 export const messages = defineMessages("vault", {
   "vault.items.title": "Saved items",
   "vault.items.description":
-    "Every agent on this server can use these items. OpenBot types passwords, card numbers and security codes into the page, so agents never see them. Agents read API keys from a file, not from the chat.",
+    "Every agent on this server can use these items. PurpleBot types passwords, card numbers and security codes into the page, so agents never see them. Agents read API keys from a file, not from the chat.",
   "vault.items.scopedDescription":
-    "Each item is for the agents that you choose. OpenBot types passwords, card numbers and security codes into the page, so agents never see them. Agents read API keys from a file, not from the chat. All agents run as the same system user, so an agent can also read an API key file that is for other agents.",
+    "Each item is for the agents that you choose. PurpleBot types passwords, card numbers and security codes into the page, so agents never see them. Agents read API keys from a file, not from the chat. All agents run as the same system user, so an agent can also read an API key file that is for other agents.",
   "vault.agents.label": "Agents",
   "vault.agents.all": "All agents",
   "vault.agents.some": "{chosen} of {total}",
@@ -101,15 +101,15 @@ export const messages = defineMessages("vault", {
   "vault.importMenu": "Import from CSV",
   "vault.importTitle": "Import from a CSV file",
   "vault.importDescription":
-    "Import logins from a CSV file that 1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Passwords, LastPass or Proton Pass exports. OpenBot reads the file on this computer and does not upload it.",
+    "Import logins from a CSV file that 1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Passwords, LastPass or Proton Pass exports. PurpleBot reads the file on this computer and does not upload it.",
   "vault.importChoose": "Choose CSV file",
   "vault.importDone": "Imported: {imported}. Skipped: {skipped}.",
   "vault.unavailableTitle": "This computer cannot keep secrets",
   "vault.unavailableDescription":
-    "OpenBot encrypts the Vault with the secret storage of the system. Set up a keyring, then open this page again.",
-  "vault.unreadableTitle": "OpenBot cannot read the Vault",
+    "PurpleBot encrypts the Vault with the secret storage of the system. Set up a keyring, then open this page again.",
+  "vault.unreadableTitle": "PurpleBot cannot read the Vault",
   "vault.unreadableDescription":
-    "The Vault file is on this computer, but OpenBot cannot decrypt it. This can occur when the system keychain changes. Reset the Vault to start again with no items.",
+    "The Vault file is on this computer, but PurpleBot cannot decrypt it. This can occur when the system keychain changes. Reset the Vault to start again with no items.",
   "vault.link.group": "Payment accounts",
   "vault.link.name": "Link",
   "vault.link.connect": "Connect",
@@ -123,7 +123,7 @@ export const messages = defineMessages("vault", {
     "Agents can no longer ask to pay with Link. Your Link account and its cards stay as they are.",
   "vault.reset": "Reset Vault",
   "vault.resetTitle": "Reset the Vault?",
-  "vault.resetDescription": "OpenBot deletes the Vault file and all items in it. You cannot undo this.",
+  "vault.resetDescription": "PurpleBot deletes the Vault file and all items in it. You cannot undo this.",
   "vault.request.private": "Goes to your Vault. {agent} never sees it.",
   "vault.request.privateUnnamed": "Goes to your Vault. The agent never sees it.",
   "vault.request.addLogin": "Add login",
@@ -143,7 +143,7 @@ export const messages = defineMessages("vault", {
   },
   "vault.twoStep.setupTitle": "Set up two-step code",
   "vault.twoStep.setupIntro":
-    "On {site}, turn on two-step verification with an authenticator app. When the site shows a QR code, give OpenBot its key.",
+    "On {site}, turn on two-step verification with an authenticator app. When the site shows a QR code, give PurpleBot its key.",
   "vault.twoStep.keyLabel": "Setup key or otpauth:// link",
   "vault.twoStep.keyHint": "Most sites show it under the QR code, as “Can’t scan it?” or “Enter the key manually”.",
   "vault.twoStep.keyInvalid": "This is not a two-step key.",
@@ -160,7 +160,7 @@ export const messages = defineMessages("vault", {
   "vault.near.name": "Crypto wallet",
   "vault.near.open": "Open crypto wallet",
   "vault.near.connect": "Connect",
-  "vault.near.signedOut": "Sign in to OpenBot to set up the crypto wallet.",
+  "vault.near.signedOut": "Sign in to PurpleBot to set up the crypto wallet.",
   "vault.near.paused": "Paused",
   "vault.near.failed": "Could not change the crypto wallet.",
   "vault.near.waiting": "Waiting for your signature in the browser…",
@@ -168,7 +168,7 @@ export const messages = defineMessages("vault", {
   "vault.near.openAgain": "Open again",
   "vault.near.signature.label": "Signatures in the browser",
   "vault.near.signature.register": "Create your passkey",
-  "vault.near.signature.registerDetail": "Only on your devices. OpenBot never holds it.",
+  "vault.near.signature.registerDetail": "Only on your devices. PurpleBot never holds it.",
   "vault.near.signature.create": "Approve the new wallet",
   "vault.near.signature.createDetail": "All agents can pay up to {amount} a day. Change it later.",
   "vault.near.signature.count": "Signature {step} of {count} in your browser",
@@ -191,7 +191,7 @@ export const messages = defineMessages("vault", {
   "vault.near.backup.unknownDetail":
     "Your browser did not tell us if this passkey has a backup. Check that your passkey manager syncs it.",
   "vault.near.backup.notChecked": "Backup not checked",
-  "vault.near.backup.noCopy": "OpenBot does not keep a copy of your passkey. Only you can sign for this wallet.",
+  "vault.near.backup.noCopy": "PurpleBot does not keep a copy of your passkey. Only you can sign for this wallet.",
   "vault.near.backup.checked": "Checked {date}",
   "vault.near.backup.check": "Check backup",
   "vault.near.backup.checkAgain": "Check again",
@@ -257,7 +257,7 @@ export const messages = defineMessages("vault", {
   "vault.near.disconnect": "Disconnect",
   "vault.near.disconnectTitle": "Disconnect crypto wallet?",
   "vault.near.disconnectDescription":
-    "Agents can no longer pay from this wallet, and OpenBot forgets it. The funds stay in the wallet on NEAR Intents.",
+    "Agents can no longer pay from this wallet, and PurpleBot forgets it. The funds stay in the wallet on NEAR Intents.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "Over the daily limit",
   "vault.near.approve": "Approve",

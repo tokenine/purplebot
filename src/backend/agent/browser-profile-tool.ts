@@ -103,11 +103,11 @@ export const handleSetBrowserProfileTool = Effect.fn("SetBrowserProfileTool.hand
     if ((profile === "named") !== (name !== undefined))
       return openBotToolFailure("Pass name with profile named, and only then.");
     const profiles = options.profiles;
-    if (!profiles) return openBotToolFailure("This OpenBot has no browser profiles.");
+    if (!profiles) return openBotToolFailure("This PurpleBot has no browser profiles.");
     if (!options.requestedByPerson)
       return openBotToolFailure(
         options.requestersCanAdminister
-          ? "Only a person's message, in your OpenBot chat or a thread they opened, can change a browser profile. Tell the user that they can change it in the agent's settings, Advanced, Browser profile."
+          ? "Only a person's message, in your PurpleBot chat or a thread they opened, can change a browser profile. Tell the user that they can change it in the agent's settings, Advanced, Browser profile."
           : "A server member who is not an owner or admin sent this request. Only an owner or admin can change a browser profile or its proxy, and a member does not see the Browser profile setting. Tell the user to ask an owner or admin of the server to change it.",
       );
     const agents = options.listAgents();

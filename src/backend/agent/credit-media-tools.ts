@@ -81,16 +81,16 @@ const generateVideoToolSchema = z.strictObject({
 });
 
 const PAID_RULE =
-  "It spends OpenBot credits. OpenBot asks the user above the price limit, so do not ask for approval yourself.";
+  "It spends PurpleBot credits. PurpleBot asks the user above the price limit, so do not ask for approval yourself.";
 
 const OWN_TOOL_RULE =
-  "only when you have no such tool of your own, when the user asks for OpenBot credits, or when the user names a model that your own tool cannot make.";
+  "only when you have no such tool of your own, when the user asks for PurpleBot credits, or when the user names a model that your own tool cannot make.";
 
 export const CREDIT_MEDIA_TOOL_DEFINITIONS = [
   {
     name: LIST_MEDIA_MODELS_TOOL,
     description:
-      "List the models of generate_image and generate_video with their options and prices, the default model of each kind, the credit balance, freeCredits (they pay only for models with takesFreeCredits), and askAboveCredits: the price above which OpenBot asks the user.",
+      "List the models of generate_image and generate_video with their options and prices, the default model of each kind, the credit balance, freeCredits (they pay only for models with takesFreeCredits), and askAboveCredits: the price above which PurpleBot asks the user.",
     shape: listMediaModelsToolSchema.shape,
   },
   {
@@ -433,10 +433,10 @@ function freeNoteText(asked: PlannedJob, free: PlannedJob): string {
   const settings = settingsText(free);
   const used = settings === "" ? freeName : `${freeName} at ${settings}`;
   if (asked.model.welcome !== true)
-    return `The paid balance was too low for ${askedName}, so OpenBot used ${used}, which takes free credits.`;
+    return `The paid balance was too low for ${askedName}, so PurpleBot used ${used}, which takes free credits.`;
   if (free.model.id === asked.model.id)
-    return `The free credits were too few for ${askedName} at the asked settings, so OpenBot used ${used}.`;
-  return `The free credits were too few for ${askedName}, so OpenBot used ${used}, which also takes free credits.`;
+    return `The free credits were too few for ${askedName} at the asked settings, so PurpleBot used ${used}.`;
+  return `The free credits were too few for ${askedName}, so PurpleBot used ${used}, which also takes free credits.`;
 }
 
 function freeNote(planned: PlannedJob): { note?: string } {
@@ -831,7 +831,7 @@ export class CreditMediaTools {
     if (!this.#options.askWhenBlocked() || this.#options.asksMuted(call.requesters)) {
       hold.answer = "not_asked";
       run.facts.outcome = "not_asked";
-      return `${blockedText(blocked, cost)} The user turned off credit requests, so OpenBot did not ask. ${NOT_AGAIN} Tell the user once, in a few words, that you skipped this step.`;
+      return `${blockedText(blocked, cost)} The user turned off credit requests, so PurpleBot did not ask. ${NOT_AGAIN} Tell the user once, in a few words, that you skipped this step.`;
     }
     const reason =
       blocked.reason === "agentsOff"
@@ -850,7 +850,7 @@ export class CreditMediaTools {
     if (answer.action === "skip") return `The user skipped this step. ${NOT_AGAIN}`;
     const person = answer.responder?.person ?? null;
     yield* this.#options.muteAsks(person).pipe(Effect.ignore);
-    return `The user skipped this step and asked OpenBot not to ask about credits again. ${NOT_AGAIN}`;
+    return `The user skipped this step and asked PurpleBot not to ask about credits again. ${NOT_AGAIN}`;
   });
 
   #funded = Effect.fn("CreditMediaTools.funded")(function* (media: CreditMediaWorkflows, planned: PlannedJob) {

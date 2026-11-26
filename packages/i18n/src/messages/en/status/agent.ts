@@ -43,7 +43,7 @@ export const messages = defineMessages("status.agent", {
     "The result shows in the channel {channel}, and each member of this server who reads the channel can see it.",
   "status.agent.creditsHoldBalance": "This uses {credits} credits, and the balance is {balance} credits.",
   "status.agent.creditsHoldAgentsOff": "Agents on this server cannot use credits.",
-  "status.agent.screenCapturePermissionNext": "macOS can then ask you to allow Screen Recording for OpenBot.",
+  "status.agent.screenCapturePermissionNext": "macOS can then ask you to allow Screen Recording for PurpleBot.",
   "status.agent.screenCaptureDisplay": "Capture the display {name} and send the image to the agent's model.",
   "status.agent.screenCaptureWindow": "Capture the window {name} and send the image to the agent's model.",
   "status.agent.screenCaptureRegion":
@@ -57,38 +57,39 @@ export const messages = defineMessages("status.agent", {
   "status.agent.sendIdea": "This becomes a public GitHub issue. Your name is not shown.",
   "status.agent.feedbackRecentErrors": "Recent errors in the chat:",
   "status.agent.feedbackSameAs": "Adds to issue #{issue}",
-  "status.agent.feedbackSent": "Sent to the OpenBot team: {title}",
+  "status.agent.feedbackSent": "Sent to the PurpleBot team: {title}",
   "status.agent.feedbackWithdrawn": "Removed from GitHub: {title}",
   "status.agent.feedbackWithdrawCommand": "Remove report #{issue} from GitHub",
   "status.agent.feedbackWithdrawReason":
     "Everyone loses access to this report on GitHub. You cannot undo this. To fix it, the agent can send a corrected report.",
   "status.agent.feedbackWithdrawing": "Removing your report from GitHub…",
   "status.agent.serverInstallCommand":
-    "Make a one-time command that installs OpenBot on another computer as the server {name} and signs it in to your account. The agent runs it there.",
+    "Make a one-time command that installs PurpleBot on another computer as the server {name} and signs it in to your account. The agent runs it there.",
   "status.agent.serverInstallCard": "Install command for the server {name}",
   "status.agent.browserProfileNamed":
     "Move {agents} to the browser profile {profile}. They get its sign-ins and cookies. Their open tabs close.",
-  "status.agent.commitCoAuthorOff": "Stop adding OpenBot as a co-author to the commits of all agents.",
-  "status.agent.commitCoAuthorOn": "Add OpenBot as a co-author to the commits of all agents again.",
+  "status.agent.commitCoAuthorOff": "Stop adding PurpleBot as a co-author to the commits of all agents.",
+  "status.agent.commitCoAuthorOn": "Add PurpleBot as a co-author to the commits of all agents again.",
   "status.agent.browserProfileNew":
     "Make the new browser profile {profile} and move {agents} to it. It has no sign-ins. Their open tabs close.",
   "status.agent.browserProfileShared":
     "Move {agents} to the shared browser profile. They get its sign-ins and cookies. Their open tabs close.",
   "status.agent.browserProfileOwn": "Give {agents} each a browser profile of its own. Their open tabs close.",
-  "status.agent.feedbackSending": "Sending your feedback to the OpenBot team…",
+  "status.agent.feedbackSending": "Sending your feedback to the PurpleBot team…",
   "status.agent.workflowDelete": "Delete the workflow {title} with its runs and versions. Its open steps stop.",
   "status.agent.deleteAgents": "Delete {agents} with their chats and files. You cannot undo this.",
   "status.agent.vaultCardFillFrames": "The card fields are in frames from {origins}.",
   "status.agent.linkCardFill":
     "Fill the one-time Link card {card} on {site}. You approved this payment in Link for {merchant}.",
-  "status.agent.nearSignatureReceived": "OpenBot received the signature. You can close this tab.",
-  "status.agent.nearSignatureUnknown": "OpenBot does not wait for this signature. Start it again in OpenBot.",
+  "status.agent.nearSignatureReceived": "PurpleBot received the signature. You can close this tab.",
+  "status.agent.nearSignatureUnknown": "PurpleBot does not wait for this signature. Start it again in PurpleBot.",
   "status.agent.nearPayment": "Pay {amount} {symbol} to {recipient} from the crypto wallet, for {domain}: {reason}",
-  "status.agent.nearSummaryCreate": "All agents can pay up to {amount} USD a day. You can change it later in OpenBot.",
-  "status.agent.nearSummaryGrant": "Let this OpenBot app pay from the wallet for {days} days, within your rules.",
+  "status.agent.nearSummaryCreate":
+    "All agents can pay up to {amount} USD a day. You can change it later in PurpleBot.",
+  "status.agent.nearSummaryGrant": "Let this PurpleBot app pay from the wallet for {days} days, within your rules.",
   "status.agent.nearSummaryBudget": "Change the daily budget of the wallet to {amount} USD.",
   "status.agent.nearSummaryAutoPay":
-    "Let OpenBot pay without your signature when a payment rule allows it. Other payments still ask you in the chat.",
+    "Let PurpleBot pay without your signature when a payment rule allows it. Other payments still ask you in the chat.",
   "status.agent.nearSummaryPayment": "Approve the payment of {amount} to {recipient}.",
   "status.agent.nearSummaryFreeze": "Agents cannot pay from this wallet until you resume payments.",
   "status.agent.nearSummaryUnfreeze": "Agents can pay from this wallet again, within your rules.",
@@ -142,9 +143,9 @@ export const messages = defineMessages("status.agent", {
   "status.agent.memoryChangesWithConflicts":
     "Memory: {saved} saved, {updated} updated, {forgotten} forgotten, {notChanged} not changed because another thread changed it first.",
   "status.agent.mcpServerAdd":
-    "Add the MCP server {name}: {target}. Every agent on this server gets its tools. OpenBot connects to it to test it.",
+    "Add the MCP server {name}: {target}. Every agent on this server gets its tools. PurpleBot connects to it to test it.",
   "status.agent.mcpServerChange":
-    "Change the MCP server {name} to {target}. Every agent on this server gets its tools. OpenBot connects to it to test it.",
+    "Change the MCP server {name} to {target}. Every agent on this server gets its tools. PurpleBot connects to it to test it.",
   "status.agent.mcpServerHeaders": "It also changes these headers: {names}.",
   "status.agent.mcpServerEnable": "Turn on the MCP server {name} for every agent on this server.",
   "status.agent.mcpServerDisable": "Turn off the MCP server {name} for every agent on this server.",

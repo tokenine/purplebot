@@ -1,4 +1,4 @@
-import { AppLogo } from "@openbot/brand";
+import { APP_LOGO_EYE_STROKE, APP_LOGO_MOUTH_STROKE, AppLogo } from "@openbot/brand";
 import { AGENT_TEMPLATE_CARD, type AgentTemplatePreview } from "@openbot/contracts/ipc";
 import { avatarHeadColor, createStaticAvatarSvg } from "@openbot/ui/bloub-avatar";
 import { render } from "@solidjs/web";
@@ -113,7 +113,7 @@ async function drawColumn(
   await drawLogo(context, x, 92, 44, colors);
   context.fillStyle = colors.primary;
   context.font = `600 28px ${FONT}`;
-  context.fillText("OpenBot", x + 58, 124);
+  context.fillText("PurpleBot", x + 58, 124);
 
   let y = 154;
   context.font = `700 60px ${FONT}`;
@@ -140,7 +140,7 @@ async function drawColumn(
     y += lineHeight;
   }
 
-  const label = "Add to OpenBot";
+  const label = "Add to PurpleBot";
   context.font = `600 24px ${FONT}`;
   const pillWidth = context.measureText(label).width + 64;
   context.fillStyle = colors.primary;
@@ -168,12 +168,15 @@ export async function drawLogo(
   dispose();
   if (!(svg instanceof SVGSVGElement)) return;
   svg.querySelector(".app-logo-background")?.setAttribute("fill", colors.logo);
-  for (const eye of svg.querySelectorAll(".app-logo-eye")) {
-    eye.setAttribute("fill", "none");
-    eye.setAttribute("stroke", colors.logoEye);
-    eye.setAttribute("stroke-width", "9.5");
-    eye.setAttribute("stroke-linecap", "round");
-    eye.setAttribute("stroke-linejoin", "round");
+  for (const shape of svg.querySelectorAll(".app-logo-eye, .app-logo-mouth")) {
+    shape.setAttribute("fill", "none");
+    shape.setAttribute("stroke", colors.logoEye);
+    shape.setAttribute(
+      "stroke-width",
+      String(shape.classList.contains("app-logo-mouth") ? APP_LOGO_MOUTH_STROKE : APP_LOGO_EYE_STROKE),
+    );
+    shape.setAttribute("stroke-linecap", "round");
+    shape.setAttribute("stroke-linejoin", "round");
   }
   context.drawImage(await loadSvg(svg, size), x, y, size, size);
 }

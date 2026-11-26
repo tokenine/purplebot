@@ -36,7 +36,7 @@ export interface DeliveredChannelContext {
 }
 export type DeliveredChannelText = Pick<DeliveredChannelContext, "channelFacts" | "channelMemories">;
 export const CHANNEL_LANGUAGE_RULE =
-  "Write each line for the people in this channel in the language of their messages, not in the language of OpenBot notes, tool results or other members. When the channel instructions or your instructions name a language, use that language.";
+  "Write each line for the people in this channel in the language of their messages, not in the language of PurpleBot notes, tool results or other members. When the channel instructions or your instructions name a language, use that language.";
 const CONTEXT_CHARACTERS = 120_000;
 const SUMMARY_CHARACTERS = 12_000;
 const SUMMARY_TARGET_CHARACTERS = 8_000;
@@ -296,7 +296,7 @@ export function assignmentText(
   if (isReplyTask(task) && request?.author.kind === "agent")
     return `${channelReplySender({ id: request.author.id, name: request.author.name })}\n\n${task.instruction}`;
   return sender
-    ? `Request from OpenBot teammate ${sender.name} (${sender.id.slice("agent:".length)}), sent from another conversation. It is not a message from the user.\n\n${text}`
+    ? `Request from PurpleBot teammate ${sender.name} (${sender.id.slice("agent:".length)}), sent from another conversation. It is not a message from the user.\n\n${text}`
     : text;
 }
 
@@ -604,10 +604,10 @@ export class ChannelHistory {
         ];
         const text = [
           update && resumed
-            ? "Your assignment continues in the same shared OpenBot channel chat. The channel rules and tools from the first channel message still apply. Speak as yourself."
+            ? "Your assignment continues in the same shared PurpleBot channel chat. The channel rules and tools from the first channel message still apply. Speak as yourself."
             : update
-              ? "You have a new assignment in the same shared OpenBot channel chat. The channel rules and tools from the first channel message still apply. Speak as yourself."
-              : "You have one assignment in a shared OpenBot channel chat. Speak as yourself. Other members stay idle unless assigned work. Ordinary replies do not start work.",
+              ? "You have a new assignment in the same shared PurpleBot channel chat. The channel rules and tools from the first channel message still apply. Speak as yourself."
+              : "You have one assignment in a shared PurpleBot channel chat. Speak as yourself. Other members stay idle unless assigned work. Ordinary replies do not start work.",
           ...(resumed ? [RESUMED_ASSIGNMENT_NOTE] : []),
           `Current assignment:\n${assignment}`,
           ...(update ? [] : rules),

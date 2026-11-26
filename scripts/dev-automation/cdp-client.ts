@@ -265,7 +265,7 @@ export async function openDevBrowser(
     if (ownerPid === null || !(await verifyBrowserOwnership(browser, ownerPid))) {
       await browser.close();
       throw new ForeignBrowserError(
-        `Port ${port} does not belong to OpenBot. Pass --port=<OPENBOT_DEV_REMOTE_DEBUGGING_PORT> of the instance you mean to drive.`,
+        `Port ${port} does not belong to PurpleBot. Pass --port=<OPENBOT_DEV_REMOTE_DEBUGGING_PORT> of the instance you mean to drive.`,
       );
     }
     logger.info(`Port :${port} belongs to the recorded instance process.`);
@@ -301,7 +301,7 @@ export async function connectToDevApp(
       );
     }
     throw new Error(
-      `Connected over CDP but found no OpenBot main window on :${port}` +
+      `Connected over CDP but found no PurpleBot main window on :${port}` +
         (expectedRendererPort === null ? ". " : ` serving renderer :${expectedRendererPort}. `) +
         (expectedRendererPort === null
           ? "Open the app window, or aim at another target with --page=<target-id|url-substring> " +

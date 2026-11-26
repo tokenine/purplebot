@@ -140,7 +140,7 @@ try {
   assert.ok(HERMES_REPO, "Set HERMES_REPO to a hermes-agent checkout.");
   assert.equal(HERMES_ACP_FLAVOR.catalogAsMcpTools, true, "The Hermes provider gets the catalog as MCP tools.");
   assert.equal(customAgentFlavor("/opt/bin/hermes").catalogAsMcpTools, true, "A custom hermes agent gets them too.");
-  assert.equal(customAgentFlavor("omp").catalogAsMcpTools, undefined, "Other custom agents keep OpenBot's search.");
+  assert.equal(customAgentFlavor("omp").catalogAsMcpTools, undefined, "Other custom agents keep PurpleBot's search.");
 
   const sent: unknown[] = visibleDynamicTools("hermes");
   const given = sent.filter(isDynamicToolNamespace);
@@ -172,7 +172,7 @@ try {
   for (const name of ["channel_result", "channel_reply", "edit_workflow", "tool_call"])
     assert.ok(openbotNames.includes(name), `The openbot server lists ${name}.`);
   for (const name of ["tool_search", "tool_describe"])
-    assert.ok(!openbotNames.includes(name), `Hermes searches with its own tool, not with OpenBot's ${name}.`);
+    assert.ok(!openbotNames.includes(name), `Hermes searches with its own tool, not with PurpleBot's ${name}.`);
   assert.ok(!openbotNames.includes("web_search"), "Hermes keeps its own web search.");
 
   await mkdir(OUT, { recursive: true });
@@ -210,7 +210,7 @@ try {
   assert.equal(fullError, null, "Hermes tool_call accepts the full name.");
   assert.ok(hermes.calls.dotted[2]?.includes("Use tool_search"), "The dotted name gets the search hint.");
   assert.ok(hermes.calls.bare[2]?.includes(String(fullName)), "The bare name gets the full name as a hint.");
-  assert.equal(hermes.calls.nested[2], null, "OpenBot's tool_call, which channel rules name, still resolves.");
+  assert.equal(hermes.calls.nested[2], null, "PurpleBot's tool_call, which channel rules name, still resolves.");
 
   const [, prefix, tool] = /^mcp__(.+)__([^_].*)$/.exec(String(fullName)) ?? [];
   const server = prefix ? hermes.servers[prefix] : undefined;
@@ -219,7 +219,7 @@ try {
   assert.deepEqual(
     report.bridged,
     [{ namespace: "openbot", tool: "channel_result", arguments: { text: "Done." } }],
-    "The call reaches OpenBot as openbot.channel_result.",
+    "The call reaches PurpleBot as openbot.channel_result.",
   );
   report.passed = true;
 } finally {

@@ -471,7 +471,9 @@ class Account {
       method,
       headers: {
         Cookie: `__Host-openbot-web=${token}`,
-        ...(method === "GET" ? {} : { Origin: this.api, "X-OpenBot-Browser": "1", "Content-Type": "application/json" }),
+        ...(method === "GET"
+          ? {}
+          : { Origin: this.api, "X-PurpleBot-Browser": "1", "Content-Type": "application/json" }),
         ...headers,
       },
       ...(body ? { body: JSON.stringify(body) } : {}),
@@ -2180,7 +2182,7 @@ const scenarios: Record<Scenario, (account: Account) => Promise<void>> = {
       );
       record(
         "boat",
-        "OpenBot in the VM redeems its claim and publishes the host with the server name",
+        "PurpleBot in the VM redeems its claim and publishes the host with the server name",
         host.host_name === name,
         host,
       );
@@ -2188,7 +2190,7 @@ const scenarios: Record<Scenario, (account: Account) => Promise<void>> = {
       record("boat", "openbot.service is active in the VM", output.startsWith("active"), output.split("\n"));
       const restart = await boat("POST", `/sandboxes/${sandboxId}/commands`, {
         command: [
-          'test -s "$HOME/.config/OpenBot/openbot-central-auth-v1.bin" || { echo "no stored session"; exit 1; }',
+          'test -s "$HOME/.config/PurpleBot/openbot-central-auth-v1.bin" || { echo "no stored session"; exit 1; }',
           "sudo -n systemctl restart openbot.service",
           "id=$(systemctl show -p InvocationID --value openbot.service)",
           "for _ in $(seq 1 30); do",

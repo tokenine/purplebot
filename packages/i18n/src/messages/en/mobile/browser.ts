@@ -41,7 +41,8 @@ export const messages = defineMessages("mobile.browser", {
   "mobile.browser.status.ended": "The live view ended.",
   "mobile.browser.status.offline": "The server is not connected.",
   "mobile.browser.status.noTab": "{name} has no browser tab open.",
-  "mobile.browser.status.unsupported": "This server cannot show its browser on a phone. Update OpenBot on this server.",
+  "mobile.browser.status.unsupported":
+    "This server cannot show its browser on a phone. Update PurpleBot on this server.",
   "mobile.browser.status.off": "The browser is not available in this version of the app.",
   "mobile.browser.notice.copied": "Copied to your phone.",
   "mobile.browser.notice.nothingSelected": "Nothing is selected on the page.",
@@ -96,5 +97,5 @@ export const messages = defineMessages("mobile.browser", {
   "mobile.browser.httpSignIn.username": "Username",
   "mobile.browser.httpSignIn.password": "Password",
   "mobile.browser.httpSignIn.submit": "Sign in",
-  "mobile.browser.httpSignIn.failed": "OpenBot could not send the sign-in.",
+  "mobile.browser.httpSignIn.failed": "PurpleBot could not send the sign-in.",
 });

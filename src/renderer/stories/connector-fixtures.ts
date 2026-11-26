@@ -206,7 +206,7 @@ export const CONNECTED_CONNECTOR_DETAILS: readonly ConnectorDetail[] = STORY_CON
         ...detail,
         props: {
           ...detail.props,
-          status: { ...detail.props.status, state: "connected", vaultNames: ["Shared with OpenBot"], loginCount: 3 },
+          status: { ...detail.props.status, state: "connected", vaultNames: ["Shared with PurpleBot"], loginCount: 3 },
         },
       };
     case "bitwarden":
@@ -219,7 +219,7 @@ export const CONNECTED_CONNECTOR_DETAILS: readonly ConnectorDetail[] = STORY_CON
           status: {
             ...detail.props.status,
             state: "connected",
-            vaultNames: ["Shared with OpenBot"],
+            vaultNames: ["Shared with PurpleBot"],
             loginCount: 12,
             expiresAt: Date.UTC(2027, 10, 5),
           },

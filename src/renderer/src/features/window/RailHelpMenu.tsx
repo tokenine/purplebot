@@ -7,7 +7,7 @@ import { openCreditPrices } from "../servers/credit-prices";
 import { compareReleaseVersions } from "../updates/whats-new-history";
 import { loadWhatsNewReleases } from "../updates/whats-new-releases";
 
-type HelpLink = "changelog" | "guides" | "discord" | "report-problem" | "feedback";
+type HelpLink = "changelog" | "guides" | "report-problem";
 
 const HELP_NEWS_COUNT = 3;
 
@@ -60,9 +60,7 @@ export function RailHelpMenu(props: {
       onOpenWhatsNew={props.onOpenWhatsNew}
       onOpenChangelog={() => openLink("changelog")}
       onOpenGuides={() => openLink("guides")}
-      onOpenDiscord={() => openLink("discord")}
       onReportProblem={() => openLink("report-problem")}
-      onSendFeedback={() => openLink("feedback")}
       onOpenCreditsExplainer={() => desktopAnalytics.track("help_link_opened", { destination: "credits-explainer" })}
       onOpenCreditPrices={() => openCreditPrices(props.onOpenUrl)}
     />

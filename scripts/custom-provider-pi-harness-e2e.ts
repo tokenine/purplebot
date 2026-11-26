@@ -277,7 +277,7 @@ try {
   });
   const refused = messages.filter((message) => message.includes("Key refused"));
   report.failure = { error: failure.error, status: failure.status, messages: refused };
-  assert.ok(refused.length > 0, "The refusal must reach OpenBot.");
+  assert.ok(refused.length > 0, "The refusal must reach PurpleBot.");
   assert.ok(
     report.requests.some((request) => request.model === FAILING_MODEL),
     "The endpoint got no request for the failing model.",

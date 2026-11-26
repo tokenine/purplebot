@@ -43,7 +43,7 @@ export const messages = {
   "mobile.browser.status.offline": "Il server non è connesso.",
   "mobile.browser.status.noTab": "{name} non ha nessuna scheda del browser aperta.",
   "mobile.browser.status.unsupported":
-    "Questo server non può mostrare il suo browser su un telefono. Aggiorna OpenBot su questo server.",
+    "Questo server non può mostrare il suo browser su un telefono. Aggiorna PurpleBot su questo server.",
   "mobile.browser.status.off": "Il browser non è disponibile in questa versione dell'app.",
   "mobile.browser.notice.copied": "Copiato sul telefono.",
   "mobile.browser.notice.nothingSelected": "Nella pagina non c'è nulla di selezionato.",
@@ -99,5 +99,5 @@ export const messages = {
   "mobile.browser.httpSignIn.username": "Nome utente",
   "mobile.browser.httpSignIn.password": "Password",
   "mobile.browser.httpSignIn.submit": "Accedi",
-  "mobile.browser.httpSignIn.failed": "OpenBot non è riuscito a inviare l’accesso.",
+  "mobile.browser.httpSignIn.failed": "PurpleBot non è riuscito a inviare l’accesso.",
 } as const satisfies PartialTranslation<typeof source>;

@@ -23,7 +23,7 @@ export const messages = {
   "error.agent.toolCallNullValue":
     "De tool is niet uitgevoerd. {name} heeft bij {paths} een object of een lijst nodig, maar elk van deze lijstitems kwam aan als null. Stuur de aanroep opnieuw en geef elk van deze items als tekenreeks met de JSON ervan.",
   "error.agent.toolDescribeUnknownNames":
-    "tool_describe heeft geen OpenBot-tool met de naam {names} gevonden. Het beschrijft alleen de OpenBot- en browsertools die openbot.tool_search toont, geen MCP-tools.",
+    "tool_describe heeft geen PurpleBot-tool met de naam {names} gevonden. Het beschrijft alleen de PurpleBot- en browsertools die openbot.tool_search toont, geen MCP-tools.",
   "error.agent.toolDescribeDiscoveryNames":
     "Roep {names} rechtstreeks aan. tool_describe beschrijft de zoektools niet.",
   "error.agent.routineScheduleArgumentsInvalid":
@@ -46,7 +46,7 @@ export const messages = {
   "error.agent.instructionsTooLarge":
     "Het instructiebestand is te groot om hier te openen. Kort het in met een teksteditor.",
   "error.agent.instructionsOutside":
-    "Het instructiebestand verwijst naar een plek buiten de werkruimte van de agent, dus OpenBot opent het niet.",
+    "Het instructiebestand verwijst naar een plek buiten de werkruimte van de agent, dus PurpleBot opent het niet.",
   "error.agent.instructionsReadFailed": "Kan het instructiebestand niet lezen.",
   "error.agent.instructionsSaveFailed": "Kan het instructiebestand niet opslaan.",
   "error.agent.profileGenerationBusy": "Er wordt al een profiel gemaakt. Probeer het zo opnieuw.",
@@ -107,19 +107,19 @@ export const messages = {
   "error.agent.changedWhileDuplicating": "De agent is gewijzigd terwijl hij werd gedupliceerd. Probeer het opnieuw.",
   "error.agent.duplicatedAgentGone": "De gedupliceerde agent bestaat niet meer.",
   "error.agent.stateCorrupt":
-    "De status van de agent is beschadigd of komt van een nieuwere versie van OpenBot; OpenBot overschrijft deze niet.",
+    "De status van de agent is beschadigd of komt van een nieuwere versie van PurpleBot; PurpleBot overschrijft deze niet.",
   "error.agent.oldRoleField":
-    "Opgeslagen agentprofielen gebruiken het oude rolveld; werk de gegevens bij voordat je OpenBot start.",
-  "error.agent.duplicateIds": "De status van de agents bevat dubbele agent-id’s; OpenBot overschrijft deze niet.",
-  "error.agent.copyNameFailed": "OpenBot kon geen unieke naam voor de kopie van de agent maken.",
+    "Opgeslagen agentprofielen gebruiken het oude rolveld; werk de gegevens bij voordat je PurpleBot start.",
+  "error.agent.duplicateIds": "De status van de agents bevat dubbele agent-id’s; PurpleBot overschrijft deze niet.",
+  "error.agent.copyNameFailed": "PurpleBot kon geen unieke naam voor de kopie van de agent maken.",
   "error.agent.endpointRemoved":
     "Het endpoint dat deze agent gebruikte, is verwijderd. Kies een ander model voor de agent.",
   "error.agent.turnStalled":
-    "{provider} reageerde niet meer, dus OpenBot heeft deze beurt beëindigd. Stuur het bericht opnieuw, of kies een ander model.",
+    "{provider} reageerde niet meer, dus PurpleBot heeft deze beurt beëindigd. Stuur het bericht opnieuw, of kies een ander model.",
   "error.agent.promptCancelled":
     "{provider} heeft dit bericht geannuleerd voordat het begon. Stuur het bericht opnieuw.",
   "error.agent.toolLoopStopped":
-    "{provider} herhaalde een mislukte stap vele keren, dus OpenBot heeft deze beurt gestopt. Stuur het bericht opnieuw of kies een ander model.",
+    "{provider} herhaalde een mislukte stap vele keren, dus PurpleBot heeft deze beurt gestopt. Stuur het bericht opnieuw of kies een ander model.",
   "error.agent.answerCutOff":
     "De agent stopte voordat het antwoord klaar was, dus het antwoord is niet volledig. Stuur het bericht opnieuw.",
   "error.agent.compactionConnectionLost":
@@ -127,7 +127,7 @@ export const messages = {
   "error.agent.compactionConnectionLostAddress":
     "De verbinding viel weg terwijl de agent zijn context comprimeerde, dus de taak is gestopt. Controleer je internetverbinding. Controleer ook of {variable} onder Variabelen in de instellingen van {provider} het API-adres van je modeldienst is (vaak eindigend op /v1). Stuur daarna een bericht.",
   "error.agent.compactionLoopStopped":
-    "{provider} heeft de context steeds opnieuw gecomprimeerd, en elke keer bleef die te vol om door te gaan. Daarom heeft OpenBot deze beurt gestopt. Zet de MCP-servers of het computergebruik uit die deze agent niet nodig heeft, en stuur dan een bericht. Als jij of de agent hebt gewijzigd wanneer {provider} comprimeert, maak die wijziging dan ongedaan.",
+    "{provider} heeft de context steeds opnieuw gecomprimeerd, en elke keer bleef die te vol om door te gaan. Daarom heeft PurpleBot deze beurt gestopt. Zet de MCP-servers of het computergebruik uit die deze agent niet nodig heeft, en stuur dan een bericht. Als jij of de agent hebt gewijzigd wanneer {provider} comprimeert, maak die wijziging dan ongedaan.",
   "error.agent.selectedGone": "De gekozen agent bestaat niet meer.",
   "error.agent.profileEndpointsChanged":
     "De aangepaste endpoints zijn gewijzigd tijdens het maken. Probeer het opnieuw.",
@@ -145,19 +145,19 @@ export const messages = {
   "error.agent.deleteIncomplete":
     "De gegevens van de agent konden niet volledig worden verwijderd. Probeer de agent opnieuw te verwijderen.",
   "error.agent.deleteFolderInUse":
-    "Werk van een andere agent gebruikt de map van deze agent nog. Verwijder deze agent opnieuw als dat werk klaar is, of nadat je OpenBot opnieuw start.",
+    "Werk van een andere agent gebruikt de map van deze agent nog. Verwijder deze agent opnieuw als dat werk klaar is, of nadat je PurpleBot opnieuw start.",
   "error.agent.deleteFolderLocked":
     "Een ander programma gebruikt de map van deze agent nog, bijvoorbeeld een programma dat de agent heeft gestart. Sluit dat programma of start de computer waarop deze agent draait opnieuw op en verwijder de agent daarna opnieuw.",
   "error.agent.deleteWhenFolderFree":
-    "Werk van een andere agent gebruikt de map van deze agent nog. OpenBot verwijdert deze agent als dat werk klaar is.",
+    "Werk van een andere agent gebruikt de map van deze agent nog. PurpleBot verwijdert deze agent als dat werk klaar is.",
   "error.agent.duplicationBusy": "Deze agent wordt al gedupliceerd.",
   "error.agent.waitBeforeDuplicate": "Wacht tot de agent klaar is en de wachtrij leeg is voordat je hem dupliceert.",
   "error.agent.saveOtherAgent": "Deze opslag hoort bij een andere agent.",
   "error.agent.savedGone": "De opgeslagen agent bestaat niet meer.",
   "error.agent.storedProfileUnreadable":
-    "Een opgeslagen agentprofiel heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je OpenBot start.",
+    "Een opgeslagen agentprofiel heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je PurpleBot start.",
   "error.agent.storedProfileUnreadableId":
-    "Opgeslagen agentprofiel {id} heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je OpenBot start.",
+    "Opgeslagen agentprofiel {id} heeft een onleesbare waarde voor “{field}”; werk de gegevens bij voordat je PurpleBot start.",
   "error.agent.queueEditRejected": "Wijziging van de wachtrij geweigerd: {reason}",
   "error.agent.computerUseLocalOnly": "Computerbesturing kun je alleen wijzigen op de computer waarop de agent draait.",
   "error.agent.automationLocalOnly": "Lokale scripts kun je alleen toestaan op de computer waarop de agent draait.",
@@ -189,7 +189,7 @@ export const messages = {
   "error.agent.lowMemoryServer":
     "Deze server heeft weinig geheugen. Je bericht wacht in de wachtrij en start zodra er geheugen vrij is.",
   "error.agent.workspaceOnlyToolMissing":
-    "Alleen werkruimte heeft {tool} nodig, maar OpenBot heeft dit niet gevonden. Installeer het, of kies Volledige toegang in de instellingen van de agent.",
+    "Alleen werkruimte heeft {tool} nodig, maar PurpleBot heeft dit niet gevonden. Installeer het, of kies Volledige toegang in de instellingen van de agent.",
   "error.agent.codexSandboxUnavailable":
     "Alleen werkruimte heeft de Codex-sandbox nodig, maar Codex kan die op deze computer niet starten, dus de opdrachten van de agent mislukken. Kies Eerst vragen of Volledige toegang in de instellingen van de agent.",
   "error.agent.claudeSandboxUnavailable":
@@ -206,7 +206,7 @@ export const messages = {
   "error.agent.screenCaptureDeclined": "De gebruiker heeft deze schermopname niet toegestaan. Er is niets opgenomen.",
   "error.agent.creditMediaDeclined":
     "De gebruiker heeft deze generatie niet toegestaan. Er zijn geen credits gebruikt.",
-  "error.agent.creditMediaNotSaved": "Het bestand is gemaakt, maar OpenBot kon het niet in de chat opslaan.",
+  "error.agent.creditMediaNotSaved": "Het bestand is gemaakt, maar PurpleBot kon het niet in de chat opslaan.",
   "error.agent.mcpServerDeclined":
     "De gebruiker heeft deze wijziging van de MCP-server niet toegestaan. Er is niets gewijzigd.",
   "error.agent.mcpToolDeclined": "De gebruiker heeft deze MCP-toolaanroep niet toegestaan. De tool is niet uitgevoerd.",
@@ -216,9 +216,9 @@ export const messages = {
   "error.agent.mcpServerHeadersNeedHttp":
     "De MCP-server {name} voert een lokale opdracht uit en neemt dus geen headers aan. Vraag de gebruiker de sleutels in te voeren in Marktplaats, Apps, {name}.",
   "error.agent.mcpServerHeadersNeedPerson":
-    "Alleen de gebruiker van deze OpenBot kan in een chat met jou de sleutels van de MCP-server {name} geven. Vraag de gebruiker ze in te voeren in Marktplaats, Apps, {name}.",
+    "Alleen de gebruiker van deze PurpleBot kan in een chat met jou de sleutels van de MCP-server {name} geven. Vraag de gebruiker ze in te voeren in Marktplaats, Apps, {name}.",
   "error.agent.mcpServerBuiltIn":
-    "{name} is een onderdeel van OpenBot, dus de MCP-tools kunnen deze niet testen, aan- of uitzetten of verwijderen. De gebruiker beheert deze op de computer waarop OpenBot draait: de GitHub-koppeling in Marktplaats, Apps, GitHub, en PC-besturing in Instellingen, PC-besturing.",
+    "{name} is een onderdeel van PurpleBot, dus de MCP-tools kunnen deze niet testen, aan- of uitzetten of verwijderen. De gebruiker beheert deze op de computer waarop PurpleBot draait: de GitHub-koppeling in Marktplaats, Apps, GitHub, en PC-besturing in Instellingen, PC-besturing.",
   "error.agent.mcpServerUnknown": "Er is geen MCP-server met de naam {name}. Roep list_mcp_servers aan voor de namen.",
   "error.agent.screenCaptureWindowMissing":
     "Dat venster is nu niet open. Roep list_capture_sources aan voor de huidige venster-id’s.",
@@ -227,9 +227,9 @@ export const messages = {
   "error.agent.screenCaptureRegionOutside":
     "Het gebied valt niet binnen één beeldscherm. Gebruik bureaubladpunten binnen de grenzen van één beeldscherm uit list_capture_sources.",
   "error.agent.screenCapturePermissionMissing":
-    "OpenBot heeft geen toestemming voor schermopname. Vraag de gebruiker om Systeeminstellingen > Privacy en beveiliging > Scherm- en systeemaudio-opname te openen, OpenBot aan te zetten en OpenBot daarna te stoppen en opnieuw te openen.",
+    "PurpleBot heeft geen toestemming voor schermopname. Vraag de gebruiker om Systeeminstellingen > Privacy en beveiliging > Scherm- en systeemaudio-opname te openen, PurpleBot aan te zetten en PurpleBot daarna te stoppen en opnieuw te openen.",
   "error.agent.screenCaptureListPermission":
-    "OpenBot heeft nog geen toestemming voor schermopname en kan de vensters daarom niet tonen. Roep capture_screen aan met target screen om een scherm vast te leggen. De gebruiker keurt de opname eerst goed, daarna kan macOS de gebruiker om toestemming vragen.",
+    "PurpleBot heeft nog geen toestemming voor schermopname en kan de vensters daarom niet tonen. Roep capture_screen aan met target screen om een scherm vast te leggen. De gebruiker keurt de opname eerst goed, daarna kan macOS de gebruiker om toestemming vragen.",
   "error.agent.screenCaptureEmptyWindows":
     "Windows gaf een leeg beeld. Vraag de gebruiker om de computer te ontgrendelen en beschermde inhoud te sluiten. Ook een beleid van de organisatie kan schermopname blokkeren.",
   "error.agent.screenCaptureFailed": "De schermopname is mislukt. Probeer het opnieuw.",

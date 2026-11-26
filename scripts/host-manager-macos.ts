@@ -9,7 +9,7 @@ import type { HostManagerOperations } from "../src/main/host-manager";
 import { HOST_MANAGER_DIRECTORY, verifyHostDirectory } from "../src/main/host-update-files";
 
 const exec = promisify(execFile);
-export const SHARED_APP = "/Applications/OpenBot.app";
+export const SHARED_APP = "/Applications/PurpleBot.app";
 const STAGING = "/Applications/.openbot-host-stage";
 const PRIVATE = join(HOST_MANAGER_DIRECTORY, "private");
 const SIGNING_REQUIREMENT =
@@ -131,7 +131,7 @@ export async function bundleProcesses(): Promise<Array<{ uid: number; pid: numbe
       processes.push({
         pid: Number(pid),
         uid: Number(uid),
-        main: executable === `${SHARED_APP}/Contents/MacOS/OpenBot`,
+        main: executable === `${SHARED_APP}/Contents/MacOS/PurpleBot`,
       });
   }
   return processes;
@@ -191,11 +191,11 @@ export function macHostOperations(): HostManagerOperations {
       await ensureHostDirectory(mount, 0o700);
       await command("/usr/bin/hdiutil", ["attach", dmg, "-readonly", "-nobrowse", "-noautoopen", "-mountpoint", mount]);
       try {
-        const source = join(mount, "OpenBot.app");
+        const source = join(mount, "PurpleBot.app");
         await verifyBundleTree(source, false);
         await verifySignature(source);
         if ((await bundleVersion(source)) !== version) throw new Error("Downloaded version mismatch.");
-        const staged = join(STAGING, "OpenBot.app");
+        const staged = join(STAGING, "PurpleBot.app");
         await rm(staged, { recursive: true, force: true });
         await command("/usr/bin/ditto", ["--noqtn", source, staged], 180_000);
         await command("/usr/sbin/chown", ["-Rh", "root:wheel", staged]);
@@ -212,11 +212,11 @@ export function macHostOperations(): HostManagerOperations {
     install: async (version) => {
       await verifySharedAppParent();
       await verifyHostPath(STAGING);
-      const staged = join(STAGING, "OpenBot.app");
+      const staged = join(STAGING, "PurpleBot.app");
       await verifyBundleTree(staged, true);
       await verifySignature(staged);
       if ((await bundleVersion(staged)) !== version) throw new Error("Staged version mismatch.");
-      if ((await bundleProcesses()).length !== 0) throw new Error("OpenBot restarted during maintenance.");
+      if ((await bundleProcesses()).length !== 0) throw new Error("PurpleBot restarted during maintenance.");
       const retired = join(STAGING, "retired.app");
       await rm(retired, { recursive: true, force: true });
       await rename(SHARED_APP, retired);

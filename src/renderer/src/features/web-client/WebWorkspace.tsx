@@ -197,7 +197,6 @@ import { type HiddenServer, ServerRail } from "@openbot/ui/features/servers/Serv
 import type { SettingsPagePlacement } from "@openbot/ui/features/settings/SettingsDialogShell";
 import { createSettingsHostedServersStore } from "@openbot/ui/features/settings/stores/hosted-servers-store";
 import { Sidebar } from "@openbot/ui/features/sidebar/Sidebar";
-import { SidebarCommunityCard } from "@openbot/ui/features/sidebar/SidebarCommunityCard";
 import { sidebarAgentOrder } from "@openbot/ui/features/sidebar/sidebar-agent-order";
 import {
   computeSidebarAgentStates,
@@ -349,7 +348,6 @@ import type { HostClaudeUserSetupCalls } from "../settings/provider-claude-user-
 import type { HostProviderEnvironmentCalls } from "../settings/provider-environment";
 import type { HostModelVisibilityCalls } from "../settings/provider-model-visibility";
 import type { HostPromptCacheTtlCalls } from "../settings/provider-prompt-cache";
-import { createCommunityCardVisibility } from "../sidebar/community-card";
 import { createSidebarAlertCards, SidebarAlertCards } from "../sidebar/SidebarAlertCards";
 import { ServerUpgradeOffer } from "../sidebar/server-upgrade-offer";
 import { isReaderAuthor } from "../team/reader-identity";
@@ -425,7 +423,7 @@ const CONNECTING_STATUS: AgentStatus = {
   message: null,
   fullAccess: true,
 };
-const WEB_APP_INFO: AppInfo = { name: "OpenBot", version: "web", platform: "darwin", variant: "production" };
+const WEB_APP_INFO: AppInfo = { name: "PurpleBot", version: "web", platform: "darwin", variant: "production" };
 const PHONE_QUERY = "(max-width: 720px)";
 const QUEUE_EDIT_ACCOUNT_KEY = "openbot.web.queue-edit-account";
 const SEARCH_ROUTINE_REQUESTS = 4;
@@ -932,7 +930,6 @@ function WebWorkspaceFrame(props: WebWorkspaceProps) {
       hiddenAgentIds: hiddenAgentIds(),
     }),
   );
-  const communityCard = createCommunityCardVisibility();
   const [messageFocusRequest, setMessageFocusRequest] = createSignal<{
     agentId: string;
     messageId: string;
@@ -3094,7 +3091,7 @@ function WebWorkspaceFrame(props: WebWorkspaceProps) {
                 <>
                   <ServerMenu
                     rail
-                    serverName={workspace.state.host?.name ?? "OpenBot"}
+                    serverName={workspace.state.host?.name ?? "PurpleBot"}
                     servers={shownServers()}
                     hiddenServers={hiddenServers()}
                     view={layout.serverView()}
@@ -3435,7 +3432,7 @@ function WebWorkspaceFrame(props: WebWorkspaceProps) {
                             !pausedAgentIds().has(agent.id) && (workspace.state.reads[agent.id]?.unreadCount ?? 0) > 0,
                         ) || channels.hasUnread()
                       }
-                      serverName={workspace.state.host?.name ?? "OpenBot"}
+                      serverName={workspace.state.host?.name ?? "PurpleBot"}
                       serverUpdate={(() => {
                         const id = server()?.id;
                         const badge = id ? serverUpdateBadge(id) : null;
@@ -3525,21 +3522,12 @@ function WebWorkspaceFrame(props: WebWorkspaceProps) {
                       onOpenSearch={() => setSearchOpen(true)}
                       onOpenMarketplace={openMarketplace}
                       footer={
-                        <>
-                          <SidebarAlertCards
-                            cards={alertCards}
-                            serverName={server()?.name ?? ""}
-                            members={workspace.state.presence?.members ?? []}
-                            onOpenStorage={(serverId) => void openServerSettings(serverId, null, "storage")}
-                          />
-                          <Show when={!alertCards.shown() && !communityCard.dismissed()}>
-                            <SidebarCommunityCard
-                              onJoinDiscord={() => void openWebDestination("discord")}
-                              onFollowX={() => void openWebDestination("x")}
-                              onDismiss={communityCard.dismiss}
-                            />
-                          </Show>
-                        </>
+                        <SidebarAlertCards
+                          cards={alertCards}
+                          serverName={server()?.name ?? ""}
+                          members={workspace.state.presence?.members ?? []}
+                          onOpenStorage={(serverId) => void openServerSettings(serverId, null, "storage")}
+                        />
                       }
                       emptyAction={
                         firstAgent()
@@ -3692,7 +3680,9 @@ function WebWorkspaceFrame(props: WebWorkspaceProps) {
                         onCreateInvite={serverSettings.createInvite}
                         ownerTransfer={ownerTransferCalls()}
                         license={licenseCalls}
-                        onDownloadDesktopApp={() => void window.open("/download", "_blank", "noopener")}
+                        onDownloadDesktopApp={() =>
+                          void window.open("https://github.com/tokenine/purplebot/releases", "_blank", "noopener")
+                        }
                         onContactUs={() => window.location.assign(HOSTED_SERVER_CONTACT_URL)}
                         onUpdateMember={serverSettings.updateMember}
                         onRemoveMember={serverSettings.removeMember}

@@ -426,7 +426,7 @@ export const OPENBOT_ACP_CLIENT_CAPABILITIES = {
   session: { configOptions: { boolean: {} } },
 } as const;
 
-export const OPENBOT_ACP_CLIENT_INFO = { name: "openbot", title: "OpenBot", version: "0.1.0" } as const;
+export const OPENBOT_ACP_CLIENT_INFO = { name: "openbot", title: "PurpleBot", version: "0.1.0" } as const;
 
 const START_MODELS_PARAM = "openbotStartModels";
 
@@ -1852,7 +1852,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
     );
     held.needsResume = false;
     held.abandonedTurn = false;
-    logger.warn("An ACP agent still holds a session after a stopped turn. OpenBot keeps using it.", {
+    logger.warn("An ACP agent still holds a session after a stopped turn. PurpleBot keeps using it.", {
       provider: this.provider,
     });
     return { thread: { id: held.id } };
@@ -1972,7 +1972,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
                   Effect.sync(() =>
                     this.emit(
                       "diagnostic",
-                      this.#redact(`OpenBot could not turn on its ${this.#label} MCP servers: ${error}`),
+                      this.#redact(`PurpleBot could not turn on its ${this.#label} MCP servers: ${error}`),
                     ),
                   ),
                 ),
@@ -2020,7 +2020,10 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
             let mcpSentAt = sentAt;
             let mcpDropped = false;
             if (connectLimit !== undefined && this.#supportsSessionResume && mcp.dropped(sentAt, connectLimit)) {
-              this.emit("diagnostic", `${this.#label} did not load OpenBot's tools in time. The session opens again.`);
+              this.emit(
+                "diagnostic",
+                `${this.#label} did not load PurpleBot's tools in time. The session opens again.`,
+              );
               mcpServers = [...given, ...mcp.renew()];
               const retriedAt = Date.now();
               mcpSentAt = retriedAt;
@@ -2034,7 +2037,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
               );
               mcpDropped = mcp.dropped(retriedAt, connectLimit);
               if (Result.isFailure(retried) || mcpDropped)
-                this.emit("diagnostic", `${this.#label} still did not load OpenBot's tools.`);
+                this.emit("diagnostic", `${this.#label} still did not load PurpleBot's tools.`);
             }
             if (this.#flavor.mcpServersLoadWithSession && !mcp.reached())
               throw new Error(sourceText("error.provider.acpMcpNotLoaded", { provider: this.#label }));
@@ -2230,7 +2233,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
       if (this.#flavor.sessionBusy?.(error)) return yield* providerFailure(new ProviderSessionBusyError(this.#label));
       recovery = this.#flavor.restoreFailure?.(error, method) ?? null;
       if (!recovery && isUnloadableSession(error)) {
-        logger.warn("An ACP agent could not open a saved session. OpenBot starts a new one.", {
+        logger.warn("An ACP agent could not open a saved session. PurpleBot starts a new one.", {
           provider: this.provider,
           method,
           reason: this.#redact(failureText(error)),
@@ -3178,7 +3181,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
       if (Result.isFailure(resumed)) {
         if (resumed.failure.cause instanceof TimeoutError)
           yield* Effect.forkIn(this.#endIfUnresponsive(thread), this.#scope);
-        logger.warn("OpenBot ended a turn whose prompt got no update.", {
+        logger.warn("PurpleBot ended a turn whose prompt got no update.", {
           provider: this.provider,
           reason: this.#redact(failureText(resumed.failure.cause)),
         });
@@ -3225,7 +3228,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
     params: unknown,
     send: () => Effect.Effect<Result.Result<PromptResponse, ProviderClientOperationError>>,
   ): Effect.fn.Return<Result.Result<PromptResponse, ProviderClientOperationError>> {
-    logger.warn("An ACP agent refused a prompt because its session changed on disk. OpenBot opens it again.", {
+    logger.warn("An ACP agent refused a prompt because its session changed on disk. PurpleBot opens it again.", {
       provider: this.provider,
     });
     yield* providerCall(() => this.#sessionConnection(thread).closeSession({ sessionId: thread.id })).pipe(
@@ -3242,7 +3245,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
       if (Result.isSuccess(sent) || !this.#flavor.staleSession?.(sent.failure.cause)) return sent;
     } else {
       thread.needsResume = true;
-      logger.warn("OpenBot could not open again a session that changed on disk.", {
+      logger.warn("PurpleBot could not open again a session that changed on disk.", {
         provider: this.provider,
         reason: this.#redact(failureText(reopened.failure.cause)),
       });
@@ -3262,13 +3265,13 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
     const transport = this.#threads.get(sessionId)?.transport ?? this.#transport;
     const discarded = yield* Effect.result(transport.run(lostTurns.discard(sessionId), this.#requestTimeoutMs));
     if (Result.isFailure(discarded)) {
-      logger.warn("OpenBot could not discard the turns that an ACP agent lost.", {
+      logger.warn("PurpleBot could not discard the turns that an ACP agent lost.", {
         provider: this.provider,
         reason: this.#redact(failureText(discarded.failure.cause)),
       });
       return false;
     }
-    logger.info("OpenBot discarded the turns that an ACP agent lost.", { provider: this.provider });
+    logger.info("PurpleBot discarded the turns that an ACP agent lost.", { provider: this.provider });
     return true;
   });
 
@@ -3356,7 +3359,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
     const server = thread.restore.mcpServers.find((entry) => entry.name === name);
     if (!server) return;
     if (thread.mcp.servers.some((bridge) => bridge === server)) {
-      this.emit("diagnostic", this.#redact(`${this.#label} could not start OpenBot's MCP server ${name}: ${reason}`));
+      this.emit("diagnostic", this.#redact(`${this.#label} could not start PurpleBot's MCP server ${name}: ${reason}`));
       return;
     }
     const kind = mcpProviderFailureKind(reason);
@@ -4078,7 +4081,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
         yield* Effect.sleep(silentFor < limit ? limit - silentFor : limit);
       }
       const message = sourceText("error.provider.acpUnresponsive", { provider: this.#label });
-      logger.warn("An ACP agent wrote nothing while a session opened, so OpenBot ended its process.", {
+      logger.warn("An ACP agent wrote nothing while a session opened, so PurpleBot ended its process.", {
         provider: this.provider,
         method,
         silentMs: limit,
@@ -4916,7 +4919,7 @@ export class AcpAgentClient extends EventEmitter<ClientEvents> {
         ),
       );
     if (!isDynamicToolResult(result))
-      return yield* providerFailure(new Error("OpenBot returned an invalid dynamic tool result."));
+      return yield* providerFailure(new Error("PurpleBot returned an invalid dynamic tool result."));
     if (turn?.id === params.turnId && params.tool === ROUTINE_NO_UPDATE_TOOL) turn.quietNoUpdate = endsQuiet(result);
     return yield* providerSync(() => result);
   });

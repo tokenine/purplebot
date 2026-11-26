@@ -34,13 +34,13 @@ install -d -m 0755 "$INSTALL" "$INSTALL/hosted"
 recover
 work=$(mktemp -d "$SCRATCH/openbot-update.XXXXXX")
 trap 'rm -rf "$work"' EXIT
-fetch --output "$work/OpenBot.AppImage" "$APPIMAGE_URL"
-echo "$APPIMAGE_SHA256  $work/OpenBot.AppImage" | sha256sum --check --quiet
-unpack "$work/OpenBot.AppImage"
+fetch --output "$work/PurpleBot.AppImage" "$APPIMAGE_URL"
+echo "$APPIMAGE_SHA256  $work/PurpleBot.AppImage" | sha256sum --check --quiet
+unpack "$work/PurpleBot.AppImage"
 prepare_release "$work/squashfs-root"
 installed=$(version_of "$INSTALL/app")
 if [ -n "$installed" ] && newer "$installed" "$(version_of "$work/squashfs-root")"; then
-  fail "OpenBot $installed is installed, and this AppImage has an older version."
+  fail "PurpleBot $installed is installed, and this AppImage has an older version."
 fi
 stage_release "$work/squashfs-root"
 swap_in

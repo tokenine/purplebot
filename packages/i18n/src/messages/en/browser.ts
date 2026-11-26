@@ -56,10 +56,10 @@ export const messages = defineMessages("browser", {
   "browser.pip.reattach": "Reattach browser to right sidebar",
   "browser.pip.reattachTitle": "Reattach browser",
   "browser.pip.close": "Close browser popup",
-  "browser.pip.reattachFailed": "OpenBot could not reattach the browser.",
-  "browser.pip.closeFailed": "OpenBot could not close the browser popup.",
+  "browser.pip.reattachFailed": "PurpleBot could not reattach the browser.",
+  "browser.pip.closeFailed": "PurpleBot could not close the browser popup.",
   "browser.window.open": "Open browser in new window",
-  "browser.window.openFailed": "OpenBot could not open the browser window.",
+  "browser.window.openFailed": "PurpleBot could not open the browser window.",
   "browser.popupBlocked.title": "Popup blocked",
   "browser.popupBlocked.dismiss": "Dismiss popup message",
   "browser.liveView.label": "Live view of the page on the server",
@@ -96,7 +96,7 @@ export const messages = defineMessages("browser", {
   "browser.secret.saveHintLocal": "Agents on this computer can then sign in without asking you.",
   "browser.secret.saveHintRemote": "It is kept on {server}. Its agents can then sign in without asking you.",
   "browser.secret.saveBlockedRole": "Only the owner or an admin of {server} can save to its Vault.",
-  "browser.secret.saveBlockedVersion": "Update OpenBot on {server} to save passwords to its Vault.",
+  "browser.secret.saveBlockedVersion": "Update PurpleBot on {server} to save passwords to its Vault.",
   "browser.secret.signInPage": "Sign-in page",
   "browser.secret.openSignInPage": "Open sign-in page in browser",
   "browser.secret.openInBrowser": "Open in browser",
@@ -106,17 +106,17 @@ export const messages = defineMessages("browser", {
   "browser.secret.failed": "The request could not be completed. Check the connection and try again.",
   "browser.secret.ended": "This sign-in request has ended. Ask the agent to try again.",
   "browser.secret.vaultSkip.agentScript":
-    "OpenBot did not use your saved login because the agent ran a script on this page. To use it, ask the agent to reload the page and try again.",
+    "PurpleBot did not use your saved login because the agent ran a script on this page. To use it, ask the agent to reload the page and try again.",
   "browser.secret.vaultSkip.fieldKind":
-    "OpenBot did not use your saved login because the agent selected the wrong field on the page.",
+    "PurpleBot did not use your saved login because the agent selected the wrong field on the page.",
   "browser.secret.vaultSkip.loginChoice":
-    "OpenBot did not use a saved login because the agent did not choose one of the saved logins for this site. Tell the agent which account to use.",
+    "PurpleBot did not use a saved login because the agent did not choose one of the saved logins for this site. Tell the agent which account to use.",
   "browser.secret.vaultSkip.noPassword":
-    "OpenBot did not use your saved login because it has no password for this site.",
+    "PurpleBot did not use your saved login because it has no password for this site.",
   "browser.secret.vaultSkip.noAuthenticatorKey":
-    "OpenBot did not use your saved login because it has no authenticator key.",
+    "PurpleBot did not use your saved login because it has no authenticator key.",
   "browser.secret.vaultSkip.vaultUnreadable":
-    "OpenBot did not use a saved login because it could not read your password manager.",
+    "PurpleBot did not use a saved login because it could not read your password manager.",
   "browser.error.openAddress": "Could not open the address in this tab.",
   "browser.error.channelNoBrowserMember": "No member can open a new tab in this channel.",
   "browser.error.closeTab": "Could not close the browser tab.",
@@ -175,17 +175,17 @@ export const messages = defineMessages("browser", {
   "browser.signIn.local": "Sign in on this computer",
   "browser.signIn.title": "Sign in to {site}",
   "browser.signIn.description":
-    "Some sites refuse a sign-in from a server. Sign in on this computer, and OpenBot sends the sign-in for {site} to {server}. All agents and members on {server} can then use it in the browser.",
+    "Some sites refuse a sign-in from a server. Sign in on this computer, and PurpleBot sends the sign-in for {site} to {server}. All agents and members on {server} can then use it in the browser.",
   "browser.signIn.windowOpen":
-    "Sign in in the window that opened. OpenBot sends the sign-in when it is complete. If the window stays open, select Done.",
+    "Sign in in the window that opened. PurpleBot sends the sign-in when it is complete. If the window stays open, select Done.",
   "browser.signIn.windowClosed":
     "The sign-in window is closed. Select Done to send the sign-in, or open the window again.",
   "browser.signIn.reopen": "Open the sign-in window",
   "browser.signIn.sending": "Sending to {server}…",
   "browser.signIn.sent": "Signed in to {site} on {server}",
-  "browser.signIn.notFound": "OpenBot found no sign-in for {site}. Sign in in the window, then select Done.",
+  "browser.signIn.notFound": "PurpleBot found no sign-in for {site}. Sign in in the window, then select Done.",
   "browser.signIn.stillSignedOut": "{server} still shows a sign-in page for {site}. Finish the sign-in in the window.",
-  "browser.signIn.failed": "OpenBot could not send the sign-in.",
+  "browser.signIn.failed": "PurpleBot could not send the sign-in.",
   "browser.httpSignIn.title": "Sign in to {site}",
   "browser.httpSignIn.description": "This site asks for its own username and password.",
   "browser.httpSignIn.refused": "The site did not accept this username or password.",
@@ -194,7 +194,7 @@ export const messages = defineMessages("browser", {
   "browser.httpSignIn.submit": "Sign in",
   "browser.profiles.title": "Browser profiles",
   "browser.profiles.subtitle":
-    "Each profile keeps its own sign-ins, cookies and site data on the computer that runs OpenBot.",
+    "Each profile keeps its own sign-ins, cookies and site data on the computer that runs PurpleBot.",
   "browser.profiles.label": "Browser profiles",
   "browser.profiles.newName": "Profile name",
   "browser.profiles.create": "Add",
@@ -213,8 +213,8 @@ export const messages = defineMessages("browser", {
   "browser.profiles.deleteDescription":
     "This deletes the sign-ins, cookies and site data of the profile. Its open tabs close.",
   "browser.profiles.deleteAgents": "These agents change to the shared profile: {agents}.",
-  "browser.profiles.failed": "OpenBot could not change the browser profiles.",
-  "browser.profiles.loadFailed": "OpenBot could not load the browser profiles.",
+  "browser.profiles.failed": "PurpleBot could not change the browser profiles.",
+  "browser.profiles.loadFailed": "PurpleBot could not load the browser profiles.",
   "browser.profiles.tabLabel": "Profile: {name}",
   "browser.profiles.tabLabelProxy": "Profile: {name} · Proxy: {proxy}",
   "browser.profiles.agentTabLabel": "Own profile of the agent",
@@ -229,7 +229,7 @@ export const messages = defineMessages("browser", {
   "browser.proxies.addTitle": "Add proxy",
   "browser.proxies.editTitle": "Edit {name}",
   "browser.proxies.dialogDescription":
-    "Use socks5, http or https. A user name and a password are optional, for each type. The password stays encrypted on the computer that runs OpenBot.",
+    "Use socks5, http or https. A user name and a password are optional, for each type. The password stays encrypted on the computer that runs PurpleBot.",
   "browser.proxies.address": "Address",
   "browser.proxies.addressPlaceholder": "socks5://user:password@host:1080",
   "browser.proxies.deleteUsed": {
@@ -239,7 +239,7 @@ export const messages = defineMessages("browser", {
   "browser.proxies.deleteUnused": "No profile uses this proxy.",
   "browser.proxies.failing": "{name} does not answer",
   "browser.proxies.signInRefused": "{name} refused the sign-in",
-  "browser.proxies.unsupported": "This server cannot use proxies. Update OpenBot on it.",
+  "browser.proxies.unsupported": "This server cannot use proxies. Update PurpleBot on it.",
   "browser.proxies.yourComputer": "Your computer",
   "browser.proxies.memberComputer": "{name}'s computer",
   "browser.proxies.unknownComputer": "A member's computer",
@@ -250,7 +250,7 @@ export const messages = defineMessages("browser", {
   "browser.proxies.offlineBadge": "{name} is offline",
   "browser.proxies.shareTitle": "Share the connection of this computer?",
   "browser.proxies.shareDescription":
-    "The profiles that use your computer open public sites through the internet connection of this computer. This works only while OpenBot is open here. The server cannot open addresses on your local network.",
+    "The profiles that use your computer open public sites through the internet connection of this computer. This works only while PurpleBot is open here. The server cannot open addresses on your local network.",
   "browser.proxies.share": "Share",
   "browser.proxies.stopSharing": "Stop sharing",
   "browser.proxies.closesTabs": {

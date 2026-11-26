@@ -64,8 +64,8 @@ function fakeSignal(now: number, answer: (body: string) => number = () => 204) {
       verifyRemoteServiceSignature(
         SECRET,
         body,
-        headers.get("OpenBot-Timestamp") ?? "",
-        headers.get("OpenBot-Signature") ?? "",
+        headers.get("PurpleBot-Timestamp") ?? "",
+        headers.get("PurpleBot-Signature") ?? "",
         now,
       ),
     );
@@ -341,8 +341,8 @@ async function eachSignalGetsEachEventAndOnlyTheFailedOneRetries() {
       verifyRemoteServiceSignature(
         SECRET,
         body,
-        headers.get("OpenBot-Timestamp") ?? "",
-        headers.get("OpenBot-Signature") ?? "",
+        headers.get("PurpleBot-Timestamp") ?? "",
+        headers.get("PurpleBot-Signature") ?? "",
         state.sentAt,
       ),
     );

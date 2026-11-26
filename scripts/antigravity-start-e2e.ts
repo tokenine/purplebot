@@ -60,7 +60,7 @@ function handle(message) {
     const opener = path.join((process.env.PATH || "").split(path.delimiter)[0] || "", process.platform === "darwin" ? "open" : "xdg-open");
     if (path.basename(path.dirname(opener)).startsWith("openbot-sign-in-") && fs.existsSync(opener)) {
       require("node:child_process").spawn(opener, ["https://accounts.google.com/o/oauth2/auth?state=fake"], { stdio: "ignore" });
-    } else process.stderr.write("OpenBot's opener is not first on PATH." + NL);
+    } else process.stderr.write("PurpleBot's opener is not first on PATH." + NL);
     return;
   }
   if (message.method === "session/new" && process.env.FAKE_AGY_AUTH_REQUIRED && fs.existsSync(process.env.FAKE_AGY_AUTH_REQUIRED)) {
@@ -297,7 +297,7 @@ try {
     unpackedWhileRunning,
     leftAfterStop: await entries(tempRoot),
   };
-  assert.ok(envInRoot, "TMP, TEMP and TMPDIR point into OpenBot's temporary root");
+  assert.ok(envInRoot, "TMP, TEMP and TMPDIR point into PurpleBot's temporary root");
   assert.ok(unpackedWhileRunning, "the fake server unpacked while it ran");
 
   process.env.FAKE_AGY_MODE = "crash";

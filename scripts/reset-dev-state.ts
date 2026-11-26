@@ -14,7 +14,7 @@ export { resolveDevelopmentAppDataRoot } from "./development-state-paths";
 const logger = createOpenBotLogger("reset-dev-state");
 
 const developmentProfiles = ["app", "test-client"] as const satisfies readonly DevelopmentProfile[];
-const legacyDevelopmentStateNames = ["OpenBot Dev Host"] as const;
+const legacyDevelopmentStateNames = ["PurpleBot Dev Host"] as const;
 
 const USAGE = [
   "Usage: bun run dev:reset",
@@ -35,7 +35,7 @@ export function developmentStatePaths(appDataRoot: string): string[] {
   ].map((name) => {
     const target = resolve(safeRoot, name);
     if (dirname(target) !== safeRoot) {
-      throw new Error(`Unsafe OpenBot dev state path: ${target}`);
+      throw new Error(`Unsafe PurpleBot dev state path: ${target}`);
     }
     return target;
   });
@@ -61,7 +61,7 @@ export async function resetDevelopmentState(
 
   for (const statePath of existingPaths) {
     if (await isDevelopmentProfileActive(statePath)) {
-      throw new Error(`Quit the OpenBot dev app before you reset its state. ${statePath} is open.`);
+      throw new Error(`Quit the PurpleBot dev app before you reset its state. ${statePath} is open.`);
     }
   }
 
@@ -82,9 +82,9 @@ async function main(): Promise<void> {
   });
 
   if (deletedPaths.length === 0) {
-    logger.info("No OpenBot development state was found.");
+    logger.info("No PurpleBot development state was found.");
   } else {
-    logger.info("OpenBot development state reset.");
+    logger.info("PurpleBot development state reset.");
   }
 
   logger.info("Seed-owned transfer files were removed. Other shared files were not changed.");

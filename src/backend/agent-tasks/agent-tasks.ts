@@ -1072,14 +1072,14 @@ function branchTitle(sourceTitle: string, titles: readonly string[]): string {
 
 function startedTaskResult(task: AgentThreadRecord, waiting: readonly string[]): OpenBotToolResponse {
   const note =
-    "The task runs in its own conversation beside this chat, and the user can follow it in its tab. When its turn ends, OpenBot sends its final answer to your main chat as a task report. Start the other independent tasks now, do the quick parts yourself, tell the user in one sentence what runs, and end your turn. Do not wait for the task or read it to check progress.";
+    "The task runs in its own conversation beside this chat, and the user can follow it in its tab. When its turn ends, PurpleBot sends its final answer to your main chat as a task report. Start the other independent tasks now, do the quick parts yourself, tell the user in one sentence what runs, and end your turn. Do not wait for the task or read it to check progress.";
   return openBotToolResult({
     taskId: task.taskId,
     title: task.title,
     note:
       waiting.length === 0
         ? note
-        : `${note} ${waiting.join(", ")} still wait for the result of their request: OpenBot sends them your answer to the task report as your reply. Do not send them a status or a result now.`,
+        : `${note} ${waiting.join(", ")} still wait for the result of their request: PurpleBot sends them your answer to the task report as your reply. Do not send them a status or a result now.`,
   });
 }
 
@@ -1088,7 +1088,7 @@ function messagedTaskResult(task: AgentThreadRecord, running: boolean): OpenBotT
     taskId: task.taskId,
     title: task.title,
     state: running ? "queued after the current turn of the task" : "sent",
-    note: "The task answers in its own conversation, and OpenBot sends that answer to your main chat as a task report. Continue with other work or end your turn.",
+    note: "The task answers in its own conversation, and PurpleBot sends that answer to your main chat as a task report. Continue with other work or end your turn.",
   });
 }
 

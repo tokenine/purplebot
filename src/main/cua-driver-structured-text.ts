@@ -1,6 +1,6 @@
 import { type DynamicRecord, isDynamicRecord } from "@openbot/contracts/runtime-values";
 
-const STRUCTURED_TEXT_LABEL = "structuredContent as JSON, copied by OpenBot for clients that show only text:";
+const STRUCTURED_TEXT_LABEL = "structuredContent as JSON, copied by PurpleBot for clients that show only text:";
 
 const MAX_STRUCTURED_TEXT_CHARS = 65_536;
 
@@ -119,5 +119,5 @@ function structuredText(copy: DynamicRecord): string {
   if (json.length <= MAX_STRUCTURED_TEXT_CHARS) return `${STRUCTURED_TEXT_LABEL}\n${json}`;
   const lastKept = json.charCodeAt(MAX_STRUCTURED_TEXT_CHARS - 1);
   const end = lastKept >= 0xd800 && lastKept <= 0xdbff ? MAX_STRUCTURED_TEXT_CHARS - 1 : MAX_STRUCTURED_TEXT_CHARS;
-  return `${STRUCTURED_TEXT_LABEL}\n${json.slice(0, end)}\n[OpenBot cut this copy at ${MAX_STRUCTURED_TEXT_CHARS} of ${json.length} characters. Ask the tool for less: get_window_state takes query and max_elements.]`;
+  return `${STRUCTURED_TEXT_LABEL}\n${json.slice(0, end)}\n[PurpleBot cut this copy at ${MAX_STRUCTURED_TEXT_CHARS} of ${json.length} characters. Ask the tool for less: get_window_state takes query and max_elements.]`;
 }

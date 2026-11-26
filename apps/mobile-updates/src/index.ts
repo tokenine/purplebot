@@ -119,7 +119,7 @@ const routeGet = Effect.fn("MobileUpdates.routeGet")(function* (
   if (url.pathname.startsWith("/assets/")) {
     return yield* assetResponse(url, url.pathname.slice("/assets/".length), runtime);
   }
-  if (url.pathname === "/") return textResponse(200, "OpenBot mobile updates.");
+  if (url.pathname === "/") return textResponse(200, "PurpleBot mobile updates.");
   return textResponse(404, "Not found.");
 });
 

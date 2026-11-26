@@ -76,9 +76,9 @@ const MAX_WINDOW_HEAP_BYTES = 1024 ** 4;
 const MAX_WINDOW_DOM_NODES = 1_000_000_000;
 const LOOP_RESOLUTION_MS = 20;
 const UTILITY_GROUPS = new Map<string, ProcessGroup & ChildType>([
-  ["OpenBot databases", "database_host"],
-  ["OpenBot voice transcription", "voice_host"],
-  ["OpenBot speech", "voice_host"],
+  ["PurpleBot databases", "database_host"],
+  ["PurpleBot voice transcription", "voice_host"],
+  ["PurpleBot speech", "voice_host"],
 ]);
 
 export interface ResourceMonitorOptions {

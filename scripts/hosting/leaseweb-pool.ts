@@ -214,25 +214,25 @@ interface MachineState {
   data: boolean;
   hostKey: string;
 }
-const MACHINE_STATE = `v=$(sed -n 's/^X-AppImage-Version=//p' /opt/OpenBot/app/*.desktop 2>/dev/null | head -n 1)
+const MACHINE_STATE = `v=$(sed -n 's/^X-AppImage-Version=//p' /opt/PurpleBot/app/*.desktop 2>/dev/null | head -n 1)
 echo "version=$v"
-echo "user=$(cat /opt/OpenBot/hosted/service-user 2>/dev/null || true)"
+echo "user=$(cat /opt/PurpleBot/hosted/service-user 2>/dev/null || true)"
 echo "ids=$(id -u user 2>/dev/null || true):$(id -g user 2>/dev/null || true)"
 echo "enabled=$(systemctl is-enabled openbot.service 2>/dev/null || true)"
-if [ -e /home/user/.config/OpenBot ] || [ -e /home/user/.config/openbot-hosted ] || [ -e /srv/openbot-hosted/keyrings ] || [ -e /srv/openbot-keyring ]; then echo data=yes; else echo data=no; fi
+if [ -e /home/user/.config/PurpleBot ] || [ -e /home/user/.config/openbot-hosted ] || [ -e /srv/openbot-hosted/keyrings ] || [ -e /srv/openbot-keyring ]; then echo data=yes; else echo data=no; fi
 echo "hostkey=$(cut -d' ' -f1,2 /etc/ssh/ssh_host_ed25519_key.pub)"`;
 
 const CUSTOM_STATE = `export LC_ALL=C
 echo "hostname=$(hostname)"
 if [ -s /etc/ssh/openbot-operator-keys/root ]; then echo bootstrap=yes; else echo bootstrap=no; fi
-user=$(cat /opt/OpenBot/hosted/service-user 2>/dev/null || true)
-if [ -n "$user" ] && command -v openbot >/dev/null && systemctl is-active --quiet openbot.service; then
-  status=$(runuser -u "$user" -- openbot status 2>/dev/null || true)
-  echo "version=$(sed -n 's/^OpenBot //p' <<<"$status" | head -n 1)"
+user=$(cat /opt/PurpleBot/hosted/service-user 2>/dev/null || true)
+if [ -n "$user" ] && command -v purplebot >/dev/null && systemctl is-active --quiet openbot.service; then
+  status=$(runuser -u "$user" -- purplebot status 2>/dev/null || true)
+  echo "version=$(sed -n 's/^PurpleBot //p' <<<"$status" | head -n 1)"
   echo "account=$(sed -n 's/^Account: //p' <<<"$status" | head -n 1)"
   echo "server=$(sed -n 's/^Server: //p' <<<"$status" | head -n 1)"
   home=$(getent passwd "$user" | cut -d: -f6)
-  echo "hosts=$(grep -o '"serverId": *"[^"]*"' "$home/.config/OpenBot/openbot-team-server-v2.json" 2>/dev/null |
+  echo "hosts=$(grep -o '"serverId": *"[^"]*"' "$home/.config/PurpleBot/openbot-team-server-v2.json" 2>/dev/null |
     sed 's/.*"\\([^"]*\\)"$/\\1/' | paste -sd, -)"
 fi`;
 
@@ -803,7 +803,7 @@ class Pool {
 
   async #runService(row: WorkRow, state: "stopped" | "running") {
     const machine = await this.#vps(row.operator_host.replace("leaseweb:", ""));
-    logger.info(`${state === "stopped" ? "Stop" : "Start"} OpenBot on VPS ${machine.id} (server ${row.server_id}).`);
+    logger.info(`${state === "stopped" ? "Stop" : "Start"} PurpleBot on VPS ${machine.id} (server ${row.server_id}).`);
     if (!this.#apply) return;
     this.#remote(
       machine,
@@ -1307,15 +1307,17 @@ command -v age >/dev/null || DEBIAN_FRONTEND=noninteractive apt-get install -y -
         );
         continue;
       }
-      if (erase) logger.info(`VPS ${id}: erase the disk, install OpenBot ${release.version}, and restart.`);
-      else if (upgrade) logger.info(`VPS ${id}: install OpenBot ${release.version} over ${state?.version}.`);
+      if (erase) logger.info(`VPS ${id}: erase the disk, install PurpleBot ${release.version}, and restart.`);
+      else if (upgrade) logger.info(`VPS ${id}: install PurpleBot ${release.version} over ${state?.version}.`);
       else if (state?.user) {
         if (this.#isReady(id)) {
-          logger.info(`VPS ${id} has OpenBot ${state.version || "of no known version"} and is ready for a new server.`);
+          logger.info(
+            `VPS ${id} has PurpleBot ${state.version || "of no known version"} and is ready for a new server.`,
+          );
           continue;
         }
-        logger.info(`VPS ${id} has OpenBot ${state.version || "of no known version"}. Offer it for a new server.`);
-      } else logger.info(`VPS ${id}: install OpenBot ${release.version}, run the bootstrap, and restart.`);
+        logger.info(`VPS ${id} has PurpleBot ${state.version || "of no known version"}. Offer it for a new server.`);
+      } else logger.info(`VPS ${id}: install PurpleBot ${release.version}, run the bootstrap, and restart.`);
       if (!this.#apply) continue;
       const started = Date.now();
       this.#withdrawOffer(id);
@@ -1510,7 +1512,7 @@ command -v age >/dev/null || DEBIAN_FRONTEND=noninteractive apt-get install -y -
       );
       if (membership?.role === "owner" && membership.status === "active" && membership.removed_at === null) return host;
     }
-    throw new Error("D1 shows no OpenBot server of this machine that the owner owns.");
+    throw new Error("D1 shows no PurpleBot server of this machine that the owner owns.");
   }
 
   async #waitOnline(machine: Vps) {
@@ -1518,7 +1520,7 @@ command -v age >/dev/null || DEBIAN_FRONTEND=noninteractive apt-get install -y -
     for (;;) {
       const state = this.#customState(machine);
       if (state?.online) return state;
-      if (Date.now() > deadline) throw new Error(`OpenBot on VPS ${machine.id} is not online after 5 minutes.`);
+      if (Date.now() > deadline) throw new Error(`PurpleBot on VPS ${machine.id} is not online after 5 minutes.`);
       await delay(10_000);
     }
   }
@@ -1549,7 +1551,7 @@ command -v age >/dev/null || DEBIAN_FRONTEND=noninteractive apt-get install -y -
       logger.info(
         resumed
           ? `VPS ${id} is ${label} already. --apply continues its setup.`
-          : `VPS ${id} would get the reference ${label} <owner>, the hostname lsw-${id}, OpenBot with a claim for the owner, the bootstrap, and a restart.`,
+          : `VPS ${id} would get the reference ${label} <owner>, the hostname lsw-${id}, PurpleBot with a claim for the owner, the bootstrap, and a restart.`,
       );
       if (resumed) this.#showCustomState(machine, owner);
       if (options.plan) {
@@ -1594,7 +1596,7 @@ command -v age >/dev/null || DEBIAN_FRONTEND=noninteractive apt-get install -y -
       logger.info(`VPS ${id} has no key of this computer. Sign in one time with the root password.`);
     }
     if (before.account !== "" && before.account !== owner) {
-      throw new Error(`OpenBot on VPS ${id} is signed in to another account. Stop and check the server by hand.`);
+      throw new Error(`PurpleBot on VPS ${id} is signed in to another account. Stop and check the server by hand.`);
     }
 
     const install = before.account === "";
@@ -1614,8 +1616,8 @@ bash ${MACHINE_HOSTING}/leaseweb-bootstrap.sh '${keys}'
 `;
     logger.info(
       install
-        ? `VPS ${id}: install OpenBot with a claim for the owner, then run the bootstrap.`
-        : `VPS ${id}: OpenBot is signed in to the owner. Run the bootstrap again.`,
+        ? `VPS ${id}: install PurpleBot with a claim for the owner, then run the bootstrap.`
+        : `VPS ${id}: PurpleBot is signed in to the owner. Run the bootstrap again.`,
     );
     this.#remote(machine, "bash -s", { input: script, password });
 
@@ -1632,11 +1634,11 @@ bash ${MACHINE_HOSTING}/leaseweb-bootstrap.sh '${keys}'
     );
 
     const after = await this.#waitOnline(machine);
-    if (after.account !== owner) throw new Error(`OpenBot on VPS ${id} is not signed in to the owner.`);
+    if (after.account !== owner) throw new Error(`PurpleBot on VPS ${id} is not signed in to the owner.`);
     const remoteHost = this.#checkOwner(owner, after.hosts);
     if (options.plan) this.#setCustomOffer(remoteHost, options.plan);
     logger.info(
-      `VPS ${id} is ${label}: OpenBot ${after.version}, online, server ${remoteHost} of the owner. Address ${machine.address}.`,
+      `VPS ${id} is ${label}: PurpleBot ${after.version}, online, server ${remoteHost} of the owner. Address ${machine.address}.`,
     );
   }
 
@@ -1650,7 +1652,7 @@ bash ${MACHINE_HOSTING}/leaseweb-bootstrap.sh '${keys}'
         WHERE h.host_id = ${hostId}`,
       customPlanRowSchema,
     );
-    if (!row) throw new Error(`D1 has no OpenBot server ${host}.`);
+    if (!row) throw new Error(`D1 has no PurpleBot server ${host}.`);
     if (row.hosted === 1)
       throw new Error(`Server ${host} is a hosted server. Its plan is a hosted plan, not a custom plan.`);
     const current = customPlanOfRow(row);
@@ -1751,7 +1753,7 @@ bash ${MACHINE_HOSTING}/leaseweb-bootstrap.sh '${keys}'
     }
     logger.info(
       `VPS ${machine.id}: hostname ${state.hostname}, bootstrap ${state.bootstrapped ? "done" : "not done"}, ` +
-        `OpenBot ${state.version || "not running"}, ${signedIn(state, owner)}, ` +
+        `PurpleBot ${state.version || "not running"}, ${signedIn(state, owner)}, ` +
         `${state.online ? "online" : "not online"}.`,
     );
   }
@@ -1891,7 +1893,7 @@ exit "$status"`;
     }
     logger.info(
       `Move server ${serverId} (${row.plan}, ${row.desired_state}, sandbox ${before.state}) to VPS ${vpsId} ` +
-        `(${machine.location} ${machine.product}, ${state?.user ? `OpenBot ${state.version}` : "not prepared"}).`,
+        `(${machine.location} ${machine.product}, ${state?.user ? `PurpleBot ${state.version}` : "not prepared"}).`,
     );
     if (!this.#apply) {
       logger.info("Nothing changed. Run again with --apply.");
@@ -1916,7 +1918,7 @@ exit "$status"`;
       await this.#prepareMachine(machine, release);
       state = this.#machineState(machine);
     } else if (!state.data && isOlder(state.version, release.version)) {
-      logger.info(`Install OpenBot ${release.version} over ${state.version}.`);
+      logger.info(`Install PurpleBot ${release.version} over ${state.version}.`);
       this.#upgradeMachine(machine, release);
       state = this.#machineState(machine);
     } else {
@@ -1925,7 +1927,7 @@ exit "$status"`;
       });
     }
     if (state?.user !== "user" || state.data || state.enabled === "enabled") {
-      throw new Error(`VPS ${vpsId} is not a prepared machine with no data and with OpenBot disabled.`);
+      throw new Error(`VPS ${vpsId} is not a prepared machine with no data and with PurpleBot disabled.`);
     }
     if (!/^ssh-ed25519 [A-Za-z0-9+/]+=*$/u.test(state.hostKey))
       throw new Error(`VPS ${vpsId} has no ed25519 host key.`);
@@ -1987,7 +1989,7 @@ ${writeFileCommand(`${SANDBOX_MOVE}/known-hosts`, `${machine.address} ${machineS
 ssh-keygen -q -t ed25519 -N '' -C openbot-move -f "$d/key" </dev/null
 echo "key=$(cat "$d/key.pub")"
 echo "ids=$(id -u user):$(id -g user)"
-echo "version=$(sed -n 's/^X-AppImage-Version=//p' /opt/OpenBot/app/*.desktop | head -n 1)"
+echo "version=$(sed -n 's/^X-AppImage-Version=//p' /opt/PurpleBot/app/*.desktop | head -n 1)"
 echo "containers=$(find /var/lib/docker/containers -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)"
 if ids=$(docker ps -aq 2>/dev/null); then
   echo "docker_running=$(docker ps -q | wc -l)"
@@ -2057,12 +2059,12 @@ bash "$d/move-from-boat.sh" packages`,
         );
       }
       if (!VERSION_PATTERN.test(sandboxVersion) || isOlder(machineState.version, sandboxVersion)) {
-        throw new Error(`The machine has OpenBot ${machineState.version}, and the sandbox has ${sandboxVersion}.`);
+        throw new Error(`The machine has PurpleBot ${machineState.version}, and the sandbox has ${sandboxVersion}.`);
       }
       const key = values.get("key") ?? "";
       if (!/^ssh-ed25519 [A-Za-z0-9+/]+=* openbot-move$/u.test(key))
         throw new Error("The sandbox made no key for the move.");
-      lap(`Sandbox ready (OpenBot ${sandboxVersion}, ${packages.length} apt packages)`);
+      lap(`Sandbox ready (PurpleBot ${sandboxVersion}, ${packages.length} apt packages)`);
       if (packages.length > 0) {
         this.#remote(machine, `bash ${MACHINE_HOSTING}/move-from-boat.sh install-packages`, {
           input: `${packages.join("\n")}\n`,
@@ -2149,7 +2151,7 @@ systemd-run --quiet --collect --unit=openbot-move-export bash ${SANDBOX_MOVE}/ru
         active = this.#remote(machine, "systemctl is-active openbot.service || true", { capture: true }).trim();
       }
       if (active !== "active") throw new Error(`openbot.service is ${active} on VPS ${vpsId} after 60 s.`);
-      lap("OpenBot started");
+      lap("PurpleBot started");
     } catch (error) {
       try {
         this.#remote(machine, "sed -i '/ openbot-move$/d' /root/.ssh/authorized_keys 2>/dev/null || true", {
@@ -2159,7 +2161,7 @@ systemd-run --quiet --collect --unit=openbot-move-export bash ${SANDBOX_MOVE}/ru
         logger.warn(`Remove the openbot-move line of /root/.ssh/authorized_keys on VPS ${vpsId} by hand.`);
       }
       logger.error(
-        `The move of server ${serverId} stopped after the export started. OpenBot is stopped in sandbox ${sandbox}, and the row names VPS ${vpsId}. ` +
+        `The move of server ${serverId} stopped after the export started. PurpleBot is stopped in sandbox ${sandbox}, and the row names VPS ${vpsId}. ` +
           `Read the error, then finish the move by hand or roll it back (docs/hosted-servers.md#move-a-server-from-boat). ` +
           `Delete ${MACHINE_ARCHIVE} on the machine and ${SANDBOX_MOVE} in the sandbox.`,
       );

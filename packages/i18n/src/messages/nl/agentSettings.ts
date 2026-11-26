@@ -43,7 +43,7 @@ export const messages = {
   "agentSettings.folders.inShared": "{folder} staat in de gedeelde map, dus {agent} kan de map al wijzigen",
   "agentSettings.folders.inFolder": "{folder} staat in {parent}, en die map is al toegevoegd",
   "agentSettings.folders.protected":
-    "Je kunt {folder} niet toevoegen: de map bevat OpenBot-gegevens of bestanden van andere agents",
+    "Je kunt {folder} niet toevoegen: de map bevat PurpleBot-gegevens of bestanden van andere agents",
   "agentSettings.folders.missing": "{folder} is geen map op deze computer",
   "agentSettings.folders.limit": {
     one: "Je kunt maximaal {count} map toevoegen",
@@ -156,7 +156,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "De agent draait met volledige computertoegang vanuit zijn werkruimte en de gedeelde map.",
   "agentSettings.runtime.askNote":
-    "Hij vraagt het je voordat hij een OpenBot-tool gebruikt of een site publiceert, en als de aanbieder om goedkeuring vraagt.",
+    "Hij vraagt het je voordat hij een PurpleBot-tool gebruikt of een site publiceert, en als de aanbieder om goedkeuring vraagt.",
   "agentSettings.runtime.fullNote": "Hij handelt zonder te vragen, behalve bij vragen die hij aan jou stelt.",
   "agentSettings.access.workspace": "Alleen werkruimte",
   "agentSettings.access.ask": "Eerst vragen",
@@ -189,12 +189,12 @@ export const messages = {
   "agentSettings.deleteHistory.button": "Wissen",
   "agentSettings.deleteHistory.confirmTitle": "Chatgeschiedenis met {name} wissen?",
   "agentSettings.deleteHistory.confirmDescription":
-    "Alle berichten en bestanden van deze chat worden uit OpenBot gewist en de agent vergeet ze. Dit kun je niet ongedaan maken. Zijthreads, instructies, model, tools, herinneringen, werkruimte en browser veranderen niet.",
+    "Alle berichten en bestanden van deze chat worden uit PurpleBot gewist en de agent vergeet ze. Dit kun je niet ongedaan maken. Zijthreads, instructies, model, tools, herinneringen, werkruimte en browser veranderen niet.",
   "agentSettings.deleteHistory.confirm": "Geschiedenis wissen",
   "agentSettings.deleteHistory.failed": "Kan de geschiedenis niet wissen.",
   "agentSettings.deleteAgent.title": "Agent verwijderen",
   "agentSettings.deleteAgent.description":
-    "De agent, de chat, herinneringen, routines en werkruimte verdwijnen uit OpenBot.",
+    "De agent, de chat, herinneringen, routines en werkruimte verdwijnen uit PurpleBot.",
   "agentSettings.deleteAgent.button": "Verwijderen",
   "agentSettings.fullAccess.title": "Deze agent volledige toegang geven?",
   "agentSettings.fullAccess.askTitle": "Deze agent buiten zijn werkruimte laten werken?",
@@ -222,7 +222,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "Een bestandswijziging buiten vraagt het je eerst. Een opdracht kan niet buiten schrijven.",
   "agentSettings.runtime.workspaceUnlimited":
-    "Computerbesturing en de OpenBot-browser zijn niet beperkt; je kunt Computerbesturing hieronder uitzetten.",
+    "Computerbesturing en de PurpleBot-browser zijn niet beperkt; je kunt Computerbesturing hieronder uitzetten.",
   "agentSettings.computerUse.title": "Computerbesturing",
   "agentSettings.computerUse.description": "Laat deze agent apps op deze computer besturen",
   "agentSettings.automation.title": "Lokale scripts",
@@ -233,7 +233,7 @@ export const messages = {
     "Laat de agent een nieuwe chat starten als de chat lang wordt. Hij slaat eerst notities op.",
   "agentSettings.quickAcknowledgement.title": "Plan tonen vóór lange taken",
   "agentSettings.quickAcknowledgement.description": "Vóór een lange taak toont de agent zijn plan.",
-  "agentSettings.builtinMemory.title": "OpenBot-geheugen",
+  "agentSettings.builtinMemory.title": "PurpleBot-geheugen",
   "agentSettings.builtinMemory.description":
     "De agent bewaart en leest zijn eigen herinneringen. Zet dit uit om alleen een geheugen-app zoals Mem0 te gebruiken. Bewaarde herinneringen blijven.",
   "agentSettings.browserProfile.label": "Browserprofiel",

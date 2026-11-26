@@ -19,7 +19,7 @@ const OUT = resolve(import.meta.dirname, "../.openbot-build/opencode-tools-lost"
 const ENDPOINT = "spark";
 const MODEL = "agent-model";
 const LONG_TURN_MS = 31_000;
-const TOOLS_NOT_LOADED = "ran this message without OpenBot's tools";
+const TOOLS_NOT_LOADED = "ran this message without PurpleBot's tools";
 const run = promisify(execFile);
 
 interface Report {
@@ -212,14 +212,14 @@ try {
   assert.ok(report.refusedConnects > 0, "The bridge must refuse the first connection.");
   assert.ok(
     firstTurn.error?.includes(TOOLS_NOT_LOADED),
-    `The first turn must say that it ran without OpenBot's tools: ${firstTurn.error}`,
+    `The first turn must say that it ran without PurpleBot's tools: ${firstTurn.error}`,
   );
-  assert.equal(report.toolCalls.length, 0, "The first turn must not reach OpenBot's tool.");
+  assert.equal(report.toolCalls.length, 0, "The first turn must not reach PurpleBot's tool.");
 
   const secondTurn = await runTurn(client, thread, { text: "Call whoami.", timeoutMs: 180_000 });
   report.turns.push(secondTurn);
   assert.equal(secondTurn.error, null, `The second turn failed: ${secondTurn.error}`);
-  assert.deepEqual(report.toolCalls, ["openbot.whoami"], "The second turn must reach OpenBot's tool.");
+  assert.deepEqual(report.toolCalls, ["openbot.whoami"], "The second turn must reach PurpleBot's tool.");
   report.passed = true;
 } catch (error) {
   report.error = error instanceof Error ? (error.stack ?? error.message) : String(error);

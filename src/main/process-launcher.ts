@@ -24,7 +24,7 @@ export interface ProcessLauncherHost {
 
 export function forkProcessLauncherHost(hostPath = join(__dirname, "process-launcher-host.js")): ProcessLauncherHost {
   const child = utilityProcess.fork(hostPath, [], {
-    serviceName: "OpenBot process launcher",
+    serviceName: "PurpleBot process launcher",
     stdio: "ignore",
   });
   return {

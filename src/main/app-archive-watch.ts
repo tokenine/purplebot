@@ -86,7 +86,7 @@ export function watchAppArchive(resourcesPath: string, translate: AppTranslate):
     const expected = process.platform === "darwin" ? ((await readPlistHash(resourcesPath)) ?? startHash) : startHash;
     if (stopped || current === expected) return;
     stop();
-    logger.error("app.asar changed while OpenBot runs; the next start fails the integrity check.");
+    logger.error("app.asar changed while PurpleBot runs; the next start fails the integrity check.");
     await showArchiveChanged(translate);
   };
 

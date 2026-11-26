@@ -573,7 +573,7 @@ try {
   };
   Object.assign(report, { failedCompactions });
   assert.equal(failedCompactions.turns, 4, "failed compactions: not every message ran");
-  assert.equal(failedCompactions.compactStarts, 2, "failed compactions: OpenBot did not stop after 2 failures");
+  assert.equal(failedCompactions.compactStarts, 2, "failed compactions: PurpleBot did not stop after 2 failures");
   assert.equal(failedCompactions.failedEnds, 2, "failed compactions: the compactions did not fail");
   assert.equal(failedCompactions.stoppedNotices, 1, "failed compactions: one notice");
 
@@ -620,7 +620,7 @@ try {
   };
   Object.assign(report, { ineffectiveCompactions });
   assert.equal(ineffectiveCompactions.turns, 4, "ineffective compactions: not every message ran");
-  assert.equal(ineffectiveCompactions.compactStarts, 2, "ineffective compactions: OpenBot did not stop after 2");
+  assert.equal(ineffectiveCompactions.compactStarts, 2, "ineffective compactions: PurpleBot did not stop after 2");
   assert.equal(ineffectiveCompactions.notices, 1, "ineffective compactions: one notice");
 
   await writeFile(controlPath, JSON.stringify({ compactionMs: 200, ignoreInterrupt: false, usageOnStop: true }));

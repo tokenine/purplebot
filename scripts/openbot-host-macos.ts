@@ -93,14 +93,15 @@ async function verifyApplication(): Promise<void> {
   const installed = await macHostOperations().installedVersion();
   const release = await runCauseEffect(readOwnedJson(join(ROOT, "host-release.json"), 0, hostReleaseSchema));
   if (isNewerRelease(release.version, installed))
-    throw new Error("Install the matching or a newer OpenBot application first.");
+    throw new Error("Install the matching or a newer PurpleBot application first.");
 }
 
 async function prepareApplication(): Promise<void> {
   await verifySharedAppParent();
   await verifyBundleTree(SHARED_APP, false);
   await verifySignature(SHARED_APP);
-  if (await macHostOperations().applicationInUse()) throw new Error("Quit all OpenBot sessions before initial setup.");
+  if (await macHostOperations().applicationInUse())
+    throw new Error("Quit all PurpleBot sessions before initial setup.");
   const admins = new Set<number>([0]);
   const checkOwner = async (path: string): Promise<void> => {
     const info = await lstat(path);
@@ -174,7 +175,7 @@ async function verifyIsolation(tenants: HostTenant[]): Promise<void> {
     for (const tenant of tenants) {
       const area = join(directory, String(tenant.uid));
       await mkdir(area, { mode: 0o700 });
-      await writeFile(join(area, "probe"), "OpenBot permission test\n", { flag: "wx", mode: 0o600 });
+      await writeFile(join(area, "probe"), "PurpleBot permission test\n", { flag: "wx", mode: 0o600 });
       await chown(join(area, "probe"), tenant.uid, 20);
       await chown(area, tenant.uid, 20);
     }

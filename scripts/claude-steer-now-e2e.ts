@@ -399,7 +399,7 @@ try {
   );
   assert.ok(
     report.turns.every((turn) => turn.status === "completed"),
-    "No OpenBot turn ends as interrupted when Claude stops its tools for a steer.",
+    "No PurpleBot turn ends as interrupted when Claude stops its tools for a steer.",
   );
   assert.ok(
     report.deliveries.every((delivery) => delivery.status === "completed"),

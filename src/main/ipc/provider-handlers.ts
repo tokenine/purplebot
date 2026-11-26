@@ -206,13 +206,13 @@ export function parseProviderApiKeyInput(value: unknown): SetProviderApiKeyInput
 
 function parseManagedProviderId(value: unknown): ManagedProviderId {
   const provider = parseProviderId(value);
-  if (!isManagedRuntimeProvider(provider)) throw new Error("OpenBot does not manage this provider's CLI.");
+  if (!isManagedRuntimeProvider(provider)) throw new Error("PurpleBot does not manage this provider's CLI.");
   return provider;
 }
 
 export function parseDownloadableProviderId(value: unknown): DownloadableProviderId {
   const provider = parseProviderId(value);
-  if (!isDownloadableProvider(provider)) throw new Error("OpenBot does not manage this provider's CLI.");
+  if (!isDownloadableProvider(provider)) throw new Error("PurpleBot does not manage this provider's CLI.");
   return provider;
 }
 

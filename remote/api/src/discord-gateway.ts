@@ -98,7 +98,9 @@ export class DiscordGateway extends Context.Service<DiscordGateway, { readonly a
           unlinking.add(guildId);
           run(
             links.removed(guildId).pipe(
-              Effect.catch(() => Effect.sync(() => console.error("OpenBot Discord could not unlink a removed guild."))),
+              Effect.catch(() =>
+                Effect.sync(() => console.error("PurpleBot Discord could not unlink a removed guild.")),
+              ),
               Effect.ensuring(Effect.sync(() => unlinking.delete(guildId))),
             ),
           );
@@ -114,7 +116,7 @@ export class DiscordGateway extends Context.Service<DiscordGateway, { readonly a
                 .reconcile(guildIds, Date.now() - DISCORD_RECONCILE_GRACE_MILLISECONDS)
                 .pipe(
                   Effect.catch(() =>
-                    Effect.sync(() => console.error("OpenBot Discord could not reconcile the guild links.")),
+                    Effect.sync(() => console.error("PurpleBot Discord could not reconcile the guild links.")),
                   ),
                 );
         });
@@ -146,7 +148,9 @@ export class DiscordGateway extends Context.Service<DiscordGateway, { readonly a
           run(
             call.pipe(
               Effect.catch((error) =>
-                Effect.sync(() => console.error(`OpenBot Discord ${action.type} failed with status ${error.status}.`)),
+                Effect.sync(() =>
+                  console.error(`PurpleBot Discord ${action.type} failed with status ${error.status}.`),
+                ),
               ),
             ),
           );
@@ -169,7 +173,7 @@ export class DiscordGateway extends Context.Service<DiscordGateway, { readonly a
                   })
                 : Effect.void,
             ).pipe(
-              Effect.tapError(() => Effect.sync(() => console.error("OpenBot Discord Gateway could not connect."))),
+              Effect.tapError(() => Effect.sync(() => console.error("PurpleBot Discord Gateway could not connect."))),
               Effect.retry(DISCORD_CONNECT_RETRY),
               Effect.ignore,
             ),
@@ -188,27 +192,27 @@ export class DiscordGateway extends Context.Service<DiscordGateway, { readonly a
             try {
               actions = state.handle(payload);
             } catch {
-              console.error(`OpenBot Discord could not read a ${payload.t} event.`);
+              console.error(`PurpleBot Discord could not read a ${payload.t} event.`);
               return;
             }
             for (const action of actions) act(action);
           });
-          gateway.on(WebSocketShardEvents.Ready, () => console.log("OpenBot Discord Gateway is ready."));
+          gateway.on(WebSocketShardEvents.Ready, () => console.log("PurpleBot Discord Gateway is ready."));
           gateway.on(WebSocketShardEvents.Resumed, (shardId) => {
             if (current !== gateway) return;
-            console.log("OpenBot Discord Gateway resumed.");
+            console.log("PurpleBot Discord Gateway resumed.");
             for (const action of state.shardResumed(shardId)) act(action);
           });
           gateway.on(WebSocketShardEvents.Closed, (code, shardId) => {
             if (current !== gateway) return;
             state.shardClosed(shardId);
-            console.log(`OpenBot Discord Gateway closed with code ${code}.`);
+            console.log(`PurpleBot Discord Gateway closed with code ${code}.`);
             if (code === GatewayCloseCodes.DisallowedIntents && intents !== DISCORD_GATEWAY_INTENTS) {
-              console.error("OpenBot Discord Gateway refused the Message Content intent. It connects without it.");
+              console.error("PurpleBot Discord Gateway refused the Message Content intent. It connects without it.");
               replace(DISCORD_GATEWAY_INTENTS);
             }
           });
-          gateway.on(WebSocketShardEvents.Error, () => console.error("OpenBot Discord Gateway failed."));
+          gateway.on(WebSocketShardEvents.Error, () => console.error("PurpleBot Discord Gateway failed."));
           return gateway;
         };
 
@@ -246,7 +250,7 @@ export class DiscordGateway extends Context.Service<DiscordGateway, { readonly a
                 stopped += 1;
                 if (stopped < stoppedLimit) return;
                 stoppedLimit = Math.min(stoppedLimit * 2, DISCORD_STOPPED_CHECKS_LIMIT);
-                console.error("OpenBot Discord Gateway stopped. It connects again.");
+                console.error("PurpleBot Discord Gateway stopped. It connects again.");
                 replace(currentIntents);
               }),
             ),

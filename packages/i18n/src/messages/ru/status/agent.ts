@@ -33,7 +33,7 @@ export const messages = {
     "Результат появится в канале {channel}, и его увидит каждый участник этого сервера, который читает канал.",
   "status.agent.creditsHoldBalance": "Будет потрачено кредитов: {credits}. Баланс: {balance}.",
   "status.agent.creditsHoldAgentsOff": "Агенты на этом сервере не могут использовать кредиты.",
-  "status.agent.screenCapturePermissionNext": "Затем macOS может попросить вас разрешить OpenBot запись экрана.",
+  "status.agent.screenCapturePermissionNext": "Затем macOS может попросить вас разрешить PurpleBot запись экрана.",
   "status.agent.screenCaptureDisplay": "Сделать снимок дисплея {name} и отправить изображение модели агента.",
   "status.agent.screenCaptureWindow": "Сделать снимок окна {name} и отправить изображение модели агента.",
   "status.agent.screenCaptureRegion":
@@ -45,40 +45,40 @@ export const messages = {
   "status.agent.sendIdea": "Это станет публичным issue на GitHub. Ваше имя не показывается.",
   "status.agent.feedbackRecentErrors": "Последние ошибки в чате:",
   "status.agent.feedbackSameAs": "Добавляется к issue #{issue}",
-  "status.agent.feedbackSent": "Отправлено команде OpenBot: {title}",
+  "status.agent.feedbackSent": "Отправлено команде PurpleBot: {title}",
   "status.agent.feedbackWithdrawn": "Удалено с GitHub: {title}",
   "status.agent.feedbackWithdrawCommand": "Удалить отчёт #{issue} с GitHub",
   "status.agent.feedbackWithdrawReason":
     "Этот отчёт больше никто не увидит на GitHub. Это нельзя отменить. Чтобы исправить отчёт, агент может отправить исправленный.",
   "status.agent.feedbackWithdrawing": "Удаление отчёта с GitHub…",
   "status.agent.serverInstallCommand":
-    "Создать одноразовую команду, которая устанавливает OpenBot на другой компьютер как сервер {name} и подключает его к вашему аккаунту. Агент запускает её там.",
+    "Создать одноразовую команду, которая устанавливает PurpleBot на другой компьютер как сервер {name} и подключает его к вашему аккаунту. Агент запускает её там.",
   "status.agent.serverInstallCard": "Команда установки для сервера {name}",
   "status.agent.browserProfileNamed":
     "Перенести {agents} в профиль браузера {profile}. Они получат его входы в аккаунты и файлы cookie. Их открытые вкладки закроются.",
-  "status.agent.commitCoAuthorOff": "Больше не добавлять OpenBot как соавтора в коммиты всех агентов.",
-  "status.agent.commitCoAuthorOn": "Снова добавлять OpenBot как соавтора в коммиты всех агентов.",
+  "status.agent.commitCoAuthorOff": "Больше не добавлять PurpleBot как соавтора в коммиты всех агентов.",
+  "status.agent.commitCoAuthorOn": "Снова добавлять PurpleBot как соавтора в коммиты всех агентов.",
   "status.agent.browserProfileNew":
     "Создать новый профиль браузера {profile} и перенести в него {agents}. В нём нет входов в аккаунты. Их открытые вкладки закроются.",
   "status.agent.browserProfileShared":
     "Перенести {agents} в общий профиль браузера. Они получат его входы в аккаунты и файлы cookie. Их открытые вкладки закроются.",
   "status.agent.browserProfileOwn":
     "Дать каждому из {agents} собственный профиль браузера. Их открытые вкладки закроются.",
-  "status.agent.feedbackSending": "Отправка отзыва команде OpenBot…",
+  "status.agent.feedbackSending": "Отправка отзыва команде PurpleBot…",
   "status.agent.workflowDelete":
     "Удалить рабочий процесс {title} вместе с его запусками и версиями. Его открытые шаги остановятся.",
   "status.agent.deleteAgents": "Удалить {agents} вместе с их чатами и файлами. Это нельзя отменить.",
-  "status.agent.nearSignatureReceived": "OpenBot получил подпись. Эту вкладку можно закрыть.",
-  "status.agent.nearSignatureUnknown": "OpenBot не ждёт эту подпись. Начните её заново в OpenBot.",
+  "status.agent.nearSignatureReceived": "PurpleBot получил подпись. Эту вкладку можно закрыть.",
+  "status.agent.nearSignatureUnknown": "PurpleBot не ждёт эту подпись. Начните её заново в PurpleBot.",
   "status.agent.nearPayment":
     "Заплатить {amount} {symbol} получателю {recipient} из криптокошелька, для {domain}: {reason}",
   "status.agent.nearSummaryCreate":
-    "Все агенты могут платить до {amount} USD в день. Это можно изменить позже в OpenBot.",
+    "Все агенты могут платить до {amount} USD в день. Это можно изменить позже в PurpleBot.",
   "status.agent.nearSummaryGrant":
-    "Разрешить этому приложению OpenBot платить из кошелька {days} дней в рамках ваших правил.",
+    "Разрешить этому приложению PurpleBot платить из кошелька {days} дней в рамках ваших правил.",
   "status.agent.nearSummaryBudget": "Изменить дневной бюджет кошелька на {amount} USD.",
   "status.agent.nearSummaryAutoPay":
-    "Разрешить OpenBot платить без вашей подписи, когда это позволяет правило платежей. О других платежах вас по-прежнему спросят в чате.",
+    "Разрешить PurpleBot платить без вашей подписи, когда это позволяет правило платежей. О других платежах вас по-прежнему спросят в чате.",
   "status.agent.nearSummaryPayment": "Одобрить платёж {amount} получателю {recipient}.",
   "status.agent.nearSummaryFreeze": "Агенты не смогут платить из этого кошелька, пока вы не возобновите платежи.",
   "status.agent.nearSummaryUnfreeze": "Агенты снова смогут платить из этого кошелька в рамках ваших правил.",

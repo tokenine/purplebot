@@ -170,7 +170,7 @@ try {
   };
   report.store = { client: record?.client ?? null, issuer: record?.discovery?.authorizationServerUrl ?? null };
   check(page.origin === "https://www.facebook.com", `the page is on ${page.origin}`);
-  check(page.searchParams.get("client_id") === META_APP_ID, "the page does not name the OpenBot Meta app");
+  check(page.searchParams.get("client_id") === META_APP_ID, "the page does not name the PurpleBot Meta app");
   check(page.searchParams.get("redirect_uri") === MCP_OAUTH_RELAY_URL, "the page does not name the relay address");
   check(page.searchParams.get("code_challenge_method") === "S256", "the page has no S256 code challenge");
   check(state.length > 0, "the page has no state");
@@ -249,7 +249,7 @@ try {
   report.impostor = { pages: impostorPages, error: impostorError };
   check(
     impostorPages.every((opened) => opened.clientId !== META_APP_ID),
-    "a server that is not Meta's got the OpenBot Meta app",
+    "a server that is not Meta's got the PurpleBot Meta app",
   );
 
   const savedAppPages = pages.length;

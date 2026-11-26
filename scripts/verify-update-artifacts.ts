@@ -45,7 +45,7 @@ if (platform === "linux" || platform === "linux-arm64") {
 
 const resourcesRoot =
   platform === "macos"
-    ? join(distRoot, process.arch === "arm64" ? "mac-arm64" : "mac", "OpenBot.app", "Contents", "Resources")
+    ? join(distRoot, process.arch === "arm64" ? "mac-arm64" : "mac", "PurpleBot.app", "Contents", "Resources")
     : join(distRoot, platform === "windows" ? "win-unpacked" : `${platform}-unpacked`, "resources");
 if (!existsSync(join(resourcesRoot, "voice", "runtime", "sherpa-onnx.node"))) {
   throw new Error("The packaged application has no voice runtime.");

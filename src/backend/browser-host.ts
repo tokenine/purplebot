@@ -382,7 +382,7 @@ const USES_BACKGROUND_WINDOW =
   process.platform === "darwin" || process.platform === "win32" || process.platform === "linux";
 
 const SHOWS_VIEWS_IN_BACKGROUND = process.platform === "linux";
-const PAGE_ALERT_ACCEPTED = "The page showed an alert. OpenBot pressed OK so the app stays usable. Alert text: ";
+const PAGE_ALERT_ACCEPTED = "The page showed an alert. PurpleBot pressed OK so the app stays usable. Alert text: ";
 
 function createBackgroundWindow(): BaseWindow {
   const window = new BaseWindow({
@@ -1937,7 +1937,7 @@ export class BrowserHost {
       throw new Error(`${action} is unavailable while the page shows a filled card. Use snapshots until it navigates.`);
     if (tab.secretShown)
       throw new Error(
-        `${action} is unavailable while the page can show a password or code that OpenBot typed. Use snapshots until it navigates.`,
+        `${action} is unavailable while the page can show a password or code that PurpleBot typed. Use snapshots until it navigates.`,
       );
   }
 
@@ -5078,7 +5078,7 @@ function boundedCaptureDataUrl(image: NativeImage): string {
   const size = image.getSize();
   if (size.width <= 0 || size.height <= 0)
     throw new Error(
-      "Browser screenshot is empty: the page drew no image. This can happen while the OpenBot window is minimized or hidden. If it is, ask the person to open the OpenBot window, then try again.",
+      "Browser screenshot is empty: the page drew no image. This can happen while the PurpleBot window is minimized or hidden. If it is, ask the person to open the PurpleBot window, then try again.",
     );
   const area = size.width * size.height;
   const scale = Math.sqrt(MAX_ENCODED_CAPTURE_PIXELS / area);

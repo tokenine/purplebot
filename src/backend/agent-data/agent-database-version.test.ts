@@ -17,7 +17,7 @@ import { AgentDatabaseSupervisor } from "./agent-database-supervisor";
 import { AgentTables } from "./agent-tables";
 
 const HOST = resolve(import.meta.dirname, "agent-database-host.ts");
-const NEWER = "A newer version of OpenBot made the shared tables file";
+const NEWER = "A newer version of PurpleBot made the shared tables file";
 
 let root = "";
 const children: ChildProcess[] = [];

@@ -305,7 +305,7 @@ async function main(): Promise<void> {
     });
     if (instanceId !== sharedEnvironment.OPENBOT_DEV_INSTANCE_ID) {
       sharedEnvironment.OPENBOT_DEV_INSTANCE_ID = instanceId;
-      logger.info("This worktree opens its own dev profile. Pass --shared to open the shared OpenBot Dev profile.");
+      logger.info("This worktree opens its own dev profile. Pass --shared to open the shared PurpleBot Dev profile.");
     }
     const allocated = await allocateDevelopmentPorts(
       services,

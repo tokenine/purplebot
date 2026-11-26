@@ -71,7 +71,7 @@ export const ConnectedWithMoreRepositories: Story = {
 };
 
 export const ConnectedRepositoriesFailed: Story = {
-  args: args({ state: "connected", login: "octocat" }, false, null, "OpenBot cannot reach GitHub: fetch failed"),
+  args: args({ state: "connected", login: "octocat" }, false, null, "PurpleBot cannot reach GitHub: fetch failed"),
 };
 
 export const Expired: Story = { args: args({ state: "expired", login: "octocat" }) };

@@ -601,7 +601,7 @@ export class BillingService {
         dependencies.stripe.createCheckoutSession({
           customerId,
           inlinePrice: {
-            productName: `OpenBot ${request.plan.name}`,
+            productName: `PurpleBot ${request.plan.name}`,
             amount: request.plan.amount,
             interval: request.plan.interval,
           },
@@ -1184,7 +1184,7 @@ export class BillingService {
     const key = price ? planLookupKey(price) : null;
     const currency = subscription.currency.toLowerCase();
     if (!key || !isBillingCurrency(currency) || !isOneOf(BILLING_SUBSCRIPTION_STATUSES, subscription.status)) {
-      console.warn("billing: subscription is not an OpenBot plan", { subscriptionId });
+      console.warn("billing: subscription is not an PurpleBot plan", { subscriptionId });
       return null;
     }
     const ownerId = yield* this.#subscriptionOwner(subscription, customerId);
@@ -1460,7 +1460,7 @@ export class BillingService {
         )
       : null;
     if (!user) {
-      console.warn("billing: subscription names no OpenBot account", { subscriptionId: subscription.id });
+      console.warn("billing: subscription names no PurpleBot account", { subscriptionId: subscription.id });
       return null;
     }
     const now = dependencies.now();

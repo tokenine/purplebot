@@ -93,7 +93,7 @@ export function vaultClosedText(status: VaultStatus | undefined) {
   if (status === "unavailable")
     return "The Vault is closed, because the secret storage of this computer did not answer. Tell the user to open Server settings > Vault, which shows what to do.";
   if (status === "unreadable")
-    return "The Vault is closed, because OpenBot cannot decrypt the Vault file on this computer. Tell the user to open Server settings > Vault, which shows what to do. Only the user decides to reset the Vault, because a reset deletes all its items.";
+    return "The Vault is closed, because PurpleBot cannot decrypt the Vault file on this computer. Tell the user to open Server settings > Vault, which shows what to do. Only the user decides to reset the Vault, because a reset deletes all its items.";
   return "No Vault is available on this computer. Ask the user.";
 }
 

@@ -4,7 +4,7 @@ import { hexToBytes, importHmacSha256Key } from "./crypto";
 
 const BOAT_API_URL = "https://boat.dev/api/v1";
 const REQUEST_TIMEOUT_MS = 15_000;
-const HOSTED_SERVER_SETUP_SCRIPT = "exec /opt/OpenBot/hosted/openbot-hosted-env\n";
+const HOSTED_SERVER_SETUP_SCRIPT = "exec /opt/PurpleBot/hosted/openbot-hosted-env\n";
 
 export type BoatSandboxType = "small" | "default" | "large";
 

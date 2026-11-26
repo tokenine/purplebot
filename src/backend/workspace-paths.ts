@@ -33,7 +33,7 @@ function withoutSlashBeforeDrive(path: string): string {
 export function sharedPathFromInput(sharedRoot: string, written: string): string {
   const inputPath = withoutSlashBeforeDrive(written);
   const normalized = inputPath.replaceAll("\\", "/");
-  for (const prefix of ["~/OpenBot/Shared/", "OpenBot/Shared/", "Shared/"]) {
+  for (const prefix of ["~/PurpleBot/Shared/", "PurpleBot/Shared/", "Shared/"]) {
     if (normalized.startsWith(prefix)) return join(sharedRoot, normalized.slice(prefix.length));
   }
   return isAbsolute(inputPath) ? inputPath : join(sharedRoot, normalized);
@@ -44,10 +44,10 @@ export function workspacePathFromInput(workspaceRoot: string, agentId: string, i
   const normalized = decoded.replaceAll("\\", "/");
   const legacyId = legacyAgentId(agentId);
   for (const prefix of [
-    `~/OpenBot/Agents/${agentId}/`,
-    `OpenBot/Agents/${agentId}/`,
-    `~/OpenBot/Bots/${legacyId}/`,
-    `OpenBot/Bots/${legacyId}/`,
+    `~/PurpleBot/Agents/${agentId}/`,
+    `PurpleBot/Agents/${agentId}/`,
+    `~/PurpleBot/Bots/${legacyId}/`,
+    `PurpleBot/Bots/${legacyId}/`,
   ]) {
     if (normalized.startsWith(prefix)) return join(workspaceRoot, normalized.slice(prefix.length));
   }

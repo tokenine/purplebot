@@ -47,7 +47,14 @@ async function eachPaidInvoiceSendsOneMessage() {
     }
     return new Response(null, { status: 503 });
   };
-  const options = { database: sqliteD1(database), clientId: "client", clientSecret: "secret", fetch, now: () => NOW };
+  const options = {
+    database: sqliteD1(database),
+    apiUrl: "https://analytics.example.com/api",
+    clientId: "client",
+    clientSecret: "secret",
+    fetch,
+    now: () => NOW,
+  };
   const sales = new BillingSales({ ...options, saleAlert: createHostedPoolAlert(ALERT_URL, fetch) });
   const run = (work: Effect.Effect<void, unknown>) => Effect.runPromise(work);
   const pending = () =>

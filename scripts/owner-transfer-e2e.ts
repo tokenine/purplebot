@@ -194,7 +194,7 @@ async function run(api: string) {
     body: JSON.stringify({ email: recipient.email }),
   });
   record(
-    "a server that OpenBot hosts cannot be transferred",
+    "a server that PurpleBot hosts cannot be transferred",
     (await errorCode(hosted)) === "owner_transfer_hosted",
     String(hosted.status),
   );

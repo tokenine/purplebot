@@ -57,13 +57,13 @@ function summary(result: Run): string {
 }
 
 async function writeFixture(root: string): Promise<void> {
-  const config = join(root, ".config/OpenBot");
-  const shared = join(root, "OpenBot/Shared/Data");
+  const config = join(root, ".config/PurpleBot");
+  const shared = join(root, "PurpleBot/Shared/Data");
   await mkdir(config, { recursive: true });
   await mkdir(shared, { recursive: true });
   await mkdir(join(root, ".local/share/keyrings"), { recursive: true });
   await mkdir(join(root, ".config/openbot-container"), { recursive: true });
-  await mkdir(join(root, "OpenBot/Agents/E2E"), { recursive: true });
+  await mkdir(join(root, "PurpleBot/Agents/E2E"), { recursive: true });
 
   const now = new Date().toISOString();
   const db = new DatabaseSync(join(config, "openbot.db"));
@@ -103,8 +103,8 @@ async function writeFixture(root: string): Promise<void> {
   await writeFile(join(root, ".config/openbot-container/keyring-password"), randomBytes(32).toString("hex"), {
     mode: 0o600,
   });
-  await writeFile(join(root, "OpenBot/Agents/E2E/notes.md"), "Saved before the backup.\n");
-  await writeFile(join(root, "OpenBot/Agents/E2E/attachment.bin"), randomBytes(256 * 1024));
+  await writeFile(join(root, "PurpleBot/Agents/E2E/notes.md"), "Saved before the backup.\n");
+  await writeFile(join(root, "PurpleBot/Agents/E2E/attachment.bin"), randomBytes(256 * 1024));
 }
 
 const standIn = `FROM alpine:3.22
@@ -160,7 +160,7 @@ async function main(): Promise<void> {
       cp -a /fixture/. ${data}/ && chown -R 1000:1000 ${data} && chmod 0700 ${data}
       printf 'OPENBOT_NAME=main\\nOPENBOT_CPUS=1\\nOPENBOT_MEM=1g\\nOPENBOT_DISK=256M\\nOPENBOT_BACKUP_DIR=/backups\\nOPENBOT_BACKUP_KEEP=2\\nOPENBOT_BACKUP_MAX_AGE=24\\n' >/opt/openbot-docker/instances/main.env
       docker run --detach --name openbot-main --stop-timeout 20 -v ${data}:/data ghcr.io/tokenine/purplebot:latest >/dev/null`);
-    const dataHash = must(`sha256sum ${data}/.config/OpenBot/openbot.db | cut -d ' ' -f 1`);
+    const dataHash = must(`sha256sum ${data}/.config/PurpleBot/openbot.db | cut -d ' ' -f 1`);
 
     let result = instance("backups", "main");
     check(
@@ -221,12 +221,12 @@ async function main(): Promise<void> {
     const invalidSources = [
       {
         name: "main database",
-        path: ".config/OpenBot/openbot.db",
-        error: /OpenBot cannot open openbot\.db|openbot\.db is damaged/,
+        path: ".config/PurpleBot/openbot.db",
+        error: /PurpleBot cannot open openbot\.db|openbot\.db is damaged/,
       },
       {
         name: "shared database",
-        path: "OpenBot/Shared/Data/agent-data.db",
+        path: "PurpleBot/Shared/Data/agent-data.db",
         error: /shared tables cannot open|shared tables are damaged/,
       },
     ];
@@ -250,7 +250,7 @@ async function main(): Promise<void> {
         summary(invalidResult),
       );
       const targetHashes = must(
-        `cd ${data} && sha256sum .config/OpenBot/openbot.db OpenBot/Shared/Data/agent-data.db OpenBot/Agents/E2E/notes.md OpenBot/Agents/E2E/attachment.bin .local/share/keyrings/login.keyring .config/openbot-container/keyring-password .e2e-starts .e2e-clean-stop`,
+        `cd ${data} && sha256sum .config/PurpleBot/openbot.db PurpleBot/Shared/Data/agent-data.db PurpleBot/Agents/E2E/notes.md PurpleBot/Agents/E2E/attachment.bin .local/share/keyrings/login.keyring .config/openbot-container/keyring-password .e2e-starts .e2e-clean-stop`,
       );
       const targetRunningBefore = running();
       const refused = instance("restore", "main", invalidBackup, "--replace");
@@ -261,7 +261,7 @@ async function main(): Promise<void> {
       );
       const targetRunningAfter = running();
       const afterHashes = must(
-        `cd ${data} && sha256sum .config/OpenBot/openbot.db OpenBot/Shared/Data/agent-data.db OpenBot/Agents/E2E/notes.md OpenBot/Agents/E2E/attachment.bin .local/share/keyrings/login.keyring .config/openbot-container/keyring-password .e2e-starts .e2e-clean-stop`,
+        `cd ${data} && sha256sum .config/PurpleBot/openbot.db PurpleBot/Shared/Data/agent-data.db PurpleBot/Agents/E2E/notes.md PurpleBot/Agents/E2E/attachment.bin .local/share/keyrings/login.keyring .config/openbot-container/keyring-password .e2e-starts .e2e-clean-stop`,
       );
       check(
         `a refused ${source.name} restore keeps target bytes and running state`,
@@ -423,7 +423,7 @@ async function main(): Promise<void> {
     );
     check("down waits for the lock of the instance", waited === "124" && running(), `timeout exit ${waited}`);
 
-    must(`echo changed > ${data}/OpenBot/Agents/E2E/after-backup.md && rm ${data}/OpenBot/Agents/E2E/notes.md`);
+    must(`echo changed > ${data}/PurpleBot/Agents/E2E/after-backup.md && rm ${data}/PurpleBot/Agents/E2E/notes.md`);
     must(
       `mkdir -p /trap && ln -s /trap ${data}/.openbot-replaced && ln -s /trap ${data}/.openbot-restore && ln -s /trap ${data}/.openbot-replaced.x && chown -h 1000:1000 ${data}/.openbot-*`,
     );
@@ -440,7 +440,7 @@ async function main(): Promise<void> {
     result = instance("restore", "main", "newer", "--replace");
     must("rm -rf /backups/main/newer");
     check(
-      "restore refuses a backup from a newer OpenBot",
+      "restore refuses a backup from a newer PurpleBot",
       result.status !== 0 && /99\.0\.0/.test(result.stderr) && running(),
       summary(result),
     );
@@ -456,7 +456,7 @@ async function main(): Promise<void> {
     check("restore with --replace", result.status === 0, summary(result));
     check("instance stays stopped after a restore", !running(), `running=${running()}`);
     const restored = must(
-      `cd ${data} && test -f OpenBot/Agents/E2E/notes.md && test ! -e OpenBot/Agents/E2E/after-backup.md && test -z "$(find . -maxdepth 1 -name '.openbot-*')" && sha256sum .config/OpenBot/openbot.db | cut -d ' ' -f 1`,
+      `cd ${data} && test -f PurpleBot/Agents/E2E/notes.md && test ! -e PurpleBot/Agents/E2E/after-backup.md && test -z "$(find . -maxdepth 1 -name '.openbot-*')" && sha256sum .config/PurpleBot/openbot.db | cut -d ' ' -f 1`,
     );
     check("restored data is the backup", restored === dataHash, `openbot.db ${restored.slice(0, 12)}`);
     check(

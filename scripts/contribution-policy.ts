@@ -214,7 +214,7 @@ function loadPullRequest(number: number): PullRequest {
 
 function failureComment(author: string): string {
   return [
-    `@${author}, thank you for the pull request. A maintainer marked it as a feature or a change to how OpenBot works.`,
+    `@${author}, thank you for the pull request. A maintainer marked it as a feature or a change to how PurpleBot works.`,
     "",
     `Changes of this type need an issue with the \`${LABEL_APPROVED}\` label before we review code. To continue:`,
     "",

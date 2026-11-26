@@ -228,7 +228,7 @@ try {
           channelId: "group-1",
           draft: { name: "Group", title: "", instructions: "", members: [{ agentId: user.id }], leadAgentId: null },
         },
-        { id: "openbot", name: "OpenBot" },
+        { id: "openbot", name: "PurpleBot" },
       ),
     );
     await runCauseEffect(

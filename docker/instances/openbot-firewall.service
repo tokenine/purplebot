@@ -1,5 +1,5 @@
 [Unit]
-Description=Firewall of the OpenBot Docker instances
+Description=Firewall of the PurpleBot Docker instances
 After=ufw.service
 Before=docker.service
 

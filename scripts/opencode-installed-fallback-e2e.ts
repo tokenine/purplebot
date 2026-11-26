@@ -109,7 +109,7 @@ try {
   report.savedChoices = savedChoices;
   assert.equal(row()?.version, INSTALLED, "the user's CLI runs");
   assert.equal(row()?.cliSource, "system");
-  assert.equal(row()?.otherCliVersion, COPY, "the row offers OpenBot's version back");
+  assert.equal(row()?.otherCliVersion, COPY, "the row offers PurpleBot's version back");
   assert.deepEqual(report.starts, [COPY, COPY, COPY, INSTALLED], "the copy gets its 3 starts first");
   assert.equal(savedChoices, 0, "the fallback is not saved as the user's choice");
 

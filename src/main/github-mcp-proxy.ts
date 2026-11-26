@@ -28,7 +28,7 @@ const UPSTREAM_TIMEOUT_MS = 5 * 60_000;
 const MAX_BODY_BYTES = 4 * 1024 * 1024;
 const MISSING_PERMISSION = "Resource not accessible by integration";
 const REPOSITORY_CREATION_HINT =
-  'OpenBot cannot create repositories for this owner. GitHub needs the "Administration: write" permission of the ' +
+  'PurpleBot cannot create repositories for this owner. GitHub needs the "Administration: write" permission of the ' +
   "OpenBotGit app on that account. An owner of the account installs OpenBotGit there, or approves its pending " +
   "permission request, in GitHub settings: Applications > Installed GitHub Apps (for an organization, in the " +
   "organization settings). Organization policy can also block repository creation. Tell the user this, and do " +
@@ -36,19 +36,19 @@ const REPOSITORY_CREATION_HINT =
 const NOT_FOUND_OR_REFUSED = /\b40[34]\b|Not Found/u;
 const RATE_LIMIT = /rate limit/iu;
 const notVisibleHint = (repository: string) =>
-  `OpenBot cannot see ${repository} on GitHub. It does not exist, or it is a private repository where the OpenBot ` +
+  `PurpleBot cannot see ${repository} on GitHub. It does not exist, or it is a private repository where the PurpleBot ` +
   'GitHub App is not installed: GitHub then answers "Not Found", and git answers "Write access to repository not ' +
-  'granted". Check the owner and the name. When they are correct, tell the user to add the repository in OpenBot: ' +
+  'granted". Check the owner and the name. When they are correct, tell the user to add the repository in PurpleBot: ' +
   "Marketplace > Apps > GitHub > Choose repositories.";
 const SAML_ENFORCEMENT = /SAML enforcement/iu;
 const singleSignOnHint = (owner: string) =>
   `GitHub refused this request because the organization ${owner} uses single sign-on (SAML), and the GitHub ` +
-  "sign-in of OpenBot does not have single sign-on access to it. This happens when the user signed in to GitHub " +
-  "in OpenBot while their browser had no active single sign-on session for the organization. Repository " +
+  "sign-in of PurpleBot does not have single sign-on access to it. This happens when the user signed in to GitHub " +
+  "in PurpleBot while their browser had no active single sign-on session for the organization. Repository " +
   'permissions are not the cause, and the "grant your OAuth token" step in the GitHub message does not apply to ' +
-  "OpenBot. Do not try another credential. Tell the user to: 1. Open " +
+  "PurpleBot. Do not try another credential. Tell the user to: 1. Open " +
   `https://github.com/orgs/${encodeURIComponent(owner)}/sso in their browser and complete the single sign-on. ` +
-  '2. In OpenBot, open Marketplace > Apps > GitHub and click "Disconnect". On the GitHub page that opens, revoke ' +
+  '2. In PurpleBot, open Marketplace > Apps > GitHub and click "Disconnect". On the GitHub page that opens, revoke ' +
   'OpenBotGit. 3. Click "Connect GitHub" and enter the code in the same browser. Then try again.';
 
 export interface GitHubMcpProxyOptions {

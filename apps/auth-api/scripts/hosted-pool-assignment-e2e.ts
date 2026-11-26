@@ -431,7 +431,7 @@ async function purchaseStartsOnThePoolOrOnBoat() {
   const session = first.state === "assigned" ? await Effect.runPromise(service.redeemClaim(first.claim)) : null;
   const signedIn = row("usd-1");
   check(
-    "the sign-in of OpenBot sets the server to running on its machine",
+    "the sign-in of PurpleBot sets the server to running on its machine",
     session?.hostId === "usd-1" &&
       session.user.id === OWNER.id &&
       signedIn?.observed_state === "running" &&
@@ -609,6 +609,7 @@ async function openPanelBodyHasTheMachine() {
   const bodies: unknown[] = [];
   const work: Promise<void>[] = [];
   const analytics = createAccountAnalytics({
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: async (_input, init) => {

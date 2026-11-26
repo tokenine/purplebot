@@ -509,7 +509,7 @@ export class BitwardenConnectorService implements PasswordVault {
       try: () => Schema.decodeUnknownSync(foldersSchema)(JSON.parse(output)),
       catch: failure,
     });
-    const shared = folders.filter((folder) => folder.name === "Shared with OpenBot");
+    const shared = folders.filter((folder) => folder.name === "Shared with PurpleBot");
     if (shared.length !== 1 || !shared[0]?.id)
       return yield* new PasswordVaultError({ cause: new Error(sourceText("error.connector.bitwardenFolderMissing")) });
     session.folderId = shared[0].id;

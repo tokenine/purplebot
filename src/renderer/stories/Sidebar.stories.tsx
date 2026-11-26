@@ -370,7 +370,7 @@ export const StorageThisComputer: Story = {
     footer: (
       <SidebarStorageCard
         level="low"
-        serverName="OpenBot"
+        serverName="PurpleBot"
         freeBytes={5_100_000_000}
         totalBytes={245_000_000_000}
         thisComputer

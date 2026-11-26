@@ -259,7 +259,7 @@ try {
 
   const fromResult = await runCase("refusal-result", agent.id, "full");
   pass(
-    "The refusal in the tool result gives one notice with the OpenBot text",
+    "The refusal in the tool result gives one notice with the PurpleBot text",
     fromResult.length === 1 && fromResult[0]?.message === NOTICE,
     JSON.stringify(fromResult),
   );

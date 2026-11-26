@@ -2,7 +2,7 @@ import type { PartialTranslation } from "../../../message";
 import type { messages as source } from "../../en/error/crm";
 
 export const messages = {
-  "error.crm.serverTooOld": "Bu sunucu CRM'i desteklemiyor. OpenBot'u sunucuyu çalıştıran bilgisayarda güncelleyin.",
+  "error.crm.serverTooOld": "Bu sunucu CRM'i desteklemiyor. PurpleBot'u sunucuyu çalıştıran bilgisayarda güncelleyin.",
   "error.crm.tooLargeToSend": "Bu CRM sayfası bu istemciye gönderilemeyecek kadar büyük.",
   "error.crm.customerMissing": "Bu müşteri artık yok.",
   "error.crm.planMissing": "Bu plan artık yok.",
@@ -38,9 +38,9 @@ export const messages = {
   "error.crm.sourcePermission":
     "Bu anahtar müşterileri, faturaları, abonelikleri, olayları ve ürünleri okuyamıyor. Ona bunlar için okuma erişimi verin.",
   "error.crm.sourceRateLimited": "Stripe çok fazla istek aldı. Bir dakika sonra yeniden deneyin.",
-  "error.crm.sourceNetwork": "OpenBot Stripe ile bağlantı kuramıyor. İnternet bağlantısını kontrol edin.",
-  "error.crm.sourceFailed": "Stripe OpenBot'un okuyamadığı bir yanıt gönderdi. Daha sonra yeniden deneyin.",
-  "error.crm.sourceKeySaveFailed": "OpenBot Stripe anahtarını bu bilgisayara kaydedemiyor.",
+  "error.crm.sourceNetwork": "PurpleBot Stripe ile bağlantı kuramıyor. İnternet bağlantısını kontrol edin.",
+  "error.crm.sourceFailed": "Stripe PurpleBot'un okuyamadığı bir yanıt gönderdi. Daha sonra yeniden deneyin.",
+  "error.crm.sourceKeySaveFailed": "PurpleBot Stripe anahtarını bu bilgisayara kaydedemiyor.",
   "error.crm.off": "CRM kapalı. Bir sahip veya yönetici bunu Sunucu Ayarları > Deneysel bölümünden açabilir.",
-  "error.crm.settingsSaveFailed": "OpenBot bu sunucuda CRM ayarını kaydedemiyor.",
+  "error.crm.settingsSaveFailed": "PurpleBot bu sunucuda CRM ayarını kaydedemiyor.",
 } as const satisfies PartialTranslation<typeof source>;

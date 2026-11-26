@@ -248,7 +248,7 @@ try {
   assert.ok(clientNames.length > 0, "The discovery process is initialized.");
   assert.ok(
     clientNames.every((name) => name === "openbot"),
-    "OpenBot names itself openbot to the Antigravity CLI 1.5, which offers Claude and GPT models to every client.",
+    "PurpleBot names itself openbot to the Antigravity CLI 1.5, which offers Claude and GPT models to every client.",
   );
   const discoveryEndsOn: Record<string, string | null> = {};
   for (const entry of discovery) if (entry.event === "set") discoveryEndsOn[entry.sessionId] = entry.model;

@@ -21,10 +21,10 @@ RUN userdel --remove ubuntu \
   && useradd --uid 1000 --user-group --home-dir /data --create-home --shell /bin/bash openbot \
   && install -d -o openbot -g openbot -m 0700 /run/openbot
 RUN install -d -m 0755 /var/lib/openbot-update/requests /var/lib/openbot-update/status
-COPY --from=release /tmp/squashfs-root /opt/OpenBot/app
-RUN install -d -m 0755 /opt/OpenBot/hosted \
-  && printf 'container\n' >/opt/OpenBot/hosted/mode \
-  && ln -s /opt/OpenBot/app/resources/hosting/openbot /usr/local/bin/openbot
+COPY --from=release /tmp/squashfs-root /opt/PurpleBot/app
+RUN install -d -m 0755 /opt/PurpleBot/hosted \
+  && printf 'container\n' >/opt/PurpleBot/hosted/mode \
+  && ln -s /opt/PurpleBot/app/resources/hosting/purplebot /usr/local/bin/purplebot
 
 ARG VERSION=unknown
 ARG REVISION=unknown
@@ -39,4 +39,4 @@ USER openbot
 WORKDIR /data
 VOLUME /data
 STOPSIGNAL SIGTERM
-ENTRYPOINT ["/usr/bin/tini", "--", "/opt/OpenBot/app/resources/hosting/openbot-container"]
+ENTRYPOINT ["/usr/bin/tini", "--", "/opt/PurpleBot/app/resources/hosting/openbot-container"]

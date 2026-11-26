@@ -65,12 +65,12 @@ export const messages = {
   "mobile.marketplace.facts.accessMac": "Yalnızca Mac",
   "mobile.marketplace.permission.admin": "Pazaryerinden yalnızca sahipler ve yöneticiler kurulum yapabilir.",
   "mobile.marketplace.permission.unavailable":
-    "Bu sunucu çevrimdışı veya OpenBot sürümü bunun için çok eski. OpenBot'u, sunucuyu çalıştıran bilgisayarda güncelleyin.",
-  "mobile.marketplace.error.agentUnsupported": "Pazaryerinden ajan eklemek için sunucudaki OpenBot'u güncelleyin.",
+    "Bu sunucu çevrimdışı veya PurpleBot sürümü bunun için çok eski. PurpleBot'u, sunucuyu çalıştıran bilgisayarda güncelleyin.",
+  "mobile.marketplace.error.agentUnsupported": "Pazaryerinden ajan eklemek için sunucudaki PurpleBot'u güncelleyin.",
   "mobile.marketplace.error.agentUpdateUnsupported":
-    "Pazaryerindeki ajanları güncellemek için sunucudaki OpenBot’u güncelleyin.",
+    "Pazaryerindeki ajanları güncellemek için sunucudaki PurpleBot’u güncelleyin.",
   "mobile.marketplace.error.signInUnsupported":
-    "Telefondan uygulamalarda oturum açmak için sunucudaki OpenBot'u güncelleyin.",
+    "Telefondan uygulamalarda oturum açmak için sunucudaki PurpleBot'u güncelleyin.",
   "mobile.marketplace.agent.add": "Ajan ekle",
   "mobile.marketplace.agent.adding": "Ajan ekleniyor",
   "mobile.marketplace.agent.update": "Ajanı güncelle",
@@ -106,7 +106,7 @@ export const messages = {
   "mobile.marketplace.app.stepReturn": "Buraya dönün. {name} sunucunuzda bağlanır.",
   "mobile.marketplace.app.stepBlank": "Son sayfa yüklenmez. Bu doğrudur.",
   "mobile.marketplace.app.stepCopy": "Adres çubuğuna dokunun ve adresin tamamını kopyalayın.",
-  "mobile.marketplace.app.stepPaste": "OpenBot'a dönün ve adresi aşağıya yapıştırın.",
+  "mobile.marketplace.app.stepPaste": "PurpleBot'a dönün ve adresi aşağıya yapıştırın.",
   "mobile.marketplace.app.openSignIn": "Giriş sayfasını aç",
   "mobile.marketplace.app.keySecure": "Anahtar yalnızca sunucunuza, şifreli bir bağlantıyla gider.",
   "mobile.marketplace.app.connecting": "Bağlanıyor",
@@ -117,11 +117,11 @@ export const messages = {
   "mobile.marketplace.app.linkInvalid": "{hostname} üzerinde bir https bağlantısı kullanın.",
   "mobile.marketplace.app.docs": "Anahtar al",
   "mobile.marketplace.app.local":
-    "Bu uygulama OpenBot'un çalıştığı bilgisayarda çalışır. Uygulamayı o bilgisayarda kurun.",
+    "Bu uygulama PurpleBot'un çalıştığı bilgisayarda çalışır. Uygulamayı o bilgisayarda kurun.",
   "mobile.marketplace.app.needsMac":
-    "Bu uygulama yalnızca OpenBot çalıştıran bir Mac'te çalışır ve bu sunucu bir Mac değil.",
+    "Bu uygulama yalnızca PurpleBot çalıştıran bir Mac'te çalışır ve bu sunucu bir Mac değil.",
   "mobile.marketplace.app.relayUnsupported":
-    "Bu uygulama tarayıcıda oturum açmayı gerektirir. Sunucudaki OpenBot'u güncelleyin veya uygulamayı bilgisayarda bağlayın.",
+    "Bu uygulama tarayıcıda oturum açmayı gerektirir. Sunucudaki PurpleBot'u güncelleyin veya uygulamayı bilgisayarda bağlayın.",
   "mobile.marketplace.app.waiting": "Oturum açma sayfası bekleniyor…",
   "mobile.marketplace.app.openAgain": "Oturum açma sayfasını yeniden aç",
   "mobile.marketplace.app.pasteLabel": "Oturum açma sonrası adres",

@@ -224,7 +224,7 @@ async function run(executable: string, modelPort: number, test: Case): Promise<O
     await runCauseEffect(
       client.request(
         "initialize",
-        { clientInfo: { name: "openbot_e2e", title: "OpenBot E2E", version: "0.0.0" }, capabilities: {} },
+        { clientInfo: { name: "openbot_e2e", title: "PurpleBot E2E", version: "0.0.0" }, capabilities: {} },
         decodeRecordResponse,
       ),
     );
@@ -324,7 +324,7 @@ const connector = row("github", { id: "openbot-github", transport: "http", url: 
 
 try {
   await step(
-    "before the fix: OpenBot's http github over the user's stdio github stops Codex",
+    "before the fix: PurpleBot's http github over the user's stdio github stops Codex",
     { name: "legacy", user: userStdio, rows: [connector], legacy: true },
     (o) => {
       assert.equal(o.started, false, "Codex started the thread");
@@ -439,7 +439,7 @@ try {
     },
   );
   await step(
-    "a rename onto OpenBot's browser tools: the row is left out, and the chat starts",
+    "a rename onto PurpleBot's browser tools: the row is left out, and the chat starts",
     {
       name: "reserved",
       user: `[mcp_servers.browser]${NL}url = "${httpUrl}"${NL}enabled = true${NL}`,
@@ -454,7 +454,7 @@ try {
   );
 
   await step(
-    "same transport onto OpenBot's browser tools: the row keeps the browser key",
+    "same transport onto PurpleBot's browser tools: the row keeps the browser key",
     {
       name: "reserved-same-transport",
       user: `[mcp_servers.browser]${NL}command = "node"${NL}args = ["${script}"]${NL}enabled = true${NL}`,

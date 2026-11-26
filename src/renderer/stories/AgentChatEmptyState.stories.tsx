@@ -14,7 +14,7 @@ const AGENT: AgentProfile = {
   title: template.title,
   description: template.description,
   threadId: "thread-desk-researcher",
-  workspacePath: "/mock/OpenBot/Agents/desk-researcher",
+  workspacePath: "/mock/PurpleBot/Agents/desk-researcher",
   avatarSeed: template.avatarSeed,
   avatarHue: template.avatarHue,
   avatarUrl: template.avatarUrl,

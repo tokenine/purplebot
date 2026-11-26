@@ -6,7 +6,7 @@ export const messages = {
   "vault.near.name": "暗号資産ウォレット",
   "vault.near.open": "暗号資産ウォレットを開く",
   "vault.near.connect": "接続",
-  "vault.near.signedOut": "暗号資産ウォレットを設定するには OpenBot にサインインしてください。",
+  "vault.near.signedOut": "暗号資産ウォレットを設定するには PurpleBot にサインインしてください。",
   "vault.near.paused": "一時停止中",
   "vault.near.failed": "暗号資産ウォレットを変更できませんでした。",
   "vault.near.waiting": "ブラウザーで署名を待っています…",
@@ -14,7 +14,7 @@ export const messages = {
   "vault.near.openAgain": "もう一度開く",
   "vault.near.signature.label": "ブラウザーでの署名",
   "vault.near.signature.register": "パスキーを作成",
-  "vault.near.signature.registerDetail": "あなたのデバイスにのみ保存されます。OpenBot が保持することはありません。",
+  "vault.near.signature.registerDetail": "あなたのデバイスにのみ保存されます。PurpleBot が保持することはありません。",
   "vault.near.signature.create": "新しいウォレットを承認",
   "vault.near.signature.createDetail":
     "すべてのエージェントが 1 日あたり最大 {amount} まで支払えます。あとで変更できます。",
@@ -39,7 +39,7 @@ export const messages = {
     "このパスキーにバックアップがあるかどうか、ブラウザーから情報がありませんでした。パスキー管理ツールで同期されていることを確認してください。",
   "vault.near.backup.notChecked": "バックアップ未確認",
   "vault.near.backup.noCopy":
-    "OpenBot はパスキーのコピーを保持しません。このウォレットに署名できるのはあなただけです。",
+    "PurpleBot はパスキーのコピーを保持しません。このウォレットに署名できるのはあなただけです。",
   "vault.near.backup.checked": "{date} に確認済み",
   "vault.near.backup.check": "バックアップを確認",
   "vault.near.backup.checkAgain": "再確認",
@@ -105,7 +105,7 @@ export const messages = {
   "vault.near.disconnect": "接続を解除",
   "vault.near.disconnectTitle": "暗号資産ウォレットの接続を解除しますか?",
   "vault.near.disconnectDescription":
-    "エージェントはこのウォレットから支払えなくなり、OpenBot はこのウォレットの情報を消去します。資金は NEAR Intents 上のウォレットに残ります。",
+    "エージェントはこのウォレットから支払えなくなり、PurpleBot はこのウォレットの情報を消去します。資金は NEAR Intents 上のウォレットに残ります。",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "1 日の上限を超えています",
   "vault.near.approve": "承認",

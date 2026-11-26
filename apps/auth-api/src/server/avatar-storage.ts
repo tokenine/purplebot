@@ -122,10 +122,12 @@ export function avatarObjectKey(userId: string, version: string): string {
   return `users/${userId}/${version}`;
 }
 
+const AVATAR_URL_BASE = "https://purplebot.invalid";
+
 function avatarVersion(avatarUrl: string | null, expectedUserId: string): string | null {
   if (!avatarUrl) return null;
   try {
-    const url = new URL(avatarUrl, "https://api.openbot.run");
+    const url = new URL(avatarUrl, AVATAR_URL_BASE);
     const match = url.pathname.match(/^\/v1\/avatars\/([^/]+)$/u);
     const userId = decodeURIComponent(match?.[1] ?? "");
     const version = url.searchParams.get("v") ?? "";

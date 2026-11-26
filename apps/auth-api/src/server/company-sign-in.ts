@@ -745,7 +745,7 @@ export class CompanySignInService {
       return yield* new CompanySignInError(
         403,
         "browser_extension_not_allowed",
-        "This browser extension cannot sign in to OpenBot.",
+        "This browser extension cannot sign in to PurpleBot.",
       );
     }
     if (!TOKEN_PATTERN.test(input.clientChallenge)) {

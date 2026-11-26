@@ -298,7 +298,7 @@ function WebAppContent(props: { createRuntime?: WebRuntimeFactory }) {
       headers: body
         ? {
             "Content-Type": "application/json",
-            "X-OpenBot-Browser": "1",
+            "X-PurpleBot-Browser": "1",
             ...(send?.idempotencyKey ? { "Idempotency-Key": send.idempotencyKey } : {}),
           }
         : {},
@@ -499,7 +499,7 @@ function WebAppContent(props: { createRuntime?: WebRuntimeFactory }) {
       method: "POST",
       credentials: "same-origin",
       cache: "no-store",
-      headers: { "Content-Type": "application/json", "X-OpenBot-Browser": "1" },
+      headers: { "Content-Type": "application/json", "X-PurpleBot-Browser": "1" },
       body: JSON.stringify({ email }),
     });
     const value = await response.json().catch(() => null);

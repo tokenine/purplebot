@@ -20,7 +20,7 @@ import {
 
 async function main(): Promise<void> {
   if (process.argv[2] === "--help") {
-    process.stdout.write("OpenBot Host Manager: run through launchd; administrator setup uses openbot-host.\n");
+    process.stdout.write("PurpleBot Host Manager: run through launchd; administrator setup uses purplebot-host.\n");
     return;
   }
   if (process.argv[2] === "--runtime-check") {
@@ -44,7 +44,7 @@ async function main(): Promise<void> {
     const config = hostConfigSchema.parse({ managed: true, tenants });
     await verifySharedAppParent();
     await macHostOperations().installedVersion();
-    await ensureHostDirectory("/Library/Application Support/OpenBot", 0o755);
+    await ensureHostDirectory("/Library/Application Support/PurpleBot", 0o755);
     await ensureHostDirectory(directory, 0o755);
     if (await runCauseEffect(readHostConfig()))
       throw new Error(

@@ -71,7 +71,7 @@ export class SlackAppService {
     const clientSecret = bindings.SLACK_CLIENT_SECRET?.trim();
     const stateSecret = bindings.SLACK_STATE_SECRET?.trim();
     if (!clientId || !clientSecret || !stateSecret || new TextEncoder().encode(stateSecret).byteLength < 32) {
-      throw new SlackAppError(503, "slack_not_configured", "The OpenBot Slack app is not configured.");
+      throw new SlackAppError(503, "slack_not_configured", "The PurpleBot Slack app is not configured.");
     }
     this.#database = bindings.DB;
     this.#clientId = clientId;
@@ -194,7 +194,7 @@ export class SlackAppService {
       return yield* new SlackAppError(
         409,
         "slack_workspace_taken",
-        "Another OpenBot server answers this Slack workspace. Disconnect it there first.",
+        "Another PurpleBot server answers this Slack workspace. Disconnect it there first.",
       );
     }
     return {

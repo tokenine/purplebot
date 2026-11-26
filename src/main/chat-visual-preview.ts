@@ -109,7 +109,7 @@ export class ChatVisualPreviewer implements ChatVisualPreviewHost {
             this.#pages.set(token, { bytes: new TextEncoder().encode(request.html), appearance: request.appearance });
             return { token, window };
           },
-          catch: () => previewFailure("OpenBot could not open a window to draw the page."),
+          catch: () => previewFailure("PurpleBot could not open a window to draw the page."),
         }),
         ({ token, window }) => this.#draw(window, token, request),
         ({ token, window }) =>
@@ -171,7 +171,7 @@ export class ChatVisualPreviewer implements ChatVisualPreviewHost {
       }
       const image = yield* Effect.tryPromise({
         try: () => contents.capturePage(),
-        catch: () => previewFailure("OpenBot could not capture the page."),
+        catch: () => previewFailure("PurpleBot could not capture the page."),
       });
       const imageUrl = yield* Effect.try({
         try: () => boundedPng(image),

@@ -6,7 +6,7 @@ export const messages = {
   "vault.near.name": "Wallet crypto",
   "vault.near.open": "Apri wallet crypto",
   "vault.near.connect": "Connetti",
-  "vault.near.signedOut": "Accedi a OpenBot per configurare il wallet crypto.",
+  "vault.near.signedOut": "Accedi a PurpleBot per configurare il wallet crypto.",
   "vault.near.paused": "In pausa",
   "vault.near.failed": "Impossibile modificare il wallet crypto.",
   "vault.near.waiting": "In attesa della tua firma nel browser…",
@@ -14,7 +14,7 @@ export const messages = {
   "vault.near.openAgain": "Riapri",
   "vault.near.signature.label": "Firme nel browser",
   "vault.near.signature.register": "Crea la tua passkey",
-  "vault.near.signature.registerDetail": "Solo sui tuoi dispositivi. OpenBot non la conserva mai.",
+  "vault.near.signature.registerDetail": "Solo sui tuoi dispositivi. PurpleBot non la conserva mai.",
   "vault.near.signature.create": "Approva il nuovo wallet",
   "vault.near.signature.createDetail":
     "Tutti gli agenti possono pagare fino a {amount} al giorno. Puoi cambiarlo in seguito.",
@@ -40,7 +40,7 @@ export const messages = {
     "Il browser non ci ha detto se questa passkey ha un backup. Controlla che il tuo gestore di passkey la sincronizzi.",
   "vault.near.backup.notChecked": "Backup non verificato",
   "vault.near.backup.noCopy":
-    "OpenBot non conserva alcuna copia della tua passkey. Solo tu puoi firmare per questo wallet.",
+    "PurpleBot non conserva alcuna copia della tua passkey. Solo tu puoi firmare per questo wallet.",
   "vault.near.backup.checked": "Verificato il {date}",
   "vault.near.backup.check": "Verifica backup",
   "vault.near.backup.checkAgain": "Verifica di nuovo",
@@ -106,7 +106,7 @@ export const messages = {
   "vault.near.disconnect": "Disconnetti",
   "vault.near.disconnectTitle": "Disconnettere il wallet crypto?",
   "vault.near.disconnectDescription":
-    "Gli agenti non potranno più pagare da questo wallet e OpenBot lo dimenticherà. I fondi restano nel wallet su NEAR Intents.",
+    "Gli agenti non potranno più pagare da questo wallet e PurpleBot lo dimenticherà. I fondi restano nel wallet su NEAR Intents.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "Oltre il limite giornaliero",
   "vault.near.approve": "Approva",

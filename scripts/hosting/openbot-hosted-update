@@ -3,7 +3,7 @@ set -euo pipefail
 export LC_ALL=C DEBIAN_FRONTEND=noninteractive
 umask 022
 
-INSTALL=/opt/OpenBot
+INSTALL=/opt/PurpleBot
 RELEASES=https://github.com/tokenine/purplebot/releases
 LOCK=/run/openbot-update.lock
 SCRATCH=/var/tmp
@@ -99,7 +99,7 @@ install_packages() {
     elif available_package "${package%t64}"; then
       available+=("${package%t64}")
     else
-      echo "This system has no package $package. OpenBot continues without it." >&2
+      echo "This system has no package $package. PurpleBot continues without it." >&2
     fi
   done
   [ "${#available[@]}" -eq 0 ] && return 0
@@ -110,7 +110,7 @@ install_packages() {
       if apt_install --simulate "$package" >/dev/null 2>&1; then
         apt_install "$package"
       else
-        echo "This system cannot install $package without removing other packages. OpenBot continues without it." >&2
+        echo "This system cannot install $package without removing other packages. PurpleBot continues without it." >&2
       fi
     done
   fi
@@ -127,7 +127,7 @@ unpack() {
 }
 
 prepare_release() {
-  [ -x "$1/openbot" ] || fail "The AppImage has no openbot executable."
+  [ -x "$1/purplebot" ] || fail "The AppImage has no purplebot executable."
   chown -R root:root "$1"
   chmod -R u+rwX,go=rX "$1"
   chmod 4755 "$1/chrome-sandbox"
@@ -195,16 +195,16 @@ check() {
     if [ "$staged" -eq 0 ]; then touch "$STAGE_STAMP"; fi
   fi
   if safe_mode_running; then
-    echo "OpenBot runs its safe mode. Stopping it."
+    echo "PurpleBot runs its safe mode. Stopping it."
     systemctl stop openbot.service || return 1
     safe_mode=1
   fi
   if [ "$safe_mode" -eq 1 ] || start_loop_stopped; then
     if [ -n "$(staged_version)" ]; then
-      echo "OpenBot stopped its start loop. Installing the staged release and starting OpenBot."
+      echo "PurpleBot stopped its start loop. Installing the staged release and starting PurpleBot."
       apply
     else
-      echo "OpenBot stopped its start loop. Starting OpenBot again."
+      echo "PurpleBot stopped its start loop. Starting PurpleBot again."
     fi
     systemctl start --no-block openbot.service
   fi
@@ -237,10 +237,10 @@ allow_sandbox_capabilities() {
   grep -qsF 'include if exists <local/bwrap-userns-restrict>' "$profile" || return 0
   grep -qsxF "$rule" "$override" && return 0
   mkdir -p /etc/apparmor.d/local
-  printf '# OpenBot: the Claude sandbox needs capabilities in the programs that bwrap starts.\n%s\n' \
+  printf '# PurpleBot: the Claude sandbox needs capabilities in the programs that bwrap starts.\n%s\n' \
     "$rule" >>"$override"
   apparmor_parser --replace "$profile" && return 0
-  sed -i -e '/^# OpenBot: /d' -e '/^priority=1 allow pix \/\*\* -> &bwrap,$/d' "$override"
+  sed -i -e '/^# PurpleBot: /d' -e '/^priority=1 allow pix \/\*\* -> &bwrap,$/d' "$override"
   apparmor_parser --replace "$profile" 2>/dev/null || true
   echo "The AppArmor rule for the Claude sandbox is not installed." >&2
 }
@@ -287,7 +287,7 @@ install_hosting() {
   systemctl enable --quiet openbot.service openbot-update-apply.service openbot-update.timer \
     openbot-update-request.path
   if self_hosted; then
-    ln -sfn "$INSTALL/hosted/openbot" /usr/local/bin/openbot
+    ln -sfn "$INSTALL/hosted/purplebot" /usr/local/bin/purplebot
   fi
   install_pre_stop "$source" || echo "The boat pre-stop hook is not installed." >&2
   install_boat_ignore || echo "The boat ignore file is not installed." >&2
@@ -303,7 +303,7 @@ install_pre_stop() {
   if self_hosted || [ ! -f "$source" ] || ! id "$BOAT_USER" >/dev/null 2>&1; then return 0; fi
   if [ -L "$BOAT_PRE_STOP" ] || { [ -e "$BOAT_PRE_STOP" ] && [ ! -f "$BOAT_PRE_STOP" ]; } ||
     { [ -f "$BOAT_PRE_STOP" ] && ! runuser -u "$BOAT_USER" -- grep -q '^# openbot-boat-pre-stop:' "$BOAT_PRE_STOP"; }; then
-    echo "$BOAT_PRE_STOP is not from OpenBot. It stays, and OpenBot is not stopped before a disk save." >&2
+    echo "$BOAT_PRE_STOP is not from PurpleBot. It stays, and PurpleBot is not stopped before a disk save." >&2
     return 0
   fi
   runuser -u "$BOAT_USER" -- cmp -s "$source" "$BOAT_PRE_STOP" 2>/dev/null && return 0
@@ -318,7 +318,7 @@ install_boat_ignore() {
   content=$(printf '%s\n' "$marker" '/.npm/_cacache/')
   if [ -L "$BOAT_IGNORE" ] || { [ -e "$BOAT_IGNORE" ] && [ ! -f "$BOAT_IGNORE" ]; } ||
     { [ -f "$BOAT_IGNORE" ] && ! runuser -u "$BOAT_USER" -- grep -qxF "$marker" "$BOAT_IGNORE"; }; then
-    echo "$BOAT_IGNORE is not from OpenBot. It stays." >&2
+    echo "$BOAT_IGNORE is not from PurpleBot. It stays." >&2
     return 0
   fi
   [ -f "$BOAT_IGNORE" ] && [ "$(runuser -u "$BOAT_USER" -- cat "$BOAT_IGNORE")" = "$content" ] && return 0
@@ -345,13 +345,13 @@ stage() {
   case $(uname -m) in
     x86_64) architecture=x86_64 manifest=latest-linux.yml ;;
     aarch64) architecture=arm64 manifest=latest-linux-arm64.yml ;;
-    *) fail "OpenBot has no release for this machine." ;;
+    *) fail "PurpleBot has no release for this machine." ;;
   esac
   if [ -e "$INSTALL/.applying" ]; then
     echo "The last update is not complete. It completes at the next start of the server." >&2
     return 0
   fi
-  [ -x "$INSTALL/app/openbot" ] || fail "OpenBot is not installed."
+  [ -x "$INSTALL/app/purplebot" ] || fail "PurpleBot is not installed."
   manifest=$(fetch "$RELEASES/latest/download/$manifest")
   version=$(sed -n 's/^version: *//p' <<<"$manifest" | head -n 1)
   path=$(sed -n 's/^path: *//p' <<<"$manifest" | head -n 1)
@@ -365,7 +365,7 @@ stage() {
   [ -n "$current" ] || fail "The installed version is not known."
   newer "$version" "$current" || return 0
   [ -d "$INSTALL/staged" ] && return 0
-  echo "Staging OpenBot $version (installed: ${current:-unknown})."
+  echo "Staging PurpleBot $version (installed: ${current:-unknown})."
   work=$(mktemp -d "$SCRATCH/openbot-update.XXXXXX")
   trap 'rm -rf "$work"; rm -f "$STATE"' EXIT
   download "$RELEASES/download/v$version/$path" "$work/PurpleBot.AppImage" "$size"
@@ -382,7 +382,7 @@ stage() {
   install_packages "$work/squashfs-root/resources/hosting/packages.txt"
   install_optional_packages "$work/squashfs-root/resources/hosting/optional-packages.txt"
   stage_release "$work/squashfs-root"
-  echo "OpenBot $version starts at the next start of the server."
+  echo "PurpleBot $version starts at the next start of the server."
 }
 
 apply() {
@@ -401,7 +401,7 @@ apply() {
   swap_in
   install_hosting "$INSTALL/app/resources/hosting"
   finish_swap
-  echo "Updated OpenBot from ${current:-unknown} to $staged."
+  echo "Updated PurpleBot from ${current:-unknown} to $staged."
 }
 
 boot() {

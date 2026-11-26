@@ -35,7 +35,7 @@ export const messages = {
   "status.agent.creditsHoldBalance": "Zużyje to {credits} kredytów, a saldo wynosi {balance} kredytów.",
   "status.agent.creditsHoldAgentsOff": "Agenci na tym serwerze nie mogą używać kredytów.",
   "status.agent.screenCapturePermissionNext":
-    "Potem macOS może poprosić cię o zezwolenie OpenBot na nagrywanie ekranu.",
+    "Potem macOS może poprosić cię o zezwolenie PurpleBot na nagrywanie ekranu.",
   "status.agent.screenCaptureDisplay": "Przechwyć wyświetlacz {name} i wyślij obraz do modelu agenta.",
   "status.agent.screenCaptureWindow": "Przechwyć okno {name} i wyślij obraz do modelu agenta.",
   "status.agent.screenCaptureRegion":
@@ -47,40 +47,40 @@ export const messages = {
   "status.agent.sendIdea": "To będzie publiczne zgłoszenie na GitHubie. Twoje imię nie będzie widoczne.",
   "status.agent.feedbackRecentErrors": "Ostatnie błędy w czacie:",
   "status.agent.feedbackSameAs": "Dodaje do zgłoszenia #{issue}",
-  "status.agent.feedbackSent": "Wysłano do zespołu OpenBot: {title}",
+  "status.agent.feedbackSent": "Wysłano do zespołu PurpleBot: {title}",
   "status.agent.feedbackWithdrawn": "Usunięto z GitHuba: {title}",
   "status.agent.feedbackWithdrawCommand": "Usuń zgłoszenie #{issue} z GitHuba",
   "status.agent.feedbackWithdrawReason":
     "Nikt już nie zobaczy tego zgłoszenia na GitHubie. Tego nie można cofnąć. Aby je poprawić, agent może wysłać poprawione zgłoszenie.",
   "status.agent.feedbackWithdrawing": "Usuwanie zgłoszenia z GitHuba…",
   "status.agent.serverInstallCommand":
-    "Utwórz jednorazowe polecenie, które instaluje OpenBot na innym komputerze jako serwer {name} i loguje go do Twojego konta. Agent uruchamia je tam.",
+    "Utwórz jednorazowe polecenie, które instaluje PurpleBot na innym komputerze jako serwer {name} i loguje go do Twojego konta. Agent uruchamia je tam.",
   "status.agent.serverInstallCard": "Polecenie instalacji dla serwera {name}",
   "status.agent.browserProfileNamed":
     "Przenieś {agents} do profilu przeglądarki {profile}. Otrzymają jego logowania i pliki cookie. Ich otwarte karty zostaną zamknięte.",
-  "status.agent.commitCoAuthorOff": "Przestań dodawać OpenBot jako współautora commitów wszystkich agentów.",
-  "status.agent.commitCoAuthorOn": "Znowu dodawaj OpenBot jako współautora commitów wszystkich agentów.",
+  "status.agent.commitCoAuthorOff": "Przestań dodawać PurpleBot jako współautora commitów wszystkich agentów.",
+  "status.agent.commitCoAuthorOn": "Znowu dodawaj PurpleBot jako współautora commitów wszystkich agentów.",
   "status.agent.browserProfileNew":
     "Utwórz nowy profil przeglądarki {profile} i przenieś do niego {agents}. Nie ma w nim logowań. Ich otwarte karty zostaną zamknięte.",
   "status.agent.browserProfileShared":
     "Przenieś {agents} do wspólnego profilu przeglądarki. Otrzymają jego logowania i pliki cookie. Ich otwarte karty zostaną zamknięte.",
   "status.agent.browserProfileOwn":
     "Daj każdemu z {agents} własny profil przeglądarki. Ich otwarte karty zostaną zamknięte.",
-  "status.agent.feedbackSending": "Wysyłanie opinii do zespołu OpenBot…",
+  "status.agent.feedbackSending": "Wysyłanie opinii do zespołu PurpleBot…",
   "status.agent.workflowDelete":
     "Usuń przepływ pracy {title} razem z jego uruchomieniami i wersjami. Jego otwarte kroki zostaną zatrzymane.",
   "status.agent.deleteAgents": "Usuń {agents} razem z ich czatami i plikami. Tej operacji nie można cofnąć.",
-  "status.agent.nearSignatureReceived": "OpenBot otrzymał podpis. Możesz zamknąć tę kartę.",
-  "status.agent.nearSignatureUnknown": "OpenBot nie czeka na ten podpis. Rozpocznij go ponownie w OpenBot.",
+  "status.agent.nearSignatureReceived": "PurpleBot otrzymał podpis. Możesz zamknąć tę kartę.",
+  "status.agent.nearSignatureUnknown": "PurpleBot nie czeka na ten podpis. Rozpocznij go ponownie w PurpleBot.",
   "status.agent.nearPayment":
     "Zapłać {amount} {symbol} odbiorcy {recipient} z portfela kryptowalut, dla {domain}: {reason}",
   "status.agent.nearSummaryCreate":
-    "Wszyscy agenci mogą płacić do {amount} USD dziennie. Możesz to później zmienić w OpenBot.",
+    "Wszyscy agenci mogą płacić do {amount} USD dziennie. Możesz to później zmienić w PurpleBot.",
   "status.agent.nearSummaryGrant":
-    "Pozwól tej aplikacji OpenBot płacić z portfela przez {days} dni, zgodnie z twoimi regułami.",
+    "Pozwól tej aplikacji PurpleBot płacić z portfela przez {days} dni, zgodnie z twoimi regułami.",
   "status.agent.nearSummaryBudget": "Zmień budżet dzienny portfela na {amount} USD.",
   "status.agent.nearSummaryAutoPay":
-    "Pozwól OpenBot płacić bez twojego podpisu, gdy pozwala na to reguła płatności. O inne płatności nadal zapytamy cię na czacie.",
+    "Pozwól PurpleBot płacić bez twojego podpisu, gdy pozwala na to reguła płatności. O inne płatności nadal zapytamy cię na czacie.",
   "status.agent.nearSummaryPayment": "Zatwierdź płatność {amount} dla odbiorcy {recipient}.",
   "status.agent.nearSummaryFreeze": "Agenci nie mogą płacić z tego portfela, dopóki nie wznowisz płatności.",
   "status.agent.nearSummaryUnfreeze": "Agenci znów mogą płacić z tego portfela, zgodnie z twoimi regułami.",

@@ -158,7 +158,7 @@ const answerToolSchema = z
 export const WORKFLOW_ANSWER_TOOL_DEFINITION = {
   name: WORKFLOW_ANSWER_TOOL,
   description:
-    "Only in a workflow step that asks for answer fields: give them as one JSON object. OpenBot checks them at once and tells you what to correct; then call it again. The last answer that fits is the result of the step.",
+    "Only in a workflow step that asks for answer fields: give them as one JSON object. PurpleBot checks them at once and tells you what to correct; then call it again. The last answer that fits is the result of the step.",
   shape: answerToolSchema.shape,
 } as const;
 
@@ -177,7 +177,7 @@ export const handleWorkflowAnswerTool = Effect.fn("WorkflowTools.answer")(functi
     case "saved":
       return openBotToolResult({
         status: "saved",
-        note: "OpenBot keeps this answer as the result of the step. Finish your turn.",
+        note: "PurpleBot keeps this answer as the result of the step. Finish your turn.",
       });
     case "problems":
       return openBotToolFailure(result.text);

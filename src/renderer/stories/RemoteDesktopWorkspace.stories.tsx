@@ -80,7 +80,7 @@ export const ConnectionError: Story = {
 export const ScreenRecordingBlocked: Story = {
   args: {
     session: undefined,
-    connectionError: "The host has not allowed OpenBot to record its screen.",
+    connectionError: "The host has not allowed PurpleBot to record its screen.",
     connectionErrorCode: "host_permissions_required",
   },
 };

@@ -96,7 +96,7 @@ export function githubSkillSource(fetchImpl: GitHubFetch) {
   const request = (url: string) =>
     io((signal) =>
       fetchImpl(url, {
-        headers: { Accept: "application/vnd.github+json", "User-Agent": "OpenBot" },
+        headers: { Accept: "application/vnd.github+json", "User-Agent": "PurpleBot" },
         signal: AbortSignal.any([signal, AbortSignal.timeout(GITHUB_REQUEST_TIMEOUT_MS)]),
       }),
     ).pipe(Effect.mapError(() => failure(sourceText("error.skill.githubUnavailable"))));

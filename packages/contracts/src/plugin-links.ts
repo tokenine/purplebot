@@ -43,7 +43,7 @@ export function parsePluginUrl(value: string): string {
   try {
     url = new URL(value);
   } catch {
-    throw new Error("The OpenBot plugin link is invalid.");
+    throw new Error("The PurpleBot plugin link is invalid.");
   }
 
   const canonical =
@@ -59,13 +59,13 @@ export function parsePluginUrl(value: string): string {
     url.search !== "" ||
     url.hash !== ""
   ) {
-    throw new Error("The OpenBot plugin link is invalid.");
+    throw new Error("The PurpleBot plugin link is invalid.");
   }
 
   const rest = canonical ? url.pathname.slice(OPENBOT_PLUGIN_PATH_PREFIX.length) : url.pathname.replace(/^\//u, "");
   const segments = rest.split("/");
   if (segments.length !== 1) {
-    throw new Error("The OpenBot plugin link is invalid.");
+    throw new Error("The PurpleBot plugin link is invalid.");
   }
 
   const slug = segments[0] ?? "";
@@ -84,6 +84,6 @@ export function isPluginUrl(value: string): boolean {
 
 function assertPluginSlug(slug: string): void {
   if (!isPluginSlug(slug)) {
-    throw new Error("The OpenBot plugin link is invalid.");
+    throw new Error("The PurpleBot plugin link is invalid.");
   }
 }

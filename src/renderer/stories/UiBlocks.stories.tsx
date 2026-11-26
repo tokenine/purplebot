@@ -214,7 +214,7 @@ export const ConfirmManyActions: Story = {
         spec={{
           type: "confirm",
           title: "Publish the release post?",
-          preview: "OpenBot 0.65 is out. Agents now ask questions in one prompt.",
+          preview: "PurpleBot 0.65 is out. Agents now ask questions in one prompt.",
           actions: [
             { id: "publish", label: "Publish on all channels", style: "primary" },
             { id: "schedule", label: "Schedule for tomorrow" },

@@ -166,7 +166,7 @@ async function fetchParsed<Schema extends z.ZodType>(
 
 async function fetchBytes(fetchImpl: typeof fetch, url: string): Promise<Buffer> {
   const response = await fetchImpl(url, {
-    headers: { "User-Agent": "OpenBot-runtime-pin" },
+    headers: { "User-Agent": "PurpleBot-runtime-pin" },
     redirect: "follow",
   });
   if (!response.ok) throw new Error(`${url} answered HTTP ${response.status}.`);

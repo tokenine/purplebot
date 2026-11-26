@@ -182,8 +182,8 @@ export function createRemoteApiApp(
         : { error: { code: "turn_unavailable", message: "The TURN relay did not allocate a relay address." } };
     })
     .post("/internal/auth-events", async ({ request, set }) => {
-      const timestamp = request.headers.get("OpenBot-Timestamp") ?? "";
-      const signature = request.headers.get("OpenBot-Signature") ?? "";
+      const timestamp = request.headers.get("PurpleBot-Timestamp") ?? "";
+      const signature = request.headers.get("PurpleBot-Signature") ?? "";
       const bytes = await readBody(request, AUTH_EVENT_BODY_BYTES_LIMIT);
       if (!bytes) {
         set.status = 413;

@@ -399,7 +399,10 @@ try {
     const lateAnswer = report.events.findIndex((event) => event.event === "late-answer" && event.pid === workerPid);
     const closed = report.events.findIndex((event) => event.event === "stdin-end" && event.pid === workerPid);
     assert.ok(lateAnswer >= 0, "The worker's Claude answers the late steer.");
-    assert.ok(closed < 0 || closed > lateAnswer, "OpenBot keeps the worker's Claude open until it answers the steer.");
+    assert.ok(
+      closed < 0 || closed > lateAnswer,
+      "PurpleBot keeps the worker's Claude open until it answers the steer.",
+    );
   }
   report.passed = true;
 } catch (error) {

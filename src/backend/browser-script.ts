@@ -32,9 +32,9 @@ export type BrowserStepOutcome =
   | { status: "dialog"; dialog: DialogTabResult };
 
 export const BROWSER_PAGE_CRASH_RELOADED =
-  "The page crashed and OpenBot loaded it again. Refs from before the crash are stale.";
+  "The page crashed and PurpleBot loaded it again. Refs from before the crash are stale.";
 
-export const BROWSER_PAGE_CRASH_KEPT = "The page crashed. OpenBot did not reload it.";
+export const BROWSER_PAGE_CRASH_KEPT = "The page crashed. PurpleBot did not reload it.";
 
 export const BROWSER_SCRIPT_USER_CONTROL_ERROR =
   "A person took control of the tab. Wait for the release, then take a fresh snapshot.";

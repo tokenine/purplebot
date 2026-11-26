@@ -104,7 +104,7 @@ try {
   assert.equal((await runTurn(third, ownThread)).error, null, "The turn on the user's own key succeeds.");
   const own = await readJsonl<LogEntry>(log);
   const spawn = own.find((entry) => entry.event === "spawn");
-  assert.equal(spawn?.configKey, null, "With no stored key, OpenBot sends no key in the config.");
+  assert.equal(spawn?.configKey, null, "With no stored key, PurpleBot sends no key in the config.");
   const ownPrompt = own.find((entry) => entry.event === "prompt");
   assert.equal(ownPrompt?.key, "own", "The user's own key is used.");
   report.noStoredKey = { configKey: spawn?.configKey ?? null, key: ownPrompt?.key ?? null };
@@ -241,7 +241,7 @@ try {
   assert.equal(
     ownGo,
     sourceText("error.provider.opencodeOwnGoKeyRefused"),
-    "A Go key in OpenCode's own store is named as the refused key, not the key saved in OpenBot (#15988).",
+    "A Go key in OpenCode's own store is named as the refused key, not the key saved in PurpleBot (#15988).",
   );
   report.ownGoKey = { error: ownGo };
   await runCauseEffect(ninth.stop());

@@ -335,7 +335,7 @@ function failureRows(result: QueryResult, versions: { previous: string; next: st
   ];
   if (sendsCause(result, versions.previous) && sendsCause(result, versions.next)) {
     specs.push({
-      metric: "failed turns, OpenBot causes",
+      metric: "failed turns, PurpleBot causes",
       column: "own_failed_share",
       unit: "share",
       floor: 0.02,
@@ -516,10 +516,10 @@ function sections(report: Report): Embed[] {
   add(
     "Failed turns",
     failures.map((row) =>
-      statusLine(row, `${group(row)}${row.metric === "failed turns" ? "" : " OpenBot causes only"}`),
+      statusLine(row, `${group(row)}${row.metric === "failed turns" ? "" : " PurpleBot causes only"}`),
     ),
     failures,
-    `Providers with ${MIN_TURNS_FOR_SHARE} turns or more in both releases. OpenBot causes leave out limits, sign-in, network and provider outages.`,
+    `Providers with ${MIN_TURNS_FOR_SHARE} turns or more in both releases. PurpleBot causes leave out limits, sign-in, network and provider outages.`,
   );
   if (report.risenErrorCodes !== null) {
     const errors = of("errors");

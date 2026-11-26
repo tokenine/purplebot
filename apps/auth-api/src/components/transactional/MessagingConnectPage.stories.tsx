@@ -7,14 +7,7 @@ import { MessagingConnectView } from "./MessagingConnectPage";
 import { messagingConnectText } from "./page-text";
 
 const rootRoute = createRootRoute();
-rootRoute.addChildren([
-  createRoute({ getParentRoute: () => rootRoute, path: "/" }),
-  createRoute({ getParentRoute: () => rootRoute, path: "/news" }),
-  createRoute({ getParentRoute: () => rootRoute, path: "/guides" }),
-  createRoute({ getParentRoute: () => rootRoute, path: "/marketplace" }),
-  createRoute({ getParentRoute: () => rootRoute, path: "/marketplace/apps" }),
-  createRoute({ getParentRoute: () => rootRoute, path: "/download" }),
-]);
+rootRoute.addChildren([createRoute({ getParentRoute: () => rootRoute, path: "/app" })]);
 const router = createRouter({ routeTree: rootRoute });
 
 function WithRouter(props: { children: () => JSX.Element }) {

@@ -772,7 +772,7 @@ async function checkOracleDifferential(): Promise<"ran" | "skipped"> {
     const oracleJid = "100000000000010:4@lid";
     const oracleAddress = addressToString(jidToAddress(oracleJid));
 
-    await check("oracle/pairwise: OpenBot initiates", async () => {
+    await check("oracle/pairwise: PurpleBot initiates", async () => {
       const state = join(dir, "peer-a.json");
       const bundle = oracle(
         "init",

@@ -525,7 +525,7 @@ try {
   assert.equal(noLoadStop.status, "interrupted", "A stop ends the turn of an agent that cannot load sessions.");
   assert.equal(noLoadNext.status, "completed", "The next turn of that agent completes.");
   assert.equal(report.noLoad.sessionsOpened, 0, "The agent keeps its session.");
-  assert.equal(report.noLoad.loads, 0, "OpenBot does not try to open the session again.");
+  assert.equal(report.noLoad.loads, 0, "PurpleBot does not try to open the session again.");
 
   const silentNew = await open("cline", DEFAULT_ACP_FLAVOR, join(root, "silent-new.jsonl"), { FAKE_SILENT_NEW: "1" });
   const silentStart = await timed(() =>
@@ -567,10 +567,10 @@ try {
   const closedNext = await runTurn(closed, closedThread, { timeoutMs: 10_000 });
   report.closedHeldSession = await activeSessionReport(closedLog, closedStall, closedNext);
   assert.equal(closedStall.status, "failed", "A silent turn of a strict agent fails at the stall limit.");
-  assert.equal(closedNext.status, "completed", "The next message works after OpenBot closes the held session.");
+  assert.equal(closedNext.status, "completed", "The next message works after PurpleBot closes the held session.");
   assert.equal(closedNext.reply, "ok", "The agent answers after the session opens again.");
   assert.equal(report.closedHeldSession.refusedRestores, 1, "The agent refused only the first resume.");
-  assert.equal(report.closedHeldSession.closes, 1, "OpenBot closes the refused session once.");
+  assert.equal(report.closedHeldSession.closes, 1, "PurpleBot closes the refused session once.");
   assert.equal(report.closedHeldSession.sameSession, true, "No new session replaces the chat.");
 
   report.passed = true;

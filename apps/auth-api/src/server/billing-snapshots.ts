@@ -86,6 +86,7 @@ export class BillingSnapshotError extends Schema.TaggedError<BillingSnapshotErro
 export interface BillingSnapshotBindings {
   DB: D1Database;
   STRIPE_SECRET_KEY?: string;
+  OPENPANEL_API_URL?: string;
   OPENPANEL_CLIENT_ID?: string;
   OPENPANEL_CLIENT_SECRET?: string;
 }
@@ -151,9 +152,10 @@ export const captureBillingSnapshot = Effect.fn("captureBillingSnapshot")(functi
   }
 
   const secretKey = bindings.STRIPE_SECRET_KEY?.trim();
+  const apiUrl = bindings.OPENPANEL_API_URL?.trim();
   const clientId = bindings.OPENPANEL_CLIENT_ID?.trim();
   const clientSecret = bindings.OPENPANEL_CLIENT_SECRET?.trim();
-  if (!secretKey || !clientId || !clientSecret) return;
+  if (!secretKey || !apiUrl || !clientId || !clientSecret) return;
 
   const day = utcDay(timestamp);
   const sourceKey = billingSnapshotSourceKey(timestamp);
@@ -250,6 +252,7 @@ export const captureBillingSnapshot = Effect.fn("captureBillingSnapshot")(functi
 
   const delivery = new SalesAnalyticsDelivery({
     database: bindings.DB,
+    apiUrl,
     clientId,
     clientSecret,
     fetch: fetcher,

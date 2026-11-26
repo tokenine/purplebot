@@ -1,8 +1,16 @@
 import { createFileRoute } from "@tanstack/solid-router";
-import { PrivacyPolicyPage } from "../components/legal/PrivacyPolicyPage";
-import { privacyPolicyHead } from "../lib/privacy-policy-head";
+import { LegalPage } from "../components/bare/LegalPage";
+import { PrivacyPolicy } from "../content/privacy-policy";
 
 export const Route = createFileRoute("/privacy")({
-  head: ({ match }) => privacyPolicyHead(match.context.siteUrl),
-  component: PrivacyPolicyPage,
+  head: () => ({ meta: [{ title: "Privacy · PurpleBot" }] }),
+  component: PrivacyPage,
 });
+
+function PrivacyPage() {
+  return (
+    <LegalPage titleId="privacy-title" title="Privacy">
+      <PrivacyPolicy />
+    </LegalPage>
+  );
+}

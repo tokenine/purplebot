@@ -26,7 +26,7 @@ export interface ApnsConfig {
 export type ApnsRelayResult = "sent" | "gone" | "rejected" | "unavailable";
 
 const ACTIVITY_NAME = "AgentActivity";
-const NOTIFICATION_TITLE = "OpenBot";
+const NOTIFICATION_TITLE = "PurpleBot";
 const ACTIVITY_ALERT = { title: NOTIFICATION_TITLE, body: NOTIFICATION_TITLE };
 const NOTIFICATION_LIFETIME_SECONDS = 24 * 60 * 60;
 const LIVE_ACTIVITY_END_LIFETIME_SECONDS = 60 * 60;

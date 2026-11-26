@@ -25,7 +25,7 @@ const requireUpdateMetadata = process.argv.includes("--require-update-metadata")
 const requireSignature = process.argv.includes("--require-signature");
 const appPathArgument = process.argv.slice(2).find((argument) => !argument.startsWith("--"));
 const appPath = resolve(appPathArgument ?? "dist/win-unpacked");
-const executablePath = resolve(appPath, "OpenBot.exe");
+const executablePath = resolve(appPath, "PurpleBot.exe");
 const resourcesPath = resolve(appPath, "resources");
 const voiceRuntimePath = resolve(resourcesPath, "voice/runtime");
 const voiceRuntimeFiles = [
@@ -130,8 +130,8 @@ const versionInfo = JSON.parse(
   ),
 );
 if (!isDynamicRecord(versionInfo)) throw new Error("Windows version metadata is invalid.");
-expectEqual(versionInfo.ProductName, "OpenBot", "product name");
-expectEqual(versionInfo.FileDescription, "OpenBot", "file description");
+expectEqual(versionInfo.ProductName, "PurpleBot", "product name");
+expectEqual(versionInfo.FileDescription, "PurpleBot", "file description");
 if (!String(versionInfo.ProductVersion).startsWith(packageJson.version)) {
   throw new Error(
     `Unexpected product version: ${String(versionInfo.ProductVersion)} (expected ${packageJson.version})`,
@@ -190,7 +190,7 @@ await verifyLaunch(executablePath);
 
 logger.info(`Verified ${appPath}`);
 logger.info(
-  `OpenBot ${packageJson.version} · Windows x64 · metadata · GPL remote runtime · ASAR integrity · hardened fuses · launch`,
+  `PurpleBot ${packageJson.version} · Windows x64 · metadata · GPL remote runtime · ASAR integrity · hardened fuses · launch`,
 );
 
 function expectEqual(actual: unknown, expected: unknown, label: string): void {
@@ -263,7 +263,7 @@ async function verifyLaunch(executable: string): Promise<void> {
   const launchExit = new Promise<never>((_, reject) => {
     child.once("exit", (code, signal) => {
       reject(
-        new Error(`Packaged OpenBot exited during launch (${signal ?? `code ${String(code)}`}): ${stderr.trim()}`),
+        new Error(`Packaged PurpleBot exited during launch (${signal ?? `code ${String(code)}`}): ${stderr.trim()}`),
       );
     });
   });
@@ -284,7 +284,7 @@ async function verifyLaunch(executable: string): Promise<void> {
     await verifySecondInstanceExits(executable, userDataPath, launchExit);
     if (child.exitCode !== null || child.signalCode !== null) {
       throw new Error(
-        `Packaged OpenBot exited when a second instance started (${child.signalCode ?? `code ${String(child.exitCode)}`}): ${stderr.trim()}`,
+        `Packaged PurpleBot exited when a second instance started (${child.signalCode ?? `code ${String(child.exitCode)}`}): ${stderr.trim()}`,
       );
     }
   } finally {
@@ -319,7 +319,7 @@ async function waitForFirstInstance(
     const limit = Date.now() + launchStepLimitMs;
     while (!(await reached())) {
       if (Date.now() > limit) {
-        throw new Error(`Packaged OpenBot did not ${step} in 5 minutes: ${stderr().trim()}`);
+        throw new Error(`Packaged PurpleBot did not ${step} in 5 minutes: ${stderr().trim()}`);
       }
       await delay(200, undefined, { signal: stop.signal });
     }
@@ -382,11 +382,11 @@ async function verifySecondInstanceExits(
       delay(launchStepLimitMs, null, { signal: stop.signal }),
     ]);
     if (!result) {
-      throw new Error(`A second OpenBot instance did not exit in 5 minutes: ${stderr.trim()}`);
+      throw new Error(`A second PurpleBot instance did not exit in 5 minutes: ${stderr.trim()}`);
     }
     if (result.code !== 0 || result.signal) {
       throw new Error(
-        `A second OpenBot instance exited unexpectedly (${result.signal ?? `code ${String(result.code)}`}): ${stderr.trim()}`,
+        `A second PurpleBot instance exited unexpectedly (${result.signal ?? `code ${String(result.code)}`}): ${stderr.trim()}`,
       );
     }
   } finally {

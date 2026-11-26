@@ -25,7 +25,7 @@ export const messages = {
     "Diese Lizenz kann nicht zu diesem Tarif wechseln. Kündige sie und kaufe den neuen Tarif.",
   "error.billing.noLicense": "Dieses Konto hat keine Lizenz.",
   "error.billing.countryRequired":
-    "Gib vor der Zahlung dein Rechnungsland an. Aktualisiere dazu OpenBot und versuche es erneut.",
+    "Gib vor der Zahlung dein Rechnungsland an. Aktualisiere dazu PurpleBot und versuche es erneut.",
   "error.billing.detailsInvalid": "Prüfe das Land und die USt-IdNr. Die USt-IdNr. muss zum gewählten Land gehören.",
   "error.billing.vatIdInvalid":
     "Das EU-Mehrwertsteuersystem kennt diese USt-IdNr. nicht. Prüfe die Nummer oder fahre ohne USt-IdNr. fort.",

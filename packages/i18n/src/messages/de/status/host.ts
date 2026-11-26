@@ -2,13 +2,14 @@ import type { PartialTranslation } from "../../../message";
 import type { messages as source } from "../../en/status/host";
 
 export const messages = {
-  "status.host.registered": "Dieser OpenBot wurde für den WebRTC-Zugriff registriert.",
+  "status.host.registered": "Dieser PurpleBot wurde für den WebRTC-Zugriff registriert.",
   "status.host.keyRotated": "Serverschlüssel geändert. Gekoppelte Geräte bleiben gekoppelt.",
   "status.host.identityUpdated": "Serveridentität aktualisiert.",
   "status.host.starting": "WebRTC-Host wird gestartet…",
-  "status.host.ready": "Dieser OpenBot ist für WebRTC-Verbindungen bereit.",
-  "status.host.signalLost": "Andere Geräte erreichen diesen OpenBot gerade nicht. Er verbindet sich erneut.",
-  "status.host.stopping": "Dieser OpenBot wird auf privat gesetzt…",
-  "status.host.private": "Dieser OpenBot ist privat.",
-  "status.host.removed": "Dieser OpenBot wurde aus deinem Konto entfernt. Veröffentliche ihn erneut, um ihn zu teilen.",
+  "status.host.ready": "Dieser PurpleBot ist für WebRTC-Verbindungen bereit.",
+  "status.host.signalLost": "Andere Geräte erreichen diesen PurpleBot gerade nicht. Er verbindet sich erneut.",
+  "status.host.stopping": "Dieser PurpleBot wird auf privat gesetzt…",
+  "status.host.private": "Dieser PurpleBot ist privat.",
+  "status.host.removed":
+    "Dieser PurpleBot wurde aus deinem Konto entfernt. Veröffentliche ihn erneut, um ihn zu teilen.",
 } as const satisfies PartialTranslation<typeof source>;

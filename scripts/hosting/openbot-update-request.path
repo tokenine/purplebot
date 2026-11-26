@@ -1,5 +1,5 @@
 [Unit]
-Description=Watch for an OpenBot update request
+Description=Watch for an PurpleBot update request
 
 [Path]
 PathExists=/run/openbot/update-stage

@@ -832,14 +832,14 @@ try {
     );
     assert.equal(
       answer.secureInput,
-      "OpenBot could not finish entering the value. Authentication submit button is not ready. The page went to the user.",
+      "PurpleBot could not finish entering the value. Authentication submit button is not ready. The page went to the user.",
     );
     return answer;
   });
 
   await step("a failed fill with another error tells the agent no page text", async () => {
     const answer = await failedFill("turn-10", new Error(`ERR_ABORTED loading https://example.test/?code=${SECRET}`));
-    assert.equal(answer.secureInput, "OpenBot could not finish entering the value. The page went to the user.");
+    assert.equal(answer.secureInput, "PurpleBot could not finish entering the value. The page went to the user.");
     return answer;
   });
 
@@ -1084,7 +1084,7 @@ try {
   );
 
   await step(
-    "a routine's saved login that OpenBot cannot fill goes back to the agent, with no card (#16283)",
+    "a routine's saved login that PurpleBot cannot fill goes back to the agent, with no card (#16283)",
     async () => {
       const vaultEvents: AgentEvent[] = [];
       const attention: string[] = [];
@@ -1115,7 +1115,7 @@ try {
               vaultFillable: true,
               submit: () =>
                 routineFillFails
-                  ? Effect.fail(browserFailure("The secure field changed before OpenBot could enter the value."))
+                  ? Effect.fail(browserFailure("The secure field changed before PurpleBot could enter the value."))
                   : Effect.succeed("submitted" as const),
             })),
           beginTakeover: () => Effect.void,

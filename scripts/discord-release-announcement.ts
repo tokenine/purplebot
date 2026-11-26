@@ -24,7 +24,7 @@ function changelogUrl(version: string): string {
 function announcementMessage(highlights: readonly unknown[], version: string, roleId?: string): string {
   return [
     roleId === undefined ? "@Release Pings" : `<@&${roleId}>`,
-    `**OpenBot v${version} is out**`,
+    `**PurpleBot v${version} is out**`,
     "",
     ...highlights.map((highlight) => `- ${String(highlight).trim()}`),
     "",
@@ -45,7 +45,7 @@ if (import.meta.main) {
   if (problems.length > 0) {
     process.stderr.write(
       [
-        `The Discord announcement for OpenBot ${version} is not ready:`,
+        `The Discord announcement for PurpleBot ${version} is not ready:`,
         ...problems.map((problem) => `- ${problem}`),
         "",
         `See ${DOCS}.`,

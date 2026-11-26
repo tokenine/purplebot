@@ -31,7 +31,7 @@ function isListingId(kind: MarketplaceListingKind, id: string): boolean {
 }
 
 function assertListing(link: MarketplaceListingLink): void {
-  if (!isListingId(link.kind, link.id)) throw new Error("The OpenBot Marketplace link is invalid.");
+  if (!isListingId(link.kind, link.id)) throw new Error("The PurpleBot Marketplace link is invalid.");
 }
 
 export function marketplaceListingPath(link: MarketplaceListingLink): string {
@@ -43,7 +43,7 @@ export function createMarketplaceShareUrl(
   link: MarketplaceListingLink,
   origin: string = OPENBOT_MARKETPLACE_ORIGIN,
 ): string {
-  if (!isMarketplaceShareOrigin(origin)) throw new Error("The OpenBot Marketplace link origin is invalid.");
+  if (!isMarketplaceShareOrigin(origin)) throw new Error("The PurpleBot Marketplace link origin is invalid.");
   return `${origin}${marketplaceListingPath(link)}`;
 }
 
@@ -86,7 +86,7 @@ export function parseMarketplaceUrl(value: string): MarketplaceListingLink {
   try {
     url = new URL(value);
   } catch {
-    throw new Error("The OpenBot Marketplace link is invalid.");
+    throw new Error("The PurpleBot Marketplace link is invalid.");
   }
 
   const prefix = `${OPENBOT_MARKETPLACE_PATH}/`;
@@ -101,14 +101,14 @@ export function parseMarketplaceUrl(value: string): MarketplaceListingLink {
     url.search !== "" ||
     url.hash !== ""
   ) {
-    throw new Error("The OpenBot Marketplace link is invalid.");
+    throw new Error("The PurpleBot Marketplace link is invalid.");
   }
 
   const rest = canonical ? url.pathname.slice(prefix.length) : url.pathname.replace(/^\//u, "");
   const [segment, id, ...extra] = rest.split("/");
   const kind = LISTING_KINDS.find((candidate) => LISTING_SEGMENTS[candidate] === segment);
   if (kind === undefined || id === undefined || extra.length > 0) {
-    throw new Error("The OpenBot Marketplace link is invalid.");
+    throw new Error("The PurpleBot Marketplace link is invalid.");
   }
   const link = { kind, id };
   assertListing(link);

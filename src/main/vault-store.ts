@@ -154,7 +154,7 @@ export class VaultStore {
         const error = errorKind(cause);
         if (this.#problem === `${step}:${error}`) return;
         this.#problem = `${step}:${error}`;
-        logger.warn("OpenBot cannot read the Vault file.", { step, error });
+        logger.warn("PurpleBot cannot read the Vault file.", { step, error });
       });
   }
 

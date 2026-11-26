@@ -4,6 +4,7 @@ import { isValidHostname as isSharedValidHostname } from "@openbot/contracts/val
 import { Effect, Fiber, Option, Result, Schema } from "effect";
 import {
   type ContactMessageEmailInput,
+  type EmailSite,
   type LicenseEmailInput,
   type OwnerTransferEmailInput,
   type RenderedEmail,
@@ -26,6 +27,7 @@ export interface SmtpEmailConfig {
   username: string;
   password: string;
   from: string;
+  siteOrigin?: string | undefined;
   relay?: EmailRelay;
 }
 
@@ -113,9 +115,13 @@ const SMTP_MAX_ATTEMPTS = 3;
 const RELAY_URL = "https://openbot-email-relay.internal/send";
 const RELAY_TIMEOUT_MS = EMAIL_CODE_DELIVERY_BUDGET_MS + 5_000;
 const EMAIL_PATTERN = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9.-]+$/iu;
+const EHLO_NAME = "purplebot";
+const DEFAULT_MESSAGE_ID_DOMAIN = "purplebot.local";
+const MESSAGE_ID_DOMAIN_PATTERN = /^[a-z0-9.-]+$/u;
 
 export const prepareEmailCode = Effect.fn("Email.prepareCode")(function* (
   message: SmtpEmailMessage,
+  site: EmailSite = {},
 ): Effect.fn.Return<PreparedEmailMessage, SmtpFailure> {
   yield* smtpValidate(() => {
     validateEmail(message.email, "recipient");
@@ -125,15 +131,19 @@ export const prepareEmailCode = Effect.fn("Email.prepareCode")(function* (
   });
   return {
     email: message.email,
-    content: renderSignInCodeEmail({
-      code: message.code,
-      expiresInMinutes: Math.max(1, Math.ceil((message.expiresAt - Date.now()) / 60_000)),
-    }),
+    content: renderSignInCodeEmail(
+      {
+        code: message.code,
+        expiresInMinutes: Math.max(1, Math.ceil((message.expiresAt - Date.now()) / 60_000)),
+      },
+      site,
+    ),
   };
 });
 
 export const prepareTeamInvite = Effect.fn("Email.prepareTeamInvite")(function* (
   message: SmtpTeamInviteMessage,
+  site: EmailSite = {},
 ): Effect.fn.Return<PreparedEmailMessage, SmtpFailure> {
   yield* smtpValidate(() => {
     validateEmail(message.email, "recipient");
@@ -151,17 +161,21 @@ export const prepareTeamInvite = Effect.fn("Email.prepareTeamInvite")(function* 
   });
   return {
     email: message.email,
-    content: renderTeamInviteEmail({
-      inviterEmail: message.inviterEmail,
-      serverName: message.serverName,
-      inviteUrl: message.inviteUrl,
-      role: message.role,
-    }),
+    content: renderTeamInviteEmail(
+      {
+        inviterEmail: message.inviterEmail,
+        serverName: message.serverName,
+        inviteUrl: message.inviteUrl,
+        role: message.role,
+      },
+      site,
+    ),
   };
 });
 
 export const prepareOwnerTransferEmail = Effect.fn("Email.prepareOwnerTransfer")(function* (
   message: SmtpOwnerTransferMessage,
+  site: EmailSite = {},
 ): Effect.fn.Return<PreparedEmailMessage, SmtpFailure> {
   yield* smtpValidate(() => {
     validateEmail(message.email, "recipient");
@@ -179,16 +193,20 @@ export const prepareOwnerTransferEmail = Effect.fn("Email.prepareOwnerTransfer")
   });
   return {
     email: message.email,
-    content: renderOwnerTransferEmail({
-      fromEmail: message.fromEmail,
-      serverName: message.serverName,
-      appUrl: message.appUrl,
-    }),
+    content: renderOwnerTransferEmail(
+      {
+        fromEmail: message.fromEmail,
+        serverName: message.serverName,
+        appUrl: message.appUrl,
+      },
+      site,
+    ),
   };
 });
 
 export const prepareWelcomeEmail = Effect.fn("Email.prepareWelcome")(function* (
   message: SmtpWelcomeMessage,
+  site: EmailSite = {},
 ): Effect.fn.Return<PreparedEmailMessage, SmtpFailure> {
   yield* smtpValidate(() => {
     if (
@@ -199,18 +217,29 @@ export const prepareWelcomeEmail = Effect.fn("Email.prepareWelcome")(function* (
       throw new Error("smtp_invalid_server_name");
     }
   });
-  return { email: message.email, content: renderWelcomeEmail({ plan: message.plan, serverName: message.serverName }) };
+  return {
+    email: message.email,
+    content: renderWelcomeEmail({ plan: message.plan, serverName: message.serverName }, site),
+  };
 });
 
-export function prepareLicenseEmail(message: SmtpLicenseMessage): Effect.Effect<PreparedEmailMessage> {
-  return Effect.sync(() => ({ email: message.email, content: renderLicenseEmail(message) }));
+export function prepareLicenseEmail(
+  message: SmtpLicenseMessage,
+  site: EmailSite = {},
+): Effect.Effect<PreparedEmailMessage> {
+  return Effect.sync(() => ({ email: message.email, content: renderLicenseEmail(message, site) }));
 }
 
 export function prepareContactMessage(
   recipient: string,
   message: SmtpContactMessage,
+  site: EmailSite = {},
 ): Effect.Effect<PreparedEmailMessage> {
-  return Effect.sync(() => ({ email: recipient, replyTo: message.email, content: renderContactMessageEmail(message) }));
+  return Effect.sync(() => ({
+    email: recipient,
+    replyTo: message.email,
+    content: renderContactMessageEmail(message, site),
+  }));
 }
 
 export const AUTOMATED_EMAIL_HEADERS = {
@@ -254,6 +283,7 @@ const RelayedEmail = Schema.Struct({
     username: Schema.String,
     password: Schema.String,
     from: Schema.String,
+    siteOrigin: Schema.optionalKey(Schema.String),
   }),
   message: Schema.Struct({
     email: Schema.String,
@@ -406,7 +436,7 @@ const runSmtpSession = Effect.fn("SmtpEmail.session")(function* (
     );
 
   yield* expect([220], "greeting");
-  yield* writeCommand(writer, "EHLO openbot.run");
+  yield* writeCommand(writer, `EHLO ${EHLO_NAME}`);
   const extensions = yield* expect([250], "ehlo");
   if (extensions.some((line) => /^AUTH\b.*\bPLAIN\b/iu.test(line))) {
     yield* writeCommand(writer, `AUTH PLAIN ${encodeBase64(`\0${config.username}\0${config.password}`)}`);
@@ -433,7 +463,7 @@ const runSmtpSession = Effect.fn("SmtpEmail.session")(function* (
   }
   yield* expect([354], "data");
   state.submissionStarted = true;
-  yield* writeCommand(writer, `${createMimeMessage(config.from, message)}\r\n.`);
+  yield* writeCommand(writer, `${createMimeMessage(config, message)}\r\n.`);
   yield* expect([250], "message");
   state.accepted = true;
   yield* writeCommand(writer, "QUIT");
@@ -486,16 +516,16 @@ class SmtpResponseReader {
   });
 }
 
-function createMimeMessage(from: string, message: PreparedEmailMessage): string {
+function createMimeMessage(config: SmtpEmailConfig, message: PreparedEmailMessage): string {
   const boundary = `openbot-${crypto.randomUUID()}`;
   return dotStuff(
     [
-      `From: OpenBot <${from}>`,
+      `From: PurpleBot <${config.from}>`,
       `To: <${message.email}>`,
       ...(message.replyTo ? [`Reply-To: <${message.replyTo}>`] : []),
       `Subject: ${encodeHeaderValue(message.content.subject)}`,
       `Date: ${new Date().toUTCString()}`,
-      `Message-ID: <${crypto.randomUUID()}@openbot.run>`,
+      `Message-ID: <${crypto.randomUUID()}@${messageIdDomain(config.siteOrigin)}>`,
       ...Object.entries(AUTOMATED_EMAIL_HEADERS).map(([name, value]) => `${name}: ${value}`),
       "MIME-Version: 1.0",
       "Content-Type: multipart/alternative;",
@@ -514,6 +544,15 @@ function createMimeMessage(from: string, message: PreparedEmailMessage): string 
       `--${boundary}--`,
     ].join("\r\n"),
   );
+}
+
+function messageIdDomain(siteOrigin: string | undefined): string {
+  try {
+    const hostname = new URL(siteOrigin?.trim() ?? "").hostname.toLowerCase();
+    return MESSAGE_ID_DOMAIN_PATTERN.test(hostname) ? hostname : DEFAULT_MESSAGE_ID_DOMAIN;
+  } catch {
+    return DEFAULT_MESSAGE_ID_DOMAIN;
+  }
 }
 
 function encodeHeaderValue(value: string): string {

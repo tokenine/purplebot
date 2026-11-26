@@ -153,7 +153,7 @@ try {
   for (const order of ["read", "before", "after"] as const) {
     const result = await race(order);
     report.races.push(result);
-    assert.equal(result.steeringRequests, 1, `${order}: OpenBot steers the message one time.`);
+    assert.equal(result.steeringRequests, 1, `${order}: PurpleBot steers the message one time.`);
     assert.equal(
       result.promptsWithMessage,
       order === "read" ? 0 : 1,

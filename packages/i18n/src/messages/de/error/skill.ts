@@ -50,7 +50,7 @@ export const messages = {
   "error.skill.ownSkillExists":
     "Dieser Agent hat bereits eine eigene Fähigkeit namens {slug}. Bitte den Agenten, diese Fähigkeit umzubenennen oder zu löschen, und füge diese Fähigkeit dann erneut hinzu.",
   "error.skill.managedSlug":
-    "OpenBot gibt jedem Agenten eine eigene Fähigkeit {slug}. Gib dieser Fähigkeit einen anderen Namen.",
+    "PurpleBot gibt jedem Agenten eine eigene Fähigkeit {slug}. Gib dieser Fähigkeit einen anderen Namen.",
   "error.skill.templateMarkdownTooLarge":
     "{name}: SKILL.md ist größer als 64 KB. Kürze die Datei vor dem Veröffentlichen.",
   "error.skill.localNoRevisions": "Die lokale Fähigkeit hat keine veröffentlichten Überarbeitungen.",
@@ -72,12 +72,12 @@ export const messages = {
   "error.skill.folderNotRead": "{provider} liest {folder} nicht. Kopiere diesen Ordner nach {target}.",
   "error.skill.githubLinkInvalid": "Füge einen Link zu einem GitHub-Repository oder -Ordner ein.",
   "error.skill.githubNotFound":
-    "OpenBot kann {repository} nicht öffnen. Das Repository ist privat oder existiert nicht.",
+    "PurpleBot kann {repository} nicht öffnen. Das Repository ist privat oder existiert nicht.",
   "error.skill.githubNoSkills": "In {folder} gibt es keine SKILL.md.",
-  "error.skill.githubUnavailable": "OpenBot kann GitHub gerade nicht lesen. Versuche es später erneut.",
+  "error.skill.githubUnavailable": "PurpleBot kann GitHub gerade nicht lesen. Versuche es später erneut.",
   "error.skill.githubRateLimited":
-    "GitHub begrenzt, wie oft OpenBot es ohne Konto lesen kann. Versuche es in einer Stunde erneut.",
-  "error.skill.githubTooLarge": "OpenBot kann nicht alle Dateien von {repository} lesen. Das Repository ist zu groß.",
+    "GitHub begrenzt, wie oft PurpleBot es ohne Konto lesen kann. Versuche es in einer Stunde erneut.",
+  "error.skill.githubTooLarge": "PurpleBot kann nicht alle Dateien von {repository} lesen. Das Repository ist zu groß.",
   "error.skill.githubHostTooOld": "Aktualisiere diesen Server, um Fähigkeiten von GitHub hinzuzufügen.",
   "error.skill.publishGithub":
     "{name} stammt von GitHub. Du kannst nur Fähigkeiten veröffentlichen, die du selbst erstellt hast.",

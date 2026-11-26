@@ -257,7 +257,7 @@ try {
       .deliveries.every((delivery) => !["queued", "starting", "running"].includes(delivery.status)),
   );
 
-  const connection = agents.messaging.store.ensureConnection("discord", "guild-e2e", "OpenBot e2e");
+  const connection = agents.messaging.store.ensureConnection("discord", "guild-e2e", "PurpleBot e2e");
   const receive = (id: string, text: string) =>
     runCauseEffect(
       agents.messaging.receive({

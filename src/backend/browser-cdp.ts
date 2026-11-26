@@ -3033,7 +3033,7 @@ export class BrowserCdpEngine {
     if (this.#cardScrub.documentSecretShown && (condition.text || condition.url))
       return yield* browserFailure(
         new Error(
-          "A wait cannot check page text or the address while the page can show a password or code that OpenBot typed. Use snapshots until it navigates.",
+          "A wait cannot check page text or the address while the page can show a password or code that PurpleBot typed. Use snapshots until it navigates.",
         ),
       );
     yield* this.#leaseEffect((send) =>
@@ -3261,7 +3261,7 @@ export class BrowserCdpEngine {
     )
       return yield* browserFailure(
         new Error(
-          "While the page can show a password or code that OpenBot typed, use a ref from a fresh snapshot as the target until it navigates.",
+          "While the page can show a password or code that PurpleBot typed, use a ref from a fresh snapshot as the target until it navigates.",
         ),
       );
     if (target.kind === "point") {

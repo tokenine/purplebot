@@ -28,7 +28,7 @@ import type { RuntimeTarget } from "./provider-runtime-descriptors";
 
 const logger = createOpenBotLogger("onepassword-connector");
 
-const ONEPASSWORD_SHARED_VAULT = "Shared with OpenBot";
+const ONEPASSWORD_SHARED_VAULT = "Shared with PurpleBot";
 const MIN_CLI_VERSION = [2, 18] as const;
 const CLI_TIMEOUT_MS = 2 * 60_000;
 const SETUP_CHECK_TIMEOUT_MS = 15_000;
@@ -199,7 +199,7 @@ const runOnePasswordCli: OnePasswordCliRunner = async (executable, args, signal)
 
 async function createSdkClient(token: string, appVersion: string): Promise<OnePasswordClient> {
   const sdk = await import("@1password/sdk");
-  const client = await sdk.createClient({ auth: token, integrationName: "OpenBot", integrationVersion: appVersion });
+  const client = await sdk.createClient({ auth: token, integrationName: "PurpleBot", integrationVersion: appVersion });
   return {
     vaults: { list: () => client.vaults.list() },
     items: {
@@ -629,7 +629,7 @@ export class OnePasswordConnectorService implements PasswordVault {
           "create",
           ONEPASSWORD_SHARED_VAULT,
           "--description",
-          "Logins that OpenBot agents may use to sign in to sites.",
+          "Logins that PurpleBot agents may use to sign in to sites.",
           ...scope,
           "--format",
           "json",
@@ -640,7 +640,7 @@ export class OnePasswordConnectorService implements PasswordVault {
       [
         "service-account",
         "create",
-        `OpenBot on ${this.#hostName}`,
+        `PurpleBot on ${this.#hostName}`,
         "--vault",
         `${vaultId}:read_items`,
         ...scope,

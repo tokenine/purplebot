@@ -245,7 +245,7 @@ class Session {
     await runCauseEffect(
       this.client.request(
         "initialize",
-        { clientInfo: { name: "openbot_e2e", title: "OpenBot E2E", version: "0.0.0" }, capabilities: {} },
+        { clientInfo: { name: "openbot_e2e", title: "PurpleBot E2E", version: "0.0.0" }, capabilities: {} },
         decodeRecordResponse,
       ),
     );
@@ -417,7 +417,7 @@ try {
     report.historyUserTexts = await session.historyUserTexts();
     await session.restartClient();
     await session.resume(instructionParams(CHANGED_MEMORIES, true, true));
-    await session.turn("turn 5, after an OpenBot restart", "One more thing.");
+    await session.turn("turn 5, after an PurpleBot restart", "One more thing.");
     report.after = session.steps;
   }
 
@@ -451,9 +451,9 @@ try {
     a4.estimatedCachedTokens >= Math.floor((a3.promptBytes - 2) / 4),
     "The app-server restart lost the prefix.",
   );
-  assert.equal(a5.fullMemoryBlocks, 2, "An OpenBot restart sent no full memory block, or more than one.");
-  assert.equal(a5.teammateBlocks, 2, "An OpenBot restart sent no section-mates block, or more than one.");
-  assert.equal(a5.savedLoginBlocks, 2, "An OpenBot restart sent no saved-logins block, or more than one.");
+  assert.equal(a5.fullMemoryBlocks, 2, "An PurpleBot restart sent no full memory block, or more than one.");
+  assert.equal(a5.teammateBlocks, 2, "An PurpleBot restart sent no section-mates block, or more than one.");
+  assert.equal(a5.savedLoginBlocks, 2, "An PurpleBot restart sent no saved-logins block, or more than one.");
   assert.equal(a5.newSession, false);
   const history = report.historyUserTexts ?? [];
   assert.ok(history.length >= 4, "The history import read no user messages.");

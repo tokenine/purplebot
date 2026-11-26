@@ -38,15 +38,15 @@ const LEFT_BEHIND = "ls -d /var/tmp/openbot-restore.* /run/openbot-restore-key.*
 const SEEDED_CACHES = [
   ".cache/e2e/models.json",
   ".npm/_npx/e2e/package.json",
-  ".config/OpenBot/Cache/Cache_Data/e2e",
-  ".config/OpenBot/Partitions/openbot-browser/Cache/Cache_Data/e2e",
-  ".config/OpenBot/Partitions/openbot-browser/Code Cache/js/e2e",
-  ".config/OpenBot/provider-runtimes/claude/linux-x64/e2e/bin/claude",
-  ".config/OpenBot/provider-runtimes/.downloads/claude-linux-x64-e2e.partial",
+  ".config/PurpleBot/Cache/Cache_Data/e2e",
+  ".config/PurpleBot/Partitions/openbot-browser/Cache/Cache_Data/e2e",
+  ".config/PurpleBot/Partitions/openbot-browser/Code Cache/js/e2e",
+  ".config/PurpleBot/provider-runtimes/claude/linux-x64/e2e/bin/claude",
+  ".config/PurpleBot/provider-runtimes/.downloads/claude-linux-x64-e2e.partial",
 ];
 const SEEDED_KEPT = [
-  ".config/OpenBot/Partitions/openbot-browser/Service Worker/CacheStorage/e2e",
-  ".config/OpenBot/provider-runtimes/bun/e2e",
+  ".config/PurpleBot/Partitions/openbot-browser/Service Worker/CacheStorage/e2e",
+  ".config/PurpleBot/provider-runtimes/bun/e2e",
 ];
 const CACHE_NAMES = [
   "Cache",
@@ -61,7 +61,7 @@ const CACHE_NAMES = [
   "component_crx_cache",
   "extensions_crx_cache",
 ];
-const NOT_ARCHIVED = ` home/user/(\\.cache|\\.npm/_npx|\\.config/OpenBot/(Partitions/[^/]+/)?(${CACHE_NAMES.join("|")})|\\.config/OpenBot/provider-runtimes/(\\.downloads|${MANAGED_RUNTIME_PROVIDERS.join("|")}))(/| |$)`;
+const NOT_ARCHIVED = ` home/user/(\\.cache|\\.npm/_npx|\\.config/PurpleBot/(Partitions/[^/]+/)?(${CACHE_NAMES.join("|")})|\\.config/PurpleBot/provider-runtimes/(\\.downloads|${MANAGED_RUNTIME_PROVIDERS.join("|")}))(/| |$)`;
 
 const FACTS = `
 set -euo pipefail
@@ -87,14 +87,14 @@ for path in ${SEEDED_KEPT.map((path) => `"${path}"`).join(" ")}; do [ -s "$path"
 const SEED = (hostId: string, extraGb: number) => `
 set -euo pipefail
 runuser -u user -- env HOME=/home/user OPENBOT_HOSTED_HOST_ID=${hostId} OPENBOT_HOSTED_CLAIM=e2e_claim_that_is_not_valid \\
-  /opt/OpenBot/hosted/openbot-hosted-env
+  /opt/PurpleBot/hosted/openbot-hosted-env
 systemctl enable --now openbot.service
 for _ in $(seq 1 180); do
-  [ -s /home/user/.config/OpenBot/openbot.db ] && [ -s /srv/openbot-hosted/keyrings/login.keyring ] &&
+  [ -s /home/user/.config/PurpleBot/openbot.db ] && [ -s /srv/openbot-hosted/keyrings/login.keyring ] &&
     [ -s /home/user/.config/openbot-hosted/keyring-password ] && break
   sleep 1
 done
-[ -s /home/user/.config/OpenBot/openbot.db ] || { journalctl -u openbot.service -n 30 --no-pager >&2; exit 1; }
+[ -s /home/user/.config/PurpleBot/openbot.db ] || { journalctl -u openbot.service -n 30 --no-pager >&2; exit 1; }
 runuser -u user -- bash -c 'set -e; cd ~
 mkdir -p projects/e2e .local/bin
 head -c 1048576 /dev/urandom >projects/e2e/data.bin
@@ -112,7 +112,7 @@ echo seeded
 
 const RUNS = `
 for _ in $(seq 1 120); do
-  if systemctl is-active --quiet openbot.service && pgrep -u user -x openbot >/dev/null; then echo runs; exit 0; fi
+  if systemctl is-active --quiet openbot.service && pgrep -u user -x purplebot >/dev/null; then echo runs; exit 0; fi
   sleep 1
 done
 echo "does not run: $(systemctl is-active openbot.service)"
@@ -270,7 +270,7 @@ async function newestRelease() {
   );
   const release = releaseSchema.parse(body);
   const version = release.tag_name.replace(/^v/u, "");
-  const asset = release.assets.find((item) => item.name === `OpenBot-${version}-x86_64.AppImage`);
+  const asset = release.assets.find((item) => item.name === `PurpleBot-${version}-x86_64.AppImage`);
   const sha256 = asset?.digest?.replace(/^sha256:/u, "") ?? "";
   if (!asset || !/^[0-9a-f]{64}$/u.test(sha256)) throw new Error(`Release ${version} has no AppImage with a SHA-256.`);
   return { version, url: asset.browser_download_url, sha256 };
@@ -363,9 +363,9 @@ async function main() {
     await step("run a server with customer files", () =>
       remote(machine, "bash -s", { input: SEED(randomUUID(), extraGb) }),
     );
-    const before = (await step("check that OpenBot runs", () => remote(machine, "bash -s", { input: RUNS }).trim()))
+    const before = (await step("check that PurpleBot runs", () => remote(machine, "bash -s", { input: RUNS }).trim()))
       .result;
-    checks.push({ name: "OpenBot runs before the archive", pass: before === "runs", detail: before });
+    checks.push({ name: "PurpleBot runs before the archive", pass: before === "runs", detail: before });
     serverBytes = Number(remote(machine, SERVER_BYTES).trim());
 
     uploadId = (await step("start the B2 upload", () => startUpload(b2, objectKey))).result;
@@ -406,7 +406,7 @@ async function main() {
     await step("reinstall and prepare the machine again", () => preparePool(machine, release, keys));
     const empty = remote(
       machine,
-      "test ! -e /home/user/.config/OpenBot && test ! -e /srv/openbot-hosted/keyrings && echo empty || echo data",
+      "test ! -e /home/user/.config/PurpleBot && test ! -e /srv/openbot-hosted/keyrings && echo empty || echo data",
     ).trim();
     checks.push({ name: "the reinstall erased the server", pass: empty === "empty", detail: empty });
 
@@ -415,7 +415,7 @@ async function main() {
     const wrongSum = archiveSha256.replace(/^./u, (first) => (first === "0" ? "1" : "0"));
     const refused = remote(
       machine,
-      `bash ${MACHINE_HOSTING}/move-from-boat.sh restore ${wrongSum} >/dev/null 2>&1 && echo restored || echo refused; test -e /home/user/.config/OpenBot && echo data || echo empty; ${LEFT_BEHIND}`,
+      `bash ${MACHINE_HOSTING}/move-from-boat.sh restore ${wrongSum} >/dev/null 2>&1 && echo restored || echo refused; test -e /home/user/.config/PurpleBot && echo data || echo empty; ${LEFT_BEHIND}`,
       { input: download() },
     )
       .trim()
@@ -453,7 +453,7 @@ async function main() {
 
     await step("start", () => remote(machine, `bash ${MACHINE_HOSTING}/move-from-boat.sh start`));
     const after = remote(machine, "bash -s", { input: RUNS }).trim();
-    checks.push({ name: "OpenBot runs after the import", pass: after === "runs", detail: after });
+    checks.push({ name: "PurpleBot runs after the import", pass: after === "runs", detail: after });
 
     await step("delete the archive in B2", async () => {
       const answer = await deleteArchive(b2, objectKey, versionId);

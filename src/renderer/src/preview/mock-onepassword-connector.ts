@@ -14,7 +14,7 @@ const CONNECTED: OnePasswordConnectorStatus = {
   ...DISCONNECTED_ONEPASSWORD_CONNECTOR,
   state: "connected",
   setup: READY,
-  vaultNames: ["Shared with OpenBot"],
+  vaultNames: ["Shared with PurpleBot"],
   loginCount: 3,
 };
 

@@ -22,8 +22,7 @@ import { listSiblingOpenBotInstances } from "./update-sibling-instances";
 
 const logger = createOpenBotLogger("update");
 const STALLED_INSTALL_DIALOG_MS = 10 * 60_000;
-const GUIDE_URL =
-  "https://github.com/nightly-labs/openbot/blob/main/docs/TROUBLESHOOTING.md#openbot-says-a-newer-version-saved-your-data";
+const GUIDE_URL = "https://github.com/tokenine/purplebot/blob/selfhost/docs/TROUBLESHOOTING.md";
 
 interface NewerDatabaseRecoveryOptions {
   window: BrowserWindow | null;
@@ -47,7 +46,7 @@ export async function recoverFromNewerDatabase(options: NewerDatabaseRecoveryOpt
   }
   if (loopVersion) {
     logger.warn(
-      `An older OpenBot started over newer data, and OpenBot ${loopVersion} did not start. Not installing it.`,
+      `An older PurpleBot started over newer data, and PurpleBot ${loopVersion} did not start. Not installing it.`,
     );
     await showLatestDidNotStart(options.translate, loopVersion);
   } else {
@@ -117,7 +116,7 @@ async function installLatest(
   updater.start(false);
   const downloaded = nextPhase(updater, ["ready", "up-to-date", "unsupported", "error"]);
   const checked = await Effect.runPromise(updater.checkForUpdates());
-  logger.info(`An older OpenBot started over newer data. Update check: ${checked.phase}.`);
+  logger.info(`An older PurpleBot started over newer data. Update check: ${checked.phase}.`);
   if (checked.phase !== "available" && checked.phase !== "downloading" && checked.phase !== "ready") {
     downloaded.cancel();
     return;

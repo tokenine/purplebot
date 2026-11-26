@@ -12,7 +12,7 @@ const OUT = resolve(import.meta.dirname, "../.openbot-build/acp-instructions-onc
 const MODES = ["context", "silent", "memory"] as const;
 type Mode = (typeof MODES)[number];
 
-const INSTRUCTIONS = "You are a teammate in OpenBot. Memory: the user likes short answers.";
+const INSTRUCTIONS = "You are a teammate in PurpleBot. Memory: the user likes short answers.";
 const CHANGED = `${INSTRUCTIONS} Memory: the user works in Kraków.`;
 
 interface Prompt {

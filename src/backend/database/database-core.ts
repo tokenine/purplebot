@@ -99,7 +99,7 @@ export class DatabaseCore {
   }
 
   get connection(): DatabaseSync {
-    if (!this.#db) throw new Error("OpenBot database is not initialized.");
+    if (!this.#db) throw new Error("PurpleBot database is not initialized.");
     return this.#db;
   }
 

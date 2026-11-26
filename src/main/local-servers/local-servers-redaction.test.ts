@@ -91,7 +91,7 @@ function servers(
   const options: LocalServersOptions = {
     registryPath: join(root, LOCAL_SERVERS_FILE),
     userDataRoot: join(root, "local-servers"),
-    agentRoot: join(root, "OpenBot", "Servers"),
+    agentRoot: join(root, "PurpleBot", "Servers"),
     runtimeRoot: join(root, "provider-runtimes"),
     cipher: {
       encrypt: (value) => Buffer.from(`sealed:${value}`).reverse(),
@@ -113,7 +113,7 @@ function servers(
       requestAuthorized: () => Effect.succeed(null),
       downloadAuthorized: () => Effect.succeed(new Uint8Array()),
     },
-    command: { executable: "/Applications/OpenBot.app/Contents/MacOS/OpenBot", args: [] },
+    command: { executable: "/Applications/PurpleBot.app/Contents/MacOS/PurpleBot", args: [] },
     trash: () => Promise.resolve(),
     log: {
       info: (message) => logger.info(message),

@@ -42,7 +42,7 @@ export const messages = defineMessages("error.billing", {
   "error.billing.licensePlanChange": "This license cannot change to that plan. Cancel it and buy the new plan.",
   "error.billing.noLicense": "This account has no license.",
   "error.billing.countryRequired":
-    "Give your billing country before you pay. Update OpenBot to do this, then try again.",
+    "Give your billing country before you pay. Update PurpleBot to do this, then try again.",
   "error.billing.detailsInvalid": "Check the country and the VAT ID. The VAT ID must be one of the selected country.",
   "error.billing.vatIdInvalid":
     "The EU VAT system does not know this VAT ID. Check the number, or continue without a VAT ID.",

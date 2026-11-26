@@ -22,7 +22,7 @@ export const messages = {
   "error.billing.licensePlanChange": "Bu lisans o plana geçemez. Lisansı iptal edip yeni planı satın alın.",
   "error.billing.noLicense": "Bu hesabın lisansı yok.",
   "error.billing.countryRequired":
-    "Ödemeden önce fatura ülkenizi belirtin. Bunun için OpenBot'u güncelleyin ve yeniden deneyin.",
+    "Ödemeden önce fatura ülkenizi belirtin. Bunun için PurpleBot'u güncelleyin ve yeniden deneyin.",
   "error.billing.detailsInvalid": "Ülkeyi ve KDV numarasını kontrol edin. KDV numarası seçilen ülkeye ait olmalıdır.",
   "error.billing.vatIdInvalid":
     "AB KDV sistemi bu KDV numarasını tanımıyor. Numarayı kontrol edin veya KDV numarası olmadan devam edin.",

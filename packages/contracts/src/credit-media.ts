@@ -18,8 +18,8 @@ export type CreditMediaInputRole = (typeof CREDIT_MEDIA_INPUT_ROLES)[number];
 export const CREDIT_MEDIA_WALLETS = ["personal", "server"] as const;
 export type CreditMediaWallet = (typeof CREDIT_MEDIA_WALLETS)[number];
 
-export const CREDIT_MEDIA_HOST_HEADER = "X-OpenBot-Host";
-export const CREDIT_MEDIA_HOST_TOKEN_HEADER = "X-OpenBot-Host-Token";
+export const CREDIT_MEDIA_HOST_HEADER = "X-PurpleBot-Host";
+export const CREDIT_MEDIA_HOST_TOKEN_HEADER = "X-PurpleBot-Host-Token";
 export const CREDIT_MEDIA_REQUEST_PART = "request";
 export const CREDIT_MEDIA_INPUT_LIMIT_BYTES = 7 * 1024 * 1024;
 export const CREDIT_MEDIA_INPUTS_LIMIT_BYTES = 14 * 1024 * 1024;

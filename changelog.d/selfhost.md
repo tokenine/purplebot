@@ -3,14 +3,24 @@
 - A self-host bundle in `selfhost/`. It runs the account service on your own Cloudflare account,
   and Signal, TURN, the email hook and the server on your own Linux server, with no connection to
   `openbot.run`. `selfhost/README.md` has the steps.
+- A way to sign a server in without a mailbox: make a claim at the account service and give it to
+  `purplebot login --claim`.
 
 ### Changed
 
-- The app identifiers of this fork are PurpleBot: the app ID, the product name, the image name and
-  the release repository. The Linux executable keeps the name `openbot`.
+- The app is PurpleBot: the name, the logo, the icon set, the brand color, the text of the interface
+  in every language, the emails, the server command (`purplebot`) and the Linux executable. The
+  `openbot://` link scheme, the `OPENBOT_*` variables, `openbot.db` and the `@openbot/*` packages keep
+  their names, so the fork can take new upstream changes.
+- The account service serves the sign-in, the web client, its APIs, a small landing page and a short
+  privacy page and terms page for a self-hosted instance. The marketing pages of upstream are gone.
 - A server that starts with `OPENBOT_AUTH_API_URL` sends no usage analytics and no error reports.
+- Help and feedback links open this repository. The Discord, X and other social links of upstream are
+  gone from the app.
 - The account service accepts an SMTP user name that is not an email address, such as the
   `api_token` of Cloudflare SMTP.
+- The agent instructions and tool catalog are a few hundred bytes longer, because the new name has
+  two more letters.
 
 ### Fixed
 

@@ -186,7 +186,7 @@ export class AgentStore {
     homePath: string,
     database: OpenBotDatabase,
     agentDefaults: () => AgentDefaults = () => DEFAULT_AGENT_DEFAULTS,
-    openbotRoot = join(homePath, "OpenBot"),
+    openbotRoot = join(homePath, "PurpleBot"),
   ) {
     this.#statePath = join(userDataPath, LEGACY_AGENTS_STATE_FILE);
     this.#agentsRoot = join(openbotRoot, "Agents");
@@ -1420,7 +1420,7 @@ export class AgentStore {
 
   bindProviderSession(id: string, provider: AgentProviderId, externalSessionId: string): ProviderSession {
     const agent = this.#requireAgent(id);
-    if (!agent.threadId) throw new Error(`Agent ${id} does not have an OpenBot thread.`);
+    if (!agent.threadId) throw new Error(`Agent ${id} does not have an PurpleBot thread.`);
     return this.#database.bindProviderSession({
       threadId: agent.threadId,
       provider,

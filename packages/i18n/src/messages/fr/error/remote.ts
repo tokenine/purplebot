@@ -20,14 +20,14 @@ export const messages = {
   "error.remote.linuxNeedsX11":
     "Sous Linux, le bureau à distance nécessite une session X11. Wayland n’est pas pris en charge.",
   "error.remote.runtimeMissing":
-    "Le runtime Sunshine et Moonlight Web est absent ou n’est pas pris en charge sur cet hôte. Installez la version complète d’OpenBot sur un hôte Mac, Windows x64 ou Linux x64, puis redémarrez OpenBot.",
+    "Le runtime Sunshine et Moonlight Web est absent ou n’est pas pris en charge sur cet hôte. Installez la version complète d’PurpleBot sur un hôte Mac, Windows x64 ou Linux x64, puis redémarrez PurpleBot.",
   "error.remote.testActive": "Un test du bureau à distance est en cours. Réessayez quand il sera terminé.",
   "error.remote.screenRecordingDenied":
-    "L’hôte n’a pas autorisé OpenBot à enregistrer son écran. Autorisez l’enregistrement de l’écran sur l’hôte, puis réessayez.",
+    "L’hôte n’a pas autorisé PurpleBot à enregistrer son écran. Autorisez l’enregistrement de l’écran sur l’hôte, puis réessayez.",
   "error.remote.windowsSessionDisconnected":
     "La session Windows de l’hôte est déconnectée : elle n’a aucun écran à partager. Connectez-vous à Windows sur l’écran de l’hôte, puis réessayez.",
   "error.remote.windowsCaptureDenied":
-    "Windows sur l’hôte n’autorise pas OpenBot à enregistrer son écran. Déverrouillez Windows sur l’écran de l’hôte, fermez toute invite d’administrateur, puis réessayez. Si le problème persiste, redémarrez l’hôte.",
+    "Windows sur l’hôte n’autorise pas PurpleBot à enregistrer son écran. Déverrouillez Windows sur l’écran de l’hôte, fermez toute invite d’administrateur, puis réessayez. Si le problème persiste, redémarrez l’hôte.",
   "error.remote.macScreenLocked":
     "Le Mac est verrouillé : il ne peut pas partager son écran. Déverrouillez le Mac sur son écran, puis réessayez.",
   "error.remote.streamTooSlowLowerQuality":
@@ -48,7 +48,7 @@ export const messages = {
   "error.remote.moonlightStartFailed":
     "Moonlight Web n’a pas démarré sur l’hôte. Consultez les journaux du bureau à distance sur l’hôte, puis réessayez.",
   "error.remote.pairingFailed":
-    "Moonlight n’a pas pu s’associer à Sunshine sur l’hôte. Réessayez. Si le problème persiste, redémarrez OpenBot sur l’hôte.",
+    "Moonlight n’a pas pu s’associer à Sunshine sur l’hôte. Réessayez. Si le problème persiste, redémarrez PurpleBot sur l’hôte.",
   "error.remote.runtimeStartFailed":
     "Le runtime du bureau à distance n’a pas démarré sur l’hôte. Consultez les journaux du bureau à distance sur l’hôte, puis réessayez.",
   "error.remote.hostUnreachable": "L’hôte est injoignable.",
@@ -56,7 +56,7 @@ export const messages = {
   "error.remote.invalidData": "L’hôte a renvoyé des données non valides.",
   "error.remote.unsafeData": "L’hôte a renvoyé des données que cette app ne peut pas utiliser en toute sécurité.",
   "error.remote.requestFailedStatus": "La requête au serveur distant a échoué ({status}).",
-  "error.remote.appUpdateRequired": "Mettez à jour cette app OpenBot avant de vous connecter à l’hôte.",
+  "error.remote.appUpdateRequired": "Mettez à jour cette app PurpleBot avant de vous connecter à l’hôte.",
   "error.remote.identityNotVerified": "Impossible de vérifier l’identité du serveur.",
   "error.remote.webRtcUnavailable": "Le transport WebRTC n’est pas disponible.",
   "error.remote.invalidCompatibility": "L’hôte a renvoyé des informations de compatibilité non valides.",
@@ -75,9 +75,9 @@ export const messages = {
   "error.remote.inviteIdentityChanged": "L’identité de l’hôte de l’invitation a changé pendant son acceptation.",
   "error.remote.localServerRemove": "Le serveur local ne peut pas être supprimé.",
   "error.remote.desktopSetupHostUpdate":
-    "Mettez à jour OpenBot sur l’hôte pour vérifier la configuration du bureau à distance.",
+    "Mettez à jour PurpleBot sur l’hôte pour vérifier la configuration du bureau à distance.",
   "error.remote.desktopTestHostUpdate":
-    "Mettez à jour OpenBot sur l’hôte pour tester la configuration du bureau à distance.",
+    "Mettez à jour PurpleBot sur l’hôte pour tester la configuration du bureau à distance.",
   "error.remote.viewerProxyUnavailable": "Le proxy local de la visionneuse distante n’est pas disponible.",
   "error.remote.viewerTransportInvalid": "Le transport de la visionneuse distante n’est pas valide.",
   "error.remote.viewerProxyNoPort": "Le proxy local de la visionneuse distante n’a pas obtenu de port.",
@@ -96,12 +96,12 @@ export const messages = {
   "error.remote.requestTimeout": "La requête distante a expiré.",
   "error.remote.requestFailed": "La requête distante a échoué.",
   "error.remote.hostKeyMissing":
-    "OpenBot ne peut pas vérifier ce serveur, car sa clé de sécurité est absente ou a changé. Demandez au propriétaire du serveur de le vérifier.",
+    "PurpleBot ne peut pas vérifier ce serveur, car sa clé de sécurité est absente ou a changé. Demandez au propriétaire du serveur de le vérifier.",
   "error.remote.connectionNotStarted":
-    "OpenBot n’a pas pu démarrer la connexion à ce serveur. Si le problème persiste, quittez OpenBot et rouvrez-le.",
+    "PurpleBot n’a pas pu démarrer la connexion à ce serveur. Si le problème persiste, quittez PurpleBot et rouvrez-le.",
   "error.remote.connectionServiceUnreachable":
-    "Cet ordinateur ne peut pas joindre le service de connexion d’OpenBot. Vérifiez sa connexion Internet. OpenBot se reconnecte automatiquement.",
-  "error.remote.serverAnswerTimeout": "Le serveur n’a pas répondu à temps. OpenBot se reconnecte automatiquement.",
+    "Cet ordinateur ne peut pas joindre le service de connexion d’PurpleBot. Vérifiez sa connexion Internet. PurpleBot se reconnecte automatiquement.",
+  "error.remote.serverAnswerTimeout": "Le serveur n’a pas répondu à temps. PurpleBot se reconnecte automatiquement.",
   "error.remote.signInConnectionClosed":
     "La connexion au serveur s’est fermée pendant la connexion. Si cela continue, vérifiez la date et l’heure du serveur et de cet appareil.",
   "error.remote.connectionCancelled": "La connexion distante a été annulée.",
@@ -155,11 +155,11 @@ export const messages = {
   "error.remote.permanentInviteNoEmail": "Les invitations permanentes ne peuvent pas être envoyées par e-mail.",
   "error.remote.selfHostedInviteNoEmail":
     "Une invitation d’un service de compte auto-hébergé ne peut pas être envoyée par e-mail. Copiez le lien.",
-  "error.remote.inviteOtherService": "Cette invitation appartient à un autre service OpenBot.",
+  "error.remote.inviteOtherService": "Cette invitation appartient à un autre service PurpleBot.",
   "error.remote.inviteFingerprintMismatch": "L’identité de l’hôte de l’invitation ne correspond pas à son empreinte.",
   "error.remote.inviteHostKeyMissing": "La clé de l’hôte de l’invitation est absente.",
   "error.remote.inviteKeyConflict": "L’invitation est en conflit avec la clé d’hôte de confiance.",
-  "error.remote.serviceRequestFailed": "La requête au service OpenBot a échoué.",
+  "error.remote.serviceRequestFailed": "La requête au service PurpleBot a échoué.",
   "error.remote.downloadTimeout": "Le téléchargement de la pièce jointe a expiré. Réessayez.",
   "error.remote.attachmentConnectionClosed": "La connexion de la pièce jointe s’est fermée.",
   "error.remote.tooManyDownloads": "Trop de téléchargements de pièces jointes.",
@@ -185,7 +185,7 @@ export const messages = {
   "error.remote.signalInvalidMessage": "Signal a renvoyé un message non valide.",
   "error.remote.sessionInvalid": "La session distante n’est pas valide.",
   "error.remote.ticketInvalid": "Le ticket de connexion n’est pas valide.",
-  "error.remote.mobileUpdateRequired": "Mettez à jour OpenBot Mobile ou l’app de bureau avant de vous connecter.",
+  "error.remote.mobileUpdateRequired": "Mettez à jour PurpleBot Mobile ou l’app de bureau avant de vous connecter.",
   "error.remote.connectionStepFailed": "Impossible de terminer cette étape de connexion.",
   "error.remote.signalNotConnected": "Signal n’est pas connecté.",
   "error.remote.signalFrameUnreadable": "Signal a envoyé une trame que ce pair ne peut pas lire.",
@@ -193,9 +193,9 @@ export const messages = {
   "error.remote.dataChannelFailed": "Le canal {kind} a échoué.",
   "error.remote.hostBusy": "L’hôte est occupé par une autre connexion. Réessayez dans un instant.",
   "error.remote.signalPermissionDenied": "Votre compte n’a pas accès à cet hôte. Demandez l’accès au propriétaire.",
-  "error.remote.signalRateLimited": "Trop de tentatives de connexion. OpenBot réessaiera dans {seconds} secondes.",
+  "error.remote.signalRateLimited": "Trop de tentatives de connexion. PurpleBot réessaiera dans {seconds} secondes.",
   "error.remote.signalProtocolError":
-    "Signal et cette application ne s’accordent pas sur le protocole de connexion. Mettez à jour OpenBot, puis réessayez.",
+    "Signal et cette application ne s’accordent pas sur le protocole de connexion. Mettez à jour PurpleBot, puis réessayez.",
   "error.remote.signalRefused": "Signal a refusé la connexion.",
   "error.remote.signalClosed": "La connexion à Signal s’est fermée avant la réponse de l’hôte.",
   "error.remote.relayUnavailable": "Signal n’a envoyé aucun serveur relais pour cette connexion. Réessayez plus tard.",
@@ -203,29 +203,29 @@ export const messages = {
     "Impossible d’établir une connexion directe avec l’hôte. Un pare-feu, un VPN ou un proxy peut la bloquer.",
   "error.remote.iceDisconnected": "La connexion directe avec l’hôte a été perdue.",
   "error.remote.webrtcBlocked":
-    "Cet appareil bloque la connexion dont OpenBot a besoin. Si le mode Isolement est activé, désactivez-le pour OpenBot dans Réglages > Confidentialité et sécurité > Mode Isolement.",
-  "error.remote.directoryUnreachable": "OpenBot n’a pas pu joindre le service OpenBot. Vérifiez votre connexion.",
-  "error.remote.directoryTimeout": "Le service OpenBot n’a pas répondu à temps. Réessayez.",
+    "Cet appareil bloque la connexion dont PurpleBot a besoin. Si le mode Isolement est activé, désactivez-le pour PurpleBot dans Réglages > Confidentialité et sécurité > Mode Isolement.",
+  "error.remote.directoryUnreachable": "PurpleBot n’a pas pu joindre le service PurpleBot. Vérifiez votre connexion.",
+  "error.remote.directoryTimeout": "Le service PurpleBot n’a pas répondu à temps. Réessayez.",
   "error.remote.inviteAlreadyUsed": "Cette invitation a déjà été utilisée. Demandez une nouvelle invitation.",
   "error.remote.inviteNotFound": "Cette invitation n’existe pas ou a expiré. Demandez une nouvelle invitation.",
   "error.remote.licenseUsersFull":
     "La licence du propriétaire du serveur n'a plus d'utilisateur libre. Demandez au propriétaire d'ajouter un utilisateur à la licence.",
   "error.remote.memberLimitReached":
     "Cet hôte a atteint sa limite de membres. Demandez au propriétaire de libérer de la place.",
-  "error.remote.hostNotRegistered": "Cet hôte n’est plus enregistré auprès du service OpenBot.",
+  "error.remote.hostNotRegistered": "Cet hôte n’est plus enregistré auprès du service PurpleBot.",
   "error.remote.membershipEnded":
     "Vous n’êtes plus membre de cet hôte. Demandez une nouvelle invitation au propriétaire.",
   "error.remote.membershipChanged": "Quelqu’un a modifié ce membre au même moment. Rechargez les membres et réessayez.",
   "error.remote.accountSessionInactive": "Votre connexion n’est plus active. Reconnectez-vous.",
   "error.remote.hostOtherAccount": "Cet hôte appartient à un autre compte.",
-  "error.remote.remoteNotConfigured": "Les connexions à distance ne sont pas configurées sur ce service OpenBot.",
+  "error.remote.remoteNotConfigured": "Les connexions à distance ne sont pas configurées sur ce service PurpleBot.",
   "error.remote.hostRefused": "L’hôte a refusé la demande ({status}).",
   "error.remote.formUnavailable": "Ce formulaire n’est plus disponible.",
   "error.remote.hostedServerRemoval": "Utilisez « Facturation » pour supprimer un serveur hébergé.",
   "error.remote.hostRemoved": "Le propriétaire a retiré ce serveur du compte.",
   "error.remote.ownerTransferSelf":
     "Vous êtes déjà propriétaire de ce serveur. Saisissez l'e-mail du nouveau propriétaire.",
-  "error.remote.ownerTransferHosted": "Un serveur hébergé par OpenBot ne peut pas changer de propriétaire.",
+  "error.remote.ownerTransferHosted": "Un serveur hébergé par PurpleBot ne peut pas changer de propriétaire.",
   "error.remote.ownerTransferInvalid":
     "Ce transfert de propriété n'est plus disponible. Demandez au propriétaire de l'envoyer à nouveau.",
   "error.remote.channelsUnsupported": "Mettez à jour ce serveur de bureau pour utiliser les canaux.",
@@ -234,9 +234,9 @@ export const messages = {
     "Le message a été envoyé, mais l’historique de la discussion n’a pas pu être actualisé.",
   "error.remote.taskHistoryRefreshFailed":
     "La tâche a été modifiée, mais l’historique de la discussion n’a pas pu être actualisé.",
-  "error.remote.serverNotLoaded": "OpenBot n'a pas pu charger le serveur. Réessayez.",
+  "error.remote.serverNotLoaded": "PurpleBot n'a pas pu charger le serveur. Réessayez.",
   "error.remote.localServerNotStarted":
-    "Le serveur sur cet ordinateur n'a pas démarré. Réessayez. S'il ne démarre toujours pas, redémarrez OpenBot sur cet ordinateur.",
+    "Le serveur sur cet ordinateur n'a pas démarré. Réessayez. S'il ne démarre toujours pas, redémarrez PurpleBot sur cet ordinateur.",
   "error.remote.localServerAccountRemovalFailed":
     "Le serveur est supprimé sur son ordinateur, mais le compte l’affiche encore. Supprimez-le à nouveau pour le retirer du compte.",
 } as const satisfies PartialTranslation<typeof source>;

@@ -18,6 +18,6 @@ export function singleInstanceOwnerPid(userDataPath: string): number | null {
 }
 
 export function singleInstanceExitMessage(ownerPid: number | null): string {
-  const owner = ownerPid === null ? "Another OpenBot" : `Another OpenBot (process ${ownerPid})`;
-  return `${owner} uses this data folder. This start sends its request to that OpenBot and stops.`;
+  const owner = ownerPid === null ? "Another PurpleBot" : `Another PurpleBot (process ${ownerPid})`;
+  return `${owner} uses this data folder. This start sends its request to that PurpleBot and stops.`;
 }

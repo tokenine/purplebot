@@ -47,7 +47,7 @@ export const messages = {
   "provider.status.checking": "Sprawdzanie",
   "provider.status.off": "Wyłączony",
   "provider.gemini.hostSignIn":
-    "Aby połączyć Gemini, otwórz OpenBot na hoście i wybierz „Połącz” w sekcji Ustawienia serwera > Dostawcy. Logowanie Google wymaga przeglądarki na tym hoście. Zdalne logowanie nie jest obsługiwane.",
+    "Aby połączyć Gemini, otwórz PurpleBot na hoście i wybierz „Połącz” w sekcji Ustawienia serwera > Dostawcy. Logowanie Google wymaga przeglądarki na tym hoście. Zdalne logowanie nie jest obsługiwane.",
 
   "provider.key.free": "Darmowy",
 
@@ -75,14 +75,14 @@ export const messages = {
   "provider.aria.cancelSignIn": "Anuluj logowanie do {name}",
   "provider.aria.apiKey": "Klucz API {name}",
   "provider.connecting.browserHint": "Dokończ logowanie, jeśli otworzy się strona w przeglądarce.",
-  "provider.connecting.cancelFailed": "OpenBot nie mógł anulować logowania do {name}. Spróbuj ponownie.",
+  "provider.connecting.cancelFailed": "PurpleBot nie mógł anulować logowania do {name}. Spróbuj ponownie.",
   "provider.aria.install": "Zainstaluj {name}",
   "provider.aria.signIn": "Zaloguj się do {name}",
   "provider.aria.codeFallback": "Zaloguj się do {name} kodem",
   "provider.aria.addressFallback": "Wklej adres logowania do {name}",
   "provider.aria.moreActions": "Więcej działań: {name}",
 
-  "provider.aria.use": "Używaj {name} w OpenBot",
+  "provider.aria.use": "Używaj {name} w PurpleBot",
   "provider.use.inUseOne": "{agent} używa {name}. Zmień model tego agenta, a potem wyłącz {name}.",
   "provider.use.inUse": {
     one: "{count} agent używa {name}. Zmień model tego agenta, a potem wyłącz {name}.",
@@ -92,7 +92,7 @@ export const messages = {
   },
 
   "provider.codeLogin.title": "Zaloguj się do {name} kodem",
-  "provider.codeLogin.description": "Dokończ na telefonie lub w innej przeglądarce. OpenBot czeka tutaj.",
+  "provider.codeLogin.description": "Dokończ na telefonie lub w innej przeglądarce. PurpleBot czeka tutaj.",
   "provider.codeLogin.starting": "Pobieranie kodu od: {name}…",
   "provider.codeLogin.qrLabel": "Kod QR strony logowania {name}",
   "provider.codeLogin.open": "Otwórz",
@@ -115,15 +115,15 @@ export const messages = {
   "provider.codeLogin.pageDescription": "Ta strona jest otwarta w przeglądarce na: {host}. Zaloguj się tutaj.",
   "provider.codeLogin.relayStarting": "Uruchamianie logowania do {name} na {host}…",
   "provider.codeLogin.pageOpening": "Otwieranie strony logowania {name} na {host}…",
-  "provider.codeLogin.linkStep": "Zaloguj się do {name}. OpenBot będzie kontynuować samodzielnie.",
+  "provider.codeLogin.linkStep": "Zaloguj się do {name}. PurpleBot będzie kontynuować samodzielnie.",
   "provider.codeLogin.thisComputerDescription":
-    "Otwórz ten link w przeglądarce na tym komputerze. OpenBot czeka tutaj.",
+    "Otwórz ten link w przeglądarce na tym komputerze. PurpleBot czeka tutaj.",
   "provider.codeLogin.copyLink": "Kopiuj link",
   "provider.codeLogin.chatgptDeviceSetting":
     "W ChatGPT na komputerze otwórz ustawienia bezpieczeństwa i włącz logowanie kodem urządzenia dla Codex. Na koncie służbowym włącza je administrator obszaru roboczego.",
-  "provider.useApp.title": "Połącz {name} w aplikacji OpenBot",
+  "provider.useApp.title": "Połącz {name} w aplikacji PurpleBot",
   "provider.useApp.description":
-    "Logowanie do {name} wraca na komputer, który je rozpoczął, a karta przeglądarki nie może go odebrać. Połącz {name} w aplikacji OpenBot. Aplikacja sama dokończy logowanie.",
+    "Logowanie do {name} wraca na komputer, który je rozpoczął, a karta przeglądarki nie może go odebrać. Połącz {name} w aplikacji PurpleBot. Aplikacja sama dokończy logowanie.",
   "provider.useApp.download": "Pobierz aplikację",
 
   "provider.picker.noEndpoints": "Brak endpointów",
@@ -134,7 +134,7 @@ export const messages = {
   "provider.picker.providers": "Dostawcy modeli",
   "provider.picker.downloading": "Pobieranie {percent}",
   "provider.picker.unavailable": "{name} jest niedostępny.",
-  "provider.picker.updateToUse": "Zaktualizuj OpenBot, aby używać {name}",
+  "provider.picker.updateToUse": "Zaktualizuj PurpleBot, aby używać {name}",
   "provider.picker.models": "Modele {name}",
   "provider.picker.addProvider": "Dodaj dostawcę",
   "provider.picker.download": "Pobieranie {name}",
@@ -214,21 +214,21 @@ export const messages = {
   "provider.cursorKey.label": "Klucz API Cursor",
   "provider.inceptionKey.title": "Klucz API Inception",
   "provider.inceptionKey.description":
-    "Zapisz klucz API Inception na tym komputerze, aby używać modeli Mercury. OpenBot uruchamia je w pobranym Pi CLI.",
+    "Zapisz klucz API Inception na tym komputerze, aby używać modeli Mercury. PurpleBot uruchamia je w pobranym Pi CLI.",
   "provider.inceptionKey.descriptionHost":
-    "Zapisz klucz API Inception na hoście, aby używać modeli Mercury. OpenBot uruchamia je w pobranym Pi CLI.",
+    "Zapisz klucz API Inception na hoście, aby używać modeli Mercury. PurpleBot uruchamia je w pobranym Pi CLI.",
   "provider.inceptionKey.label": "Klucz API Inception",
   "provider.deepseekKey.title": "Klucz API DeepSeek",
   "provider.deepseekKey.description":
-    "Zapisz klucz API DeepSeek na tym komputerze, aby używać modeli DeepSeek. OpenBot uruchamia je w pobranym Pi CLI.",
+    "Zapisz klucz API DeepSeek na tym komputerze, aby używać modeli DeepSeek. PurpleBot uruchamia je w pobranym Pi CLI.",
   "provider.deepseekKey.descriptionHost":
-    "Zapisz klucz API DeepSeek na hoście, aby używać modeli DeepSeek. OpenBot uruchamia je w pobranym Pi CLI.",
+    "Zapisz klucz API DeepSeek na hoście, aby używać modeli DeepSeek. PurpleBot uruchamia je w pobranym Pi CLI.",
   "provider.deepseekKey.label": "Klucz API DeepSeek",
   "provider.openrouterKey.title": "Klucz API OpenRouter",
   "provider.openrouterKey.description":
-    "Zapisz klucz API OpenRouter na tym komputerze, aby używać modeli z OpenRouter. OpenBot uruchamia je w pobranym Pi CLI.",
+    "Zapisz klucz API OpenRouter na tym komputerze, aby używać modeli z OpenRouter. PurpleBot uruchamia je w pobranym Pi CLI.",
   "provider.openrouterKey.descriptionHost":
-    "Zapisz klucz API OpenRouter na hoście, aby używać modeli z OpenRouter. OpenBot uruchamia je w pobranym Pi CLI.",
+    "Zapisz klucz API OpenRouter na hoście, aby używać modeli z OpenRouter. PurpleBot uruchamia je w pobranym Pi CLI.",
   "provider.openrouterKey.label": "Klucz API OpenRouter",
 
   "provider.openCodeKey.title": "Zaloguj się do OpenCode Go",
@@ -295,20 +295,20 @@ export const messages = {
   "provider.settings.disconnectTitle": "Odłączyć {name}?",
   "provider.settings.disconnectOthers": "Pozostałe konta {provider} czekają, aż ponownie połączysz {provider}.",
   "provider.settings.disconnectLocal":
-    "OpenBot wyloguje {provider} na tym komputerze. CLI {provider} w terminalu również zostanie wylogowane.",
-  "provider.settings.disconnectHost": "OpenBot wyloguje {provider} na serwerze.",
+    "PurpleBot wyloguje {provider} na tym komputerze. CLI {provider} w terminalu również zostanie wylogowane.",
+  "provider.settings.disconnectHost": "PurpleBot wyloguje {provider} na serwerze.",
   "provider.settings.geminiKeyReplacesAccount":
     "Zapisany klucz API Gemini jest używany zamiast logowania przez Google. Aby używać planu Google i jego modeli, usuń klucz.",
   "provider.settings.museKeyInUse":
     "Muse używa tego klucza, a nie Twojego logowania. Aby używać logowania, usuń klucz.",
   "provider.settings.versionInstalledByUser": "{version} · zainstalowana przez Ciebie",
-  "provider.settings.versionDownloaded": "{version} · pobrana przez OpenBot",
+  "provider.settings.versionDownloaded": "{version} · pobrana przez PurpleBot",
   "provider.settings.otherVersionInstalledByUser": "Nieużywana: {version} · zainstalowana przez Ciebie",
-  "provider.settings.otherVersionDownloaded": "Nieużywana: {version} · pobrana przez OpenBot",
+  "provider.settings.otherVersionDownloaded": "Nieużywana: {version} · pobrana przez PurpleBot",
   "provider.settings.installedVersionIncomplete":
-    "Niektóre modele potrzebują części, której brakuje w tej wersji. Pobierz wersję OpenBot, aby ich używać.",
+    "Niektóre modele potrzebują części, której brakuje w tej wersji. Pobierz wersję PurpleBot, aby ich używać.",
   "provider.settings.useInstalledVersion": "Użyj zainstalowanej",
-  "provider.settings.useDownloadedVersion": "Użyj wersji OpenBot",
+  "provider.settings.useDownloadedVersion": "Użyj wersji PurpleBot",
   "provider.settings.cache": "Pamięć podręczna",
   "provider.settings.promptCache": "Pamięć podręczna promptów",
   "provider.settings.promptCacheDescription":
@@ -372,11 +372,12 @@ export const messages = {
   "provider.settings.modelsNoMatch": "Żaden model nie pasuje do wyszukiwania.",
   "provider.settings.modelsLoadFailed": "Nie udało się wczytać modeli tego serwera.",
   "provider.settings.deleteTitle": "Usuń {name}",
-  "provider.settings.deleteOn": "Wyłącza {name} i usuwa CLI pobrane przez OpenBot. Konta, logowania i agenci zostają.",
+  "provider.settings.deleteOn":
+    "Wyłącza {name} i usuwa CLI pobrane przez PurpleBot. Konta, logowania i agenci zostają.",
   "provider.settings.deleteOff":
-    "Usuwa CLI pobrane przez OpenBot dla {name} ({size}). Konta, logowania i agenci zostają.",
+    "Usuwa CLI pobrane przez PurpleBot dla {name} ({size}). Konta, logowania i agenci zostają.",
   "provider.settings.removeDownloadFailed": "Nie udało się usunąć pobranych plików.",
   "provider.settings.disconnectLocalOnly":
-    "OpenBot wylogowuje {provider} na tym komputerze. CLI {provider} w terminalu pozostaje zalogowane.",
+    "PurpleBot wylogowuje {provider} na tym komputerze. CLI {provider} w terminalu pozostaje zalogowane.",
   "provider.settings.updateAll": "Aktualizuj wszystkie",
 } as const satisfies PartialTranslation<typeof source>;

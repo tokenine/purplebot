@@ -104,7 +104,7 @@ try {
       "--certificate-validity-duration-years",
       "1",
       "--certificate-common-name",
-      "OpenBot OTA E2E",
+      "PurpleBot OTA E2E",
     ],
     { cwd: MOBILE },
   );
@@ -181,7 +181,7 @@ try {
       scope: of,
       update: await readExport(directory, of.platform),
       assetBaseUrl: `${SERVER}/assets`,
-      expoClient: { name: "OpenBot", version: "9.9.9" },
+      expoClient: { name: "PurpleBot", version: "9.9.9" },
       commit: "0".repeat(40),
       message,
       rollout,

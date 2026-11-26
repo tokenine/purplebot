@@ -23,7 +23,7 @@ export const messages = {
   "error.billing.licensePlanChange": "Esta licencia no puede cambiar a ese plan. Cancélala y compra el plan nuevo.",
   "error.billing.noLicense": "Esta cuenta no tiene licencia.",
   "error.billing.countryRequired":
-    "Indica tu país de facturación antes de pagar. Actualiza OpenBot para hacerlo y vuelve a intentarlo.",
+    "Indica tu país de facturación antes de pagar. Actualiza PurpleBot para hacerlo y vuelve a intentarlo.",
   "error.billing.detailsInvalid": "Revisa el país y el NIF-IVA. El NIF-IVA debe ser del país elegido.",
   "error.billing.vatIdInvalid":
     "El sistema de IVA de la UE no reconoce este NIF-IVA. Revisa el número o continúa sin NIF-IVA.",

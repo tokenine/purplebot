@@ -48,7 +48,7 @@ export const messages = {
   "mobile.browser.status.offline": "Serwer nie jest połączony.",
   "mobile.browser.status.noTab": "Agent {name} nie ma otwartej karty przeglądarki.",
   "mobile.browser.status.unsupported":
-    "Ten serwer nie może pokazać swojej przeglądarki na telefonie. Zaktualizuj OpenBot na tym serwerze.",
+    "Ten serwer nie może pokazać swojej przeglądarki na telefonie. Zaktualizuj PurpleBot na tym serwerze.",
   "mobile.browser.status.off": "Przeglądarka nie jest dostępna w tej wersji aplikacji.",
   "mobile.browser.notice.copied": "Skopiowano na telefon.",
   "mobile.browser.notice.nothingSelected": "Na stronie nic nie jest zaznaczone.",
@@ -104,5 +104,5 @@ export const messages = {
   "mobile.browser.httpSignIn.username": "Nazwa użytkownika",
   "mobile.browser.httpSignIn.password": "Hasło",
   "mobile.browser.httpSignIn.submit": "Zaloguj się",
-  "mobile.browser.httpSignIn.failed": "OpenBot nie mógł wysłać logowania.",
+  "mobile.browser.httpSignIn.failed": "PurpleBot nie mógł wysłać logowania.",
 } as const satisfies PartialTranslation<typeof source>;

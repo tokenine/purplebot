@@ -211,7 +211,7 @@ export const messages = {
   "sidebar.delete.pending": "Usuwanie…",
   "sidebar.delete.title": "Usunąć {name}?",
   "sidebar.delete.agentDescription":
-    "To usunie agenta i jego rozmowę OpenBot z aplikacji. Jego kolejka, wspomnienia, rutyny i obszar roboczy zostaną usunięte. Historia przechowywana osobno przez połączonego dostawcę CLI nie zostanie usunięta.",
+    "To usunie agenta i jego rozmowę PurpleBot z aplikacji. Jego kolejka, wspomnienia, rutyny i obszar roboczy zostaną usunięte. Historia przechowywana osobno przez połączonego dostawcę CLI nie zostanie usunięta.",
   "sidebar.delete.channelDescription":
     "To zatrzyma kanał. Jego historia zostanie w sekcji „Usunięte kanały” tylko do podglądu. Można go stamtąd przywrócić. Agenci należący do kanału zostaną zachowani.",
   "sidebar.delete.sectionDescription":
@@ -252,6 +252,6 @@ export const messages = {
   "sidebar.community.title": "Dosiądź się.",
   "sidebar.community.body": "W przyszłości AI jest miejsce dla Ciebie. Dołącz do społeczności na Discordzie i X.",
   "sidebar.community.joinDiscord": "Dołącz do Discorda",
-  "sidebar.community.followX": "Obserwuj OpenBot na X",
+  "sidebar.community.followX": "Obserwuj PurpleBot na X",
   "sidebar.community.dismiss": "Zamknij zaproszenie do społeczności",
 } as const satisfies PartialTranslation<typeof source>;

@@ -54,10 +54,10 @@ try {
   report.emptyOnce = await startCursor("empty-once", 1);
   assert.equal(report.emptyOnce.error, null, "Cursor starts when its second model list has models.");
   assert.deepEqual(report.emptyOnce.models, ["auto"], "The second model list is used.");
-  assert.equal(report.emptyOnce.sessions, 2, "OpenBot asks Cursor for its models one more time.");
+  assert.equal(report.emptyOnce.sessions, 2, "PurpleBot asks Cursor for its models one more time.");
 
   report.alwaysEmpty = await startCursor("always-empty", Number.MAX_SAFE_INTEGER);
-  assert.equal(report.alwaysEmpty.sessions, 2, "OpenBot asks Cursor again only once.");
+  assert.equal(report.alwaysEmpty.sessions, 2, "PurpleBot asks Cursor again only once.");
   assert.ok(
     report.alwaysEmpty.error?.startsWith(sourceText("error.provider.cursorNoModels")),
     "The error tells the user what to do in plain words.",

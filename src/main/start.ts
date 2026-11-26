@@ -41,7 +41,7 @@ try {
   await import("./index");
 } catch (error) {
   if (!isDamagedInstallation(error)) throw error;
-  report("OpenBot cannot start: a program file is damaged or missing.", error);
+  report("PurpleBot cannot start: a program file is damaged or missing.", error);
   if (runsAsServer()) {
     app.exit(1);
   } else {

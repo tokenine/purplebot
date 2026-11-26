@@ -82,7 +82,7 @@ export class ProviderSessions {
     const id = requiredStringColumn(row, "id");
     if (!this.#reportedUnknownProviders.has(id)) {
       this.#reportedUnknownProviders.add(id);
-      logger.warn("A provider session names a provider that OpenBot does not know, so OpenBot skips it.", {
+      logger.warn("A provider session names a provider that PurpleBot does not know, so PurpleBot skips it.", {
         providerSessionId: id,
       });
     }

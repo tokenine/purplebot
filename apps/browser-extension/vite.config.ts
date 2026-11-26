@@ -31,11 +31,11 @@ function extensionManifest(apiUrl: string, webUrl: string, development: boolean)
       if (development) hostPermissions.push("http://localhost/*", "http://127.0.0.1/*");
       const manifest = {
         manifest_version: 3,
-        name: development ? "OpenBot (Dev)" : "OpenBot",
-        description: "Chat with your OpenBot agents beside any page.",
+        name: development ? "PurpleBot (Dev)" : "PurpleBot",
+        description: "Chat with your PurpleBot agents beside any page.",
         version: rootPackage.version,
         icons: { 16: "icons/icon-16.png", 32: "icons/icon-32.png", 48: "icons/icon-48.png", 128: "icons/icon-128.png" },
-        action: { default_title: "OpenBot", default_icon: { 16: "icons/icon-16.png", 32: "icons/icon-32.png" } },
+        action: { default_title: "PurpleBot", default_icon: { 16: "icons/icon-16.png", 32: "icons/icon-32.png" } },
         side_panel: { default_path: "sidepanel.html" },
         background: { service_worker: "background.js", type: "module" },
         permissions: [

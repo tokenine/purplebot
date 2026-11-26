@@ -40,6 +40,7 @@ export class BillingSalesError extends Schema.TaggedError<BillingSalesError>()("
 export interface BillingSalesOptions {
   database: D1Database;
   fetch: (input: string, init: RequestInit) => Promise<Response>;
+  apiUrl: string | undefined;
   clientId: string | undefined;
   clientSecret: string | undefined;
   now?: () => number;
@@ -205,6 +206,7 @@ export class BillingSales {
     this.#fetch = options.fetch;
     this.#delivery = new SalesAnalyticsDelivery({
       database: options.database,
+      apiUrl: options.apiUrl,
       clientId: options.clientId,
       clientSecret: options.clientSecret,
       fetch: options.fetch,

@@ -28,7 +28,7 @@ interface ReleaseTarget {
 }
 
 const DESKTOP: ReleaseTarget = {
-  name: "OpenBot",
+  name: "PurpleBot",
   changelog: "CHANGELOG.md",
   fragmentDir: FRAGMENT_DIR,
   versionFiles: ["package.json"],
@@ -37,7 +37,7 @@ const DESKTOP: ReleaseTarget = {
 };
 
 const MOBILE: ReleaseTarget = {
-  name: "OpenBot mobile",
+  name: "PurpleBot mobile",
   changelog: MOBILE_CHANGELOG,
   fragmentDir: MOBILE_FRAGMENT_DIR,
   versionFiles: MOBILE_VERSION_FILES,

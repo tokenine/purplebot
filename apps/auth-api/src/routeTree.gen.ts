@@ -9,129 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ContactRouteImport } from './routes/_contact'
-import { Route as HomeRouteImport } from './routes/_home'
-import { Route as PricingRouteImport } from './routes/_pricing'
-import { Route as TeamsRouteImport } from './routes/_teams'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppRouteImport } from './routes/app'
-import { Route as AppPreviewRouteImport } from './routes/app-preview'
-import { Route as BrandingRouteImport } from './routes/branding'
-import { Route as ChangelogRouteImport } from './routes/changelog'
-import { Route as ClaRouteImport } from './routes/cla'
-import { Route as CommercialLicenseRouteImport } from './routes/commercial-license'
-import { Route as CommerciallicenseRouteImport } from './routes/commerciallicense'
-import { Route as CreditsRouteImport } from './routes/credits'
-import { Route as DpaRouteImport } from './routes/dpa'
 import { Route as JoinRouteImport } from './routes/join'
-import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as ReportSiteRouteImport } from './routes/report-site'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as DotwellKnownAppleAppSiteAssociationRouteImport } from './routes/[.]well-known/apple-app-site-association'
 import { Route as DotwellKnownJwksDotjsonRouteImport } from './routes/[.]well-known/jwks[.]json'
-import { Route as ContactContactRouteImport } from './routes/_contact/contact'
-import { Route as HomeIndexRouteImport } from './routes/_home/index'
-import { Route as HomeArRouteImport } from './routes/_home/ar'
-import { Route as HomeDeRouteImport } from './routes/_home/de'
-import { Route as HomeEsRouteImport } from './routes/_home/es'
-import { Route as HomeFrRouteImport } from './routes/_home/fr'
-import { Route as HomeHeRouteImport } from './routes/_home/he'
-import { Route as HomeItRouteImport } from './routes/_home/it'
-import { Route as HomeJaRouteImport } from './routes/_home/ja'
-import { Route as HomeKoRouteImport } from './routes/_home/ko'
-import { Route as HomeNlRouteImport } from './routes/_home/nl'
-import { Route as HomePlRouteImport } from './routes/_home/pl'
-import { Route as HomePtRouteImport } from './routes/_home/pt'
-import { Route as HomeRuRouteImport } from './routes/_home/ru'
-import { Route as HomeTrRouteImport } from './routes/_home/tr'
-import { Route as HomeZhRouteImport } from './routes/_home/zh'
-import { Route as PricingPricingRouteImport } from './routes/_pricing/pricing'
-import { Route as TeamsTeamsRouteImport } from './routes/_teams/teams'
-import { Route as AgentsTemplateIdRouteImport } from './routes/agents/$templateId'
-import { Route as BillingReturnRouteImport } from './routes/billing/return'
-import { Route as BrandIndexRouteImport } from './routes/brand/index'
-import { Route as BrandFileRouteImport } from './routes/brand/$file'
-import { Route as CompareIndexRouteImport } from './routes/compare/index'
-import { Route as CompareSlugRouteImport } from './routes/compare/$slug'
-import { Route as CompareRssDotxmlRouteImport } from './routes/compare/rss[.]xml'
 import { Route as DiscordConnectRouteImport } from './routes/discord/connect'
-import { Route as DownloadIndexRouteImport } from './routes/download/index'
-import { Route as DownloadPlatformRouteImport } from './routes/download/$platform'
-import { Route as GuidesIndexRouteImport } from './routes/guides/index'
-import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
-import { Route as GuidesRssDotxmlRouteImport } from './routes/guides/rss[.]xml'
 import { Route as HealthHostingRouteImport } from './routes/health/hosting'
 import { Route as HealthLiveRouteImport } from './routes/health/live'
 import { Route as HealthReadyRouteImport } from './routes/health/ready'
-import { Route as MarketplaceIndexRouteImport } from './routes/marketplace/index'
-import { Route as MarketplaceAppsRouteImport } from './routes/marketplace/apps'
-import { Route as NearSignRouteImport } from './routes/near/sign'
-import { Route as NewsIndexRouteImport } from './routes/news/index'
-import { Route as NewsSlugRouteImport } from './routes/news/$slug'
-import { Route as NewsOpenbotVsGrokbotRouteImport } from './routes/news/openbot-vs-grokbot'
-import { Route as NewsRssDotxmlRouteImport } from './routes/news/rss[.]xml'
 import { Route as OauthMcpCallbackRouteImport } from './routes/oauth/mcp-callback'
 import { Route as OauthMcpClientDotjsonRouteImport } from './routes/oauth/mcp-client[.]json'
-import { Route as PluginsIndexRouteImport } from './routes/plugins/index'
-import { Route as PluginsSlugRouteImport } from './routes/plugins/$slug'
-import { Route as ProvidersIndexRouteImport } from './routes/providers/index'
-import { Route as ProvidersSlugRouteImport } from './routes/providers/$slug'
-import { Route as ProvidersRssDotxmlRouteImport } from './routes/providers/rss[.]xml'
 import { Route as SlackConnectRouteImport } from './routes/slack/connect'
 import { Route as V1ContactRouteImport } from './routes/v1/contact'
 import { Route as V1FeedbackRouteImport } from './routes/v1/feedback'
 import { Route as V1MeRouteImport } from './routes/v1/me'
-import { Route as ContactArContactRouteImport } from './routes/_contact/ar/contact'
-import { Route as ContactDeContactRouteImport } from './routes/_contact/de/contact'
-import { Route as ContactEsContactRouteImport } from './routes/_contact/es/contact'
-import { Route as ContactFrContactRouteImport } from './routes/_contact/fr/contact'
-import { Route as ContactHeContactRouteImport } from './routes/_contact/he/contact'
-import { Route as ContactItContactRouteImport } from './routes/_contact/it/contact'
-import { Route as ContactJaContactRouteImport } from './routes/_contact/ja/contact'
-import { Route as ContactKoContactRouteImport } from './routes/_contact/ko/contact'
-import { Route as ContactNlContactRouteImport } from './routes/_contact/nl/contact'
-import { Route as ContactPlContactRouteImport } from './routes/_contact/pl/contact'
-import { Route as ContactPtContactRouteImport } from './routes/_contact/pt/contact'
-import { Route as ContactRuContactRouteImport } from './routes/_contact/ru/contact'
-import { Route as ContactTrContactRouteImport } from './routes/_contact/tr/contact'
-import { Route as ContactZhContactRouteImport } from './routes/_contact/zh/contact'
-import { Route as PricingArPricingRouteImport } from './routes/_pricing/ar/pricing'
-import { Route as PricingDePricingRouteImport } from './routes/_pricing/de/pricing'
-import { Route as PricingEsPricingRouteImport } from './routes/_pricing/es/pricing'
-import { Route as PricingFrPricingRouteImport } from './routes/_pricing/fr/pricing'
-import { Route as PricingHePricingRouteImport } from './routes/_pricing/he/pricing'
-import { Route as PricingItPricingRouteImport } from './routes/_pricing/it/pricing'
-import { Route as PricingJaPricingRouteImport } from './routes/_pricing/ja/pricing'
-import { Route as PricingKoPricingRouteImport } from './routes/_pricing/ko/pricing'
-import { Route as PricingNlPricingRouteImport } from './routes/_pricing/nl/pricing'
-import { Route as PricingPlPricingRouteImport } from './routes/_pricing/pl/pricing'
-import { Route as PricingPtPricingRouteImport } from './routes/_pricing/pt/pricing'
-import { Route as PricingRuPricingRouteImport } from './routes/_pricing/ru/pricing'
-import { Route as PricingTrPricingRouteImport } from './routes/_pricing/tr/pricing'
-import { Route as PricingZhPricingRouteImport } from './routes/_pricing/zh/pricing'
-import { Route as TeamsArTeamsRouteImport } from './routes/_teams/ar/teams'
-import { Route as TeamsDeTeamsRouteImport } from './routes/_teams/de/teams'
-import { Route as TeamsEsTeamsRouteImport } from './routes/_teams/es/teams'
-import { Route as TeamsFrTeamsRouteImport } from './routes/_teams/fr/teams'
-import { Route as TeamsHeTeamsRouteImport } from './routes/_teams/he/teams'
-import { Route as TeamsItTeamsRouteImport } from './routes/_teams/it/teams'
-import { Route as TeamsJaTeamsRouteImport } from './routes/_teams/ja/teams'
-import { Route as TeamsKoTeamsRouteImport } from './routes/_teams/ko/teams'
-import { Route as TeamsNlTeamsRouteImport } from './routes/_teams/nl/teams'
-import { Route as TeamsPlTeamsRouteImport } from './routes/_teams/pl/teams'
-import { Route as TeamsPtTeamsRouteImport } from './routes/_teams/pt/teams'
-import { Route as TeamsRuTeamsRouteImport } from './routes/_teams/ru/teams'
-import { Route as TeamsTrTeamsRouteImport } from './routes/_teams/tr/teams'
-import { Route as TeamsZhTeamsRouteImport } from './routes/_teams/zh/teams'
 import { Route as ApiBrowserSplatRouteImport } from './routes/api/browser/$'
-import { Route as DownloadPlatformLatestRouteImport } from './routes/download/$platform_/latest'
-import { Route as MarketplaceAgentsAgentIdRouteImport } from './routes/marketplace/agents/$agentId'
-import { Route as MarketplaceSkillsIndexRouteImport } from './routes/marketplace/skills/index'
-import { Route as MarketplaceSkillsSlugRouteImport } from './routes/marketplace/skills/$slug'
-import { Route as NewsOgOpenbotVsGrokbotDotpngRouteImport } from './routes/news/og/openbot-vs-grokbot[.]png'
-import { Route as PluginsIconSlugRouteImport } from './routes/plugins/icon/$slug'
 import { Route as V1AgentTemplatesIndexRouteImport } from './routes/v1/agent-templates/index'
 import { Route as V1AgentTemplatesTemplateIdRouteImport } from './routes/v1/agent-templates/$templateId'
 import { Route as V1AgentTemplatesMineRouteImport } from './routes/v1/agent-templates/mine'
@@ -296,20 +192,9 @@ import { Route as V2RemoteHostsHostIdCompanySignInTestRouteImport } from './rout
 import { Route as V2RemoteHostsHostIdMembersIndexRouteImport } from './routes/v2/remote/hosts/$hostId/members/index'
 import { Route as V2RemoteHostsHostIdMembersMembershipIdRouteImport } from './routes/v2/remote/hosts/$hostId/members/$membershipId'
 
-const ContactRoute = ContactRouteImport.update({
-  id: '/_contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HomeRoute = HomeRouteImport.update({
-  id: '/_home',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/_pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TeamsRoute = TeamsRouteImport.update({
-  id: '/_teams',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppRoute = AppRouteImport.update({
@@ -317,54 +202,9 @@ const AppRoute = AppRouteImport.update({
   path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/app.lazy').then((d) => d.Route))
-const AppPreviewRoute = AppPreviewRouteImport.update({
-  id: '/app-preview',
-  path: '/app-preview',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/app-preview.lazy').then((d) => d.Route))
-const BrandingRoute = BrandingRouteImport.update({
-  id: '/branding',
-  path: '/branding',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ChangelogRoute = ChangelogRouteImport.update({
-  id: '/changelog',
-  path: '/changelog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClaRoute = ClaRouteImport.update({
-  id: '/cla',
-  path: '/cla',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CommercialLicenseRoute = CommercialLicenseRouteImport.update({
-  id: '/commercial-license',
-  path: '/commercial-license',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CommerciallicenseRoute = CommerciallicenseRouteImport.update({
-  id: '/commerciallicense',
-  path: '/commerciallicense',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreditsRoute = CreditsRouteImport.update({
-  id: '/credits',
-  path: '/credits',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DpaRoute = DpaRouteImport.update({
-  id: '/dpa',
-  path: '/dpa',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const JoinRoute = JoinRouteImport.update({
   id: '/join',
   path: '/join',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
-  id: '/llms.txt',
-  path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -375,16 +215,6 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReportSiteRoute = ReportSiteRouteImport.update({
-  id: '/report-site',
-  path: '/report-site',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -403,159 +233,9 @@ const DotwellKnownJwksDotjsonRoute = DotwellKnownJwksDotjsonRouteImport.update({
   path: '/.well-known/jwks.json',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactContactRoute = ContactContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const HomeIndexRoute = HomeIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeArRoute = HomeArRouteImport.update({
-  id: '/ar',
-  path: '/ar',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeDeRoute = HomeDeRouteImport.update({
-  id: '/de',
-  path: '/de',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeEsRoute = HomeEsRouteImport.update({
-  id: '/es',
-  path: '/es',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeFrRoute = HomeFrRouteImport.update({
-  id: '/fr',
-  path: '/fr',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeHeRoute = HomeHeRouteImport.update({
-  id: '/he',
-  path: '/he',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeItRoute = HomeItRouteImport.update({
-  id: '/it',
-  path: '/it',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeJaRoute = HomeJaRouteImport.update({
-  id: '/ja',
-  path: '/ja',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeKoRoute = HomeKoRouteImport.update({
-  id: '/ko',
-  path: '/ko',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeNlRoute = HomeNlRouteImport.update({
-  id: '/nl',
-  path: '/nl',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomePlRoute = HomePlRouteImport.update({
-  id: '/pl',
-  path: '/pl',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomePtRoute = HomePtRouteImport.update({
-  id: '/pt',
-  path: '/pt',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeRuRoute = HomeRuRouteImport.update({
-  id: '/ru',
-  path: '/ru',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeTrRoute = HomeTrRouteImport.update({
-  id: '/tr',
-  path: '/tr',
-  getParentRoute: () => HomeRoute,
-} as any)
-const HomeZhRoute = HomeZhRouteImport.update({
-  id: '/zh',
-  path: '/zh',
-  getParentRoute: () => HomeRoute,
-} as any)
-const PricingPricingRoute = PricingPricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const TeamsTeamsRoute = TeamsTeamsRouteImport.update({
-  id: '/teams',
-  path: '/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const AgentsTemplateIdRoute = AgentsTemplateIdRouteImport.update({
-  id: '/agents/$templateId',
-  path: '/agents/$templateId',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BillingReturnRoute = BillingReturnRouteImport.update({
-  id: '/billing/return',
-  path: '/billing/return',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BrandIndexRoute = BrandIndexRouteImport.update({
-  id: '/brand/',
-  path: '/brand/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BrandFileRoute = BrandFileRouteImport.update({
-  id: '/brand/$file',
-  path: '/brand/$file',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompareIndexRoute = CompareIndexRouteImport.update({
-  id: '/compare/',
-  path: '/compare/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompareSlugRoute = CompareSlugRouteImport.update({
-  id: '/compare/$slug',
-  path: '/compare/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompareRssDotxmlRoute = CompareRssDotxmlRouteImport.update({
-  id: '/compare/rss.xml',
-  path: '/compare/rss.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DiscordConnectRoute = DiscordConnectRouteImport.update({
   id: '/discord/connect',
   path: '/discord/connect',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DownloadIndexRoute = DownloadIndexRouteImport.update({
-  id: '/download/',
-  path: '/download/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DownloadPlatformRoute = DownloadPlatformRouteImport.update({
-  id: '/download/$platform',
-  path: '/download/$platform',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuidesIndexRoute = GuidesIndexRouteImport.update({
-  id: '/guides/',
-  path: '/guides/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuidesSlugRoute = GuidesSlugRouteImport.update({
-  id: '/guides/$slug',
-  path: '/guides/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuidesRssDotxmlRoute = GuidesRssDotxmlRouteImport.update({
-  id: '/guides/rss.xml',
-  path: '/guides/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HealthHostingRoute = HealthHostingRouteImport.update({
@@ -573,41 +253,6 @@ const HealthReadyRoute = HealthReadyRouteImport.update({
   path: '/health/ready',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MarketplaceIndexRoute = MarketplaceIndexRouteImport.update({
-  id: '/marketplace/',
-  path: '/marketplace/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MarketplaceAppsRoute = MarketplaceAppsRouteImport.update({
-  id: '/marketplace/apps',
-  path: '/marketplace/apps',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NearSignRoute = NearSignRouteImport.update({
-  id: '/near/sign',
-  path: '/near/sign',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsIndexRoute = NewsIndexRouteImport.update({
-  id: '/news/',
-  path: '/news/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsSlugRoute = NewsSlugRouteImport.update({
-  id: '/news/$slug',
-  path: '/news/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsOpenbotVsGrokbotRoute = NewsOpenbotVsGrokbotRouteImport.update({
-  id: '/news/openbot-vs-grokbot',
-  path: '/news/openbot-vs-grokbot',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsRssDotxmlRoute = NewsRssDotxmlRouteImport.update({
-  id: '/news/rss.xml',
-  path: '/news/rss.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const OauthMcpCallbackRoute = OauthMcpCallbackRouteImport.update({
   id: '/oauth/mcp-callback',
   path: '/oauth/mcp-callback',
@@ -616,31 +261,6 @@ const OauthMcpCallbackRoute = OauthMcpCallbackRouteImport.update({
 const OauthMcpClientDotjsonRoute = OauthMcpClientDotjsonRouteImport.update({
   id: '/oauth/mcp-client.json',
   path: '/oauth/mcp-client.json',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PluginsIndexRoute = PluginsIndexRouteImport.update({
-  id: '/plugins/',
-  path: '/plugins/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PluginsSlugRoute = PluginsSlugRouteImport.update({
-  id: '/plugins/$slug',
-  path: '/plugins/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProvidersIndexRoute = ProvidersIndexRouteImport.update({
-  id: '/providers/',
-  path: '/providers/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProvidersSlugRoute = ProvidersSlugRouteImport.update({
-  id: '/providers/$slug',
-  path: '/providers/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProvidersRssDotxmlRoute = ProvidersRssDotxmlRouteImport.update({
-  id: '/providers/rss.xml',
-  path: '/providers/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SlackConnectRoute = SlackConnectRouteImport.update({
@@ -663,251 +283,9 @@ const V1MeRoute = V1MeRouteImport.update({
   path: '/v1/me',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactArContactRoute = ContactArContactRouteImport.update({
-  id: '/ar/contact',
-  path: '/ar/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactDeContactRoute = ContactDeContactRouteImport.update({
-  id: '/de/contact',
-  path: '/de/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactEsContactRoute = ContactEsContactRouteImport.update({
-  id: '/es/contact',
-  path: '/es/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactFrContactRoute = ContactFrContactRouteImport.update({
-  id: '/fr/contact',
-  path: '/fr/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactHeContactRoute = ContactHeContactRouteImport.update({
-  id: '/he/contact',
-  path: '/he/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactItContactRoute = ContactItContactRouteImport.update({
-  id: '/it/contact',
-  path: '/it/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactJaContactRoute = ContactJaContactRouteImport.update({
-  id: '/ja/contact',
-  path: '/ja/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactKoContactRoute = ContactKoContactRouteImport.update({
-  id: '/ko/contact',
-  path: '/ko/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactNlContactRoute = ContactNlContactRouteImport.update({
-  id: '/nl/contact',
-  path: '/nl/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactPlContactRoute = ContactPlContactRouteImport.update({
-  id: '/pl/contact',
-  path: '/pl/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactPtContactRoute = ContactPtContactRouteImport.update({
-  id: '/pt/contact',
-  path: '/pt/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactRuContactRoute = ContactRuContactRouteImport.update({
-  id: '/ru/contact',
-  path: '/ru/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactTrContactRoute = ContactTrContactRouteImport.update({
-  id: '/tr/contact',
-  path: '/tr/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const ContactZhContactRoute = ContactZhContactRouteImport.update({
-  id: '/zh/contact',
-  path: '/zh/contact',
-  getParentRoute: () => ContactRoute,
-} as any)
-const PricingArPricingRoute = PricingArPricingRouteImport.update({
-  id: '/ar/pricing',
-  path: '/ar/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingDePricingRoute = PricingDePricingRouteImport.update({
-  id: '/de/pricing',
-  path: '/de/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingEsPricingRoute = PricingEsPricingRouteImport.update({
-  id: '/es/pricing',
-  path: '/es/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingFrPricingRoute = PricingFrPricingRouteImport.update({
-  id: '/fr/pricing',
-  path: '/fr/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingHePricingRoute = PricingHePricingRouteImport.update({
-  id: '/he/pricing',
-  path: '/he/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingItPricingRoute = PricingItPricingRouteImport.update({
-  id: '/it/pricing',
-  path: '/it/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingJaPricingRoute = PricingJaPricingRouteImport.update({
-  id: '/ja/pricing',
-  path: '/ja/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingKoPricingRoute = PricingKoPricingRouteImport.update({
-  id: '/ko/pricing',
-  path: '/ko/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingNlPricingRoute = PricingNlPricingRouteImport.update({
-  id: '/nl/pricing',
-  path: '/nl/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingPlPricingRoute = PricingPlPricingRouteImport.update({
-  id: '/pl/pricing',
-  path: '/pl/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingPtPricingRoute = PricingPtPricingRouteImport.update({
-  id: '/pt/pricing',
-  path: '/pt/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingRuPricingRoute = PricingRuPricingRouteImport.update({
-  id: '/ru/pricing',
-  path: '/ru/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingTrPricingRoute = PricingTrPricingRouteImport.update({
-  id: '/tr/pricing',
-  path: '/tr/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const PricingZhPricingRoute = PricingZhPricingRouteImport.update({
-  id: '/zh/pricing',
-  path: '/zh/pricing',
-  getParentRoute: () => PricingRoute,
-} as any)
-const TeamsArTeamsRoute = TeamsArTeamsRouteImport.update({
-  id: '/ar/teams',
-  path: '/ar/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsDeTeamsRoute = TeamsDeTeamsRouteImport.update({
-  id: '/de/teams',
-  path: '/de/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsEsTeamsRoute = TeamsEsTeamsRouteImport.update({
-  id: '/es/teams',
-  path: '/es/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsFrTeamsRoute = TeamsFrTeamsRouteImport.update({
-  id: '/fr/teams',
-  path: '/fr/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsHeTeamsRoute = TeamsHeTeamsRouteImport.update({
-  id: '/he/teams',
-  path: '/he/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsItTeamsRoute = TeamsItTeamsRouteImport.update({
-  id: '/it/teams',
-  path: '/it/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsJaTeamsRoute = TeamsJaTeamsRouteImport.update({
-  id: '/ja/teams',
-  path: '/ja/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsKoTeamsRoute = TeamsKoTeamsRouteImport.update({
-  id: '/ko/teams',
-  path: '/ko/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsNlTeamsRoute = TeamsNlTeamsRouteImport.update({
-  id: '/nl/teams',
-  path: '/nl/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsPlTeamsRoute = TeamsPlTeamsRouteImport.update({
-  id: '/pl/teams',
-  path: '/pl/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsPtTeamsRoute = TeamsPtTeamsRouteImport.update({
-  id: '/pt/teams',
-  path: '/pt/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsRuTeamsRoute = TeamsRuTeamsRouteImport.update({
-  id: '/ru/teams',
-  path: '/ru/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsTrTeamsRoute = TeamsTrTeamsRouteImport.update({
-  id: '/tr/teams',
-  path: '/tr/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
-const TeamsZhTeamsRoute = TeamsZhTeamsRouteImport.update({
-  id: '/zh/teams',
-  path: '/zh/teams',
-  getParentRoute: () => TeamsRoute,
-} as any)
 const ApiBrowserSplatRoute = ApiBrowserSplatRouteImport.update({
   id: '/api/browser/$',
   path: '/api/browser/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DownloadPlatformLatestRoute = DownloadPlatformLatestRouteImport.update({
-  id: '/download/$platform_/latest',
-  path: '/download/$platform/latest',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MarketplaceAgentsAgentIdRoute =
-  MarketplaceAgentsAgentIdRouteImport.update({
-    id: '/marketplace/agents/$agentId',
-    path: '/marketplace/agents/$agentId',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MarketplaceSkillsIndexRoute = MarketplaceSkillsIndexRouteImport.update({
-  id: '/marketplace/skills/',
-  path: '/marketplace/skills/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MarketplaceSkillsSlugRoute = MarketplaceSkillsSlugRouteImport.update({
-  id: '/marketplace/skills/$slug',
-  path: '/marketplace/skills/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsOgOpenbotVsGrokbotDotpngRoute =
-  NewsOgOpenbotVsGrokbotDotpngRouteImport.update({
-    id: '/news/og/openbot-vs-grokbot.png',
-    path: '/news/og/openbot-vs-grokbot.png',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const PluginsIconSlugRoute = PluginsIconSlugRouteImport.update({
-  id: '/plugins/icon/$slug',
-  path: '/plugins/icon/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const V1AgentTemplatesIndexRoute = V1AgentTemplatesIndexRouteImport.update({
@@ -1803,124 +1181,25 @@ const V2RemoteHostsHostIdMembersMembershipIdRoute =
   } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof HomeIndexRoute
+  '/': typeof IndexRoute
   '/app': typeof AppRoute
-  '/app-preview': typeof AppPreviewRoute
-  '/branding': typeof BrandingRoute
-  '/changelog': typeof ChangelogRoute
-  '/cla': typeof ClaRoute
-  '/commercial-license': typeof CommercialLicenseRoute
-  '/commerciallicense': typeof CommerciallicenseRoute
-  '/credits': typeof CreditsRoute
-  '/dpa': typeof DpaRoute
   '/join': typeof JoinRoute
-  '/llms.txt': typeof LlmsDottxtRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/report-site': typeof ReportSiteRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/.well-known/apple-app-site-association': typeof DotwellKnownAppleAppSiteAssociationRoute
   '/.well-known/jwks.json': typeof DotwellKnownJwksDotjsonRoute
-  '/contact': typeof ContactContactRoute
-  '/ar': typeof HomeArRoute
-  '/de': typeof HomeDeRoute
-  '/es': typeof HomeEsRoute
-  '/fr': typeof HomeFrRoute
-  '/he': typeof HomeHeRoute
-  '/it': typeof HomeItRoute
-  '/ja': typeof HomeJaRoute
-  '/ko': typeof HomeKoRoute
-  '/nl': typeof HomeNlRoute
-  '/pl': typeof HomePlRoute
-  '/pt': typeof HomePtRoute
-  '/ru': typeof HomeRuRoute
-  '/tr': typeof HomeTrRoute
-  '/zh': typeof HomeZhRoute
-  '/pricing': typeof PricingPricingRoute
-  '/teams': typeof TeamsTeamsRoute
-  '/agents/$templateId': typeof AgentsTemplateIdRoute
-  '/billing/return': typeof BillingReturnRoute
-  '/brand/$file': typeof BrandFileRoute
-  '/compare/$slug': typeof CompareSlugRoute
-  '/compare/rss.xml': typeof CompareRssDotxmlRoute
   '/discord/connect': typeof DiscordConnectRoute
-  '/download/$platform': typeof DownloadPlatformRoute
-  '/guides/$slug': typeof GuidesSlugRoute
-  '/guides/rss.xml': typeof GuidesRssDotxmlRoute
   '/health/hosting': typeof HealthHostingRoute
   '/health/live': typeof HealthLiveRoute
   '/health/ready': typeof HealthReadyRoute
-  '/marketplace/apps': typeof MarketplaceAppsRoute
-  '/near/sign': typeof NearSignRoute
-  '/news/$slug': typeof NewsSlugRoute
-  '/news/openbot-vs-grokbot': typeof NewsOpenbotVsGrokbotRoute
-  '/news/rss.xml': typeof NewsRssDotxmlRoute
   '/oauth/mcp-callback': typeof OauthMcpCallbackRoute
   '/oauth/mcp-client.json': typeof OauthMcpClientDotjsonRoute
-  '/plugins/$slug': typeof PluginsSlugRoute
-  '/providers/$slug': typeof ProvidersSlugRoute
-  '/providers/rss.xml': typeof ProvidersRssDotxmlRoute
   '/slack/connect': typeof SlackConnectRoute
   '/v1/contact': typeof V1ContactRoute
   '/v1/feedback': typeof V1FeedbackRouteWithChildren
   '/v1/me': typeof V1MeRouteWithChildren
-  '/brand/': typeof BrandIndexRoute
-  '/compare/': typeof CompareIndexRoute
-  '/download/': typeof DownloadIndexRoute
-  '/guides/': typeof GuidesIndexRoute
-  '/marketplace/': typeof MarketplaceIndexRoute
-  '/news/': typeof NewsIndexRoute
-  '/plugins/': typeof PluginsIndexRoute
-  '/providers/': typeof ProvidersIndexRoute
-  '/ar/contact': typeof ContactArContactRoute
-  '/de/contact': typeof ContactDeContactRoute
-  '/es/contact': typeof ContactEsContactRoute
-  '/fr/contact': typeof ContactFrContactRoute
-  '/he/contact': typeof ContactHeContactRoute
-  '/it/contact': typeof ContactItContactRoute
-  '/ja/contact': typeof ContactJaContactRoute
-  '/ko/contact': typeof ContactKoContactRoute
-  '/nl/contact': typeof ContactNlContactRoute
-  '/pl/contact': typeof ContactPlContactRoute
-  '/pt/contact': typeof ContactPtContactRoute
-  '/ru/contact': typeof ContactRuContactRoute
-  '/tr/contact': typeof ContactTrContactRoute
-  '/zh/contact': typeof ContactZhContactRoute
-  '/ar/pricing': typeof PricingArPricingRoute
-  '/de/pricing': typeof PricingDePricingRoute
-  '/es/pricing': typeof PricingEsPricingRoute
-  '/fr/pricing': typeof PricingFrPricingRoute
-  '/he/pricing': typeof PricingHePricingRoute
-  '/it/pricing': typeof PricingItPricingRoute
-  '/ja/pricing': typeof PricingJaPricingRoute
-  '/ko/pricing': typeof PricingKoPricingRoute
-  '/nl/pricing': typeof PricingNlPricingRoute
-  '/pl/pricing': typeof PricingPlPricingRoute
-  '/pt/pricing': typeof PricingPtPricingRoute
-  '/ru/pricing': typeof PricingRuPricingRoute
-  '/tr/pricing': typeof PricingTrPricingRoute
-  '/zh/pricing': typeof PricingZhPricingRoute
-  '/ar/teams': typeof TeamsArTeamsRoute
-  '/de/teams': typeof TeamsDeTeamsRoute
-  '/es/teams': typeof TeamsEsTeamsRoute
-  '/fr/teams': typeof TeamsFrTeamsRoute
-  '/he/teams': typeof TeamsHeTeamsRoute
-  '/it/teams': typeof TeamsItTeamsRoute
-  '/ja/teams': typeof TeamsJaTeamsRoute
-  '/ko/teams': typeof TeamsKoTeamsRoute
-  '/nl/teams': typeof TeamsNlTeamsRoute
-  '/pl/teams': typeof TeamsPlTeamsRoute
-  '/pt/teams': typeof TeamsPtTeamsRoute
-  '/ru/teams': typeof TeamsRuTeamsRoute
-  '/tr/teams': typeof TeamsTrTeamsRoute
-  '/zh/teams': typeof TeamsZhTeamsRoute
   '/api/browser/$': typeof ApiBrowserSplatRoute
-  '/download/$platform/latest': typeof DownloadPlatformLatestRoute
-  '/marketplace/agents/$agentId': typeof MarketplaceAgentsAgentIdRoute
-  '/marketplace/skills/$slug': typeof MarketplaceSkillsSlugRoute
-  '/news/og/openbot-vs-grokbot.png': typeof NewsOgOpenbotVsGrokbotDotpngRoute
-  '/plugins/icon/$slug': typeof PluginsIconSlugRoute
   '/v1/agent-templates/$templateId': typeof V1AgentTemplatesTemplateIdRouteWithChildren
   '/v1/agent-templates/mine': typeof V1AgentTemplatesMineRoute
   '/v1/app/minimum-version': typeof V1AppMinimumVersionRoute
@@ -1965,7 +1244,6 @@ export interface FileRoutesByFullPath {
   '/v2/server-claims/redeem': typeof V2ServerClaimsRedeemRoute
   '/v2/slack/authorize': typeof V2SlackAuthorizeRoute
   '/v2/slack/callback': typeof V2SlackCallbackRoute
-  '/marketplace/skills/': typeof MarketplaceSkillsIndexRoute
   '/v1/agent-templates/': typeof V1AgentTemplatesIndexRoute
   '/v1/sites/': typeof V1SitesIndexRoute
   '/v1/skills/': typeof V1SkillsIndexRoute
@@ -2087,124 +1365,25 @@ export interface FileRoutesByFullPath {
   '/v2/remote/hosts/$hostId/members/': typeof V2RemoteHostsHostIdMembersIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof HomeIndexRoute
+  '/': typeof IndexRoute
   '/app': typeof AppRoute
-  '/app-preview': typeof AppPreviewRoute
-  '/branding': typeof BrandingRoute
-  '/changelog': typeof ChangelogRoute
-  '/cla': typeof ClaRoute
-  '/commercial-license': typeof CommercialLicenseRoute
-  '/commerciallicense': typeof CommerciallicenseRoute
-  '/credits': typeof CreditsRoute
-  '/dpa': typeof DpaRoute
   '/join': typeof JoinRoute
-  '/llms.txt': typeof LlmsDottxtRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/report-site': typeof ReportSiteRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/.well-known/apple-app-site-association': typeof DotwellKnownAppleAppSiteAssociationRoute
   '/.well-known/jwks.json': typeof DotwellKnownJwksDotjsonRoute
-  '/contact': typeof ContactContactRoute
-  '/ar': typeof HomeArRoute
-  '/de': typeof HomeDeRoute
-  '/es': typeof HomeEsRoute
-  '/fr': typeof HomeFrRoute
-  '/he': typeof HomeHeRoute
-  '/it': typeof HomeItRoute
-  '/ja': typeof HomeJaRoute
-  '/ko': typeof HomeKoRoute
-  '/nl': typeof HomeNlRoute
-  '/pl': typeof HomePlRoute
-  '/pt': typeof HomePtRoute
-  '/ru': typeof HomeRuRoute
-  '/tr': typeof HomeTrRoute
-  '/zh': typeof HomeZhRoute
-  '/pricing': typeof PricingPricingRoute
-  '/teams': typeof TeamsTeamsRoute
-  '/agents/$templateId': typeof AgentsTemplateIdRoute
-  '/billing/return': typeof BillingReturnRoute
-  '/brand/$file': typeof BrandFileRoute
-  '/compare/$slug': typeof CompareSlugRoute
-  '/compare/rss.xml': typeof CompareRssDotxmlRoute
   '/discord/connect': typeof DiscordConnectRoute
-  '/download/$platform': typeof DownloadPlatformRoute
-  '/guides/$slug': typeof GuidesSlugRoute
-  '/guides/rss.xml': typeof GuidesRssDotxmlRoute
   '/health/hosting': typeof HealthHostingRoute
   '/health/live': typeof HealthLiveRoute
   '/health/ready': typeof HealthReadyRoute
-  '/marketplace/apps': typeof MarketplaceAppsRoute
-  '/near/sign': typeof NearSignRoute
-  '/news/$slug': typeof NewsSlugRoute
-  '/news/openbot-vs-grokbot': typeof NewsOpenbotVsGrokbotRoute
-  '/news/rss.xml': typeof NewsRssDotxmlRoute
   '/oauth/mcp-callback': typeof OauthMcpCallbackRoute
   '/oauth/mcp-client.json': typeof OauthMcpClientDotjsonRoute
-  '/plugins/$slug': typeof PluginsSlugRoute
-  '/providers/$slug': typeof ProvidersSlugRoute
-  '/providers/rss.xml': typeof ProvidersRssDotxmlRoute
   '/slack/connect': typeof SlackConnectRoute
   '/v1/contact': typeof V1ContactRoute
   '/v1/feedback': typeof V1FeedbackRouteWithChildren
   '/v1/me': typeof V1MeRouteWithChildren
-  '/brand': typeof BrandIndexRoute
-  '/compare': typeof CompareIndexRoute
-  '/download': typeof DownloadIndexRoute
-  '/guides': typeof GuidesIndexRoute
-  '/marketplace': typeof MarketplaceIndexRoute
-  '/news': typeof NewsIndexRoute
-  '/plugins': typeof PluginsIndexRoute
-  '/providers': typeof ProvidersIndexRoute
-  '/ar/contact': typeof ContactArContactRoute
-  '/de/contact': typeof ContactDeContactRoute
-  '/es/contact': typeof ContactEsContactRoute
-  '/fr/contact': typeof ContactFrContactRoute
-  '/he/contact': typeof ContactHeContactRoute
-  '/it/contact': typeof ContactItContactRoute
-  '/ja/contact': typeof ContactJaContactRoute
-  '/ko/contact': typeof ContactKoContactRoute
-  '/nl/contact': typeof ContactNlContactRoute
-  '/pl/contact': typeof ContactPlContactRoute
-  '/pt/contact': typeof ContactPtContactRoute
-  '/ru/contact': typeof ContactRuContactRoute
-  '/tr/contact': typeof ContactTrContactRoute
-  '/zh/contact': typeof ContactZhContactRoute
-  '/ar/pricing': typeof PricingArPricingRoute
-  '/de/pricing': typeof PricingDePricingRoute
-  '/es/pricing': typeof PricingEsPricingRoute
-  '/fr/pricing': typeof PricingFrPricingRoute
-  '/he/pricing': typeof PricingHePricingRoute
-  '/it/pricing': typeof PricingItPricingRoute
-  '/ja/pricing': typeof PricingJaPricingRoute
-  '/ko/pricing': typeof PricingKoPricingRoute
-  '/nl/pricing': typeof PricingNlPricingRoute
-  '/pl/pricing': typeof PricingPlPricingRoute
-  '/pt/pricing': typeof PricingPtPricingRoute
-  '/ru/pricing': typeof PricingRuPricingRoute
-  '/tr/pricing': typeof PricingTrPricingRoute
-  '/zh/pricing': typeof PricingZhPricingRoute
-  '/ar/teams': typeof TeamsArTeamsRoute
-  '/de/teams': typeof TeamsDeTeamsRoute
-  '/es/teams': typeof TeamsEsTeamsRoute
-  '/fr/teams': typeof TeamsFrTeamsRoute
-  '/he/teams': typeof TeamsHeTeamsRoute
-  '/it/teams': typeof TeamsItTeamsRoute
-  '/ja/teams': typeof TeamsJaTeamsRoute
-  '/ko/teams': typeof TeamsKoTeamsRoute
-  '/nl/teams': typeof TeamsNlTeamsRoute
-  '/pl/teams': typeof TeamsPlTeamsRoute
-  '/pt/teams': typeof TeamsPtTeamsRoute
-  '/ru/teams': typeof TeamsRuTeamsRoute
-  '/tr/teams': typeof TeamsTrTeamsRoute
-  '/zh/teams': typeof TeamsZhTeamsRoute
   '/api/browser/$': typeof ApiBrowserSplatRoute
-  '/download/$platform/latest': typeof DownloadPlatformLatestRoute
-  '/marketplace/agents/$agentId': typeof MarketplaceAgentsAgentIdRoute
-  '/marketplace/skills/$slug': typeof MarketplaceSkillsSlugRoute
-  '/news/og/openbot-vs-grokbot.png': typeof NewsOgOpenbotVsGrokbotDotpngRoute
-  '/plugins/icon/$slug': typeof PluginsIconSlugRoute
   '/v1/agent-templates/$templateId': typeof V1AgentTemplatesTemplateIdRouteWithChildren
   '/v1/agent-templates/mine': typeof V1AgentTemplatesMineRoute
   '/v1/app/minimum-version': typeof V1AppMinimumVersionRoute
@@ -2249,7 +1428,6 @@ export interface FileRoutesByTo {
   '/v2/server-claims/redeem': typeof V2ServerClaimsRedeemRoute
   '/v2/slack/authorize': typeof V2SlackAuthorizeRoute
   '/v2/slack/callback': typeof V2SlackCallbackRoute
-  '/marketplace/skills': typeof MarketplaceSkillsIndexRoute
   '/v1/agent-templates': typeof V1AgentTemplatesIndexRoute
   '/v1/sites': typeof V1SitesIndexRoute
   '/v1/skills': typeof V1SkillsIndexRoute
@@ -2372,128 +1550,25 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/_contact': typeof ContactRouteWithChildren
-  '/_home': typeof HomeRouteWithChildren
-  '/_pricing': typeof PricingRouteWithChildren
-  '/_teams': typeof TeamsRouteWithChildren
+  '/': typeof IndexRoute
   '/app': typeof AppRoute
-  '/app-preview': typeof AppPreviewRoute
-  '/branding': typeof BrandingRoute
-  '/changelog': typeof ChangelogRoute
-  '/cla': typeof ClaRoute
-  '/commercial-license': typeof CommercialLicenseRoute
-  '/commerciallicense': typeof CommerciallicenseRoute
-  '/credits': typeof CreditsRoute
-  '/dpa': typeof DpaRoute
   '/join': typeof JoinRoute
-  '/llms.txt': typeof LlmsDottxtRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/report-site': typeof ReportSiteRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/.well-known/apple-app-site-association': typeof DotwellKnownAppleAppSiteAssociationRoute
   '/.well-known/jwks.json': typeof DotwellKnownJwksDotjsonRoute
-  '/_contact/contact': typeof ContactContactRoute
-  '/_home/ar': typeof HomeArRoute
-  '/_home/de': typeof HomeDeRoute
-  '/_home/es': typeof HomeEsRoute
-  '/_home/fr': typeof HomeFrRoute
-  '/_home/he': typeof HomeHeRoute
-  '/_home/it': typeof HomeItRoute
-  '/_home/ja': typeof HomeJaRoute
-  '/_home/ko': typeof HomeKoRoute
-  '/_home/nl': typeof HomeNlRoute
-  '/_home/pl': typeof HomePlRoute
-  '/_home/pt': typeof HomePtRoute
-  '/_home/ru': typeof HomeRuRoute
-  '/_home/tr': typeof HomeTrRoute
-  '/_home/zh': typeof HomeZhRoute
-  '/_pricing/pricing': typeof PricingPricingRoute
-  '/_teams/teams': typeof TeamsTeamsRoute
-  '/agents/$templateId': typeof AgentsTemplateIdRoute
-  '/billing/return': typeof BillingReturnRoute
-  '/brand/$file': typeof BrandFileRoute
-  '/compare/$slug': typeof CompareSlugRoute
-  '/compare/rss.xml': typeof CompareRssDotxmlRoute
   '/discord/connect': typeof DiscordConnectRoute
-  '/download/$platform': typeof DownloadPlatformRoute
-  '/guides/$slug': typeof GuidesSlugRoute
-  '/guides/rss.xml': typeof GuidesRssDotxmlRoute
   '/health/hosting': typeof HealthHostingRoute
   '/health/live': typeof HealthLiveRoute
   '/health/ready': typeof HealthReadyRoute
-  '/marketplace/apps': typeof MarketplaceAppsRoute
-  '/near/sign': typeof NearSignRoute
-  '/news/$slug': typeof NewsSlugRoute
-  '/news/openbot-vs-grokbot': typeof NewsOpenbotVsGrokbotRoute
-  '/news/rss.xml': typeof NewsRssDotxmlRoute
   '/oauth/mcp-callback': typeof OauthMcpCallbackRoute
   '/oauth/mcp-client.json': typeof OauthMcpClientDotjsonRoute
-  '/plugins/$slug': typeof PluginsSlugRoute
-  '/providers/$slug': typeof ProvidersSlugRoute
-  '/providers/rss.xml': typeof ProvidersRssDotxmlRoute
   '/slack/connect': typeof SlackConnectRoute
   '/v1/contact': typeof V1ContactRoute
   '/v1/feedback': typeof V1FeedbackRouteWithChildren
   '/v1/me': typeof V1MeRouteWithChildren
-  '/_home/': typeof HomeIndexRoute
-  '/brand/': typeof BrandIndexRoute
-  '/compare/': typeof CompareIndexRoute
-  '/download/': typeof DownloadIndexRoute
-  '/guides/': typeof GuidesIndexRoute
-  '/marketplace/': typeof MarketplaceIndexRoute
-  '/news/': typeof NewsIndexRoute
-  '/plugins/': typeof PluginsIndexRoute
-  '/providers/': typeof ProvidersIndexRoute
-  '/_contact/ar/contact': typeof ContactArContactRoute
-  '/_contact/de/contact': typeof ContactDeContactRoute
-  '/_contact/es/contact': typeof ContactEsContactRoute
-  '/_contact/fr/contact': typeof ContactFrContactRoute
-  '/_contact/he/contact': typeof ContactHeContactRoute
-  '/_contact/it/contact': typeof ContactItContactRoute
-  '/_contact/ja/contact': typeof ContactJaContactRoute
-  '/_contact/ko/contact': typeof ContactKoContactRoute
-  '/_contact/nl/contact': typeof ContactNlContactRoute
-  '/_contact/pl/contact': typeof ContactPlContactRoute
-  '/_contact/pt/contact': typeof ContactPtContactRoute
-  '/_contact/ru/contact': typeof ContactRuContactRoute
-  '/_contact/tr/contact': typeof ContactTrContactRoute
-  '/_contact/zh/contact': typeof ContactZhContactRoute
-  '/_pricing/ar/pricing': typeof PricingArPricingRoute
-  '/_pricing/de/pricing': typeof PricingDePricingRoute
-  '/_pricing/es/pricing': typeof PricingEsPricingRoute
-  '/_pricing/fr/pricing': typeof PricingFrPricingRoute
-  '/_pricing/he/pricing': typeof PricingHePricingRoute
-  '/_pricing/it/pricing': typeof PricingItPricingRoute
-  '/_pricing/ja/pricing': typeof PricingJaPricingRoute
-  '/_pricing/ko/pricing': typeof PricingKoPricingRoute
-  '/_pricing/nl/pricing': typeof PricingNlPricingRoute
-  '/_pricing/pl/pricing': typeof PricingPlPricingRoute
-  '/_pricing/pt/pricing': typeof PricingPtPricingRoute
-  '/_pricing/ru/pricing': typeof PricingRuPricingRoute
-  '/_pricing/tr/pricing': typeof PricingTrPricingRoute
-  '/_pricing/zh/pricing': typeof PricingZhPricingRoute
-  '/_teams/ar/teams': typeof TeamsArTeamsRoute
-  '/_teams/de/teams': typeof TeamsDeTeamsRoute
-  '/_teams/es/teams': typeof TeamsEsTeamsRoute
-  '/_teams/fr/teams': typeof TeamsFrTeamsRoute
-  '/_teams/he/teams': typeof TeamsHeTeamsRoute
-  '/_teams/it/teams': typeof TeamsItTeamsRoute
-  '/_teams/ja/teams': typeof TeamsJaTeamsRoute
-  '/_teams/ko/teams': typeof TeamsKoTeamsRoute
-  '/_teams/nl/teams': typeof TeamsNlTeamsRoute
-  '/_teams/pl/teams': typeof TeamsPlTeamsRoute
-  '/_teams/pt/teams': typeof TeamsPtTeamsRoute
-  '/_teams/ru/teams': typeof TeamsRuTeamsRoute
-  '/_teams/tr/teams': typeof TeamsTrTeamsRoute
-  '/_teams/zh/teams': typeof TeamsZhTeamsRoute
   '/api/browser/$': typeof ApiBrowserSplatRoute
-  '/download/$platform_/latest': typeof DownloadPlatformLatestRoute
-  '/marketplace/agents/$agentId': typeof MarketplaceAgentsAgentIdRoute
-  '/marketplace/skills/$slug': typeof MarketplaceSkillsSlugRoute
-  '/news/og/openbot-vs-grokbot.png': typeof NewsOgOpenbotVsGrokbotDotpngRoute
-  '/plugins/icon/$slug': typeof PluginsIconSlugRoute
   '/v1/agent-templates/$templateId': typeof V1AgentTemplatesTemplateIdRouteWithChildren
   '/v1/agent-templates/mine': typeof V1AgentTemplatesMineRoute
   '/v1/app/minimum-version': typeof V1AppMinimumVersionRoute
@@ -2538,7 +1613,6 @@ export interface FileRoutesById {
   '/v2/server-claims/redeem': typeof V2ServerClaimsRedeemRoute
   '/v2/slack/authorize': typeof V2SlackAuthorizeRoute
   '/v2/slack/callback': typeof V2SlackCallbackRoute
-  '/marketplace/skills/': typeof MarketplaceSkillsIndexRoute
   '/v1/agent-templates/': typeof V1AgentTemplatesIndexRoute
   '/v1/sites/': typeof V1SitesIndexRoute
   '/v1/skills/': typeof V1SkillsIndexRoute
@@ -2664,122 +1738,23 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/app'
-    | '/app-preview'
-    | '/branding'
-    | '/changelog'
-    | '/cla'
-    | '/commercial-license'
-    | '/commerciallicense'
-    | '/credits'
-    | '/dpa'
     | '/join'
-    | '/llms.txt'
     | '/privacy'
     | '/privacy-policy'
-    | '/report-site'
-    | '/sitemap.xml'
     | '/terms'
     | '/.well-known/apple-app-site-association'
     | '/.well-known/jwks.json'
-    | '/contact'
-    | '/ar'
-    | '/de'
-    | '/es'
-    | '/fr'
-    | '/he'
-    | '/it'
-    | '/ja'
-    | '/ko'
-    | '/nl'
-    | '/pl'
-    | '/pt'
-    | '/ru'
-    | '/tr'
-    | '/zh'
-    | '/pricing'
-    | '/teams'
-    | '/agents/$templateId'
-    | '/billing/return'
-    | '/brand/$file'
-    | '/compare/$slug'
-    | '/compare/rss.xml'
     | '/discord/connect'
-    | '/download/$platform'
-    | '/guides/$slug'
-    | '/guides/rss.xml'
     | '/health/hosting'
     | '/health/live'
     | '/health/ready'
-    | '/marketplace/apps'
-    | '/near/sign'
-    | '/news/$slug'
-    | '/news/openbot-vs-grokbot'
-    | '/news/rss.xml'
     | '/oauth/mcp-callback'
     | '/oauth/mcp-client.json'
-    | '/plugins/$slug'
-    | '/providers/$slug'
-    | '/providers/rss.xml'
     | '/slack/connect'
     | '/v1/contact'
     | '/v1/feedback'
     | '/v1/me'
-    | '/brand/'
-    | '/compare/'
-    | '/download/'
-    | '/guides/'
-    | '/marketplace/'
-    | '/news/'
-    | '/plugins/'
-    | '/providers/'
-    | '/ar/contact'
-    | '/de/contact'
-    | '/es/contact'
-    | '/fr/contact'
-    | '/he/contact'
-    | '/it/contact'
-    | '/ja/contact'
-    | '/ko/contact'
-    | '/nl/contact'
-    | '/pl/contact'
-    | '/pt/contact'
-    | '/ru/contact'
-    | '/tr/contact'
-    | '/zh/contact'
-    | '/ar/pricing'
-    | '/de/pricing'
-    | '/es/pricing'
-    | '/fr/pricing'
-    | '/he/pricing'
-    | '/it/pricing'
-    | '/ja/pricing'
-    | '/ko/pricing'
-    | '/nl/pricing'
-    | '/pl/pricing'
-    | '/pt/pricing'
-    | '/ru/pricing'
-    | '/tr/pricing'
-    | '/zh/pricing'
-    | '/ar/teams'
-    | '/de/teams'
-    | '/es/teams'
-    | '/fr/teams'
-    | '/he/teams'
-    | '/it/teams'
-    | '/ja/teams'
-    | '/ko/teams'
-    | '/nl/teams'
-    | '/pl/teams'
-    | '/pt/teams'
-    | '/ru/teams'
-    | '/tr/teams'
-    | '/zh/teams'
     | '/api/browser/$'
-    | '/download/$platform/latest'
-    | '/marketplace/agents/$agentId'
-    | '/marketplace/skills/$slug'
-    | '/news/og/openbot-vs-grokbot.png'
-    | '/plugins/icon/$slug'
     | '/v1/agent-templates/$templateId'
     | '/v1/agent-templates/mine'
     | '/v1/app/minimum-version'
@@ -2824,7 +1799,6 @@ export interface FileRouteTypes {
     | '/v2/server-claims/redeem'
     | '/v2/slack/authorize'
     | '/v2/slack/callback'
-    | '/marketplace/skills/'
     | '/v1/agent-templates/'
     | '/v1/sites/'
     | '/v1/skills/'
@@ -2948,122 +1922,23 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/app'
-    | '/app-preview'
-    | '/branding'
-    | '/changelog'
-    | '/cla'
-    | '/commercial-license'
-    | '/commerciallicense'
-    | '/credits'
-    | '/dpa'
     | '/join'
-    | '/llms.txt'
     | '/privacy'
     | '/privacy-policy'
-    | '/report-site'
-    | '/sitemap.xml'
     | '/terms'
     | '/.well-known/apple-app-site-association'
     | '/.well-known/jwks.json'
-    | '/contact'
-    | '/ar'
-    | '/de'
-    | '/es'
-    | '/fr'
-    | '/he'
-    | '/it'
-    | '/ja'
-    | '/ko'
-    | '/nl'
-    | '/pl'
-    | '/pt'
-    | '/ru'
-    | '/tr'
-    | '/zh'
-    | '/pricing'
-    | '/teams'
-    | '/agents/$templateId'
-    | '/billing/return'
-    | '/brand/$file'
-    | '/compare/$slug'
-    | '/compare/rss.xml'
     | '/discord/connect'
-    | '/download/$platform'
-    | '/guides/$slug'
-    | '/guides/rss.xml'
     | '/health/hosting'
     | '/health/live'
     | '/health/ready'
-    | '/marketplace/apps'
-    | '/near/sign'
-    | '/news/$slug'
-    | '/news/openbot-vs-grokbot'
-    | '/news/rss.xml'
     | '/oauth/mcp-callback'
     | '/oauth/mcp-client.json'
-    | '/plugins/$slug'
-    | '/providers/$slug'
-    | '/providers/rss.xml'
     | '/slack/connect'
     | '/v1/contact'
     | '/v1/feedback'
     | '/v1/me'
-    | '/brand'
-    | '/compare'
-    | '/download'
-    | '/guides'
-    | '/marketplace'
-    | '/news'
-    | '/plugins'
-    | '/providers'
-    | '/ar/contact'
-    | '/de/contact'
-    | '/es/contact'
-    | '/fr/contact'
-    | '/he/contact'
-    | '/it/contact'
-    | '/ja/contact'
-    | '/ko/contact'
-    | '/nl/contact'
-    | '/pl/contact'
-    | '/pt/contact'
-    | '/ru/contact'
-    | '/tr/contact'
-    | '/zh/contact'
-    | '/ar/pricing'
-    | '/de/pricing'
-    | '/es/pricing'
-    | '/fr/pricing'
-    | '/he/pricing'
-    | '/it/pricing'
-    | '/ja/pricing'
-    | '/ko/pricing'
-    | '/nl/pricing'
-    | '/pl/pricing'
-    | '/pt/pricing'
-    | '/ru/pricing'
-    | '/tr/pricing'
-    | '/zh/pricing'
-    | '/ar/teams'
-    | '/de/teams'
-    | '/es/teams'
-    | '/fr/teams'
-    | '/he/teams'
-    | '/it/teams'
-    | '/ja/teams'
-    | '/ko/teams'
-    | '/nl/teams'
-    | '/pl/teams'
-    | '/pt/teams'
-    | '/ru/teams'
-    | '/tr/teams'
-    | '/zh/teams'
     | '/api/browser/$'
-    | '/download/$platform/latest'
-    | '/marketplace/agents/$agentId'
-    | '/marketplace/skills/$slug'
-    | '/news/og/openbot-vs-grokbot.png'
-    | '/plugins/icon/$slug'
     | '/v1/agent-templates/$templateId'
     | '/v1/agent-templates/mine'
     | '/v1/app/minimum-version'
@@ -3108,7 +1983,6 @@ export interface FileRouteTypes {
     | '/v2/server-claims/redeem'
     | '/v2/slack/authorize'
     | '/v2/slack/callback'
-    | '/marketplace/skills'
     | '/v1/agent-templates'
     | '/v1/sites'
     | '/v1/skills'
@@ -3230,128 +2104,25 @@ export interface FileRouteTypes {
     | '/v2/remote/hosts/$hostId/members'
   id:
     | '__root__'
-    | '/_contact'
-    | '/_home'
-    | '/_pricing'
-    | '/_teams'
+    | '/'
     | '/app'
-    | '/app-preview'
-    | '/branding'
-    | '/changelog'
-    | '/cla'
-    | '/commercial-license'
-    | '/commerciallicense'
-    | '/credits'
-    | '/dpa'
     | '/join'
-    | '/llms.txt'
     | '/privacy'
     | '/privacy-policy'
-    | '/report-site'
-    | '/sitemap.xml'
     | '/terms'
     | '/.well-known/apple-app-site-association'
     | '/.well-known/jwks.json'
-    | '/_contact/contact'
-    | '/_home/ar'
-    | '/_home/de'
-    | '/_home/es'
-    | '/_home/fr'
-    | '/_home/he'
-    | '/_home/it'
-    | '/_home/ja'
-    | '/_home/ko'
-    | '/_home/nl'
-    | '/_home/pl'
-    | '/_home/pt'
-    | '/_home/ru'
-    | '/_home/tr'
-    | '/_home/zh'
-    | '/_pricing/pricing'
-    | '/_teams/teams'
-    | '/agents/$templateId'
-    | '/billing/return'
-    | '/brand/$file'
-    | '/compare/$slug'
-    | '/compare/rss.xml'
     | '/discord/connect'
-    | '/download/$platform'
-    | '/guides/$slug'
-    | '/guides/rss.xml'
     | '/health/hosting'
     | '/health/live'
     | '/health/ready'
-    | '/marketplace/apps'
-    | '/near/sign'
-    | '/news/$slug'
-    | '/news/openbot-vs-grokbot'
-    | '/news/rss.xml'
     | '/oauth/mcp-callback'
     | '/oauth/mcp-client.json'
-    | '/plugins/$slug'
-    | '/providers/$slug'
-    | '/providers/rss.xml'
     | '/slack/connect'
     | '/v1/contact'
     | '/v1/feedback'
     | '/v1/me'
-    | '/_home/'
-    | '/brand/'
-    | '/compare/'
-    | '/download/'
-    | '/guides/'
-    | '/marketplace/'
-    | '/news/'
-    | '/plugins/'
-    | '/providers/'
-    | '/_contact/ar/contact'
-    | '/_contact/de/contact'
-    | '/_contact/es/contact'
-    | '/_contact/fr/contact'
-    | '/_contact/he/contact'
-    | '/_contact/it/contact'
-    | '/_contact/ja/contact'
-    | '/_contact/ko/contact'
-    | '/_contact/nl/contact'
-    | '/_contact/pl/contact'
-    | '/_contact/pt/contact'
-    | '/_contact/ru/contact'
-    | '/_contact/tr/contact'
-    | '/_contact/zh/contact'
-    | '/_pricing/ar/pricing'
-    | '/_pricing/de/pricing'
-    | '/_pricing/es/pricing'
-    | '/_pricing/fr/pricing'
-    | '/_pricing/he/pricing'
-    | '/_pricing/it/pricing'
-    | '/_pricing/ja/pricing'
-    | '/_pricing/ko/pricing'
-    | '/_pricing/nl/pricing'
-    | '/_pricing/pl/pricing'
-    | '/_pricing/pt/pricing'
-    | '/_pricing/ru/pricing'
-    | '/_pricing/tr/pricing'
-    | '/_pricing/zh/pricing'
-    | '/_teams/ar/teams'
-    | '/_teams/de/teams'
-    | '/_teams/es/teams'
-    | '/_teams/fr/teams'
-    | '/_teams/he/teams'
-    | '/_teams/it/teams'
-    | '/_teams/ja/teams'
-    | '/_teams/ko/teams'
-    | '/_teams/nl/teams'
-    | '/_teams/pl/teams'
-    | '/_teams/pt/teams'
-    | '/_teams/ru/teams'
-    | '/_teams/tr/teams'
-    | '/_teams/zh/teams'
     | '/api/browser/$'
-    | '/download/$platform_/latest'
-    | '/marketplace/agents/$agentId'
-    | '/marketplace/skills/$slug'
-    | '/news/og/openbot-vs-grokbot.png'
-    | '/plugins/icon/$slug'
     | '/v1/agent-templates/$templateId'
     | '/v1/agent-templates/mine'
     | '/v1/app/minimum-version'
@@ -3396,7 +2167,6 @@ export interface FileRouteTypes {
     | '/v2/server-claims/redeem'
     | '/v2/slack/authorize'
     | '/v2/slack/callback'
-    | '/marketplace/skills/'
     | '/v1/agent-templates/'
     | '/v1/sites/'
     | '/v1/skills/'
@@ -3519,68 +2289,25 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  ContactRoute: typeof ContactRouteWithChildren
-  HomeRoute: typeof HomeRouteWithChildren
-  PricingRoute: typeof PricingRouteWithChildren
-  TeamsRoute: typeof TeamsRouteWithChildren
+  IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRoute
-  AppPreviewRoute: typeof AppPreviewRoute
-  BrandingRoute: typeof BrandingRoute
-  ChangelogRoute: typeof ChangelogRoute
-  ClaRoute: typeof ClaRoute
-  CommercialLicenseRoute: typeof CommercialLicenseRoute
-  CommerciallicenseRoute: typeof CommerciallicenseRoute
-  CreditsRoute: typeof CreditsRoute
-  DpaRoute: typeof DpaRoute
   JoinRoute: typeof JoinRoute
-  LlmsDottxtRoute: typeof LlmsDottxtRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ReportSiteRoute: typeof ReportSiteRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   DotwellKnownAppleAppSiteAssociationRoute: typeof DotwellKnownAppleAppSiteAssociationRoute
   DotwellKnownJwksDotjsonRoute: typeof DotwellKnownJwksDotjsonRoute
-  AgentsTemplateIdRoute: typeof AgentsTemplateIdRoute
-  BillingReturnRoute: typeof BillingReturnRoute
-  BrandFileRoute: typeof BrandFileRoute
-  CompareSlugRoute: typeof CompareSlugRoute
-  CompareRssDotxmlRoute: typeof CompareRssDotxmlRoute
   DiscordConnectRoute: typeof DiscordConnectRoute
-  DownloadPlatformRoute: typeof DownloadPlatformRoute
-  GuidesSlugRoute: typeof GuidesSlugRoute
-  GuidesRssDotxmlRoute: typeof GuidesRssDotxmlRoute
   HealthHostingRoute: typeof HealthHostingRoute
   HealthLiveRoute: typeof HealthLiveRoute
   HealthReadyRoute: typeof HealthReadyRoute
-  MarketplaceAppsRoute: typeof MarketplaceAppsRoute
-  NearSignRoute: typeof NearSignRoute
-  NewsSlugRoute: typeof NewsSlugRoute
-  NewsOpenbotVsGrokbotRoute: typeof NewsOpenbotVsGrokbotRoute
-  NewsRssDotxmlRoute: typeof NewsRssDotxmlRoute
   OauthMcpCallbackRoute: typeof OauthMcpCallbackRoute
   OauthMcpClientDotjsonRoute: typeof OauthMcpClientDotjsonRoute
-  PluginsSlugRoute: typeof PluginsSlugRoute
-  ProvidersSlugRoute: typeof ProvidersSlugRoute
-  ProvidersRssDotxmlRoute: typeof ProvidersRssDotxmlRoute
   SlackConnectRoute: typeof SlackConnectRoute
   V1ContactRoute: typeof V1ContactRoute
   V1FeedbackRoute: typeof V1FeedbackRouteWithChildren
   V1MeRoute: typeof V1MeRouteWithChildren
-  BrandIndexRoute: typeof BrandIndexRoute
-  CompareIndexRoute: typeof CompareIndexRoute
-  DownloadIndexRoute: typeof DownloadIndexRoute
-  GuidesIndexRoute: typeof GuidesIndexRoute
-  MarketplaceIndexRoute: typeof MarketplaceIndexRoute
-  NewsIndexRoute: typeof NewsIndexRoute
-  PluginsIndexRoute: typeof PluginsIndexRoute
-  ProvidersIndexRoute: typeof ProvidersIndexRoute
   ApiBrowserSplatRoute: typeof ApiBrowserSplatRoute
-  DownloadPlatformLatestRoute: typeof DownloadPlatformLatestRoute
-  MarketplaceAgentsAgentIdRoute: typeof MarketplaceAgentsAgentIdRoute
-  MarketplaceSkillsSlugRoute: typeof MarketplaceSkillsSlugRoute
-  NewsOgOpenbotVsGrokbotDotpngRoute: typeof NewsOgOpenbotVsGrokbotDotpngRoute
-  PluginsIconSlugRoute: typeof PluginsIconSlugRoute
   V1AgentTemplatesTemplateIdRoute: typeof V1AgentTemplatesTemplateIdRouteWithChildren
   V1AgentTemplatesMineRoute: typeof V1AgentTemplatesMineRoute
   V1AppMinimumVersionRoute: typeof V1AppMinimumVersionRoute
@@ -3617,7 +2344,6 @@ export interface RootRouteChildren {
   V2ServerClaimsRedeemRoute: typeof V2ServerClaimsRedeemRoute
   V2SlackAuthorizeRoute: typeof V2SlackAuthorizeRoute
   V2SlackCallbackRoute: typeof V2SlackCallbackRoute
-  MarketplaceSkillsIndexRoute: typeof MarketplaceSkillsIndexRoute
   V1AgentTemplatesIndexRoute: typeof V1AgentTemplatesIndexRoute
   V1SitesIndexRoute: typeof V1SitesIndexRoute
   V1SkillsIndexRoute: typeof V1SkillsIndexRoute
@@ -3712,32 +2438,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/solid-router' {
   interface FileRoutesByPath {
-    '/_contact': {
-      id: '/_contact'
-      path: ''
+    '/': {
+      id: '/'
+      path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_home': {
-      id: '/_home'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof HomeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_pricing': {
-      id: '/_pricing'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_teams': {
-      id: '/_teams'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof TeamsRouteImport
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app': {
@@ -3747,74 +2452,11 @@ declare module '@tanstack/solid-router' {
       preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/app-preview': {
-      id: '/app-preview'
-      path: '/app-preview'
-      fullPath: '/app-preview'
-      preLoaderRoute: typeof AppPreviewRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/branding': {
-      id: '/branding'
-      path: '/branding'
-      fullPath: '/branding'
-      preLoaderRoute: typeof BrandingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/changelog': {
-      id: '/changelog'
-      path: '/changelog'
-      fullPath: '/changelog'
-      preLoaderRoute: typeof ChangelogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cla': {
-      id: '/cla'
-      path: '/cla'
-      fullPath: '/cla'
-      preLoaderRoute: typeof ClaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/commercial-license': {
-      id: '/commercial-license'
-      path: '/commercial-license'
-      fullPath: '/commercial-license'
-      preLoaderRoute: typeof CommercialLicenseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/commerciallicense': {
-      id: '/commerciallicense'
-      path: '/commerciallicense'
-      fullPath: '/commerciallicense'
-      preLoaderRoute: typeof CommerciallicenseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/credits': {
-      id: '/credits'
-      path: '/credits'
-      fullPath: '/credits'
-      preLoaderRoute: typeof CreditsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dpa': {
-      id: '/dpa'
-      path: '/dpa'
-      fullPath: '/dpa'
-      preLoaderRoute: typeof DpaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/join': {
       id: '/join'
       path: '/join'
       fullPath: '/join'
       preLoaderRoute: typeof JoinRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/llms.txt': {
-      id: '/llms.txt'
-      path: '/llms.txt'
-      fullPath: '/llms.txt'
-      preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -3829,20 +2471,6 @@ declare module '@tanstack/solid-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/report-site': {
-      id: '/report-site'
-      path: '/report-site'
-      fullPath: '/report-site'
-      preLoaderRoute: typeof ReportSiteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -3866,221 +2494,11 @@ declare module '@tanstack/solid-router' {
       preLoaderRoute: typeof DotwellKnownJwksDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_contact/contact': {
-      id: '/_contact/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_home/': {
-      id: '/_home/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof HomeIndexRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/ar': {
-      id: '/_home/ar'
-      path: '/ar'
-      fullPath: '/ar'
-      preLoaderRoute: typeof HomeArRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/de': {
-      id: '/_home/de'
-      path: '/de'
-      fullPath: '/de'
-      preLoaderRoute: typeof HomeDeRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/es': {
-      id: '/_home/es'
-      path: '/es'
-      fullPath: '/es'
-      preLoaderRoute: typeof HomeEsRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/fr': {
-      id: '/_home/fr'
-      path: '/fr'
-      fullPath: '/fr'
-      preLoaderRoute: typeof HomeFrRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/he': {
-      id: '/_home/he'
-      path: '/he'
-      fullPath: '/he'
-      preLoaderRoute: typeof HomeHeRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/it': {
-      id: '/_home/it'
-      path: '/it'
-      fullPath: '/it'
-      preLoaderRoute: typeof HomeItRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/ja': {
-      id: '/_home/ja'
-      path: '/ja'
-      fullPath: '/ja'
-      preLoaderRoute: typeof HomeJaRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/ko': {
-      id: '/_home/ko'
-      path: '/ko'
-      fullPath: '/ko'
-      preLoaderRoute: typeof HomeKoRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/nl': {
-      id: '/_home/nl'
-      path: '/nl'
-      fullPath: '/nl'
-      preLoaderRoute: typeof HomeNlRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/pl': {
-      id: '/_home/pl'
-      path: '/pl'
-      fullPath: '/pl'
-      preLoaderRoute: typeof HomePlRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/pt': {
-      id: '/_home/pt'
-      path: '/pt'
-      fullPath: '/pt'
-      preLoaderRoute: typeof HomePtRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/ru': {
-      id: '/_home/ru'
-      path: '/ru'
-      fullPath: '/ru'
-      preLoaderRoute: typeof HomeRuRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/tr': {
-      id: '/_home/tr'
-      path: '/tr'
-      fullPath: '/tr'
-      preLoaderRoute: typeof HomeTrRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_home/zh': {
-      id: '/_home/zh'
-      path: '/zh'
-      fullPath: '/zh'
-      preLoaderRoute: typeof HomeZhRouteImport
-      parentRoute: typeof HomeRoute
-    }
-    '/_pricing/pricing': {
-      id: '/_pricing/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_teams/teams': {
-      id: '/_teams/teams'
-      path: '/teams'
-      fullPath: '/teams'
-      preLoaderRoute: typeof TeamsTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/agents/$templateId': {
-      id: '/agents/$templateId'
-      path: '/agents/$templateId'
-      fullPath: '/agents/$templateId'
-      preLoaderRoute: typeof AgentsTemplateIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/billing/return': {
-      id: '/billing/return'
-      path: '/billing/return'
-      fullPath: '/billing/return'
-      preLoaderRoute: typeof BillingReturnRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/brand/': {
-      id: '/brand/'
-      path: '/brand'
-      fullPath: '/brand/'
-      preLoaderRoute: typeof BrandIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/brand/$file': {
-      id: '/brand/$file'
-      path: '/brand/$file'
-      fullPath: '/brand/$file'
-      preLoaderRoute: typeof BrandFileRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compare/': {
-      id: '/compare/'
-      path: '/compare'
-      fullPath: '/compare/'
-      preLoaderRoute: typeof CompareIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compare/$slug': {
-      id: '/compare/$slug'
-      path: '/compare/$slug'
-      fullPath: '/compare/$slug'
-      preLoaderRoute: typeof CompareSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compare/rss.xml': {
-      id: '/compare/rss.xml'
-      path: '/compare/rss.xml'
-      fullPath: '/compare/rss.xml'
-      preLoaderRoute: typeof CompareRssDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/discord/connect': {
       id: '/discord/connect'
       path: '/discord/connect'
       fullPath: '/discord/connect'
       preLoaderRoute: typeof DiscordConnectRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/download/': {
-      id: '/download/'
-      path: '/download'
-      fullPath: '/download/'
-      preLoaderRoute: typeof DownloadIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/download/$platform': {
-      id: '/download/$platform'
-      path: '/download/$platform'
-      fullPath: '/download/$platform'
-      preLoaderRoute: typeof DownloadPlatformRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides/': {
-      id: '/guides/'
-      path: '/guides'
-      fullPath: '/guides/'
-      preLoaderRoute: typeof GuidesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides/$slug': {
-      id: '/guides/$slug'
-      path: '/guides/$slug'
-      fullPath: '/guides/$slug'
-      preLoaderRoute: typeof GuidesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides/rss.xml': {
-      id: '/guides/rss.xml'
-      path: '/guides/rss.xml'
-      fullPath: '/guides/rss.xml'
-      preLoaderRoute: typeof GuidesRssDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/health/hosting': {
@@ -4104,55 +2522,6 @@ declare module '@tanstack/solid-router' {
       preLoaderRoute: typeof HealthReadyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/marketplace/': {
-      id: '/marketplace/'
-      path: '/marketplace'
-      fullPath: '/marketplace/'
-      preLoaderRoute: typeof MarketplaceIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/marketplace/apps': {
-      id: '/marketplace/apps'
-      path: '/marketplace/apps'
-      fullPath: '/marketplace/apps'
-      preLoaderRoute: typeof MarketplaceAppsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/near/sign': {
-      id: '/near/sign'
-      path: '/near/sign'
-      fullPath: '/near/sign'
-      preLoaderRoute: typeof NearSignRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news/': {
-      id: '/news/'
-      path: '/news'
-      fullPath: '/news/'
-      preLoaderRoute: typeof NewsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news/$slug': {
-      id: '/news/$slug'
-      path: '/news/$slug'
-      fullPath: '/news/$slug'
-      preLoaderRoute: typeof NewsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news/openbot-vs-grokbot': {
-      id: '/news/openbot-vs-grokbot'
-      path: '/news/openbot-vs-grokbot'
-      fullPath: '/news/openbot-vs-grokbot'
-      preLoaderRoute: typeof NewsOpenbotVsGrokbotRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news/rss.xml': {
-      id: '/news/rss.xml'
-      path: '/news/rss.xml'
-      fullPath: '/news/rss.xml'
-      preLoaderRoute: typeof NewsRssDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/oauth/mcp-callback': {
       id: '/oauth/mcp-callback'
       path: '/oauth/mcp-callback'
@@ -4165,41 +2534,6 @@ declare module '@tanstack/solid-router' {
       path: '/oauth/mcp-client.json'
       fullPath: '/oauth/mcp-client.json'
       preLoaderRoute: typeof OauthMcpClientDotjsonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/plugins/': {
-      id: '/plugins/'
-      path: '/plugins'
-      fullPath: '/plugins/'
-      preLoaderRoute: typeof PluginsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/plugins/$slug': {
-      id: '/plugins/$slug'
-      path: '/plugins/$slug'
-      fullPath: '/plugins/$slug'
-      preLoaderRoute: typeof PluginsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/providers/': {
-      id: '/providers/'
-      path: '/providers'
-      fullPath: '/providers/'
-      preLoaderRoute: typeof ProvidersIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/providers/$slug': {
-      id: '/providers/$slug'
-      path: '/providers/$slug'
-      fullPath: '/providers/$slug'
-      preLoaderRoute: typeof ProvidersSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/providers/rss.xml': {
-      id: '/providers/rss.xml'
-      path: '/providers/rss.xml'
-      fullPath: '/providers/rss.xml'
-      preLoaderRoute: typeof ProvidersRssDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/slack/connect': {
@@ -4230,347 +2564,11 @@ declare module '@tanstack/solid-router' {
       preLoaderRoute: typeof V1MeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_contact/ar/contact': {
-      id: '/_contact/ar/contact'
-      path: '/ar/contact'
-      fullPath: '/ar/contact'
-      preLoaderRoute: typeof ContactArContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/de/contact': {
-      id: '/_contact/de/contact'
-      path: '/de/contact'
-      fullPath: '/de/contact'
-      preLoaderRoute: typeof ContactDeContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/es/contact': {
-      id: '/_contact/es/contact'
-      path: '/es/contact'
-      fullPath: '/es/contact'
-      preLoaderRoute: typeof ContactEsContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/fr/contact': {
-      id: '/_contact/fr/contact'
-      path: '/fr/contact'
-      fullPath: '/fr/contact'
-      preLoaderRoute: typeof ContactFrContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/he/contact': {
-      id: '/_contact/he/contact'
-      path: '/he/contact'
-      fullPath: '/he/contact'
-      preLoaderRoute: typeof ContactHeContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/it/contact': {
-      id: '/_contact/it/contact'
-      path: '/it/contact'
-      fullPath: '/it/contact'
-      preLoaderRoute: typeof ContactItContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/ja/contact': {
-      id: '/_contact/ja/contact'
-      path: '/ja/contact'
-      fullPath: '/ja/contact'
-      preLoaderRoute: typeof ContactJaContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/ko/contact': {
-      id: '/_contact/ko/contact'
-      path: '/ko/contact'
-      fullPath: '/ko/contact'
-      preLoaderRoute: typeof ContactKoContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/nl/contact': {
-      id: '/_contact/nl/contact'
-      path: '/nl/contact'
-      fullPath: '/nl/contact'
-      preLoaderRoute: typeof ContactNlContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/pl/contact': {
-      id: '/_contact/pl/contact'
-      path: '/pl/contact'
-      fullPath: '/pl/contact'
-      preLoaderRoute: typeof ContactPlContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/pt/contact': {
-      id: '/_contact/pt/contact'
-      path: '/pt/contact'
-      fullPath: '/pt/contact'
-      preLoaderRoute: typeof ContactPtContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/ru/contact': {
-      id: '/_contact/ru/contact'
-      path: '/ru/contact'
-      fullPath: '/ru/contact'
-      preLoaderRoute: typeof ContactRuContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/tr/contact': {
-      id: '/_contact/tr/contact'
-      path: '/tr/contact'
-      fullPath: '/tr/contact'
-      preLoaderRoute: typeof ContactTrContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_contact/zh/contact': {
-      id: '/_contact/zh/contact'
-      path: '/zh/contact'
-      fullPath: '/zh/contact'
-      preLoaderRoute: typeof ContactZhContactRouteImport
-      parentRoute: typeof ContactRoute
-    }
-    '/_pricing/ar/pricing': {
-      id: '/_pricing/ar/pricing'
-      path: '/ar/pricing'
-      fullPath: '/ar/pricing'
-      preLoaderRoute: typeof PricingArPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/de/pricing': {
-      id: '/_pricing/de/pricing'
-      path: '/de/pricing'
-      fullPath: '/de/pricing'
-      preLoaderRoute: typeof PricingDePricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/es/pricing': {
-      id: '/_pricing/es/pricing'
-      path: '/es/pricing'
-      fullPath: '/es/pricing'
-      preLoaderRoute: typeof PricingEsPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/fr/pricing': {
-      id: '/_pricing/fr/pricing'
-      path: '/fr/pricing'
-      fullPath: '/fr/pricing'
-      preLoaderRoute: typeof PricingFrPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/he/pricing': {
-      id: '/_pricing/he/pricing'
-      path: '/he/pricing'
-      fullPath: '/he/pricing'
-      preLoaderRoute: typeof PricingHePricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/it/pricing': {
-      id: '/_pricing/it/pricing'
-      path: '/it/pricing'
-      fullPath: '/it/pricing'
-      preLoaderRoute: typeof PricingItPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/ja/pricing': {
-      id: '/_pricing/ja/pricing'
-      path: '/ja/pricing'
-      fullPath: '/ja/pricing'
-      preLoaderRoute: typeof PricingJaPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/ko/pricing': {
-      id: '/_pricing/ko/pricing'
-      path: '/ko/pricing'
-      fullPath: '/ko/pricing'
-      preLoaderRoute: typeof PricingKoPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/nl/pricing': {
-      id: '/_pricing/nl/pricing'
-      path: '/nl/pricing'
-      fullPath: '/nl/pricing'
-      preLoaderRoute: typeof PricingNlPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/pl/pricing': {
-      id: '/_pricing/pl/pricing'
-      path: '/pl/pricing'
-      fullPath: '/pl/pricing'
-      preLoaderRoute: typeof PricingPlPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/pt/pricing': {
-      id: '/_pricing/pt/pricing'
-      path: '/pt/pricing'
-      fullPath: '/pt/pricing'
-      preLoaderRoute: typeof PricingPtPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/ru/pricing': {
-      id: '/_pricing/ru/pricing'
-      path: '/ru/pricing'
-      fullPath: '/ru/pricing'
-      preLoaderRoute: typeof PricingRuPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/tr/pricing': {
-      id: '/_pricing/tr/pricing'
-      path: '/tr/pricing'
-      fullPath: '/tr/pricing'
-      preLoaderRoute: typeof PricingTrPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_pricing/zh/pricing': {
-      id: '/_pricing/zh/pricing'
-      path: '/zh/pricing'
-      fullPath: '/zh/pricing'
-      preLoaderRoute: typeof PricingZhPricingRouteImport
-      parentRoute: typeof PricingRoute
-    }
-    '/_teams/ar/teams': {
-      id: '/_teams/ar/teams'
-      path: '/ar/teams'
-      fullPath: '/ar/teams'
-      preLoaderRoute: typeof TeamsArTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/de/teams': {
-      id: '/_teams/de/teams'
-      path: '/de/teams'
-      fullPath: '/de/teams'
-      preLoaderRoute: typeof TeamsDeTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/es/teams': {
-      id: '/_teams/es/teams'
-      path: '/es/teams'
-      fullPath: '/es/teams'
-      preLoaderRoute: typeof TeamsEsTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/fr/teams': {
-      id: '/_teams/fr/teams'
-      path: '/fr/teams'
-      fullPath: '/fr/teams'
-      preLoaderRoute: typeof TeamsFrTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/he/teams': {
-      id: '/_teams/he/teams'
-      path: '/he/teams'
-      fullPath: '/he/teams'
-      preLoaderRoute: typeof TeamsHeTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/it/teams': {
-      id: '/_teams/it/teams'
-      path: '/it/teams'
-      fullPath: '/it/teams'
-      preLoaderRoute: typeof TeamsItTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/ja/teams': {
-      id: '/_teams/ja/teams'
-      path: '/ja/teams'
-      fullPath: '/ja/teams'
-      preLoaderRoute: typeof TeamsJaTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/ko/teams': {
-      id: '/_teams/ko/teams'
-      path: '/ko/teams'
-      fullPath: '/ko/teams'
-      preLoaderRoute: typeof TeamsKoTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/nl/teams': {
-      id: '/_teams/nl/teams'
-      path: '/nl/teams'
-      fullPath: '/nl/teams'
-      preLoaderRoute: typeof TeamsNlTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/pl/teams': {
-      id: '/_teams/pl/teams'
-      path: '/pl/teams'
-      fullPath: '/pl/teams'
-      preLoaderRoute: typeof TeamsPlTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/pt/teams': {
-      id: '/_teams/pt/teams'
-      path: '/pt/teams'
-      fullPath: '/pt/teams'
-      preLoaderRoute: typeof TeamsPtTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/ru/teams': {
-      id: '/_teams/ru/teams'
-      path: '/ru/teams'
-      fullPath: '/ru/teams'
-      preLoaderRoute: typeof TeamsRuTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/tr/teams': {
-      id: '/_teams/tr/teams'
-      path: '/tr/teams'
-      fullPath: '/tr/teams'
-      preLoaderRoute: typeof TeamsTrTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
-    '/_teams/zh/teams': {
-      id: '/_teams/zh/teams'
-      path: '/zh/teams'
-      fullPath: '/zh/teams'
-      preLoaderRoute: typeof TeamsZhTeamsRouteImport
-      parentRoute: typeof TeamsRoute
-    }
     '/api/browser/$': {
       id: '/api/browser/$'
       path: '/api/browser/$'
       fullPath: '/api/browser/$'
       preLoaderRoute: typeof ApiBrowserSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/download/$platform_/latest': {
-      id: '/download/$platform_/latest'
-      path: '/download/$platform/latest'
-      fullPath: '/download/$platform/latest'
-      preLoaderRoute: typeof DownloadPlatformLatestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/marketplace/agents/$agentId': {
-      id: '/marketplace/agents/$agentId'
-      path: '/marketplace/agents/$agentId'
-      fullPath: '/marketplace/agents/$agentId'
-      preLoaderRoute: typeof MarketplaceAgentsAgentIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/marketplace/skills/': {
-      id: '/marketplace/skills/'
-      path: '/marketplace/skills'
-      fullPath: '/marketplace/skills/'
-      preLoaderRoute: typeof MarketplaceSkillsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/marketplace/skills/$slug': {
-      id: '/marketplace/skills/$slug'
-      path: '/marketplace/skills/$slug'
-      fullPath: '/marketplace/skills/$slug'
-      preLoaderRoute: typeof MarketplaceSkillsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news/og/openbot-vs-grokbot.png': {
-      id: '/news/og/openbot-vs-grokbot.png'
-      path: '/news/og/openbot-vs-grokbot.png'
-      fullPath: '/news/og/openbot-vs-grokbot.png'
-      preLoaderRoute: typeof NewsOgOpenbotVsGrokbotDotpngRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/plugins/icon/$slug': {
-      id: '/plugins/icon/$slug'
-      path: '/plugins/icon/$slug'
-      fullPath: '/plugins/icon/$slug'
-      preLoaderRoute: typeof PluginsIconSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/v1/agent-templates/': {
@@ -5717,160 +3715,6 @@ declare module '@tanstack/solid-router' {
   }
 }
 
-interface ContactRouteChildren {
-  ContactContactRoute: typeof ContactContactRoute
-  ContactArContactRoute: typeof ContactArContactRoute
-  ContactDeContactRoute: typeof ContactDeContactRoute
-  ContactEsContactRoute: typeof ContactEsContactRoute
-  ContactFrContactRoute: typeof ContactFrContactRoute
-  ContactHeContactRoute: typeof ContactHeContactRoute
-  ContactItContactRoute: typeof ContactItContactRoute
-  ContactJaContactRoute: typeof ContactJaContactRoute
-  ContactKoContactRoute: typeof ContactKoContactRoute
-  ContactNlContactRoute: typeof ContactNlContactRoute
-  ContactPlContactRoute: typeof ContactPlContactRoute
-  ContactPtContactRoute: typeof ContactPtContactRoute
-  ContactRuContactRoute: typeof ContactRuContactRoute
-  ContactTrContactRoute: typeof ContactTrContactRoute
-  ContactZhContactRoute: typeof ContactZhContactRoute
-}
-
-const ContactRouteChildren: ContactRouteChildren = {
-  ContactContactRoute: ContactContactRoute,
-  ContactArContactRoute: ContactArContactRoute,
-  ContactDeContactRoute: ContactDeContactRoute,
-  ContactEsContactRoute: ContactEsContactRoute,
-  ContactFrContactRoute: ContactFrContactRoute,
-  ContactHeContactRoute: ContactHeContactRoute,
-  ContactItContactRoute: ContactItContactRoute,
-  ContactJaContactRoute: ContactJaContactRoute,
-  ContactKoContactRoute: ContactKoContactRoute,
-  ContactNlContactRoute: ContactNlContactRoute,
-  ContactPlContactRoute: ContactPlContactRoute,
-  ContactPtContactRoute: ContactPtContactRoute,
-  ContactRuContactRoute: ContactRuContactRoute,
-  ContactTrContactRoute: ContactTrContactRoute,
-  ContactZhContactRoute: ContactZhContactRoute,
-}
-
-const ContactRouteWithChildren =
-  ContactRoute._addFileChildren(ContactRouteChildren)
-
-interface HomeRouteChildren {
-  HomeArRoute: typeof HomeArRoute
-  HomeDeRoute: typeof HomeDeRoute
-  HomeEsRoute: typeof HomeEsRoute
-  HomeFrRoute: typeof HomeFrRoute
-  HomeHeRoute: typeof HomeHeRoute
-  HomeItRoute: typeof HomeItRoute
-  HomeJaRoute: typeof HomeJaRoute
-  HomeKoRoute: typeof HomeKoRoute
-  HomeNlRoute: typeof HomeNlRoute
-  HomePlRoute: typeof HomePlRoute
-  HomePtRoute: typeof HomePtRoute
-  HomeRuRoute: typeof HomeRuRoute
-  HomeTrRoute: typeof HomeTrRoute
-  HomeZhRoute: typeof HomeZhRoute
-  HomeIndexRoute: typeof HomeIndexRoute
-}
-
-const HomeRouteChildren: HomeRouteChildren = {
-  HomeArRoute: HomeArRoute,
-  HomeDeRoute: HomeDeRoute,
-  HomeEsRoute: HomeEsRoute,
-  HomeFrRoute: HomeFrRoute,
-  HomeHeRoute: HomeHeRoute,
-  HomeItRoute: HomeItRoute,
-  HomeJaRoute: HomeJaRoute,
-  HomeKoRoute: HomeKoRoute,
-  HomeNlRoute: HomeNlRoute,
-  HomePlRoute: HomePlRoute,
-  HomePtRoute: HomePtRoute,
-  HomeRuRoute: HomeRuRoute,
-  HomeTrRoute: HomeTrRoute,
-  HomeZhRoute: HomeZhRoute,
-  HomeIndexRoute: HomeIndexRoute,
-}
-
-const HomeRouteWithChildren = HomeRoute._addFileChildren(HomeRouteChildren)
-
-interface PricingRouteChildren {
-  PricingPricingRoute: typeof PricingPricingRoute
-  PricingArPricingRoute: typeof PricingArPricingRoute
-  PricingDePricingRoute: typeof PricingDePricingRoute
-  PricingEsPricingRoute: typeof PricingEsPricingRoute
-  PricingFrPricingRoute: typeof PricingFrPricingRoute
-  PricingHePricingRoute: typeof PricingHePricingRoute
-  PricingItPricingRoute: typeof PricingItPricingRoute
-  PricingJaPricingRoute: typeof PricingJaPricingRoute
-  PricingKoPricingRoute: typeof PricingKoPricingRoute
-  PricingNlPricingRoute: typeof PricingNlPricingRoute
-  PricingPlPricingRoute: typeof PricingPlPricingRoute
-  PricingPtPricingRoute: typeof PricingPtPricingRoute
-  PricingRuPricingRoute: typeof PricingRuPricingRoute
-  PricingTrPricingRoute: typeof PricingTrPricingRoute
-  PricingZhPricingRoute: typeof PricingZhPricingRoute
-}
-
-const PricingRouteChildren: PricingRouteChildren = {
-  PricingPricingRoute: PricingPricingRoute,
-  PricingArPricingRoute: PricingArPricingRoute,
-  PricingDePricingRoute: PricingDePricingRoute,
-  PricingEsPricingRoute: PricingEsPricingRoute,
-  PricingFrPricingRoute: PricingFrPricingRoute,
-  PricingHePricingRoute: PricingHePricingRoute,
-  PricingItPricingRoute: PricingItPricingRoute,
-  PricingJaPricingRoute: PricingJaPricingRoute,
-  PricingKoPricingRoute: PricingKoPricingRoute,
-  PricingNlPricingRoute: PricingNlPricingRoute,
-  PricingPlPricingRoute: PricingPlPricingRoute,
-  PricingPtPricingRoute: PricingPtPricingRoute,
-  PricingRuPricingRoute: PricingRuPricingRoute,
-  PricingTrPricingRoute: PricingTrPricingRoute,
-  PricingZhPricingRoute: PricingZhPricingRoute,
-}
-
-const PricingRouteWithChildren =
-  PricingRoute._addFileChildren(PricingRouteChildren)
-
-interface TeamsRouteChildren {
-  TeamsTeamsRoute: typeof TeamsTeamsRoute
-  TeamsArTeamsRoute: typeof TeamsArTeamsRoute
-  TeamsDeTeamsRoute: typeof TeamsDeTeamsRoute
-  TeamsEsTeamsRoute: typeof TeamsEsTeamsRoute
-  TeamsFrTeamsRoute: typeof TeamsFrTeamsRoute
-  TeamsHeTeamsRoute: typeof TeamsHeTeamsRoute
-  TeamsItTeamsRoute: typeof TeamsItTeamsRoute
-  TeamsJaTeamsRoute: typeof TeamsJaTeamsRoute
-  TeamsKoTeamsRoute: typeof TeamsKoTeamsRoute
-  TeamsNlTeamsRoute: typeof TeamsNlTeamsRoute
-  TeamsPlTeamsRoute: typeof TeamsPlTeamsRoute
-  TeamsPtTeamsRoute: typeof TeamsPtTeamsRoute
-  TeamsRuTeamsRoute: typeof TeamsRuTeamsRoute
-  TeamsTrTeamsRoute: typeof TeamsTrTeamsRoute
-  TeamsZhTeamsRoute: typeof TeamsZhTeamsRoute
-}
-
-const TeamsRouteChildren: TeamsRouteChildren = {
-  TeamsTeamsRoute: TeamsTeamsRoute,
-  TeamsArTeamsRoute: TeamsArTeamsRoute,
-  TeamsDeTeamsRoute: TeamsDeTeamsRoute,
-  TeamsEsTeamsRoute: TeamsEsTeamsRoute,
-  TeamsFrTeamsRoute: TeamsFrTeamsRoute,
-  TeamsHeTeamsRoute: TeamsHeTeamsRoute,
-  TeamsItTeamsRoute: TeamsItTeamsRoute,
-  TeamsJaTeamsRoute: TeamsJaTeamsRoute,
-  TeamsKoTeamsRoute: TeamsKoTeamsRoute,
-  TeamsNlTeamsRoute: TeamsNlTeamsRoute,
-  TeamsPlTeamsRoute: TeamsPlTeamsRoute,
-  TeamsPtTeamsRoute: TeamsPtTeamsRoute,
-  TeamsRuTeamsRoute: TeamsRuTeamsRoute,
-  TeamsTrTeamsRoute: TeamsTrTeamsRoute,
-  TeamsZhTeamsRoute: TeamsZhTeamsRoute,
-}
-
-const TeamsRouteWithChildren = TeamsRoute._addFileChildren(TeamsRouteChildren)
-
 interface V1FeedbackRouteChildren {
   V1FeedbackSimilarRoute: typeof V1FeedbackSimilarRoute
   V1FeedbackWithdrawRoute: typeof V1FeedbackWithdrawRoute
@@ -6051,69 +3895,26 @@ const V1MarketplaceAgentsAdminSubmissionsRouteWithChildren =
   )
 
 const rootRouteChildren: RootRouteChildren = {
-  ContactRoute: ContactRouteWithChildren,
-  HomeRoute: HomeRouteWithChildren,
-  PricingRoute: PricingRouteWithChildren,
-  TeamsRoute: TeamsRouteWithChildren,
+  IndexRoute: IndexRoute,
   AppRoute: AppRoute,
-  AppPreviewRoute: AppPreviewRoute,
-  BrandingRoute: BrandingRoute,
-  ChangelogRoute: ChangelogRoute,
-  ClaRoute: ClaRoute,
-  CommercialLicenseRoute: CommercialLicenseRoute,
-  CommerciallicenseRoute: CommerciallicenseRoute,
-  CreditsRoute: CreditsRoute,
-  DpaRoute: DpaRoute,
   JoinRoute: JoinRoute,
-  LlmsDottxtRoute: LlmsDottxtRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ReportSiteRoute: ReportSiteRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   DotwellKnownAppleAppSiteAssociationRoute:
     DotwellKnownAppleAppSiteAssociationRoute,
   DotwellKnownJwksDotjsonRoute: DotwellKnownJwksDotjsonRoute,
-  AgentsTemplateIdRoute: AgentsTemplateIdRoute,
-  BillingReturnRoute: BillingReturnRoute,
-  BrandFileRoute: BrandFileRoute,
-  CompareSlugRoute: CompareSlugRoute,
-  CompareRssDotxmlRoute: CompareRssDotxmlRoute,
   DiscordConnectRoute: DiscordConnectRoute,
-  DownloadPlatformRoute: DownloadPlatformRoute,
-  GuidesSlugRoute: GuidesSlugRoute,
-  GuidesRssDotxmlRoute: GuidesRssDotxmlRoute,
   HealthHostingRoute: HealthHostingRoute,
   HealthLiveRoute: HealthLiveRoute,
   HealthReadyRoute: HealthReadyRoute,
-  MarketplaceAppsRoute: MarketplaceAppsRoute,
-  NearSignRoute: NearSignRoute,
-  NewsSlugRoute: NewsSlugRoute,
-  NewsOpenbotVsGrokbotRoute: NewsOpenbotVsGrokbotRoute,
-  NewsRssDotxmlRoute: NewsRssDotxmlRoute,
   OauthMcpCallbackRoute: OauthMcpCallbackRoute,
   OauthMcpClientDotjsonRoute: OauthMcpClientDotjsonRoute,
-  PluginsSlugRoute: PluginsSlugRoute,
-  ProvidersSlugRoute: ProvidersSlugRoute,
-  ProvidersRssDotxmlRoute: ProvidersRssDotxmlRoute,
   SlackConnectRoute: SlackConnectRoute,
   V1ContactRoute: V1ContactRoute,
   V1FeedbackRoute: V1FeedbackRouteWithChildren,
   V1MeRoute: V1MeRouteWithChildren,
-  BrandIndexRoute: BrandIndexRoute,
-  CompareIndexRoute: CompareIndexRoute,
-  DownloadIndexRoute: DownloadIndexRoute,
-  GuidesIndexRoute: GuidesIndexRoute,
-  MarketplaceIndexRoute: MarketplaceIndexRoute,
-  NewsIndexRoute: NewsIndexRoute,
-  PluginsIndexRoute: PluginsIndexRoute,
-  ProvidersIndexRoute: ProvidersIndexRoute,
   ApiBrowserSplatRoute: ApiBrowserSplatRoute,
-  DownloadPlatformLatestRoute: DownloadPlatformLatestRoute,
-  MarketplaceAgentsAgentIdRoute: MarketplaceAgentsAgentIdRoute,
-  MarketplaceSkillsSlugRoute: MarketplaceSkillsSlugRoute,
-  NewsOgOpenbotVsGrokbotDotpngRoute: NewsOgOpenbotVsGrokbotDotpngRoute,
-  PluginsIconSlugRoute: PluginsIconSlugRoute,
   V1AgentTemplatesTemplateIdRoute: V1AgentTemplatesTemplateIdRouteWithChildren,
   V1AgentTemplatesMineRoute: V1AgentTemplatesMineRoute,
   V1AppMinimumVersionRoute: V1AppMinimumVersionRoute,
@@ -6150,7 +3951,6 @@ const rootRouteChildren: RootRouteChildren = {
   V2ServerClaimsRedeemRoute: V2ServerClaimsRedeemRoute,
   V2SlackAuthorizeRoute: V2SlackAuthorizeRoute,
   V2SlackCallbackRoute: V2SlackCallbackRoute,
-  MarketplaceSkillsIndexRoute: MarketplaceSkillsIndexRoute,
   V1AgentTemplatesIndexRoute: V1AgentTemplatesIndexRoute,
   V1SitesIndexRoute: V1SitesIndexRoute,
   V1SkillsIndexRoute: V1SkillsIndexRoute,

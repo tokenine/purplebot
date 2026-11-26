@@ -227,9 +227,7 @@ function RailPreview(props: {
               onOpenWhatsNew={fn()}
               onOpenChangelog={fn()}
               onOpenGuides={fn()}
-              onOpenDiscord={fn()}
               onReportProblem={fn()}
-              onSendFeedback={fn()}
             />
           }
         />
@@ -241,7 +239,7 @@ function RailPreview(props: {
 function CreditMovePreview(props: { personal: number; server: number }) {
   const calls = createMockCredits({
     balance: props.personal,
-    servers: [{ serverId: "team", name: "OpenBot team", role: "owner", balance: props.server }],
+    servers: [{ serverId: "team", name: "PurpleBot team", role: "owner", balance: props.server }],
   });
   const [state, setState] = createSignal<CreditsState | null>(null);
   const [moving, setMoving] = createSignal(false);
@@ -333,7 +331,7 @@ export const CreditsHundredThousand: Story = {
     creditAgents: true,
     creditAsk: true,
     creditMove: true,
-    creditWalletName: "OpenBot team",
+    creditWalletName: "PurpleBot team",
   },
 };
 

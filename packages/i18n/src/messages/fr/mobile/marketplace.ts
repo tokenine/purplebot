@@ -66,13 +66,13 @@ export const messages = {
   "mobile.marketplace.permission.admin":
     "Seuls les propriétaires et les administrateurs peuvent installer depuis la Marketplace.",
   "mobile.marketplace.permission.unavailable":
-    "Ce serveur est hors ligne, ou son OpenBot est trop ancien pour cela. Mettez à jour OpenBot sur l’ordinateur qui l’exécute.",
+    "Ce serveur est hors ligne, ou son PurpleBot est trop ancien pour cela. Mettez à jour PurpleBot sur l’ordinateur qui l’exécute.",
   "mobile.marketplace.error.agentUnsupported":
-    "Mettez à jour OpenBot sur le serveur pour ajouter des agents depuis la Marketplace.",
+    "Mettez à jour PurpleBot sur le serveur pour ajouter des agents depuis la Marketplace.",
   "mobile.marketplace.error.agentUpdateUnsupported":
-    "Mettez à jour OpenBot sur le serveur pour mettre à jour les agents du Marketplace.",
+    "Mettez à jour PurpleBot sur le serveur pour mettre à jour les agents du Marketplace.",
   "mobile.marketplace.error.signInUnsupported":
-    "Mettez à jour OpenBot sur le serveur pour vous connecter aux apps depuis le téléphone.",
+    "Mettez à jour PurpleBot sur le serveur pour vous connecter aux apps depuis le téléphone.",
   "mobile.marketplace.agent.add": "Ajouter l’agent",
   "mobile.marketplace.agent.adding": "Ajout de l’agent",
   "mobile.marketplace.agent.update": "Mettre à jour",
@@ -109,7 +109,7 @@ export const messages = {
   "mobile.marketplace.app.stepReturn": "Revenez ici. {name} se connecte sur votre serveur.",
   "mobile.marketplace.app.stepBlank": "La dernière page ne se charge pas. C'est normal.",
   "mobile.marketplace.app.stepCopy": "Touchez la barre d'adresse et copiez l'adresse complète.",
-  "mobile.marketplace.app.stepPaste": "Revenez dans OpenBot et collez l'adresse ci-dessous.",
+  "mobile.marketplace.app.stepPaste": "Revenez dans PurpleBot et collez l'adresse ci-dessous.",
   "mobile.marketplace.app.openSignIn": "Ouvrir la connexion",
   "mobile.marketplace.app.keySecure": "La clé va uniquement à votre serveur, par une connexion chiffrée.",
   "mobile.marketplace.app.connecting": "Connexion",
@@ -120,11 +120,11 @@ export const messages = {
   "mobile.marketplace.app.linkInvalid": "Utilisez un lien https sur {hostname}.",
   "mobile.marketplace.app.docs": "Obtenir une clé",
   "mobile.marketplace.app.local":
-    "Cette app s’exécute sur l’ordinateur avec OpenBot. Configurez-la sur cet ordinateur.",
+    "Cette app s’exécute sur l’ordinateur avec PurpleBot. Configurez-la sur cet ordinateur.",
   "mobile.marketplace.app.needsMac":
-    "Cette app fonctionne uniquement sur un Mac qui exécute OpenBot, et ce serveur n’est pas un Mac.",
+    "Cette app fonctionne uniquement sur un Mac qui exécute PurpleBot, et ce serveur n’est pas un Mac.",
   "mobile.marketplace.app.relayUnsupported":
-    "Cette app demande une connexion dans le navigateur. Mettez à jour OpenBot sur le serveur ou connectez l’app sur l’ordinateur.",
+    "Cette app demande une connexion dans le navigateur. Mettez à jour PurpleBot sur le serveur ou connectez l’app sur l’ordinateur.",
   "mobile.marketplace.app.waiting": "En attente de la page de connexion…",
   "mobile.marketplace.app.openAgain": "Rouvrir la page de connexion",
   "mobile.marketplace.app.pasteLabel": "Adresse après la connexion",

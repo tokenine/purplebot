@@ -32,7 +32,7 @@ const storyGeneralSettings: GeneralSettingsValue = {
   quitGuard: "working",
 };
 
-const storyAppInfo = { name: "OpenBot", version: "0.2.1", platform: "darwin", variant: "dev" } as const;
+const storyAppInfo = { name: "PurpleBot", version: "0.2.1", platform: "darwin", variant: "dev" } as const;
 const storyAccount: CentralAuthUser = {
   id: "user-1",
   email: "person@example.com",

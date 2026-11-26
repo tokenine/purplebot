@@ -107,12 +107,12 @@ try {
 }
 
 if (failures.length > 0) {
-  logger.error("OpenBot release preflight failed:\n");
+  logger.error("PurpleBot release preflight failed:\n");
   for (const failure of failures) logger.error(`- ${failure}`);
   logger.error("\nNo release tag was created.");
   process.exitCode = 1;
 } else {
-  logger.info(`OpenBot v${packageJson.version} release preflight passed.`);
+  logger.info(`PurpleBot v${packageJson.version} release preflight passed.`);
 }
 
 function run(command: string, args: string[]): string {

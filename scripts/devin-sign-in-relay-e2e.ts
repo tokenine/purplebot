@@ -161,7 +161,7 @@ try {
 
   const devin = await signIn("Devin page, relayed callback", fake, "https://app.devin.ai");
   report.cases.push(devin);
-  assert.equal(devin.pageOrigin, "https://app.devin.ai", "OpenBot gets the page, not a browser on the host.");
+  assert.equal(devin.pageOrigin, "https://app.devin.ai", "PurpleBot gets the page, not a browser on the host.");
   assert.equal(devin.callback?.path, "/callback", "The page returns to the CLI's loopback listener.");
   assert.equal(devin.callback?.state, "devin-state", "The relay knows the state of the page.");
   assert.equal(devin.replayed, true, "The host replays the client's callback to the CLI.");
@@ -169,7 +169,7 @@ try {
 
   const other = await signIn("Page of another site", fake, "https://devin.example");
   report.cases.push(other);
-  assert.equal(other.pageOrigin, null, "OpenBot does not pass on a page of another site.");
+  assert.equal(other.pageOrigin, null, "PurpleBot does not pass on a page of another site.");
   assert.equal(other.error, sourceText("error.provider.acpSignInFailed"), "The sign-in fails with a plain text.");
   report.passed = true;
 } finally {

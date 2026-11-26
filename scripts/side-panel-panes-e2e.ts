@@ -25,7 +25,7 @@ const report: { passed: boolean; checks: typeof checks; errors: string[]; error?
   errors: [],
 };
 
-const PAGE = "OpenBot documentation";
+const PAGE = "PurpleBot documentation";
 const PANE_NAMES = ["Browser", "Files", "Threads", "Agent settings", "Side question", "Page"];
 const PAGE_TABS = ".conversation-panel > .side-panel-header .side-panel-page-tab";
 const MAIN_HEADER = ".conversation-panel > .side-panel-header";

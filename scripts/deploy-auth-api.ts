@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createOpenBotLogger, toLogValue } from "@openbot/logging";
@@ -18,7 +18,6 @@ const environmentArgs = cloudflareEnvironment ? ["--env", cloudflareEnvironment]
 
 async function main(): Promise<void> {
   if (!cloudflareEnvironment) {
-    assertLandingBeam();
   }
   assertFcmServiceAccount();
   // Wrangler refuses the deploy when a secret in `secrets.required` of the config is missing.
@@ -62,7 +61,7 @@ async function main(): Promise<void> {
     env: cloudflareEnvironment ? { CLOUDFLARE_ENV: cloudflareEnvironment } : undefined,
   });
   if (!cloudflareEnvironment) {
-    await run(bunExecutable, [join(apiRoot, "scripts", "keep-previous-assets.ts")], {
+    await run(bunExecutable, [join(apiRoot, "scripts", "keep-previous-assets.ts"), ...previousAssetsOriginArgs()], {
       label: "Earlier code files",
     });
   }
@@ -81,15 +80,6 @@ async function main(): Promise<void> {
     label: "Auth API deployment",
   });
 }
-
-function assertLandingBeam(): void {
-  const port = join(apiRoot, "src", "vendor", "laser-flow", "LandingLaserFlow.tsx");
-  if (existsSync(port)) return;
-  logger.info(
-    "The home page beam is missing. The home page keeps its plain look. Clone nightly-labs/openbot-laser-flow into apps/auth-api/src/vendor/laser-flow to add it.",
-  );
-}
-
 // The relay Worker runs best in the colo next to the mail host. Write a config with the
 // placement host from EMAIL_RELAY_PLACEMENT_HOST, or the config default.
 function prepareEmailRelayConfig(): "wrangler.email-relay.jsonc" | "wrangler.email-relay.generated.jsonc" {
@@ -206,3 +196,10 @@ void main().catch((error) => {
   logger.error("Auth API deployment failed.", toLogValue(error));
   process.exitCode = 1;
 });
+
+// The earlier code files stay available for clients that still load the previous deployment.
+// They are read back from this deployment only: pass --origin or export SITE_ORIGIN.
+function previousAssetsOriginArgs(): string[] {
+  const origin = process.env.SITE_ORIGIN?.trim();
+  return origin ? ["--origin", origin] : [];
+}

@@ -47,7 +47,7 @@ export const messages = {
   "error.skill.ownSkillExists":
     "이 에이전트에는 이미 {slug}(이)라는 자체 스킬이 있어요. 에이전트에게 그 스킬의 이름을 바꾸거나 삭제해 달라고 요청한 다음 이 스킬을 다시 추가해 주세요.",
   "error.skill.managedSlug":
-    "OpenBot은 모든 에이전트에 자체 {slug} 스킬을 제공해요. 이 스킬에는 다른 이름을 지정해 주세요.",
+    "PurpleBot은 모든 에이전트에 자체 {slug} 스킬을 제공해요. 이 스킬에는 다른 이름을 지정해 주세요.",
   "error.skill.templateMarkdownTooLarge": "{name}: SKILL.md가 64KB보다 커요. 게시하기 전에 줄여 주세요.",
   "error.skill.localNoRevisions": "로컬 스킬에 게시된 수정본이 없어요.",
   "error.skill.localNotFound": "이 로컬 스킬은 없어요. 로컬 스킬 목록에서 ID를 확인해 주세요.",
@@ -63,12 +63,12 @@ export const messages = {
   "error.skill.pathSymlink": "스킬 경로에는 심볼릭 링크를 포함할 수 없어요.",
   "error.skill.folderNotRead": "{provider}은(는) {folder}을(를) 읽지 않아요. 이 폴더를 {target}(으)로 복사해 주세요.",
   "error.skill.githubLinkInvalid": "GitHub 저장소나 폴더 링크를 붙여 넣어 주세요.",
-  "error.skill.githubNotFound": "OpenBot이 {repository}을(를) 열 수 없어요. 비공개 저장소이거나 존재하지 않아요.",
+  "error.skill.githubNotFound": "PurpleBot이 {repository}을(를) 열 수 없어요. 비공개 저장소이거나 존재하지 않아요.",
   "error.skill.githubNoSkills": "{folder}에 SKILL.md가 없어요.",
-  "error.skill.githubUnavailable": "지금은 OpenBot이 GitHub를 읽을 수 없어요. 나중에 다시 시도해 주세요.",
+  "error.skill.githubUnavailable": "지금은 PurpleBot이 GitHub를 읽을 수 없어요. 나중에 다시 시도해 주세요.",
   "error.skill.githubRateLimited":
-    "GitHub는 계정 없이 OpenBot이 읽을 수 있는 횟수를 제한해요. 1시간 후에 다시 시도해 주세요.",
-  "error.skill.githubTooLarge": "OpenBot이 {repository}의 모든 파일을 읽을 수 없습니다. 저장소가 너무 큽니다.",
+    "GitHub는 계정 없이 PurpleBot이 읽을 수 있는 횟수를 제한해요. 1시간 후에 다시 시도해 주세요.",
+  "error.skill.githubTooLarge": "PurpleBot이 {repository}의 모든 파일을 읽을 수 없습니다. 저장소가 너무 큽니다.",
   "error.skill.githubHostTooOld": "GitHub에서 스킬을 추가하려면 이 서버를 업데이트해 주세요.",
   "error.skill.publishGithub": "{name}은(는) GitHub에서 가져온 스킬이에요. 직접 만든 스킬만 게시할 수 있어요.",
 } as const satisfies PartialTranslation<typeof source>;

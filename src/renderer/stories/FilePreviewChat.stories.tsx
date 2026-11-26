@@ -9,7 +9,7 @@ import { INLINE_SVG_CHART, publishChatVisualPage } from "./chat-visual-fixtures"
 import { filePreviewForPath, WORKSPACE_FILE_PREVIEWS } from "./file-previews";
 import { STORY_AGENTS } from "./fixtures";
 
-const WORKSPACE = "/Users/test/OpenBot/Agents/agent-4f2c";
+const WORKSPACE = "/Users/test/PurpleBot/Agents/agent-4f2c";
 
 const MESSAGES: AgentMessage[] = [
   {

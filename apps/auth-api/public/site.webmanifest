@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "OpenBot",
-  "short_name": "OpenBot",
-  "description": "Run Codex and Claude side by side as persistent AI teammates, each with its own workspace, queue, and context.",
+  "name": "PurpleBot",
+  "short_name": "PurpleBot",
+  "description": "Self-hosted PurpleBot account service",
   "start_url": "/app",
   "scope": "/",
   "display": "standalone",

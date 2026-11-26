@@ -402,12 +402,12 @@ if (hasSingleInstanceLock) {
       previousStartHalt = takeStartHalt(app.getPath("userData"));
       if (previousStartHalt)
         logger.warn(
-          `The previous run of OpenBot ${previousStartHalt.appVersion} stopped its start loop (${previousStartHalt.reason}). This start tries again.`,
+          `The previous run of PurpleBot ${previousStartHalt.appVersion} stopped its start loop (${previousStartHalt.reason}). This start tries again.`,
         );
     }
     if (attempts.consecutiveFailures > 0)
       logger.warn(
-        `OpenBot ${attempts.appVersion} did not finish its start ${attempts.consecutiveFailures} times in a row (previous start: ${attempts.previousOutcome}, last failure: ${attempts.lastFailure ?? "none"}).`,
+        `PurpleBot ${attempts.appVersion} did not finish its start ${attempts.consecutiveFailures} times in a row (previous start: ${attempts.previousOutcome}, last failure: ${attempts.lastFailure ?? "none"}).`,
       );
     if (process.platform === "darwin" && (attempts.consecutiveFailures > 0 || forcedStartFailure !== null))
       systemPreferences.registerDefaults({ ApplePersistenceIgnoreState: true });
@@ -415,11 +415,11 @@ if (hasSingleInstanceLock) {
   stopAppImageCrashpadHandlerAtExit();
   stopStuckExitAfterLimit(join(app.getPath("userData"), "logs"));
   if (startedOnXWayland === "monitor")
-    logger.warn("The Wayland session had no monitor, so OpenBot uses XWayland until the next start.");
+    logger.warn("The Wayland session had no monitor, so PurpleBot uses XWayland until the next start.");
   if (startedOnXWayland === "above-apps")
-    logger.info("The agent dock or the Dynamic Island shows above other apps, so OpenBot uses XWayland.");
+    logger.info("The agent dock or the Dynamic Island shows above other apps, so PurpleBot uses XWayland.");
   if (startedOnXWayland === "software-rendering")
-    logger.info("Software rendering is on, so OpenBot uses XWayland: on Wayland its window can stay empty.");
+    logger.info("Software rendering is on, so PurpleBot uses XWayland: on Wayland its window can stay empty.");
 }
 configureLinuxGpu({
   userDataPath: app.getPath("userData"),
@@ -1152,7 +1152,7 @@ function requestDesktopNotificationPermission(
       preference,
       showWelcome: () => {
         if (!Notification.isSupported()) return;
-        showRetainedNotification(new Notification({ title: "OpenBot", body: translate("notification.welcome") }));
+        showRetainedNotification(new Notification({ title: "PurpleBot", body: translate("notification.welcome") }));
       },
     }),
   );
@@ -1161,7 +1161,7 @@ function requestDesktopNotificationPermission(
 function haltServerStart(reason: StartHaltReason): Omit<StartHaltRecord, "version"> {
   const appVersion = app.getVersion();
   logger.error(
-    `OpenBot ${appVersion} stopped its start loop (${reason}). It starts again after an update or a restart of the server or of the service.`,
+    `PurpleBot ${appVersion} stopped its start loop (${reason}). It starts again after an update or a restart of the server or of the service.`,
   );
   const record = { reason, appVersion, haltedAt: Date.now() };
   writeStartHalt(app.getPath("userData"), record);
@@ -1179,7 +1179,7 @@ async function enterServerSafeMode(halt: Omit<StartHaltRecord, "version">): Prom
     );
     if (shutdownStarted) await Effect.runPromise(serverSafeMode.stop);
   } catch (error) {
-    logger.warn("The safe mode did not start. OpenBot quits.", toLogValue(error));
+    logger.warn("The safe mode did not start. PurpleBot quits.", toLogValue(error));
     app.quit();
     return;
   }
@@ -1193,12 +1193,12 @@ async function recoverFromStartLoop(): Promise<
   const summary = startAttempts.summary();
   if (serverStartGuard) {
     if (previousStartHalt) {
-      logger.warn(`OpenBot ${summary.appVersion} is in a start loop. It stopped the loop before, so it tries again.`);
+      logger.warn(`PurpleBot ${summary.appVersion} is in a start loop. It stopped the loop before, so it tries again.`);
       return null;
     }
     return { halt: haltServerStart("start_failed") };
   }
-  logger.warn(`OpenBot ${summary.appVersion} is in a start loop. Showing the recovery window.`);
+  logger.warn(`PurpleBot ${summary.appVersion} is in a start loop. Showing the recovery window.`);
   const databaseSchemaVersion = readDatabaseSchemaVersion(app.getPath("userData"));
   const previousRelease = compatiblePreviousRelease({
     summary,
@@ -1239,7 +1239,7 @@ async function presentApplication(): Promise<void> {
     ((process.platform === "darwin" || process.platform === "win32") && app.isPackaged)
   ) {
     if (!app.setAsDefaultProtocolClient("openbot")) {
-      logger.warn("Unable to register the openbot:// scheme. Invitation links will not open OpenBot.");
+      logger.warn("Unable to register the openbot:// scheme. Invitation links will not open PurpleBot.");
     }
   }
 }
@@ -1709,7 +1709,7 @@ if (!hasSingleInstanceLock) {
       updater.on("status", forwardUpdateStatus);
       updater.on("status", (status) => {
         if (!shutdownStarted || status.errorCode !== "install_failed") return;
-        logger.error("OpenBot update install failed after shutdown preparation and will exit now.");
+        logger.error("PurpleBot update install failed after shutdown preparation and will exit now.");
         exitAfterLogFlush();
       });
       built.requestedUpdate.on("preference", forwardUpdatePreference);
@@ -1751,7 +1751,7 @@ if (!hasSingleInstanceLock) {
           })
         ) {
           void runCauseEffect(built.centralAuthInitialization.pipe(Effect.flatMap(() => host.start(true)))).catch(
-            (error) => logger.error("Unable to republish this OpenBot:", toLogValue(error)),
+            (error) => logger.error("Unable to republish this PurpleBot:", toLogValue(error)),
           );
         }
       };
@@ -1949,7 +1949,7 @@ if (!hasSingleInstanceLock) {
         return;
       }
       const message = (error instanceof Error ? error.message : String(error)).replace(/[^\P{Cc}\n\t]/gu, "�");
-      logger.error("OpenBot failed to start:", toLogValue(error));
+      logger.error("PurpleBot failed to start:", toLogValue(error));
       if (!(error instanceof NewerDatabaseError)) startAttempts?.failed("error");
       if (serverStartGuard) {
         const reason = startHaltReason(error);
@@ -2039,7 +2039,7 @@ const SHUTDOWN_DEADLINE_MS = 30_000;
 
 function forceExitAfterShutdownDeadline(deadlineMs: number): void {
   setTimeout(() => {
-    logger.error(`OpenBot did not quit within ${deadlineMs} ms and will exit now.`);
+    logger.error(`PurpleBot did not quit within ${deadlineMs} ms and will exit now.`);
     runMarker?.quitTimedOut();
     exitAfterLogFlush();
   }, deadlineMs);

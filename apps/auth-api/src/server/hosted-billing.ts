@@ -34,6 +34,7 @@ export type HostedBillingBindings = HostedServerBindings &
       | "VIES_REQUESTER_VAT_ID"
       | "LICENSE_TRIAL_END"
       | "BILLING_COUNTRY_REQUIRED"
+      | "OPENPANEL_API_URL"
       | "OPENPANEL_CLIENT_ID"
       | "OPENPANEL_CLIENT_SECRET"
     >
@@ -51,6 +52,7 @@ export function createHostedBilling(
   const send = options.fetch ?? ((input, init) => fetch(input, init));
   const operatorAlert = createHostedPoolAlert(bindings.HOSTED_POOL_ALERT_WEBHOOK_URL, send);
   const analytics = createAccountAnalytics({
+    apiUrl: bindings.OPENPANEL_API_URL,
     clientId: bindings.OPENPANEL_CLIENT_ID,
     clientSecret: bindings.OPENPANEL_CLIENT_SECRET,
     fetch: send,
@@ -59,9 +61,12 @@ export function createHostedBilling(
   });
   const secretKey = bindings.STRIPE_SECRET_KEY?.trim();
   const sales =
-    bindings.OPENPANEL_CLIENT_ID?.trim() && bindings.OPENPANEL_CLIENT_SECRET?.trim()
+    bindings.OPENPANEL_API_URL?.trim() &&
+    bindings.OPENPANEL_CLIENT_ID?.trim() &&
+    bindings.OPENPANEL_CLIENT_SECRET?.trim()
       ? new BillingSales({
           database: bindings.DB,
+          apiUrl: bindings.OPENPANEL_API_URL,
           clientId: bindings.OPENPANEL_CLIENT_ID,
           clientSecret: bindings.OPENPANEL_CLIENT_SECRET,
           fetch: send,

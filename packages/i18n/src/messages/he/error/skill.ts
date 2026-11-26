@@ -44,7 +44,7 @@ export const messages = {
   "error.skill.tooManySkills": "לסוכן יכולות להיות עד {limit} מיומנויות.",
   "error.skill.ownSkillExists":
     "לסוכן הזה כבר יש מיומנות משלו בשם {slug}. יש לבקש מהסוכן לשנות את שם המיומנות הזו או למחוק אותה, ואז להוסיף את המיומנות הזו שוב.",
-  "error.skill.managedSlug": "OpenBot נותן לכל סוכן מיומנות {slug} משלו. יש לתת למיומנות הזו שם אחר.",
+  "error.skill.managedSlug": "PurpleBot נותן לכל סוכן מיומנות {slug} משלו. יש לתת למיומנות הזו שם אחר.",
   "error.skill.templateMarkdownTooLarge": "{name}: SKILL.md גדול מ-64 KB. יש לקצר אותו לפני הפרסום.",
   "error.skill.localNoRevisions": "למיומנות מקומית אין גרסאות שפורסמו.",
   "error.skill.localNotFound": "המיומנות המקומית הזו לא קיימת. יש לבדוק את המזהה שלה ברשימת המיומנויות המקומיות.",
@@ -60,12 +60,12 @@ export const messages = {
   "error.skill.pathSymlink": "נתיבי מיומנות אינם יכולים להכיל קישורים סמליים.",
   "error.skill.folderNotRead": "{provider} אינו קורא את {folder}. יש להעתיק את התיקייה הזו אל {target}.",
   "error.skill.githubLinkInvalid": "יש להדביק קישור למאגר או לתיקייה ב-GitHub.",
-  "error.skill.githubNotFound": "OpenBot לא יכול לפתוח את {repository}. המאגר פרטי או שהוא לא קיים.",
+  "error.skill.githubNotFound": "PurpleBot לא יכול לפתוח את {repository}. המאגר פרטי או שהוא לא קיים.",
   "error.skill.githubNoSkills": "אין SKILL.md בתיקייה {folder}.",
-  "error.skill.githubUnavailable": "OpenBot לא יכול לקרוא את GitHub כרגע. יש לנסות שוב מאוחר יותר.",
+  "error.skill.githubUnavailable": "PurpleBot לא יכול לקרוא את GitHub כרגע. יש לנסות שוב מאוחר יותר.",
   "error.skill.githubRateLimited":
-    "GitHub מגביל את מספר הפעמים ש-OpenBot יכול לקרוא אותו בלי חשבון. יש לנסות שוב בעוד שעה.",
-  "error.skill.githubTooLarge": "OpenBot לא יכול לקרוא את כל הקבצים של {repository}. המאגר גדול מדי.",
+    "GitHub מגביל את מספר הפעמים ש-PurpleBot יכול לקרוא אותו בלי חשבון. יש לנסות שוב בעוד שעה.",
+  "error.skill.githubTooLarge": "PurpleBot לא יכול לקרוא את כל הקבצים של {repository}. המאגר גדול מדי.",
   "error.skill.githubHostTooOld": "יש לעדכן את השרת הזה כדי להוסיף מיומנויות מ-GitHub.",
   "error.skill.publishGithub": "{name} מגיעה מ-GitHub. אפשר לפרסם רק מיומנויות שיצרת.",
 } as const satisfies PartialTranslation<typeof source>;

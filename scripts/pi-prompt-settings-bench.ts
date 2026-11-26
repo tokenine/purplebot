@@ -54,7 +54,7 @@ const DOCS_EXTENSION = String.raw`export default function (pi) {
 
 const DEFERRED = (...tools: string[]): BridgeChange => ({
   toolExposure: Object.fromEntries(tools.map((tool) => [tool, "deferred" as const])),
-  description: "OpenBot",
+  description: "PurpleBot",
 });
 
 const VARIANTS: Variant[] = [
@@ -69,7 +69,10 @@ const VARIANTS: Variant[] = [
   { name: "no-skills", flags: ["--no-skills"] },
   { name: "two-openbot-tools-deferred", bridge: DEFERRED("request_api_key", "suggest_marketplace_app") },
   { name: "ask-ui-deferred-too", bridge: DEFERRED("ask_ui", "request_api_key", "suggest_marketplace_app") },
-  { name: "all-openbot-tools-deferred", bridge: { exposure: "deferred", toolExposure: null, description: "OpenBot" } },
+  {
+    name: "all-openbot-tools-deferred",
+    bridge: { exposure: "deferred", toolExposure: null, description: "PurpleBot" },
+  },
 ];
 
 const MEASURE_EXTENSION = `import { appendFileSync } from "node:fs";
@@ -146,7 +149,7 @@ const report: { cli: { executable: string; version: string }; model: string; tok
 };
 
 function git(cwd: string, ...args: string[]): void {
-  execFileSync("git", ["-c", "user.name=OpenBot", "-c", "user.email=e2e@openbot.invalid", ...args], { cwd });
+  execFileSync("git", ["-c", "user.name=PurpleBot", "-c", "user.email=e2e@openbot.invalid", ...args], { cwd });
 }
 
 const quote = (value: string) => `'${value.replaceAll("'", `'\\''`)}'`;

@@ -110,12 +110,12 @@ export interface RoutineHooks {
 const logger = createOpenBotLogger("routine-scheduler");
 
 const DELIVERY_TIMEZONE_LIMIT = 10_000;
-const SKIPPED_WHILE_CLOSED = "Skipped: OpenBot was closed at the scheduled time.";
+const SKIPPED_WHILE_CLOSED = "Skipped: PurpleBot was closed at the scheduled time.";
 const QUEUED_RUN_REASONS: Record<string, string> = {
   "active-turn": "Waiting: another turn still runs in the same chat. This run starts when that turn ends.",
-  "provider-start": "Waiting: the provider did not start a new chat in time. OpenBot tries again later.",
+  "provider-start": "Waiting: the provider did not start a new chat in time. PurpleBot tries again later.",
   "usage-limit": "Waiting: the provider usage limit is reached. This run starts when the limit resets.",
-  "sign-in": "Waiting: the provider needs sign-in on the computer that runs OpenBot. This run starts after sign-in.",
+  "sign-in": "Waiting: the provider needs sign-in on the computer that runs PurpleBot. This run starts after sign-in.",
 };
 
 function queuedRunReason(hold: string): string {
@@ -357,7 +357,7 @@ export class RoutineScheduler implements RoutineDueSource {
     try {
       this.#routines.markPausedByRun(routineId, { scheduledFor });
     } catch (error) {
-      logger.warn("OpenBot could not keep why a run paused its routine.", {
+      logger.warn("PurpleBot could not keep why a run paused its routine.", {
         error: error instanceof Error ? error.message : String(error),
       });
       return;
@@ -1384,7 +1384,7 @@ export class RoutineScheduler implements RoutineDueSource {
     if (!webhooks) throw new RoutineInputError("This server cannot create webhook routines.");
     if (!requestedByPerson()) {
       throw new RoutineInputError(
-        "Only a person's message, in your OpenBot chat or a thread they opened, can create, change or delete a webhook routine. Ask the user to request it there.",
+        "Only a person's message, in your PurpleBot chat or a thread they opened, can create, change or delete a webhook routine. Ask the user to request it there.",
       );
     }
     return webhooks;

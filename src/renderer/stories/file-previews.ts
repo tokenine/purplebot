@@ -16,7 +16,7 @@ const filePreview = (
 
 const MARKDOWN = `# Release notes
 
-OpenBot keeps workspaces, conversations, and attachments on **your** computer.
+PurpleBot keeps workspaces, conversations, and attachments on **your** computer.
 
 ## What is new
 
@@ -26,12 +26,12 @@ OpenBot keeps workspaces, conversations, and attachments on **your** computer.
 
 ## Configuration
 
-Set the provider in \`~/OpenBot/config.json\`:
+Set the provider in \`~/PurpleBot/config.json\`:
 
 \`\`\`json
 {
   "provider": "claude-code",
-  "workspace": "~/OpenBot/Agents"
+  "workspace": "~/PurpleBot/Agents"
 }
 \`\`\`
 
@@ -84,7 +84,7 @@ const SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width
 `;
 
 const buildPdf = () => {
-  const stream = "BT /F1 18 Tf 24 150 Td (OpenBot file preview) Tj ET";
+  const stream = "BT /F1 18 Tf 24 150 Td (PurpleBot file preview) Tj ET";
   const objects = [
     "<< /Type /Catalog /Pages 2 0 R >>",
     "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",

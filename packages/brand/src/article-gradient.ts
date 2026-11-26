@@ -1,4 +1,4 @@
-const LOGO_PRODUCTION = "#d6adf2";
+const LOGO_PRODUCTION = "#7c3aed";
 const LOGO_DEV = "#ff9412";
 const LOGO_PREVIEW = "#31cf76";
 const ACCENT = "#007cf7";

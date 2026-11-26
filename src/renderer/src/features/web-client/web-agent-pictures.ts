@@ -1,6 +1,6 @@
 const PICTURE_CACHE = "openbot-agent-pictures-v1";
 const PICTURE_PATH = "/openbot-agent-pictures/";
-const SOURCE_HEADER = "X-OpenBot-Picture-Source";
+const SOURCE_HEADER = "X-PurpleBot-Picture-Source";
 
 let signOuts = 0;
 const serverDeletes = new Map<string, number>();

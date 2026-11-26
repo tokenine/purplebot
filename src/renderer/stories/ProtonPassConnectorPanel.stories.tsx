@@ -32,7 +32,7 @@ const args = (status: Partial<PasswordManagerStatus>, hostName?: string) => ({
 
 const CONNECTED: Partial<PasswordManagerStatus> = {
   state: "connected",
-  vaultNames: ["Shared with OpenBot"],
+  vaultNames: ["Shared with PurpleBot"],
   loginCount: 12,
   expiresAt: NEXT_YEAR,
 };

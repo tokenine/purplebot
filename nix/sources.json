@@ -2,19 +2,19 @@
   "version": "0.79.0",
   "assets": {
     "x86_64-linux": {
-      "name": "OpenBot-0.79.0-x86_64.AppImage",
+      "name": "PurpleBot-0.79.0-x86_64.AppImage",
       "hash": "sha256-C1Hrz65GD33DReRj3hcFYAYdqHo6Dc+YlSL4wJHqMjE="
     },
     "aarch64-linux": {
-      "name": "OpenBot-0.79.0-arm64.AppImage",
+      "name": "PurpleBot-0.79.0-arm64.AppImage",
       "hash": "sha256-jSb/uHid1oNqjn139TaJnm7lxPGcoRKGJbBA3zZKb/8="
     },
     "x86_64-darwin": {
-      "name": "OpenBot-0.79.0-x64.zip",
+      "name": "PurpleBot-0.79.0-x64.zip",
       "hash": "sha256-o3BP0m2PooTBIzpVoVC5SKivjCaHz9WFTu2IFF3khLE="
     },
     "aarch64-darwin": {
-      "name": "OpenBot-0.79.0-arm64.zip",
+      "name": "PurpleBot-0.79.0-arm64.zip",
       "hash": "sha256-oCcUQ37K8Sb57Cm6/K0lu8tTWdSRsE66992tX600E7U="
     }
   }

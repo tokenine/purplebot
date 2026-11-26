@@ -19,7 +19,7 @@ import { ProviderSignInError, signInReason } from "../provider-client-effects";
 import { recordRestartActivity } from "../restart-activity";
 
 const CODEX_LOGIN_TIMEOUT_MS = 10 * 60_000;
-const UNVERIFIED_MESSAGE = "OpenBot could not verify the ChatGPT connection. Try again.";
+const UNVERIFIED_MESSAGE = "PurpleBot could not verify the ChatGPT connection. Try again.";
 
 interface PendingCodexLogin {
   client: AgentClient;
@@ -89,7 +89,7 @@ export class CodexLoginFlow {
         this.#track(client, cli, login.loginId);
         const opened = yield* Effect.result(loginIo(() => openExternal(login.authUrl)));
         if (Result.isFailure(opened)) {
-          yield* this.cancel("OpenBot could not open the ChatGPT connection page.");
+          yield* this.cancel("PurpleBot could not open the ChatGPT connection page.");
           return yield* new CodexLoginFailed({ cause: new Error(sourceText("error.provider.chatgptPageFailed")) });
         }
       }),
@@ -349,7 +349,7 @@ function initializeLoginClient(client: AgentClient): Effect.Effect<void, CodexLo
       .request(
         "initialize",
         {
-          clientInfo: { name: "openbot", title: "OpenBot", version: "0.1.0" },
+          clientInfo: { name: "openbot", title: "PurpleBot", version: "0.1.0" },
           capabilities: { experimentalApi: true, mcpServerOpenaiFormElicitation: true },
         },
         decodeRecordResponse,

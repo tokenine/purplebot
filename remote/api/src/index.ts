@@ -89,8 +89,8 @@ class ControlPlane extends Context.Service<
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "OpenBot-Timestamp": timestamp,
-              "OpenBot-Signature": signServiceRequest(body, timestamp, config.authWebhookSecret),
+              "PurpleBot-Timestamp": timestamp,
+              "PurpleBot-Signature": signServiceRequest(body, timestamp, config.authWebhookSecret),
             },
             body,
             signal: AbortSignal.any([signal, AbortSignal.timeout(timeoutMilliseconds)]),
@@ -346,7 +346,7 @@ const tlsPaths =
 const signalRuntime = ManagedRuntime.make(signal.dependencies);
 const discordConfig = config.discord;
 if (!discordConfig) {
-  console.log("OpenBot Discord is off: DISCORD_BOT_TOKEN and DISCORD_APPLICATION_ID are not both set and valid.");
+  console.log("PurpleBot Discord is off: DISCORD_BOT_TOKEN and DISCORD_APPLICATION_ID are not both set and valid.");
 }
 let discordApi: DiscordApi | null = null;
 const discordWhileEntry: Effect.Effect<void> = discordConfig
@@ -417,7 +417,7 @@ const healthServer = Bun.serve({
 });
 
 const protocol = tlsPaths ? "https" : "http";
-console.log(`OpenBot Remote API is ready at ${protocol}://${config.host}:${config.port}`);
+console.log(`PurpleBot Remote API is ready at ${protocol}://${config.host}:${config.port}`);
 
 const readCertificateFile = (path: string) =>
   Effect.tryPromise({
@@ -435,7 +435,7 @@ function reloadTlsWhenChanged(): Promise<void> {
   pendingReload ??= controlPlane
     .runPromise(reloadTlsEffect())
     .catch(() => {
-      console.error("OpenBot Remote API could not reload its TLS certificate.");
+      console.error("PurpleBot Remote API could not reload its TLS certificate.");
     })
     .finally(() => {
       pendingReload = null;
@@ -456,7 +456,7 @@ const reloadTlsEffect = Effect.fn("Signal.reloadTls")(function* () {
     catch: () => new ControlPlaneError({ message: "The Signal listener could not be restarted." }),
   });
   certificateHash = nextHash;
-  console.log("OpenBot Remote API reloaded its TLS certificate.");
+  console.log("PurpleBot Remote API reloaded its TLS certificate.");
 });
 
 function tlsCertificateHash(): Effect.Effect<string | null> {

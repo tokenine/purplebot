@@ -607,7 +607,7 @@ export class CodexAppServerClient extends EventEmitter<ClientEvents> {
       if ("id" in message) {
         const requestTurn = notificationTurnKey(message.params);
         if (requestTurn !== null && this.#abandonedTurns.has(requestTurn)) {
-          this.#write({ id: message.id, error: { code: -32_000, message: "OpenBot stopped this turn." } });
+          this.#write({ id: message.id, error: { code: -32_000, message: "PurpleBot stopped this turn." } });
           return;
         }
         const id = randomUUID();

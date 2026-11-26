@@ -660,7 +660,7 @@ export function vaultRequestFormSpec(args: VaultRequestArguments): UiBlockSpec |
   });
   return (
     normalizeUiBlockSpec({ type: "form", title: args.title, fields, submit: sourceText("status.agent.vaultSave") }) ??
-    "OpenBot could not show this form. Use a shorter title or shorter values and retry."
+    "PurpleBot could not show this form. Use a shorter title or shorter values and retry."
   );
 }
 
@@ -675,7 +675,7 @@ export function vaultPromptResult(
 }
 
 const TAKEOVER_SIGN_IN_MISSING_NEXT =
-  "No sign-in came from the user's own device. Take a fresh snapshot. If the page still asks for a sign-in, tell the user in one short sentence that this site accepts only a sign-in from the OpenBot desktop app on their computer, then call request_takeover with reason sign-in-blocked once more so that they can answer the card there. If this result comes again, do not ask again: tell the user and end your turn.";
+  "No sign-in came from the user's own device. Take a fresh snapshot. If the page still asks for a sign-in, tell the user in one short sentence that this site accepts only a sign-in from the PurpleBot desktop app on their computer, then call request_takeover with reason sign-in-blocked once more so that they can answer the card there. If this result comes again, do not ask again: tell the user and end your turn.";
 
 const TAKEOVER_USER_CANCELLED_NEXT =
   "The user selected Cancel. Do not call submit_secret or request_takeover again for this step, and do not try to get the same result another way. Say in your reply that the user cancelled it, and wait for the user before you try again.";
@@ -693,7 +693,7 @@ function browserTakeoverNotes(
     ...(secureInputFailed === undefined
       ? {}
       : {
-          secureInput: `OpenBot could not finish entering the value.${secureInputFailed ? ` ${secureInputFailed}` : ""} The page went to the user.`,
+          secureInput: `PurpleBot could not finish entering the value.${secureInputFailed ? ` ${secureInputFailed}` : ""} The page went to the user.`,
         }),
   };
 }
@@ -777,7 +777,7 @@ export function browserUserControlResult(): DynamicToolResult {
 }
 
 export function browserTakeoverError(
-  message = "OpenBot could not create a browser takeover request.",
+  message = "PurpleBot could not create a browser takeover request.",
 ): DynamicToolResult {
   return {
     success: false,

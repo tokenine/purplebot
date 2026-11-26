@@ -773,7 +773,7 @@ try {
     return { files: Object.keys(after).sort() };
   });
 
-  await step("openbot-hosted-update check: the marker of the safe mode starts OpenBot again", async () => {
+  await step("openbot-hosted-update check: the marker of the safe mode starts PurpleBot again", async () => {
     const results: { name: string; calls: string[]; exitCode: number }[] = [];
     for (const entry of CHECK_CASES) {
       const result = runCheck(entry);

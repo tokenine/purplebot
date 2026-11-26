@@ -2,8 +2,8 @@
 ; openbot:// scheme only on macOS and Linux, so the installer writes the Windows key itself.
 ; The application writes the same key at each start (`src/main/index.ts`).
 
-; A chosen folder such as D:\OpenBot inherits Modify rights for "Authenticated Users" from the drive
-; root, so another account could replace OpenBot.exe. Give access only to this user, SYSTEM and
+; A chosen folder such as D:\PurpleBot inherits Modify rights for "Authenticated Users" from the drive
+; root, so another account could replace PurpleBot.exe. Give access only to this user, SYSTEM and
 ; Administrators, as %LOCALAPPDATA% does, and reset the files to inherit it. This runs before the
 ; files are copied at each install and update, because an update deletes the folder. The installer
 ; makes the folder, so this user owns it and icacls can change it. On a drive with no ACLs, such as
@@ -38,7 +38,7 @@
 !macroend
 
 !macro customInstall
-  WriteRegStr SHCTX "Software\Classes\openbot" "" "URL:OpenBot invitations"
+  WriteRegStr SHCTX "Software\Classes\openbot" "" "URL:PurpleBot invitations"
   WriteRegStr SHCTX "Software\Classes\openbot" "URL Protocol" ""
   WriteRegStr SHCTX "Software\Classes\openbot\DefaultIcon" "" "$appExe,0"
   WriteRegStr SHCTX "Software\Classes\openbot\shell\open\command" "" '"$appExe" "%1"'
@@ -46,8 +46,8 @@
   !insertmacro openBotRemoveAppAboveInstallDirectory
 !macroend
 
-; OpenBot keeps the agent workspaces in %USERPROFILE%\OpenBot (`src/backend/agent-store.ts`) and its
-; user data in %APPDATA%\OpenBot (`app.setName` in `src/main/index.ts`). The uninstaller deletes the
+; PurpleBot keeps the agent workspaces in %USERPROFILE%\PurpleBot (`src/backend/agent-store.ts`) and its
+; user data in %APPDATA%\PurpleBot (`app.setName` in `src/main/index.ts`). The uninstaller deletes the
 ; installation folder, and an update moves each file in it to a temporary folder that it then
 ; deletes. An installation folder must not be one of these folders or a folder that holds one.
 ; Sets OUT to "1" when the folder in the variable PATH is such a folder, otherwise to "0". A
@@ -61,8 +61,8 @@
     StrCpy ${PATH} ${PATH} -1
   ${endIf}
   ${if} ${PATH} != ""
-    !insertmacro openBotHolds ${PATH} "$PROFILE\OpenBot" ${OUT}
-    !insertmacro openBotHolds ${PATH} "$APPDATA\OpenBot" ${OUT}
+    !insertmacro openBotHolds ${PATH} "$PROFILE\PurpleBot" ${OUT}
+    !insertmacro openBotHolds ${PATH} "$APPDATA\PurpleBot" ${OUT}
   ${endIf}
   Pop $R9
   Pop $R8
@@ -83,11 +83,11 @@
 !ifndef BUILD_UNINSTALLER
   ; "1" when the registry names an earlier installation in a folder with user data.
   Var openBotRegisteredInDataFolder
-  ; The folder with user data that holds an earlier OpenBot.exe. The update removes that copy.
+  ; The folder with user data that holds an earlier PurpleBot.exe. The update removes that copy.
   Var openBotDataFolderInstall
 
   ; The assisted installer accepted a folder that did not exist yet, so a first installation could go
-  ; to %USERPROFILE%\OpenBot, and the app then made the agent folders in it. The earlier uninstaller
+  ; to %USERPROFILE%\PurpleBot, and the app then made the agent folders in it. The earlier uninstaller
   ; would move them with the app files and delete them, or it stops the update with "Failed to
   ; uninstall old application files". Do not run that uninstaller: `customCheckAppRunning` removes its
   ; registry entry, and `customInstall` removes only the app files. A copy whose registry entry is
@@ -102,10 +102,10 @@
       ${if} ${FileExists} "$1\${APP_EXECUTABLE_FILENAME}"
         StrCpy $openBotDataFolderInstall $1
       ${endIf}
-    ${elseIf} ${FileExists} "$PROFILE\OpenBot\${APP_EXECUTABLE_FILENAME}"
-      StrCpy $openBotDataFolderInstall "$PROFILE\OpenBot"
-    ${elseIf} ${FileExists} "$APPDATA\OpenBot\${APP_EXECUTABLE_FILENAME}"
-      StrCpy $openBotDataFolderInstall "$APPDATA\OpenBot"
+    ${elseIf} ${FileExists} "$PROFILE\PurpleBot\${APP_EXECUTABLE_FILENAME}"
+      StrCpy $openBotDataFolderInstall "$PROFILE\PurpleBot"
+    ${elseIf} ${FileExists} "$APPDATA\PurpleBot\${APP_EXECUTABLE_FILENAME}"
+      StrCpy $openBotDataFolderInstall "$APPDATA\PurpleBot"
     ${endIf}
     !insertmacro openBotHoldsUserData $INSTDIR $0
     ${if} $0 == "1"
@@ -115,7 +115,7 @@
 
   ; The installer runs this check before it removes the earlier version. It is the default check.
   ; When the registry names a folder with user data, the update closes the app there, so the check
-  ; looks for the earlier OpenBot.exe only: a match on the folder would also stop the programs that
+  ; looks for the earlier PurpleBot.exe only: a match on the folder would also stop the programs that
   ; agents run from their workspaces. Then the registry no longer names that installation, so
   ; `uninstallOldVersion` does not run its uninstaller. The uninstaller keeps the default check.
   !macro customCheckAppRunning
@@ -151,10 +151,10 @@
 !macroend
 
 ; An installation in the default folder whose registry entry is gone, for example after an update
-; that stopped, is installed again in an OpenBot subfolder (`openBotSafeInstallDirectory`). The
+; that stopped, is installed again in an PurpleBot subfolder (`openBotSafeInstallDirectory`). The
 ; earlier copy stays in the default folder, often with files missing, and no update reaches it. Its
 ; login item and shortcuts then open a copy that fails at start. Delete its app files. Only this
-; user has the default folder, and it holds only OpenBot.
+; user has the default folder, and it holds only PurpleBot.
 !macro openBotRemoveAppAboveInstallDirectory
   ${if} $INSTDIR == "$LocalAppData\Programs\${APP_FILENAME}\${APP_FILENAME}"
   ${andIf} ${FileExists} "$LocalAppData\Programs\${APP_FILENAME}\${APP_EXECUTABLE_FILENAME}"
@@ -162,10 +162,10 @@
   ${endIf}
 !macroend
 
-; Only the files and folders that an OpenBot installation has are deleted from FOLDER, so the agent
+; Only the files and folders that an PurpleBot installation has are deleted from FOLDER, so the agent
 ; folders stay. A file that Windows still holds stays too; it does not stop the update. The login
 ; item names the executable (`src/main/login-item.ts`), and Electron calls it by the AppUserModelId:
-; point it at the new copy, or OpenBot no longer opens at sign-in.
+; point it at the new copy, or PurpleBot no longer opens at sign-in.
 !macro openBotRemoveAppFiles FOLDER
   Push $0
   Push $1
@@ -216,7 +216,7 @@
   ${endIf}
 !macroend
 
-; OpenBot installs for the current user only. The application writes the openbot:// key in HKCU at
+; PurpleBot installs for the current user only. The application writes the openbot:// key in HKCU at
 ; each start, and an update finds only one installation. This skips the "All users" page.
 !macro customInstallMode
   StrCpy $isForceCurrentInstall "1"
@@ -224,7 +224,7 @@
 
 ; The app starts an update visibly (`src/main/update-service.ts`), so the user sees the progress page
 ; until the new version opens. An update skips every other page; the earlier uninstaller deletes
-; OpenBot.exe before the new files are copied, and a silent update gave no sign of that. This is the
+; PurpleBot.exe before the new files are copied, and a silent update gave no sign of that. This is the
 ; default finish page of the assisted installer, but in an update it opens the app at once and skips
 ; the page, which also closes the installer. The installer opens the app by itself only in a silent run.
 !macro customFinishPage
@@ -255,11 +255,11 @@
 !macroend
 
 ; The uninstaller and each update delete the whole installation folder. electron-builder adds an
-; OpenBot subfolder only when the chosen path does not contain "OpenBot", so a choice such as
-; %USERPROFILE%\OpenBot (the agent workspaces) or %APPDATA%\OpenBot (the user data) would be
+; PurpleBot subfolder only when the chosen path does not contain "PurpleBot", so a choice such as
+; %USERPROFILE%\PurpleBot (the agent workspaces) or %APPDATA%\PurpleBot (the user data) would be
 ; deleted. Another account can also make a folder first and keep its rights on it. Use only a folder
-; that does not exist or that holds this user's earlier installation. Until then, add an OpenBot
-; subfolder. The app makes %USERPROFILE%\OpenBot only at its first start, so that folder can also not
+; that does not exist or that holds this user's earlier installation. Until then, add an PurpleBot
+; subfolder. The app makes %USERPROFILE%\PurpleBot only at its first start, so that folder can also not
 ; exist yet: use the default folder for it and for a folder that holds it. The page shows nothing;
 ; Abort skips it. In a visible update, the install mode page has set the folder from the registry
 ; again, so this page uses the folder that `customInit` uses for a silent update.

@@ -183,13 +183,13 @@ function returnText(task: ChannelTask, channelId: string, channelName: string, a
     return [
       origin,
       "Status: paused",
-      `Result: OpenBot note, not written by this member: the channel task stopped before it finished. ${reason}`.trim(),
+      `Result: PurpleBot note, not written by this member: the channel task stopped before it finished. ${reason}`.trim(),
       "Next: Do not send the request again. A person can continue the task in the channel, and its result then comes back here.",
     ].join("\n");
   return [
     origin,
     "Status: blocked",
-    `Result: OpenBot note, not written by this member: the channel task ${task.state === "failed" ? "failed" : "was cancelled"} before it finished. ${reason}`.trim(),
+    `Result: PurpleBot note, not written by this member: the channel task ${task.state === "failed" ? "failed" : "was cancelled"} before it finished. ${reason}`.trim(),
     "Unblock: Read the channel, then send the request again if you still need the result.",
   ].join("\n");
 }

@@ -60,38 +60,38 @@ import {
 } from "./app-inputs";
 import { stringPayload } from "./validation";
 
-const OPENBOT_SITE = "https://openbot.run";
+const PURPLEBOT_SITE = "https://github.com/tokenine/purplebot";
 
 function draftPost(translate: AppTranslate): string {
-  return encodeURIComponent(translate("app.socialFollow.draftPost", { site: "openbot.run" }));
+  return encodeURIComponent(translate("app.socialFollow.draftPost", { site: "github.com/tokenine/purplebot" }));
 }
 
 const EXTERNAL_DESTINATIONS: Record<ExternalDestination, string | ((translate: AppTranslate) => string)> = {
-  "agent-setup": "https://github.com/nightly-labs/openbot/blob/main/docs/TROUBLESHOOTING.md",
+  "agent-setup": "https://github.com/tokenine/purplebot/blob/selfhost/docs/TROUBLESHOOTING.md",
   "opencode-install": "https://opencode.ai/docs/",
   "opencode-auth": "https://opencode.ai/auth",
   "claude-install": "https://code.claude.com/docs",
   "hermes-install": "https://hermes-agent.nousresearch.com/docs/getting-started/installation",
-  feedback: "https://x.com/intent/post?text=Feedback%20for%20OpenBot%20%40norbertbodziony%3A%20",
+  feedback: "https://github.com/tokenine/purplebot/issues/new?template=feature_request.yml",
   "report-problem": () => bugReportFormUrl(feedbackFacts()),
-  message: "https://x.com/norbertbodziony",
-  changelog: "https://openbot.run/changelog",
-  guides: "https://openbot.run/guides",
-  discord: "https://discord.openbot.run",
-  github: "https://github.com/nightly-labs/openbot",
-  x: "https://x.com/OpenBot_",
-  threads: "https://www.threads.com/@openbot.run",
-  instagram: "https://www.instagram.com/openbot.run/",
-  tiktok: "https://www.tiktok.com/@openbot.run",
-  facebook: "https://www.facebook.com/profile.php?id=61595425259628",
-  linkedin: "https://www.linkedin.com/company/openbot-si/",
-  reddit: "https://www.reddit.com/r/OpenBot_/",
+  message: "https://github.com/tokenine/purplebot/issues",
+  changelog: "https://github.com/tokenine/purplebot/blob/selfhost/CHANGELOG.md",
+  guides: "https://github.com/tokenine/purplebot/tree/selfhost/selfhost",
+  discord: "https://github.com/tokenine/purplebot/issues",
+  github: "https://github.com/tokenine/purplebot",
+  x: "https://github.com/tokenine/purplebot",
+  threads: "https://github.com/tokenine/purplebot",
+  instagram: "https://github.com/tokenine/purplebot",
+  tiktok: "https://github.com/tokenine/purplebot",
+  facebook: "https://github.com/tokenine/purplebot",
+  linkedin: "https://github.com/tokenine/purplebot",
+  reddit: "https://github.com/tokenine/purplebot",
   "x-post": (translate) => `https://x.com/intent/post?text=${draftPost(translate)}`,
   "threads-post": (translate) => `https://www.threads.com/intent/post?text=${draftPost(translate)}`,
-  "linkedin-post": `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(OPENBOT_SITE)}`,
+  "linkedin-post": `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(PURPLEBOT_SITE)}`,
   "reddit-post": (translate) =>
-    `https://www.reddit.com/r/OpenBot_/submit?type=TEXT&title=${encodeURIComponent(translate("app.socialFollow.redditTitle"))}&text=${draftPost(translate)}`,
-  "facebook-post": `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(OPENBOT_SITE)}`,
+    `https://www.reddit.com/submit?type=TEXT&title=${encodeURIComponent(translate("app.socialFollow.redditTitle"))}&text=${draftPost(translate)}`,
+  "facebook-post": `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(PURPLEBOT_SITE)}`,
   "instagram-post": "https://www.instagram.com/",
   "tiktok-post": "https://www.tiktok.com/upload",
   "grok-bot-export": GROK_BOT_EXPORT_URL,

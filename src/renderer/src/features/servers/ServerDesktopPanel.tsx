@@ -27,7 +27,7 @@ const ISSUE_TITLES = {
   authentication_required: "server.desktop.connectionUnavailable",
   network_unavailable: "server.desktop.connectionUnavailable",
 } as const satisfies Record<ServerConnectionIssueCode, AppTextKey>;
-const REMOTE_HOST_GATEWAY_NAME = "OpenBot Remote Host Gateway";
+const REMOTE_HOST_GATEWAY_NAME = "PurpleBot Remote Host Gateway";
 
 function localComponentStatusKey(status: HostStatus | null | undefined): AppTextKey {
   if (status?.remoteDesktopReady) return "server.desktop.componentInstalled";

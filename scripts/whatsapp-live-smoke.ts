@@ -88,8 +88,8 @@ try {
       300_000,
     );
     report.stages.decrypt = { text: textOf(first).length > 0 };
-    await Effect.runPromise(handle.session.send(peerJid, { text: "OpenBot live smoke: your message arrived." }));
-    const image = Buffer.from(await QRCode.toBuffer("OpenBot live smoke"));
+    await Effect.runPromise(handle.session.send(peerJid, { text: "PurpleBot live smoke: your message arrived." }));
+    const image = Buffer.from(await QRCode.toBuffer("PurpleBot live smoke"));
     await Effect.runPromise(handle.session.send(peerJid, { image, mimetype: "image/png", caption: "Image check" }));
     report.stages.send = { text: true, image: true };
     logger.info("Sent a text and an image. Check them on the peer phone.");

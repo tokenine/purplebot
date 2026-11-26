@@ -46,7 +46,7 @@ export const messages = {
   "error.skill.tooManySkills": "Un agente può avere fino a {limit} skill.",
   "error.skill.ownSkillExists":
     "Questo agente ha già una propria skill chiamata {slug}. Chiedi all'agente di rinominare o eliminare quella skill, poi aggiungi di nuovo questa skill.",
-  "error.skill.managedSlug": "OpenBot dà a ogni agente la propria skill {slug}. Dai un altro nome a questa skill.",
+  "error.skill.managedSlug": "PurpleBot dà a ogni agente la propria skill {slug}. Dai un altro nome a questa skill.",
   "error.skill.templateMarkdownTooLarge": "{name}: SKILL.md è più grande di 64 KB. Accorcialo prima di pubblicare.",
   "error.skill.localNoRevisions": "La skill locale non ha revisioni pubblicate.",
   "error.skill.localNotFound": "Questa skill locale non esiste. Controlla il suo ID nell’elenco delle skill locali.",
@@ -63,12 +63,13 @@ export const messages = {
   "error.skill.pathSymlink": "I percorsi delle skill non possono contenere link simbolici.",
   "error.skill.folderNotRead": "{provider} non legge {folder}. Copia questa cartella in {target}.",
   "error.skill.githubLinkInvalid": "Incolla un link a un repository o a una cartella di GitHub.",
-  "error.skill.githubNotFound": "OpenBot non può aprire {repository}. Il repository è privato o non esiste.",
+  "error.skill.githubNotFound": "PurpleBot non può aprire {repository}. Il repository è privato o non esiste.",
   "error.skill.githubNoSkills": "Non c'è nessun SKILL.md in {folder}.",
-  "error.skill.githubUnavailable": "OpenBot non può leggere GitHub ora. Riprova più tardi.",
+  "error.skill.githubUnavailable": "PurpleBot non può leggere GitHub ora. Riprova più tardi.",
   "error.skill.githubRateLimited":
-    "GitHub limita quanto spesso OpenBot può leggerlo senza un account. Riprova tra un'ora.",
-  "error.skill.githubTooLarge": "OpenBot non può leggere tutti i file di {repository}. Il repository è troppo grande.",
+    "GitHub limita quanto spesso PurpleBot può leggerlo senza un account. Riprova tra un'ora.",
+  "error.skill.githubTooLarge":
+    "PurpleBot non può leggere tutti i file di {repository}. Il repository è troppo grande.",
   "error.skill.githubHostTooOld": "Aggiorna questo server per aggiungere skill da GitHub.",
   "error.skill.publishGithub": "{name} proviene da GitHub. Puoi pubblicare solo le skill che hai creato.",
 } as const satisfies PartialTranslation<typeof source>;

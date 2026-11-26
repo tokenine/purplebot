@@ -1,5 +1,5 @@
 [Unit]
-Description=OpenBot pool machine waits for a server
+Description=PurpleBot pool machine waits for a server
 Wants=network-online.target
 After=network-online.target
 ConditionPathExists=/etc/openbot-pool/token

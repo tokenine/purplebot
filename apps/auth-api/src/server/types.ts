@@ -49,6 +49,7 @@ export interface WorkerBindings {
   SITE_COOKIE_ISOLATION_READY?: string;
   SITE_PUBLISH_ENABLED?: string;
   SITE_LOCAL_ORIGIN?: string;
+  SITE_ORIGIN?: string;
   REMOTE_TICKET_PRIVATE_JWK?: string;
   REMOTE_TICKET_PUBLIC_JWKS?: string;
   REMOTE_TICKET_KEY_ID?: string;
@@ -89,6 +90,7 @@ export interface WorkerBindings {
   HOSTED_POOL_ALERT_WEBHOOK_URL?: string;
   OPENPANEL_CLIENT_ID?: string;
   OPENPANEL_CLIENT_SECRET?: string;
+  OPENPANEL_API_URL?: string;
   GITHUB_APP_CLIENT_ID?: string;
   GITHUB_APP_PRIVATE_KEY?: string;
   FEEDBACK_WITHDRAWN_REPOSITORY?: string;

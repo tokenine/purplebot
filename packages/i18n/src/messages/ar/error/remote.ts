@@ -17,14 +17,14 @@ export const messages = {
   "error.remote.sessionCapacity": "لدى المضيف بالفعل أربع جلسات نشطة.",
   "error.remote.linuxNeedsX11": "يحتاج سطح المكتب البعيد على Linux إلى جلسة X11. Wayland غير مدعوم.",
   "error.remote.runtimeMissing":
-    "بيئة تشغيل Sunshine وMoonlight Web مفقودة أو غير مدعومة على هذا المضيف. ثبّت إصدار OpenBot الكامل على Mac أو مضيف Windows x64 أو مضيف Linux x64، ثم أعد تشغيل OpenBot.",
+    "بيئة تشغيل Sunshine وMoonlight Web مفقودة أو غير مدعومة على هذا المضيف. ثبّت إصدار PurpleBot الكامل على Mac أو مضيف Windows x64 أو مضيف Linux x64، ثم أعد تشغيل PurpleBot.",
   "error.remote.testActive": "يوجد اختبار نشط لسطح المكتب البعيد. أعد المحاولة عند انتهائه.",
   "error.remote.screenRecordingDenied":
-    "لم يسمح المضيف لـ OpenBot بتسجيل شاشته. امنح إذن تسجيل الشاشة على المضيف، ثم أعد المحاولة.",
+    "لم يسمح المضيف لـ PurpleBot بتسجيل شاشته. امنح إذن تسجيل الشاشة على المضيف، ثم أعد المحاولة.",
   "error.remote.windowsSessionDisconnected":
     "جلسة Windows على المضيف غير متصلة، لذلك لا توجد شاشة لمشاركتها. سجّل الدخول إلى Windows على شاشة المضيف، ثم أعد المحاولة.",
   "error.remote.windowsCaptureDenied":
-    "لا يسمح Windows على المضيف لـ OpenBot بتسجيل شاشته. افتح قفل Windows على شاشة المضيف وأغلق أي طلب إذن من المسؤول، ثم أعد المحاولة. إذا استمرت المشكلة، فأعد تشغيل المضيف.",
+    "لا يسمح Windows على المضيف لـ PurpleBot بتسجيل شاشته. افتح قفل Windows على شاشة المضيف وأغلق أي طلب إذن من المسؤول، ثم أعد المحاولة. إذا استمرت المشكلة، فأعد تشغيل المضيف.",
   "error.remote.macScreenLocked":
     "جهاز Mac مقفل، لذلك لا يمكنه مشاركة شاشته. افتح قفل جهاز Mac من شاشته، ثم أعد المحاولة.",
   "error.remote.streamTooSlowLowerQuality":
@@ -44,7 +44,7 @@ export const messages = {
   "error.remote.moonlightStartFailed":
     "لم يبدأ Moonlight Web على المضيف. راجع سجلات سطح المكتب البعيد على المضيف، ثم أعد المحاولة.",
   "error.remote.pairingFailed":
-    "تعذّر على Moonlight الاقتران مع Sunshine على المضيف. أعد المحاولة. إذا استمرت المشكلة، فأعد تشغيل OpenBot على المضيف.",
+    "تعذّر على Moonlight الاقتران مع Sunshine على المضيف. أعد المحاولة. إذا استمرت المشكلة، فأعد تشغيل PurpleBot على المضيف.",
   "error.remote.runtimeStartFailed":
     "لم تبدأ بيئة تشغيل سطح المكتب البعيد على المضيف. راجع سجلات سطح المكتب البعيد على المضيف، ثم أعد المحاولة.",
   "error.remote.hostUnreachable": "يتعذّر الوصول إلى المضيف.",
@@ -52,7 +52,7 @@ export const messages = {
   "error.remote.invalidData": "أعاد المضيف بيانات غير صالحة.",
   "error.remote.unsafeData": "أعاد المضيف بيانات لا يمكن لهذا التطبيق استخدامها بأمان.",
   "error.remote.requestFailedStatus": "فشل طلب الخادم البعيد ({status}).",
-  "error.remote.appUpdateRequired": "حدّث تطبيق OpenBot هذا قبل الاتصال بالمضيف.",
+  "error.remote.appUpdateRequired": "حدّث تطبيق PurpleBot هذا قبل الاتصال بالمضيف.",
   "error.remote.identityNotVerified": "تعذّر التحقق من هوية الخادم.",
   "error.remote.webRtcUnavailable": "نقل WebRTC غير متاح.",
   "error.remote.invalidCompatibility": "أعاد المضيف معلومات توافق غير صالحة.",
@@ -70,8 +70,8 @@ export const messages = {
   "error.remote.inviteAcceptedOtherHost": "قبلت خدمة الحسابات مضيفًا مختلفًا.",
   "error.remote.inviteIdentityChanged": "تغيّرت هوية مضيف الدعوة أثناء قبولها.",
   "error.remote.localServerRemove": "لا يمكن إزالة الخادم المحلي.",
-  "error.remote.desktopSetupHostUpdate": "حدّث OpenBot على المضيف للتحقق من إعداد سطح المكتب البعيد.",
-  "error.remote.desktopTestHostUpdate": "حدّث OpenBot على المضيف لاختبار إعداد سطح المكتب البعيد.",
+  "error.remote.desktopSetupHostUpdate": "حدّث PurpleBot على المضيف للتحقق من إعداد سطح المكتب البعيد.",
+  "error.remote.desktopTestHostUpdate": "حدّث PurpleBot على المضيف لاختبار إعداد سطح المكتب البعيد.",
   "error.remote.viewerProxyUnavailable": "وكيل العارض البعيد المحلي غير متاح.",
   "error.remote.viewerTransportInvalid": "نقل العارض البعيد غير صالح.",
   "error.remote.viewerProxyNoPort": "لم يحصل وكيل العارض البعيد المحلي على منفذ.",
@@ -89,12 +89,12 @@ export const messages = {
   "error.remote.requestTimeout": "انتهت مهلة الطلب البعيد.",
   "error.remote.requestFailed": "فشل الطلب البعيد.",
   "error.remote.hostKeyMissing":
-    "لا يمكن لـ OpenBot التحقق من هذا الخادم لأن مفتاح الأمان الخاص به مفقود أو تغيّر. اطلب من مالك الخادم فحص الخادم.",
+    "لا يمكن لـ PurpleBot التحقق من هذا الخادم لأن مفتاح الأمان الخاص به مفقود أو تغيّر. اطلب من مالك الخادم فحص الخادم.",
   "error.remote.connectionNotStarted":
-    "تعذّر على OpenBot بدء الاتصال بهذا الخادم. إذا استمرت المشكلة، فأغلق OpenBot ثم افتحه مرة أخرى.",
+    "تعذّر على PurpleBot بدء الاتصال بهذا الخادم. إذا استمرت المشكلة، فأغلق PurpleBot ثم افتحه مرة أخرى.",
   "error.remote.connectionServiceUnreachable":
-    "لا يستطيع هذا الكمبيوتر الوصول إلى خدمة اتصال OpenBot. تحقّق من اتصاله بالإنترنت. يعيد OpenBot الاتصال تلقائيًا.",
-  "error.remote.serverAnswerTimeout": "لم يستجب الخادم في الوقت المحدد. يعيد OpenBot الاتصال تلقائيًا.",
+    "لا يستطيع هذا الكمبيوتر الوصول إلى خدمة اتصال PurpleBot. تحقّق من اتصاله بالإنترنت. يعيد PurpleBot الاتصال تلقائيًا.",
+  "error.remote.serverAnswerTimeout": "لم يستجب الخادم في الوقت المحدد. يعيد PurpleBot الاتصال تلقائيًا.",
   "error.remote.signInConnectionClosed":
     "أُغلق الاتصال بالخادم أثناء تسجيل الدخول. إذا تكرر ذلك، فتأكد من صحة التاريخ والوقت على الخادم وعلى هذا الجهاز.",
   "error.remote.connectionCancelled": "أُلغي الاتصال البعيد.",
@@ -146,11 +146,11 @@ export const messages = {
   "error.remote.permanentInviteNoEmail": "لا يمكن إرسال الدعوات الدائمة بالبريد الإلكتروني.",
   "error.remote.selfHostedInviteNoEmail":
     "لا يمكن إرسال دعوة من خدمة حسابات مستضافة ذاتيًا بالبريد الإلكتروني. انسخ الرابط.",
-  "error.remote.inviteOtherService": "تنتمي هذه الدعوة إلى خدمة OpenBot أخرى.",
+  "error.remote.inviteOtherService": "تنتمي هذه الدعوة إلى خدمة PurpleBot أخرى.",
   "error.remote.inviteFingerprintMismatch": "هوية مضيف الدعوة لا تطابق بصمتها.",
   "error.remote.inviteHostKeyMissing": "مفتاح مضيف الدعوة مفقود.",
   "error.remote.inviteKeyConflict": "تتعارض الدعوة مع مفتاح المضيف الموثوق.",
-  "error.remote.serviceRequestFailed": "فشل طلب خدمة OpenBot.",
+  "error.remote.serviceRequestFailed": "فشل طلب خدمة PurpleBot.",
   "error.remote.downloadTimeout": "انتهت مهلة تنزيل المرفق. أعد المحاولة.",
   "error.remote.attachmentConnectionClosed": "أُغلق اتصال المرفقات.",
   "error.remote.tooManyDownloads": "عدد كبير جدًا من تنزيلات المرفقات.",
@@ -176,7 +176,7 @@ export const messages = {
   "error.remote.signalInvalidMessage": "أعاد Signal رسالة غير صالحة.",
   "error.remote.sessionInvalid": "الجلسة البعيدة غير صالحة.",
   "error.remote.ticketInvalid": "تذكرة الاتصال غير صالحة.",
-  "error.remote.mobileUpdateRequired": "حدّث OpenBot Mobile أو تطبيق الحاسوب المكتبي قبل الاتصال.",
+  "error.remote.mobileUpdateRequired": "حدّث PurpleBot Mobile أو تطبيق الحاسوب المكتبي قبل الاتصال.",
   "error.remote.connectionStepFailed": "تعذّر إكمال خطوة الاتصال هذه.",
   "error.remote.signalNotConnected": "Signal غير متصل.",
   "error.remote.signalFrameUnreadable": "أرسل Signal إطارًا لا يستطيع هذا النظير قراءته.",
@@ -184,46 +184,47 @@ export const messages = {
   "error.remote.dataChannelFailed": "فشلت قناة {kind}.",
   "error.remote.hostBusy": "المضيف مشغول باتصال آخر. أعد المحاولة بعد لحظة.",
   "error.remote.signalPermissionDenied": "لا يملك حسابك وصولًا إلى هذا المضيف. اطلب الوصول من المالك.",
-  "error.remote.signalRateLimited": "محاولات اتصال كثيرة جدًا. سيعيد OpenBot المحاولة بعد {seconds} ثانية.",
-  "error.remote.signalProtocolError": "لا يتفق Signal وهذا التطبيق على بروتوكول الاتصال. حدّث OpenBot، ثم أعد المحاولة.",
+  "error.remote.signalRateLimited": "محاولات اتصال كثيرة جدًا. سيعيد PurpleBot المحاولة بعد {seconds} ثانية.",
+  "error.remote.signalProtocolError":
+    "لا يتفق Signal وهذا التطبيق على بروتوكول الاتصال. حدّث PurpleBot، ثم أعد المحاولة.",
   "error.remote.signalRefused": "رفض Signal الاتصال.",
   "error.remote.signalClosed": "أُغلق الاتصال بـ Signal قبل أن يرد المضيف.",
   "error.remote.relayUnavailable": "لم يرسل Signal أي خوادم ترحيل لهذا الاتصال. أعد المحاولة لاحقًا.",
   "error.remote.iceFailed": "تعذّر إنشاء اتصال مباشر بالمضيف. قد يحظره جدار حماية أو VPN أو وكيل.",
   "error.remote.iceDisconnected": "فُقد الاتصال المباشر بالمضيف.",
   "error.remote.webrtcBlocked":
-    "هذا الجهاز يحظر الاتصال الذي يحتاجه OpenBot. إذا كان نمط المنع قيد التشغيل، فأوقفه لـ OpenBot في الإعدادات > الخصوصية والأمن > نمط المنع.",
-  "error.remote.directoryUnreachable": "تعذّر على OpenBot الوصول إلى خدمة OpenBot. تحقق من اتصالك.",
-  "error.remote.directoryTimeout": "لم ترد خدمة OpenBot في الوقت المحدد. أعد المحاولة.",
+    "هذا الجهاز يحظر الاتصال الذي يحتاجه PurpleBot. إذا كان نمط المنع قيد التشغيل، فأوقفه لـ PurpleBot في الإعدادات > الخصوصية والأمن > نمط المنع.",
+  "error.remote.directoryUnreachable": "تعذّر على PurpleBot الوصول إلى خدمة PurpleBot. تحقق من اتصالك.",
+  "error.remote.directoryTimeout": "لم ترد خدمة PurpleBot في الوقت المحدد. أعد المحاولة.",
   "error.remote.inviteAlreadyUsed": "استُخدمت هذه الدعوة بالفعل. اطلب دعوة جديدة.",
   "error.remote.inviteNotFound": "هذه الدعوة غير موجودة أو انتهت صلاحيتها. اطلب دعوة جديدة.",
   "error.remote.licenseUsersFull":
     "لا يتوفر مستخدم شاغر في ترخيص مالك الخادم. اطلب من المالك إضافة مستخدم إلى الترخيص.",
   "error.remote.memberLimitReached": "وصل هذا المضيف إلى الحد الأقصى للأعضاء. اطلب من المالك إتاحة مكان.",
-  "error.remote.hostNotRegistered": "لم يعد هذا المضيف مسجّلًا في خدمة OpenBot.",
+  "error.remote.hostNotRegistered": "لم يعد هذا المضيف مسجّلًا في خدمة PurpleBot.",
   "error.remote.membershipEnded": "لم تعد عضوًا في هذا المضيف. اطلب دعوة جديدة من المالك.",
   "error.remote.membershipChanged": "غيّر شخص آخر هذا العضو في الوقت نفسه. حمّل الأعضاء مجددًا ثم حاول مرة أخرى.",
   "error.remote.accountSessionInactive": "لم يعد تسجيل دخولك نشطًا. سجّل الدخول مرة أخرى.",
   "error.remote.hostOtherAccount": "ينتمي هذا المضيف إلى حساب آخر.",
-  "error.remote.remoteNotConfigured": "الاتصالات البعيدة غير مُعدّة في خدمة OpenBot هذه.",
+  "error.remote.remoteNotConfigured": "الاتصالات البعيدة غير مُعدّة في خدمة PurpleBot هذه.",
   "error.remote.hostRefused": "رفض المضيف الطلب ({status}).",
   "error.remote.formUnavailable": "هذا النموذج لم يعد متاحًا.",
   "error.remote.hostedServerRemoval": "استخدم «الفوترة» لحذف خادم مستضاف.",
   "error.remote.hostRemoved": "أزال المالك هذا الخادم من الحساب.",
   "error.remote.ownerTransferSelf": "أنت بالفعل مالك هذا الخادم. أدخل البريد الإلكتروني للمالك الجديد.",
-  "error.remote.ownerTransferHosted": "لا يمكن تغيير مالك خادم تستضيفه OpenBot.",
+  "error.remote.ownerTransferHosted": "لا يمكن تغيير مالك خادم تستضيفه PurpleBot.",
   "error.remote.ownerTransferInvalid": "طلب نقل الملكية هذا لم يعد متاحًا. اطلب من المالك إرساله مرة أخرى.",
   "error.remote.channelsUnsupported": "حدّث خادم الحاسوب المكتبي هذا لاستخدام القنوات.",
   "error.remote.channelDeleteUnsupported": "حدّث خادم الحاسوب المكتبي هذا لحذف القنوات.",
   "error.remote.historyRefreshFailed": "أُرسلت الرسالة، لكن تعذّر تحديث سجل الدردشة.",
   "error.remote.taskHistoryRefreshFailed": "تغيّرت المهمة، لكن تعذّر تحديث سجل الدردشة.",
-  "error.remote.serverNotLoaded": "تعذّر على OpenBot تحميل الخادم. حاول مرة أخرى.",
+  "error.remote.serverNotLoaded": "تعذّر على PurpleBot تحميل الخادم. حاول مرة أخرى.",
   "error.remote.localServerNotStarted":
-    "لم يبدأ الخادم على هذا الحاسوب. حاول مرة أخرى. إذا لم يبدأ، فأعد تشغيل OpenBot على هذا الحاسوب.",
+    "لم يبدأ الخادم على هذا الحاسوب. حاول مرة أخرى. إذا لم يبدأ، فأعد تشغيل PurpleBot على هذا الحاسوب.",
   "error.remote.localServerNotFound": "هذا الخادم ليس على هذا الحاسوب.",
   "error.remote.localServerAccountRemovalFailed":
     "حُذف الخادم على حاسوبه، لكن الحساب لا يزال يُدرجه. احذفه مرة أخرى لإزالته من الحساب.",
   "error.remote.localServerLimit": "يمكنك امتلاك {limit} خادم كحد أقصى على هذا الحاسوب. احذف واحدًا لإنشاء آخر.",
   "error.remote.localServersReadOnly":
-    "لا يستطيع هذا الإصدار من OpenBot قراءة قائمة الخوادم على هذا الحاسوب. حدّث OpenBot.",
+    "لا يستطيع هذا الإصدار من PurpleBot قراءة قائمة الخوادم على هذا الحاسوب. حدّث PurpleBot.",
 } as const satisfies PartialTranslation<typeof source>;

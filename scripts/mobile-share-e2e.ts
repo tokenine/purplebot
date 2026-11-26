@@ -72,8 +72,8 @@ async function selectSimulator(): Promise<string> {
     } catch {}
   }
   const [udid, ...extra] = withApp;
-  if (!udid) throw new Error("No booted simulator has OpenBot installed. Run `bun run dev:mobile` first.");
-  if (extra.length > 0) throw new Error(`Several booted simulators have OpenBot. Pass --simulator=<udid>.`);
+  if (!udid) throw new Error("No booted simulator has PurpleBot installed. Run `bun run dev:mobile` first.");
+  if (extra.length > 0) throw new Error(`Several booted simulators have PurpleBot. Pass --simulator=<udid>.`);
   return udid;
 }
 
@@ -135,7 +135,7 @@ async function main(): Promise<void> {
   mkdirSync(OUT, { recursive: true });
 
   const cases: ShareCase[] = [
-    { name: "text", coldStart: false, text: [{ type: "text", value: "OpenBot share E2E text" }] },
+    { name: "text", coldStart: false, text: [{ type: "text", value: "PurpleBot share E2E text" }] },
     { name: "link", coldStart: false, text: [{ type: "url", value: "https://openbot.run/" }] },
     {
       name: "image",
@@ -176,7 +176,7 @@ async function main(): Promise<void> {
     {
       name: "cold-start",
       coldStart: true,
-      text: [{ type: "text", value: "OpenBot share E2E cold start" }],
+      text: [{ type: "text", value: "PurpleBot share E2E cold start" }],
       file: {
         source: fixtures.png,
         name: "share-e2e-cold.png",

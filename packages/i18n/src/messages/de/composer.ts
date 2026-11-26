@@ -79,12 +79,12 @@ export const messages = {
   "composer.voice.transcribing": "Sprachanweisung wird transkribiert",
   "composer.voice.start": "Anweisung per Sprache erstellen",
   "composer.voice.blocked":
-    "Der Mikrofonzugriff ist gesperrt. Erlaube OpenBot in den Systemeinstellungen den Zugriff auf das Mikrofon.",
+    "Der Mikrofonzugriff ist gesperrt. Erlaube PurpleBot in den Systemeinstellungen den Zugriff auf das Mikrofon.",
   "composer.voice.noMicrophone": "Kein Mikrofon verfügbar.",
-  "composer.voice.startFailed": "OpenBot konnte die Sprachaufnahme nicht starten.",
+  "composer.voice.startFailed": "PurpleBot konnte die Sprachaufnahme nicht starten.",
   "composer.voice.microphoneUnavailable":
-    "OpenBot konnte das Mikrofon nicht öffnen. Schließe andere Apps, die es verwenden, prüfe, ob es angeschlossen und in den Systemeinstellungen erlaubt ist, und versuche es erneut.",
-  "composer.voice.transcribeFailed": "OpenBot konnte diese Aufnahme nicht transkribieren.",
+    "PurpleBot konnte das Mikrofon nicht öffnen. Schließe andere Apps, die es verwenden, prüfe, ob es angeschlossen und in den Systemeinstellungen erlaubt ist, und versuche es erneut.",
+  "composer.voice.transcribeFailed": "PurpleBot konnte diese Aufnahme nicht transkribieren.",
   "composer.reply.toYou": "Antwort auf deine Nachricht",
   "composer.reply.toAgent": "Antwort an den Agenten",
   "composer.reply.attachment": "Anhang",

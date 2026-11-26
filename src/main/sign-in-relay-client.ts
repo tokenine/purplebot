@@ -203,7 +203,7 @@ export class SignInRelayClient {
       Effect.as(true),
       Effect.catch((error) =>
         Effect.sync(() => {
-          logger.warn("OpenBot could not open a relayed sign-in page:", toLogValue(error.cause));
+          logger.warn("PurpleBot could not open a relayed sign-in page:", toLogValue(error.cause));
           return false;
         }),
       ),
@@ -237,7 +237,10 @@ export class SignInRelayClient {
           : { status: 400, message: "error.mcp.redirectNoSignIn" };
       },
     }).catch((error: unknown) => {
-      logger.warn("OpenBot could not listen for a relayed sign-in, so only a pasted address works:", toLogValue(error));
+      logger.warn(
+        "PurpleBot could not listen for a relayed sign-in, so only a pasted address works:",
+        toLogValue(error),
+      );
       return null;
     });
     const shared: SharedListener = { id, users: 0, server };

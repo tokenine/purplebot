@@ -4,9 +4,9 @@ import type { messages as source } from "../en/vault";
 export const messages = {
   "vault.items.title": "פריטים שמורים",
   "vault.items.description":
-    "כל סוכן בשרת הזה יכול להשתמש בפריטים האלה. OpenBot מקליד סיסמאות, מספרי כרטיס וקודי אבטחה בעמוד, כך שהסוכנים אינם רואים אותם. סוכנים קוראים מפתחות API מקובץ ולא מהצ'אט.",
+    "כל סוכן בשרת הזה יכול להשתמש בפריטים האלה. PurpleBot מקליד סיסמאות, מספרי כרטיס וקודי אבטחה בעמוד, כך שהסוכנים אינם רואים אותם. סוכנים קוראים מפתחות API מקובץ ולא מהצ'אט.",
   "vault.items.scopedDescription":
-    "כל פריט מיועד לסוכנים שבחרת. OpenBot מקליד סיסמאות, מספרי כרטיס וקודי אבטחה בעמוד, כך שהסוכנים אינם רואים אותם. סוכנים קוראים מפתחות API מקובץ ולא מהצ'אט. כל הסוכנים פועלים כאותו משתמש מערכת, ולכן סוכן יכול לקרוא גם קובץ מפתח API שמיועד לסוכנים אחרים.",
+    "כל פריט מיועד לסוכנים שבחרת. PurpleBot מקליד סיסמאות, מספרי כרטיס וקודי אבטחה בעמוד, כך שהסוכנים אינם רואים אותם. סוכנים קוראים מפתחות API מקובץ ולא מהצ'אט. כל הסוכנים פועלים כאותו משתמש מערכת, ולכן סוכן יכול לקרוא גם קובץ מפתח API שמיועד לסוכנים אחרים.",
   "vault.agents.label": "סוכנים",
   "vault.agents.all": "כל הסוכנים",
   "vault.agents.some": "{chosen} מתוך {total}",
@@ -101,15 +101,15 @@ export const messages = {
   "vault.importMenu": "ייבוא מ-CSV",
   "vault.importTitle": "ייבוא מקובץ CSV",
   "vault.importDescription":
-    "אפשר לייבא התחברויות מקובץ CSV שיוצא מ-1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Passwords, LastPass או Proton Pass. OpenBot קורא את הקובץ במחשב הזה ואינו מעלה אותו.",
+    "אפשר לייבא התחברויות מקובץ CSV שיוצא מ-1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Passwords, LastPass או Proton Pass. PurpleBot קורא את הקובץ במחשב הזה ואינו מעלה אותו.",
   "vault.importChoose": "בחירת קובץ CSV",
   "vault.importDone": "יובאו: {imported}. דולגו: {skipped}.",
   "vault.unavailableTitle": "המחשב הזה אינו יכול לשמור סודות",
   "vault.unavailableDescription":
-    "OpenBot מצפין את הכספת באמצעות אחסון הסודות של המערכת. יש להגדיר מחזיקת מפתחות ולפתוח את העמוד הזה שוב.",
-  "vault.unreadableTitle": "OpenBot אינו יכול לקרוא את הכספת",
+    "PurpleBot מצפין את הכספת באמצעות אחסון הסודות של המערכת. יש להגדיר מחזיקת מפתחות ולפתוח את העמוד הזה שוב.",
+  "vault.unreadableTitle": "PurpleBot אינו יכול לקרוא את הכספת",
   "vault.unreadableDescription":
-    "קובץ הכספת נמצא במחשב הזה, אבל OpenBot אינו מצליח לפענח אותו. זה יכול לקרות כששרשרת המפתחות של המערכת משתנה. איפוס הכספת מתחיל מחדש בלי פריטים.",
+    "קובץ הכספת נמצא במחשב הזה, אבל PurpleBot אינו מצליח לפענח אותו. זה יכול לקרות כששרשרת המפתחות של המערכת משתנה. איפוס הכספת מתחיל מחדש בלי פריטים.",
   "vault.link.group": "חשבונות תשלום",
   "vault.link.name": "Link",
   "vault.link.connect": "חיבור",
@@ -123,7 +123,7 @@ export const messages = {
     "הסוכנים לא יוכלו עוד לבקש לשלם עם Link. חשבון Link והכרטיסים שבו נשארים כפי שהם.",
   "vault.reset": "איפוס הכספת",
   "vault.resetTitle": "לאפס את הכספת?",
-  "vault.resetDescription": "OpenBot מוחק את קובץ הכספת ואת כל הפריטים שבו. אי אפשר לבטל את הפעולה.",
+  "vault.resetDescription": "PurpleBot מוחק את קובץ הכספת ואת כל הפריטים שבו. אי אפשר לבטל את הפעולה.",
   "vault.request.private": "נשמר בכספת שלך. {agent} אינו רואה אותו לעולם.",
   "vault.request.privateUnnamed": "נשמר בכספת שלך. הסוכן אינו רואה אותו לעולם.",
   "vault.request.addLogin": "הוספת התחברות",
@@ -144,7 +144,7 @@ export const messages = {
   },
   "vault.twoStep.setupTitle": "הגדרת קוד דו־שלבי",
   "vault.twoStep.setupIntro":
-    "ב־{site}, יש להפעיל אימות דו־שלבי עם אפליקציית אימות. כשהאתר מציג קוד QR, יש למסור ל־OpenBot את המפתח שלו.",
+    "ב־{site}, יש להפעיל אימות דו־שלבי עם אפליקציית אימות. כשהאתר מציג קוד QR, יש למסור ל־PurpleBot את המפתח שלו.",
   "vault.twoStep.keyLabel": "מפתח הגדרה או קישור otpauth://",
   "vault.twoStep.keyHint": "רוב האתרים מציגים אותו מתחת לקוד ה־QR, בתור „לא ניתן לסרוק?” או „הזנת המפתח ידנית”.",
   "vault.twoStep.keyInvalid": "זה לא מפתח אימות דו־שלבי.",
@@ -162,7 +162,7 @@ export const messages = {
   "vault.near.name": "ארנק קריפטו",
   "vault.near.open": "פתיחת ארנק הקריפטו",
   "vault.near.connect": "חיבור",
-  "vault.near.signedOut": "יש להתחבר ל-OpenBot כדי להגדיר את ארנק הקריפטו.",
+  "vault.near.signedOut": "יש להתחבר ל-PurpleBot כדי להגדיר את ארנק הקריפטו.",
   "vault.near.paused": "מושהה",
   "vault.near.failed": "לא ניתן לשנות את ארנק הקריפטו.",
   "vault.near.waiting": "ממתין לחתימה שלך בדפדפן…",
@@ -170,7 +170,7 @@ export const messages = {
   "vault.near.openAgain": "פתיחה מחדש",
   "vault.near.signature.label": "חתימות בדפדפן",
   "vault.near.signature.register": "יצירת מפתח הגישה שלך",
-  "vault.near.signature.registerDetail": "רק במכשירים שלך. OpenBot אף פעם לא מחזיק בו.",
+  "vault.near.signature.registerDetail": "רק במכשירים שלך. PurpleBot אף פעם לא מחזיק בו.",
   "vault.near.signature.create": "אישור הארנק החדש",
   "vault.near.signature.createDetail": "כל הסוכנים יכולים לשלם עד {amount} ביום. אפשר לשנות זאת אחר כך.",
   "vault.near.signature.count": "חתימה {step} מתוך {count} בדפדפן",
@@ -193,7 +193,7 @@ export const messages = {
   "vault.near.backup.unknownDetail":
     "הדפדפן לא דיווח לנו אם יש גיבוי למפתח הגישה הזה. יש לוודא שמנהל מפתחות הגישה שלך מסנכרן אותו.",
   "vault.near.backup.notChecked": "הגיבוי לא נבדק",
-  "vault.near.backup.noCopy": "OpenBot לא שומר עותק של מפתח הגישה שלך. רק לך יש אפשרות לחתום עבור הארנק הזה.",
+  "vault.near.backup.noCopy": "PurpleBot לא שומר עותק של מפתח הגישה שלך. רק לך יש אפשרות לחתום עבור הארנק הזה.",
   "vault.near.backup.checked": "נבדק ב-{date}",
   "vault.near.backup.check": "בדיקת הגיבוי",
   "vault.near.backup.checkAgain": "בדיקה חוזרת",
@@ -271,7 +271,7 @@ export const messages = {
   "vault.near.disconnect": "ניתוק",
   "vault.near.disconnectTitle": "לנתק את ארנק הקריפטו?",
   "vault.near.disconnectDescription":
-    "הסוכנים לא יוכלו עוד לשלם מהארנק הזה, ו-OpenBot ישכח אותו. הכספים נשארים בארנק ב-NEAR Intents.",
+    "הסוכנים לא יוכלו עוד לשלם מהארנק הזה, ו-PurpleBot ישכח אותו. הכספים נשארים בארנק ב-NEAR Intents.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "מעל המגבלה היומית",
   "vault.near.approve": "אישור",

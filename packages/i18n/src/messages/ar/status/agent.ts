@@ -32,7 +32,7 @@ export const messages = {
     "تظهر النتيجة في القناة {channel}، ويمكن لكل عضو في هذا الخادم يقرأ القناة رؤيتها.",
   "status.agent.creditsHoldBalance": "يستهلك ذلك {credits} من الأرصدة، والرصيد الحالي {balance} من الأرصدة.",
   "status.agent.creditsHoldAgentsOff": "لا يمكن للوكلاء على هذا الخادم استخدام الأرصدة.",
-  "status.agent.screenCapturePermissionNext": "قد يطلب منك macOS بعد ذلك السماح لـ OpenBot بـ «تسجيل الشاشة».",
+  "status.agent.screenCapturePermissionNext": "قد يطلب منك macOS بعد ذلك السماح لـ PurpleBot بـ «تسجيل الشاشة».",
   "status.agent.screenCaptureDisplay": "التقاط الشاشة {name} وإرسال الصورة إلى نموذج الوكيل.",
   "status.agent.screenCaptureWindow": "التقاط النافذة {name} وإرسال الصورة إلى نموذج الوكيل.",
   "status.agent.screenCaptureRegion":
@@ -45,40 +45,40 @@ export const messages = {
   "status.agent.sendIdea": "يصبح هذا مشكلة عامة على GitHub. لا يظهر اسمك.",
   "status.agent.feedbackRecentErrors": "الأخطاء الأخيرة في المحادثة:",
   "status.agent.feedbackSameAs": "يُضاف إلى المشكلة #{issue}",
-  "status.agent.feedbackSent": "أُرسل إلى فريق OpenBot: {title}",
+  "status.agent.feedbackSent": "أُرسل إلى فريق PurpleBot: {title}",
   "status.agent.feedbackWithdrawn": "أُزيل من GitHub: {title}",
   "status.agent.feedbackWithdrawCommand": "إزالة البلاغ #{issue} من GitHub",
   "status.agent.feedbackWithdrawReason":
     "لن يتمكن أحد من رؤية هذا البلاغ على GitHub بعد الآن. لا يمكنك التراجع عن ذلك. لتصحيحه، يمكن للوكيل إرسال بلاغ مصحَّح.",
   "status.agent.feedbackWithdrawing": "جارٍ إزالة بلاغك من GitHub…",
   "status.agent.serverInstallCommand":
-    "إنشاء أمر لمرة واحدة يثبّت OpenBot على كمبيوتر آخر كالخادم {name} ويسجّل دخوله إلى حسابك. يشغّله الوكيل هناك.",
+    "إنشاء أمر لمرة واحدة يثبّت PurpleBot على كمبيوتر آخر كالخادم {name} ويسجّل دخوله إلى حسابك. يشغّله الوكيل هناك.",
   "status.agent.serverInstallCard": "أمر التثبيت للخادم {name}",
   "status.agent.browserProfileNamed":
     "انقل {agents} إلى ملف تعريف المتصفح {profile}. يحصلون على تسجيلات الدخول وملفات تعريف الارتباط الخاصة به. تُغلق علاماتهم المفتوحة.",
-  "status.agent.commitCoAuthorOff": "إيقاف إضافة OpenBot كمؤلف مشارك في إيداعات جميع الوكلاء.",
-  "status.agent.commitCoAuthorOn": "إضافة OpenBot مجددًا كمؤلف مشارك في إيداعات جميع الوكلاء.",
+  "status.agent.commitCoAuthorOff": "إيقاف إضافة PurpleBot كمؤلف مشارك في إيداعات جميع الوكلاء.",
+  "status.agent.commitCoAuthorOn": "إضافة PurpleBot مجددًا كمؤلف مشارك في إيداعات جميع الوكلاء.",
   "status.agent.browserProfileNew":
     "أنشئ ملف تعريف المتصفح الجديد {profile} وانقل {agents} إليه. لا يحتوي على أي تسجيل دخول. تُغلق علاماتهم المفتوحة.",
   "status.agent.browserProfileShared":
     "انقل {agents} إلى ملف تعريف المتصفح المشترك. يحصلون على تسجيلات الدخول وملفات تعريف الارتباط الخاصة به. تُغلق علاماتهم المفتوحة.",
   "status.agent.browserProfileOwn": "امنح كل واحد من {agents} ملف تعريف متصفح خاصًا به. تُغلق علاماتهم المفتوحة.",
-  "status.agent.feedbackSending": "جارٍ إرسال ملاحظاتك إلى فريق OpenBot…",
+  "status.agent.feedbackSending": "جارٍ إرسال ملاحظاتك إلى فريق PurpleBot…",
   "status.agent.workflowDelete": "احذف سير العمل {title} مع عمليات تشغيله وإصداراته. تتوقف خطواته المفتوحة.",
   "status.agent.deleteAgents": "احذف {agents} مع محادثاتهم وملفاتهم. لا يمكنك التراجع عن ذلك.",
   "status.agent.vaultCardFillFrames": "حقول البطاقة موجودة في إطارات من {origins}.",
   "status.agent.linkCardFill":
     "تعبئة بطاقة Link لمرة واحدة {card} في {site}. وافقت على هذا الدفع في Link لصالح {merchant}.",
-  "status.agent.nearSignatureReceived": "تلقّى OpenBot التوقيع. يمكنك إغلاق علامة التبويب هذه.",
-  "status.agent.nearSignatureUnknown": "لا ينتظر OpenBot هذا التوقيع. ابدأه من جديد في OpenBot.",
+  "status.agent.nearSignatureReceived": "تلقّى PurpleBot التوقيع. يمكنك إغلاق علامة التبويب هذه.",
+  "status.agent.nearSignatureUnknown": "لا ينتظر PurpleBot هذا التوقيع. ابدأه من جديد في PurpleBot.",
   "status.agent.nearPayment":
     "دفع {amount} {symbol} إلى {recipient} من محفظة العملات المشفرة، لصالح {domain}: {reason}",
   "status.agent.nearSummaryCreate":
-    "يمكن لكل الوكلاء دفع ما يصل إلى {amount} USD يوميًا. يمكنك تغيير ذلك لاحقًا في OpenBot.",
-  "status.agent.nearSummaryGrant": "السماح لتطبيق OpenBot هذا بالدفع من المحفظة لمدة {days} يومًا، ضمن قواعدك.",
+    "يمكن لكل الوكلاء دفع ما يصل إلى {amount} USD يوميًا. يمكنك تغيير ذلك لاحقًا في PurpleBot.",
+  "status.agent.nearSummaryGrant": "السماح لتطبيق PurpleBot هذا بالدفع من المحفظة لمدة {days} يومًا، ضمن قواعدك.",
   "status.agent.nearSummaryBudget": "تغيير الميزانية اليومية للمحفظة إلى {amount} USD.",
   "status.agent.nearSummaryAutoPay":
-    "السماح لـ OpenBot بالدفع دون توقيعك عندما تسمح بذلك قاعدة دفع. أما الدفعات الأخرى فتظل تسألك في الدردشة.",
+    "السماح لـ PurpleBot بالدفع دون توقيعك عندما تسمح بذلك قاعدة دفع. أما الدفعات الأخرى فتظل تسألك في الدردشة.",
   "status.agent.nearSummaryPayment": "الموافقة على دفع {amount} إلى {recipient}.",
   "status.agent.nearSummaryFreeze": "لا يمكن للوكلاء الدفع من هذه المحفظة حتى تستأنف الدفعات.",
   "status.agent.nearSummaryUnfreeze": "يمكن للوكلاء الدفع من هذه المحفظة مرة أخرى، ضمن قواعدك.",
@@ -136,9 +136,9 @@ export const messages = {
   "status.agent.memoryChangesWithConflicts":
     "الذاكرة: حُفظ {saved}، وحُدّث {updated}، ونُسي {forgotten}، ولم يتغير {notChanged} لأن سلسلة أخرى غيّرته أولًا.",
   "status.agent.mcpServerAdd":
-    "إضافة خادم MCP {name}: {target}. يحصل كل وكيل على هذا الخادم على أدواته. يتصل OpenBot به لاختباره.",
+    "إضافة خادم MCP {name}: {target}. يحصل كل وكيل على هذا الخادم على أدواته. يتصل PurpleBot به لاختباره.",
   "status.agent.mcpServerChange":
-    "تغيير خادم MCP {name} إلى {target}. يحصل كل وكيل على هذا الخادم على أدواته. يتصل OpenBot به لاختباره.",
+    "تغيير خادم MCP {name} إلى {target}. يحصل كل وكيل على هذا الخادم على أدواته. يتصل PurpleBot به لاختباره.",
   "status.agent.mcpServerHeaders": "ويغيّر أيضًا هذه الترويسات: {names}.",
   "status.agent.mcpServerEnable": "تشغيل خادم MCP {name} لكل وكيل على هذا الخادم.",
   "status.agent.mcpServerDisable": "إيقاف خادم MCP {name} لكل وكيل على هذا الخادم.",

@@ -161,7 +161,7 @@ try {
   report.steered = { turnId: turn.id, reply: finished.reply, status: finished.status, steer: sent };
 
   const note = steerNoteFor("deepseek", { kind: "user" }, "keep the tests");
-  assert.ok(note, "A provider with no steer note of its own must get OpenBot's.");
+  assert.ok(note, "A provider with no steer note of its own must get PurpleBot's.");
   assert.ok(
     steerNoteFor("pi", { kind: "agent", agentId: "teammate" }, "keep the tests"),
     "A teammate's steer must get a note.",

@@ -2,41 +2,41 @@ import type { PartialTranslation } from "../../message";
 import type { messages as source } from "../en/startup";
 
 export const messages = {
-  "startup.failedTitle": "Nie udało się uruchomić OpenBot",
+  "startup.failedTitle": "Nie udało się uruchomić PurpleBot",
   "startup.failedBody":
     "{message}\n\nTwoje lokalne dane nie zostały zresetowane ani nadpisane. Kroki przywracania znajdziesz w przewodniku rozwiązywania problemów.",
-  "startup.archiveChangedTitle": "Pliki OpenBot zostały zmienione",
+  "startup.archiveChangedTitle": "Pliki PurpleBot zostały zmienione",
   "startup.archiveChangedBody":
-    "Inny program zmienił plik app.asar OpenBot. OpenBot działa teraz, ale nie uruchomi się po zamknięciu.\n\nAby naprawić OpenBot, zainstaluj go ponownie. Twoje lokalne dane zostaną zachowane.",
-  "startup.archiveChangedDownload": "Pobierz OpenBot",
+    "Inny program zmienił plik app.asar PurpleBot. PurpleBot działa teraz, ale nie uruchomi się po zamknięciu.\n\nAby naprawić PurpleBot, zainstaluj go ponownie. Twoje lokalne dane zostaną zachowane.",
+  "startup.archiveChangedDownload": "Pobierz PurpleBot",
   "startup.filesDamagedBody":
-    "Niektóre pliki OpenBot są uszkodzone lub ich brakuje.\n\nAby naprawić OpenBot, zainstaluj go ponownie. Twoje lokalne dane zostaną zachowane.",
-  "startup.newerDataUpdatingTitle": "Aktualizowanie OpenBot",
+    "Niektóre pliki PurpleBot są uszkodzone lub ich brakuje.\n\nAby naprawić PurpleBot, zainstaluj go ponownie. Twoje lokalne dane zostaną zachowane.",
+  "startup.newerDataUpdatingTitle": "Aktualizowanie PurpleBot",
   "startup.newerDataUpdatingBody":
-    "Nowsza wersja OpenBot zapisała Twoje dane. OpenBot instaluje najnowszą wersję, a potem uruchomi się ponownie.\n\nTwoje lokalne dane nie zostały zresetowane ani nadpisane.",
-  "startup.newerDataTitle": "Zainstaluj najnowszy OpenBot",
+    "Nowsza wersja PurpleBot zapisała Twoje dane. PurpleBot instaluje najnowszą wersję, a potem uruchomi się ponownie.\n\nTwoje lokalne dane nie zostały zresetowane ani nadpisane.",
+  "startup.newerDataTitle": "Zainstaluj najnowszy PurpleBot",
   "startup.newerDataBody":
-    "Nowsza wersja OpenBot zapisała Twoje dane, a ta wersja ({version}) nie może ich otworzyć. Zainstaluj najnowszą wersję, aby otworzyć swoje dane.\n\nTwoje lokalne dane nie zostały zresetowane ani nadpisane.",
-  "startup.newerDataDownload": "Pobierz OpenBot",
+    "Nowsza wersja PurpleBot zapisała Twoje dane, a ta wersja ({version}) nie może ich otworzyć. Zainstaluj najnowszą wersję, aby otworzyć swoje dane.\n\nTwoje lokalne dane nie zostały zresetowane ani nadpisane.",
+  "startup.newerDataDownload": "Pobierz PurpleBot",
   "startup.newerDataGuide": "Otwórz przewodnik",
   "startup.newerDataQuit": "Zakończ",
-  "startup.newerDataLoopTitle": "Najnowszy OpenBot się nie otworzył",
+  "startup.newerDataLoopTitle": "Najnowszy PurpleBot się nie otworzył",
   "startup.newerDataLoopBody":
-    "Nowsza wersja OpenBot zapisała Twoje dane, a ta wersja ({version}) nie może ich otworzyć. OpenBot {loopVersion} kilka razy z rzędu zatrzymał się przed otwarciem, więc nie zostanie zainstalowany ponownie.\n\nZainstaluj wersję nowszą niż {loopVersion}, gdy będzie dostępna. Aby uzyskać pomoc, otwórz przewodnik.\n\nTwoje lokalne dane nie zostały zresetowane ani nadpisane.",
+    "Nowsza wersja PurpleBot zapisała Twoje dane, a ta wersja ({version}) nie może ich otworzyć. PurpleBot {loopVersion} kilka razy z rzędu zatrzymał się przed otwarciem, więc nie zostanie zainstalowany ponownie.\n\nZainstaluj wersję nowszą niż {loopVersion}, gdy będzie dostępna. Aby uzyskać pomoc, otwórz przewodnik.\n\nTwoje lokalne dane nie zostały zresetowane ani nadpisane.",
   "startup.newerDataReleases": "Pokaż wydania",
-  "startup.recoveryWindowTitle": "Odzyskiwanie OpenBot",
-  "startup.recoveryTitle": "OpenBot się nie otworzył",
+  "startup.recoveryWindowTitle": "Odzyskiwanie PurpleBot",
+  "startup.recoveryTitle": "PurpleBot się nie otworzył",
   "startup.recoveryBody": {
-    one: "OpenBot {version} zatrzymał się przed otwarciem {count} raz z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
-    few: "OpenBot {version} zatrzymał się przed otwarciem {count} razy z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
-    many: "OpenBot {version} zatrzymał się przed otwarciem {count} razy z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
+    one: "PurpleBot {version} zatrzymał się przed otwarciem {count} raz z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
+    few: "PurpleBot {version} zatrzymał się przed otwarciem {count} razy z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
+    many: "PurpleBot {version} zatrzymał się przed otwarciem {count} razy z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
     other:
-      "OpenBot {version} zatrzymał się przed otwarciem {count} razy z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
+      "PurpleBot {version} zatrzymał się przed otwarciem {count} razy z rzędu. Twoje lokalne dane nie zostały zresetowane ani nadpisane.",
   },
   "startup.recoveryHint":
     "Spróbuj ponownie albo zainstaluj ostatnią wersję, która się otwierała. Aby uzyskać pomoc, wyeksportuj diagnostykę i wyślij plik ze zgłoszeniem.",
   "startup.recoveryHintLatest":
-    "OpenBot nie znalazł wcześniejszej wersji, która może otworzyć Twoje dane. Spróbuj ponownie albo zainstaluj najnowszą wersję. Aby uzyskać pomoc, wyeksportuj diagnostykę i wyślij plik ze zgłoszeniem.",
+    "PurpleBot nie znalazł wcześniejszej wersji, która może otworzyć Twoje dane. Spróbuj ponownie albo zainstaluj najnowszą wersję. Aby uzyskać pomoc, wyeksportuj diagnostykę i wyślij plik ze zgłoszeniem.",
   "startup.recoveryRetry": "Spróbuj ponownie",
   "startup.recoveryPreviousVersion": "Pobierz poprzednią wersję",
   "startup.recoveryLatestVersion": "Pobierz najnowszą wersję",
@@ -44,5 +44,5 @@ export const messages = {
   "startup.recoveryOpenDataFolder": "Otwórz folder danych",
   "startup.recoveryQuit": "Zakończ",
   "startup.recoveryDiagnosticsSaved": "Plik diagnostyki został zapisany.",
-  "startup.recoveryActionFailed": "OpenBot nie mógł wykonać tej czynności.",
+  "startup.recoveryActionFailed": "PurpleBot nie mógł wykonać tej czynności.",
 } as const satisfies PartialTranslation<typeof source>;

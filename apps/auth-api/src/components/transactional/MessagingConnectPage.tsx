@@ -6,11 +6,11 @@ import {
 import { DiscordMark, SlackMark } from "@openbot/ui/features/settings/brand-marks";
 import type { JSX } from "@solidjs/web";
 import { createSignal, onSettled, Show } from "solid-js";
-import { handOffToWebClient } from "../landing/web-messaging-handoff";
 import { Button } from "../ui/button";
 import { createOpenAppFallback, OpenAppFallbackDialog } from "./OpenAppFallback";
 import type { MessagingConnectText } from "./page-text";
 import { TransactionalPage } from "./TransactionalPage";
+import { handOffToWebClient } from "./web-messaging-handoff";
 
 export type FailureKind =
   | "cancelled"
@@ -139,7 +139,7 @@ export function MessagingConnectView(props: {
   const actionsId = () => `${props.provider}-connect-open`;
 
   return (
-    <TransactionalPage titleId={titleId()} lang={props.lang}>
+    <TransactionalPage titleId={titleId()} lang={props.lang} legal={props.text.legal}>
       <AppLogo variant="production" animation="blink" class="join-card-logo" />
       <p class="join-card-eyebrow transactional-provider">
         {provider().mark()}

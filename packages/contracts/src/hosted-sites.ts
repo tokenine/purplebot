@@ -24,8 +24,8 @@ export function parseHostedSiteLimitReason(value: unknown): HostedSiteLimitReaso
   return isOneOf(HOSTED_SITE_LIMIT_REASONS, reason) ? reason : null;
 }
 
-export const HOSTED_SITE_HOST_ID_HEADER = "OpenBot-Host-Id";
-export const HOSTED_SITE_HOST_TOKEN_HEADER = "OpenBot-Host-Token";
+export const HOSTED_SITE_HOST_ID_HEADER = "PurpleBot-Host-Id";
+export const HOSTED_SITE_HOST_TOKEN_HEADER = "PurpleBot-Host-Token";
 
 export const HOSTED_SITE_MIME_TYPES: Readonly<Record<string, readonly [string, ...string[]]>> = {
   html: ["text/html"],

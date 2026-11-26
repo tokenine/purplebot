@@ -43,7 +43,7 @@ export const messages = {
   "agentSettings.folders.inShared": "{folder} est dans le dossier partagé, donc {agent} peut déjà le modifier",
   "agentSettings.folders.inFolder": "{folder} est dans {parent}, qui est déjà ajouté",
   "agentSettings.folders.protected":
-    "Vous ne pouvez pas ajouter {folder}, car il contient des données OpenBot ou les fichiers d’autres agents",
+    "Vous ne pouvez pas ajouter {folder}, car il contient des données PurpleBot ou les fichiers d’autres agents",
   "agentSettings.folders.missing": "{folder} n’est pas un dossier de cet ordinateur",
   "agentSettings.folders.limit": {
     one: "Vous pouvez ajouter {count} dossier au maximum",
@@ -160,7 +160,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "L’agent s’exécute avec un accès complet à l’ordinateur depuis son espace de travail et le dossier partagé.",
   "agentSettings.runtime.askNote":
-    "Il vous demande avant d’utiliser un outil OpenBot ou de publier un site, et quand son fournisseur demande une approbation.",
+    "Il vous demande avant d’utiliser un outil PurpleBot ou de publier un site, et quand son fournisseur demande une approbation.",
   "agentSettings.runtime.fullNote": "Il agit sans demander, sauf pour les questions qu’il vous pose.",
 
   "agentSettings.access.workspace": "Espace de travail seul",
@@ -196,12 +196,12 @@ export const messages = {
   "agentSettings.deleteHistory.button": "Supprimer",
   "agentSettings.deleteHistory.confirmTitle": "Supprimer l’historique de la discussion avec {name} ?",
   "agentSettings.deleteHistory.confirmDescription":
-    "Tous les messages et fichiers de cette discussion sont supprimés d’OpenBot et l’agent les oublie. Cette action est irréversible. Les fils secondaires, les instructions, le modèle, les outils, les mémoires, l’espace de travail et le navigateur ne changent pas.",
+    "Tous les messages et fichiers de cette discussion sont supprimés d’PurpleBot et l’agent les oublie. Cette action est irréversible. Les fils secondaires, les instructions, le modèle, les outils, les mémoires, l’espace de travail et le navigateur ne changent pas.",
   "agentSettings.deleteHistory.confirm": "Supprimer l’historique",
   "agentSettings.deleteHistory.failed": "Impossible de supprimer l’historique.",
   "agentSettings.deleteAgent.title": "Supprimer l’agent",
   "agentSettings.deleteAgent.description":
-    "L’agent, sa discussion, ses souvenirs, ses routines et son espace de travail sont retirés d’OpenBot.",
+    "L’agent, sa discussion, ses souvenirs, ses routines et son espace de travail sont retirés d’PurpleBot.",
   "agentSettings.deleteAgent.button": "Supprimer",
 
   "agentSettings.fullAccess.title": "Donner un accès complet à cet agent ?",
@@ -231,7 +231,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "Une modification de fichier à l’extérieur vous demande d’abord. Une commande ne peut pas écrire à l’extérieur.",
   "agentSettings.runtime.workspaceUnlimited":
-    "Computer Use et le navigateur OpenBot ne sont pas limités ; vous pouvez désactiver Computer Use ci-dessous.",
+    "Computer Use et le navigateur PurpleBot ne sont pas limités ; vous pouvez désactiver Computer Use ci-dessous.",
   "agentSettings.computerUse.title": "Computer Use",
   "agentSettings.computerUse.description": "Autoriser cet agent à contrôler les apps de cet ordinateur",
   "agentSettings.automation.title": "Scripts locaux",
@@ -242,7 +242,7 @@ export const messages = {
     "L’agent peut démarrer une nouvelle discussion quand la sienne devient longue. Il enregistre d’abord des notes.",
   "agentSettings.quickAcknowledgement.title": "Montrer le plan avant les longues tâches",
   "agentSettings.quickAcknowledgement.description": "Avant une longue tâche, l’agent montre son plan.",
-  "agentSettings.builtinMemory.title": "Mémoire OpenBot",
+  "agentSettings.builtinMemory.title": "Mémoire PurpleBot",
   "agentSettings.builtinMemory.description":
     "L’agent enregistre et lit ses propres souvenirs. Désactivez-la pour utiliser seulement une app de mémoire, comme Mem0. Les souvenirs enregistrés restent.",
   "agentSettings.browserProfile.label": "Profil de navigateur",

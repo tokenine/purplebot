@@ -81,7 +81,7 @@ jobs:
         env:
           TAG: ${{ steps.latest.outputs.tag }}
         run: |
-          name="OpenBot-${TAG#v}-arm64.zip"
+          name="PurpleBot-${TAG#v}-arm64.zip"
           directory="$RUNNER_TEMP/newest"
           gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir "$directory" \
             --pattern "$name" --pattern SHA256SUMS.txt

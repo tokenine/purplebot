@@ -278,7 +278,7 @@ class Rig {
       this.#client.request(
         "initialize",
         {
-          clientInfo: { name: "openbot_e2e", title: "OpenBot E2E", version: "0.0.0" },
+          clientInfo: { name: "openbot_e2e", title: "PurpleBot E2E", version: "0.0.0" },
           capabilities: { experimentalApi: true, mcpServerOpenaiFormElicitation: true },
         },
         decodeRecordResponse,

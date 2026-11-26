@@ -49,7 +49,7 @@ export const messages = {
   "mobile.browser.status.ended": "انتهى العرض المباشر.",
   "mobile.browser.status.offline": "الخادم غير متصل.",
   "mobile.browser.status.noTab": "لا توجد علامة تبويب مفتوحة في متصفح {name}.",
-  "mobile.browser.status.unsupported": "لا يستطيع هذا الخادم عرض متصفحه على الهاتف. حدّث OpenBot على هذا الخادم.",
+  "mobile.browser.status.unsupported": "لا يستطيع هذا الخادم عرض متصفحه على الهاتف. حدّث PurpleBot على هذا الخادم.",
   "mobile.browser.status.off": "المتصفح غير متاح في هذا الإصدار من التطبيق.",
   "mobile.browser.notice.copied": "تم النسخ إلى هاتفك.",
   "mobile.browser.notice.nothingSelected": "لا يوجد تحديد في الصفحة.",
@@ -104,5 +104,5 @@ export const messages = {
   "mobile.browser.httpSignIn.username": "اسم المستخدم",
   "mobile.browser.httpSignIn.password": "كلمة المرور",
   "mobile.browser.httpSignIn.submit": "تسجيل الدخول",
-  "mobile.browser.httpSignIn.failed": "تعذّر على OpenBot إرسال تسجيل الدخول.",
+  "mobile.browser.httpSignIn.failed": "تعذّر على PurpleBot إرسال تسجيل الدخول.",
 } as const satisfies PartialTranslation<typeof source>;

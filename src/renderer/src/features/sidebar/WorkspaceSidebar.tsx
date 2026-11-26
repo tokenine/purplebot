@@ -4,13 +4,10 @@ import { CONVERSATION_UNREAD_FROM_CAPABILITY } from "@openbot/contracts/team-pro
 import { AGENT_HIDDEN_CAPABILITY } from "@openbot/contracts/team-protocol/current";
 import { MAIN_THREAD_ID } from "@openbot/ui/features/conversation/threads/thread-types";
 import { Sidebar } from "@openbot/ui/features/sidebar/Sidebar";
-import { SidebarCommunityCard } from "@openbot/ui/features/sidebar/SidebarCommunityCard";
-import { SidebarMobileAppCard } from "@openbot/ui/features/sidebar/SidebarMobileAppCard";
-import { sidebarAgentOrder } from "@openbot/ui/features/sidebar/sidebar-agent-order";
 import { sidebarChannelWaits } from "@openbot/ui/features/sidebar/sidebar-agent-states";
 import { teamMemberName } from "@openbot/ui/features/team/TeamPersonAvatar";
 import { useText } from "@openbot/ui/text";
-import { createEffect, createMemo, createSignal, onSettled, Show } from "solid-js";
+import { createEffect, createMemo, createSignal, onSettled } from "solid-js";
 import { appPort } from "../../app-port";
 import { type ChatHistoryEntry, chatHistoryKeys } from "../../chat-history";
 import { useLayout } from "../../layout";
@@ -38,13 +35,10 @@ import { useSettings } from "../settings/settings-context";
 import { usePresence } from "../team/team-context";
 import { SidebarUpdateIsland } from "../updates/SidebarUpdateIsland";
 import { useWindowPage } from "../window/window-page-context";
-import { createCommunityCardVisibility } from "./community-card";
 import { DevWorktreeLabel } from "./DevWorktreeLabel";
 import { createSidebarAlertCards, SidebarAlertCards } from "./SidebarAlertCards";
 import { ServerUpgradeOffer } from "./server-upgrade-offer";
 import { useSidebar } from "./sidebar-context";
-
-const MOBILE_APP_DISMISSED_STORAGE_KEY = "openbot:mobile-app-card-dismissed";
 
 export function WorkspaceSidebar(props: { peopleEnabled: boolean }) {
   const { t } = useText();
@@ -68,7 +62,7 @@ export function WorkspaceSidebar(props: { peopleEnabled: boolean }) {
   );
   const { openServerSettings, serverSettingsOpen } = useServerSettings();
   const serverActions = useServerActions();
-  const { openMobileInstall, setSkillsMarketplaceOpen } = useSettings();
+  const { setSkillsMarketplaceOpen } = useSettings();
   const {
     agentList,
     agentListConnecting,
@@ -78,7 +72,6 @@ export function WorkspaceSidebar(props: { peopleEnabled: boolean }) {
     duplicatingAgentIds,
     openAgentSetup,
     userHiddenAgents,
-    userHiddenAgentIds,
     userPausedAgentIds,
     userHiddenAgentsWork,
     mutedAgentIds,
@@ -139,17 +132,6 @@ export function WorkspaceSidebar(props: { peopleEnabled: boolean }) {
     reorderPinnedSidebarItems,
     reorderSidebarPeople,
   } = useSidebar();
-  const [mobileAppDismissed, setMobileAppDismissed] = createSignal(
-    window.localStorage.getItem(MOBILE_APP_DISMISSED_STORAGE_KEY) === "true",
-  );
-  const mobileAppCrew = createMemo(() =>
-    sidebarAgentOrder(agentList(), {
-      layout: sidebarLayout(),
-      pinnedItems: pinnedSidebarItems(),
-      hiddenAgentIds: userHiddenAgentIds(),
-    }).filter((agent) => !userHiddenAgentIds().has(agent.id)),
-  );
-  const communityCard = createCommunityCardVisibility();
   const alertCards = createSidebarAlertCards(activeServer);
   createEffect(serverSettingsOpen, (open, wasOpen) => {
     if (!open && wasOpen) alertCards.refresh();
@@ -323,27 +305,6 @@ export function WorkspaceSidebar(props: { peopleEnabled: boolean }) {
               members={teamPresence().members}
               onOpenStorage={(serverId) => openServerSettings(serverId, null, "storage")}
             />
-            <Show when={!platform.landingPreview && !alertCards.shown() && !mobileAppDismissed()}>
-              <SidebarMobileAppCard
-                agents={mobileAppCrew()}
-                onInstall={(phone) => openMobileInstall(phone)}
-                onDismiss={() => {
-                  window.localStorage.setItem(MOBILE_APP_DISMISSED_STORAGE_KEY, "true");
-                  setMobileAppDismissed(true);
-                }}
-              />
-            </Show>
-            <Show
-              when={
-                !platform.landingPreview && !alertCards.shown() && mobileAppDismissed() && !communityCard.dismissed()
-              }
-            >
-              <SidebarCommunityCard
-                onJoinDiscord={() => void appPort().openExternal("discord")}
-                onFollowX={() => void appPort().openExternal("x")}
-                onDismiss={communityCard.dismiss}
-              />
-            </Show>
             <SidebarUpdateIsland />
           </>
         }

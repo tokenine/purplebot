@@ -17,7 +17,7 @@ const RUNS = `${SERVICE_HOME}/.config/${APP_NAME}/runs.jsonl`;
 const KEYRING = "/srv/openbot-hosted/keyrings/login.keyring";
 const PASSWORD = `${SERVICE_HOME}/.config/openbot-hosted/keyring-password`;
 const BACKUP = "/srv/openbot-keyring";
-const GUARD = "/opt/OpenBot/hosted/openbot-hosted-keyring";
+const GUARD = "/opt/PurpleBot/hosted/openbot-hosted-keyring";
 const RESTORED = "Restored the copy from";
 const DEADLINE_MS = 120_000;
 const POLL_MS = 250;
@@ -86,18 +86,18 @@ app.whenReady().then(() => {
 
 const SETUP = `set -euo pipefail
 useradd --system --create-home --home-dir ${SERVICE_HOME} --shell /bin/bash ${SERVICE_USER}
-install -d -m 0755 /opt/OpenBot/hosted /opt/OpenBot/app
-cp -a /opt/electron/. /opt/OpenBot/app/
-mv /opt/OpenBot/app/electron /opt/OpenBot/app/openbot
-chown root:root /opt/OpenBot/app/chrome-sandbox
-chmod 4755 /opt/OpenBot/app/chrome-sandbox
-install -d -m 0755 /opt/OpenBot/app/resources/app
-cp /e2e/stub/package.json /e2e/stub/main.js /opt/OpenBot/app/resources/app/
-cp -a /e2e/hosting /opt/OpenBot/app/resources/hosting
-printf '%s\\n' ${SERVICE_USER} >/opt/OpenBot/hosted/service-user
-printf '%s\\n' self >/opt/OpenBot/hosted/mode
-install -m 0755 /e2e/hosting/openbot-hosted-server /opt/OpenBot/hosted/openbot-hosted-server
-install -m 0755 /e2e/hosting/openbot-hosted-update /opt/OpenBot/hosted/openbot-hosted-update
+install -d -m 0755 /opt/PurpleBot/hosted /opt/PurpleBot/app
+cp -a /opt/electron/. /opt/PurpleBot/app/
+mv /opt/PurpleBot/app/electron /opt/PurpleBot/app/purplebot
+chown root:root /opt/PurpleBot/app/chrome-sandbox
+chmod 4755 /opt/PurpleBot/app/chrome-sandbox
+install -d -m 0755 /opt/PurpleBot/app/resources/app
+cp /e2e/stub/package.json /e2e/stub/main.js /opt/PurpleBot/app/resources/app/
+cp -a /e2e/hosting /opt/PurpleBot/app/resources/hosting
+printf '%s\\n' ${SERVICE_USER} >/opt/PurpleBot/hosted/service-user
+printf '%s\\n' self >/opt/PurpleBot/hosted/mode
+install -m 0755 /e2e/hosting/openbot-hosted-server /opt/PurpleBot/hosted/openbot-hosted-server
+install -m 0755 /e2e/hosting/openbot-hosted-update /opt/PurpleBot/hosted/openbot-hosted-update
 sed 's/@SERVICE_USER@/${SERVICE_USER}/g' /e2e/hosting/openbot.service >/etc/systemd/system/openbot.service
 install -d -o ${SERVICE_USER} -g ${SERVICE_USER} -m 0700 /srv/openbot-hosted
 systemctl daemon-reload
@@ -182,7 +182,7 @@ async function runCases(): Promise<void> {
   await waitForKeyringWrite(first.run.at);
   record("first start", first, { guardInstalledByTrigger: true });
 
-  inside("touch /run/openbot-update.staged && /opt/OpenBot/hosted/openbot-hosted-update check");
+  inside("touch /run/openbot-update.staged && /opt/PurpleBot/hosted/openbot-hosted-update check");
   const saved = backupState();
   assert.equal(saved.modes, "root:root 700|root:root 600|root:root 600", "the copy is only for root");
   assert.equal(saved.items.length, 1, "the copy has the safeStorage key");
@@ -237,7 +237,7 @@ for item in $(grep -o '/org/freedesktop/secrets/collection/login/[A-Za-z0-9_]*' 
     --dest=org.freedesktop.secrets "$item" org.freedesktop.Secret.Item.Delete >/dev/null
 done`);
   await waitForKeyringWrite(deletedAt);
-  const hourly = inside(`touch /run/openbot-update.staged && /opt/OpenBot/hosted/openbot-hosted-update check 2>&1`);
+  const hourly = inside(`touch /run/openbot-update.staged && /opt/PurpleBot/hosted/openbot-hosted-update check 2>&1`);
   assert.match(hourly, /restored at the next start/u, "deleted item: the hourly check reports it");
   assert.equal(backupState().digest, beforeDelete.digest, "deleted item: the hourly check keeps the copy");
   record("deleted item over D-Bus", await expectRestored("deleted item"), { hourlyCheckKeptCopy: true });
@@ -248,7 +248,7 @@ done`);
 printf other-secret | runuser -u ${SERVICE_USER} -- env DBUS_SESSION_BUS_ADDRESS="$bus" \\
   secret-tool store --label=Other service openbot-keyring-e2e`);
   await waitForKeyringWrite(addedAt);
-  inside("touch /run/openbot-update.staged && /opt/OpenBot/hosted/openbot-hosted-update check");
+  inside("touch /run/openbot-update.staged && /opt/PurpleBot/hosted/openbot-hosted-update check");
   const afterAdd = backupState();
   assert.notEqual(afterAdd.digest, beforeAdd.digest, "added item: the hourly check refreshes the copy");
   assert.equal(afterAdd.items.length, 1, "added item: the copy still has the safeStorage key");
@@ -321,7 +321,7 @@ async function startAndRead(start: () => void): Promise<{ run: Run; restored: bo
     }
     if (Date.now() > deadline) {
       throw new Error(
-        `OpenBot did not start in ${DEADLINE_MS} ms. Journal:\n${journalLines().slice(lines).join("\n")}`,
+        `PurpleBot did not start in ${DEADLINE_MS} ms. Journal:\n${journalLines().slice(lines).join("\n")}`,
       );
     }
     await delay(POLL_MS);

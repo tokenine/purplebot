@@ -1329,7 +1329,7 @@ export function isWorkflowMediaCatalog(value: unknown): value is WorkflowMediaCa
 const WORKFLOW_CATALOG_SOURCE_NAMES: Readonly<Record<WorkflowCatalogSource, string>> = {
   sunra: "Sunra",
   higgsfield: "Higgsfield",
-  openbot: "OpenBot",
+  openbot: "PurpleBot",
 };
 
 export function workflowCatalogMediaModel(entry: WorkflowMediaCatalogModel): WorkflowMediaModel | null {

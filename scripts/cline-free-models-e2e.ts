@@ -100,7 +100,7 @@ try {
     ],
     "The picker lists the CLI's models, then Cline's ClinePass and valid free models.",
   );
-  assert.ok(requests.length > 0, "OpenBot reads Cline's recommended models.");
+  assert.ok(requests.length > 0, "PurpleBot reads Cline's recommended models.");
   for (const request of requests) {
     assert.deepEqual(request.headers, { accept: "application/json" }, "The request sends no account data.");
     assert.equal(request.credentials, null, "The request sends no credentials.");

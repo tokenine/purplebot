@@ -85,8 +85,8 @@ export class RequiredUpdate {
     this.#required = minimumVersion;
     this.#options.log(
       minimumVersion
-        ? `OpenBot ${this.#options.currentVersion} is below the minimum version ${minimumVersion}.`
-        : "OpenBot is at or above the minimum version.",
+        ? `PurpleBot ${this.#options.currentVersion} is below the minimum version ${minimumVersion}.`
+        : "PurpleBot is at or above the minimum version.",
     );
     this.#options.updater.setRequiredVersion(minimumVersion);
     this.#options.setRequired(minimumVersion !== null);

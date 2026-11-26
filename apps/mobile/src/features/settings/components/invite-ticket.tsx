@@ -295,7 +295,7 @@ export function InviteTicket({
           style={{ borderTopLeftRadius: STUB_RADIUS, borderTopRightRadius: STUB_RADIUS, borderCurve: "continuous" }}
         >
           <View style={{ minHeight: 236, padding: 22, gap: 18, justifyContent: "space-between" }}>
-            <ListingGradient name="OpenBot guest pass night" />
+            <ListingGradient name="PurpleBot guest pass night" />
             <View className="flex-row items-center justify-between gap-3">
               <Typography
                 weight="semibold"

@@ -113,7 +113,7 @@ runs the full app headless on two virtual displays. All state lives in the
 With an email code, in a terminal:
 
 ```sh
-ssh your-server docker exec -it purplebot openbot login
+ssh your-server docker exec -it purplebot purplebot login
 ```
 
 Type your email address, then the code from the mail.
@@ -125,28 +125,27 @@ then give it to the server.
 curl -fsS -X POST https://purple-api.example.com/v2/admin/server-claims \
   -H "Authorization: Bearer $(grep ^SERVER_CLAIMS_ADMIN_TOKEN= selfhost/.env.server-secrets | cut -d= -f2-)" \
   -H 'Content-Type: application/json' -d '{"email":"you@example.com"}'
-ssh your-server docker exec -i purplebot openbot login --claim
+ssh your-server docker exec -i purplebot purplebot login --claim
 ```
 
 Paste the `claim` value, then press Enter.
 
-Check: `ssh your-server docker exec purplebot openbot status` shows your account
-and `Server: ... (online)`. The last line of `openbot login` names
-`https://openbot.run/app`; with this bundle, use the `/app` of your own account
-service.
+Check: `ssh your-server docker exec purplebot purplebot status` shows your account
+and `Server: ... (online)`.
 
 To connect:
 
 - Browser: open `https://purple-api.example.com/app`, sign in with an email code,
   and add your server.
-- Phone: scan the connection QR code of a desktop app that uses your service.
-  Email sign-in on the phone always uses `openbot.run`.
+- Phone: the phone app is the OpenBot app of upstream from the App Store and Google
+  Play. Scan the connection QR code of a desktop app that uses your service. Email
+  sign-in on the phone always uses `openbot.run`, so it cannot reach your service.
 - Desktop app: start it with two variables, each time:
 
   ```sh
   OPENBOT_AUTH_API_URL=https://purple-api.example.com \
   OPENBOT_REMOTE_SIGNAL_URL=wss://signal.example.com/v1/signal \
-  /Applications/OpenBot.app/Contents/MacOS/OpenBot
+  /Applications/PurpleBot.app/Contents/MacOS/PurpleBot
   ```
 
   Without them the app talks to `openbot.run`. Sign out there first.
@@ -190,9 +189,17 @@ signal`, and build the server again (step 4).
 
 ## Brand and license notes
 
-- The app name of this fork is PurpleBot (`appId app.purplebot.desktop`). The
-  `openbot://` link scheme and the name of the Linux executable (`openbot`) stay
-  unchanged: the hosting scripts of upstream depend on them.
-- The upstream logo and UI strings are not changed yet. A full rebrand is a later step.
+- The app is PurpleBot: the name, the logo, the icon set, the brand color, the
+  text of the interface in every language, the emails and the server command
+  (`purplebot`). The source of the icon is `build/icon.svg`.
+- Internal identifiers keep the names of upstream, so that the fork can take new
+  upstream changes: the `OPENBOT_*` environment variables, the `openbot://` link
+  scheme, `openbot.db`, the `@openbot/*` packages and most file names. New agent
+  data lives in `~/PurpleBot`.
+- The account service of this bundle serves a small landing page, the sign-in, the
+  web client at `/app`, its APIs, and a short privacy page and terms page for a
+  self-hosted instance. Write them for your organization when the law of your
+  country needs more.
 - Skills in the marketplace catalog come from third-party repositories under the
-  Apache-2.0 license; see `marketplace/production-catalog/`.
+  Apache-2.0 license; see `marketplace/production-catalog/`. That catalog is the
+  content of the upstream team and stays as it is, with its notices.

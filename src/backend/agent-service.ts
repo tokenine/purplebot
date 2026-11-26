@@ -4017,7 +4017,7 @@ export class AgentService extends EventEmitter<AgentServiceEvents> {
     agentId: string,
   ) {
     if (!this.#mayRecoverOrphanedDeliveries(agentId)) return;
-    logger.warn("A message that no provider runs held the agent's queue. OpenBot settles it again.", { agentId });
+    logger.warn("A message that no provider runs held the agent's queue. PurpleBot settles it again.", { agentId });
     yield* this.#boot
       .reconcileUnresolvedDeliveries(agentId)
       .pipe(

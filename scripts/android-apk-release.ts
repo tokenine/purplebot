@@ -164,7 +164,7 @@ async function commandStage(args: readonly string[]) {
   const commit = (await storeBuildCommit(version, versionCode)) ?? process.env.GITHUB_SHA;
   if (!commit) throw new UsageError("Set GITHUB_SHA: the store build has no tag yet.");
   const notes = [
-    `OpenBot for Android ${version} (build ${versionCode}) as an APK, for a phone with no Google Play. It is the universal APK that Google Play makes from the store bundle, so it has the signature of the app on Google Play. Install steps: ${INSTALL_PAGE}`,
+    `PurpleBot for Android ${version} (build ${versionCode}) as an APK, for a phone with no Google Play. It is the universal APK that Google Play makes from the store bundle, so it has the signature of the app on Google Play. Install steps: ${INSTALL_PAGE}`,
     "This release is not an update of the desktop app. It is a GitHub prerelease only so that it never becomes the latest release: the build is the one on Google Play.",
     `- Commit: ${commit}\n- SHA-256 of the file: \`${sha256}\`\n- SHA-256 of the signing certificate: \`${certificate}\``,
   ].join("\n\n");
@@ -179,7 +179,7 @@ async function commandStage(args: readonly string[]) {
       const target = state.draft ? ["--target", commit] : [];
       await gh("release", "edit", release.tag, "--notes", notes, "--prerelease", "--latest=false", ...target);
     } else {
-      const title = `OpenBot for Android ${version}`;
+      const title = `PurpleBot for Android ${version}`;
       await gh(
         "release",
         "create",

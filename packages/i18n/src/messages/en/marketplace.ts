@@ -25,7 +25,7 @@ export const messages = defineMessages("marketplace", {
   "marketplace.description.agents": "Ready-made agents with their own instructions and skills.",
   "marketplace.description.skills": "Instructions that teach an agent a task or a tool.",
 
-  "marketplace.plugins.missing": "This plugin is not in the OpenBot catalog.",
+  "marketplace.plugins.missing": "This plugin is not in the PurpleBot catalog.",
 
   "marketplace.agents.loadingDetail": "Loading agent details…",
   "marketplace.agents.skills": "Skills",
@@ -36,16 +36,16 @@ export const messages = defineMessages("marketplace", {
   "marketplace.agents.yours": "Your agents",
   "marketplace.agents.all": "All agents",
   "marketplace.agents.missing": "This agent is not in the Marketplace.",
-  "marketplace.agents.trust.reviewed": "Made by another OpenBot user. OpenBot reviewed it before it went live.",
+  "marketplace.agents.trust.reviewed": "Made by another PurpleBot user. PurpleBot reviewed it before it went live.",
   "marketplace.agents.trust.reviewedBeforeAdd":
-    "Made by another OpenBot user. OpenBot reviewed it before it went live. It can act on your behalf once added.",
-  "marketplace.agents.trust.pending": "Shared by its creator before OpenBot reviewed it.",
+    "Made by another PurpleBot user. PurpleBot reviewed it before it went live. It can act on your behalf once added.",
+  "marketplace.agents.trust.pending": "Shared by its creator before PurpleBot reviewed it.",
   "marketplace.agents.trust.pendingBeforeAdd":
-    "Shared by its creator before OpenBot reviewed it. It can act on your behalf once added.",
+    "Shared by its creator before PurpleBot reviewed it. It can act on your behalf once added.",
   "marketplace.agents.source.pending": "Not reviewed yet",
 
   "marketplace.skill.loading": "Loading skill",
-  "marketplace.try.readFailed": "OpenBot could not read this agent's skills. Try again.",
+  "marketplace.try.readFailed": "PurpleBot could not read this agent's skills. Try again.",
   "marketplace.try.enable": "Enable this skill in agent settings to try it.",
   "marketplace.try.repair": "Repair this skill in agent settings to try it.",
   "marketplace.try.update": "Update this skill to try this version.",
@@ -119,8 +119,8 @@ export const messages = defineMessages("marketplace", {
   "marketplace.xApp.title": "X",
   "marketplace.xApp.tagline": "Reply to a post on X with @openbot_, and an agent does the work",
   "marketplace.xApp.description":
-    "X adds one agent, also called X, to this server. On X, reply to any post and mention @openbot_ with what you want: summarize it, translate it, draft a reply, save a note or set a reminder. The OpenBot extension for Chrome reads the post and sends it to the X agent, and X posts your reply as usual. The answer waits in the X chat in OpenBot. The X agent never posts, likes, follows or sends messages on X.",
-  "marketplace.xApp.developer": "OpenBot",
+    "X adds one agent, also called X, to this server. On X, reply to any post and mention @openbot_ with what you want: summarize it, translate it, draft a reply, save a note or set a reminder. The PurpleBot extension for Chrome reads the post and sends it to the X agent, and X posts your reply as usual. The answer waits in the X chat in PurpleBot. The X agent never posts, likes, follows or sends messages on X.",
+  "marketplace.xApp.developer": "PurpleBot",
   "marketplace.xApp.notSetUp": "Not set up",
   "marketplace.xApp.setUp": "Set up",
   "marketplace.xApp.howTitle": "How it works",
@@ -129,28 +129,28 @@ export const messages = defineMessages("marketplace", {
     "Reply to any post and mention @openbot_ with what you want, for example “@openbot_ summarize this”.",
   "marketplace.xApp.howSendTitle": "The extension sends it.",
   "marketplace.xApp.howSend":
-    "OpenBot for Chrome reads the post and the posts above it and sends them to the X agent. X posts your reply as usual.",
+    "PurpleBot for Chrome reads the post and the posts above it and sends them to the X agent. X posts your reply as usual.",
   "marketplace.xApp.howWorkTitle": "X does the work.",
-  "marketplace.xApp.howWork": "The answer waits in the X chat in OpenBot. Nothing from OpenBot shows on X.",
+  "marketplace.xApp.howWork": "The answer waits in the X chat in PurpleBot. Nothing from PurpleBot shows on X.",
   "marketplace.xApp.agentTitle": "Agent",
   "marketplace.xApp.agentDescription": "X answers each post that you send from X in its own chat.",
   "marketplace.xApp.extensionTitle": "In Chrome",
-  "marketplace.xApp.extensionDescription": "X works only through the OpenBot extension for Chrome.",
-  "marketplace.xApp.extensionName": "OpenBot for Chrome",
+  "marketplace.xApp.extensionDescription": "X works only through the PurpleBot extension for Chrome.",
+  "marketplace.xApp.extensionName": "PurpleBot for Chrome",
   "marketplace.xApp.extensionNote":
     "Open its side panel and sign in to this server. It reads a post only when you reply with @openbot_.",
   "marketplace.xApp.getExtension": "Get the extension",
   "marketplace.xApp.stepExtension": "Extension",
   "marketplace.xApp.stepAgent": "Agent",
   "marketplace.xApp.next": "Next",
-  "marketplace.xApp.extensionStepTitle": "Add OpenBot to Chrome",
+  "marketplace.xApp.extensionStepTitle": "Add PurpleBot to Chrome",
   "marketplace.xApp.extensionStepDescription":
     "The extension reads a post on X when you reply with @openbot_ and sends it to this server.",
-  "marketplace.xApp.extensionStepStore": "Open the OpenBot page in the Chrome Web Store",
+  "marketplace.xApp.extensionStepStore": "Open the PurpleBot page in the Chrome Web Store",
   "marketplace.xApp.extensionStepAdd": "Click Add to Chrome",
-  "marketplace.xApp.extensionStepSignIn": "Open the OpenBot side panel and sign in to this server",
+  "marketplace.xApp.extensionStepSignIn": "Open the PurpleBot side panel and sign in to this server",
   "marketplace.xApp.agentStepTitle": "Add the X agent",
-  "marketplace.xApp.agentStepDescription": "X gets the posts that you send from X. OpenBot adds it to this server.",
+  "marketplace.xApp.agentStepDescription": "X gets the posts that you send from X. PurpleBot adds it to this server.",
   "marketplace.xApp.agentDoesReceive": "Gets each post that you answer on X with @openbot_",
   "marketplace.xApp.agentDoesWork": "Summarizes, translates, drafts replies, saves notes and sets reminders",
   "marketplace.xApp.agentDoesNoPost": "Never posts on X: the answer waits in its chat",
@@ -185,25 +185,25 @@ export const messages = defineMessages("marketplace", {
   "marketplace.app.setup.account": "Sign in with your {name} account in the browser.",
   "marketplace.app.setup.key": "Needs an API key from your {name} account.",
   "marketplace.app.setup.keySaved": "{field} saved on {host}.",
-  "marketplace.app.account.removeDescription": "OpenBot deletes the sign-in of this account on {host}.",
+  "marketplace.app.account.removeDescription": "PurpleBot deletes the sign-in of this account on {host}.",
   "marketplace.app.setup.desktop": "Runs in the {name} desktop app at {address}.",
   "marketplace.app.setup.desktopConnected": "Connected to {address}.",
   "marketplace.app.setup.open": "No sign-in or key needed.",
   "marketplace.app.blocked.update":
-    "{host} runs an older OpenBot version that cannot connect apps. Update OpenBot on {host}, or ask its owner to update it.",
+    "{host} runs an older PurpleBot version that cannot connect apps. Update PurpleBot on {host}, or ask its owner to update it.",
   "marketplace.app.blocked.member":
-    "Only an owner or admin of {host} can connect apps there. Ask one of them to connect {name}, or to update OpenBot on {host} so that members can connect apps.",
-  "marketplace.app.blocked.mac": "{name} works only on a Mac that runs OpenBot.",
+    "Only an owner or admin of {host} can connect apps there. Ask one of them to connect {name}, or to update PurpleBot on {host} so that members can connect apps.",
+  "marketplace.app.blocked.mac": "{name} works only on a Mac that runs PurpleBot.",
   "marketplace.app.connectAgain": "Connect again",
   "marketplace.app.automation.askOnInstall": "Ask macOS for access at install",
   "marketplace.app.automation.title": "Access to Apple apps",
   "marketplace.app.automation.description":
     "macOS shows one prompt for each app. A closed app opens for a moment, then quits.",
   "marketplace.app.automation.request": "Ask for access",
-  "marketplace.app.automation.allowed": "OpenBot can now control all of the Apple apps.",
+  "marketplace.app.automation.allowed": "PurpleBot can now control all of the Apple apps.",
   "marketplace.app.automation.refused":
-    "macOS did not give access to {apps}. Allow OpenBot in System Settings › Privacy & Security › Automation.",
-  "marketplace.app.automation.failed": "OpenBot could not ask macOS about {apps}. Try again.",
+    "macOS did not give access to {apps}. Allow PurpleBot in System Settings › Privacy & Security › Automation.",
+  "marketplace.app.automation.failed": "PurpleBot could not ask macOS about {apps}. Try again.",
   "marketplace.app.automation.app.calendar": "Calendar",
   "marketplace.app.automation.app.contacts": "Contacts",
   "marketplace.app.automation.app.mail": "Mail",
@@ -258,7 +258,7 @@ export const messages = defineMessages("marketplace", {
   "marketplace.plugin.cobrain.prompt.saveNote": "Save a note in Cobrain with what we did today and what is left.",
   "marketplace.plugin.honcho.tagline": "Your memory across AI tools",
   "marketplace.plugin.honcho.description":
-    "Honcho by Plastic Labs gives agents a long-term memory of you that other AI tools you connect can share. Agents save what they learn, and Honcho reasons over it to build a model of your preferences, goals and ways of working. Agents ask it questions before they start. OpenBot agents keep their own memory too; Honcho is the memory that follows you to other tools. Messages that agents save go to your Honcho account.",
+    "Honcho by Plastic Labs gives agents a long-term memory of you that other AI tools you connect can share. Agents save what they learn, and Honcho reasons over it to build a model of your preferences, goals and ways of working. Agents ask it questions before they start. PurpleBot agents keep their own memory too; Honcho is the memory that follows you to other tools. Messages that agents save go to your Honcho account.",
   "marketplace.plugin.honcho.app": "Save and query long-term memory in your Honcho workspaces over one MCP server.",
   "marketplace.plugin.honcho.prompt.recall": "Ask Honcho what it knows about how I like to work before we start.",
   "marketplace.plugin.honcho.prompt.save": "Save the decisions from this thread to Honcho.",
@@ -266,7 +266,7 @@ export const messages = defineMessages("marketplace", {
   "marketplace.plugin.honcho.hint.apiKey": "Create a key at app.honcho.dev.",
   "marketplace.plugin.hindsight.tagline": "Memory that learns over time",
   "marketplace.plugin.hindsight.description":
-    "Hindsight by Vectorize gives agents a long-term memory in Hindsight Cloud. Agents retain facts and events, recall them by meaning, time and entity, and reflect on them to form mental models. Memories are kept in banks, and agents can make a bank for each project or person. OpenBot agents keep their own memory too; Hindsight is the memory that other AI tools you connect can share. What agents retain goes to your Hindsight Cloud account.",
+    "Hindsight by Vectorize gives agents a long-term memory in Hindsight Cloud. Agents retain facts and events, recall them by meaning, time and entity, and reflect on them to form mental models. Memories are kept in banks, and agents can make a bank for each project or person. PurpleBot agents keep their own memory too; Hindsight is the memory that other AI tools you connect can share. What agents retain goes to your Hindsight Cloud account.",
   "marketplace.plugin.hindsight.app":
     "Retain, recall and reflect on memories in your Hindsight Cloud banks over one MCP server.",
   "marketplace.plugin.hindsight.prompt.recall":
@@ -286,7 +286,7 @@ export const messages = defineMessages("marketplace", {
   "marketplace.plugin.figma.prompt.assets": "Extract the marketing icons at 2x for the app bundle.",
   "marketplace.plugin.paper.tagline": "Design canvas built on HTML and CSS",
   "marketplace.plugin.paper.description":
-    "Paper lets agents read and write the design file that is open in Paper Desktop: inspect artboards, selections, computed styles, JSX and tokens, and create or change frames, text and styles. Install Paper Desktop, open it once, and open a file before you start. OpenBot starts the Paper CLI that Paper Desktop installs. Paper needs no key. Write tools change the open file, so review each write before you approve it.",
+    "Paper lets agents read and write the design file that is open in Paper Desktop: inspect artboards, selections, computed styles, JSX and tokens, and create or change frames, text and styles. Install Paper Desktop, open it once, and open a file before you start. PurpleBot starts the Paper CLI that Paper Desktop installs. Paper needs no key. Write tools change the open file, so review each write before you approve it.",
   "marketplace.plugin.paper.app":
     "Reads and writes the open Paper Desktop file, over the local MCP server that the Paper CLI relays. Needs Paper Desktop with a file open.",
   "marketplace.plugin.paper.prompt.implement":
@@ -325,7 +325,7 @@ export const messages = defineMessages("marketplace", {
     "Summarize the last ten conversations of my support voice agent.",
   "marketplace.plugin.appleApps.tagline": "Mail, Calendar and more on your Mac",
   "marketplace.plugin.appleApps.description":
-    "Apple apps lets agents use Mail, Calendar, Contacts, Reminders, Notes, Messages and Safari on this Mac. It works on macOS only. OpenBot starts mcp-icloud, a community server that is not made by Apple or OpenBot. The server controls the apps through AppleScript, on this computer, and needs no account and no key. When you install it, OpenBot can ask macOS for access to all of these apps at once, with one prompt for each app. If you do not, macOS asks the first time an agent uses an app. To change this later, open System Settings › Privacy & Security › Automation. Agents can send email and iMessages, and change or delete events, contacts and reminders, so review each write before you approve it. What the tools read, such as email text, goes to the model provider of the agent.",
+    "Apple apps lets agents use Mail, Calendar, Contacts, Reminders, Notes, Messages and Safari on this Mac. It works on macOS only. PurpleBot starts mcp-icloud, a community server that is not made by Apple or PurpleBot. The server controls the apps through AppleScript, on this computer, and needs no account and no key. When you install it, PurpleBot can ask macOS for access to all of these apps at once, with one prompt for each app. If you do not, macOS asks the first time an agent uses an app. To change this later, open System Settings › Privacy & Security › Automation. Agents can send email and iMessages, and change or delete events, contacts and reminders, so review each write before you approve it. What the tools read, such as email text, goes to the model provider of the agent.",
   "marketplace.plugin.appleApps.app":
     "Mail, Calendar, Contacts, Reminders, Notes, Messages and Safari, over the local mcp-icloud server. Needs macOS and Automation access.",
   "marketplace.plugin.appleApps.prompt.unread": "Summarize my unread email in Apple Mail from today.",
@@ -605,8 +605,8 @@ export const messages = defineMessages("marketplace", {
   "marketplace.skills.source.all": "All",
   "marketplace.skills.source.verified": "Verified",
   "marketplace.skills.source.public": "Public",
-  "marketplace.skills.source.verifiedLong": "Verified by OpenBot",
-  "marketplace.skills.source.publicLong": "Reviewed by OpenBot",
+  "marketplace.skills.source.verifiedLong": "Verified by PurpleBot",
+  "marketplace.skills.source.publicLong": "Reviewed by PurpleBot",
   "marketplace.skills.sortLabel": "Sort",
   "marketplace.skills.sortName": "Sort: {name}",
   "marketplace.skills.sort.installs": "Most used",
@@ -629,7 +629,7 @@ export const messages = defineMessages("marketplace", {
   "marketplace.skills.origin.github": "From GitHub · {repository}",
   "marketplace.skills.github.search": "Search, or paste a GitHub link",
   "marketplace.skills.github.reading": "Looking for skills in the repository",
-  "marketplace.skills.github.trust": "OpenBot did not review skills from GitHub. Read a skill before you add it.",
+  "marketplace.skills.github.trust": "PurpleBot did not review skills from GitHub. Read a skill before you add it.",
   "marketplace.skills.github.source": "GitHub · {repository} at {commit}",
   "marketplace.skills.github.open": "GitHub",
   "marketplace.skills.github.openName": "Open {repository} on GitHub",

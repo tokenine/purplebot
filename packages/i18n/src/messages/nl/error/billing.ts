@@ -21,7 +21,7 @@ export const messages = {
   "error.billing.licenseUnavailable": "Licenties zijn nu niet beschikbaar.",
   "error.billing.noLicense": "Dit account heeft geen licentie.",
   "error.billing.countryRequired":
-    "Geef je factuurland op voordat je betaalt. Werk OpenBot bij om dit te doen en probeer het opnieuw.",
+    "Geef je factuurland op voordat je betaalt. Werk PurpleBot bij om dit te doen en probeer het opnieuw.",
   "error.billing.detailsInvalid":
     "Controleer het land en het btw-nummer. Het btw-nummer moet bij het gekozen land horen.",
   "error.billing.vatIdInvalid":

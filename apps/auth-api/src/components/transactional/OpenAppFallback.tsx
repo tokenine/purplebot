@@ -1,11 +1,10 @@
 import { Portal } from "@solidjs/web";
 import { type Accessor, createSignal, createUniqueId, onCleanup, Show } from "solid-js";
-import { detectDownloadPlatform } from "../../lib/download-platforms";
-import { OPENBOT_DOWNLOAD_LINKS } from "../../lib/landing-links";
 import { Button } from "../ui/button";
 import type { OpenAppFallbackText } from "./page-text";
 
 const OPEN_APP_HINT_DELAY_MS = 1200;
+export const WEB_APP_PATH = "/app";
 
 export interface OpenAppFallback {
   arm: () => void;
@@ -44,10 +43,14 @@ export function createOpenAppFallback(): OpenAppFallback {
   return { arm, open, close: () => setOpen(false) };
 }
 
-export function OpenAppFallbackDialog(props: { fallback: OpenAppFallback; text: OpenAppFallbackText }) {
+export function OpenAppFallbackDialog(props: {
+  fallback: OpenAppFallback;
+  text: OpenAppFallbackText;
+  href?: string;
+  label?: string;
+}) {
   const titleId = createUniqueId();
   let dialog: HTMLDialogElement | undefined;
-  const platform = () => detectDownloadPlatform(globalThis.navigator ?? {}) ?? "macos";
 
   const openDialog = (element: HTMLDialogElement) => {
     dialog = element;
@@ -71,8 +74,8 @@ export function OpenAppFallbackDialog(props: { fallback: OpenAppFallback; text: 
             <button class="plugin-dialog-dismiss" type="button" onClick={() => dialog?.close()}>
               {props.text.dismiss}
             </button>
-            <Button autofocus href={OPENBOT_DOWNLOAD_LINKS[platform()]} variant="primary" size="sm" icon="download">
-              {props.text.download[platform()]}
+            <Button autofocus href={props.href ?? WEB_APP_PATH} variant="primary" size="sm" icon="arrow-right">
+              {props.label ?? props.text.openInBrowser}
             </Button>
           </div>
         </dialog>

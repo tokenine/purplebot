@@ -134,7 +134,7 @@ export const verifyWindowsUpdateSignature = Effect.fn("verifyWindowsUpdateSignat
 
 /**
  * `parseDn` of builder-util-runtime 9.7.0 (`rfc2253Parser.ts`, MIT, Copyright (c) 2015 Loopline
- * Systems), the parser that electron-updater 6.8.11 matches publisher names with. OpenBot does not
+ * Systems), the parser that electron-updater 6.8.11 matches publisher names with. PurpleBot does not
  * depend on builder-util-runtime directly.
  */
 function parseDn(text: string): Map<string, string> {

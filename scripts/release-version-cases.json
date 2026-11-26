@@ -1,5 +1,5 @@
 {
-  "description": "How OpenBot release versions compare. `newer` is the result of isNewerRelease(candidate, current) in packages/contracts/src/release-version.ts. `bash` is the result of newer() in scripts/hosting/openbot-hosted-update, only for the pairs that the script can get: `stage` accepts only an X.Y.Z candidate, and the installed version is an X.Y.Z release or empty. scripts/release-version-comparator-e2e.ts checks both.",
+  "description": "How PurpleBot release versions compare. `newer` is the result of isNewerRelease(candidate, current) in packages/contracts/src/release-version.ts. `bash` is the result of newer() in scripts/hosting/openbot-hosted-update, only for the pairs that the script can get: `stage` accepts only an X.Y.Z candidate, and the installed version is an X.Y.Z release or empty. scripts/release-version-comparator-e2e.ts checks both.",
   "cases": [
     { "candidate": "0.72.1", "current": "0.72.0", "newer": true, "bash": true },
     { "candidate": "0.72.0", "current": "0.72.1", "newer": false, "bash": false },

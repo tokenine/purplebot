@@ -187,7 +187,7 @@ try {
     report.userRules.catalog.opencode.includes("read_mcp_resource"),
     "The global pattern did not keep opencode.read_mcp_resource.",
   );
-  assert.ok(!report.userRules.skills.includes("opencode"), "OpenBot's rule for the opencode skill is gone.");
+  assert.ok(!report.userRules.skills.includes("opencode"), "PurpleBot's rule for the opencode skill is gone.");
   assert.ok(
     !report.userRules.catalog.opencode.includes("list_mcp_resources"),
     "The catalog lists list_mcp_resources again.",

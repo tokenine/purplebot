@@ -10,7 +10,7 @@ import { Option, Schema } from "effect";
 const run = promisify(execFile);
 
 const EXTENSION_ID = "eggdpikcggoicfcfdpdihfkinajchpfj";
-const EXTENSION_NAME = "OpenBot";
+const EXTENSION_NAME = "PurpleBot";
 const STORE_API = "https://chromewebstore.googleapis.com";
 const STORE_SCOPE = "https://www.googleapis.com/auth/chromewebstore";
 const PUBLIC_PACKAGE_URL = `https://clients2.google.com/service/update2/crx?response=redirect&prodversion=142.0&acceptformat=crx3&x=id%3D${EXTENSION_ID}%26uc`;
@@ -398,7 +398,7 @@ async function publish(manifest: Manifest, options: Options): Promise<void> {
   const result = await client.publish();
   const warnings = result.warningInfo?.warnings ?? [];
   summarize([
-    `Submitted OpenBot extension ${manifest.version} to the Chrome Web Store (state ${result.state ?? "unknown"}).`,
+    `Submitted PurpleBot extension ${manifest.version} to the Chrome Web Store (state ${result.state ?? "unknown"}).`,
     "The store publishes it to all users when the review passes. Chrome then updates each install within a few hours.",
     ...warnings.map((warning) => `- Warning ${warning.reason ?? ""}: ${warning.description ?? ""}`),
   ]);

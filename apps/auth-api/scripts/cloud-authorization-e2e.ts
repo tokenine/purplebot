@@ -479,6 +479,7 @@ async function aCheckoutReturnStaysOnTheAccountSite() {
   const sales = new BillingSales({
     database: sqliteD1(database),
     fetch: () => Promise.reject(new Error("No network in this test.")),
+    apiUrl: undefined,
     clientId: undefined,
     clientSecret: undefined,
   });

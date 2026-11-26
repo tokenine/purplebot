@@ -234,7 +234,7 @@ try {
     };
     report.cases.push(result);
     assert.equal(result.finalStatus, "completed", `${entry.name}: ${result.finalError ?? result.finalStatus}`);
-    assert.equal(result.turnStarts, 1, `${entry.name}: OpenBot started the turn again`);
+    assert.equal(result.turnStarts, 1, `${entry.name}: PurpleBot started the turn again`);
     if (entry.banner) {
       assert.ok(
         result.errorEvents.some((event) => event.code === "agent_warning" && event.message === READABLE),

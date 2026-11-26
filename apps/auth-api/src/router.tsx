@@ -1,5 +1,4 @@
 import { createRouter } from "@tanstack/solid-router";
-import { cspNonce } from "./lib/csp-nonce";
 import { routeTree } from "./routeTree.gen";
 
 const CHUNK_RELOAD_KEY = "openbot:chunk-reload-at";
@@ -25,11 +24,10 @@ function textCatalogOf(loaderData: unknown): string | undefined {
 }
 
 export function getRouter() {
-  const nonce = cspNonce();
   const router = createRouter({
     routeTree,
     defaultPreload: "intent",
-    ssr: nonce === undefined ? {} : { nonce },
+    ssr: {},
     dehydrate: (): { textCatalog: string | undefined } => ({
       textCatalog: router.state.matches.map((match) => textCatalogOf(match.loaderData)).find(Boolean),
     }),

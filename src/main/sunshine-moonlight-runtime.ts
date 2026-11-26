@@ -341,7 +341,7 @@ export class SunshineMoonlightRuntime {
   #state: SunshineMoonlightRuntimeState | null = null;
   #screenCaptureDenied = false;
   #windowsCaptureDenied = false;
-  readonly #moonlightHeader = `X-OpenBot-Remote-${randomBytes(32).toString("hex")}`;
+  readonly #moonlightHeader = `X-PurpleBot-Remote-${randomBytes(32).toString("hex")}`;
   #selectedDisplayId: string | null = null;
   #softwareEncoder = false;
   readonly #lifecycle = new LifecycleGate<SunshineMoonlightRuntimeState, RemoteDesktopOperationError>();
@@ -464,7 +464,7 @@ export class SunshineMoonlightRuntime {
     yield* desktopCall(() => writeFile(this.#softwareEncoderMarker(), until, { mode: 0o600 }));
     this.#options.onDiagnostic?.(
       "sunshine",
-      "OpenBot: no picture reached the viewer with the hardware encoder. Sunshine uses the software encoder for 7 days from its next start.\n",
+      "PurpleBot: no picture reached the viewer with the hardware encoder. Sunshine uses the software encoder for 7 days from its next start.\n",
     );
   }).bind(this);
 
@@ -597,7 +597,7 @@ export class SunshineMoonlightRuntime {
           },
           this.#moonlight,
         ).pipe(Effect.mapError(this.#failStart("moonlight")));
-        this.#options.onDiagnostic?.("moonlight", "OpenBot: Moonlight Web is ready.\n");
+        this.#options.onDiagnostic?.("moonlight", "PurpleBot: Moonlight Web is ready.\n");
         const paired = yield* this.#bootstrapMoonlightEffect(moonlightPort).pipe(
           Effect.mapError(this.#failStart("pairing")),
         );
@@ -651,7 +651,7 @@ export class SunshineMoonlightRuntime {
     const directory = windowsShortPath(this.#options.stateDirectory);
     this.#softwareEncoder = this.#options.platform === "win32" && (yield* this.#softwareEncoderActiveEffect());
     const values = [
-      "sunshine_name = OpenBot Remote Desktop",
+      "sunshine_name = PurpleBot Remote Desktop",
       `port = ${basePort}`,
       "upnp = disabled",
       "stream_audio = disabled",
@@ -862,7 +862,7 @@ export class SunshineMoonlightRuntime {
       )).hosts;
       this.#options.onDiagnostic?.(
         "moonlight",
-        `OpenBot: found ${hosts.length} local Moonlight hosts for streamer slot ${slot}.\n`,
+        `PurpleBot: found ${hosts.length} local Moonlight hosts for streamer slot ${slot}.\n`,
       );
       for (const previous of endpointChanged ? hosts : []) {
         const deleted = yield* moonlightHttpResponseEffect(
@@ -895,7 +895,7 @@ export class SunshineMoonlightRuntime {
       if (host.paired !== "Paired") {
         this.#options.onDiagnostic?.(
           "moonlight",
-          `OpenBot: pairing local host ${host.host_id} for streamer slot ${slot}.\n`,
+          `PurpleBot: pairing local host ${host.host_id} for streamer slot ${slot}.\n`,
         );
         yield* this.#pairMoonlightEffect(baseUrl, host.host_id, user);
       }
@@ -1021,16 +1021,16 @@ export class SunshineMoonlightRuntime {
                 Effect.mapError(desktopFailure),
               );
               if (typeof message === "object" && "Pin" in message) {
-                this.#options.onDiagnostic?.("moonlight", "OpenBot: received local pairing PIN.\n");
+                this.#options.onDiagnostic?.("moonlight", "PurpleBot: received local pairing PIN.\n");
                 const pairingId = yield* this.#waitForPairingRequestEffect();
                 yield* sunshineRequestEffect(
                   yield* desktopSync(() => this.#requireSunshineHttpsPort()),
                   "/api/pin",
                   this.#options.credentials,
                   join(this.#options.stateDirectory, "sunshine-cert.pem"),
-                  JSON.stringify({ pairing_id: pairingId, pin: message.Pin, name: "OpenBot Remote Desktop" }),
+                  JSON.stringify({ pairing_id: pairingId, pin: message.Pin, name: "PurpleBot Remote Desktop" }),
                 );
-                this.#options.onDiagnostic?.("moonlight", "OpenBot: submitted local pairing PIN.\n");
+                this.#options.onDiagnostic?.("moonlight", "PurpleBot: submitted local pairing PIN.\n");
                 pinSubmitted = true;
                 continue;
               }
@@ -1116,12 +1116,12 @@ export class SunshineMoonlightRuntime {
 
   #watchExit(child: ChildProcess, source: "sunshine" | "moonlight"): void {
     child.on("error", (error) => {
-      this.#options.onDiagnostic?.(source, `OpenBot: ${source} had a process error (${error.message}).\n`);
+      this.#options.onDiagnostic?.(source, `PurpleBot: ${source} had a process error (${error.message}).\n`);
     });
     child.once("exit", (code, signal) => {
       if ((source === "sunshine" ? this.#sunshine : this.#moonlight) !== child || !this.#state) return;
       this.#state = null;
-      this.#options.onDiagnostic?.(source, `OpenBot: ${source} exited unexpectedly (${signal ?? `code ${code}`}).\n`);
+      this.#options.onDiagnostic?.(source, `PurpleBot: ${source} exited unexpectedly (${signal ?? `code ${code}`}).\n`);
       this.#options.onExit?.(source);
     });
   }

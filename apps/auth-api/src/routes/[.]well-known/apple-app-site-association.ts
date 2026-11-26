@@ -3,20 +3,7 @@ import { createFileRoute } from "@tanstack/solid-router";
 const APPLE_APP_SITE_ASSOCIATION = {
   applinks: {
     apps: [],
-    details: [
-      {
-        appID: "ZTRDTUL87R.app.openbot.desktop",
-        paths: ["/join"],
-      },
-      {
-        appID: "ZTRDTUL87R.run.openbot.mobile",
-        paths: ["/join", "/agents/*"],
-      },
-      {
-        appID: "8A47NKRZSJ.run.openbot.mobile",
-        paths: ["/join", "/agents/*"],
-      },
-    ],
+    details: [],
   },
 };
 

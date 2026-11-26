@@ -10,7 +10,7 @@ const logger = createOpenBotLogger("windows-home-install-update-e2e");
 
 if (process.platform !== "win32") throw new Error("This test drives the Windows installers and must run on Windows.");
 if (process.env.GITHUB_ACTIONS !== "true") {
-  throw new Error("This test deletes %USERPROFILE%\\OpenBot and runs only on a GitHub Actions runner.");
+  throw new Error("This test deletes %USERPROFILE%\\PurpleBot and runs only on a GitHub Actions runner.");
 }
 
 const [earlierInstallerArgument, newInstallerArgument] = process.argv.slice(2);
@@ -22,9 +22,9 @@ const newInstaller = resolve(newInstallerArgument);
 const localAppData = process.env.LOCALAPPDATA;
 if (!localAppData) throw new Error("LOCALAPPDATA is not set.");
 
-const homeFolder = join(homedir(), "OpenBot");
-const defaultFolder = join(localAppData, "Programs", "OpenBot");
-const nestedFolder = join(defaultFolder, "OpenBot");
+const homeFolder = join(homedir(), "PurpleBot");
+const defaultFolder = join(localAppData, "Programs", "PurpleBot");
+const nestedFolder = join(defaultFolder, "PurpleBot");
 const uninstallKey = "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall";
 const runKey = "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run";
 const loginItemName = "app.openbot.desktop";
@@ -38,7 +38,7 @@ const workspaceFiles = [
   join("Shared", "report.txt"),
   join("Downloads", "picture.txt"),
 ];
-const appFiles = ["OpenBot.exe", "Uninstall OpenBot.exe", "resources", "locales", "ffmpeg.dll", "resources.pak"];
+const appFiles = ["PurpleBot.exe", "Uninstall PurpleBot.exe", "resources", "locales", "ffmpeg.dll", "resources.pak"];
 
 interface Registration {
   displayName: string | null;
@@ -111,7 +111,7 @@ function registration(): Registration {
     $entry = $null
     if (Test-Path ${uninstallKey}) {
       $entry = Get-ChildItem ${uninstallKey} | Get-ItemProperty |
-        Where-Object { $_.DisplayName -like 'OpenBot*' } | Select-Object -First 1
+        Where-Object { $_.DisplayName -like 'PurpleBot*' } | Select-Object -First 1
     }
     $location = $null
     if ($entry) { $location = (Get-ItemProperty -LiteralPath "HKCU:\\Software\\$($entry.PSChildName)" -ErrorAction SilentlyContinue).InstallLocation }
@@ -151,7 +151,7 @@ function removeRegistration(): void {
   const keys = powershell(`
     if (Test-Path ${uninstallKey}) {
       Get-ChildItem ${uninstallKey} | Get-ItemProperty |
-        Where-Object { $_.DisplayName -like 'OpenBot*' } | ForEach-Object { $_.PSChildName }
+        Where-Object { $_.DisplayName -like 'PurpleBot*' } | ForEach-Object { $_.PSChildName }
     }`);
   for (const key of keys.split(/\r?\n/u).filter(Boolean)) {
     powershell(`Remove-Item -LiteralPath "${uninstallKey}\\${key}" -Recurse -Force -ErrorAction SilentlyContinue
@@ -194,7 +194,7 @@ function presentAppFiles(folder: string): string[] {
 async function runEarlierUninstallerAsUpdate(): Promise<number> {
   const copyFolder = await mkdtemp(join(tmpdir(), "openbot-old-uninstaller-"));
   const copy = join(copyFolder, "old-uninstaller.exe");
-  await copyFile(join(homeFolder, "Uninstall OpenBot.exe"), copy);
+  await copyFile(join(homeFolder, "Uninstall PurpleBot.exe"), copy);
   try {
     return await runInstaller(copy, `/S /KEEP_APP_DATA /currentuser --updated _?=${homeFolder}`);
   } finally {
@@ -205,13 +205,13 @@ async function runEarlierUninstallerAsUpdate(): Promise<number> {
 async function installEarlierInHomeFolder(): Promise<void> {
   await removeEverything();
   check((await runInstaller(earlierInstaller, `/S /D=${homeFolder}`)) === 0, "The earlier installer failed.");
-  check(existsSync(join(homeFolder, "OpenBot.exe")), "The earlier installer did not install in the home folder.");
+  check(existsSync(join(homeFolder, "PurpleBot.exe")), "The earlier installer did not install in the home folder.");
 }
 
 async function normalUpdate(): Promise<void> {
   await removeEverything();
   check((await runInstaller(earlierInstaller, "/S")) === 0, "The earlier installer failed.");
-  check(existsSync(join(defaultFolder, "OpenBot.exe")), "The earlier installer did not use the default folder.");
+  check(existsSync(join(defaultFolder, "PurpleBot.exe")), "The earlier installer did not use the default folder.");
   await makeWorkspaces({ longPath: false });
   const exitCode = await runInstaller(newInstaller, "--updated /S");
   const result = {
@@ -223,7 +223,7 @@ async function normalUpdate(): Promise<void> {
   cases.normalUpdate = result;
   check(exitCode === 0, `The normal update exited with ${exitCode}.`);
   check(result.registration.installLocation === defaultFolder, "The normal update moved the installation.");
-  check(result.appFilesInDefaultFolder.includes("OpenBot.exe"), "The normal update did not install OpenBot.exe.");
+  check(result.appFilesInDefaultFolder.includes("PurpleBot.exe"), "The normal update did not install PurpleBot.exe.");
   check(result.missingWorkspaceFiles.length === 0, "The normal update changed the workspaces.");
 }
 
@@ -256,7 +256,7 @@ async function earlierUninstallerDeletesWorkspaces(): Promise<void> {
 async function newInstallerMovesTheInstallation(visible = false): Promise<void> {
   await installEarlierInHomeFolder();
   const longPathFile = await makeWorkspaces({ longPath: true });
-  setLoginItem(join(homeFolder, "OpenBot.exe"));
+  setLoginItem(join(homeFolder, "PurpleBot.exe"));
   const exitCode = await runInstaller(newInstaller, visible ? "--updated" : "--updated /S");
   const result = {
     exitCode,
@@ -269,14 +269,14 @@ async function newInstallerMovesTheInstallation(visible = false): Promise<void> 
   cases[visible ? "visibleUpdateMovesTheInstallation" : "newInstallerMovesTheInstallation"] = result;
   check(exitCode === 0, `The new installer exited with ${exitCode}.`);
   check(result.missingWorkspaceFiles.length === 0, `Workspace files are missing: ${result.missingWorkspaceFiles}`);
-  check(result.appFilesInDefaultFolder.includes("OpenBot.exe"), "The new installer did not use the default folder.");
+  check(result.appFilesInDefaultFolder.includes("PurpleBot.exe"), "The new installer did not use the default folder.");
   check(result.appFilesInHomeFolder.length === 0, `App files stay in the home folder: ${result.appFilesInHomeFolder}`);
   check(result.registration.installLocation === defaultFolder, "The registry does not name the default folder.");
   check(
     result.registration.uninstallString?.includes(defaultFolder) === true,
     "The uninstall entry does not name the default folder.",
   );
-  check(result.loginItem === `"${join(defaultFolder, "OpenBot.exe")}"`, "The login item does not name the new copy.");
+  check(result.loginItem === `"${join(defaultFolder, "PurpleBot.exe")}"`, "The login item does not name the new copy.");
 }
 
 async function newInstallerRemovesTheCopyAbove(): Promise<void> {
@@ -284,12 +284,12 @@ async function newInstallerRemovesTheCopyAbove(): Promise<void> {
   check((await runInstaller(earlierInstaller, "/S")) === 0, "The earlier installer failed.");
   removeRegistration();
   check((await runInstaller(earlierInstaller, `/S /D=${nestedFolder}`)) === 0, "The earlier installer failed again.");
-  check(existsSync(join(defaultFolder, "OpenBot.exe")), "The earlier copy is not in the folder above.");
-  check(existsSync(join(nestedFolder, "OpenBot.exe")), "The earlier installer did not use the subfolder.");
+  check(existsSync(join(defaultFolder, "PurpleBot.exe")), "The earlier copy is not in the folder above.");
+  check(existsSync(join(nestedFolder, "PurpleBot.exe")), "The earlier installer did not use the subfolder.");
   await rm(join(defaultFolder, "ffmpeg.dll"));
   const otherFile = join(defaultFolder, "notes.txt");
   await writeFile(otherFile, "not an app file\n");
-  setLoginItem(join(defaultFolder, "OpenBot.exe"));
+  setLoginItem(join(defaultFolder, "PurpleBot.exe"));
   const exitCode = await runInstaller(newInstaller, "--updated /S");
   const result = {
     exitCode,
@@ -303,10 +303,10 @@ async function newInstallerRemovesTheCopyAbove(): Promise<void> {
   cases.newInstallerRemovesTheCopyAbove = result;
   check(exitCode === 0, `The new installer exited with ${exitCode}.`);
   check(result.registration.installLocation === nestedFolder, "The registry does not name the subfolder.");
-  check(result.appFilesInNestedFolder.includes("OpenBot.exe"), "The new installer did not update the subfolder.");
+  check(result.appFilesInNestedFolder.includes("PurpleBot.exe"), "The new installer did not update the subfolder.");
   check(result.appFilesInDefaultFolder.length === 0, `App files stay above: ${result.appFilesInDefaultFolder}`);
   check(result.otherFileKept, "The new installer deleted a file that is not an app file.");
-  check(result.loginItem === `"${join(nestedFolder, "OpenBot.exe")}"`, "The login item does not name the new copy.");
+  check(result.loginItem === `"${join(nestedFolder, "PurpleBot.exe")}"`, "The login item does not name the new copy.");
 }
 
 async function visibleUpdate(): Promise<void> {
@@ -323,7 +323,7 @@ async function visibleUpdate(): Promise<void> {
   cases.visibleUpdate = result;
   check(exitCode === 0, `The visible update exited with ${exitCode}.`);
   check(result.registration.installLocation === defaultFolder, "The visible update moved the installation.");
-  check(result.appFilesInDefaultFolder.includes("OpenBot.exe"), "The visible update did not install OpenBot.exe.");
+  check(result.appFilesInDefaultFolder.includes("PurpleBot.exe"), "The visible update did not install PurpleBot.exe.");
   check(result.missingWorkspaceFiles.length === 0, "The visible update changed the workspaces.");
 }
 

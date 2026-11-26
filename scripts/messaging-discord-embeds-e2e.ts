@@ -118,7 +118,7 @@ const gateway = (t: string, d: unknown): Parameters<DiscordState["handle"]>[0] =
 signal.handle(
   gateway("READY", {
     v: 10,
-    user: { id: APP, username: "OpenBot", bot: true },
+    user: { id: APP, username: "PurpleBot", bot: true },
     application: { id: APP, flags: 0 },
     guilds: [{ id: GUILD, unavailable: true }],
     session_id: "session",
@@ -243,7 +243,7 @@ const embed = {
   url: "https://openbot.run/report",
   color: 0x5865f2,
   timestamp: "2026-11-09T10:00:00.000Z",
-  author: { name: "OpenBot", icon_url: "https://openbot.run/icon.png" },
+  author: { name: "PurpleBot", icon_url: "https://openbot.run/icon.png" },
   footer: { text: "Routine: nightly" },
   thumbnail: { url: "https://openbot.run/thumb.png" },
   image: { url: "https://openbot.run/chart.png" },

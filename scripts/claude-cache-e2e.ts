@@ -20,7 +20,7 @@ interface Variant {
 }
 
 const VARIANTS: Variant[] = [
-  { name: "current", description: "The options that OpenBot sends now.", options: (options) => options },
+  { name: "current", description: "The options that PurpleBot sends now.", options: (options) => options },
   {
     name: "snapshot-on",
     description: "`--system-prompt-snapshot on`: the CLI records the system prompt and resumes with it.",
@@ -80,7 +80,7 @@ function startedThreadId(value: unknown): string {
 }
 
 function git(cwd: string, ...args: string[]): void {
-  execFileSync("git", ["-c", "user.name=OpenBot", "-c", "user.email=e2e@openbot.invalid", ...args], { cwd });
+  execFileSync("git", ["-c", "user.name=PurpleBot", "-c", "user.email=e2e@openbot.invalid", ...args], { cwd });
 }
 
 for (const variant of variants) {

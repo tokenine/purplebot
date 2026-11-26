@@ -59,7 +59,7 @@ export function normalizeMarketplaceQuery(value: string | undefined): string | u
 }
 
 export function marketplaceCreatorName(name: string | null | undefined): string {
-  return name?.trim() || "OpenBot user";
+  return name?.trim() || "PurpleBot user";
 }
 
 export function marketplaceLikePattern(value: string): string {

@@ -371,7 +371,7 @@ open(sys.argv[1], "wb").write(data)
     `import sys, zipfile
 with zipfile.ZipFile(sys.argv[1], "w", zipfile.ZIP_DEFLATED) as z:
     z.writestr("openbot-import.json", sys.argv[2])
-    z.writestr("agents/broken/files/text.txt", "OpenBot " * 10000)
+    z.writestr("agents/broken/files/text.txt", "PurpleBot " * 10000)
     z.writestr("agents/broken/files/ok.txt", "ok\\n")
 info = zipfile.ZipFile(sys.argv[1]).getinfo("agents/broken/files/text.txt")
 with open(sys.argv[1], "r+b") as f:

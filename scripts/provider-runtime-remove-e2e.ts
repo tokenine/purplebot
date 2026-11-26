@@ -358,7 +358,7 @@ try {
       chosenUpdate: { source: "managed", version: "0.201.0", passedOver: "system 0.200.0" },
       chosenNoInstalled: { source: "managed", version: "0.201.0", passedOver: null },
     },
-    "the user's CLI wins when it is as new or chosen, an update starts OpenBot's copy, and the other CLI is named",
+    "the user's CLI wins when it is as new or chosen, an update starts PurpleBot's copy, and the other CLI is named",
   );
 
   report.passed = true;

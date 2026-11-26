@@ -69,7 +69,7 @@ const REPLAY_WINDOW_MS = 60 * 60_000;
 const SEND_ATTEMPTS = 3;
 const MAX_PREPARED = 32;
 const MAX_ACTIONS_PER_HOUR = 20;
-const AGENT_NAME = "OpenBot";
+const AGENT_NAME = "PurpleBot";
 const GATEWAY_API_KEY = "openbot-gateway";
 
 const NEAR_ACCOUNT =

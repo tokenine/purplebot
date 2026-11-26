@@ -3,7 +3,7 @@ set -euo pipefail
 export LC_ALL=C
 umask 077
 
-INSTALL=/opt/OpenBot
+INSTALL=/opt/PurpleBot
 BACKUP=/srv/openbot-keyring
 KEYRING=/srv/openbot-hosted/keyrings/login.keyring
 FILE_LIMIT=16777216
@@ -149,7 +149,7 @@ guard() {
   local mode=$1 current=$WORK/current backup_status=0 current_status=0 complete=1 read_status=0
   read_current "$current" || read_status=$?
   if [ "$read_status" -eq "$TOO_LARGE" ]; then
-    log "A file of the OpenBot keyring is larger than $FILE_LIMIT bytes. The OpenBot keyring and its copy stay as they are."
+    log "A file of the PurpleBot keyring is larger than $FILE_LIMIT bytes. The PurpleBot keyring and its copy stay as they are."
     return 0
   fi
   [ "$read_status" -eq 0 ] || complete=0
@@ -157,7 +157,7 @@ guard() {
     [ "$complete" -eq 1 ] || return 0
     check_keyring "$current" "$WORK/current.items" || return 0
     save_backup "$current"
-    log "Saved a copy of the OpenBot keyring in $BACKUP."
+    log "Saved a copy of the PurpleBot keyring in $BACKUP."
     return 0
   fi
   if [ "$complete" -eq 1 ] && same_files "$current" "$BACKUP"; then return 0; fi
@@ -168,7 +168,7 @@ guard() {
     current_status=$FAILED
   fi
   if [ "$backup_status" -eq "$UNKNOWN" ] || [ "$current_status" -eq "$UNKNOWN" ]; then
-    log "The keyring check did not complete ($CHECK_STATUS). The OpenBot keyring and its copy stay as they are."
+    log "The keyring check did not complete ($CHECK_STATUS). The PurpleBot keyring and its copy stay as they are."
     return 0
   fi
   if [ "$current_status" -eq "$PASS" ] &&
@@ -177,15 +177,15 @@ guard() {
     return 0
   fi
   if [ "$backup_status" -ne "$PASS" ]; then
-    log "The OpenBot keyring and its copy in $BACKUP do not open. Both stay as they are."
+    log "The PurpleBot keyring and its copy in $BACKUP do not open. Both stay as they are."
     return 0
   fi
   if [ "$mode" != start ]; then
-    log "The OpenBot keyring changed outside OpenBot. Its copy is restored at the next start of OpenBot."
+    log "The PurpleBot keyring changed outside PurpleBot. Its copy is restored at the next start of PurpleBot."
     return 0
   fi
   restore_backup "$current"
-  log "The OpenBot keyring changed outside OpenBot, and it no longer had the key of the OpenBot data. Restored the copy from $(date -u -r "$BACKUP/login.keyring" +%FT%TZ). The replaced files are in $BACKUP/replaced."
+  log "The PurpleBot keyring changed outside PurpleBot, and it no longer had the key of the PurpleBot data. Restored the copy from $(date -u -r "$BACKUP/login.keyring" +%FT%TZ). The replaced files are in $BACKUP/replaced."
 }
 
 main() {
@@ -206,7 +206,7 @@ main() {
   exec 8>/run/openbot-hosted-keyring.lock
   if [ "$mode" = start ]; then
     flock -w "$START_LOCK_SECONDS" 8 || {
-      log "Another keyring check did not stop in $START_LOCK_SECONDS seconds. The OpenBot keyring stays as it is."
+      log "Another keyring check did not stop in $START_LOCK_SECONDS seconds. The PurpleBot keyring stays as it is."
       return 0
     }
   else

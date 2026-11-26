@@ -6,18 +6,19 @@ export const messages = {
   "error.workflow.versionMissing": "이 버전의 워크플로는 더 이상 존재하지 않아요.",
   "error.workflow.annotation": "텍스트, 메모, 도형에는 연결을 추가할 수 없어요.",
   "error.workflow.port": "단계가 이 유형의 입력을 받을 수 없어요.",
-  "error.workflow.unknownValue": "이 OpenBot은 단계의 설정을 알지 못합니다. OpenBot을 업데이트한 후 다시 시도하세요.",
+  "error.workflow.unknownValue":
+    "이 PurpleBot은 단계의 설정을 알지 못합니다. PurpleBot을 업데이트한 후 다시 시도하세요.",
   "error.workflow.branch": "‘예’와 ‘아니요’ 연결은 조건에만 있을 수 있어요.",
   "error.workflow.conditionBranch": "조건에서 나가는 각 연결은 ‘예’ 또는 ‘아니요’여야 해요.",
   "error.workflow.duplicateEdge": "이 두 단계에는 이미 이 연결이 있어요.",
   "error.workflow.serverTooOld":
-    "이 서버는 워크플로를 지원하지 않아요. 서버를 실행하는 컴퓨터에서 OpenBot을 업데이트하세요.",
+    "이 서버는 워크플로를 지원하지 않아요. 서버를 실행하는 컴퓨터에서 PurpleBot을 업데이트하세요.",
   "error.workflow.newerSteps":
-    "이 워크플로에는 최신 버전 OpenBot의 단계가 있어요. 변경하려면 OpenBot을 업데이트하세요.",
-  "error.workflow.nodeUnsupported": "이 버전의 OpenBot은 아직 이미지, 파일, 메시지 단계를 실행할 수 없어요.",
-  "error.workflow.interrupted": "이 단계가 실행되는 동안 OpenBot이 중지됐어요. 다시 실행해 주세요.",
+    "이 워크플로에는 최신 버전 PurpleBot의 단계가 있어요. 변경하려면 PurpleBot을 업데이트하세요.",
+  "error.workflow.nodeUnsupported": "이 버전의 PurpleBot은 아직 이미지, 파일, 메시지 단계를 실행할 수 없어요.",
+  "error.workflow.interrupted": "이 단계가 실행되는 동안 PurpleBot이 중지됐어요. 다시 실행해 주세요.",
   "error.workflow.agentMissing": "이 단계의 에이전트를 선택하세요.",
-  "error.workflow.handoffFailed": "OpenBot이 이 단계를 에이전트에 보내지 못했어요.",
+  "error.workflow.handoffFailed": "PurpleBot이 이 단계를 에이전트에 보내지 못했어요.",
   "error.workflow.agentStepEnded": "에이전트가 답하기 전에 이 단계의 메시지가 삭제됐어요.",
   "error.workflow.agentStepStopped": "에이전트가 이 단계에 답하기 전에 멈췄어요. 단계를 다시 실행해 주세요.",
   "error.workflow.conditionUnclear": "모델이 ‘예’ 또는 ‘아니요’로 답하지 않았어요.",
@@ -43,7 +44,7 @@ export const messages = {
   "error.workflow.modelUnavailable": "이 단계의 모델을 사용할 수 없어요. 이 단계에 다른 모델을 골라 주세요.",
   "error.workflow.providerBusy": "제공자가 바빠요. 몇 분 기다린 다음 단계를 다시 실행해 주세요.",
   "error.workflow.providerOffline":
-    "OpenBot이 제공자에 연결할 수 없었어요. 인터넷 연결을 확인한 다음 단계를 다시 실행해 주세요.",
+    "PurpleBot이 제공자에 연결할 수 없었어요. 인터넷 연결을 확인한 다음 단계를 다시 실행해 주세요.",
   "error.workflow.providerBilling":
     "계정에 크레딧이 없거나 요금제에 이 모델이 없어요. 요금제를 확인하거나 다른 모델을 골라 주세요.",
   "error.workflow.modelRefused": "제공자가 이 계정에 이 모델을 허용하지 않아요. 다른 모델을 골라 주세요.",
@@ -70,7 +71,7 @@ export const messages = {
   "error.workflow.noDecision": "이 단계는 결정을 기다리고 있지 않아요.",
   "error.workflow.outputPlaceMissing": "이 출력의 메시징 위치를 선택하세요.",
   "error.workflow.outputChannelMissing": "이 출력의 채널을 선택하세요.",
-  "error.workflow.outputChannelFailed": "OpenBot이 결과를 채널에 게시하지 못했습니다. 단계를 다시 실행하세요.",
+  "error.workflow.outputChannelFailed": "PurpleBot이 결과를 채널에 게시하지 못했습니다. 단계를 다시 실행하세요.",
   "error.workflow.discordNoMessage":
     "이 출력은 실행을 시작한 Discord 메시지에 작동합니다. Discord 멘션으로 실행을 시작하거나 채널에 게시를 선택하세요.",
   "error.workflow.slackNoMessage":
@@ -79,7 +80,7 @@ export const messages = {
     "이 출력은 실행을 시작한 Telegram 메시지에 작동합니다. Telegram 멘션으로 실행을 시작하거나 채팅에 게시를 선택하세요.",
   "error.workflow.outputConnectionOff": "이 출력의 메시징 연결이 꺼져 있거나 삭제됐어요. 위치를 다시 선택하세요.",
   "error.workflow.outputNotRunning": "메시징 연결이 지금 실행되고 있지 않아요. 실행될 때 다시 시도해 주세요.",
-  "error.workflow.outputRefused": "위치에서 게시를 거부했어요. OpenBot이 그곳에 게시할 수 있는지 확인하세요.",
+  "error.workflow.outputRefused": "위치에서 게시를 거부했어요. PurpleBot이 그곳에 게시할 수 있는지 확인하세요.",
   "error.workflow.outputUncertain":
     "게시가 도중에 멈췄어요. 일부가 이미 그 위치에 있을 수 있어요. 다시 시도하기 전에 확인하세요.",
   "error.workflow.tooLarge":
@@ -99,12 +100,12 @@ export const messages = {
   "error.workflow.githubChoseNothing": "모델이 이 저장소의 레이블이나 사용자를 하나도 선택하지 않았어요.",
   "error.workflow.githubNotConnected": "이 워크플로를 실행하는 컴퓨터에서 GitHub를 연결하세요.",
   "error.workflow.githubNoAccess":
-    "OpenBot GitHub App이 이 저장소나 항목을 볼 수 없어요. GitHub를 열고 액세스 권한을 주세요.",
+    "PurpleBot GitHub App이 이 저장소나 항목을 볼 수 없어요. GitHub를 열고 액세스 권한을 주세요.",
   "error.workflow.githubNoWrite":
-    "OpenBot GitHub App이 이 저장소를 변경할 수 없어요. GitHub를 열고 액세스 권한을 주세요.",
+    "PurpleBot GitHub App이 이 저장소를 변경할 수 없어요. GitHub를 열고 액세스 권한을 주세요.",
   "error.workflow.githubLocked": "이 대화는 GitHub에서 잠겨 있어요.",
   "error.workflow.githubRefused": "GitHub가 변경을 거부했어요: {detail}",
-  "error.workflow.githubUnreachable": "OpenBot이 GitHub에 연결하지 못했어요. 단계를 다시 실행해 주세요.",
+  "error.workflow.githubUnreachable": "PurpleBot이 GitHub에 연결하지 못했어요. 단계를 다시 실행해 주세요.",
   "error.workflow.githubUncertain":
     "변경이 도중에 멈췄어요. GitHub에 이미 반영됐을 수 있어요. 단계를 다시 실행하기 전에 GitHub를 확인하세요.",
   "error.workflow.githubNoEvent": "이 트리거가 시작할 이슈나 풀 리퀘스트가 GitHub에 없어요.",
@@ -117,7 +118,7 @@ export const messages = {
     "Sunra는 개인 계정에서만 입력 이미지를 사용합니다. Sunra에서 개인 계정을 선택하거나 이미지 연결을 제거하세요.",
   "error.workflow.sunraFailed": "Sunra가 파일을 만들지 못했습니다: {reason}",
   "error.workflow.sunraTimeout":
-    "Sunra가 제시간에 파일을 완성하지 못했습니다. 단계를 다시 실행하기 전에 sunra.ai의 OpenBot 프로젝트를 확인하세요.",
+    "Sunra가 제시간에 파일을 완성하지 못했습니다. 단계를 다시 실행하기 전에 sunra.ai의 PurpleBot 프로젝트를 확인하세요.",
   "error.workflow.higgsfieldSignIn": "Higgsfield 모델을 사용하려면 앱에서 Higgsfield에 로그인하세요.",
   "error.workflow.higgsfieldNoCredits":
     "Higgsfield 계정의 크레딧이 부족해요. higgsfield.ai/pricing에서 크레딧을 추가한 다음 단계를 다시 실행하세요.",

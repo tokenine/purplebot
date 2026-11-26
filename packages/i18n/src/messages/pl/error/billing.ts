@@ -24,7 +24,7 @@ export const messages = {
   "error.billing.licensePlanChange": "Tej licencji nie można zmienić na ten plan. Anuluj ją i kup nowy plan.",
   "error.billing.noLicense": "To konto nie ma licencji.",
   "error.billing.countryRequired":
-    "Podaj kraj rozliczenia przed płatnością. Zaktualizuj OpenBot, aby to zrobić, i spróbuj ponownie.",
+    "Podaj kraj rozliczenia przed płatnością. Zaktualizuj PurpleBot, aby to zrobić, i spróbuj ponownie.",
   "error.billing.detailsInvalid": "Sprawdź kraj i numer VAT. Numer VAT musi należeć do wybranego kraju.",
   "error.billing.vatIdInvalid": "System VAT UE nie zna tego numeru VAT. Sprawdź numer lub kontynuuj bez numeru VAT.",
   "error.billing.vatIdUnverified":

@@ -187,9 +187,9 @@ try {
     [
       "",
       signedOut
-        ? `Chrome is open with OpenBot (Dev) for ${authApi}. The side panel is not signed in.`
-        : `Chrome is open with OpenBot (Dev), signed in as ${email} to ${authApi}.`,
-      `The side panel page is open in a tab. Click the OpenBot icon to open it in the side panel.`,
+        ? `Chrome is open with PurpleBot (Dev) for ${authApi}. The side panel is not signed in.`
+        : `Chrome is open with PurpleBot (Dev), signed in as ${email} to ${authApi}.`,
+      `The side panel page is open in a tab. Click the PurpleBot icon to open it in the side panel.`,
       `Profile: ${PROFILE} (--fresh starts over). Downloads go to ${downloads}.`,
       "After an extension change, run this again: it rebuilds and reloads the extension in this Chrome.",
     ].join("\n") + "\n",

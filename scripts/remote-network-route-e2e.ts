@@ -171,7 +171,7 @@ try {
     (at) => window.__routeE2ePeers?.[at]?.connectionState ?? "closed",
     report.openbot.index,
   );
-  assert.equal(report.firstPeerAfterChange, "closed", "The host kept the peer that connected through OpenBot.");
+  assert.equal(report.firstPeerAfterChange, "closed", "The host kept the peer that connected through PurpleBot.");
   assert.ok(report.private.hostCandidates.length > 0, "The host sent no candidates on the private route.");
   for (const candidate of report.private.hostCandidates) {
     const [type, address = ""] = candidate.split(" ");

@@ -15,7 +15,7 @@ export function routineFeedIcs(calendar: RoutineCalendar, text: RoutineFeedText,
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//OpenBot//Routines//EN",
+    "PRODID:-//PurpleBot//Routines//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     `NAME:${icsText(text.calendarName)}`,
@@ -29,7 +29,7 @@ export function routineFeedIcs(calendar: RoutineCalendar, text: RoutineFeedText,
     const start = icsUtc(new Date(run.at));
     lines.push(
       "BEGIN:VEVENT",
-      `UID:${icsText(`${run.routineId}-${start}@routines.openbot.run`)}`,
+      `UID:${icsText(`${run.routineId}-${start}@routines.purplebot`)}`,
       `DTSTAMP:${stamp}`,
       `DTSTART:${start}`,
       `DURATION:${EVENT_DURATION}`,

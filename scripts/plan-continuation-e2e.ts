@@ -14,8 +14,8 @@ const userData = join(root, "user-data");
 const home = join(root, "home");
 const fakeCodex = join(root, "codex");
 const fakeLog = join(root, "codex.jsonl");
-const NOTE_MARKER = "OpenBot note, not a message from the user";
-const CHECK_MARKER = "OpenBot finish check";
+const NOTE_MARKER = "PurpleBot note, not a message from the user";
+const CHECK_MARKER = "PurpleBot finish check";
 
 process.env.HOME = home;
 process.env.CODEX_HOME = join(home, ".codex");

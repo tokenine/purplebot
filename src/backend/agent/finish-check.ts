@@ -3,7 +3,7 @@ import { Schema } from "effect";
 
 export const FINISH_CHECK_DEADLINE_MS = 30_000;
 
-const FINISH_CHECK_MARKER = "OpenBot finish check";
+const FINISH_CHECK_MARKER = "PurpleBot finish check";
 
 export const FINISH_CHECK_ABORT_POLL = "250 millis";
 
@@ -58,7 +58,7 @@ function earlierTurnLines(answers: readonly string[], gaps: readonly string[]): 
   if (answers.length === 0 && gaps.length === 0) return [];
   return [
     "",
-    "OpenBot already continued this request automatically. The work of the earlier turns counts for the request.",
+    "PurpleBot already continued this request automatically. The work of the earlier turns counts for the request.",
     ...(answers.length > 0
       ? [
           "The agent's earlier answers to the user in this request, oldest first. The user already sees them:",
@@ -138,7 +138,7 @@ export function finishCheckPrompt(input: FinishCheckInput): string {
     ...(input.awaitsTeammate
       ? [
           "",
-          "The agent sent requests to teammate agents, and they still work on them. OpenBot gives each reply to the agent automatically, and the reply starts a new turn of the agent.",
+          "The agent sent requests to teammate agents, and they still work on them. PurpleBot gives each reply to the agent automatically, and the reply starts a new turn of the agent.",
         ]
       : []),
     "",

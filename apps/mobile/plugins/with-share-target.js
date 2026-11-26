@@ -21,7 +21,7 @@ const {
 //   keychain items keep their group.
 // - The extension takes `INSendMessageIntent`, so the share sheet offers the agents that the app donates.
 // - Info.plist sets the display name to the target name, `expo-sharing-extension`. The iOS share
-//   sheet shows that name under the OpenBot icon, so the extension gets the app's name.
+//   sheet shows that name under the PurpleBot icon, so the extension gets the app's name.
 
 const TARGET_NAME = "expo-sharing-extension";
 const SOURCE_DIRECTORY = path.join(__dirname, "share-extension");

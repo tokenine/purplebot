@@ -19,7 +19,7 @@ import type { ServerMemory } from "./server-memory";
 const CONTROL_SOCKET_FILE = "control.sock";
 const MAX_BODY_BYTES = 4096;
 const MAX_EMAIL_LENGTH = 254;
-const DEFAULT_SERVER_NAME = "OpenBot";
+const DEFAULT_SERVER_NAME = "PurpleBot";
 
 export interface ServerModeEnvironment {
   controlSocketPath: string;

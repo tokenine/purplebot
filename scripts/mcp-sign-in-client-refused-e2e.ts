@@ -66,7 +66,7 @@ const REGISTRATION_REFUSALS = {
     error: "invalid_client",
     error_description: "The client is not registered. Contact support if you need to register a new client.",
   },
-  omnisend: { error: "invalid_client_metadata", error_description: "unknown application: OpenBot" },
+  omnisend: { error: "invalid_client_metadata", error_description: "unknown application: PurpleBot" },
   tessie: {
     error: "invalid_client_metadata",
     error_description: "No dynamic client registration template matched this request.",

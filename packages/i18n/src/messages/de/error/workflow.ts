@@ -7,19 +7,19 @@ export const messages = {
   "error.workflow.annotation": "Texte, Notizen und Formen können keine Verbindungen haben.",
   "error.workflow.port": "Ein Schritt kann diese Art von Eingabe nicht annehmen.",
   "error.workflow.unknownValue":
-    "Dieses OpenBot kennt eine Einstellung eines Schritts nicht. Aktualisiere OpenBot und versuche es dann erneut.",
+    "Dieses PurpleBot kennt eine Einstellung eines Schritts nicht. Aktualisiere PurpleBot und versuche es dann erneut.",
   "error.workflow.branch": "Nur eine Bedingung kann Ja- und Nein-Verbindungen haben.",
   "error.workflow.conditionBranch": "Jede Verbindung einer Bedingung muss Ja oder Nein sein.",
   "error.workflow.duplicateEdge": "Diese zwei Schritte haben diese Verbindung bereits.",
   "error.workflow.serverTooOld":
-    "Dieser Server unterstützt keine Workflows. Aktualisiere OpenBot auf dem Computer, auf dem er läuft.",
+    "Dieser Server unterstützt keine Workflows. Aktualisiere PurpleBot auf dem Computer, auf dem er läuft.",
   "error.workflow.newerSteps":
-    "Dieser Workflow hat Schritte aus einer neueren OpenBot-Version. Aktualisiere OpenBot, um ihn zu ändern.",
+    "Dieser Workflow hat Schritte aus einer neueren PurpleBot-Version. Aktualisiere PurpleBot, um ihn zu ändern.",
   "error.workflow.nodeUnsupported":
-    "Diese Version von OpenBot kann Bild-, Datei- und Nachrichtenschritte noch nicht ausführen.",
-  "error.workflow.interrupted": "OpenBot wurde beendet, während dieser Schritt lief. Führe ihn erneut aus.",
+    "Diese Version von PurpleBot kann Bild-, Datei- und Nachrichtenschritte noch nicht ausführen.",
+  "error.workflow.interrupted": "PurpleBot wurde beendet, während dieser Schritt lief. Führe ihn erneut aus.",
   "error.workflow.agentMissing": "Wähle einen Agenten für diesen Schritt.",
-  "error.workflow.handoffFailed": "OpenBot konnte diesen Schritt nicht an seinen Agenten senden.",
+  "error.workflow.handoffFailed": "PurpleBot konnte diesen Schritt nicht an seinen Agenten senden.",
   "error.workflow.agentStepEnded": "Die Nachricht an den Agenten wurde entfernt, bevor er antwortete.",
   "error.workflow.agentStepStopped":
     "Der Agent hat angehalten, bevor er auf diesen Schritt antwortete. Führe den Schritt erneut aus.",
@@ -50,7 +50,7 @@ export const messages = {
   "error.workflow.providerBusy":
     "Der Anbieter ist ausgelastet. Warte einige Minuten und führe den Schritt dann erneut aus.",
   "error.workflow.providerOffline":
-    "OpenBot konnte den Anbieter nicht erreichen. Prüfe die Internetverbindung und führe den Schritt dann erneut aus.",
+    "PurpleBot konnte den Anbieter nicht erreichen. Prüfe die Internetverbindung und führe den Schritt dann erneut aus.",
   "error.workflow.providerBilling":
     "Das Konto hat kein Guthaben, oder sein Tarif enthält dieses Modell nicht. Prüfe den Tarif, oder wähle ein anderes Modell.",
   "error.workflow.modelRefused": "Der Anbieter erlaubt dieses Modell für dieses Konto nicht. Wähle ein anderes Modell.",
@@ -85,7 +85,7 @@ export const messages = {
   "error.workflow.outputPlaceMissing": "Wähle einen Messaging-Ort für diese Ausgabe.",
   "error.workflow.outputChannelMissing": "Wähle einen Kanal für diese Ausgabe.",
   "error.workflow.outputChannelFailed":
-    "OpenBot konnte das Ergebnis nicht im Kanal posten. Führe den Schritt erneut aus.",
+    "PurpleBot konnte das Ergebnis nicht im Kanal posten. Führe den Schritt erneut aus.",
   "error.workflow.discordNoMessage":
     "Diese Ausgabe wirkt auf die Discord-Nachricht, die den Lauf gestartet hat. Starte den Lauf über eine Discord-Erwähnung oder wähle „Im Kanal posten“.",
   "error.workflow.slackNoMessage":
@@ -95,7 +95,7 @@ export const messages = {
   "error.workflow.outputConnectionOff":
     "Die Messaging-Verbindung dieser Ausgabe ist aus oder entfernt. Wähle erneut einen Ort.",
   "error.workflow.outputNotRunning": "Die Messaging-Verbindung läuft gerade nicht. Versuche es erneut, wenn sie läuft.",
-  "error.workflow.outputRefused": "Der Ort hat den Beitrag abgelehnt. Stelle sicher, dass OpenBot dort posten kann.",
+  "error.workflow.outputRefused": "Der Ort hat den Beitrag abgelehnt. Stelle sicher, dass PurpleBot dort posten kann.",
   "error.workflow.outputUncertain":
     "Der Beitrag wurde unterwegs unterbrochen. Ein Teil kann schon am Ort sein. Sieh dort nach, bevor du es erneut versuchst.",
   "error.workflow.tooLarge":
@@ -117,12 +117,12 @@ export const messages = {
   "error.workflow.githubChoseNothing": "Das Modell hat kein Label und keine Person dieses Repositorys gewählt.",
   "error.workflow.githubNotConnected": "Verbinde GitHub auf dem Computer, auf dem dieser Workflow läuft.",
   "error.workflow.githubNoAccess":
-    "Die OpenBot-GitHub-App kann dieses Repository oder Element nicht sehen. Öffne GitHub und gib ihr Zugriff.",
+    "Die PurpleBot-GitHub-App kann dieses Repository oder Element nicht sehen. Öffne GitHub und gib ihr Zugriff.",
   "error.workflow.githubNoWrite":
-    "Die OpenBot-GitHub-App kann dieses Repository nicht ändern. Öffne GitHub und gib ihr Zugriff.",
+    "Die PurpleBot-GitHub-App kann dieses Repository nicht ändern. Öffne GitHub und gib ihr Zugriff.",
   "error.workflow.githubLocked": "Diese Unterhaltung ist auf GitHub gesperrt.",
   "error.workflow.githubRefused": "GitHub hat die Änderung abgelehnt: {detail}",
-  "error.workflow.githubUnreachable": "OpenBot konnte GitHub nicht erreichen. Führe den Schritt erneut aus.",
+  "error.workflow.githubUnreachable": "PurpleBot konnte GitHub nicht erreichen. Führe den Schritt erneut aus.",
   "error.workflow.githubUncertain":
     "Die Änderung wurde unterwegs unterbrochen. Sie kann schon auf GitHub sein. Sieh dort nach, bevor du den Schritt erneut ausführst.",
   "error.workflow.githubNoEvent": "GitHub hat kein Issue und keinen Pull Request, bei dem dieser Auslöser startet.",
@@ -135,7 +135,7 @@ export const messages = {
     "Sunra verwendet Eingabebilder nur mit einem persönlichen Konto. Wähle dein persönliches Konto in Sunra aus oder entferne die Bildverbindungen.",
   "error.workflow.sunraFailed": "Sunra konnte die Datei nicht erstellen: {reason}",
   "error.workflow.sunraTimeout":
-    "Sunra hat die Datei nicht rechtzeitig fertiggestellt. Sieh im Projekt OpenBot auf sunra.ai nach, bevor du den Schritt erneut ausführst.",
+    "Sunra hat die Datei nicht rechtzeitig fertiggestellt. Sieh im Projekt PurpleBot auf sunra.ai nach, bevor du den Schritt erneut ausführst.",
   "error.workflow.higgsfieldSignIn": "Melde dich unter Apps bei Higgsfield an, um Higgsfield-Modelle zu verwenden.",
   "error.workflow.higgsfieldNoCredits":
     "Dein Higgsfield-Konto hat nicht genug Credits. Füge Credits unter higgsfield.ai/pricing hinzu und führe den Schritt dann erneut aus.",

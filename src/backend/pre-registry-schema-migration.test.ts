@@ -74,7 +74,7 @@ function seedSharedTables(db: DatabaseSync): void {
     INSERT INTO projection_agents (agent_id, thread_id, model, updated_at, sort_order, agent_json, last_event_sequence)
     VALUES
       ('chief', 'openbot-thread-chief', 'gpt-5', '2026-01-02T09:00:00.000Z', 0,
-        '{"id":"chief","name":"Chief","workspacePath":"/Users/user/OpenBot/Bots/chief"}', 1),
+        '{"id":"chief","name":"Chief","workspacePath":"/Users/user/PurpleBot/Bots/chief"}', 1),
       ('scout', 'openbot-thread-scout', 'claude-opus', NULL, 1, '{"id":"scout","name":"Scout"}', 2);
     INSERT INTO projection_provider_sessions (id, thread_id, provider, external_session_id, model, effort, state,
       created_at, updated_at, resume_cursor, last_event_sequence)
@@ -121,7 +121,7 @@ function seedSharedTables(db: DatabaseSync): void {
     INSERT INTO projection_attachments
       (attachment_id, owner_kind, owner_id, name, path, metadata_json, created_at, last_event_sequence)
     VALUES ('openbot-thread-chief:message-1:file-1', 'thread-message', 'openbot-thread-chief:message-1', 'notes.md',
-      '/Users/user/OpenBot/Attachments/notes.md', '{"id":"file-1"}', '2026-01-02T10:00:00.000Z', 1);
+      '/Users/user/PurpleBot/Attachments/notes.md', '{"id":"file-1"}', '2026-01-02T10:00:00.000Z', 1);
     INSERT INTO projection_thread_summaries
       (summary_id, thread_id, through_message_id, summary_text, estimated_tokens, created_at, last_event_sequence)
     VALUES ('summary-1', 'openbot-thread-chief', 'message-1', 'The user asked for a plan.', 12,
@@ -136,7 +136,7 @@ function seedSharedTables(db: DatabaseSync): void {
     INSERT INTO projection_direct_reads (thread_id, member_id, last_read_sequence, updated_at)
     VALUES ('direct-1', 'chief', 4, '2026-01-02T09:05:00.000Z');
     INSERT INTO file_deletion_outbox (id, path, reason, created_at, attempts, last_error)
-    VALUES ('outbox-1', '/Users/user/OpenBot/Attachments/old.md', 'attachment-deleted', '2026-01-02T09:00:00.000Z', 2,
+    VALUES ('outbox-1', '/Users/user/PurpleBot/Attachments/old.md', 'attachment-deleted', '2026-01-02T09:00:00.000Z', 2,
       'EBUSY');
   `);
 }
@@ -306,7 +306,7 @@ describe("upgrade from a released schema before the migration registry", () => {
       { actor_kind: "user", actor_agent_id: "" },
     ]);
     expect(db.prepare("SELECT agent_json FROM projection_agents WHERE agent_id = 'chief'").get()).toEqual({
-      agent_json: '{"id":"chief","name":"Chief","workspacePath":"/Users/user/OpenBot/Bots/chief"}',
+      agent_json: '{"id":"chief","name":"Chief","workspacePath":"/Users/user/PurpleBot/Bots/chief"}',
     });
 
     if (released.tag !== "v0.2.1") return;

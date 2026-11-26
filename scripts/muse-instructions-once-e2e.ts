@@ -9,7 +9,7 @@ import { MuseAgentClient } from "../src/backend/muse-client";
 import { readJsonl, runTurn, startThread, stopClients } from "./provider-fakes/host";
 
 const OUT = resolve(import.meta.dirname, "../.openbot-build/muse-instructions-once-e2e");
-const INSTRUCTIONS = "You are a teammate in OpenBot. Memory: the user likes short answers.";
+const INSTRUCTIONS = "You are a teammate in PurpleBot. Memory: the user likes short answers.";
 const CHANGED = `${INSTRUCTIONS} Memory: the user works in Kraków.`;
 
 const fixture = `#!${process.execPath}

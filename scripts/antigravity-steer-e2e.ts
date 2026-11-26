@@ -372,7 +372,7 @@ try {
     secondPrompt: await notedPrompt(stoppedThread, "once more on the same process"),
     heldSession: await notedPrompt(daemonThread, "again on the held session"),
   };
-  assert.ok(report.reloadNote.afterIdleStop, "A session that OpenBot stopped as idle must get the reload note.");
+  assert.ok(report.reloadNote.afterIdleStop, "A session that PurpleBot stopped as idle must get the reload note.");
   assert.ok(!report.reloadNote.secondPrompt, "The reload note must come only once.");
   assert.ok(!report.reloadNote.heldSession, "A session whose work held its process must not get the reload note.");
 

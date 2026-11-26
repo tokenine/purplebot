@@ -1,5 +1,5 @@
 [Unit]
-Description=Update requests of OpenBot instance %i
+Description=Update requests of PurpleBot instance %i
 
 [Path]
 PathExists=/srv/openbot/%i/update-requests/update-stage

@@ -16,7 +16,7 @@ export const SITES_KEY = "openbot.client-browser.sites.v1";
 export const ASKS_KEY = "openbot.client-browser.asks.v1";
 export const PRESENCE_KEY = "openbot.client-browser.presence.v1";
 
-export const OPENBOT_GROUP_TITLE = "OpenBot";
+export const OPENBOT_GROUP_TITLE = "PurpleBot";
 
 export const ASK_KINDS = ["site", "password", "payment", "download", "sign-in"] as const;
 export type AskKind = (typeof ASK_KINDS)[number];

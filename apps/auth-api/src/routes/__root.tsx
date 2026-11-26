@@ -7,25 +7,18 @@ import { rememberPromotionCode } from "@openbot/contracts/promotion-code";
 import { rememberReferralCode } from "@openbot/contracts/referral";
 import { installPointerFocusGuard } from "@openbot/ui/pointer-focus";
 import "../styles.css";
-import { NotFoundPage } from "../components/landing/NotFoundPage";
-import { PageError } from "../components/landing/PageError";
-import { SiteTextProvider, useRouteSiteChrome } from "../components/landing/SiteText";
+import { NotFoundPage } from "../components/bare/NotFoundPage";
+import { PageError } from "../components/bare/PageError";
 import { type RootPageText, rootPageText } from "../components/transactional/page-text";
 import { loadPageText, type PageText } from "../lib/page-text";
 import { requestLocale } from "../lib/request-locale";
-import { servingSiteUrl } from "../lib/serving-site-url";
-import { loadSiteChrome } from "../lib/site-locale";
 import { OPENBOT_SECURITY_HEADERS, openBotRootHead } from "../lib/site-metadata";
-import type { SiteChrome } from "../lib/site-text";
 
-const NOT_FOUND_TITLE = "Page not found · OpenBot";
+const NOT_FOUND_TITLE = "Page not found · PurpleBot";
 
 export const Route = createRootRoute({
-  beforeLoad: () => ({ siteUrl: servingSiteUrl(), locale: requestLocale() }),
-  loader: async ({ context }) => {
-    const [page, site] = await Promise.all([loadPageText(context.locale, rootPageText), loadSiteChrome("en")]);
-    return { ...page, site };
-  },
+  beforeLoad: () => ({ locale: requestLocale() }),
+  loader: async ({ context }) => loadPageText(context.locale, rootPageText),
   shouldReload: false,
   head: ({ matches }) => {
     const head = openBotRootHead(interLatinFont);
@@ -49,20 +42,14 @@ function RootComponent() {
 function RootError(props: ErrorComponentProps) {
   console.error(props.error);
   const loaded = Route.useMatch({ select: (match) => match.loaderData });
-  const [fallback, setFallback] = createSignal<PageText<RootPageText> & { site: SiteChrome }>();
+  const [fallback, setFallback] = createSignal<PageText<RootPageText>>();
   onSettled(() => {
     if (loaded()) return;
-    void Promise.all([loadPageText("en", rootPageText), loadSiteChrome("en")]).then(([page, site]) =>
-      setFallback({ ...page, site }),
-    );
+    void loadPageText("en", rootPageText).then((page) => setFallback(page));
   });
   return (
     <Show when={loaded() ?? fallback()}>
-      {(page) => (
-        <SiteTextProvider chrome={page().site}>
-          <PageError lang={page().lang} text={page().text.error} onRetry={() => window.location.reload()} />
-        </SiteTextProvider>
-      )}
+      {(page) => <PageError lang={page().lang} text={page().text.error} onRetry={() => window.location.reload()} />}
     </Show>
   );
 }
@@ -70,17 +57,14 @@ function RootError(props: ErrorComponentProps) {
 const NO_SCRIPT_STYLE = "<style>[data-revealed=false],[data-revealed=false] *{opacity:1!important}</style>";
 
 function RootDocument(props: { children: JSX.Element }) {
-  const chrome = useRouteSiteChrome();
-  const lang = () => chrome()?.lang ?? "en";
-  const dir = () => chrome()?.dir ?? "ltr";
   return (
-    <html lang={lang()} dir={dir()}>
+    <html lang="en" dir="ltr">
       <head>
         <HeadContent />
         <noscript innerHTML={NO_SCRIPT_STYLE} />
       </head>
       <body>
-        <SiteTextProvider>{props.children}</SiteTextProvider>
+        {props.children}
         <Scripts />
       </body>
     </html>

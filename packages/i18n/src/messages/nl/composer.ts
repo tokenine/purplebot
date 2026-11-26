@@ -80,12 +80,12 @@ export const messages = {
   "composer.voice.transcribing": "Gesproken prompt uitschrijven",
   "composer.voice.start": "Prompt inspreken",
   "composer.voice.blocked":
-    "Toegang tot de microfoon is geblokkeerd. Geef OpenBot toegang tot de microfoon in de systeeminstellingen.",
+    "Toegang tot de microfoon is geblokkeerd. Geef PurpleBot toegang tot de microfoon in de systeeminstellingen.",
   "composer.voice.noMicrophone": "Er is geen microfoon beschikbaar.",
-  "composer.voice.startFailed": "OpenBot kan de spraakopname niet starten.",
+  "composer.voice.startFailed": "PurpleBot kan de spraakopname niet starten.",
   "composer.voice.microphoneUnavailable":
-    "OpenBot kan de microfoon niet openen. Sluit andere apps die hem gebruiken, controleer of hij is aangesloten en is toegestaan in de systeeminstellingen, en probeer het opnieuw.",
-  "composer.voice.transcribeFailed": "OpenBot kan deze opname niet uitschrijven.",
+    "PurpleBot kan de microfoon niet openen. Sluit andere apps die hem gebruiken, controleer of hij is aangesloten en is toegestaan in de systeeminstellingen, en probeer het opnieuw.",
+  "composer.voice.transcribeFailed": "PurpleBot kan deze opname niet uitschrijven.",
   "composer.reply.toYou": "Antwoord op je bericht",
   "composer.reply.toAgent": "Antwoord aan agent",
   "composer.reply.attachment": "Bijlage",

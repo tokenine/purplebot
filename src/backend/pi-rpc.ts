@@ -116,7 +116,7 @@ export class PiRpc extends EventEmitter<{ record: [DynamicRecord]; diagnostic: [
           if (record) this.#record(record);
           else if (line.trim() && !skippedLine) {
             skippedLine = true;
-            logger.warn("Pi wrote a stdout line that is not an RPC record. OpenBot skips such lines.", {
+            logger.warn("Pi wrote a stdout line that is not an RPC record. PurpleBot skips such lines.", {
               provider: this.provider,
               length: line.length,
             });

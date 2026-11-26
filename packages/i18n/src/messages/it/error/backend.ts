@@ -3,7 +3,7 @@ import type { messages as source } from "../../en/error/backend";
 
 export const messages = {
   "error.backend.eventsUnavailable": "Gli eventi non sono disponibili su questo host.",
-  "error.backend.databaseIntegrity": "Il database di OpenBot non ha superato il controllo di integrità.",
+  "error.backend.databaseIntegrity": "Il database di PurpleBot non ha superato il controllo di integrità.",
   "error.backend.creditsHoldAdminOnly":
     "Solo un proprietario o un amministratore di questo server può consentire agli agenti di usare i crediti.",
   "error.backend.creditsHoldShort": "Non ci sono ancora abbastanza crediti.",
@@ -18,8 +18,8 @@ export const messages = {
   "error.backend.browserViewLimit": "Su questo host ci sono troppe viste del browser aperte.",
   "error.backend.browserViewEnded": "La vista in diretta di questa pagina è terminata.",
   "error.backend.browserViewFailed": "La vista in diretta di questa pagina non è riuscita.",
-  "error.backend.windowTemporarilyUnavailable": "La finestra di OpenBot non è al momento disponibile.",
-  "error.backend.windowUnavailable": "La finestra di OpenBot non è disponibile.",
+  "error.backend.windowTemporarilyUnavailable": "La finestra di PurpleBot non è al momento disponibile.",
+  "error.backend.windowUnavailable": "La finestra di PurpleBot non è disponibile.",
   "error.backend.sunshineApiHttp": "L'API di Sunshine ha risposto con errore HTTP {status}.",
   "error.backend.sunshinePortsUnavailable":
     "Impossibile riservare una famiglia di porte Sunshine libera per il desktop remoto.",
@@ -36,7 +36,7 @@ export const messages = {
   "error.backend.moonlightRejectedPairing": "Moonlight ha rifiutato l'associazione con Sunshine.",
   "error.backend.moonlightNoPin": "Moonlight non ha restituito un PIN di associazione.",
   "error.backend.moonlightPairingIncomplete": "L'associazione di Moonlight non è stata completata.",
-  "error.backend.moonlightWebNotEmbedded": "Moonlight Web non è una build incorporata di OpenBot.",
+  "error.backend.moonlightWebNotEmbedded": "Moonlight Web non è una build incorporata di PurpleBot.",
   "error.backend.moonlightEmptyResponse": "Moonlight ha restituito una risposta vuota.",
   "error.backend.remoteDesktopTimeout": "La richiesta al desktop remoto è scaduta.",
   "error.backend.moonlightApiHttp": "L'API di Moonlight ha risposto con errore HTTP {status}.",
@@ -56,10 +56,10 @@ export const messages = {
   "error.backend.browserUserControlUnsupported":
     "Questo host remoto non supporta il controllo di una scheda del browser.",
   "error.backend.browserSignInUnsupported": "Questo host remoto non può ricevere un accesso da questo computer.",
-  "error.backend.browserSignInOpenFailed": "OpenBot non è riuscito ad aprire la finestra di accesso.",
+  "error.backend.browserSignInOpenFailed": "PurpleBot non è riuscito ad aprire la finestra di accesso.",
   "error.backend.browserSignInLoadFailed":
-    "OpenBot non è riuscito a caricare la pagina nella finestra di accesso. Controlla la connessione a internet, poi apri di nuovo la finestra di accesso.",
-  "error.backend.browserSignInReadFailed": "OpenBot non è riuscito a leggere l’accesso dalla finestra.",
+    "PurpleBot non è riuscito a caricare la pagina nella finestra di accesso. Controlla la connessione a internet, poi apri di nuovo la finestra di accesso.",
+  "error.backend.browserSignInReadFailed": "PurpleBot non è riuscito a leggere l’accesso dalla finestra.",
   "error.backend.browserStopUnsupported": "Questo host remoto non può interrompere il caricamento di una pagina.",
   "error.backend.browserLocationFailed": "Impossibile impostare la posizione per la pagina.",
   "error.backend.browserPermissionsUnsupported": "Questo host remoto non può rispondere alle richieste di posizione.",
@@ -72,23 +72,23 @@ export const messages = {
   "error.backend.sunshineNotReadyReason": "Sunshine non è diventato pronto. {reason}",
   "error.backend.channelLeadModelUnavailable": "Il modello del responsabile del canale non è disponibile.",
   "error.backend.contextCompactionIneffective":
-    "La compattazione non riduce questa chat: dopo due compattazioni usa ancora il {percent}% della finestra di contesto del modello, quindi OpenBot smette di compattarla. Strumenti e istruzioni usano la maggior parte della finestra. Disattiva i server MCP o l'uso del computer che questo agente non usa, oppure scegli un modello con una finestra più grande. Poi avvia una nuova chat.",
+    "La compattazione non riduce questa chat: dopo due compattazioni usa ancora il {percent}% della finestra di contesto del modello, quindi PurpleBot smette di compattarla. Strumenti e istruzioni usano la maggior parte della finestra. Disattiva i server MCP o l'uso del computer che questo agente non usa, oppure scegli un modello con una finestra più grande. Poi avvia una nuova chat.",
   "error.backend.contextCompactionStopped":
-    "Due compattazioni di fila di questa chat non sono riuscite, quindi OpenBot smette di compattarla automaticamente. Ogni tentativo invia l'intera chat al modello e consuma il limite del tuo piano. Seleziona «Compatta ora» per riprovare, oppure avvia una nuova chat.",
+    "Due compattazioni di fila di questa chat non sono riuscite, quindi PurpleBot smette di compattarla automaticamente. Ogni tentativo invia l'intera chat al modello e consuma il limite del tuo piano. Seleziona «Compatta ora» per riprovare, oppure avvia una nuova chat.",
   "error.backend.contextCompactionRetrying":
-    "Il provider non è riuscito a compattare questa chat e riprova. I nuovi messaggi di questa chat attendono la fine della compattazione. Se non termina presto, OpenBot la interrompe e invia i tuoi messaggi.",
+    "Il provider non è riuscito a compattare questa chat e riprova. I nuovi messaggi di questa chat attendono la fine della compattazione. Se non termina presto, PurpleBot la interrompe e invia i tuoi messaggi.",
   "error.backend.contextCompactionFailed":
     "La compattazione di questa chat non è riuscita. La chat non è cambiata. I messaggi in attesa vanno ora all’agente.",
   "error.backend.contextCompactionTimedOut":
-    "La compattazione di questa chat ha richiesto troppo tempo, quindi OpenBot l’ha interrotta. La chat non è cambiata. I messaggi in attesa vanno ora all’agente.",
+    "La compattazione di questa chat ha richiesto troppo tempo, quindi PurpleBot l’ha interrotta. La chat non è cambiata. I messaggi in attesa vanno ora all’agente.",
   "error.backend.providerModelAtCapacity":
     "Il modello è al limite della capacità. Il provider riproverà tra qualche minuto. Per continuare ora, interrompi il turno e scegli un altro modello.",
   "error.backend.providerRetrying":
     "Il provider non è riuscito a completare questa richiesta {attempts} volte e riprova. Se l'agente non continua, interrompi il turno.",
   "error.backend.providerRetryingLargeContext":
-    "Il provider non è riuscito a completare questa richiesta {attempts} volte e riprova. Questa chat usa il {percent}% della finestra di contesto del modello. Se l'agente non continua, interrompi il turno: OpenBot compatterà la chat prima del prossimo messaggio.",
+    "Il provider non è riuscito a completare questa richiesta {attempts} volte e riprova. Questa chat usa il {percent}% della finestra di contesto del modello. Se l'agente non continua, interrompi il turno: PurpleBot compatterà la chat prima del prossimo messaggio.",
   "error.backend.sharedDataUnavailable": "I dati condivisi non sono disponibili.",
-  "error.backend.shuttingDown": "OpenBot si sta chiudendo.",
+  "error.backend.shuttingDown": "PurpleBot si sta chiudendo.",
   "error.backend.channelUnconfirmedStart":
     "Il canale ha un avvio di assegnazione non confermato. Controlla il risultato prima di eliminarlo.",
   "error.backend.channelNotFound": "Canale non trovato.",
@@ -160,7 +160,7 @@ export const messages = {
     "L’esecuzione si è fermata con un errore, ma senza un motivo. Apri l’esecuzione per vedere cosa ha fatto l’agente.",
   "error.backend.turnNotStarted": "Il provider non ha avviato questo turno.",
   "error.backend.turnStartUnconfirmed":
-    "{provider} non ha confermato in tempo di aver avviato questo messaggio. OpenBot non lo invia di nuovo, così il lavoro non viene eseguito due volte. OpenBot attende fino a 5 minuti che l’agente inizi.",
+    "{provider} non ha confermato in tempo di aver avviato questo messaggio. PurpleBot non lo invia di nuovo, così il lavoro non viene eseguito due volte. PurpleBot attende fino a 5 minuti che l’agente inizi.",
   "error.backend.turnStartAbandoned":
     "L’agente non ha avviato questo messaggio entro 5 minuti. Invia di nuovo il messaggio.",
   "error.backend.routineResultConnectionOff":
@@ -201,7 +201,7 @@ export const messages = {
   "error.backend.fileGone": "Il file non esiste o è già stato eliminato.",
   "error.backend.managedAttachmentChanged": "L'allegato gestito manca o è cambiato: {name}",
   "error.backend.mailboxStateCorrupt":
-    "Lo stato della casella è danneggiato o proviene da una versione più recente di OpenBot; non viene sovrascritto.",
+    "Lo stato della casella è danneggiato o proviene da una versione più recente di PurpleBot; non viene sovrascritto.",
   "error.backend.recipientDeleting": "Il destinatario è in fase di eliminazione. Riprova al termine dell'eliminazione.",
   "error.backend.recipientHidden": "Questo agente è nascosto. Ripristinalo per inviare messaggi.",
   "error.backend.agentIdUnknown": "Nessun agente ha l'ID {id}. Ottieni gli ID con openbot.list_agents, poi riprova.",
@@ -215,7 +215,7 @@ export const messages = {
   "error.backend.videoGenerationNoVideo": "La generazione del video non ha restituito alcun video.",
   "error.backend.videoGenerationInterrupted": "La generazione del video è stata interrotta.",
   "error.backend.attachmentNotRegularFile": "Si possono allegare solo file normali: {name}",
-  "error.backend.attachmentCopyFailed": "OpenBot non è riuscito a copiare {name}.",
+  "error.backend.attachmentCopyFailed": "PurpleBot non è riuscito a copiare {name}.",
   "error.backend.routineNameRequired": "Il nome della routine è obbligatorio.",
   "error.backend.routineNameTooLong": "Il nome della routine è troppo lungo.",
   "error.backend.routineInstructionRequired": "L'istruzione della routine è obbligatoria.",
@@ -240,7 +240,7 @@ export const messages = {
   "error.backend.routineRunStarting":
     "Questa esecuzione della routine si sta ancora avviando. Riprova dopo l'avvio del turno.",
   "error.backend.routineRunNoSession":
-    "OpenBot non può interrompere l'esecuzione attiva della routine perché la sessione del provider non è disponibile.",
+    "PurpleBot non può interrompere l'esecuzione attiva della routine perché la sessione del provider non è disponibile.",
   "error.backend.interruptSelf": "Un agente non può interrompere se stesso.",
   "error.backend.interruptOtherWork":
     "Questo agente sta lavorando a un'attività che il tuo messaggio non ha avviato. Solo l'utente o chi ha inviato quell'attività può fermarla.",
@@ -248,7 +248,7 @@ export const messages = {
     "Il turno di questo agente lavora sul tuo messaggio e anche su un messaggio dell'utente o di un altro agente. Solo l'utente può fermarlo, con Ferma l'agente nella chat di quell'agente.",
   "error.backend.interruptStarting": "Questo agente sta ancora avviando un turno. Riprova dopo l'avvio del turno.",
   "error.backend.interruptNoSession":
-    "OpenBot non può interrompere questo agente perché la sua sessione del provider non è disponibile.",
+    "PurpleBot non può interrompere questo agente perché la sua sessione del provider non è disponibile.",
   "error.backend.memoryTextRequired": "Il testo della memoria è obbligatorio.",
   "error.backend.memoryTextTooLong": "Il testo della memoria è troppo lungo.",
   "error.backend.mcpServerGone": "Questo server MCP non esiste più.",
@@ -282,9 +282,9 @@ export const messages = {
   "error.backend.messagePinNotFound": "Questo messaggio non è nella chat.",
   "error.backend.messagePinLimit": "Questa chat ha 50 messaggi fissati. Rimuovine uno prima di fissarne un altro.",
   "error.backend.routineFlowHandoffFailed": "La routine non è riuscita a passare il lavoro a questo agente.",
-  "error.backend.mcpServerLimit": "OpenBot conserva fino a {limit} server MCP.",
+  "error.backend.mcpServerLimit": "PurpleBot conserva fino a {limit} server MCP.",
   "error.backend.mcpServerNameTaken": "Esiste già un server MCP chiamato {name}.",
-  "error.backend.mcpServerInvalid": "OpenBot non può salvare questa configurazione del server MCP.",
+  "error.backend.mcpServerInvalid": "PurpleBot non può salvare questa configurazione del server MCP.",
   "error.backend.mcpHeaderNameInvalid":
     "I nomi delle intestazioni non possono contenere spazi o simboli come : ( ) /. Usa un nome come Authorization e inserisci la chiave o il token in Valore.",
   "error.backend.mcpServerNoAnswer": "Il server non ha risposto entro {seconds} secondi.",
@@ -294,18 +294,18 @@ export const messages = {
   "error.backend.mcpSignInAccountRefused":
     "Il server ha rifiutato l'account con cui hai effettuato l'accesso. Verifica che questo account possa usare il servizio. Per usare un altro account, esci e poi accedi di nuovo.",
   "error.backend.mcpSignInClientRefused":
-    "Il server di accesso non ha accettato OpenBot al completamento dell'accesso. Accedi di nuovo: OpenBot si registra di nuovo sul server.",
+    "Il server di accesso non ha accettato PurpleBot al completamento dell'accesso. Accedi di nuovo: PurpleBot si registra di nuovo sul server.",
   "error.backend.mcpSignInAppRefused":
     "Il server di accesso non ha accettato l'app di accesso di questo server. Controlla l'ID client e il secret del client dell'app di accesso, poi accedi di nuovo.",
   "error.backend.mcpCommandNotFound": "Comando non trovato: {command}",
   "error.backend.mcpProviderLimit":
     "Questo agente può usare solo un numero limitato di server MCP. Per usare questo server, disattiva un server MCP che non serve all’agente.",
   "error.backend.mcpRegistrationRefused":
-    "Il server di accesso non accetta ancora OpenBot come app. La causa non è il tuo account. Usa un altro modo per connetterti, ad esempio un server MCP locale.",
+    "Il server di accesso non accetta ancora PurpleBot come app. La causa non è il tuo account. Usa un altro modo per connetterti, ad esempio un server MCP locale.",
   "error.backend.mcpRegistrationUnavailable":
-    "Il server di accesso non può registrare OpenBot come app. La causa non è il tuo account. Per connetterti, salva questo server in Marketplace, App, poi aggiungi un’app di accesso.",
+    "Il server di accesso non può registrare PurpleBot come app. La causa non è il tuo account. Per connetterti, salva questo server in Marketplace, App, poi aggiungi un’app di accesso.",
   "error.backend.mcpSignInAppNeeded":
-    "Il server di accesso non può registrare OpenBot come app. La causa non è il tuo account. Per connetterti, apri questo server in Marketplace, App, fai clic su Prova la connessione, poi aggiungi un’app di accesso.",
+    "Il server di accesso non può registrare PurpleBot come app. La causa non è il tuo account. Per connetterti, apri questo server in Marketplace, App, fai clic su Prova la connessione, poi aggiungi un’app di accesso.",
   "error.backend.mcpSignInAbandonedGeneric": "L'accesso è stato abbandonato.",
   "error.backend.mcpSignInForgotten": "L'accesso MCP è stato dimenticato mentre era in corso.",
   "error.backend.mcpSignInAbandoned": "L'accesso MCP è stato abbandonato.",
@@ -313,9 +313,9 @@ export const messages = {
   "error.backend.mcpSignInNotWebPage": "L'indirizzo di accesso non è una pagina web.",
   "error.backend.mcpSignInRequired": "Questo server richiede l'accesso. Scegli «Accedi» per continuare nel browser.",
   "error.backend.mcpSignInOnHost":
-    "Questo server richiede l'accesso. Accedi a questo server in OpenBot sul computer host.",
+    "Questo server richiede l'accesso. Accedi a questo server in PurpleBot sul computer host.",
   "error.backend.mcpSignInNeedsHttps":
-    "Questo server richiede l'accesso e OpenBot accede solo tramite https. Cambia l'URL in {url}.",
+    "Questo server richiede l'accesso e PurpleBot accede solo tramite https. Cambia l'URL in {url}.",
   "error.backend.mcpSignInOtherAddress":
     "Questo server accetta l’accesso solo su {url}. Cambia l’URL con questo indirizzo, poi accedi di nuovo.",
   "error.backend.mcpSignInCancelled": "L'accesso è stato annullato.",
@@ -323,9 +323,9 @@ export const messages = {
   "error.backend.mcpSignInRefused": "La pagina di accesso ha rifiutato l'accesso. Accedi di nuovo.",
   "error.backend.mcpSignInResponseTimedOut": "La risposta dell'accesso non è arrivata in tempo.",
   "error.backend.mcpSignInMetadataUnreadable":
-    "OpenBot non ha potuto leggere le informazioni di accesso di questo server. Controlla l’indirizzo del server e riprova.",
+    "PurpleBot non ha potuto leggere le informazioni di accesso di questo server. Controlla l’indirizzo del server e riprova.",
   "error.backend.mcpSignInAnswerUnreadable":
-    "Il server di accesso ha inviato una risposta che OpenBot non può leggere. Se il servizio ti fornisce una chiave API o un token, aggiungilo nelle impostazioni di questo server, poi verifica di nuovo la connessione.",
+    "Il server di accesso ha inviato una risposta che PurpleBot non può leggere. Se il servizio ti fornisce una chiave API o un token, aggiungilo nelle impostazioni di questo server, poi verifica di nuovo la connessione.",
   "error.backend.mcpServerExited":
     "Il server si è fermato prima di rispondere. Esegui il comando in un terminale per vedere l'errore.",
   "error.backend.mcpServerExitedWithOutput": "Il server si è fermato prima di rispondere. Ha scritto: {detail}",
@@ -333,7 +333,7 @@ export const messages = {
     "Il server non si è avviato perché il download non è riuscito. Controlla la connessione a internet, poi riprova.",
   "error.backend.mcpServerFailedToStart": "Il server non si è avviato: {reason}",
   "error.backend.mcpServerProgramMissing":
-    "OpenBot non è riuscito ad avviare il server MCP {name}, perché il suo programma non è installato sul computer che esegue OpenBot. Installa l’app che fornisce {name} su quel computer, oppure disattiva {name} in Marketplace, App.",
+    "PurpleBot non è riuscito ad avviare il server MCP {name}, perché il suo programma non è installato sul computer che esegue PurpleBot. Installa l’app che fornisce {name} su quel computer, oppure disattiva {name} in Marketplace, App.",
   "error.backend.mcpServerStartAbandoned":
     "{provider} ha smesso di attendere prima che il server si avviasse, quindi i suoi agenti non ricevono gli strumenti di questo server.",
   "error.backend.mcpServerStoppedDuringCall": "Il server MCP si è fermato prima di rispondere a questa chiamata.",
@@ -346,7 +346,7 @@ export const messages = {
   "error.backend.mcpServerFailedForProvider":
     "{provider} non è riuscito ad avviare il server MCP {name}. Apri {name} in Marketplace, App, e scegli Prova la connessione per vedere la causa.",
   "error.backend.mcpServerFailedInProvider":
-    "{provider} non è riuscito ad avviare il server MCP {name}. I suoi strumenti non sono disponibili per {provider}. {provider} avvia il server da solo, quindi la prova di connessione in OpenBot può riuscire. Avvia una nuova chat per riprovare.",
+    "{provider} non è riuscito ad avviare il server MCP {name}. I suoi strumenti non sono disponibili per {provider}. {provider} avvia il server da solo, quindi la prova di connessione in PurpleBot può riuscire. Avvia una nuova chat per riprovare.",
   "error.backend.mcpServerTimedOutInProvider":
     "{provider} non è riuscito ad avviare il server MCP {name}, perché il server non ha risposto in tempo. Avvia una nuova chat per riprovare.",
   "error.backend.mcpServerUnavailableInProvider":
@@ -356,12 +356,12 @@ export const messages = {
   "error.backend.githubToolsNotStarted":
     "{provider} non è riuscito a ottenere gli strumenti di GitHub, perché GitHub non ha risposto. Apri GitHub in Marketplace, App, e collegalo di nuovo se te lo chiede. Poi avvia una nuova chat per riprovare.",
   "error.backend.mcpOAuthProxyUnavailable":
-    "OpenBot non è riuscito ad avviare la connessione di accesso locale per questo server. Riavvia OpenBot e riprova.",
+    "PurpleBot non è riuscito ad avviare la connessione di accesso locale per questo server. Riavvia PurpleBot e riprova.",
   "error.backend.mcpOAuthSignInNeeded":
-    "L'accesso a questo server MCP è terminato. L'utente deve accedere di nuovo in OpenBot.",
+    "L'accesso a questo server MCP è terminato. L'utente deve accedere di nuovo in PurpleBot.",
   "error.backend.mcpOAuthRenewalFailed":
-    "OpenBot non è riuscito a rinnovare ora l'accesso a questo server MCP. L'accesso resta salvato e la prossima richiesta riproverà. Se l'errore continua, l'utente può disconnettersi dal server in OpenBot e accedere di nuovo.",
-  "error.backend.mcpServerUnreachable": "OpenBot non è riuscito a raggiungere il server. Controlla l'URL e la rete.",
+    "PurpleBot non è riuscito a rinnovare ora l'accesso a questo server MCP. L'accesso resta salvato e la prossima richiesta riproverà. Se l'errore continua, l'utente può disconnettersi dal server in PurpleBot e accedere di nuovo.",
+  "error.backend.mcpServerUnreachable": "PurpleBot non è riuscito a raggiungere il server. Controlla l'URL e la rete.",
   "error.backend.mcpLocalServerOff":
     "Nessun server risponde all'indirizzo {address} su questo computer. Avvia il server, o attivalo nell'app che lo esegue, poi riprova.",
   "error.backend.mcpServerBlocked":
@@ -369,7 +369,7 @@ export const messages = {
   "error.backend.mcpServerIncompatible":
     "A questo indirizzo qualcosa ha risposto, ma non come server MCP via Streamable HTTP. Controlla l'URL e aggiorna l'app che esegue il server.",
   "error.backend.mcpRemoteBridge":
-    "{reason} Questo comando esegue il bridge mcp-remote. Scegli invece Streamable HTTP con l'URL {url} e OpenBot ti fa accedere.",
+    "{reason} Questo comando esegue il bridge mcp-remote. Scegli invece Streamable HTTP con l'URL {url} e PurpleBot ti fa accedere.",
   "error.backend.oauthNotHttps":
     "L'endpoint OAuth {origin} non usa https, quindi le credenziali non sono state inviate.",
   "error.backend.oauthTooManyRedirects": "L'endpoint OAuth ha reindirizzato troppe volte.",
@@ -423,14 +423,14 @@ export const messages = {
   "error.backend.promptAnswerMismatch": "La risposta al prompt non corrisponde a una domanda attiva.",
   "error.backend.approvalInactive": "Questa approvazione non è più attiva.",
   "error.backend.feedbackNeedsPhone":
-    "Solo l'app OpenBot del telefono può inviare questa segnalazione, perché aggiunge la versione e il log di assistenza del telefono. Apri questa chat sul telefono. Se vedi questo messaggio lì, aggiorna l'app del telefono.",
+    "Solo l'app PurpleBot del telefono può inviare questa segnalazione, perché aggiunge la versione e il log di assistenza del telefono. Apri questa chat sul telefono. Se vedi questo messaggio lì, aggiorna l'app del telefono.",
   "error.backend.takeoverInactive": "Questo intervento nel browser non è più attivo.",
   "error.backend.authSubmitting": "L'invio dell'autenticazione è già in corso.",
-  "error.backend.apiKeyListFailed": "OpenBot non è riuscito a leggere le chiavi API salvate.",
-  "error.backend.apiKeySaveFailed": "OpenBot non è riuscito a salvare la chiave API. Riprova.",
+  "error.backend.apiKeyListFailed": "PurpleBot non è riuscito a leggere le chiavi API salvate.",
+  "error.backend.apiKeySaveFailed": "PurpleBot non è riuscito a salvare la chiave API. Riprova.",
   "error.backend.apiKeySaving": "La chiave API è già in fase di salvataggio.",
   "error.backend.apiKeyAnswerUnreadable":
-    "OpenBot non è riuscito a leggere la chiave API. Inserisci una chiave di massimo 8.000 caratteri e scegli chi può usarla.",
+    "PurpleBot non è riuscito a leggere la chiave API. Inserisci una chiave di massimo 8.000 caratteri e scegli chi può usarla.",
   "error.backend.authRequestInactive": "Questa richiesta di autenticazione sicura non è più attiva.",
   "error.backend.secureAuthUnavailable": "L'autenticazione sicura non è disponibile.",
   "error.backend.browserUrlRequired": "L'URL del browser è obbligatorio.",
@@ -453,9 +453,9 @@ export const messages = {
   "error.backend.browserProxySignInRefused":
     "Il proxy {name} ha rifiutato l’accesso, quindi la pagina non si è aperta.",
   "error.backend.browserSystemProxyFailed":
-    "Il proxy nelle impostazioni del computer che esegue OpenBot non risponde o ha rifiutato la connessione, quindi la pagina non si è aperta. Controlla le impostazioni proxy di quel computer.",
+    "Il proxy nelle impostazioni del computer che esegue PurpleBot non risponde o ha rifiutato la connessione, quindi la pagina non si è aperta. Controlla le impostazioni proxy di quel computer.",
   "error.backend.browserSystemProxyOrSiteClosed":
-    "Il sito o il proxy nelle impostazioni del computer che esegue OpenBot ha chiuso la connessione senza risposta, quindi la pagina non si è aperta. Se non si apre nessun sito, controlla le impostazioni proxy di quel computer.",
+    "Il sito o il proxy nelle impostazioni del computer che esegue PurpleBot ha chiuso la connessione senza risposta, quindi la pagina non si è aperta. Se non si apre nessun sito, controlla le impostazioni proxy di quel computer.",
   "error.backend.browserProfileProxyOrSiteClosed":
     "Il sito o il proxy di questo profilo del browser ha chiuso la connessione senza risposta, quindi la pagina non si è aperta. Se non si apre nessun sito, controlla il proxy del profilo.",
   "error.backend.browserProxyComputerUnreachable":
@@ -496,7 +496,7 @@ export const messages = {
   "error.backend.mcpSignInAppUrl": "L'app di accesso richiede un URL del server valido.",
   "error.backend.mcpSignInAppClientId": "Inserisci l'ID client dell'app di accesso.",
   "error.backend.mcpSignInAppIssuerChanged":
-    "Il server di accesso di questo server MCP è cambiato, quindi OpenBot non gli ha inviato l'app di accesso. Se la modifica è corretta, rimuovi l'app di accesso e aggiungila di nuovo.",
+    "Il server di accesso di questo server MCP è cambiato, quindi PurpleBot non gli ha inviato l'app di accesso. Se la modifica è corretta, rimuovi l'app di accesso e aggiungila di nuovo.",
   "error.backend.mcpSignInAppNoServer":
     "Salva questo server MCP come server con URL prima di aggiungere un'app di accesso.",
   "error.backend.mcpSignInAppUnavailable": "Questo computer non può conservare un'app di accesso.",
@@ -531,7 +531,7 @@ export const messages = {
   "error.backend.taskOpenLimitReached":
     "Questo agente ha {count} attività aperte. Chiudi un'attività, poi avviane o aprine un'altra.",
   "error.backend.taskRemoteUnsupported": "Le attività sono disponibili solo per gli agenti su questo computer.",
-  "error.backend.taskMessageFailed": "OpenBot non è riuscito a inviare il messaggio all’attività. Riprova più tardi.",
+  "error.backend.taskMessageFailed": "PurpleBot non è riuscito a inviare il messaggio all’attività. Riprova più tardi.",
   "error.backend.taskStartFailed":
-    "OpenBot non è riuscito ad avviare l'attività. Esegui invece il lavoro in questo turno.",
+    "PurpleBot non è riuscito ad avviare l'attività. Esegui invece il lavoro in questo turno.",
 } as const satisfies PartialTranslation<typeof source>;

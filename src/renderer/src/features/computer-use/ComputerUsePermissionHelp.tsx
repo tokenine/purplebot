@@ -19,7 +19,7 @@ const PERMISSION_HELP: Record<MacPermissionId, { title: AppTextKey; pane: AppTex
 };
 
 const SUNSHINE_APP_NAME = "Sunshine";
-const OPENBOT_APP_NAME = "OpenBot";
+const OPENBOT_APP_NAME = "PurpleBot";
 
 const POLL_INTERVAL_MS = 1_000;
 

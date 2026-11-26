@@ -146,7 +146,7 @@ const gateway = (t: string, d: unknown): Parameters<DiscordState["handle"]>[0] =
 signal.handle(
   gateway("READY", {
     v: 10,
-    user: { id: APP, username: "OpenBot", bot: true },
+    user: { id: APP, username: "PurpleBot", bot: true },
     application: { id: APP, flags: 0 },
     guilds: [{ id: GUILD, unavailable: true }],
     session_id: "session",
@@ -287,7 +287,7 @@ try {
     const connection = threads.store.connections()[0]?.connectionId ?? "";
     assert.ok(connection, "The Discord connection is missing.");
 
-    await step("the place list shows the channel that OpenBot can view, and not the hidden one", async () => {
+    await step("the place list shows the channel that PurpleBot can view, and not the hidden one", async () => {
       const listed = await call(threads, "messaging_list_places", { connection });
       assert.ok(listed.success, JSON.stringify(listed.result));
       assert.deepEqual(listed.result.places, [{ id: CHANNEL, name: "#general", kind: "channel" }]);

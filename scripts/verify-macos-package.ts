@@ -30,13 +30,13 @@ const EXPECTED_MACOS_ICON_FILES = [
 ] as const;
 
 const architecture = process.arch === "arm64" ? "arm64" : process.arch === "x64" ? "x64" : null;
-if (!architecture) throw new Error(`OpenBot does not ship for macOS ${process.arch}.`);
+if (!architecture) throw new Error(`PurpleBot does not ship for macOS ${process.arch}.`);
 const machOArchitecture = architecture === "arm64" ? "arm64" : "x86_64";
 const appPath = resolve(
-  process.argv[2] ?? (architecture === "arm64" ? "dist/mac-arm64/OpenBot.app" : "dist/mac/OpenBot.app"),
+  process.argv[2] ?? (architecture === "arm64" ? "dist/mac-arm64/PurpleBot.app" : "dist/mac/PurpleBot.app"),
 );
 const contentsPath = resolve(appPath, "Contents");
-const executablePath = resolve(contentsPath, "MacOS/OpenBot");
+const executablePath = resolve(contentsPath, "MacOS/PurpleBot");
 const resourcesPath = resolve(contentsPath, "Resources");
 const packagedIconPath = resolve(resourcesPath, "icon.icns");
 const sourceIconPath = resolve("build/icon-production.icns");
@@ -115,8 +115,8 @@ await assertAbsent(
 
 const plist = JSON.parse(run("plutil", ["-convert", "json", "-o", "-", plistPath]));
 if (!isDynamicRecord(plist)) throw new Error("Info.plist is not a JSON object.");
-expectEqual(plist.CFBundleDisplayName, "OpenBot", "display name");
-expectEqual(plist.CFBundleExecutable, "OpenBot", "executable name");
+expectEqual(plist.CFBundleDisplayName, "PurpleBot", "display name");
+expectEqual(plist.CFBundleExecutable, "PurpleBot", "executable name");
 expectEqual(plist.CFBundleIdentifier, "app.openbot.desktop", "bundle identifier");
 expectEqual(plist.CFBundleIconFile, "icon.icns", "application icon");
 expectEqual(plist.CFBundleIconName, "Icon", "macOS 26 application icon");
@@ -128,13 +128,13 @@ if (!Array.isArray(plist.NSUserActivityTypes) || !plist.NSUserActivityTypes.incl
 if (!plist.ElectronAsarIntegrity) throw new Error("ASAR integrity metadata is missing.");
 expectEqual(
   plist.NSMicrophoneUsageDescription,
-  "OpenBot uses the microphone to transcribe voice prompts locally on this Mac.",
+  "PurpleBot uses the microphone to transcribe voice prompts locally on this Mac.",
   "microphone usage description",
 );
 for (const key of ["NSLocationUsageDescription", "NSLocationWhenInUseUsageDescription"] as const) {
   expectEqual(
     plist[key],
-    "OpenBot shares the location of this Mac with a page in the OpenBot browser only when you allow it.",
+    "PurpleBot shares the location of this Mac with a page in the PurpleBot browser only when you allow it.",
     "location usage description",
   );
 }
@@ -208,7 +208,7 @@ await verifyLaunch(executablePath);
 
 logger.info(`Verified ${appPath}`);
 logger.info(
-  `OpenBot ${String(packageJson.version)} · ${machOArchitecture} · icon · GPL remote runtime · WebRTC remote stack · ASAR integrity · hardened fuses · launch`,
+  `PurpleBot ${String(packageJson.version)} · ${machOArchitecture} · icon · GPL remote runtime · WebRTC remote stack · ASAR integrity · hardened fuses · launch`,
 );
 
 function expectEqual(actual: unknown, expected: unknown, label: string): void {
@@ -233,7 +233,7 @@ async function verifyPackagedIcon(packagedPath: string, sourcePath: string): Pro
   }
 
   const iconRoot = await mkdtemp(join(tmpdir(), "openbot-icon-"));
-  const iconSetPath = join(iconRoot, "OpenBot.iconset");
+  const iconSetPath = join(iconRoot, "PurpleBot.iconset");
   try {
     run("iconutil", ["--convert", "iconset", packagedPath, "--output", iconSetPath]);
     await Promise.all(EXPECTED_MACOS_ICON_FILES.map((name) => access(join(iconSetPath, name))));
@@ -295,7 +295,7 @@ async function verifyLaunch(executable: string): Promise<void> {
   const launchExit = new Promise<never>((_, reject) => {
     child.once("exit", (code, signal) => {
       reject(
-        new Error(`Packaged OpenBot exited during launch (${signal ?? `code ${String(code)}`}): ${stderr.trim()}`),
+        new Error(`Packaged PurpleBot exited during launch (${signal ?? `code ${String(code)}`}): ${stderr.trim()}`),
       );
     });
   });
@@ -316,7 +316,7 @@ async function verifyLaunch(executable: string): Promise<void> {
     await verifySecondInstanceExits(executable, userDataPath, launchExit);
     if (child.exitCode !== null || child.signalCode !== null) {
       throw new Error(
-        `Packaged OpenBot exited when a second instance started (${child.signalCode ?? `code ${String(child.exitCode)}`}): ${stderr.trim()}`,
+        `Packaged PurpleBot exited when a second instance started (${child.signalCode ?? `code ${String(child.exitCode)}`}): ${stderr.trim()}`,
       );
     }
   } finally {
@@ -345,7 +345,7 @@ async function waitForFirstInstance(
     const limit = Date.now() + launchStepLimitMs;
     while (!(await reached())) {
       if (Date.now() > limit) {
-        throw new Error(`Packaged OpenBot did not ${step} in 5 minutes: ${stderr().trim()}`);
+        throw new Error(`Packaged PurpleBot did not ${step} in 5 minutes: ${stderr().trim()}`);
       }
       await delay(200, undefined, { signal: stop.signal });
     }
@@ -407,11 +407,11 @@ async function verifySecondInstanceExits(
       delay(launchStepLimitMs, null, { signal: stop.signal }),
     ]);
     if (!result) {
-      throw new Error(`A second OpenBot instance did not exit in 5 minutes: ${stderr.trim()}`);
+      throw new Error(`A second PurpleBot instance did not exit in 5 minutes: ${stderr.trim()}`);
     }
     if (result.code !== 0 || result.signal) {
       throw new Error(
-        `A second OpenBot instance exited unexpectedly (${result.signal ?? `code ${String(result.code)}`}): ${stderr.trim()}`,
+        `A second PurpleBot instance exited unexpectedly (${result.signal ?? `code ${String(result.code)}`}): ${stderr.trim()}`,
       );
     }
   } finally {

@@ -414,6 +414,7 @@ async function run() {
   const bodies: unknown[] = [];
   const sends: Effect.Effect<void>[] = [];
   const analytics = createAccountAnalytics({
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: async (_input, init) => {
@@ -488,7 +489,7 @@ async function scheduledSnapshots(database: DatabaseSync, at: number, cron: stri
   const originalFetch = globalThis.fetch;
   const routedFetch = async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = String(input instanceof Request ? input.url : input);
-    if (url !== "https://analytics.openbot.run/api/track") return new Response(null, { status: 404 });
+    if (url !== "https://analytics.example.com/api/track") return new Response(null, { status: 404 });
     const body = String(init?.body);
     if (body.includes('"name":"hosted_pool_snapshot"')) snapshots.push(body);
     return new Response(null, { status: 202 });
@@ -497,7 +498,12 @@ async function scheduledSnapshots(database: DatabaseSync, at: number, cron: stri
   try {
     await createWorkerHandler(() => new Response(null, { status: 404 })).scheduled(
       { scheduledTime: at, cron },
-      { DB: sqliteD1(database), OPENPANEL_CLIENT_ID: "client", OPENPANEL_CLIENT_SECRET: "secret" },
+      {
+        DB: sqliteD1(database),
+        OPENPANEL_API_URL: "https://analytics.example.com/api",
+        OPENPANEL_CLIENT_ID: "client",
+        OPENPANEL_CLIENT_SECRET: "secret",
+      },
     );
   } finally {
     globalThis.fetch = originalFetch;

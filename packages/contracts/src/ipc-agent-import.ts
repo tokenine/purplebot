@@ -3,7 +3,7 @@ import { type ClientAgentSummary, isClientAgentSummary } from "./ipc-agents";
 import { isBoundedString, isIdentifier, isNullableBoundedString } from "./ipc-bounded-values";
 import { isBoolean, isDynamicRecord, isNumber, isString } from "./runtime-values";
 
-export const GROK_BOT_EXPORT_URL = "https://x.ai/bot/pOUBH2kQK8CKvM7nW8stG";
+export const GROK_BOT_EXPORT_URL = "https://github.com/tokenine/purplebot";
 
 export const AGENT_IMPORT_SKILL_SOURCES = ["grok-bot", "hermes-agent"] as const;
 export type AgentImportSkillSource = (typeof AGENT_IMPORT_SKILL_SOURCES)[number];
@@ -12,10 +12,10 @@ export const HERMES_EXPORT_SKILL_ID = "nightly-labs/openbot/resources/agent-impo
 
 export const HERMES_SKILL_COMMAND = `/skills install ${HERMES_EXPORT_SKILL_ID}`;
 
-export const AGENT_IMPORT_PROMPT = "Export my agents for OpenBot";
+export const AGENT_IMPORT_PROMPT = "Export my agents for PurpleBot";
 export const HERMES_EXPORT_PROMPT = "/openbot-export";
 
-export const AGENT_IMPORT_EXPORT_AGENT_NAME = "OpenBot export";
+export const AGENT_IMPORT_EXPORT_AGENT_NAME = "PurpleBot export";
 
 export const AGENT_IMPORT_LIMITS = {
   files: 200_000,

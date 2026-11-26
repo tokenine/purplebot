@@ -1,4 +1,4 @@
-# OpenBot mobile update server
+# PurpleBot mobile update server
 
 This Worker gives the mobile app its over-the-air updates at `https://updates.openbot.run`. It
 answers the [Expo Updates protocol](https://docs.expo.dev/technical-specs/expo-updates-1/), version

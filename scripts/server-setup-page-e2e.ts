@@ -27,7 +27,7 @@ const EMAIL = "owner@example.com";
 const CODE = "K7PQ-R2MX";
 const WRONG_CODE = "22222222";
 const CHALLENGE = "challenge-e2e";
-const SERVER_NAME = "OpenBot";
+const SERVER_NAME = "PurpleBot";
 
 let account: CentralAuthState = { status: "signed_out" };
 let session = false;
@@ -222,7 +222,7 @@ try {
       }
     });
     await tab.goto(`${origin}/`);
-    await tab.getByRole("heading", { name: "Sign in to OpenBot" }).waitFor();
+    await tab.getByRole("heading", { name: "Sign in to PurpleBot" }).waitFor();
     await tab.getByLabel("Email").fill(EMAIL);
     await settledScreenshot(tab, join(OUT, "1-email.png"));
     await tab.getByRole("button", { name: "Send sign-in code" }).click();
@@ -246,7 +246,7 @@ try {
     await codeInput.fill(CODE.replace("-", ""));
     await tab.getByRole("heading", { name: `${SERVER_NAME} is online` }).waitFor({ timeout: 30_000 });
     await tab.getByText(`Signed in as ${EMAIL}`).waitFor();
-    const appLink = await tab.getByRole("link", { name: "Open OpenBot" }).getAttribute("href");
+    const appLink = await tab.getByRole("link", { name: "Open PurpleBot" }).getAttribute("href");
     assert.equal(appLink, "https://openbot.run/app");
     await settledScreenshot(tab, join(OUT, "3-online.png"));
     assert.equal(hostStatus.serverName, SERVER_NAME);

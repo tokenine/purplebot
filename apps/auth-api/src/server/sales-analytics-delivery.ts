@@ -10,7 +10,6 @@ import {
   readAccountEmail,
 } from "./account-analytics";
 
-const OPENPANEL_API_URL = "https://analytics.openbot.run/api";
 const SEND_TIMEOUT_MS = 5_000;
 const CLAIM_TIMEOUT_MS = 5 * 60_000;
 const MAX_BATCH_SIZE = 50;
@@ -153,6 +152,7 @@ export class SalesAnalyticsDeliveryError extends Schema.TaggedError<SalesAnalyti
 
 export interface SalesAnalyticsDeliveryOptions {
   database: D1Database;
+  apiUrl: string | undefined;
   clientId: string | undefined;
   clientSecret: string | undefined;
   fetch: (input: string, init: RequestInit) => Promise<Response>;
@@ -178,6 +178,7 @@ interface DeliveryOutcome {
 
 export class SalesAnalyticsDelivery {
   readonly #database: D1Database;
+  readonly #apiUrl: string | undefined;
   readonly #clientId: string | undefined;
   readonly #clientSecret: string | undefined;
   readonly #fetch: (input: string, init: RequestInit) => Promise<Response>;
@@ -185,10 +186,18 @@ export class SalesAnalyticsDelivery {
 
   constructor(options: SalesAnalyticsDeliveryOptions) {
     this.#database = options.database;
+    this.#apiUrl = options.apiUrl?.trim().replace(/\/+$/u, "") || undefined;
     this.#clientId = options.clientId?.trim() || undefined;
     this.#clientSecret = options.clientSecret?.trim() || undefined;
     this.#fetch = options.fetch;
     this.#now = options.now ?? Date.now;
+  }
+
+  #target(): { apiUrl: string; clientId: string; clientSecret: string } | null {
+    const apiUrl = this.#apiUrl;
+    const clientId = this.#clientId;
+    const clientSecret = this.#clientSecret;
+    return apiUrl && clientId && clientSecret ? { apiUrl, clientId, clientSecret } : null;
   }
 
   enqueue(
@@ -230,7 +239,7 @@ export class SalesAnalyticsDelivery {
           uncertain: 0,
           pending: rows.length,
         };
-        if (!this.#clientId || !this.#clientSecret) return summary;
+        if (!this.#target()) return summary;
 
         const identified = new Set<string>();
         for (const row of rows) {
@@ -253,18 +262,17 @@ export class SalesAnalyticsDelivery {
   }
 
   async #identify(profileId: string): Promise<void> {
-    const clientId = this.#clientId;
-    const clientSecret = this.#clientSecret;
-    if (!clientId || !clientSecret) return;
+    const target = this.#target();
+    if (!target) return;
     try {
       const email = await readAccountEmail(this.#database, profileId);
       if (!email) return;
-      const response = await this.#fetch(`${OPENPANEL_API_URL}/track`, {
+      const response = await this.#fetch(`${target.apiUrl}/track`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          "openpanel-client-id": clientId,
-          "openpanel-client-secret": clientSecret,
+          "openpanel-client-id": target.clientId,
+          "openpanel-client-secret": target.clientSecret,
           "openpanel-sdk-name": "openbot-account-api",
         },
         body: JSON.stringify({ type: "identify", payload: { profileId, email } }),
@@ -302,17 +310,16 @@ export class SalesAnalyticsDelivery {
 
     let response: Response;
     try {
-      const clientId = this.#clientId;
-      const clientSecret = this.#clientSecret;
-      if (!clientId || !clientSecret) {
+      const target = this.#target();
+      if (!target) {
         return { status: "uncertain", httpStatus: null, retryAt: null, error: "credentials_unavailable" };
       }
-      response = await this.#fetch(`${OPENPANEL_API_URL}/track`, {
+      response = await this.#fetch(`${target.apiUrl}/track`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          "openpanel-client-id": clientId,
-          "openpanel-client-secret": clientSecret,
+          "openpanel-client-id": target.clientId,
+          "openpanel-client-secret": target.clientSecret,
           "openpanel-sdk-name": "openbot-account-api",
         },
         body: JSON.stringify({ type: "track", payload }),

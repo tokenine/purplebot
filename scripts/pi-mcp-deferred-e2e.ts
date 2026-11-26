@@ -183,10 +183,10 @@ try {
   const bridge = (names: string[]) => names.filter((name) => name.startsWith("mcp__") && !name.endsWith(TOOL));
   assert.deepEqual(external(first), [], `The first request declares the user's tool: ${first.join(", ")}`);
   assert.ok(first.includes("tool_search"), `The first request has no tool_search: ${first.join(", ")}`);
-  assert.ok(bridge(first).length > 0, `The first request declares no OpenBot tool: ${first.join(", ")}`);
+  assert.ok(bridge(first).length > 0, `The first request declares no PurpleBot tool: ${first.join(", ")}`);
   assert.equal(external(second).length, 1, `tool_search did not load the user's tool: ${second.join(", ")}`);
   const openbotSearch = bridge(first).find((name) => name.endsWith("__tool_search"));
-  assert.ok(openbotSearch, `The first request has no OpenBot tool_search: ${first.join(", ")}`);
+  assert.ok(openbotSearch, `The first request has no PurpleBot tool_search: ${first.join(", ")}`);
   assert.ok(
     report.toolResults?.includes(`find them with ${openbotSearch},`),
     `Pi's tool_search result does not name ${openbotSearch}: ${report.toolResults}`,

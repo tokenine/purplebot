@@ -11,7 +11,7 @@ export function useSignInColors() {
   const radius = useCSSVariable("--openbot-radius-lg");
   return {
     surface: String(surface ?? "#2a2a2a"),
-    brand: String(brand ?? "#d6adf2"),
+    brand: String(brand ?? "#7c3aed"),
     onBrand: String(onBrand ?? "#040007"),
     text: String(text ?? "#ffffff"),
     muted: String(muted ?? "#979797"),

@@ -87,7 +87,7 @@ const crash = () => {
 const turn = (message) => {
   const text = JSON.stringify(message.message);
   log({ prompt: text });
-  if (text.includes("OpenBot note")) {
+  if (text.includes("PurpleBot note")) {
     if (fs.existsSync(${JSON.stringify(crashAgainMarker)})) {
       fs.rmSync(${JSON.stringify(crashAgainMarker)});
       begin(message, "Second part of the answer.");
@@ -299,7 +299,7 @@ try {
   const continuationText = sourceText("status.agent.providerExitContinues");
 
   const runCase = async (text: string): Promise<CaseResult> => {
-    const notesBefore = standInLog().filter((line) => line.prompt?.includes("OpenBot note")).length;
+    const notesBefore = standInLog().filter((line) => line.prompt?.includes("PurpleBot note")).length;
     const errorsBefore = errors.length;
     await runCauseEffect(agents.sendMessage({ agentId: agent.id, text }));
     await waitFor(`the message "${text}" to reach the stand-in`, () =>
@@ -317,7 +317,7 @@ try {
     return {
       status: delivery.status,
       deliveryError: delivery.error ?? null,
-      notes: standInLog().filter((line) => line.prompt?.includes("OpenBot note")).length - notesBefore,
+      notes: standInLog().filter((line) => line.prompt?.includes("PurpleBot note")).length - notesBefore,
       continuationLine: after.some((message) => message.text === continuationText),
       completeAnswer: after.some((message) => message.author === "assistant" && message.text === COMPLETE_ANSWER),
       shownErrors: errors

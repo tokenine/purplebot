@@ -186,7 +186,7 @@ async function codexRequest(root: string) {
         client.request(
           "initialize",
           {
-            clientInfo: { name: "openbot_bench", title: "OpenBot Bench", version: "0.0.0" },
+            clientInfo: { name: "openbot_bench", title: "PurpleBot Bench", version: "0.0.0" },
             capabilities: { experimentalApi: true },
           },
           decodeRecordResponse,
@@ -222,8 +222,8 @@ async function codexRequest(root: string) {
     assert(request, "Codex sent no model request.");
     const openbotTools = request.tools.filter((tool) => OPENBOT_NAMES.has(tool.name ?? ""));
     assert(openbotTools.length > 0, "Codex sent no openbot tools.");
-    const ownInstructions = request.developer.filter((part) => part.includes("persistent local OpenBot teammate"));
-    assert(ownInstructions.length > 0, "Codex sent no OpenBot instructions.");
+    const ownInstructions = request.developer.filter((part) => part.includes("persistent local PurpleBot teammate"));
+    assert(ownInstructions.length > 0, "Codex sent no PurpleBot instructions.");
     await writeFile(join(OUT, "codex-openbot-tools.json"), `${JSON.stringify(openbotTools, null, 2)}${NL}`);
     return {
       codexVersion: cli.version,

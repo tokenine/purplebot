@@ -55,6 +55,7 @@ async function accountAnalytics() {
   const api = openPanel();
   const work: Promise<void>[] = [];
   const analytics = createAccountAnalytics({
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: api.fetch,
@@ -125,6 +126,7 @@ async function salesLedger() {
   const api = openPanel();
   const ledger = new SalesAnalyticsDelivery({
     database: sqliteD1(database),
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: api.fetch,
@@ -159,6 +161,7 @@ async function salesLedger() {
   const unpaidApi = openPanel();
   const unpaid = new SalesAnalyticsDelivery({
     database: sqliteD1(failedOnly),
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: unpaidApi.fetch,
@@ -178,6 +181,7 @@ async function salesLedger() {
   refusedApi.state.refuseIdentify = true;
   const refused = new SalesAnalyticsDelivery({
     database: sqliteD1(refusedDatabase),
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: refusedApi.fetch,

@@ -18,7 +18,8 @@ import {
   MessageReferenceType,
 } from "discord-api-types/v10";
 
-export const DISCORD_DIRECT_MESSAGE_REPLY = "OpenBot answers in Discord servers. Mention @OpenBot in a server channel.";
+export const DISCORD_DIRECT_MESSAGE_REPLY =
+  "PurpleBot answers in Discord servers. Mention @PurpleBot in a server channel.";
 
 const INTERACTION_TOKEN_TTL_MILLISECONDS = 15 * 60_000;
 const MAXIMUM_INTERACTIONS = 10_000;

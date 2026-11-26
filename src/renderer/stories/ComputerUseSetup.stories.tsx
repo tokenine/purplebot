@@ -83,7 +83,7 @@ export const DriverMissing: Story = {
       state={{
         status: "driver-missing",
         permissions: permissions([]),
-        message: "This build of OpenBot carries no Computer Use driver.",
+        message: "This build of PurpleBot carries no Computer Use driver.",
       }}
     />
   ),
@@ -100,12 +100,12 @@ export const ReadyWithoutInput: Story = {
         status: "ready",
         permissions: [],
         message:
-          "On this desktop, OpenBot cannot type or click in other apps. For tasks on websites, ask the agent to use the OpenBot browser.",
+          "On this desktop, PurpleBot cannot type or click in other apps. For tasks on websites, ask the agent to use the PurpleBot browser.",
       }}
     />
   ),
 };
 
 export const Failure: Story = {
-  render: () => <MockedSetup error={new Error("OpenBot could not check Computer Use.")} />,
+  render: () => <MockedSetup error={new Error("PurpleBot could not check Computer Use.")} />,
 };

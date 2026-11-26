@@ -2394,7 +2394,7 @@ const fakeBitwardenCli: BitwardenCliRunner = async (_executable, args, env) => {
   };
   if (command === "sync") return "Syncing complete.";
   if (command === "list" && target === "folders")
-    return JSON.stringify([{ id: "shared", name: "Shared with OpenBot" }]);
+    return JSON.stringify([{ id: "shared", name: "Shared with PurpleBot" }]);
   if (command === "list" && target === "items") return JSON.stringify([item]);
   if (command === "get" && target === "item") return JSON.stringify(item);
   throw new Error(`Unexpected bw call: ${command}`);
@@ -2442,7 +2442,7 @@ const protonPassDriver: PasswordManagerDriver = {
             state: "connected",
             step: null,
             signInUrl: null,
-            vaultNames: ["Shared with OpenBot"],
+            vaultNames: ["Shared with PurpleBot"],
             loginCount: 0,
           })
         : setProtonPass({ state: "signing-in", step: "browser", signInUrl: PROTON_PASS_SIGN_IN });
@@ -2881,7 +2881,7 @@ try {
   const agentFolders = createAgentFolders({
     service: {
       listAgents: () => agents,
-      sharedRoot: join(root, "OpenBot", "Shared"),
+      sharedRoot: join(root, "PurpleBot", "Shared"),
       updateAgent: (input) =>
         Effect.sync(() => {
           record("updateAgentFolders", input);
@@ -2897,7 +2897,7 @@ try {
   const channelFolders = createChannelFolders({
     service: {
       listAgents: () => agents,
-      sharedRoot: join(root, "OpenBot", "Shared"),
+      sharedRoot: join(root, "PurpleBot", "Shared"),
       channels: {
         store: {
           get: (channelId) => {
@@ -4747,7 +4747,7 @@ try {
     mkdirSync(join(projects, "app", "build"), { recursive: true });
     mkdirSync(join(projects, ".hidden"), { recursive: true });
     mkdirSync(join(root, "workspaces", "agent-ada"), { recursive: true });
-    mkdirSync(join(root, "OpenBot", "Shared"), { recursive: true });
+    mkdirSync(join(root, "PurpleBot", "Shared"), { recursive: true });
     writeFileSync(join(projects, "notes.txt"), "not a folder\n");
     const app = realpathSync(join(projects, "app"));
     const build = realpathSync(join(projects, "app", "build"));
@@ -6075,7 +6075,7 @@ try {
       ...v10,
     });
     check(
-      "an admin reads that OpenBot memory is on for an agent with no own value",
+      "an admin reads that PurpleBot memory is on for an agent with no own value",
       adminRead.status === 200 && isDeepStrictEqual(adminRead.body, { memory: true }),
       summary(adminRead),
     );
@@ -6085,7 +6085,7 @@ try {
       protocol: TEAM_PROTOCOL_V10,
     });
     check(
-      "the OpenBot memory routes without the capability get 400 agentSettingsUnsupported",
+      "the PurpleBot memory routes without the capability get 400 agentSettingsUnsupported",
       errorIs(unsupported, 400, sourceText("error.team.agentSettingsUnsupported")),
       summary(unsupported),
     );
@@ -6100,7 +6100,7 @@ try {
       ...v10,
     });
     check(
-      "a member cannot read or set OpenBot memory",
+      "a member cannot read or set PurpleBot memory",
       errorIs(memberRead, 403, sourceText("error.team.adminRequired")) &&
         errorIs(memberSet, 403, sourceText("error.team.adminRequired")) &&
         callsOf("updateAgent").length === writes,
@@ -6112,7 +6112,7 @@ try {
       ...v10,
     });
     check(
-      "the host refuses an OpenBot memory value that is not a boolean, and writes nothing",
+      "the host refuses an PurpleBot memory value that is not a boolean, and writes nothing",
       notBoolean.status === 400 && callsOf("updateAgent").length === writes,
       summary(notBoolean),
     );
@@ -6127,7 +6127,7 @@ try {
       ...v10,
     });
     check(
-      "an admin turns off OpenBot memory through the agent writer and reads it back",
+      "an admin turns off PurpleBot memory through the agent writer and reads it back",
       adminOff.status === 200 &&
         isDeepStrictEqual(adminOff.body, { memory: false }) &&
         isDeepStrictEqual(readOff.body, { memory: false }) &&
@@ -6145,7 +6145,7 @@ try {
       ...v10,
     });
     check(
-      "an admin turns OpenBot memory on again, and an unknown agent gets 404",
+      "an admin turns PurpleBot memory on again, and an unknown agent gets 404",
       adminOn.status === 200 &&
         isDeepStrictEqual(adminOn.body, { memory: true }) &&
         errorIs(missing, 404, sourceText("error.team.agentNotFound")),
@@ -6158,7 +6158,7 @@ try {
       ...v10,
     });
     check(
-      "the agent profile update refuses OpenBot memory and writes nothing",
+      "the agent profile update refuses PurpleBot memory and writes nothing",
       profilePatch.status === 400 &&
         callsOf("updateAgent").length === writes + 2 &&
         callsOf("updateAgentColor").length === colorWrites,
@@ -9614,7 +9614,7 @@ try {
       capabilities: diskCapabilities,
     });
     check(
-      "the disk route ignores a path in the body and reads the disk of the OpenBot data",
+      "the disk route ignores a path in the body and reads the disk of the PurpleBot data",
       withBody.status === 200 && isDeepStrictEqual(withBody.body, expected) && callsOf("disk").length === 3,
       summary(withBody),
     );
@@ -12338,7 +12338,7 @@ try {
     check(
       "an admin connects with an access key; the key reaches the driver and no answer carries it",
       connected.state === "connected" &&
-        isDeepStrictEqual(connected.vaultNames, ["Shared with OpenBot"]) &&
+        isDeepStrictEqual(connected.vaultNames, ["Shared with PurpleBot"]) &&
         isDeepStrictEqual(callsOf("protonpass.connect").at(-1), ["key", true]) &&
         !connect.text.includes(PROTON_PASS_KEY) &&
         !after.text.includes(PROTON_PASS_KEY) &&

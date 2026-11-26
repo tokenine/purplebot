@@ -164,7 +164,7 @@ try {
     result.status === 0 &&
       state.posts.length === 1 &&
       lastPost().includes(`<@&${ROLE_ID}>`) &&
-      lastPost().includes("**OpenBot v1.4.7 is out on iOS**\nThe Android version comes out later.") &&
+      lastPost().includes("**PurpleBot v1.4.7 is out on iOS**\nThe Android version comes out later.") &&
       !lastPost().includes("[Android]") &&
       state.tags.has("mobile-announced/v1.4.7/ios"),
     { output: result.output, post: lastPost(), tags: [...state.tags] },
@@ -200,7 +200,7 @@ try {
     "posts the second store",
     result.status === 0 &&
       state.posts.length === 2 &&
-      lastPost().includes("**OpenBot v1.4.7 is out on Android**\nIt is already out on iOS.") &&
+      lastPost().includes("**PurpleBot v1.4.7 is out on Android**\nIt is already out on iOS.") &&
       lastPost().includes("[iOS]") &&
       state.tags.has("mobile-announced/v1.4.7/android"),
     { output: result.output, post: lastPost() },
@@ -212,7 +212,7 @@ try {
     "posts both stores in one post",
     result.status === 0 &&
       state.posts.length === 3 &&
-      lastPost().includes("**OpenBot v1.4.7 is out on iOS and Android**\n\n"),
+      lastPost().includes("**PurpleBot v1.4.7 is out on iOS and Android**\n\n"),
     { output: result.output, post: lastPost() },
   );
 
@@ -222,7 +222,7 @@ try {
   result = await announce();
   check(
     "a skipped store gets no line",
-    result.status === 0 && lastPost().includes("**OpenBot v1.4.7 is out on iOS**\n\n- One."),
+    result.status === 0 && lastPost().includes("**PurpleBot v1.4.7 is out on iOS**\n\n- One."),
     { output: result.output, post: lastPost() },
   );
 
@@ -293,7 +293,7 @@ try {
     "--version posts an older version",
     result.status === 0 &&
       state.posts.length === beforeOlder + 1 &&
-      lastPost().includes("OpenBot v1.4.6 is out on iOS"),
+      lastPost().includes("PurpleBot v1.4.6 is out on iOS"),
     result.output,
   );
   writeFileSync(
@@ -342,7 +342,7 @@ try {
     "an OTA section gets no post and no tag",
     result.status === 0 &&
       state.posts.length === postsBeforeOta + 1 &&
-      lastPost().includes("**OpenBot v1.4.7 is out on iOS and Android**") &&
+      lastPost().includes("**PurpleBot v1.4.7 is out on iOS and Android**") &&
       !result.output.includes("1.4.7.1") &&
       [...state.tags].sort().join() === "mobile-announced/v1.4.7/android,mobile-announced/v1.4.7/ios",
     { output: result.output, post: lastPost(), tags: [...state.tags] },

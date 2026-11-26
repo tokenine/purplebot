@@ -9,9 +9,9 @@ import { causeHelpers } from "../backend/effect-boundary";
 
 const logger = createOpenBotLogger("linux-desktop-entry");
 
-const DESKTOP_FILE_NAME = "openbot.desktop";
-const ICON_FILE_NAME = "openbot.png";
-const WM_CLASS = "openbot";
+const DESKTOP_FILE_NAME = "purplebot.desktop";
+const ICON_FILE_NAME = "purplebot.png";
+const WM_CLASS = "purplebot";
 const LAUNCHER_READ_CONCURRENCY = 16;
 const GSETTINGS_TIMEOUT_MS = 2_000;
 const execFileAsync = promisify(execFile);
@@ -20,7 +20,7 @@ function linuxDesktopEntry(appImagePath: string, iconPath: string, ownsWindow: b
   return `${[
     "[Desktop Entry]",
     "Type=Application",
-    "Name=OpenBot",
+    "Name=PurpleBot",
     "Comment=A local-first multi-agent desktop workspace.",
     `Exec=${quoteExecutable(appImagePath)} %U`,
     `Icon=${iconPath}`,

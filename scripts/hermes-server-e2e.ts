@@ -11,7 +11,7 @@ const OUT = join(REPO, ".openbot-build/hermes-server-e2e");
 const REPLY = "HERMES_SERVER_E2E_OK";
 const MODEL = "mock-model";
 const BUN_VERSION = "1.4.2";
-const PROVIDERS_LOG = "/data/.config/OpenBot/logs/providers/providers.log";
+const PROVIDERS_LOG = "/data/.config/PurpleBot/logs/providers/providers.log";
 
 if (process.argv.includes("--install")) {
   await install();
@@ -290,7 +290,7 @@ async function host(): Promise<void> {
     );
     await must("docker", ["build", "--quiet", "--tag", testImage, build]);
     version = (await must("docker", ["run", "--rm", "--entrypoint", "openbot", testImage, "version"])).trim();
-    check("image", true, `${image}, OpenBot ${version}`);
+    check("image", true, `${image}, PurpleBot ${version}`);
 
     const installed = await asOpenBot(
       `curl -fsSL https://bun.sh/install | bash -s bun-v${BUN_VERSION} >/dev/null 2>&1

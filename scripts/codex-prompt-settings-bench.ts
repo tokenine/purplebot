@@ -189,7 +189,7 @@ try {
       for (const skill of listed) assert.ok(!listsSkill(current.context, skill), `current still lists ${skill}.`);
       report.checks.plain = `request_plugin_install and ${listed.join(", ")} dropped; web__run kept`;
     } else {
-      assert.equal(settings["features.tool_suggest"], false, "OpenBot keeps the user's tool_suggest.");
+      assert.equal(settings["features.tool_suggest"], false, "PurpleBot keeps the user's tool_suggest.");
       assert.deepEqual(
         settings["skills.config"]?.[0],
         { name: "openai-docs", enabled: true },

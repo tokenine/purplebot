@@ -194,6 +194,7 @@ cmd_auth() {
   export DEPLOY_EMAIL_RELAY="${DEPLOY_EMAIL_RELAY:-}"
   export EMAIL_RELAY_PLACEMENT_HOST="${EMAIL_RELAY_PLACEMENT_HOST:-}"
   export EMAIL_RELAY_SERVICE="${EMAIL_RELAY_SERVICE:-}"
+  export SITE_ORIGIN="$API_DOMAIN"
   bun "$REPO_ROOT/scripts/deploy-auth-api.ts"
 
   log "checking the account service (a new domain can take a minute to resolve)"
@@ -267,7 +268,7 @@ cmd_server() {
   log "starting the PurpleBot server container"
   ssh $SSH_OPTIONS "$SSH_USER_AT_HOST" "cd '$SELFHOST_DIR' && docker compose -f selfhost/docker-compose.server.yaml --env-file selfhost/.env.server up -d"
   ssh $SSH_OPTIONS "$SSH_USER_AT_HOST" "docker ps --filter name=purplebot --format '{{.Names}} {{.Status}}'"
-  log "sign in with: ssh $SSH_USER_AT_HOST 'docker exec -it purplebot openbot login'"
+  log "sign in with: ssh $SSH_USER_AT_HOST 'docker exec -it purplebot purplebot login'"
 }
 
 case "${1:-}" in

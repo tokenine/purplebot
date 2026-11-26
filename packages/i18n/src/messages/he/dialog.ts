@@ -21,9 +21,9 @@ export const messages = {
   "dialog.saveExportSkill": "שמירת מיומנות הייצוא",
   "dialog.saveTransfer": "שמירת קובץ ההעברה",
   "dialog.chooseTransfer": "בחירת קובץ העברה",
-  "dialog.filter.transfer": "קובצי העברה של OpenBot",
+  "dialog.filter.transfer": "קובצי העברה של PurpleBot",
   "dialog.saveWorkflow": "שמירת קובץ תהליך העבודה",
-  "dialog.filter.workflow": "קובצי תהליכי עבודה של OpenBot",
+  "dialog.filter.workflow": "קובצי תהליכי עבודה של PurpleBot",
   "dialog.chooseExternalLinkApp": "בחירת דפדפן",
   "dialog.filter.applications": "אפליקציות",
 } as const satisfies PartialTranslation<typeof source>;

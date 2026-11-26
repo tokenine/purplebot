@@ -539,12 +539,12 @@ function atomFeed(incidents: readonly Incident[]): string {
   const lines = [
     '<?xml version="1.0" encoding="utf-8"?>',
     '<feed xmlns="http://www.w3.org/2005/Atom">',
-    "  <title>OpenBot status</title>",
+    "  <title>PurpleBot status</title>",
     `  <id>${SITE_URL}/</id>`,
     `  <link href="${SITE_URL}/"/>`,
     `  <link rel="self" href="${SITE_URL}/feed.xml"/>`,
     `  <updated>${updated}</updated>`,
-    "  <author><name>OpenBot</name></author>",
+    "  <author><name>PurpleBot</name></author>",
   ];
   for (const { incident, update } of entries) {
     const stage = update.stage.charAt(0).toUpperCase() + update.stage.slice(1);

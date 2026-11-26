@@ -149,8 +149,8 @@ nsis:
 linux:
   category: Development
   icon: build/icon-production.png
-  # The hosting scripts start /opt/OpenBot/app/openbot by this name.
-  executableName: openbot
+  # The hosting scripts start /opt/PurpleBot/app/purplebot by this name.
+  executableName: purplebot
   synopsis: A local-first multi-agent desktop workspace.
   extraResources:
     - from: build/linux/openbot.apparmor

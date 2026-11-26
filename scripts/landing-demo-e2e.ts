@@ -15,7 +15,7 @@ const browserExecutable = option("browser-executable");
 const givenOrigin = option("origin");
 
 const TIME_ZONE = "Europe/Warsaw";
-const IFRAME = 'iframe[title="Interactive OpenBot application preview"]';
+const IFRAME = 'iframe[title="Interactive PurpleBot application preview"]';
 const AGENTS = ["Atlas", "Scout", "Forge", "Pulse"] as const;
 const QUESTION = "Which channels should the launch use?";
 const AUTO_ANSWER = "Blog and changelog";

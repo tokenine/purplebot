@@ -82,7 +82,7 @@ export class GrokAgentClient extends AcpAgentClient {
             ]
           : profileGeneration
             ? ["--tools=", "--deny", "*", "--no-subagents", "--disable-web-search"]
-            : // Grok asks OpenBot before a tool that needs approval, and the agent's access decides.
+            : // Grok asks PurpleBot before a tool that needs approval, and the agent's access decides.
               ["--permission-mode", "default"]),
         "agent",
         "stdio",

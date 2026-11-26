@@ -74,7 +74,7 @@ async function ensureOffscreen(): Promise<void> {
     .createDocument({
       url: OFFSCREEN_PAGE,
       reasons: ["WEB_RTC"],
-      justification: "Keeps the connection to the user's OpenBot server for the posts that the user sends from X.",
+      justification: "Keeps the connection to the user's PurpleBot server for the posts that the user sends from X.",
     })
     .finally(() => {
       creating = null;

@@ -42,7 +42,7 @@ export const messages = {
   "mobile.browser.status.ended": "实时视图已结束。",
   "mobile.browser.status.offline": "服务器未连接。",
   "mobile.browser.status.noTab": "{name} 没有打开浏览器标签页。",
-  "mobile.browser.status.unsupported": "该服务器无法在手机上显示其浏览器。请更新该服务器上的 OpenBot。",
+  "mobile.browser.status.unsupported": "该服务器无法在手机上显示其浏览器。请更新该服务器上的 PurpleBot。",
   "mobile.browser.status.off": "该版本应用不提供浏览器功能。",
   "mobile.browser.notice.copied": "已复制到手机。",
   "mobile.browser.notice.nothingSelected": "页面上没有选中任何内容。",
@@ -94,5 +94,5 @@ export const messages = {
   "mobile.browser.httpSignIn.username": "用户名",
   "mobile.browser.httpSignIn.password": "密码",
   "mobile.browser.httpSignIn.submit": "登录",
-  "mobile.browser.httpSignIn.failed": "OpenBot 无法发送登录信息。",
+  "mobile.browser.httpSignIn.failed": "PurpleBot 无法发送登录信息。",
 } as const satisfies PartialTranslation<typeof source>;

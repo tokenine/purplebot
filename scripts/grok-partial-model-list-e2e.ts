@@ -154,7 +154,7 @@ try {
 
   const once = await restartGrok(Number.MAX_SAFE_INTEGER, true);
   const startMark = await waitFor("the first list of the start", async () => listMark());
-  await waitFor("OpenBot to read the list again", async () => {
+  await waitFor("PurpleBot to read the list again", async () => {
     const mark = listMark();
     return mark !== undefined && mark !== startMark;
   });

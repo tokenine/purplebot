@@ -185,9 +185,9 @@ async function selectSimulator(requested: string | null): Promise<string> {
     } catch {}
   }
   const [udid, ...extra] = withApp;
-  if (!udid) throw new Error("No booted simulator has OpenBot installed. Run without --pair-only to build it.");
+  if (!udid) throw new Error("No booted simulator has PurpleBot installed. Run without --pair-only to build it.");
   if (extra.length > 0) {
-    throw new Error(`Several booted simulators have OpenBot. Pass --simulator=<udid>: ${withApp.join(", ")}`);
+    throw new Error(`Several booted simulators have PurpleBot. Pass --simulator=<udid>: ${withApp.join(", ")}`);
   }
   return udid;
 }

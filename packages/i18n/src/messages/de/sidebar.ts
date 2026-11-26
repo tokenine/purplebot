@@ -162,7 +162,7 @@ export const messages = {
   "sidebar.delete.pending": "Wird gelöscht…",
   "sidebar.delete.title": "{name} löschen?",
   "sidebar.delete.agentDescription":
-    "Dies entfernt den Agenten und seine OpenBot-Unterhaltung aus der App. Seine Warteschlange, Erinnerungen, Routinen und sein Arbeitsbereich werden gelöscht. Der separat vom verbundenen CLI-Anbieter gespeicherte Verlauf wird nicht gelöscht.",
+    "Dies entfernt den Agenten und seine PurpleBot-Unterhaltung aus der App. Seine Warteschlange, Erinnerungen, Routinen und sein Arbeitsbereich werden gelöscht. Der separat vom verbundenen CLI-Anbieter gespeicherte Verlauf wird nicht gelöscht.",
   "sidebar.delete.channelDescription":
     "Dies stoppt den Kanal. Sein Verlauf bleibt unter „Gelöschte Kanäle“ nur zur Ansicht erhalten. Dort kannst du ihn wiederherstellen. Die zugehörigen Agenten bleiben erhalten.",
   "sidebar.delete.sectionDescription":
@@ -205,6 +205,6 @@ export const messages = {
   "sidebar.community.title": "Setz dich zu uns.",
   "sidebar.community.body": "In der KI-Zukunft ist ein Platz für dich frei. Komm in die Community auf Discord und X.",
   "sidebar.community.joinDiscord": "Zum Discord",
-  "sidebar.community.followX": "OpenBot auf X folgen",
+  "sidebar.community.followX": "PurpleBot auf X folgen",
   "sidebar.community.dismiss": "Community-Einladung ausblenden",
 } as const satisfies PartialTranslation<typeof source>;

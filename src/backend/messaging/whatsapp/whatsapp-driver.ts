@@ -60,7 +60,7 @@ const EDIT_WINDOW_MS = 14 * 60_000;
 const PLACE_NAME_TIMEOUT_MS = 5_000;
 const ACCOUNT_CHECK_TIMEOUT_MS = 5_000;
 const SAVED_HISTORY_NOTE =
-  "WhatsApp sends no older messages to OpenBot. OpenBot has only the messages that it received after the number was linked and the chat was allowed, up to 1 day old on arrival, for 90 days. In a chat with a contact, the messages that the user sent from their phone are not saved. Fewer messages here does not mean that the connection has a problem: tell the user what OpenBot can read.";
+  "WhatsApp sends no older messages to PurpleBot. PurpleBot has only the messages that it received after the number was linked and the chat was allowed, up to 1 day old on arrival, for 90 days. In a chat with a contact, the messages that the user sent from their phone are not saved. Fewer messages here does not mean that the connection has a problem: tell the user what PurpleBot can read.";
 
 const REACTIONS: Record<StatusReaction, string> = {
   received: "👀",
@@ -465,7 +465,7 @@ class WhatsAppAdapter implements MessagingAdapter {
       chatJid: target.platformChannelId,
       threadKey: this.#threadKey(target, postId),
       authorId: whatsAppIdentity(this.#handle)?.number ?? "",
-      authorName: "OpenBot",
+      authorName: "PurpleBot",
       text,
       sentAt: new Date().toISOString(),
     });

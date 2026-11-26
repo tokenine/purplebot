@@ -164,6 +164,7 @@ async function openPanelBodyHasTheTime() {
   const bodies: unknown[] = [];
   const work: Promise<void>[] = [];
   const analytics = createAccountAnalytics({
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: async (_input, init) => {

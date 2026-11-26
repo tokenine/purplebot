@@ -1,5 +1,5 @@
 [Unit]
-Description=Rotate the container logs of the OpenBot instances
+Description=Rotate the container logs of the PurpleBot instances
 
 [Service]
 Type=oneshot

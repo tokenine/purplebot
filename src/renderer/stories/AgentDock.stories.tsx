@@ -164,7 +164,7 @@ const APPROVAL: AgentApproval = {
   turnId: "chief-turn",
   kind: "command",
   command: "git push origin launch-plan",
-  cwd: "~/OpenBot/Chief",
+  cwd: "~/PurpleBot/Chief",
   reason: "Push the launch plan branch so Research can review it.",
   grantRoot: null,
   permissions: null,

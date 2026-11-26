@@ -43,7 +43,7 @@ export const messages = {
   "mobile.browser.status.offline": "サーバーに接続されていません。",
   "mobile.browser.status.noTab": "{name} には開いているブラウザータブがありません。",
   "mobile.browser.status.unsupported":
-    "このサーバーはスマートフォンにブラウザーを表示できません。このサーバーの OpenBot をアップデートしてください。",
+    "このサーバーはスマートフォンにブラウザーを表示できません。このサーバーの PurpleBot をアップデートしてください。",
   "mobile.browser.status.off": "このバージョンのアプリではブラウザーを使用できません。",
   "mobile.browser.notice.copied": "スマートフォンにコピーしました。",
   "mobile.browser.notice.nothingSelected": "ページで何も選択されていません。",
@@ -98,5 +98,5 @@ export const messages = {
   "mobile.browser.httpSignIn.username": "ユーザー名",
   "mobile.browser.httpSignIn.password": "パスワード",
   "mobile.browser.httpSignIn.submit": "サインイン",
-  "mobile.browser.httpSignIn.failed": "OpenBot はサインインを送信できませんでした。",
+  "mobile.browser.httpSignIn.failed": "PurpleBot はサインインを送信できませんでした。",
 } as const satisfies PartialTranslation<typeof source>;

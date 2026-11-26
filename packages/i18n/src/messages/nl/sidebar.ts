@@ -147,7 +147,7 @@ export const messages = {
   "sidebar.delete.pending": "Verwijderen…",
   "sidebar.delete.title": "{name} verwijderen?",
   "sidebar.delete.agentDescription":
-    "Hiermee verwijder je de agent en zijn OpenBot-gesprek uit de app. De wachtrij, herinneringen, routines en werkruimte worden verwijderd. Geschiedenis die de verbonden CLI-aanbieder apart bewaart, wordt niet verwijderd.",
+    "Hiermee verwijder je de agent en zijn PurpleBot-gesprek uit de app. De wachtrij, herinneringen, routines en werkruimte worden verwijderd. Geschiedenis die de verbonden CLI-aanbieder apart bewaart, wordt niet verwijderd.",
   "sidebar.delete.channelDescription":
     "Hiermee stop je het kanaal. De geschiedenis blijft alleen ter inzage in Verwijderde kanalen. Je kunt het daar herstellen. Agents die lid zijn blijven bestaan.",
   "sidebar.delete.sectionDescription":
@@ -189,6 +189,6 @@ export const messages = {
   "sidebar.community.title": "Schuif aan.",
   "sidebar.community.body": "Er is een plek voor jou in de toekomst van AI. Word lid van de community op Discord en X.",
   "sidebar.community.joinDiscord": "Word lid van de Discord",
-  "sidebar.community.followX": "Volg OpenBot op X",
+  "sidebar.community.followX": "Volg PurpleBot op X",
   "sidebar.community.dismiss": "Community-uitnodiging sluiten",
 } as const satisfies PartialTranslation<typeof source>;

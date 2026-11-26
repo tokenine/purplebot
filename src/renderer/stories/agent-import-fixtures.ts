@@ -76,18 +76,18 @@ export const AGENT_IMPORT_WARNINGS = [
 
 export const AGENT_IMPORT_SKILL = `---
 name: openbot-export
-description: Export the user's Grok Bot agents into one .zip file that OpenBot imports.
+description: Export the user's Grok Bot agents into one .zip file that PurpleBot imports.
 ---
 
-# Export agents for OpenBot
+# Export agents for PurpleBot
 `;
 
 export const HERMES_EXPORT_SKILL = `---
 name: openbot-export
-description: Export the user's Hermes Agent profiles into one .zip file that OpenBot imports.
+description: Export the user's Hermes Agent profiles into one .zip file that PurpleBot imports.
 ---
 
-# Export Hermes profiles for OpenBot
+# Export Hermes profiles for PurpleBot
 `;
 
 export const HERMES_IMPORT_PREVIEW: HermesImportPreview = {

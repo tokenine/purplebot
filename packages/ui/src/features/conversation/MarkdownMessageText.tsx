@@ -1145,9 +1145,9 @@ function sharedFileTarget(value: string): string | null {
   const path = value.trim();
   if (!path || /[\0\r\n]/u.test(path)) return null;
   const normalized = path.replaceAll("\\", "/");
-  return normalized.startsWith("~/OpenBot/Shared/") ||
-    normalized.startsWith("OpenBot/Shared/") ||
-    normalized.includes("/OpenBot/Shared/")
+  return normalized.startsWith("~/PurpleBot/Shared/") ||
+    normalized.startsWith("PurpleBot/Shared/") ||
+    normalized.includes("/PurpleBot/Shared/")
     ? path
     : null;
 }

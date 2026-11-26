@@ -26,7 +26,7 @@ export const messages = {
   "marketplace.description.agents": "Готовые агенты со своими инструкциями и навыками.",
   "marketplace.description.skills": "Инструкции, которые учат агента задаче или инструменту.",
 
-  "marketplace.plugins.missing": "Этого плагина нет в каталоге OpenBot.",
+  "marketplace.plugins.missing": "Этого плагина нет в каталоге PurpleBot.",
 
   "marketplace.agents.loadingDetail": "Загрузка сведений об агенте…",
   "marketplace.agents.skills": "Навыки",
@@ -42,16 +42,17 @@ export const messages = {
   "marketplace.agents.yours": "Ваши агенты",
   "marketplace.agents.all": "Все агенты",
   "marketplace.agents.missing": "Этого агента нет в каталоге.",
-  "marketplace.agents.trust.reviewed": "Создан другим пользователем OpenBot. OpenBot проверил его перед публикацией.",
+  "marketplace.agents.trust.reviewed":
+    "Создан другим пользователем PurpleBot. PurpleBot проверил его перед публикацией.",
   "marketplace.agents.trust.reviewedBeforeAdd":
-    "Создан другим пользователем OpenBot. OpenBot проверил его перед публикацией. После добавления он может действовать от вашего имени.",
-  "marketplace.agents.trust.pending": "Автор поделился им до проверки OpenBot.",
+    "Создан другим пользователем PurpleBot. PurpleBot проверил его перед публикацией. После добавления он может действовать от вашего имени.",
+  "marketplace.agents.trust.pending": "Автор поделился им до проверки PurpleBot.",
   "marketplace.agents.trust.pendingBeforeAdd":
-    "Автор поделился им до проверки OpenBot. После добавления он может действовать от вашего имени.",
+    "Автор поделился им до проверки PurpleBot. После добавления он может действовать от вашего имени.",
   "marketplace.agents.source.pending": "Ещё не проверен",
 
   "marketplace.skill.loading": "Загрузка навыка",
-  "marketplace.try.readFailed": "OpenBot не удалось прочитать навыки этого агента. Повторите попытку.",
+  "marketplace.try.readFailed": "PurpleBot не удалось прочитать навыки этого агента. Повторите попытку.",
   "marketplace.try.enable": "Чтобы попробовать этот навык, включите его в настройках агента.",
   "marketplace.try.repair": "Чтобы попробовать этот навык, восстановите его в настройках агента.",
   "marketplace.try.update": "Чтобы попробовать эту версию, обновите навык.",
@@ -128,8 +129,8 @@ export const messages = {
   "marketplace.xApp.title": "X",
   "marketplace.xApp.tagline": "Ответьте на пост в X с @openbot_, и агент сделает всю работу",
   "marketplace.xApp.description":
-    "X добавляет на этот сервер одного агента, который тоже называется X. В X ответьте на любой пост и упомяните @openbot_ с тем, что нужно: кратко пересказать, перевести, набросать ответ, сохранить заметку или поставить напоминание. Расширение OpenBot для Chrome читает пост и отправляет его агенту X, а X публикует ваш ответ как обычно. Ответ ждёт в чате X в OpenBot. Агент X никогда не публикует посты, не ставит лайки, не подписывается и не отправляет сообщения в X.",
-  "marketplace.xApp.developer": "OpenBot",
+    "X добавляет на этот сервер одного агента, который тоже называется X. В X ответьте на любой пост и упомяните @openbot_ с тем, что нужно: кратко пересказать, перевести, набросать ответ, сохранить заметку или поставить напоминание. Расширение PurpleBot для Chrome читает пост и отправляет его агенту X, а X публикует ваш ответ как обычно. Ответ ждёт в чате X в PurpleBot. Агент X никогда не публикует посты, не ставит лайки, не подписывается и не отправляет сообщения в X.",
+  "marketplace.xApp.developer": "PurpleBot",
   "marketplace.xApp.notSetUp": "Не настроено",
   "marketplace.xApp.setUp": "Настроить",
   "marketplace.xApp.howTitle": "Как это работает",
@@ -138,29 +139,29 @@ export const messages = {
     "Ответьте на любой пост и упомяните @openbot_ с тем, что нужно, например «@openbot_ перескажи кратко».",
   "marketplace.xApp.howSendTitle": "Расширение отправляет его.",
   "marketplace.xApp.howSend":
-    "OpenBot для Chrome читает пост и посты над ним и отправляет их агенту X. X публикует ваш ответ как обычно.",
+    "PurpleBot для Chrome читает пост и посты над ним и отправляет их агенту X. X публикует ваш ответ как обычно.",
   "marketplace.xApp.howWorkTitle": "X делает работу.",
-  "marketplace.xApp.howWork": "Ответ ждёт в чате X в OpenBot. В X ничего от OpenBot не появляется.",
+  "marketplace.xApp.howWork": "Ответ ждёт в чате X в PurpleBot. В X ничего от PurpleBot не появляется.",
   "marketplace.xApp.agentTitle": "Агент",
   "marketplace.xApp.agentDescription": "X отвечает на каждый пост, отправленный из X, в своём чате.",
   "marketplace.xApp.extensionTitle": "В Chrome",
-  "marketplace.xApp.extensionDescription": "X работает только через расширение OpenBot для Chrome.",
-  "marketplace.xApp.extensionName": "OpenBot для Chrome",
+  "marketplace.xApp.extensionDescription": "X работает только через расширение PurpleBot для Chrome.",
+  "marketplace.xApp.extensionName": "PurpleBot для Chrome",
   "marketplace.xApp.extensionNote":
     "Откройте его боковую панель и войдите на этот сервер. Оно читает пост, только когда вы отвечаете с @openbot_.",
   "marketplace.xApp.getExtension": "Получить расширение",
   "marketplace.xApp.stepExtension": "Расширение",
   "marketplace.xApp.stepAgent": "Агент",
   "marketplace.xApp.next": "Далее",
-  "marketplace.xApp.extensionStepTitle": "Добавьте OpenBot в Chrome",
+  "marketplace.xApp.extensionStepTitle": "Добавьте PurpleBot в Chrome",
   "marketplace.xApp.extensionStepDescription":
     "Расширение читает пост в X, когда вы отвечаете с @openbot_, и отправляет его на этот сервер.",
-  "marketplace.xApp.extensionStepStore": "Откройте страницу OpenBot в Chrome Web Store",
+  "marketplace.xApp.extensionStepStore": "Откройте страницу PurpleBot в Chrome Web Store",
   "marketplace.xApp.extensionStepAdd": "Нажмите «Установить»",
-  "marketplace.xApp.extensionStepSignIn": "Откройте боковую панель OpenBot и войдите на этот сервер",
+  "marketplace.xApp.extensionStepSignIn": "Откройте боковую панель PurpleBot и войдите на этот сервер",
   "marketplace.xApp.agentStepTitle": "Добавьте агента X",
   "marketplace.xApp.agentStepDescription":
-    "X получает посты, которые вы отправляете из X. OpenBot добавит его на этот сервер.",
+    "X получает посты, которые вы отправляете из X. PurpleBot добавит его на этот сервер.",
   "marketplace.xApp.agentDoesReceive": "Получает каждый пост, на который вы отвечаете в X с @openbot_",
   "marketplace.xApp.agentDoesWork":
     "Пересказывает, переводит, пишет черновики ответов, сохраняет заметки и ставит напоминания",
@@ -197,25 +198,25 @@ export const messages = {
   "marketplace.app.setup.account": "Войдите в аккаунт {name} в браузере.",
   "marketplace.app.setup.key": "Нужен ключ API из аккаунта {name}.",
   "marketplace.app.setup.keySaved": "{field} хранится на {host}.",
-  "marketplace.app.account.removeDescription": "OpenBot удалит данные входа этого аккаунта на {host}.",
+  "marketplace.app.account.removeDescription": "PurpleBot удалит данные входа этого аккаунта на {host}.",
   "marketplace.app.setup.desktop": "Работает в настольном приложении {name} по адресу {address}.",
   "marketplace.app.setup.desktopConnected": "Подключено к {address}.",
   "marketplace.app.setup.open": "Вход и ключ не нужны.",
   "marketplace.app.blocked.update":
-    "На {host} работает старая версия OpenBot, которая не может подключать приложения. Обновите OpenBot на {host} или попросите владельца обновить его.",
+    "На {host} работает старая версия PurpleBot, которая не может подключать приложения. Обновите PurpleBot на {host} или попросите владельца обновить его.",
   "marketplace.app.blocked.member":
-    "Подключать приложения на {host} может только владелец или администратор. Попросите одного из них подключить {name} или обновить OpenBot на {host}, чтобы участники могли подключать приложения.",
-  "marketplace.app.blocked.mac": "{name} работает только на Mac, где запущен OpenBot.",
+    "Подключать приложения на {host} может только владелец или администратор. Попросите одного из них подключить {name} или обновить PurpleBot на {host}, чтобы участники могли подключать приложения.",
+  "marketplace.app.blocked.mac": "{name} работает только на Mac, где запущен PurpleBot.",
   "marketplace.app.connectAgain": "Подключить снова",
   "marketplace.app.automation.askOnInstall": "Запросить доступ у macOS при установке",
   "marketplace.app.automation.title": "Доступ к приложениям Apple",
   "marketplace.app.automation.description":
     "macOS показывает один запрос для каждого приложения. Закрытое приложение ненадолго откроется, а затем закроется.",
   "marketplace.app.automation.request": "Запросить доступ",
-  "marketplace.app.automation.allowed": "Теперь OpenBot может управлять всеми приложениями Apple.",
+  "marketplace.app.automation.allowed": "Теперь PurpleBot может управлять всеми приложениями Apple.",
   "marketplace.app.automation.refused":
-    "macOS не дала доступ к приложениям: {apps}. Разрешите OpenBot в Системных настройках › Конфиденциальность и безопасность › Автоматизация.",
-  "marketplace.app.automation.failed": "OpenBot не смог запросить macOS о приложениях: {apps}. Попробуйте ещё раз.",
+    "macOS не дала доступ к приложениям: {apps}. Разрешите PurpleBot в Системных настройках › Конфиденциальность и безопасность › Автоматизация.",
+  "marketplace.app.automation.failed": "PurpleBot не смог запросить macOS о приложениях: {apps}. Попробуйте ещё раз.",
   "marketplace.app.automation.app.calendar": "Календарь",
   "marketplace.app.automation.app.contacts": "Контакты",
   "marketplace.app.automation.app.mail": "Почта",
@@ -277,7 +278,7 @@ export const messages = {
     "Сохраните в Cobrain заметку о том, что мы сделали сегодня и что осталось.",
   "marketplace.plugin.honcho.tagline": "Ваша память во всех ИИ-инструментах",
   "marketplace.plugin.honcho.description":
-    "Honcho от Plastic Labs даёт агентам долговременную память о вас, которую могут разделять другие подключённые ИИ-инструменты. Агенты сохраняют то, что узнали, а Honcho делает из этого выводы и строит модель ваших предпочтений, целей и способов работы. Агенты задают ему вопросы перед началом работы. У агентов OpenBot есть и своя память; Honcho — это память, которая следует за вами в другие инструменты. Сообщения, которые сохраняют агенты, попадают в ваш аккаунт Honcho.",
+    "Honcho от Plastic Labs даёт агентам долговременную память о вас, которую могут разделять другие подключённые ИИ-инструменты. Агенты сохраняют то, что узнали, а Honcho делает из этого выводы и строит модель ваших предпочтений, целей и способов работы. Агенты задают ему вопросы перед началом работы. У агентов PurpleBot есть и своя память; Honcho — это память, которая следует за вами в другие инструменты. Сообщения, которые сохраняют агенты, попадают в ваш аккаунт Honcho.",
   "marketplace.plugin.honcho.app":
     "Сохранение и запросы к долговременной памяти в ваших рабочих пространствах Honcho через один MCP-сервер.",
   "marketplace.plugin.honcho.prompt.recall":
@@ -287,7 +288,7 @@ export const messages = {
   "marketplace.plugin.honcho.hint.apiKey": "Создайте ключ на app.honcho.dev.",
   "marketplace.plugin.hindsight.tagline": "Память, которая учится со временем",
   "marketplace.plugin.hindsight.description":
-    "Hindsight от Vectorize даёт агентам долговременную память в Hindsight Cloud. Агенты запоминают факты и события, находят их по смыслу, времени и сущности и размышляют над ними, чтобы строить ментальные модели. Воспоминания хранятся в банках, и агенты могут создать банк для каждого проекта или человека. У агентов OpenBot есть и своя память; Hindsight — это память, которую могут разделять другие подключённые ИИ-инструменты. То, что запоминают агенты, попадает в ваш аккаунт Hindsight Cloud.",
+    "Hindsight от Vectorize даёт агентам долговременную память в Hindsight Cloud. Агенты запоминают факты и события, находят их по смыслу, времени и сущности и размышляют над ними, чтобы строить ментальные модели. Воспоминания хранятся в банках, и агенты могут создать банк для каждого проекта или человека. У агентов PurpleBot есть и своя память; Hindsight — это память, которую могут разделять другие подключённые ИИ-инструменты. То, что запоминают агенты, попадает в ваш аккаунт Hindsight Cloud.",
   "marketplace.plugin.hindsight.app":
     "Запоминание, поиск и осмысление воспоминаний в ваших банках Hindsight Cloud через один MCP-сервер.",
   "marketplace.plugin.hindsight.prompt.recall":
@@ -307,7 +308,7 @@ export const messages = {
   "marketplace.plugin.figma.prompt.assets": "Экспортируйте маркетинговые иконки в 2x для сборки приложения.",
   "marketplace.plugin.paper.tagline": "Холст для дизайна на HTML и CSS",
   "marketplace.plugin.paper.description":
-    "Paper позволяет агентам читать и изменять файл дизайна, открытый в Paper Desktop: изучать артборды, выделение, вычисленные стили, JSX и токены, а также создавать и менять фреймы, текст и стили. Установите Paper Desktop, запустите его хотя бы раз и откройте файл перед началом работы. OpenBot запускает Paper CLI, который устанавливает Paper Desktop. Ключ для Paper не нужен. Инструменты записи меняют открытый файл, поэтому проверяйте каждое изменение перед тем, как его одобрить.",
+    "Paper позволяет агентам читать и изменять файл дизайна, открытый в Paper Desktop: изучать артборды, выделение, вычисленные стили, JSX и токены, а также создавать и менять фреймы, текст и стили. Установите Paper Desktop, запустите его хотя бы раз и откройте файл перед началом работы. PurpleBot запускает Paper CLI, который устанавливает Paper Desktop. Ключ для Paper не нужен. Инструменты записи меняют открытый файл, поэтому проверяйте каждое изменение перед тем, как его одобрить.",
   "marketplace.plugin.paper.app":
     "Читает и изменяет открытый файл Paper Desktop через локальный сервер MCP, к которому подключается Paper CLI. Нужен Paper Desktop с открытым файлом.",
   "marketplace.plugin.paper.prompt.implement":
@@ -346,7 +347,7 @@ export const messages = {
     "Кратко опишите последние десять разговоров моего голосового агента поддержки.",
   "marketplace.plugin.appleApps.tagline": "Почта, Календарь и другое на вашем Mac",
   "marketplace.plugin.appleApps.description":
-    "Apple apps позволяет агентам работать с приложениями Почта, Календарь, Контакты, Напоминания, Заметки, Сообщения и Safari на этом Mac. Работает только в macOS. OpenBot запускает mcp-icloud — сервер сообщества, который не создан Apple или OpenBot. Сервер управляет приложениями через AppleScript на этом компьютере, и ему не нужны аккаунт или ключ. При установке OpenBot может сразу запросить у macOS доступ ко всем этим приложениям, по одному запросу на приложение. Иначе macOS спросит, когда агент впервые использует приложение. Чтобы изменить это позже, откройте Системные настройки › Конфиденциальность и безопасность › Автоматизация. Агенты могут отправлять письма и iMessage, а также изменять или удалять события, контакты и напоминания, поэтому проверяйте каждую запись перед подтверждением. То, что читают инструменты, например текст писем, передаётся провайдеру модели агента.",
+    "Apple apps позволяет агентам работать с приложениями Почта, Календарь, Контакты, Напоминания, Заметки, Сообщения и Safari на этом Mac. Работает только в macOS. PurpleBot запускает mcp-icloud — сервер сообщества, который не создан Apple или PurpleBot. Сервер управляет приложениями через AppleScript на этом компьютере, и ему не нужны аккаунт или ключ. При установке PurpleBot может сразу запросить у macOS доступ ко всем этим приложениям, по одному запросу на приложение. Иначе macOS спросит, когда агент впервые использует приложение. Чтобы изменить это позже, откройте Системные настройки › Конфиденциальность и безопасность › Автоматизация. Агенты могут отправлять письма и iMessage, а также изменять или удалять события, контакты и напоминания, поэтому проверяйте каждую запись перед подтверждением. То, что читают инструменты, например текст писем, передаётся провайдеру модели агента.",
   "marketplace.plugin.appleApps.app":
     "Почта, Календарь, Контакты, Напоминания, Заметки, Сообщения и Safari через локальный сервер mcp-icloud. Нужны macOS и доступ в разделе «Автоматизация».",
   "marketplace.plugin.appleApps.prompt.unread": "Кратко перескажите мои непрочитанные письма за сегодня в Apple Почте.",
@@ -632,8 +633,8 @@ export const messages = {
   "marketplace.skills.source.all": "Все",
   "marketplace.skills.source.verified": "Проверенные",
   "marketplace.skills.source.public": "Публичные",
-  "marketplace.skills.source.verifiedLong": "Проверен OpenBot",
-  "marketplace.skills.source.publicLong": "Одобрен OpenBot",
+  "marketplace.skills.source.verifiedLong": "Проверен PurpleBot",
+  "marketplace.skills.source.publicLong": "Одобрен PurpleBot",
   "marketplace.skills.sortLabel": "Сортировка",
   "marketplace.skills.sortName": "Сортировка: {name}",
   "marketplace.skills.sort.installs": "Популярные",
@@ -661,7 +662,8 @@ export const messages = {
   "marketplace.skills.origin.github": "Из GitHub · {repository}",
   "marketplace.skills.github.search": "Поиск или ссылка на GitHub",
   "marketplace.skills.github.reading": "Поиск навыков в репозитории",
-  "marketplace.skills.github.trust": "OpenBot не проверял навыки из GitHub. Прочитайте навык, прежде чем добавить его.",
+  "marketplace.skills.github.trust":
+    "PurpleBot не проверял навыки из GitHub. Прочитайте навык, прежде чем добавить его.",
   "marketplace.skills.github.source": "GitHub · {repository}, коммит {commit}",
   "marketplace.skills.github.open": "GitHub",
   "marketplace.skills.github.openName": "Открыть {repository} на GitHub",

@@ -4,9 +4,9 @@ import type { messages as source } from "../en/vault";
 export const messages = {
   "vault.items.title": "العناصر المحفوظة",
   "vault.items.description":
-    "يمكن لكل وكيل على هذا الخادم استخدام هذه العناصر. يكتب OpenBot كلمات المرور وأرقام البطاقات ورموز الأمان في الصفحة، لذا لا يراها الوكلاء أبدًا. يقرأ الوكلاء مفاتيح API من ملف، لا من الدردشة.",
+    "يمكن لكل وكيل على هذا الخادم استخدام هذه العناصر. يكتب PurpleBot كلمات المرور وأرقام البطاقات ورموز الأمان في الصفحة، لذا لا يراها الوكلاء أبدًا. يقرأ الوكلاء مفاتيح API من ملف، لا من الدردشة.",
   "vault.items.scopedDescription":
-    "كل عنصر مخصص للوكلاء الذين تختارهم. يكتب OpenBot كلمات المرور وأرقام البطاقات ورموز الأمان في الصفحة، لذا لا يراها الوكلاء أبدًا. يقرأ الوكلاء مفاتيح API من ملف، لا من الدردشة. يعمل كل الوكلاء كمستخدم النظام نفسه، لذا يمكن للوكيل أيضًا قراءة ملف مفتاح API مخصص لوكلاء آخرين.",
+    "كل عنصر مخصص للوكلاء الذين تختارهم. يكتب PurpleBot كلمات المرور وأرقام البطاقات ورموز الأمان في الصفحة، لذا لا يراها الوكلاء أبدًا. يقرأ الوكلاء مفاتيح API من ملف، لا من الدردشة. يعمل كل الوكلاء كمستخدم النظام نفسه، لذا يمكن للوكيل أيضًا قراءة ملف مفتاح API مخصص لوكلاء آخرين.",
   "vault.agents.label": "الوكلاء",
   "vault.agents.all": "كل الوكلاء",
   "vault.agents.some": "{chosen} من {total}",
@@ -101,15 +101,15 @@ export const messages = {
   "vault.importMenu": "استيراد من CSV",
   "vault.importTitle": "استيراد من ملف CSV",
   "vault.importDescription":
-    "استورد بيانات الدخول من ملف CSV يصدّره 1Password أو Bitwarden أو Chrome أو Edge أو Firefox أو Safari أو Apple Passwords أو LastPass أو Proton Pass. يقرأ OpenBot الملف على هذا الحاسوب ولا يرفعه.",
+    "استورد بيانات الدخول من ملف CSV يصدّره 1Password أو Bitwarden أو Chrome أو Edge أو Firefox أو Safari أو Apple Passwords أو LastPass أو Proton Pass. يقرأ PurpleBot الملف على هذا الحاسوب ولا يرفعه.",
   "vault.importChoose": "اختيار ملف CSV",
   "vault.importDone": "المستورد: {imported}. المتخطى: {skipped}.",
   "vault.unavailableTitle": "لا يمكن لهذا الحاسوب حفظ الأسرار",
   "vault.unavailableDescription":
-    "يشفّر OpenBot الخزنة باستخدام مخزن الأسرار في النظام. أعدّ سلسلة مفاتيح، ثم افتح هذه الصفحة مرة أخرى.",
-  "vault.unreadableTitle": "لا يمكن لـ OpenBot قراءة الخزنة",
+    "يشفّر PurpleBot الخزنة باستخدام مخزن الأسرار في النظام. أعدّ سلسلة مفاتيح، ثم افتح هذه الصفحة مرة أخرى.",
+  "vault.unreadableTitle": "لا يمكن لـ PurpleBot قراءة الخزنة",
   "vault.unreadableDescription":
-    "ملف الخزنة موجود على هذا الحاسوب، لكن لا يمكن لـ OpenBot فك تشفيره. قد يحدث ذلك عند تغيّر سلسلة مفاتيح النظام. أعد تعيين الخزنة للبدء من جديد دون عناصر.",
+    "ملف الخزنة موجود على هذا الحاسوب، لكن لا يمكن لـ PurpleBot فك تشفيره. قد يحدث ذلك عند تغيّر سلسلة مفاتيح النظام. أعد تعيين الخزنة للبدء من جديد دون عناصر.",
   "vault.link.group": "حسابات الدفع",
   "vault.link.name": "Link",
   "vault.link.connect": "ربط",
@@ -123,7 +123,7 @@ export const messages = {
     "لن يتمكن الوكلاء من طلب الدفع عبر Link بعد الآن. يبقى حساب Link وبطاقاته كما هي.",
   "vault.reset": "إعادة تعيين الخزنة",
   "vault.resetTitle": "إعادة تعيين الخزنة؟",
-  "vault.resetDescription": "يحذف OpenBot ملف الخزنة وكل العناصر فيه. لا يمكنك التراجع عن ذلك.",
+  "vault.resetDescription": "يحذف PurpleBot ملف الخزنة وكل العناصر فيه. لا يمكنك التراجع عن ذلك.",
   "vault.request.private": "يُحفظ في خزنتك. لا يراه {agent} أبدًا.",
   "vault.request.privateUnnamed": "يُحفظ في خزنتك. لا يراه الوكيل أبدًا.",
   "vault.request.addLogin": "إضافة بيانات دخول",
@@ -147,7 +147,7 @@ export const messages = {
   },
   "vault.twoStep.setupTitle": "إعداد رمز التحقق بخطوتين",
   "vault.twoStep.setupIntro":
-    "على {site}، فعّل التحقق بخطوتين باستخدام تطبيق مصادقة. عندما يعرض الموقع رمز QR، أعطِ OpenBot مفتاحه.",
+    "على {site}، فعّل التحقق بخطوتين باستخدام تطبيق مصادقة. عندما يعرض الموقع رمز QR، أعطِ PurpleBot مفتاحه.",
   "vault.twoStep.keyLabel": "مفتاح الإعداد أو رابط otpauth://",
   "vault.twoStep.keyHint": "تعرضه معظم المواقع أسفل رمز QR، باسم ”لا يمكنك المسح؟“ أو ”أدخل المفتاح يدويًا“.",
   "vault.twoStep.keyInvalid": "هذا ليس مفتاح تحقق بخطوتين.",
@@ -168,7 +168,7 @@ export const messages = {
   "vault.near.name": "محفظة العملات المشفرة",
   "vault.near.open": "فتح محفظة العملات المشفرة",
   "vault.near.connect": "ربط",
-  "vault.near.signedOut": "سجّل الدخول إلى OpenBot لإعداد محفظة العملات المشفرة.",
+  "vault.near.signedOut": "سجّل الدخول إلى PurpleBot لإعداد محفظة العملات المشفرة.",
   "vault.near.paused": "متوقفة مؤقتًا",
   "vault.near.failed": "تعذّر تغيير محفظة العملات المشفرة.",
   "vault.near.waiting": "في انتظار توقيعك في المتصفح…",
@@ -176,7 +176,7 @@ export const messages = {
   "vault.near.openAgain": "فتح مرة أخرى",
   "vault.near.signature.label": "التوقيعات في المتصفح",
   "vault.near.signature.register": "أنشئ مفتاح المرور",
-  "vault.near.signature.registerDetail": "على أجهزتك فقط. لا يحتفظ به OpenBot أبدًا.",
+  "vault.near.signature.registerDetail": "على أجهزتك فقط. لا يحتفظ به PurpleBot أبدًا.",
   "vault.near.signature.create": "وافق على المحفظة الجديدة",
   "vault.near.signature.createDetail": "يمكن لكل الوكلاء دفع ما يصل إلى {amount} يوميًا. يمكنك تغيير ذلك لاحقًا.",
   "vault.near.signature.count": "التوقيع {step} من {count} في متصفحك",
@@ -199,7 +199,7 @@ export const messages = {
   "vault.near.backup.unknownDetail":
     "لم يخبرنا متصفحك إن كان لمفتاح المرور هذا نسخة احتياطية. تأكد من أن مدير مفاتيح المرور يزامنه.",
   "vault.near.backup.notChecked": "لم يُتحقق من النسخ الاحتياطي",
-  "vault.near.backup.noCopy": "لا يحتفظ OpenBot بنسخة من مفتاح المرور. أنت وحدك يمكنك التوقيع لهذه المحفظة.",
+  "vault.near.backup.noCopy": "لا يحتفظ PurpleBot بنسخة من مفتاح المرور. أنت وحدك يمكنك التوقيع لهذه المحفظة.",
   "vault.near.backup.checked": "تم التحقق في {date}",
   "vault.near.backup.check": "فحص النسخة",
   "vault.near.backup.checkAgain": "فحص مرة أخرى",
@@ -286,7 +286,7 @@ export const messages = {
   "vault.near.disconnect": "فصل",
   "vault.near.disconnectTitle": "فصل محفظة العملات المشفرة؟",
   "vault.near.disconnectDescription":
-    "لن يتمكن الوكلاء من الدفع من هذه المحفظة بعد الآن، وسينساها OpenBot. تبقى الأموال في المحفظة على NEAR Intents.",
+    "لن يتمكن الوكلاء من الدفع من هذه المحفظة بعد الآن، وسينساها PurpleBot. تبقى الأموال في المحفظة على NEAR Intents.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "تجاوز الحد اليومي",
   "vault.near.approve": "موافقة",

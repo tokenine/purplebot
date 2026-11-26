@@ -3,7 +3,7 @@ import type { messages as source } from "../../en/error/backend";
 
 export const messages = {
   "error.backend.eventsUnavailable": "このホストではイベントを利用できません。",
-  "error.backend.databaseIntegrity": "OpenBot のデータベースが整合性チェックに失敗しました。",
+  "error.backend.databaseIntegrity": "PurpleBot のデータベースが整合性チェックに失敗しました。",
   "error.backend.creditsHoldAdminOnly":
     "エージェントのクレジット使用を許可できるのは、このサーバーのオーナーまたは管理者のみです。",
   "error.backend.creditsHoldShort": "クレジットがまだ足りません。",
@@ -18,8 +18,8 @@ export const messages = {
   "error.backend.browserViewLimit": "このホストで開いているブラウザービューが多すぎます。",
   "error.backend.browserViewEnded": "このページのライブビューは終了しました。",
   "error.backend.browserViewFailed": "このページのライブビューは失敗しました。",
-  "error.backend.windowTemporarilyUnavailable": "OpenBot ウィンドウは一時的に使用できません。",
-  "error.backend.windowUnavailable": "OpenBot ウィンドウを使用できません。",
+  "error.backend.windowTemporarilyUnavailable": "PurpleBot ウィンドウは一時的に使用できません。",
+  "error.backend.windowUnavailable": "PurpleBot ウィンドウを使用できません。",
   "error.backend.sunshineApiHttp": "Sunshine API が HTTP {status} で失敗しました。",
   "error.backend.sunshinePortsUnavailable":
     "リモートデスクトップ用に空いている Sunshine のポート群を確保できませんでした。",
@@ -36,7 +36,7 @@ export const messages = {
   "error.backend.moonlightRejectedPairing": "Moonlight が Sunshine とのペアリングを拒否しました。",
   "error.backend.moonlightNoPin": "Moonlight がペアリング PIN を返しませんでした。",
   "error.backend.moonlightPairingIncomplete": "Moonlight のペアリングが完了しませんでした。",
-  "error.backend.moonlightWebNotEmbedded": "Moonlight Web は OpenBot 組み込みビルドではありません。",
+  "error.backend.moonlightWebNotEmbedded": "Moonlight Web は PurpleBot 組み込みビルドではありません。",
   "error.backend.moonlightEmptyResponse": "Moonlight が空の応答を返しました。",
   "error.backend.remoteDesktopTimeout": "リモートデスクトップの要求がタイムアウトしました。",
   "error.backend.moonlightApiHttp": "Moonlight API が HTTP {status} で失敗しました。",
@@ -57,10 +57,10 @@ export const messages = {
   "error.backend.browserUserControlUnsupported":
     "このリモートホストは、ブラウザーのタブの操作の引き継ぎに対応していません。",
   "error.backend.browserSignInUnsupported": "このリモートホストはこのコンピューターからのサインインを受け取れません。",
-  "error.backend.browserSignInOpenFailed": "OpenBot はサインインウィンドウを開けませんでした。",
+  "error.backend.browserSignInOpenFailed": "PurpleBot はサインインウィンドウを開けませんでした。",
   "error.backend.browserSignInLoadFailed":
-    "OpenBot はサインインウィンドウでページを読み込めませんでした。インターネット接続を確認してから、サインインウィンドウをもう一度開いてください。",
-  "error.backend.browserSignInReadFailed": "OpenBot はウィンドウからサインインを読み取れませんでした。",
+    "PurpleBot はサインインウィンドウでページを読み込めませんでした。インターネット接続を確認してから、サインインウィンドウをもう一度開いてください。",
+  "error.backend.browserSignInReadFailed": "PurpleBot はウィンドウからサインインを読み取れませんでした。",
   "error.backend.browserStopUnsupported": "このリモートホストはページの読み込みを停止できません。",
   "error.backend.browserLocationFailed": "ページの位置情報を設定できませんでした。",
   "error.backend.browserPermissionsUnsupported": "このリモートホストは位置情報のリクエストに応答できません。",
@@ -74,23 +74,23 @@ export const messages = {
   "error.backend.sunshineNotReadyReason": "Sunshine の準備ができませんでした。{reason}",
   "error.backend.channelLeadModelUnavailable": "チャンネルリードのモデルを使用できません。",
   "error.backend.contextCompactionIneffective":
-    "圧縮してもこのチャットは小さくなりません。2回圧縮しても、モデルのコンテキストウィンドウの{percent}%を使っているため、OpenBotは自動圧縮を止めます。ウィンドウの大部分はツールと指示が使っています。このエージェントに不要なMCPサーバーやコンピューター操作をオフにするか、より大きなウィンドウのモデルを選んでください。その後、新しいチャットを開始してください。",
+    "圧縮してもこのチャットは小さくなりません。2回圧縮しても、モデルのコンテキストウィンドウの{percent}%を使っているため、PurpleBotは自動圧縮を止めます。ウィンドウの大部分はツールと指示が使っています。このエージェントに不要なMCPサーバーやコンピューター操作をオフにするか、より大きなウィンドウのモデルを選んでください。その後、新しいチャットを開始してください。",
   "error.backend.contextCompactionStopped":
-    "このチャットの圧縮が2回続けて失敗したため、OpenBot は自動圧縮を停止します。試行のたびにチャット全体がモデルに送信され、プランの上限を消費します。もう一度試すには「今すぐ圧縮」を選択するか、新しいチャットを開始してください。",
+    "このチャットの圧縮が2回続けて失敗したため、PurpleBot は自動圧縮を停止します。試行のたびにチャット全体がモデルに送信され、プランの上限を消費します。もう一度試すには「今すぐ圧縮」を選択するか、新しいチャットを開始してください。",
   "error.backend.contextCompactionRetrying":
-    "プロバイダーはこのチャットを圧縮できず、再試行しています。圧縮が終わるまで、このチャットの新しいメッセージは待機します。すぐに終わらない場合、OpenBot は圧縮を停止してメッセージを送信します。",
+    "プロバイダーはこのチャットを圧縮できず、再試行しています。圧縮が終わるまで、このチャットの新しいメッセージは待機します。すぐに終わらない場合、PurpleBot は圧縮を停止してメッセージを送信します。",
   "error.backend.contextCompactionFailed":
     "このチャットの圧縮に失敗しました。チャットは変更されていません。待機中のメッセージは今エージェントに送られます。",
   "error.backend.contextCompactionTimedOut":
-    "このチャットの圧縮に時間がかかりすぎたため、OpenBot が停止しました。チャットは変更されていません。待機中のメッセージは今エージェントに送られます。",
+    "このチャットの圧縮に時間がかかりすぎたため、PurpleBot が停止しました。チャットは変更されていません。待機中のメッセージは今エージェントに送られます。",
   "error.backend.providerModelAtCapacity":
     "モデルが混雑しています。プロバイダーは数分後に再試行します。今すぐ続けるには、ターンを停止して別のモデルを選んでください。",
   "error.backend.providerRetrying":
     "プロバイダーでこのリクエストが{attempts}回失敗し、再試行しています。エージェントが続かない場合は、ターンを停止してください。",
   "error.backend.providerRetryingLargeContext":
-    "プロバイダーでこのリクエストが{attempts}回失敗し、再試行しています。このチャットはモデルのコンテキストウィンドウの{percent}%を使っています。エージェントが続かない場合は、ターンを停止してください。OpenBotは次のメッセージの前にチャットを圧縮します。",
+    "プロバイダーでこのリクエストが{attempts}回失敗し、再試行しています。このチャットはモデルのコンテキストウィンドウの{percent}%を使っています。エージェントが続かない場合は、ターンを停止してください。PurpleBotは次のメッセージの前にチャットを圧縮します。",
   "error.backend.sharedDataUnavailable": "共有データを使用できません。",
-  "error.backend.shuttingDown": "OpenBot を終了しています。",
+  "error.backend.shuttingDown": "PurpleBot を終了しています。",
   "error.backend.channelUnconfirmedStart":
     "チャンネルに開始が未確認の割り当てがあります。削除する前に結果を確認してください。",
   "error.backend.channelNotFound": "チャンネルが見つかりません。",
@@ -164,7 +164,7 @@ export const messages = {
     "実行はエラーで停止しましたが、理由は届いていません。実行を開いて、エージェントが何をしたかを確認してください。",
   "error.backend.turnNotStarted": "プロバイダーはこのターンを開始しませんでした。",
   "error.backend.turnStartUnconfirmed":
-    "{provider} はこのメッセージを開始したことを時間内に確認しませんでした。作業が二重に実行されないように、OpenBot はメッセージを再送信しません。OpenBot はエージェントが開始するまで最大 5 分待ちます。",
+    "{provider} はこのメッセージを開始したことを時間内に確認しませんでした。作業が二重に実行されないように、PurpleBot はメッセージを再送信しません。PurpleBot はエージェントが開始するまで最大 5 分待ちます。",
   "error.backend.turnStartAbandoned":
     "エージェントは 5 分以内にこのメッセージを開始しませんでした。メッセージをもう一度送信してください。",
   "error.backend.routineResultConnectionOff":
@@ -204,7 +204,7 @@ export const messages = {
   "error.backend.fileGone": "ファイルが存在しないか、すでに削除されています。",
   "error.backend.managedAttachmentChanged": "管理対象の添付ファイルが見つからないか、変更されています: {name}",
   "error.backend.mailboxStateCorrupt":
-    "メールボックスの状態が破損しているか、新しいバージョンの OpenBot のものです。上書きしません。",
+    "メールボックスの状態が破損しているか、新しいバージョンの PurpleBot のものです。上書きしません。",
   "error.backend.recipientDeleting": "受信者を削除中です。削除が終わってから再試行してください。",
   "error.backend.recipientHidden": "このエージェントは非表示です。メッセージを送るには元に戻してください。",
   "error.backend.agentIdUnknown":
@@ -219,7 +219,7 @@ export const messages = {
   "error.backend.videoGenerationNoVideo": "動画の生成で動画が返されませんでした。",
   "error.backend.videoGenerationInterrupted": "動画の生成が中断されました。",
   "error.backend.attachmentNotRegularFile": "添付できるのは通常のファイルだけです: {name}",
-  "error.backend.attachmentCopyFailed": "OpenBot は {name} をコピーできませんでした。",
+  "error.backend.attachmentCopyFailed": "PurpleBot は {name} をコピーできませんでした。",
   "error.backend.routineNameRequired": "ルーティン名が必要です。",
   "error.backend.routineNameTooLong": "ルーティン名が長すぎます。",
   "error.backend.routineInstructionRequired": "ルーティンの指示が必要です。",
@@ -243,7 +243,7 @@ export const messages = {
   "error.backend.routineRunStarting":
     "このルーティンの実行はまだ開始中です。ターンが始まってからもう一度お試しください。",
   "error.backend.routineRunNoSession":
-    "プロバイダーのセッションを使用できないため、OpenBot は実行中のルーティンを中断できません。",
+    "プロバイダーのセッションを使用できないため、PurpleBot は実行中のルーティンを中断できません。",
   "error.backend.interruptSelf": "エージェントは自分自身を中断できません。",
   "error.backend.interruptOtherWork":
     "このエージェントは、あなたのメッセージで開始されていないタスクを実行中です。そのタスクを停止できるのは、ユーザーまたはそのタスクの送信者だけです。",
@@ -252,7 +252,7 @@ export const messages = {
   "error.backend.interruptStarting":
     "このエージェントはまだターンを開始中です。ターンが始まってからもう一度お試しください。",
   "error.backend.interruptNoSession":
-    "プロバイダーのセッションを使用できないため、OpenBot はこのエージェントを中断できません。",
+    "プロバイダーのセッションを使用できないため、PurpleBot はこのエージェントを中断できません。",
   "error.backend.memoryTextRequired": "メモリーのテキストが必要です。",
   "error.backend.memoryTextTooLong": "メモリーのテキストが長すぎます。",
   "error.backend.mcpServerGone": "この MCP サーバーはもう存在しません。",
@@ -285,9 +285,9 @@ export const messages = {
   "error.backend.messagePinLimit":
     "このチャットにはピン留めしたメッセージが50件あります。別のメッセージをピン留めする前に、1件解除してください。",
   "error.backend.routineFlowHandoffFailed": "ルーティンはこのエージェントに作業を渡せませんでした。",
-  "error.backend.mcpServerLimit": "OpenBot に保存できる MCP サーバーは {limit} 個までです。",
+  "error.backend.mcpServerLimit": "PurpleBot に保存できる MCP サーバーは {limit} 個までです。",
   "error.backend.mcpServerNameTaken": "{name} という名前の MCP サーバーはすでに存在します。",
-  "error.backend.mcpServerInvalid": "OpenBot はこの MCP サーバーの設定を保存できません。",
+  "error.backend.mcpServerInvalid": "PurpleBot はこの MCP サーバーの設定を保存できません。",
   "error.backend.mcpHeaderNameInvalid":
     "ヘッダー名にはスペースや : ( ) / などの記号を使えません。Authorization のような名前を使い、キーまたはトークンは「値」に入力してください。",
   "error.backend.mcpServerNoAnswer": "サーバーは {seconds} 秒以内に応答しませんでした。",
@@ -297,18 +297,18 @@ export const messages = {
   "error.backend.mcpSignInAccountRefused":
     "サーバーは、サインインに使ったアカウントを拒否しました。このアカウントがサービスを使えるか確認してください。別のアカウントを使うには、サインアウトしてからもう一度サインインしてください。",
   "error.backend.mcpSignInClientRefused":
-    "サインインの完了時に、サインインサーバーが OpenBot を受け付けませんでした。もう一度サインインしてください。OpenBot はサーバーに再登録します。",
+    "サインインの完了時に、サインインサーバーが PurpleBot を受け付けませんでした。もう一度サインインしてください。PurpleBot はサーバーに再登録します。",
   "error.backend.mcpSignInAppRefused":
     "サインインサーバーがこのサーバーのサインインアプリを受け付けませんでした。サインインアプリのクライアント ID とクライアントシークレットを確認してから、もう一度サインインしてください。",
   "error.backend.mcpCommandNotFound": "コマンドが見つかりません: {command}",
   "error.backend.mcpProviderLimit":
     "このエージェントが使える MCP サーバーの数には上限があります。このサーバーを使うには、エージェントに不要な MCP サーバーをオフにしてください。",
   "error.backend.mcpRegistrationRefused":
-    "サインインサーバーはまだ OpenBot をアプリとして受け付けていません。原因はお使いのアカウントではありません。ローカル MCP サーバーなど、別の方法で接続してください。",
+    "サインインサーバーはまだ PurpleBot をアプリとして受け付けていません。原因はお使いのアカウントではありません。ローカル MCP サーバーなど、別の方法で接続してください。",
   "error.backend.mcpRegistrationUnavailable":
-    "サインインサーバーは OpenBot をアプリとして登録できません。原因はお使いのアカウントではありません。接続するには、マーケットプレイス、アプリでこのサーバーを保存してから、サインインアプリを追加してください。",
+    "サインインサーバーは PurpleBot をアプリとして登録できません。原因はお使いのアカウントではありません。接続するには、マーケットプレイス、アプリでこのサーバーを保存してから、サインインアプリを追加してください。",
   "error.backend.mcpSignInAppNeeded":
-    "サインインサーバーは OpenBot をアプリとして登録できません。原因はお使いのアカウントではありません。接続するには、マーケットプレイス、アプリでこのサーバーを開き、接続をテストをクリックしてから、サインインアプリを追加してください。",
+    "サインインサーバーは PurpleBot をアプリとして登録できません。原因はお使いのアカウントではありません。接続するには、マーケットプレイス、アプリでこのサーバーを開き、接続をテストをクリックしてから、サインインアプリを追加してください。",
   "error.backend.mcpSignInAbandonedGeneric": "サインインは中止されました。",
   "error.backend.mcpSignInForgotten": "MCP のサインインは実行中に破棄されました。",
   "error.backend.mcpSignInAbandoned": "MCP のサインインは中止されました。",
@@ -317,9 +317,9 @@ export const messages = {
   "error.backend.mcpSignInRequired":
     "このサーバーはサインインを求めています。「サインイン」を選んでブラウザーで続けてください。",
   "error.backend.mcpSignInOnHost":
-    "このサーバーはサインインを求めています。ホストコンピューターの OpenBot でサインインしてください。",
+    "このサーバーはサインインを求めています。ホストコンピューターの PurpleBot でサインインしてください。",
   "error.backend.mcpSignInNeedsHttps":
-    "このサーバーはサインインを求めていますが、OpenBot は https でのみサインインします。URL を {url} に変更してください。",
+    "このサーバーはサインインを求めていますが、PurpleBot は https でのみサインインします。URL を {url} に変更してください。",
   "error.backend.mcpSignInOtherAddress":
     "このサーバーは {url} でのみサインインできます。URL をこのアドレスに変更してから、もう一度サインインしてください。",
   "error.backend.mcpSignInCancelled": "サインインはキャンセルされました。",
@@ -327,9 +327,9 @@ export const messages = {
   "error.backend.mcpSignInRefused": "サインインページでアクセスが拒否されました。もう一度サインインしてください。",
   "error.backend.mcpSignInResponseTimedOut": "サインインの応答が時間内に届きませんでした。",
   "error.backend.mcpSignInMetadataUnreadable":
-    "OpenBot はこのサーバーのサインイン情報を読み取れませんでした。サーバーアドレスを確認して再試行してください。",
+    "PurpleBot はこのサーバーのサインイン情報を読み取れませんでした。サーバーアドレスを確認して再試行してください。",
   "error.backend.mcpSignInAnswerUnreadable":
-    "サインインサーバーから OpenBot が読み取れない応答が返されました。サービスから API キーまたはトークンが提供されている場合は、このサーバーの設定に追加してから、もう一度接続をテストしてください。",
+    "サインインサーバーから PurpleBot が読み取れない応答が返されました。サービスから API キーまたはトークンが提供されている場合は、このサーバーの設定に追加してから、もう一度接続をテストしてください。",
   "error.backend.mcpServerExited":
     "サーバーは応答する前に停止しました。ターミナルでコマンドを実行してエラーを確認してください。",
   "error.backend.mcpServerExitedWithOutput": "サーバーは応答する前に停止しました。出力: {detail}",
@@ -337,7 +337,7 @@ export const messages = {
     "ダウンロードに失敗したため、サーバーが起動しませんでした。インターネット接続を確認してから、もう一度お試しください。",
   "error.backend.mcpServerFailedToStart": "サーバーが起動しませんでした: {reason}",
   "error.backend.mcpServerProgramMissing":
-    "MCP サーバー {name} のプログラムが OpenBot を実行しているコンピューターにインストールされていないため、OpenBot は起動できませんでした。そのコンピューターに {name} を提供するアプリをインストールするか、マーケットプレイス、アプリで {name} をオフにしてください。",
+    "MCP サーバー {name} のプログラムが PurpleBot を実行しているコンピューターにインストールされていないため、PurpleBot は起動できませんでした。そのコンピューターに {name} を提供するアプリをインストールするか、マーケットプレイス、アプリで {name} をオフにしてください。",
   "error.backend.mcpServerStartAbandoned":
     "サーバーが起動する前に {provider} が待つのをやめたため、{provider} のエージェントはこのサーバーのツールを使えません。",
   "error.backend.mcpServerStoppedDuringCall": "MCP サーバーがこの呼び出しに応答する前に停止しました。",
@@ -350,7 +350,7 @@ export const messages = {
   "error.backend.mcpServerFailedForProvider":
     "{provider} は MCP サーバー {name} を起動できませんでした。マーケットプレイス、アプリで {name} を開いて「接続をテスト」を選択すると、原因を確認できます。",
   "error.backend.mcpServerFailedInProvider":
-    "{provider} は MCP サーバー {name} を起動できませんでした。{provider} はこのサーバーのツールを使えません。{provider} はサーバーを自分で起動するため、OpenBot の接続テストは成功することがあります。新しいチャットを開始して、もう一度お試しください。",
+    "{provider} は MCP サーバー {name} を起動できませんでした。{provider} はこのサーバーのツールを使えません。{provider} はサーバーを自分で起動するため、PurpleBot の接続テストは成功することがあります。新しいチャットを開始して、もう一度お試しください。",
   "error.backend.mcpServerTimedOutInProvider":
     "サーバーが時間内に応答しなかったため、{provider} は MCP サーバー {name} を起動できませんでした。新しいチャットを開始して、もう一度お試しください。",
   "error.backend.mcpServerUnavailableInProvider":
@@ -360,13 +360,13 @@ export const messages = {
   "error.backend.githubToolsNotStarted":
     "GitHub が応答しなかったため、{provider} は GitHub のツールを取得できませんでした。マーケットプレイス、アプリで GitHub を開き、求められた場合はもう一度接続してください。その後、新しいチャットを開始して、もう一度お試しください。",
   "error.backend.mcpOAuthProxyUnavailable":
-    "OpenBot はこのサーバーのローカルサインイン接続を開始できませんでした。OpenBot を再起動してから、もう一度お試しください。",
+    "PurpleBot はこのサーバーのローカルサインイン接続を開始できませんでした。PurpleBot を再起動してから、もう一度お試しください。",
   "error.backend.mcpOAuthSignInNeeded":
-    "この MCP サーバーへのサインインは終了しました。ユーザーは OpenBot でもう一度サインインする必要があります。",
+    "この MCP サーバーへのサインインは終了しました。ユーザーは PurpleBot でもう一度サインインする必要があります。",
   "error.backend.mcpOAuthRenewalFailed":
-    "OpenBot は今この MCP サーバーのサインインを更新できませんでした。サインインは保持され、次のリクエストで再試行します。このエラーが続く場合、ユーザーは OpenBot でこのサーバーからサインアウトし、もう一度サインインできます。",
+    "PurpleBot は今この MCP サーバーのサインインを更新できませんでした。サインインは保持され、次のリクエストで再試行します。このエラーが続く場合、ユーザーは PurpleBot でこのサーバーからサインアウトし、もう一度サインインできます。",
   "error.backend.mcpServerUnreachable":
-    "OpenBot はサーバーに接続できませんでした。URL とネットワークを確認してください。",
+    "PurpleBot はサーバーに接続できませんでした。URL とネットワークを確認してください。",
   "error.backend.mcpLocalServerOff":
     "このコンピューターの {address} で応答するサーバーがありません。サーバーを起動するか、サーバーを実行するアプリでオンにしてから、もう一度お試しください。",
   "error.backend.mcpServerBlocked":
@@ -374,7 +374,7 @@ export const messages = {
   "error.backend.mcpServerIncompatible":
     "このアドレスで応答がありましたが、Streamable HTTP の MCP サーバーではありません。URL を確認し、サーバーを実行するアプリを更新してください。",
   "error.backend.mcpRemoteBridge":
-    "{reason} このコマンドは mcp-remote ブリッジを実行します。代わりに URL {url} で Streamable HTTP を選ぶと、OpenBot がサインインします。",
+    "{reason} このコマンドは mcp-remote ブリッジを実行します。代わりに URL {url} で Streamable HTTP を選ぶと、PurpleBot がサインインします。",
   "error.backend.oauthNotHttps": "OAuth エンドポイント {origin} は https ではないため、認証情報を送信しませんでした。",
   "error.backend.oauthTooManyRedirects": "OAuth エンドポイントのリダイレクトが多すぎます。",
   "error.backend.oauthRedirectOrigin":
@@ -427,14 +427,14 @@ export const messages = {
   "error.backend.promptAnswerMismatch": "回答が有効な質問と一致しません。",
   "error.backend.approvalInactive": "この承認はもう有効ではありません。",
   "error.backend.feedbackNeedsPhone":
-    "このレポートを送信できるのは OpenBot のスマートフォンアプリだけです。スマートフォンのバージョンとサポートログを追加するためです。スマートフォンでこのチャットを開いてください。そこでもこのメッセージが表示される場合は、スマートフォンアプリを更新してください。",
+    "このレポートを送信できるのは PurpleBot のスマートフォンアプリだけです。スマートフォンのバージョンとサポートログを追加するためです。スマートフォンでこのチャットを開いてください。そこでもこのメッセージが表示される場合は、スマートフォンアプリを更新してください。",
   "error.backend.takeoverInactive": "このブラウザーの操作引き継ぎはもう有効ではありません。",
   "error.backend.authSubmitting": "認証の送信はすでに実行中です。",
   "error.backend.apiKeyListFailed": "保存された API キーを読み込めませんでした。",
   "error.backend.apiKeySaveFailed": "API キーを保存できませんでした。もう一度お試しください。",
   "error.backend.apiKeySaving": "API キーはすでに保存中です。",
   "error.backend.apiKeyAnswerUnreadable":
-    "OpenBot は API キーを読み取れませんでした。8,000 文字以内のキーを入力し、使用できる対象を選択してください。",
+    "PurpleBot は API キーを読み取れませんでした。8,000 文字以内のキーを入力し、使用できる対象を選択してください。",
   "error.backend.authRequestInactive": "この安全な認証要求はもう有効ではありません。",
   "error.backend.secureAuthUnavailable": "安全な認証を使用できません。",
   "error.backend.browserUrlRequired": "ブラウザーの URL が必要です。",
@@ -456,9 +456,9 @@ export const messages = {
   "error.backend.browserProxyUnreachable": "プロキシ {name} が応答しないため、ページを開けませんでした。",
   "error.backend.browserProxySignInRefused": "プロキシ {name} がサインインを拒否したため、ページを開けませんでした。",
   "error.backend.browserSystemProxyFailed":
-    "OpenBot を実行しているコンピューターの設定にあるプロキシが応答しないか接続を拒否したため、ページを開けませんでした。そのコンピューターのプロキシ設定を確認してください。",
+    "PurpleBot を実行しているコンピューターの設定にあるプロキシが応答しないか接続を拒否したため、ページを開けませんでした。そのコンピューターのプロキシ設定を確認してください。",
   "error.backend.browserSystemProxyOrSiteClosed":
-    "サイト、または OpenBot を実行しているコンピューターの設定にあるプロキシが応答なしで接続を閉じたため、ページを開けませんでした。どのサイトも開けない場合は、そのコンピューターのプロキシ設定を確認してください。",
+    "サイト、または PurpleBot を実行しているコンピューターの設定にあるプロキシが応答なしで接続を閉じたため、ページを開けませんでした。どのサイトも開けない場合は、そのコンピューターのプロキシ設定を確認してください。",
   "error.backend.browserProfileProxyOrSiteClosed":
     "サイト、またはこのブラウザープロファイルのプロキシが応答なしで接続を閉じたため、ページを開けませんでした。どのサイトも開けない場合は、プロファイルのプロキシを確認してください。",
   "error.backend.browserProxyComputerUnreachable":
@@ -499,7 +499,7 @@ export const messages = {
   "error.backend.mcpSignInAppUrl": "サインインアプリには有効なサーバー URL が必要です。",
   "error.backend.mcpSignInAppClientId": "サインインアプリのクライアント ID を入力してください。",
   "error.backend.mcpSignInAppIssuerChanged":
-    "この MCP サーバーのサインインサーバーが変わったため、OpenBot はサインインアプリを送信しませんでした。この変更が正しい場合は、サインインアプリを削除してからもう一度追加してください。",
+    "この MCP サーバーのサインインサーバーが変わったため、PurpleBot はサインインアプリを送信しませんでした。この変更が正しい場合は、サインインアプリを削除してからもう一度追加してください。",
   "error.backend.mcpSignInAppNoServer":
     "サインインアプリを追加する前に、この MCP サーバーを URL サーバーとして保存してください。",
   "error.backend.mcpSignInAppUnavailable": "このコンピューターではサインインアプリを保存できません。",
@@ -531,6 +531,7 @@ export const messages = {
   "error.backend.taskOpenLimitReached":
     "このエージェントには {count} 件の開いているタスクがあります。タスクを閉じてから、別のタスクを開始するか開いてください。",
   "error.backend.taskRemoteUnsupported": "タスクは、このコンピューター上のエージェントでのみ利用できます。",
-  "error.backend.taskMessageFailed": "OpenBot はタスクにメッセージを送信できませんでした。後でもう一度お試しください。",
-  "error.backend.taskStartFailed": "OpenBot はタスクを開始できませんでした。代わりにこのターンで作業してください。",
+  "error.backend.taskMessageFailed":
+    "PurpleBot はタスクにメッセージを送信できませんでした。後でもう一度お試しください。",
+  "error.backend.taskStartFailed": "PurpleBot はタスクを開始できませんでした。代わりにこのターンで作業してください。",
 } as const satisfies PartialTranslation<typeof source>;

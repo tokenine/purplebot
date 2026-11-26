@@ -2,7 +2,7 @@ import { sourceText } from "@openbot/i18n/source";
 import { CANCEL_TEXT, chatFailureReason } from "../messaging-types";
 
 const OLD_SPACER = /\n⠀{8,}\s*$/u;
-const OLD_QUEUED = "Waiting: OpenBot is working on another request. The answer comes here.";
+const OLD_QUEUED = "Waiting: PurpleBot is working on another request. The answer comes here.";
 const SELF_CHAT_SPAN_MS = 10_000;
 const SELF_CHAT_LIMITS = [
   { windowMs: 10 * 60_000, maxSpans: 30 },

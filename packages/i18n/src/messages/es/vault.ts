@@ -6,7 +6,7 @@ export const messages = {
   "vault.near.name": "Cartera cripto",
   "vault.near.open": "Abrir cartera cripto",
   "vault.near.connect": "Conectar",
-  "vault.near.signedOut": "Inicia sesión en OpenBot para configurar la cartera cripto.",
+  "vault.near.signedOut": "Inicia sesión en PurpleBot para configurar la cartera cripto.",
   "vault.near.paused": "En pausa",
   "vault.near.failed": "No se pudo cambiar la cartera cripto.",
   "vault.near.waiting": "Esperando tu firma en el navegador…",
@@ -14,7 +14,7 @@ export const messages = {
   "vault.near.openAgain": "Abrir de nuevo",
   "vault.near.signature.label": "Firmas en el navegador",
   "vault.near.signature.register": "Crear tu llave de acceso",
-  "vault.near.signature.registerDetail": "Solo en tus dispositivos. OpenBot nunca la tiene.",
+  "vault.near.signature.registerDetail": "Solo en tus dispositivos. PurpleBot nunca la tiene.",
   "vault.near.signature.create": "Aprobar la nueva cartera",
   "vault.near.signature.createDetail":
     "Todos los agentes pueden pagar hasta {amount} al día. Puedes cambiarlo más tarde.",
@@ -40,7 +40,7 @@ export const messages = {
     "Tu navegador no nos indicó si esta llave de acceso tiene copia de seguridad. Comprueba que tu gestor de llaves de acceso la sincroniza.",
   "vault.near.backup.notChecked": "Copia de seguridad sin comprobar",
   "vault.near.backup.noCopy":
-    "OpenBot no guarda ninguna copia de tu llave de acceso. Solo tú puedes firmar para esta cartera.",
+    "PurpleBot no guarda ninguna copia de tu llave de acceso. Solo tú puedes firmar para esta cartera.",
   "vault.near.backup.checked": "Comprobada el {date}",
   "vault.near.backup.check": "Comprobar copia",
   "vault.near.backup.checkAgain": "Comprobar de nuevo",
@@ -106,7 +106,7 @@ export const messages = {
   "vault.near.disconnect": "Desconectar",
   "vault.near.disconnectTitle": "¿Desconectar la cartera cripto?",
   "vault.near.disconnectDescription":
-    "Los agentes ya no podrán pagar desde esta cartera y OpenBot la olvidará. Los fondos se quedan en la cartera en NEAR Intents.",
+    "Los agentes ya no podrán pagar desde esta cartera y PurpleBot la olvidará. Los fondos se quedan en la cartera en NEAR Intents.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "Supera el límite diario",
   "vault.near.approve": "Aprobar",

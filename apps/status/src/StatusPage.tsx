@@ -164,15 +164,15 @@ export function StatusPage(props: StatusPageProps) {
   return (
     <div class="status-page">
       <header class="status-header">
-        <a class="status-brand" href={SITE_URL} aria-label="OpenBot home">
+        <a class="status-brand" href={SITE_URL} aria-label="PurpleBot home">
           <AppLogo variant="production" class="status-brand-logo" />
-          <span>OpenBot</span>
+          <span>PurpleBot</span>
         </a>
       </header>
 
       <main class="status-main">
         <header class="status-hero">
-          <h1 class="status-title">OpenBot status</h1>
+          <h1 class="status-title">PurpleBot status</h1>
           <div class="status-hero-actions">
             <a class="status-button" href="feed.xml" type="application/atom+xml">
               <Rss class="status-button-icon" aria-hidden="true" />

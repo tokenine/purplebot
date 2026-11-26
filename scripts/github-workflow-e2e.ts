@@ -251,7 +251,7 @@ try {
   check('"not a bot" refuses another bot', dependabotRow?.reason === "filter", dependabotRow);
   const ownBot = await send(comment("acme/app", 4, `${BOT}[bot]`, "Bot").body);
   const ownBotRow = await delivery(queue.summary.id, ownBot.deliveryId);
-  check('"not a bot" refuses OpenBot\'s own bot', ownBotRow?.reason === "filter", ownBotRow);
+  check('"not a bot" refuses PurpleBot\'s own bot', ownBotRow?.reason === "filter", ownBotRow);
 
   const chainRows = [];
   for (let index = 0; index < 4; index += 1) {
@@ -259,7 +259,7 @@ try {
     chainRows.push(await delivery(chain.summary.id, sent.deliveryId));
   }
   check(
-    "OpenBot's bot starts runs until the chain is too long",
+    "PurpleBot's bot starts runs until the chain is too long",
     chainRows.slice(0, 3).every((row) => row?.outcome === "started") && chainRows[3]?.reason === "chain",
     chainRows,
   );

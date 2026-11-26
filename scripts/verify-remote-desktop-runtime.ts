@@ -23,10 +23,10 @@ if (manifest.moonlightWeb?.commit !== lock.remoteDesktop.moonlightWeb.commit) {
   throw new Error("The Moonlight Web commit is not approved.");
 }
 if (manifest.sunshine?.patch?.sha256 !== lock.remoteDesktop.sunshine.patch.sha256) {
-  throw new Error("The Sunshine OpenBot patch is not approved.");
+  throw new Error("The Sunshine PurpleBot patch is not approved.");
 }
 if (manifest.moonlightWeb?.patch?.sha256 !== lock.remoteDesktop.moonlightWeb.patch.sha256) {
-  throw new Error("The Moonlight Web OpenBot patch is not approved.");
+  throw new Error("The Moonlight Web PurpleBot patch is not approved.");
 }
 
 const target = runtimeTarget(platform, architecture);

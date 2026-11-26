@@ -393,10 +393,10 @@ try {
   writeFileSync(switchedFlag, "");
   await runCauseEffect(agents.updateAgent({ agentId: backup.id, model: "gpt-6-luna" }));
   const returnFrom = turnModels().length;
-  await runCauseEffect(agents.sendMessage({ agentId: backup.id, text: "Reset outside OpenBot." }));
+  await runCauseEffect(agents.sendMessage({ agentId: backup.id, text: "Reset outside PurpleBot." }));
   await waitFor("the message to run on the model that the limit held", done);
   const returned = turnModels().slice(returnFrom);
-  assert.deepEqual(returned, ["gpt-6-luna"], "After a reset outside OpenBot, the message runs on the held model.");
+  assert.deepEqual(returned, ["gpt-6-luna"], "After a reset outside PurpleBot, the message runs on the held model.");
   assert.equal(modelOf(), "gpt-6-luna", "The agent stays on the model that it tried.");
   assert.ok(
     !agents.getRuntimeSnapshot().usageLimitedModels?.some((limit) => limit.model === "gpt-6-luna"),

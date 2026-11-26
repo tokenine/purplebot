@@ -276,7 +276,7 @@ try {
   await check("a wrong command line exits 2", ["run", "Ada"], 2, (run) => run.stderr.includes("Usage:"));
   const oldUrl = readFileSync(join(root, "url"), "utf8");
   await check(
-    "run --wait continues after OpenBot restarts",
+    "run --wait continues after PurpleBot restarts",
     ["run", "Ada", "restart", "--wait", "--json"],
     0,
     (run) => {
@@ -364,7 +364,7 @@ try {
   });
   busy = false;
   await Effect.runPromise(server.stop());
-  await check("a stopped app exits 5", ["list"], 5, (run) => run.stderr.includes("OpenBot is not running"));
+  await check("a stopped app exits 5", ["list"], 5, (run) => run.stderr.includes("PurpleBot is not running"));
   await check("a wrong command line exits 2 also when the app is stopped", ["agent", "foo", "Ada"], 2, (run) =>
     run.stderr.includes("Usage:"),
   );

@@ -34,7 +34,7 @@ class ProbeUpdater extends AppUpdater {
   constructor(userData: string, version: string, platform: NodeJS.Platform) {
     super(null, {
       version,
-      name: "OpenBot",
+      name: "PurpleBot",
       isPackaged: true,
       appUpdateConfigPath: join(userData, "app-update.yml"),
       userDataPath: userData,

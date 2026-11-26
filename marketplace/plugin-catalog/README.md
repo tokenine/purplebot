@@ -36,11 +36,11 @@ Rules for a new entry:
   own link on any Composio host.
   No `workingDirectory`: the provider drops such servers.
 - A `command` can start with `~/` to name a program that a desktop app installs
-  in the home folder, as the Paper listing does. OpenBot expands `~` on the
+  in the home folder, as the Paper listing does. PurpleBot expands `~` on the
   computer that runs the server, before any provider starts it.
 - Names must pass `mcpConfigErrors` and must not be reserved (`openbot`).
 - OAuth-only vendors install as a plain `http` server with a `link` flow, the
-  same shape the Canva listing uses. OpenBot signs in itself: the main process
+  same shape the Canva listing uses. PurpleBot signs in itself: the main process
   holds the MCP OAuth client, keeps the tokens in encrypted storage, and adds
   the `Authorization` header at hand-off. No bridge program is installed, and
   no listing may name one.
@@ -71,7 +71,7 @@ keeps `OBSIDIAN_API_KEY`, `OBSIDIAN_BASE_URL`, and `OBSIDIAN_VERIFY_SSL=false` a
 the default. The server talks to the
 Local REST API community plugin in the Obsidian app
 (<https://github.com/coddingtonbear/obsidian-local-rest-api>). The user types the
-plugin's API key in the connect dialog, and OpenBot gives it to the server as
+plugin's API key in the connect dialog, and PurpleBot gives it to the server as
 `OBSIDIAN_API_KEY`.
 
 The server uses `http://127.0.0.1:27123` by default, and the plugin keeps that
@@ -108,7 +108,7 @@ through AppleScript and needs no key. Its cloud mode needs
 The app lists `macAutomation`: the Apple apps that the server drives. On a Mac
 that runs the server, the listing page shows a switch, on by default, that asks
 macOS for each app right after the install, and later an "Ask for access"
-button. OpenBot sends one harmless Apple Event (`count windows`) to each app, so
+button. PurpleBot sends one harmless Apple Event (`count windows`) to each app, so
 macOS shows its Automation prompt then and not during an agent's task. An app
 that the request opened is quit again. macOS does not ask again for an app that
 the user refused.
@@ -116,7 +116,7 @@ the user refused.
 Troubleshooting:
 
 - An error `-1743` ("not authorized to send Apple events"): the user refused
-  the Automation prompt. Turn OpenBot on for the app in System Settings ›
+  the Automation prompt. Turn PurpleBot on for the app in System Settings ›
   Privacy & Security › Automation, or run `tccutil reset AppleEvents` to get
   the prompts again.
 - Mail or Calendar tools time out: AppleScript is slow on large mailboxes and
@@ -150,12 +150,12 @@ The listing connects to Omnisend's own MCP server at `https://mcp.omnisend.com/m
 
 The listing has no browser sign-in (#7722, #9372). Omnisend's documentation names only OAuth
 with dynamic client registration, but the registration endpoint accepts only the client
-names that Omnisend approved and answers OpenBot with 400 `invalid_client_metadata`
-("unknown application: OpenBot"). `/v2/mcp` names the same metadata. The server's 401
+names that Omnisend approved and answers PurpleBot with 400 `invalid_client_metadata`
+("unknown application: PurpleBot"). `/v2/mcp` names the same metadata. The server's 401
 challenge asks for "Authorization or X-Api-Key", and a tool call with a wrong key returns
 the Omnisend API's own 401, so the server passes the key to the API. No Omnisend document
 says that an API key works for MCP, and the listing was not tested with a real key. Add a
-`link` flow again when Omnisend registers OpenBot.
+`link` flow again when Omnisend registers PurpleBot.
 
 The server shows four tools: `search`, `tool_schema`, `tool_documentation` and
 `execute`. The agent finds an Omnisend operation with `search` and runs it with
@@ -265,7 +265,7 @@ A registration with the loopback address gets the `offline_access` scope and the
 grant (checked 2026-11-13). A user whose Adobe ID is in more than one organization selects one at
 sign-in.
 
-The metadata does not list `offline_access` in `scopes_supported`, so OpenBot does not ask for it
+The metadata does not list `offline_access` in `scopes_supported`, so PurpleBot does not ask for it
 (`withOfflineAccess` in `src/backend/mcp-oauth-provider.ts`). Adobe's authorize endpoint accepts the
 request with or without that scope. Not confirmed with an Adobe account: whether the token answer
 then has a refresh token. Without one, the user signs in again when the access token expires.
@@ -293,7 +293,7 @@ Troubleshooting:
 
 The listing connects to ElevenLabs' hosted MCP server at `https://api.elevenlabs.io/v1/mcp`
 (<https://elevenlabs.io/docs/eleven-agents/operate/hosted-mcp>). ElevenLabs deprecated its local
-server. The authorization server has no client registration. It reads OpenBot's client metadata
+server. The authorization server has no client registration. It reads PurpleBot's client metadata
 document, `https://openbot.run/oauth/mcp-client.json`, so the user signs in through the browser and
 types no key. Generated audio comes back as a short-lived download link.
 
@@ -303,8 +303,8 @@ the server's MCP servers settings and selects Sign in.
 
 Troubleshooting:
 
-- The sign-in page refuses the redirect address: another program uses port 28417, so OpenBot
-  listens on another port that the document does not list. Close that program and restart OpenBot.
+- The sign-in page refuses the redirect address: another program uses port 28417, so PurpleBot
+  listens on another port that the document does not list. Close that program and restart PurpleBot.
 
 ## Sunra
 
@@ -361,7 +361,7 @@ Each user can have 10 MCP sessions at a time.
 
 To delete an application or a deployment profile, or to add a cloud, Cloud 66 sends an elicitation
 over the open session. The agent shows a one-time Cloud 66 link, and the user confirms on that page
-in the browser (with 2FA for a delete). Cloud 66 does not document the elicitation mode. OpenBot
+in the browser (with 2FA for a delete). Cloud 66 does not document the elicitation mode. PurpleBot
 shows a `form` request as a question card in the chat and declines a `url` request
 (`mcpElicitationQuestions` in `src/backend/agent/prompts.ts`). Cloud 66 supports only MCP
 `2025-06-18`, which has no `url` mode, so the request is probably a `form`. Not confirmed with a
@@ -443,9 +443,9 @@ agents other than Claude, ChatGPT and Grok.
 
 The listing has no browser sign-in (#9372). The authorization server
 `https://auth.tessie.com` lists a registration endpoint, but it registers only the
-clients that match its templates. It answers OpenBot with 400 `invalid_client_metadata`
+clients that match its templates. It answers PurpleBot with 400 `invalid_client_metadata`
 ("No dynamic client registration template matched this request."). Add a `link` flow
-again only when a registration for OpenBot succeeds.
+again only when a registration for PurpleBot succeeds.
 
 The token can read the vehicles and send commands, such as unlock and remote start.
 

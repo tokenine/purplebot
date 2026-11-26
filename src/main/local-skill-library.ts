@@ -54,7 +54,7 @@ export class LocalSkillLibrary {
           continue;
         }
         const skillId = published[index] ?? "";
-        logger.warn(`OpenBot skipped local skill ${skillId}: its latest revision could not be read.`);
+        logger.warn(`PurpleBot skipped local skill ${skillId}: its latest revision could not be read.`);
         const cause = result.failure.cause;
         unreadable.push({ skillId, error: cause instanceof Error ? cause.message : String(cause) });
       }

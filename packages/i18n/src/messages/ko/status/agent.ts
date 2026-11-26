@@ -34,7 +34,7 @@ export const messages = {
     "결과는 {channel} 채널에 표시되며, 이 서버에서 채널을 읽는 모든 멤버가 볼 수 있습니다.",
   "status.agent.creditsHoldBalance": "크레딧 {credits}을(를) 사용하며, 잔액은 크레딧 {balance}입니다.",
   "status.agent.creditsHoldAgentsOff": "이 서버의 에이전트는 크레딧을 사용할 수 없습니다.",
-  "status.agent.screenCapturePermissionNext": "그다음 macOS가 OpenBot의 화면 녹화를 허용할지 물어볼 수 있어요.",
+  "status.agent.screenCapturePermissionNext": "그다음 macOS가 PurpleBot의 화면 녹화를 허용할지 물어볼 수 있어요.",
   "status.agent.screenCaptureDisplay": "디스플레이 {name}을(를) 캡처해서 이미지를 에이전트의 모델에 보내요.",
   "status.agent.screenCaptureWindow": "창 {name}을(를) 캡처해서 이미지를 에이전트의 모델에 보내요.",
   "status.agent.screenCaptureRegion":
@@ -45,38 +45,39 @@ export const messages = {
   "status.agent.sendIdea": "공개 GitHub 이슈가 됩니다. 이름은 표시되지 않습니다.",
   "status.agent.feedbackRecentErrors": "채팅의 최근 오류:",
   "status.agent.feedbackSameAs": "이슈 #{issue}에 추가됩니다",
-  "status.agent.feedbackSent": "OpenBot 팀에 보냄: {title}",
+  "status.agent.feedbackSent": "PurpleBot 팀에 보냄: {title}",
   "status.agent.feedbackWithdrawn": "GitHub에서 삭제함: {title}",
   "status.agent.feedbackWithdrawCommand": "GitHub에서 보고서 #{issue} 삭제",
   "status.agent.feedbackWithdrawReason":
     "이제 GitHub에서 누구도 이 보고서를 볼 수 없어요. 되돌릴 수 없어요. 고치려면 에이전트가 수정한 보고서를 보낼 수 있어요.",
   "status.agent.feedbackWithdrawing": "GitHub에서 보고서를 삭제하는 중…",
   "status.agent.serverInstallCommand":
-    "다른 컴퓨터에 OpenBot을 서버 {name}(으)로 설치하고 계정에 로그인하는 일회용 명령을 만듭니다. 에이전트가 그곳에서 실행합니다.",
+    "다른 컴퓨터에 PurpleBot을 서버 {name}(으)로 설치하고 계정에 로그인하는 일회용 명령을 만듭니다. 에이전트가 그곳에서 실행합니다.",
   "status.agent.serverInstallCard": "서버 {name}의 설치 명령",
   "status.agent.browserProfileNamed":
     "{agents}을(를) 브라우저 프로필 {profile}(으)로 옮깁니다. 그 프로필의 로그인 정보와 쿠키를 사용하게 됩니다. 열린 탭은 닫힙니다.",
-  "status.agent.commitCoAuthorOff": "모든 에이전트의 커밋에 OpenBot을 공동 작성자로 추가하지 않습니다.",
-  "status.agent.commitCoAuthorOn": "모든 에이전트의 커밋에 OpenBot을 다시 공동 작성자로 추가합니다.",
+  "status.agent.commitCoAuthorOff": "모든 에이전트의 커밋에 PurpleBot을 공동 작성자로 추가하지 않습니다.",
+  "status.agent.commitCoAuthorOn": "모든 에이전트의 커밋에 PurpleBot을 다시 공동 작성자로 추가합니다.",
   "status.agent.browserProfileNew":
     "새 브라우저 프로필 {profile}을(를) 만들고 {agents}을(를) 옮깁니다. 로그인 정보가 없습니다. 열린 탭은 닫힙니다.",
   "status.agent.browserProfileShared":
     "{agents}을(를) 공유 브라우저 프로필로 옮깁니다. 그 프로필의 로그인 정보와 쿠키를 사용하게 됩니다. 열린 탭은 닫힙니다.",
   "status.agent.browserProfileOwn": "{agents}에게 각자 전용 브라우저 프로필을 줍니다. 열린 탭은 닫힙니다.",
-  "status.agent.feedbackSending": "피드백을 OpenBot 팀에 보내는 중…",
+  "status.agent.feedbackSending": "피드백을 PurpleBot 팀에 보내는 중…",
   "status.agent.workflowDelete":
     "워크플로 {title}을(를) 실행 기록 및 버전과 함께 삭제합니다. 진행 중인 단계는 중지됩니다.",
   "status.agent.deleteAgents": "{agents}을(를) 채팅 및 파일과 함께 삭제합니다. 되돌릴 수 없습니다.",
-  "status.agent.nearSignatureReceived": "OpenBot이 서명을 받았습니다. 이 탭은 닫아도 됩니다.",
-  "status.agent.nearSignatureUnknown": "OpenBot이 이 서명을 기다리고 있지 않습니다. OpenBot에서 다시 시작하세요.",
+  "status.agent.nearSignatureReceived": "PurpleBot이 서명을 받았습니다. 이 탭은 닫아도 됩니다.",
+  "status.agent.nearSignatureUnknown": "PurpleBot이 이 서명을 기다리고 있지 않습니다. PurpleBot에서 다시 시작하세요.",
   "status.agent.nearPayment":
     "{domain} 결제로 암호화폐 지갑에서 {recipient}에게 {amount} {symbol}을(를) 보냅니다: {reason}",
   "status.agent.nearSummaryCreate":
-    "모든 에이전트가 하루 최대 {amount} USD까지 결제할 수 있습니다. 나중에 OpenBot에서 변경할 수 있습니다.",
-  "status.agent.nearSummaryGrant": "이 OpenBot 앱이 {days}일 동안 내 규칙 범위 안에서 지갑으로 결제하도록 허용합니다.",
+    "모든 에이전트가 하루 최대 {amount} USD까지 결제할 수 있습니다. 나중에 PurpleBot에서 변경할 수 있습니다.",
+  "status.agent.nearSummaryGrant":
+    "이 PurpleBot 앱이 {days}일 동안 내 규칙 범위 안에서 지갑으로 결제하도록 허용합니다.",
   "status.agent.nearSummaryBudget": "지갑의 일일 예산을 {amount} USD로 변경합니다.",
   "status.agent.nearSummaryAutoPay":
-    "결제 규칙이 허용하면 OpenBot이 내 서명 없이 결제하도록 허용합니다. 다른 결제는 계속 채팅에서 확인을 요청합니다.",
+    "결제 규칙이 허용하면 PurpleBot이 내 서명 없이 결제하도록 허용합니다. 다른 결제는 계속 채팅에서 확인을 요청합니다.",
   "status.agent.nearSummaryPayment": "{recipient}에게 보내는 {amount} 결제를 승인합니다.",
   "status.agent.nearSummaryFreeze": "결제를 재개할 때까지 에이전트가 이 지갑으로 결제할 수 없습니다.",
   "status.agent.nearSummaryUnfreeze": "에이전트가 내 규칙 범위 안에서 다시 이 지갑으로 결제할 수 있습니다.",
@@ -129,9 +130,9 @@ export const messages = {
   "status.agent.memoryChangesWithConflicts":
     "메모리: {saved}개 저장, {updated}개 업데이트, {forgotten}개 삭제, {notChanged}개는 다른 스레드가 먼저 변경해서 변경 안 됨.",
   "status.agent.mcpServerAdd":
-    "MCP 서버 {name}을(를) 추가해요: {target}. 이 서버의 모든 에이전트가 해당 도구를 사용할 수 있어요. OpenBot이 연결을 테스트해요.",
+    "MCP 서버 {name}을(를) 추가해요: {target}. 이 서버의 모든 에이전트가 해당 도구를 사용할 수 있어요. PurpleBot이 연결을 테스트해요.",
   "status.agent.mcpServerChange":
-    "MCP 서버 {name}을(를) {target}(으)로 변경해요. 이 서버의 모든 에이전트가 해당 도구를 사용할 수 있어요. OpenBot이 연결을 테스트해요.",
+    "MCP 서버 {name}을(를) {target}(으)로 변경해요. 이 서버의 모든 에이전트가 해당 도구를 사용할 수 있어요. PurpleBot이 연결을 테스트해요.",
   "status.agent.mcpServerHeaders": "다음 헤더도 변경해요: {names}.",
   "status.agent.mcpServerEnable": "이 서버의 모든 에이전트에 MCP 서버 {name}을(를) 켜요.",
   "status.agent.mcpServerDisable": "이 서버의 모든 에이전트에 MCP 서버 {name}을(를) 꺼요.",

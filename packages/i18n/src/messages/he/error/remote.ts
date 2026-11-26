@@ -17,14 +17,14 @@ export const messages = {
   "error.remote.sessionCapacity": "במארח כבר יש ארבעה סשנים פעילים.",
   "error.remote.linuxNeedsX11": "שולחן עבודה מרוחק ב-Linux דורש סשן X11. Wayland אינו נתמך.",
   "error.remote.runtimeMissing":
-    "סביבת הריצה של Sunshine ו-Moonlight Web חסרה או שאינה נתמכת במארח הזה. יש להתקין את גרסת OpenBot המלאה ב-Mac, במארח Windows x64 או במארח Linux x64, ואז להפעיל מחדש את OpenBot.",
+    "סביבת הריצה של Sunshine ו-Moonlight Web חסרה או שאינה נתמכת במארח הזה. יש להתקין את גרסת PurpleBot המלאה ב-Mac, במארח Windows x64 או במארח Linux x64, ואז להפעיל מחדש את PurpleBot.",
   "error.remote.testActive": "בדיקת שולחן עבודה מרוחק פעילה. יש לנסות שוב כשהיא תסתיים.",
   "error.remote.screenRecordingDenied":
-    "המארח לא אישר ל-OpenBot להקליט את המסך שלו. יש לאשר הקלטת מסך במארח ולנסות שוב.",
+    "המארח לא אישר ל-PurpleBot להקליט את המסך שלו. יש לאשר הקלטת מסך במארח ולנסות שוב.",
   "error.remote.windowsSessionDisconnected":
     "הסשן של Windows במארח מנותק, ולכן אין מסך לשיתוף. יש להיכנס ל-Windows במסך של המארח ולנסות שוב.",
   "error.remote.windowsCaptureDenied":
-    "Windows במארח לא מאפשר ל-OpenBot להקליט את המסך שלו. יש לבטל את נעילת Windows במסך של המארח, לסגור כל בקשת הרשאת מנהל ולנסות שוב. אם הבעיה נמשכת, יש להפעיל מחדש את המארח.",
+    "Windows במארח לא מאפשר ל-PurpleBot להקליט את המסך שלו. יש לבטל את נעילת Windows במסך של המארח, לסגור כל בקשת הרשאת מנהל ולנסות שוב. אם הבעיה נמשכת, יש להפעיל מחדש את המארח.",
   "error.remote.macScreenLocked":
     "ה-Mac נעול, ולכן אינו יכול לשתף את המסך שלו. יש לבטל את נעילת ה-Mac במסך שלו ולנסות שוב.",
   "error.remote.streamTooSlowLowerQuality":
@@ -44,7 +44,7 @@ export const messages = {
   "error.remote.moonlightStartFailed":
     "Moonlight Web לא הופעל במארח. יש לבדוק את יומני שולחן העבודה המרוחק במארח ולנסות שוב.",
   "error.remote.pairingFailed":
-    "Moonlight לא הצליח להתאים את עצמו ל-Sunshine במארח. יש לנסות שוב. אם הבעיה נמשכת, יש להפעיל מחדש את OpenBot במארח.",
+    "Moonlight לא הצליח להתאים את עצמו ל-Sunshine במארח. יש לנסות שוב. אם הבעיה נמשכת, יש להפעיל מחדש את PurpleBot במארח.",
   "error.remote.runtimeStartFailed":
     "סביבת הריצה של שולחן עבודה מרוחק לא הופעלה במארח. יש לבדוק את יומני שולחן העבודה המרוחק במארח ולנסות שוב.",
   "error.remote.hostUnreachable": "אי אפשר להגיע למארח.",
@@ -52,7 +52,7 @@ export const messages = {
   "error.remote.invalidData": "המארח החזיר נתונים לא תקינים.",
   "error.remote.unsafeData": "המארח החזיר נתונים שהאפליקציה לא יכלה להשתמש בהם בבטחה.",
   "error.remote.requestFailedStatus": "הבקשה לשרת המרוחק נכשלה ({status}).",
-  "error.remote.appUpdateRequired": "יש לעדכן את אפליקציית OpenBot לפני החיבור למארח.",
+  "error.remote.appUpdateRequired": "יש לעדכן את אפליקציית PurpleBot לפני החיבור למארח.",
   "error.remote.identityNotVerified": "לא ניתן היה לאמת את זהות השרת.",
   "error.remote.webRtcUnavailable": "שכבת התעבורה WebRTC אינה זמינה.",
   "error.remote.invalidCompatibility": "המארח החזיר מידע תאימות לא תקין.",
@@ -70,8 +70,8 @@ export const messages = {
   "error.remote.inviteAcceptedOtherHost": "שירות החשבונות אישר מארח אחר.",
   "error.remote.inviteIdentityChanged": "זהות מארח ההזמנה השתנתה בזמן אישור ההזמנה.",
   "error.remote.localServerRemove": "אי אפשר להסיר את השרת המקומי.",
-  "error.remote.desktopSetupHostUpdate": "יש לעדכן את OpenBot במארח כדי לבדוק את הגדרת שולחן העבודה המרוחק.",
-  "error.remote.desktopTestHostUpdate": "יש לעדכן את OpenBot במארח כדי לבדוק את הגדרת שולחן העבודה המרוחק.",
+  "error.remote.desktopSetupHostUpdate": "יש לעדכן את PurpleBot במארח כדי לבדוק את הגדרת שולחן העבודה המרוחק.",
+  "error.remote.desktopTestHostUpdate": "יש לעדכן את PurpleBot במארח כדי לבדוק את הגדרת שולחן העבודה המרוחק.",
   "error.remote.viewerProxyUnavailable": "שרת הביניים המקומי של מציג שולחן העבודה המרוחק אינו זמין.",
   "error.remote.viewerTransportInvalid": "שכבת התעבורה של מציג שולחן העבודה המרוחק אינה תקינה.",
   "error.remote.viewerProxyNoPort": "שרת הביניים המקומי של המציג המרוחק לא קיבל פורט.",
@@ -89,12 +89,12 @@ export const messages = {
   "error.remote.requestTimeout": "הבקשה המרוחקת חרגה ממגבלת הזמן.",
   "error.remote.requestFailed": "הבקשה המרוחקת נכשלה.",
   "error.remote.hostKeyMissing":
-    "OpenBot לא יכול לאמת את השרת הזה, כי מפתח האבטחה שלו חסר או השתנה. בקשו מבעל השרת לבדוק את השרת.",
+    "PurpleBot לא יכול לאמת את השרת הזה, כי מפתח האבטחה שלו חסר או השתנה. בקשו מבעל השרת לבדוק את השרת.",
   "error.remote.connectionNotStarted":
-    "OpenBot לא הצליח להתחיל את החיבור לשרת הזה. אם הבעיה נמשכת, צאו מ-OpenBot ופתחו אותו שוב.",
+    "PurpleBot לא הצליח להתחיל את החיבור לשרת הזה. אם הבעיה נמשכת, צאו מ-PurpleBot ופתחו אותו שוב.",
   "error.remote.connectionServiceUnreachable":
-    "המחשב הזה לא מצליח להגיע לשירות החיבור של OpenBot. יש לבדוק את החיבור שלו לאינטרנט. OpenBot יתחבר שוב אוטומטית.",
-  "error.remote.serverAnswerTimeout": "השרת לא ענה בזמן. OpenBot יתחבר שוב אוטומטית.",
+    "המחשב הזה לא מצליח להגיע לשירות החיבור של PurpleBot. יש לבדוק את החיבור שלו לאינטרנט. PurpleBot יתחבר שוב אוטומטית.",
+  "error.remote.serverAnswerTimeout": "השרת לא ענה בזמן. PurpleBot יתחבר שוב אוטומטית.",
   "error.remote.signInConnectionClosed":
     "החיבור לשרת נסגר במהלך הכניסה. אם זה חוזר, ודאו שהתאריך והשעה נכונים בשרת ובמכשיר הזה.",
   "error.remote.connectionCancelled": "החיבור המרוחק בוטל.",
@@ -146,11 +146,11 @@ export const messages = {
   "error.remote.permanentInviteNoEmail": "אי אפשר לשלוח הזמנות קבועות באימייל.",
   "error.remote.selfHostedInviteNoEmail":
     "אי אפשר לשלוח באימייל הזמנה משירות חשבונות באירוח עצמי. יש להעתיק את הקישור.",
-  "error.remote.inviteOtherService": "ההזמנה הזו שייכת לשירות OpenBot אחר.",
+  "error.remote.inviteOtherService": "ההזמנה הזו שייכת לשירות PurpleBot אחר.",
   "error.remote.inviteFingerprintMismatch": "זהות מארח ההזמנה אינה תואמת לטביעת האצבע שלה.",
   "error.remote.inviteHostKeyMissing": "מפתח מארח ההזמנה חסר.",
   "error.remote.inviteKeyConflict": "ההזמנה סותרת את מפתח המארח המהימן.",
-  "error.remote.serviceRequestFailed": "הבקשה לשירות OpenBot נכשלה.",
+  "error.remote.serviceRequestFailed": "הבקשה לשירות PurpleBot נכשלה.",
   "error.remote.downloadTimeout": "הורדת הקובץ המצורף חרגה ממגבלת הזמן. יש לנסות שוב.",
   "error.remote.attachmentConnectionClosed": "חיבור הקובץ המצורף נסגר.",
   "error.remote.tooManyDownloads": "יותר מדי הורדות של קבצים מצורפים.",
@@ -176,7 +176,7 @@ export const messages = {
   "error.remote.signalInvalidMessage": "Signal החזיר הודעה לא תקינה.",
   "error.remote.sessionInvalid": "הסשן המרוחק אינו תקין.",
   "error.remote.ticketInvalid": "כרטיס החיבור אינו תקין.",
-  "error.remote.mobileUpdateRequired": "יש לעדכן את OpenBot לנייד או את אפליקציית שולחן העבודה לפני החיבור.",
+  "error.remote.mobileUpdateRequired": "יש לעדכן את PurpleBot לנייד או את אפליקציית שולחן העבודה לפני החיבור.",
   "error.remote.connectionStepFailed": "לא ניתן היה להשלים את שלב החיבור הזה.",
   "error.remote.signalNotConnected": "Signal אינו מחובר.",
   "error.remote.signalFrameUnreadable": "Signal שלח מסגרת שהצד הזה לא יכול לקרוא.",
@@ -184,34 +184,34 @@ export const messages = {
   "error.remote.dataChannelFailed": "ערוץ {kind} נכשל.",
   "error.remote.hostBusy": "המארח עסוק בחיבור אחר. יש לנסות שוב בעוד רגע.",
   "error.remote.signalPermissionDenied": "לחשבון שלך אין גישה למארח הזה. יש לבקש גישה מהבעלים.",
-  "error.remote.signalRateLimited": "יותר מדי ניסיונות חיבור. OpenBot ינסה שוב בעוד {seconds} שניות.",
+  "error.remote.signalRateLimited": "יותר מדי ניסיונות חיבור. PurpleBot ינסה שוב בעוד {seconds} שניות.",
   "error.remote.signalProtocolError":
-    "Signal והאפליקציה הזו לא מסכימים על פרוטוקול החיבור. יש לעדכן את OpenBot ולנסות שוב.",
+    "Signal והאפליקציה הזו לא מסכימים על פרוטוקול החיבור. יש לעדכן את PurpleBot ולנסות שוב.",
   "error.remote.signalRefused": "Signal דחה את החיבור.",
   "error.remote.signalClosed": "החיבור ל-Signal נסגר לפני שהמארח ענה.",
   "error.remote.relayUnavailable": "Signal לא שלח שרתי ממסר לחיבור הזה. יש לנסות שוב מאוחר יותר.",
   "error.remote.iceFailed": "לא ניתן היה ליצור חיבור ישיר למארח. חומת אש, VPN או שרת proxy יכולים לחסום אותו.",
   "error.remote.iceDisconnected": "החיבור הישיר למארח אבד.",
   "error.remote.webrtcBlocked":
-    "המכשיר הזה חוסם את החיבור ש-OpenBot צריך. אם מצב נעילה מופעל, כבה אותו עבור OpenBot בהגדרות > פרטיות ואבטחה > מצב נעילה.",
-  "error.remote.directoryUnreachable": "OpenBot לא הצליח להגיע לשירות OpenBot. יש לבדוק את החיבור.",
-  "error.remote.directoryTimeout": "שירות OpenBot לא ענה בזמן. יש לנסות שוב.",
+    "המכשיר הזה חוסם את החיבור ש-PurpleBot צריך. אם מצב נעילה מופעל, כבה אותו עבור PurpleBot בהגדרות > פרטיות ואבטחה > מצב נעילה.",
+  "error.remote.directoryUnreachable": "PurpleBot לא הצליח להגיע לשירות PurpleBot. יש לבדוק את החיבור.",
+  "error.remote.directoryTimeout": "שירות PurpleBot לא ענה בזמן. יש לנסות שוב.",
   "error.remote.inviteAlreadyUsed": "ההזמנה הזו כבר נוצלה. יש לבקש הזמנה חדשה.",
   "error.remote.inviteNotFound": "ההזמנה הזו אינה קיימת או שפג תוקפה. יש לבקש הזמנה חדשה.",
   "error.remote.licenseUsersFull": "ברישיון של בעל השרת אין משתמש פנוי. יש לבקש מהבעלים להוסיף משתמש לרישיון.",
   "error.remote.memberLimitReached": "המארח הזה הגיע למגבלת החברים. יש לבקש מהבעלים לפנות מקום.",
-  "error.remote.hostNotRegistered": "המארח הזה כבר אינו רשום בשירות OpenBot.",
+  "error.remote.hostNotRegistered": "המארח הזה כבר אינו רשום בשירות PurpleBot.",
   "error.remote.membershipEnded": "אינך עוד חבר במארח הזה. יש לבקש הזמנה חדשה מהבעלים.",
   "error.remote.membershipChanged": "מישהו שינה את החבר הזה באותו זמן. יש לטעון את החברים מחדש ולנסות שוב.",
   "error.remote.accountSessionInactive": "ההתחברות שלך כבר לא פעילה. יש להתחבר שוב.",
   "error.remote.hostOtherAccount": "המארח הזה שייך לחשבון אחר.",
-  "error.remote.remoteNotConfigured": "חיבורים מרוחקים אינם מוגדרים בשירות OpenBot הזה.",
+  "error.remote.remoteNotConfigured": "חיבורים מרוחקים אינם מוגדרים בשירות PurpleBot הזה.",
   "error.remote.hostRefused": "המארח דחה את הבקשה ({status}).",
   "error.remote.formUnavailable": "הטופס הזה כבר לא זמין.",
   "error.remote.hostedServerRemoval": "יש להשתמש בחיוב כדי למחוק שרת מתארח.",
   "error.remote.hostRemoved": "הבעלים הסיר את השרת הזה מהחשבון.",
   "error.remote.ownerTransferSelf": "השרת הזה כבר בבעלותך. הזן את כתובת האימייל של הבעלים החדש.",
-  "error.remote.ownerTransferHosted": "שרת ש-OpenBot מארחת לא יכול להחליף בעלים.",
+  "error.remote.ownerTransferHosted": "שרת ש-PurpleBot מארחת לא יכול להחליף בעלים.",
   "error.remote.ownerTransferInvalid": "העברת הבעלות הזו כבר לא זמינה. בקש מהבעלים לשלוח אותה שוב.",
   "error.remote.channelsUnsupported": "יש לעדכן את שרת שולחן העבודה הזה כדי להשתמש בערוצים.",
   "error.remote.channelDeleteUnsupported": "יש לעדכן את שרת שולחן העבודה הזה כדי למחוק ערוצים.",
@@ -219,11 +219,11 @@ export const messages = {
   "error.remote.taskHistoryRefreshFailed": "המשימה שונתה, אבל לא ניתן היה לרענן את היסטוריית הצ'אט.",
   "error.remote.serverNotLoaded": "לא ניתן היה לטעון את השרת. יש לנסות שוב.",
   "error.remote.localServerNotStarted":
-    "השרת במחשב הזה לא הופעל. יש לנסות שוב. אם הוא לא מופעל, יש להפעיל מחדש את OpenBot במחשב הזה.",
+    "השרת במחשב הזה לא הופעל. יש לנסות שוב. אם הוא לא מופעל, יש להפעיל מחדש את PurpleBot במחשב הזה.",
   "error.remote.localServerNotFound": "השרת הזה אינו במחשב הזה.",
   "error.remote.localServerAccountRemovalFailed":
     "השרת נמחק במחשב שלו, אבל החשבון עדיין מציג אותו. יש למחוק אותו שוב כדי להסיר אותו מהחשבון.",
   "error.remote.localServerLimit": "אפשר לקיים עד {limit} שרתים במחשב הזה. יש למחוק אחד כדי ליצור שרת נוסף.",
   "error.remote.localServersReadOnly":
-    "הגרסה הזו של OpenBot לא יכולה לקרוא את רשימת השרתים במחשב הזה. יש לעדכן את OpenBot.",
+    "הגרסה הזו של PurpleBot לא יכולה לקרוא את רשימת השרתים במחשב הזה. יש לעדכן את PurpleBot.",
 } as const satisfies PartialTranslation<typeof source>;

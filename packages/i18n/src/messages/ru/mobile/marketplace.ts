@@ -65,11 +65,11 @@ export const messages = {
   "mobile.marketplace.facts.accessMac": "Только Mac",
   "mobile.marketplace.permission.admin": "Устанавливать из каталога могут только владельцы и администраторы.",
   "mobile.marketplace.permission.unavailable":
-    "Этот сервер не в сети, или его версия OpenBot слишком старая для этого. Обновите OpenBot на компьютере, где он работает.",
-  "mobile.marketplace.error.agentUnsupported": "Обновите OpenBot на сервере, чтобы добавлять агентов из каталога.",
+    "Этот сервер не в сети, или его версия PurpleBot слишком старая для этого. Обновите PurpleBot на компьютере, где он работает.",
+  "mobile.marketplace.error.agentUnsupported": "Обновите PurpleBot на сервере, чтобы добавлять агентов из каталога.",
   "mobile.marketplace.error.agentUpdateUnsupported":
-    "Обновите OpenBot на сервере, чтобы обновлять агентов из каталога.",
-  "mobile.marketplace.error.signInUnsupported": "Обновите OpenBot на сервере, чтобы входить в приложения с телефона.",
+    "Обновите PurpleBot на сервере, чтобы обновлять агентов из каталога.",
+  "mobile.marketplace.error.signInUnsupported": "Обновите PurpleBot на сервере, чтобы входить в приложения с телефона.",
   "mobile.marketplace.agent.add": "Добавить агента",
   "mobile.marketplace.agent.adding": "Добавление агента",
   "mobile.marketplace.agent.update": "Обновить агента",
@@ -106,7 +106,7 @@ export const messages = {
   "mobile.marketplace.app.stepReturn": "Вернитесь сюда. {name} подключится на вашем сервере.",
   "mobile.marketplace.app.stepBlank": "Последняя страница не загрузится. Так и должно быть.",
   "mobile.marketplace.app.stepCopy": "Нажмите на адресную строку и скопируйте весь адрес.",
-  "mobile.marketplace.app.stepPaste": "Вернитесь в OpenBot и вставьте адрес ниже.",
+  "mobile.marketplace.app.stepPaste": "Вернитесь в PurpleBot и вставьте адрес ниже.",
   "mobile.marketplace.app.openSignIn": "Открыть вход",
   "mobile.marketplace.app.keySecure": "Ключ передаётся только на ваш сервер по зашифрованному соединению.",
   "mobile.marketplace.app.connecting": "Подключение",
@@ -116,11 +116,12 @@ export const messages = {
   "mobile.marketplace.app.connectFailed": "Не удалось подключить приложение.",
   "mobile.marketplace.app.linkInvalid": "Используйте ссылку https на {hostname}.",
   "mobile.marketplace.app.docs": "Получить ключ",
-  "mobile.marketplace.app.local": "Это приложение работает на компьютере с OpenBot. Настройте его на этом компьютере.",
+  "mobile.marketplace.app.local":
+    "Это приложение работает на компьютере с PurpleBot. Настройте его на этом компьютере.",
   "mobile.marketplace.app.needsMac":
-    "Это приложение работает только на Mac, где запущен OpenBot, а этот сервер — не Mac.",
+    "Это приложение работает только на Mac, где запущен PurpleBot, а этот сервер — не Mac.",
   "mobile.marketplace.app.relayUnsupported":
-    "Этому приложению нужен вход в браузере. Обновите OpenBot на сервере или подключите приложение на компьютере.",
+    "Этому приложению нужен вход в браузере. Обновите PurpleBot на сервере или подключите приложение на компьютере.",
   "mobile.marketplace.app.waiting": "Ожидание страницы входа…",
   "mobile.marketplace.app.openAgain": "Снова открыть страницу входа",
   "mobile.marketplace.app.pasteLabel": "Адрес после входа",

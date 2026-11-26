@@ -90,13 +90,13 @@ async function ask<T>(message: XRequest, decode: (value: unknown) => T): Promise
 }
 
 function note(text: string) {
-  if (__OPENBOT_X_NOTES__) console.info(`[OpenBot] ${text}`);
+  if (__OPENBOT_X_NOTES__) console.info(`[PurpleBot] ${text}`);
 }
 
 function explain(reason: string) {
   if (reason === logged) return;
   logged = reason;
-  note(reason ? `The reply button stays as X made it: ${reason}` : "The reply button has the OpenBot look.");
+  note(reason ? `The reply button stays as X made it: ${reason}` : "The reply button has the PurpleBot look.");
 }
 
 function refreshStatus() {

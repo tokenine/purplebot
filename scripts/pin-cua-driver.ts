@@ -67,7 +67,7 @@ async function pinArtifact(fetchImpl: typeof fetch, target: CuaDriverTarget, ver
 }
 
 async function download(fetchImpl: typeof fetch, url: string): Promise<Buffer> {
-  const response = await fetchImpl(url, { headers: { "User-Agent": "OpenBot-runtime-pin" }, redirect: "follow" });
+  const response = await fetchImpl(url, { headers: { "User-Agent": "PurpleBot-runtime-pin" }, redirect: "follow" });
   if (!response.ok) throw new Error(`${url} answered HTTP ${response.status}.`);
   return Buffer.from(await response.arrayBuffer());
 }

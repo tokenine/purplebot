@@ -17,11 +17,11 @@ export const messages = {
   "connector.github.connectedAs": "Verbunden als @{login}",
   "connector.github.repositoriesTitle": "Repositories",
   "connector.github.repositoriesDescription":
-    "Agenten können nur Repositories verwenden, in denen die OpenBot GitHub App installiert ist.",
+    "Agenten können nur Repositories verwenden, in denen die PurpleBot GitHub App installiert ist.",
   "connector.github.chooseRepositories": "Repositories auswählen",
   "connector.github.repositoriesLoading": "Repositories werden von GitHub gelesen",
-  "connector.github.repositoriesFailed": "OpenBot konnte die Repositories von GitHub nicht lesen.",
-  "connector.github.noRepositories": "Die OpenBot GitHub App ist noch in keinem Repository installiert.",
+  "connector.github.repositoriesFailed": "PurpleBot konnte die Repositories von GitHub nicht lesen.",
+  "connector.github.noRepositories": "Die PurpleBot GitHub App ist noch in keinem Repository installiert.",
   "connector.github.moreRepositories": {
     one: "Und {count} weiteres Repository",
     other: "Und {count} weitere Repositories",
@@ -35,7 +35,7 @@ export const messages = {
   "connector.github.expiredDescription":
     "Verbinde dich erneut als @{login}, damit Agenten wieder auf GitHub zugreifen können.",
   "connector.github.reconnect": "Neu verbinden",
-  "connector.github.actionFailed": "OpenBot konnte die GitHub-Verbindung nicht ändern.",
+  "connector.github.actionFailed": "PurpleBot konnte die GitHub-Verbindung nicht ändern.",
   "connector.github.statusConnected": "Verbunden",
   "connector.github.statusConnecting": "Wird verbunden",
   "connector.github.statusExpired": "Abgelaufen",
@@ -48,7 +48,7 @@ export const messages = {
   "connector.github.noMatch": "Kein Repository entspricht „{query}“.",
   "connector.github.stepSignIn": "Anmelden",
   "connector.github.stepConnected": "Verbunden",
-  "connector.github.requestingCode": "OpenBot fordert einen Code von GitHub an.",
+  "connector.github.requestingCode": "PurpleBot fordert einen Code von GitHub an.",
   "connector.github.codeLabel": "Code {code}",
   "connector.github.failedTitle": "GitHub wurde nicht verbunden",
   "connector.github.cancelConnecting": "GitHub-Verbindung abbrechen",
@@ -63,7 +63,7 @@ export const messages = {
     "Beim Trennen wird die Anmeldung von @{login} von diesem Computer entfernt.",
   "connector.github.disconnectEffectTools": "Alle Agenten verlieren die GitHub-Werkzeuge, gh und git.",
   "connector.github.disconnectEffectRevoke":
-    "Danach öffnet sich GitHub. Dort kannst du den Zugriff von OpenBot widerrufen.",
+    "Danach öffnet sich GitHub. Dort kannst du den Zugriff von PurpleBot widerrufen.",
   "connector.github.disconnectEffectKept": "Chats, Dateien und Agentenspeicher bleiben auf diesem Computer erhalten.",
   "connector.github.descriptionHost":
     "Alle Agenten auf {host} können deine GitHub-Repositories, Issues und Pull Requests sowie gh und git verwenden.",
@@ -78,10 +78,10 @@ export const messages = {
   "connector.github.close": "Schließen",
   "connector.dangerZone": "Gefahrenbereich",
   "connector.statusUnknown": "Unbekannt",
-  "connector.readFailed": "OpenBot konnte den Status dieser Verbindung nicht lesen.",
+  "connector.readFailed": "PurpleBot konnte den Status dieser Verbindung nicht lesen.",
   "connector.slack.title": "Slack",
   "connector.slack.description":
-    "Personen erwähnen @OpenBot in Slack oder senden ihm eine Direktnachricht. Der Slack Orchestrator fragt den passenden Agenten und antwortet.",
+    "Personen erwähnen @PurpleBot in Slack oder senden ihm eine Direktnachricht. Der Slack Orchestrator fragt den passenden Agenten und antwortet.",
   "connector.slack.statusConnected": "Verbunden",
   "connector.slack.statusAttention": "Handlungsbedarf",
   "connector.slack.summaryConnected": "{workspace} · Slack Orchestrator antwortet",
@@ -95,16 +95,16 @@ export const messages = {
   "connector.slack.addAgent": "Agenten hinzufügen",
   "connector.slack.actionFailed": "Slack hat die Änderung nicht angenommen",
   "connector.slack.workspaceTitle": "Arbeitsbereiche",
-  "connector.slack.workspaceDescription": "Personen erwähnen @OpenBot oder senden ihm eine Direktnachricht.",
+  "connector.slack.workspaceDescription": "Personen erwähnen @PurpleBot oder senden ihm eine Direktnachricht.",
   "connector.slack.disconnectWorkspace": "Trennen",
   "connector.slack.disconnectAllTitle": "Slack trennen",
   "connector.slack.disconnectAllSummary":
-    "Alle Workspaces werden getrennt. Niemand erreicht deine Agenten dann noch über @OpenBot.",
+    "Alle Workspaces werden getrennt. Niemand erreicht deine Agenten dann noch über @PurpleBot.",
   "connector.slack.disconnectAllSummaryOrchestrator":
-    "Alle Workspaces werden getrennt. Der Slack Orchestrator und seine Unterhaltungen werden aus OpenBot gelöscht.",
+    "Alle Workspaces werden getrennt. Der Slack Orchestrator und seine Unterhaltungen werden aus PurpleBot gelöscht.",
   "connector.slack.missingScopes":
-    "OpenBot hat diese Berechtigungen in Slack nicht: {scopes}. Trenne den Arbeitsbereich und verbinde ihn erneut.",
-  "connector.slack.retryAt": "Slack hat OpenBot gebeten zu warten. OpenBot versucht es um {time} erneut.",
+    "PurpleBot hat diese Berechtigungen in Slack nicht: {scopes}. Trenne den Arbeitsbereich und verbinde ihn erneut.",
+  "connector.slack.retryAt": "Slack hat PurpleBot gebeten zu warten. PurpleBot versucht es um {time} erneut.",
   "connector.slack.reconnect": "Neu verbinden",
   "connector.slack.pause": "Pausieren",
   "connector.slack.resume": "Fortsetzen",
@@ -115,12 +115,12 @@ export const messages = {
   "connector.slack.orchestratorNone": "Noch kein Agent antwortet",
   "connector.slack.orchestratorNoneDescription": "Füge den Slack Orchestrator hinzu, sonst erhält Slack keine Antwort.",
   "connector.slack.inviteNote":
-    "OpenBot tritt allen öffentlichen Kanälen und jedem neuen Kanal automatisch bei. Lade ihn in einen privaten Kanal ein: /invite @OpenBot.",
+    "PurpleBot tritt allen öffentlichen Kanälen und jedem neuen Kanal automatisch bei. Lade ihn in einen privaten Kanal ein: /invite @PurpleBot.",
   "connector.slack.stepWorkspace": "Arbeitsbereich",
   "connector.slack.stepAgent": "Agent",
   "connector.slack.connectTitle": "Slack-Arbeitsbereich verbinden",
   "connector.slack.connectDescription":
-    "OpenBot installiert eine App namens OpenBot im Arbeitsbereich. Sie tritt allen öffentlichen Kanälen bei.",
+    "PurpleBot installiert eine App namens PurpleBot im Arbeitsbereich. Sie tritt allen öffentlichen Kanälen bei.",
   "connector.slack.connectStepBrowser": "Slack öffnet sich in deinem Browser",
   "connector.slack.connectStepAllow": "Wähle den Arbeitsbereich oben rechts und dann „Zulassen“",
   "connector.slack.connectStepReturn": "Dieser Dialog wird fortgesetzt, sobald Slack fertig ist",
@@ -128,26 +128,27 @@ export const messages = {
   "connector.slack.connectWaiting": "Warten auf Slack. Schließe die Installation in deinem Browser ab.",
   "connector.slack.agentStepTitle": "Slack Orchestrator hinzufügen",
   "connector.slack.agentStepDescription":
-    "Dieser neue Agent beantwortet alles, was Personen in {workspace} an @OpenBot senden.",
+    "Dieser neue Agent beantwortet alles, was Personen in {workspace} an @PurpleBot senden.",
   "connector.slack.orchestratorName": "Slack Orchestrator",
   "connector.slack.orchestratorRole": "Antwortet in Slack und fragt das Team",
   "connector.slack.orchestratorDoesReceive": "Erhält jede Slack-Anfrage zuerst",
   "connector.slack.orchestratorDoesDelegate": "Gibt jede Aufgabe an den am besten geeigneten Agenten weiter",
   "connector.slack.orchestratorDoesAnswer": "Veröffentlicht die Antwort im Slack-Thread",
   "connector.slack.orchestratorModel": "Modell",
-  "connector.slack.doneTitle": "OpenBot ist in {workspace}",
+  "connector.slack.doneTitle": "PurpleBot ist in {workspace}",
   "connector.slack.doneDescription":
-    "Erwähne @OpenBot in einem öffentlichen Kanal oder sende ihm eine Direktnachricht.",
+    "Erwähne @PurpleBot in einem öffentlichen Kanal oder sende ihm eine Direktnachricht.",
   "connector.slack.done": "Fertig",
   "connector.slack.disconnectTitle": "{workspace} trennen?",
   "connector.slack.disconnectDescription":
-    "OpenBot antwortet nicht mehr in {workspace} und entfernt sein Slack-Token von diesem Computer.",
+    "PurpleBot antwortet nicht mehr in {workspace} und entfernt sein Slack-Token von diesem Computer.",
   "connector.slack.disconnectDescriptionHost":
-    "OpenBot antwortet nicht mehr in {workspace} und entfernt sein Slack-Token von {host}.",
+    "PurpleBot antwortet nicht mehr in {workspace} und entfernt sein Slack-Token von {host}.",
   "connector.slack.disconnectEffect":
-    "Personen in {workspace} können deine Agenten nicht mehr über @OpenBot erreichen.",
-  "connector.slack.removeEffectKept": "Die Unterhaltungen und der Slack Orchestrator bleiben in OpenBot erhalten.",
-  "connector.slack.removeEffectDeleted": "Der Slack Orchestrator und seine Unterhaltungen werden aus OpenBot gelöscht.",
+    "Personen in {workspace} können deine Agenten nicht mehr über @PurpleBot erreichen.",
+  "connector.slack.removeEffectKept": "Die Unterhaltungen und der Slack Orchestrator bleiben in PurpleBot erhalten.",
+  "connector.slack.removeEffectDeleted":
+    "Der Slack Orchestrator und seine Unterhaltungen werden aus PurpleBot gelöscht.",
   "connector.slack.keep": "Verbunden lassen",
   "connector.slack.close": "Schließen",
   "connector.slack.addWorkspace": "Arbeitsbereich hinzufügen",
@@ -161,7 +162,7 @@ export const messages = {
   },
   "connector.discord.title": "Discord",
   "connector.discord.description":
-    "Personen erwähnen @OpenBot in einem Kanal eines Discord-Servers. Der Discord Orchestrator fragt den passenden Agenten und antwortet.",
+    "Personen erwähnen @PurpleBot in einem Kanal eines Discord-Servers. Der Discord Orchestrator fragt den passenden Agenten und antwortet.",
   "connector.discord.statusConnected": "Verbunden",
   "connector.discord.statusAttention": "Handlungsbedarf",
   "connector.discord.summaryConnected": "{workspace} · Discord Orchestrator antwortet",
@@ -175,16 +176,16 @@ export const messages = {
   "connector.discord.addAgent": "Agenten hinzufügen",
   "connector.discord.actionFailed": "Discord hat die Änderung nicht angenommen",
   "connector.discord.workspaceTitle": "Discord-Server",
-  "connector.discord.workspaceDescription": "Erwähne @OpenBot in einem Kanal. Antworte OpenBot, um fortzufahren.",
+  "connector.discord.workspaceDescription": "Erwähne @PurpleBot in einem Kanal. Antworte PurpleBot, um fortzufahren.",
   "connector.discord.disconnectWorkspace": "Trennen",
   "connector.discord.disconnectAllTitle": "Discord trennen",
   "connector.discord.disconnectAllSummary":
-    "Alle Server werden getrennt. Niemand erreicht deine Agenten dann noch über @OpenBot.",
+    "Alle Server werden getrennt. Niemand erreicht deine Agenten dann noch über @PurpleBot.",
   "connector.discord.disconnectAllSummaryOrchestrator":
-    "Alle Server werden getrennt. Der Discord Orchestrator und seine Unterhaltungen werden aus OpenBot gelöscht.",
+    "Alle Server werden getrennt. Der Discord Orchestrator und seine Unterhaltungen werden aus PurpleBot gelöscht.",
   "connector.discord.missingScopes":
-    "OpenBot hat diese Berechtigungen in Discord nicht: {scopes}. Trenne den Discord-Server und verbinde ihn erneut.",
-  "connector.discord.retryAt": "Discord hat OpenBot gebeten zu warten. OpenBot versucht es um {time} erneut.",
+    "PurpleBot hat diese Berechtigungen in Discord nicht: {scopes}. Trenne den Discord-Server und verbinde ihn erneut.",
+  "connector.discord.retryAt": "Discord hat PurpleBot gebeten zu warten. PurpleBot versucht es um {time} erneut.",
   "connector.discord.reconnect": "Neu verbinden",
   "connector.discord.pause": "Pausieren",
   "connector.discord.resume": "Fortsetzen",
@@ -195,11 +196,11 @@ export const messages = {
   "connector.discord.orchestratorNone": "Noch kein Agent antwortet",
   "connector.discord.orchestratorNoneDescription":
     "Füge den Discord Orchestrator hinzu, sonst erhält Discord keine Antwort.",
-  "connector.discord.channelsNote": "OpenBot sieht die Kanäle, die seine Rolle sehen darf.",
+  "connector.discord.channelsNote": "PurpleBot sieht die Kanäle, die seine Rolle sehen darf.",
   "connector.discord.stepWorkspace": "Discord-Server",
   "connector.discord.stepAgent": "Agent",
   "connector.discord.connectTitle": "Discord-Server verbinden",
-  "connector.discord.connectDescription": "OpenBot fügt dem Discord-Server einen Bot namens OpenBot hinzu.",
+  "connector.discord.connectDescription": "PurpleBot fügt dem Discord-Server einen Bot namens PurpleBot hinzu.",
   "connector.discord.connectStepBrowser": "Discord öffnet sich in deinem Browser",
   "connector.discord.connectStepAllow": "Wähle den Server und dann „Autorisieren“",
   "connector.discord.connectStepReturn": "Dieser Dialog wird fortgesetzt, sobald Discord fertig ist",
@@ -207,26 +208,27 @@ export const messages = {
   "connector.discord.connectWaiting": "Warten auf Discord. Schließe die Autorisierung in deinem Browser ab.",
   "connector.discord.agentStepTitle": "Discord Orchestrator hinzufügen",
   "connector.discord.agentStepDescription":
-    "Dieser neue Agent beantwortet alles, was Personen in {workspace} an @OpenBot senden.",
+    "Dieser neue Agent beantwortet alles, was Personen in {workspace} an @PurpleBot senden.",
   "connector.discord.orchestratorName": "Discord Orchestrator",
   "connector.discord.orchestratorRole": "Antwortet in Discord und fragt das Team",
   "connector.discord.orchestratorDoesReceive": "Erhält jede Discord-Anfrage zuerst",
   "connector.discord.orchestratorDoesDelegate": "Gibt jede Aufgabe an den am besten geeigneten Agenten weiter",
   "connector.discord.orchestratorDoesAnswer": "Sendet die Antwort im Discord-Kanal",
   "connector.discord.orchestratorModel": "Modell",
-  "connector.discord.doneTitle": "OpenBot ist in {workspace}",
-  "connector.discord.doneDescription": "Erwähne @OpenBot in einem Kanal. Antworte OpenBot, um fortzufahren.",
+  "connector.discord.doneTitle": "PurpleBot ist in {workspace}",
+  "connector.discord.doneDescription": "Erwähne @PurpleBot in einem Kanal. Antworte PurpleBot, um fortzufahren.",
   "connector.discord.done": "Fertig",
   "connector.discord.disconnectTitle": "{workspace} trennen?",
   "connector.discord.disconnectDescription":
-    "OpenBot antwortet nicht mehr in {workspace} und entfernt die Discord-Verbindung von diesem Computer.",
+    "PurpleBot antwortet nicht mehr in {workspace} und entfernt die Discord-Verbindung von diesem Computer.",
   "connector.discord.disconnectDescriptionHost":
-    "OpenBot antwortet nicht mehr in {workspace} und entfernt die Discord-Verbindung von {host}.",
+    "PurpleBot antwortet nicht mehr in {workspace} und entfernt die Discord-Verbindung von {host}.",
   "connector.discord.disconnectEffect":
-    "Personen in {workspace} können deine Agenten nicht mehr über @OpenBot erreichen.",
-  "connector.discord.removeEffectKept": "Die Unterhaltungen und der Discord Orchestrator bleiben in OpenBot erhalten.",
+    "Personen in {workspace} können deine Agenten nicht mehr über @PurpleBot erreichen.",
+  "connector.discord.removeEffectKept":
+    "Die Unterhaltungen und der Discord Orchestrator bleiben in PurpleBot erhalten.",
   "connector.discord.removeEffectDeleted":
-    "Der Discord Orchestrator und seine Unterhaltungen werden aus OpenBot gelöscht.",
+    "Der Discord Orchestrator und seine Unterhaltungen werden aus PurpleBot gelöscht.",
   "connector.discord.keep": "Verbunden lassen",
   "connector.discord.close": "Schließen",
   "connector.discord.addWorkspace": "Discord-Server hinzufügen",
@@ -238,24 +240,25 @@ export const messages = {
     one: "{count} Discord-Server · Discord Orchestrator antwortet",
     other: "{count} Discord-Server · Discord Orchestrator antwortet",
   },
-  "connector.discord.accessTitle": "Wer OpenBot nutzen kann",
-  "connector.discord.accessDescription": "OpenBot antwortet nur diesen Personen. Erwähnungen von anderen ignoriert es.",
+  "connector.discord.accessTitle": "Wer PurpleBot nutzen kann",
+  "connector.discord.accessDescription":
+    "PurpleBot antwortet nur diesen Personen. Erwähnungen von anderen ignoriert es.",
   "connector.discord.accessEveryone": "Alle auf dem Server",
   "connector.discord.accessEveryoneDescription":
-    "Jeder, der in einem Kanal schreiben kann, den OpenBot sieht, kann es erwähnen.",
+    "Jeder, der in einem Kanal schreiben kann, den PurpleBot sieht, kann es erwähnen.",
   "connector.discord.accessRoles": "Mitglieder mit {roles}",
   "connector.discord.accessChoose": "Rollen wählen",
-  "connector.discord.accessDialogTitle": "Wer kann OpenBot in {workspace} nutzen?",
-  "connector.discord.accessDialogDescription": "Ohne ausgewählte Rolle können alle OpenBot erwähnen.",
+  "connector.discord.accessDialogTitle": "Wer kann PurpleBot in {workspace} nutzen?",
+  "connector.discord.accessDialogDescription": "Ohne ausgewählte Rolle können alle PurpleBot erwähnen.",
   "connector.discord.accessLoading": "Rollen werden geladen…",
   "connector.discord.accessLoadFailed": "Discord-Rollen wurden nicht geladen",
   "connector.discord.accessNoRoles": "Dieser Server hat keine Rollen zur Auswahl.",
   "connector.discord.accessRoleDeleted": "{role} (gelöscht)",
   "connector.discord.accessSave": "Speichern",
-  "connector.discord.accessHostUpdate": "Aktualisiere OpenBot auf {host}, um Rollen zu wählen.",
+  "connector.discord.accessHostUpdate": "Aktualisiere PurpleBot auf {host}, um Rollen zu wählen.",
   "connector.telegram.title": "Telegram",
   "connector.telegram.description":
-    "Füge den OpenBot-Bot zu einer Telegram-Gruppe hinzu oder öffne einen direkten Chat mit ihm. Der Telegram-Orchestrator fragt den passenden Agenten und antwortet.",
+    "Füge den PurpleBot-Bot zu einer Telegram-Gruppe hinzu oder öffne einen direkten Chat mit ihm. Der Telegram-Orchestrator fragt den passenden Agenten und antwortet.",
   "connector.telegram.statusConnected": "Verbunden",
   "connector.telegram.statusAttention": "Handlungsbedarf",
   "connector.telegram.summaryConnected": {
@@ -278,31 +281,32 @@ export const messages = {
   "connector.telegram.groupDescription": "Personen erwähnen den Bot oder antworten auf seine Nachrichten.",
   "connector.telegram.directDescription": "Jede Nachricht in diesem Chat geht an den Telegram-Orchestrator.",
   "connector.telegram.helpRemoved":
-    "Der OpenBot-Bot ist nicht mehr in diesem Chat. Trenne den Chat und füge den Bot dann erneut hinzu.",
+    "Der PurpleBot-Bot ist nicht mehr in diesem Chat. Trenne den Chat und füge den Bot dann erneut hinzu.",
   "connector.telegram.helpRelayUnavailable":
-    "OpenBot kann auf diesem Computer keine Telegram-Nachrichten empfangen. Melde dich an, gib diesem Computer in den Servereinstellungen einen Namen und lass OpenBot geöffnet.",
+    "PurpleBot kann auf diesem Computer keine Telegram-Nachrichten empfangen. Melde dich an, gib diesem Computer in den Servereinstellungen einen Namen und lass PurpleBot geöffnet.",
   "connector.telegram.helpRelayUnavailableHost":
-    "OpenBot auf {host} kann keine Telegram-Nachrichten empfangen. Melde dich auf {host} an, gib dem Server in den Servereinstellungen einen Namen und lass OpenBot geöffnet.",
-  "connector.telegram.helpError": "OpenBot kann diesen Chat nicht erreichen. Verbinde ihn erneut oder trenne den Chat.",
+    "PurpleBot auf {host} kann keine Telegram-Nachrichten empfangen. Melde dich auf {host} an, gib dem Server in den Servereinstellungen einen Namen und lass PurpleBot geöffnet.",
+  "connector.telegram.helpError":
+    "PurpleBot kann diesen Chat nicht erreichen. Verbinde ihn erneut oder trenne den Chat.",
   "connector.telegram.helpNotLinked":
     "Dieser Chat ist nicht mit diesem Server verknüpft. Wähle „Neu verbinden“, um ihn zu verknüpfen.",
-  "connector.telegram.retryAt": "Telegram hat OpenBot gebeten zu warten. Neuer Versuch um {time}.",
+  "connector.telegram.retryAt": "Telegram hat PurpleBot gebeten zu warten. Neuer Versuch um {time}.",
   "connector.telegram.pause": "Pausieren",
   "connector.telegram.resume": "Fortsetzen",
   "connector.telegram.reconnect": "Neu verbinden",
   "connector.telegram.disconnectChat": "Trennen",
   "connector.telegram.disconnectAllTitle": "Telegram trennen",
   "connector.telegram.disconnectAllSummary":
-    "Alle Chats werden getrennt. Niemand erreicht deine Agenten dann noch über den OpenBot-Bot.",
+    "Alle Chats werden getrennt. Niemand erreicht deine Agenten dann noch über den PurpleBot-Bot.",
   "connector.telegram.disconnectAllSummaryOrchestrator":
-    "Alle Chats werden getrennt. Der Telegram-Orchestrator und seine Unterhaltungen werden aus OpenBot gelöscht.",
+    "Alle Chats werden getrennt. Der Telegram-Orchestrator und seine Unterhaltungen werden aus PurpleBot gelöscht.",
   "connector.telegram.rowAction": "{action}: {name}",
   "connector.telegram.linkChat": "Chat verknüpfen",
   "connector.telegram.addToGroup": "Zu Gruppe hinzufügen",
   "connector.telegram.openDirectChat": "Direkten Chat öffnen",
   "connector.telegram.orchestratorTitle": "Telegram-Orchestrator",
   "connector.telegram.orchestratorDescription":
-    "Dieser Agent empfängt die Nachrichten für OpenBot aus all deinen Telegram-Chats. Kurze beantwortet er selbst, andere Aufgaben gibt er an den passenden Agenten weiter und postet die Antwort im Chat.",
+    "Dieser Agent empfängt die Nachrichten für PurpleBot aus all deinen Telegram-Chats. Kurze beantwortet er selbst, andere Aufgaben gibt er an den passenden Agenten weiter und postet die Antwort im Chat.",
   "connector.telegram.orchestratorNone": "Noch kein Agent antwortet",
   "connector.telegram.orchestratorNoneDescription":
     "Füge den Telegram-Orchestrator hinzu, sonst bekommt Telegram keine Antwort.",
@@ -312,29 +316,29 @@ export const messages = {
   "connector.telegram.stepAgent": "Agent",
   "connector.telegram.connectTitle": "Telegram-Chat verknüpfen",
   "connector.telegram.connectDescription":
-    "Füge den OpenBot-Bot zu einer Gruppe hinzu oder öffne einen direkten Chat mit ihm. Ein Bot bedient all deine Chats.",
+    "Füge den PurpleBot-Bot zu einer Gruppe hinzu oder öffne einen direkten Chat mit ihm. Ein Bot bedient all deine Chats.",
   "connector.telegram.connectStepBrowser": "Telegram wird in deinem Browser geöffnet",
   "connector.telegram.connectStepPick": "Wähle die Gruppe aus oder tippe im direkten Chat auf „Starten“",
   "connector.telegram.connectStepReturn": "Dieser Dialog geht weiter, sobald der Chat verknüpft ist",
   "connector.telegram.connectWaiting": "Warten auf Telegram. Wähle den Chat in Telegram aus.",
   "connector.telegram.agentStepTitle": "Telegram-Orchestrator hinzufügen",
   "connector.telegram.agentStepDescription":
-    "Dieser neue Agent beantwortet die Nachrichten für OpenBot in {chat} und in jedem Chat, den du später verknüpfst.",
+    "Dieser neue Agent beantwortet die Nachrichten für PurpleBot in {chat} und in jedem Chat, den du später verknüpfst.",
   "connector.telegram.orchestratorName": "Telegram-Orchestrator",
   "connector.telegram.orchestratorRole": "Antwortet in Telegram und fragt das Team",
-  "connector.telegram.orchestratorDoesReceive": "Empfängt jede Telegram-Nachricht für OpenBot zuerst",
+  "connector.telegram.orchestratorDoesReceive": "Empfängt jede Telegram-Nachricht für PurpleBot zuerst",
   "connector.telegram.orchestratorDoesDelegate": "Gibt jede Aufgabe an den am besten passenden Agenten weiter",
   "connector.telegram.orchestratorDoesAnswer": "Postet die Antwort im Telegram-Chat",
   "connector.telegram.orchestratorModel": "Modell",
-  "connector.telegram.doneTitle": "OpenBot ist in {chat}",
+  "connector.telegram.doneTitle": "PurpleBot ist in {chat}",
   "connector.telegram.done": "Fertig",
   "connector.telegram.disconnectTitle": "{chat} trennen?",
-  "connector.telegram.leaveDescription": "Der OpenBot-Bot verlässt {chat}, und OpenBot antwortet dort nicht mehr.",
+  "connector.telegram.leaveDescription": "Der PurpleBot-Bot verlässt {chat}, und PurpleBot antwortet dort nicht mehr.",
   "connector.telegram.disconnectEffect":
-    "Personen in {chat} können deine Agenten nicht mehr über den OpenBot-Bot erreichen.",
-  "connector.telegram.removeEffectKept": "Die Unterhaltungen und der Telegram-Orchestrator bleiben in OpenBot.",
+    "Personen in {chat} können deine Agenten nicht mehr über den PurpleBot-Bot erreichen.",
+  "connector.telegram.removeEffectKept": "Die Unterhaltungen und der Telegram-Orchestrator bleiben in PurpleBot.",
   "connector.telegram.removeEffectDeleted":
-    "Das ist der letzte Chat, daher werden der Telegram-Orchestrator und seine Unterhaltungen aus OpenBot gelöscht.",
+    "Das ist der letzte Chat, daher werden der Telegram-Orchestrator und seine Unterhaltungen aus PurpleBot gelöscht.",
   "connector.telegram.keep": "Verbunden lassen",
   "connector.telegram.close": "Schließen",
   "connector.whatsapp.title": "WhatsApp",
@@ -363,18 +367,18 @@ export const messages = {
   "connector.whatsapp.numbersTitle": "Nummern",
   "connector.whatsapp.linkNumber": "Nummer verknüpfen",
   "connector.whatsapp.ownNumberNote":
-    "Dein Chat „Nachricht an dich selbst“ und die Personen, die du zulässt, erreichen OpenBot.",
+    "Dein Chat „Nachricht an dich selbst“ und die Personen, die du zulässt, erreichen PurpleBot.",
   "connector.whatsapp.dedicatedNote":
-    "Dein Chat „Nachricht an dich selbst“ und die Personen, die du zulässt, erreichen OpenBot. Andere Personen bekommen einen Code, den sie dir geben.",
+    "Dein Chat „Nachricht an dich selbst“ und die Personen, die du zulässt, erreichen PurpleBot. Andere Personen bekommen einen Code, den sie dir geben.",
   "connector.whatsapp.helpLoggedOut":
     "WhatsApp hat diesen Computer aus den verknüpften Geräten entfernt. Verknüpfe die Nummer erneut.",
   "connector.whatsapp.helpLoggedOutHost":
     "WhatsApp hat diesen Server aus den verknüpften Geräten entfernt. Verknüpfe die Nummer erneut.",
   "connector.whatsapp.helpError":
-    "OpenBot kann WhatsApp unter dieser Nummer nicht erreichen. Verbinde sie erneut oder trenne die Nummer.",
+    "PurpleBot kann WhatsApp unter dieser Nummer nicht erreichen. Verbinde sie erneut oder trenne die Nummer.",
   "connector.whatsapp.helpKeysUnreadable":
-    "OpenBot kann die gespeicherten Schlüssel dieser Nummer nicht lesen. Verknüpfe die Nummer erneut.",
-  "connector.whatsapp.retryAt": "WhatsApp hat OpenBot gebeten zu warten. Neuer Versuch um {time}.",
+    "PurpleBot kann die gespeicherten Schlüssel dieser Nummer nicht lesen. Verknüpfe die Nummer erneut.",
+  "connector.whatsapp.retryAt": "WhatsApp hat PurpleBot gebeten zu warten. Neuer Versuch um {time}.",
   "connector.whatsapp.pause": "Pausieren",
   "connector.whatsapp.resume": "Fortsetzen",
   "connector.whatsapp.reconnect": "Neu verbinden",
@@ -384,20 +388,20 @@ export const messages = {
   "connector.whatsapp.disconnectAllSummary":
     "Alle Nummern werden getrennt. Niemand erreicht deine Agenten dann noch über WhatsApp.",
   "connector.whatsapp.disconnectAllSummaryOrchestrator":
-    "Alle Nummern werden getrennt. Der WhatsApp-Orchestrator und seine Unterhaltungen werden aus OpenBot gelöscht.",
+    "Alle Nummern werden getrennt. Der WhatsApp-Orchestrator und seine Unterhaltungen werden aus PurpleBot gelöscht.",
   "connector.whatsapp.rowAction": "{action}: {name}",
   "connector.whatsapp.ownNumber": "Private Nummer",
   "connector.whatsapp.ownNumberDescription":
-    "Nur dein Chat „Nachricht an dich selbst“ und die Personen, die du zulässt, können schreiben. Andere bekommen keine Antwort. Wenn es aus ist, antwortet OpenBot unbekannten Personen mit einem Code.",
+    "Nur dein Chat „Nachricht an dich selbst“ und die Personen, die du zulässt, können schreiben. Andere bekommen keine Antwort. Wenn es aus ist, antwortet PurpleBot unbekannten Personen mit einem Code.",
   "connector.whatsapp.workingMessage": "Nachricht „Wird bearbeitet…“",
   "connector.whatsapp.workingMessageDescription":
-    "OpenBot sendet sie, während der Agent arbeitet, und ersetzt sie dann durch die Antwort. Eine Anfrage, die auf eine frühere wartet, bekommt auch eine Wartemeldung. Bei einer privaten Nummer bekommt nur dein Chat „Nachricht an dich selbst“ diese Meldungen. Schalte sie aus, um nur die Antwort zu senden.",
+    "PurpleBot sendet sie, während der Agent arbeitet, und ersetzt sie dann durch die Antwort. Eine Anfrage, die auf eine frühere wartet, bekommt auch eine Wartemeldung. Bei einer privaten Nummer bekommt nur dein Chat „Nachricht an dich selbst“ diese Meldungen. Schalte sie aus, um nur die Antwort zu senden.",
   "connector.whatsapp.statusReactions": "Status-Reaktionen",
   "connector.whatsapp.statusReactionsDescription":
-    "OpenBot reagiert mit 👀, wenn eine Nachricht ankommt, und mit ✅, wenn die Antwort fertig ist. Schalte sie aus, um keine Reaktionen zu senden.",
+    "PurpleBot reagiert mit 👀, wenn eine Nachricht ankommt, und mit ✅, wenn die Antwort fertig ist. Schalte sie aus, um keine Reaktionen zu senden.",
   "connector.whatsapp.orchestratorTitle": "WhatsApp-Orchestrator",
   "connector.whatsapp.orchestratorDescription":
-    "Dieser Agent empfängt die Nachrichten für OpenBot von all deinen verknüpften Nummern. Kurze beantwortet er selbst, andere Aufgaben gibt er an den passenden Agenten weiter und antwortet in WhatsApp.",
+    "Dieser Agent empfängt die Nachrichten für PurpleBot von all deinen verknüpften Nummern. Kurze beantwortet er selbst, andere Aufgaben gibt er an den passenden Agenten weiter und antwortet in WhatsApp.",
   "connector.whatsapp.orchestratorNone": "Noch kein Agent antwortet",
   "connector.whatsapp.orchestratorNoneDescription":
     "Füge den WhatsApp-Orchestrator hinzu, sonst bekommt WhatsApp keine Antwort.",
@@ -413,10 +417,10 @@ export const messages = {
   "connector.whatsapp.kindLabel": "Nummer",
   "connector.whatsapp.kindPersonal": "Meine private Nummer",
   "connector.whatsapp.kindPersonalDescription":
-    "OpenBot antwortet nur dir in „Nachricht an dich selbst“ und den Personen, die du zulässt. Andere Personen bekommen keine Antwort.",
-  "connector.whatsapp.kindDedicated": "Eine Nummer nur für OpenBot",
+    "PurpleBot antwortet nur dir in „Nachricht an dich selbst“ und den Personen, die du zulässt. Andere Personen bekommen keine Antwort.",
+  "connector.whatsapp.kindDedicated": "Eine Nummer nur für PurpleBot",
   "connector.whatsapp.kindDedicatedDescription":
-    "OpenBot antwortet von dieser Nummer jeder unbekannten Person mit einem Code, den sie dir gibt. Du genehmigst sie hier.",
+    "PurpleBot antwortet von dieser Nummer jeder unbekannten Person mit einem Code, den sie dir gibt. Du genehmigst sie hier.",
   "connector.whatsapp.methodLabel": "Verknüpfungsart",
   "connector.whatsapp.methodQr": "QR-Code",
   "connector.whatsapp.methodCode": "Kopplungscode",
@@ -443,26 +447,26 @@ export const messages = {
   "connector.whatsapp.failedRefused":
     "WhatsApp hat die Verknüpfung abgelehnt. Warte ein paar Minuten und versuche es dann erneut.",
   "connector.whatsapp.failedBusy": "Eine andere Verknüpfung läuft. Warte, bis sie endet, und versuche es dann erneut.",
-  "connector.whatsapp.failedUnavailable": "OpenBot kann WhatsApp nicht erreichen. Prüfe die Internetverbindung.",
+  "connector.whatsapp.failedUnavailable": "PurpleBot kann WhatsApp nicht erreichen. Prüfe die Internetverbindung.",
   "connector.whatsapp.tryAgain": "Wiederholen",
   "connector.whatsapp.agentStepTitle": "WhatsApp-Orchestrator hinzufügen",
   "connector.whatsapp.agentStepDescription":
-    "Dieser neue Agent beantwortet die Nachrichten für OpenBot unter {number} und unter jeder Nummer, die du später verknüpfst.",
+    "Dieser neue Agent beantwortet die Nachrichten für PurpleBot unter {number} und unter jeder Nummer, die du später verknüpfst.",
   "connector.whatsapp.orchestratorName": "WhatsApp-Orchestrator",
   "connector.whatsapp.orchestratorRole": "Antwortet in WhatsApp und fragt das Team",
-  "connector.whatsapp.orchestratorDoesReceive": "Empfängt jede WhatsApp-Nachricht für OpenBot zuerst",
+  "connector.whatsapp.orchestratorDoesReceive": "Empfängt jede WhatsApp-Nachricht für PurpleBot zuerst",
   "connector.whatsapp.orchestratorDoesDelegate": "Gibt jede Aufgabe an den am besten passenden Agenten weiter",
   "connector.whatsapp.orchestratorDoesAnswer": "Antwortet im WhatsApp-Chat",
   "connector.whatsapp.orchestratorModel": "Modell",
-  "connector.whatsapp.doneTitle": "OpenBot ist mit {number} verknüpft",
+  "connector.whatsapp.doneTitle": "PurpleBot ist mit {number} verknüpft",
   "connector.whatsapp.done": "Fertig",
   "connector.whatsapp.disconnectTitle": "{number} trennen?",
   "connector.whatsapp.disconnectDescription":
-    "OpenBot meldet sich unter {number} von WhatsApp ab. War OpenBot aus, entferne das Gerät auch in WhatsApp > Verknüpfte Geräte.",
+    "PurpleBot meldet sich unter {number} von WhatsApp ab. War PurpleBot aus, entferne das Gerät auch in WhatsApp > Verknüpfte Geräte.",
   "connector.whatsapp.disconnectEffect": "Personen können deine Agenten nicht mehr über {number} erreichen.",
-  "connector.whatsapp.removeEffectKept": "Die Unterhaltungen und der WhatsApp-Orchestrator bleiben in OpenBot.",
+  "connector.whatsapp.removeEffectKept": "Die Unterhaltungen und der WhatsApp-Orchestrator bleiben in PurpleBot.",
   "connector.whatsapp.removeEffectDeleted":
-    "Das ist die letzte Nummer, daher werden der WhatsApp-Orchestrator und seine Unterhaltungen aus OpenBot gelöscht.",
+    "Das ist die letzte Nummer, daher werden der WhatsApp-Orchestrator und seine Unterhaltungen aus PurpleBot gelöscht.",
   "connector.whatsapp.keep": "Verknüpft lassen",
   "connector.whatsapp.close": "Schließen",
   "connector.whatsapp.sendersTitle": "Wer an {number} schreiben kann",
@@ -486,7 +490,7 @@ export const messages = {
     "Personen in dieser Gruppe können deinen Agenten Aufgaben geben, wenn sie die Nummer erwähnen oder auf ihre Nachrichten antworten.",
   "connector.whatsapp.groupSearch": "Gruppen suchen",
   "connector.whatsapp.groupsLoading": "Gruppen werden gelesen…",
-  "connector.whatsapp.groupsLoadFailed": "OpenBot konnte die Gruppen nicht lesen",
+  "connector.whatsapp.groupsLoadFailed": "PurpleBot konnte die Gruppen nicht lesen",
   "connector.whatsapp.groupsEmpty": "Diese Nummer ist in keiner Gruppe.",
   "connector.whatsapp.groupsNoMatch": "Keine Gruppe hat diesen Namen.",
   "connector.whatsapp.groupAdded": "Hinzugefügt",
@@ -499,9 +503,9 @@ export const messages = {
   "connector.whatsapp.deny": "Ablehnen",
   "connector.onePassword.title": "1Password",
   "connector.onePassword.description":
-    "Teile einen eigenen 1Password-Tresor über ein Dienstkonto mit OpenBot. So können sich Agenten im OpenBot-Browser auf Websites anmelden.",
+    "Teile einen eigenen 1Password-Tresor über ein Dienstkonto mit PurpleBot. So können sich Agenten im PurpleBot-Browser auf Websites anmelden.",
   "connector.onePassword.howItWorks":
-    "Beim Verbinden werden in deinem 1Password-Konto ein Tresor „Shared with OpenBot“ und ein Dienstkonto erstellt, das nur diesen Tresor lesen kann. OpenBot füllt gespeicherte Anmeldedaten in seinem Browser auf diesem Computer aus. Nur Einträge, die du in diesen Tresor verschiebst, werden geteilt. Agenten sehen niemals ein Passwort.",
+    "Beim Verbinden werden in deinem 1Password-Konto ein Tresor „Shared with PurpleBot“ und ein Dienstkonto erstellt, das nur diesen Tresor lesen kann. PurpleBot füllt gespeicherte Anmeldedaten in seinem Browser auf diesem Computer aus. Nur Einträge, die du in diesen Tresor verschiebst, werden geteilt. Agenten sehen niemals ein Passwort.",
   "connector.onePassword.connect": "1Password verbinden",
   "connector.onePassword.setupTitle": "Einrichten",
   "connector.onePassword.stepCliTitle": "1Password CLI installieren",
@@ -509,20 +513,20 @@ export const messages = {
   "connector.onePassword.stepCliInstalling": "1Password CLI wird von 1Password heruntergeladen",
   "connector.onePassword.stepCliReady": "Version {version} ist installiert.",
   "connector.onePassword.stepCliMissing":
-    "OpenBot lädt sie von 1Password in seinen eigenen Ordner herunter. Dafür ist kein Administratorpasswort erforderlich.",
+    "PurpleBot lädt sie von 1Password in seinen eigenen Ordner herunter. Dafür ist kein Administratorpasswort erforderlich.",
   "connector.onePassword.stepCliManual":
-    "OpenBot kann sie auf diesem Computer nicht installieren. Installiere sie über 1Password und kehre dann zu dieser Seite zurück.",
+    "PurpleBot kann sie auf diesem Computer nicht installieren. Installiere sie über 1Password und kehre dann zu dieser Seite zurück.",
   "connector.onePassword.installCli": "Installieren",
   "connector.onePassword.stepAppTitle": "CLI-Integration aktivieren",
   "connector.onePassword.stepAppDescription":
     "Öffne in der 1Password-App Einstellungen > Entwickler und aktiviere „In 1Password CLI integrieren“.",
   "connector.onePassword.stepAppReady": "Die 1Password-App erlaubt der CLI, den geteilten Tresor zu erstellen.",
   "connector.onePassword.openApp": "1Password öffnen",
-  "connector.onePassword.openAppFailed": "OpenBot konnte 1Password nicht öffnen.",
+  "connector.onePassword.openAppFailed": "PurpleBot konnte 1Password nicht öffnen.",
   "connector.onePassword.checkAgain": "Erneut prüfen",
   "connector.onePassword.stepVaultTitle": "Geteilten Tresor erstellen",
   "connector.onePassword.stepVaultDescription":
-    "OpenBot erstellt den Tresor „Shared with OpenBot“ und ein Dienstkonto, das ihn nur lesen kann. 1Password bittet dich um Bestätigung.",
+    "PurpleBot erstellt den Tresor „Shared with PurpleBot“ und ein Dienstkonto, das ihn nur lesen kann. 1Password bittet dich um Bestätigung.",
   "connector.onePassword.useTokenDescription":
     "Füge statt dieser Schritte ein Dienstkonto-Token von 1Password.com ein.",
   "connector.onePassword.useTokenAction": "Token verwenden",
@@ -533,7 +537,7 @@ export const messages = {
   "connector.onePassword.cancel": "Abbrechen",
   "connector.onePassword.chooseAccountTitle": "Konto auswählen",
   "connector.onePassword.chooseAccountDescription":
-    "OpenBot erstellt den geteilten Tresor in dem Konto, das du auswählst.",
+    "PurpleBot erstellt den geteilten Tresor in dem Konto, das du auswählst.",
   "connector.onePassword.useAccount": "Dieses Konto verwenden",
   "connector.onePassword.vaultTitle": "Geteilter Tresor",
   "connector.onePassword.vaultDescription":
@@ -546,46 +550,46 @@ export const messages = {
   "connector.onePassword.disconnect": "Trennen",
   "connector.onePassword.disconnectTitle": "1Password trennen",
   "connector.onePassword.disconnectSummary":
-    "OpenBot entfernt das Token. Der Tresor und das Dienstkonto bleiben in 1Password erhalten. Entferne sie dort, wenn du sie nicht mehr benötigst.",
-  "connector.onePassword.actionFailed": "OpenBot konnte die 1Password-Verbindung nicht ändern.",
+    "PurpleBot entfernt das Token. Der Tresor und das Dienstkonto bleiben in 1Password erhalten. Entferne sie dort, wenn du sie nicht mehr benötigst.",
+  "connector.onePassword.actionFailed": "PurpleBot konnte die 1Password-Verbindung nicht ändern.",
   "connector.onePassword.statusConnected": "Verbunden",
   "connector.onePassword.statusConnecting": "Wird verbunden",
   "connector.onePassword.descriptionHost":
-    "Teile einen eigenen 1Password-Tresor über ein Dienstkonto mit OpenBot auf {host}, damit Agenten auf {host} sich in seinem Browser bei Websites anmelden können.",
+    "Teile einen eigenen 1Password-Tresor über ein Dienstkonto mit PurpleBot auf {host}, damit Agenten auf {host} sich in seinem Browser bei Websites anmelden können.",
   "connector.onePassword.howItWorksHost":
-    "{host} verbindet sich mit einem Dienstkonto-Token. Erstelle auf 1Password.com ein Dienstkonto, das nur den Tresor lesen kann, den du mit OpenBot teilst, und füge sein Token hier ein. {host} prüft das Token und speichert es; dieser Computer speichert es nicht. Agenten sehen nie ein Passwort.",
+    "{host} verbindet sich mit einem Dienstkonto-Token. Erstelle auf 1Password.com ein Dienstkonto, das nur den Tresor lesen kann, den du mit PurpleBot teilst, und füge sein Token hier ein. {host} prüft das Token und speichert es; dieser Computer speichert es nicht. Agenten sehen nie ein Passwort.",
   "connector.onePassword.disconnectSummaryHost":
     "{host} vergisst das Token. Der Tresor und das Dienstkonto bleiben in 1Password; entferne sie dort, wenn du sie nicht mehr brauchst.",
   "connector.bitwarden.title": "Bitwarden",
   "connector.bitwarden.description": "Anmeldedaten aus Bitwarden im Browser ausfüllen.",
   "connector.bitwarden.setup":
-    "Installiere die Bitwarden CLI und melde dich mit bw login an. Erstelle einen Ordner namens Shared with OpenBot und lege dort nur Anmeldedaten ab, die Agenten verwenden dürfen. Führe bw unlock --raw aus und füge den Sitzungsschlüssel unten ein. Füge nicht dein Master-Passwort ein.",
+    "Installiere die Bitwarden CLI und melde dich mit bw login an. Erstelle einen Ordner namens Shared with PurpleBot und lege dort nur Anmeldedaten ab, die Agenten verwenden dürfen. Führe bw unlock --raw aus und füge den Sitzungsschlüssel unten ein. Füge nicht dein Master-Passwort ein.",
   "connector.bitwarden.scope":
-    "Alle Agenten auf diesem Computer können passende Anmeldedaten in Shared with OpenBot verwenden. OpenBot verwendet exakte HTTPS-Ursprünge. Einträge, die eine Master-Passwort-Abfrage oder eine eigene URI-Abgleichsregel erfordern, werden nicht verwendet.",
+    "Alle Agenten auf diesem Computer können passende Anmeldedaten in Shared with PurpleBot verwenden. PurpleBot verwendet exakte HTTPS-Ursprünge. Einträge, die eine Master-Passwort-Abfrage oder eine eigene URI-Abgleichsregel erfordern, werden nicht verwendet.",
   "connector.bitwarden.session":
-    "Der Sitzungsschlüssel bleibt im Arbeitsspeicher. Verbinde dich erneut, wenn der Tresor 8 Stunden nicht verwendet wurde oder OpenBot beendet wurde. Trennen beendet den Zugriff von OpenBot. Andere Bitwarden-Clients werden dadurch nicht gesperrt.",
+    "Der Sitzungsschlüssel bleibt im Arbeitsspeicher. Verbinde dich erneut, wenn der Tresor 8 Stunden nicht verwendet wurde oder PurpleBot beendet wurde. Trennen beendet den Zugriff von PurpleBot. Andere Bitwarden-Clients werden dadurch nicht gesperrt.",
   "connector.bitwarden.sessionKey": "Bitwarden-Sitzungsschlüssel",
   "connector.bitwarden.connect": "Bitwarden verbinden",
   "connector.bitwarden.disconnect": "Bitwarden trennen",
   "connector.bitwarden.disconnectAction": "Trennen",
   "connector.bitwarden.disconnectSummary":
-    "OpenBot vergisst den Sitzungsschlüssel. Agenten können keine Logins mehr aus Bitwarden ausfüllen. Andere Bitwarden-Clients bleiben entsperrt.",
+    "PurpleBot vergisst den Sitzungsschlüssel. Agenten können keine Logins mehr aus Bitwarden ausfüllen. Andere Bitwarden-Clients bleiben entsperrt.",
   "connector.bitwarden.disconnectSummaryHost":
     "{host} entfernt den API-Schlüssel und das Master-Passwort. Agenten auf {host} können keine Logins mehr aus Bitwarden ausfüllen.",
   "connector.bitwarden.connected": "Verbunden",
-  "connector.bitwarden.actionFailed": "OpenBot konnte die Bitwarden-Verbindung nicht ändern.",
+  "connector.bitwarden.actionFailed": "PurpleBot konnte die Bitwarden-Verbindung nicht ändern.",
   "connector.bitwarden.descriptionHost": "Browser-Anmeldungen auf {host} aus Bitwarden oder Vaultwarden ausfüllen.",
   "connector.bitwarden.setupHost":
-    "{host} meldet sich mit seiner eigenen Bitwarden CLI an. Erstelle in deinem Tresor einen Ordner mit dem Namen Shared with OpenBot und lege nur die Anmeldungen hinein, die Agenten verwenden dürfen. Öffne im Web-Tresor Einstellungen › Sicherheit › Schlüssel und zeige deinen API-Schlüssel an. Gib unten die Serveradresse, client_id, client_secret und dein Master-Passwort ein.",
+    "{host} meldet sich mit seiner eigenen Bitwarden CLI an. Erstelle in deinem Tresor einen Ordner mit dem Namen Shared with PurpleBot und lege nur die Anmeldungen hinein, die Agenten verwenden dürfen. Öffne im Web-Tresor Einstellungen › Sicherheit › Schlüssel und zeige deinen API-Schlüssel an. Gib unten die Serveradresse, client_id, client_secret und dein Master-Passwort ein.",
   "connector.bitwarden.scopeHost":
-    "Alle Agenten auf {host} können passende Anmeldungen in Shared with OpenBot verwenden. OpenBot verwendet exakte HTTPS-Ursprünge. Einträge mit Master-Passwort-Abfrage oder eigener URI-Erkennungsregel werden nicht verwendet.",
+    "Alle Agenten auf {host} können passende Anmeldungen in Shared with PurpleBot verwenden. PurpleBot verwendet exakte HTTPS-Ursprünge. Einträge mit Master-Passwort-Abfrage oder eigener URI-Erkennungsregel werden nicht verwendet.",
   "connector.bitwarden.sessionHost":
     "{host} speichert den API-Schlüssel und das Master-Passwort verschlüsselt, damit es nach einem Neustart wieder entsperren kann. Dieser Computer speichert sie nicht. Trennen entfernt sie von {host}. {host} muss die Serveradresse über HTTPS erreichen.",
   "connector.bitwarden.serverUrl": "Serveradresse",
   "connector.bitwarden.folderTitle": "Geteilter Ordner",
   "connector.bitwarden.folderDescription":
     "Verschiebe Anmeldedaten in diesen Ordner in Bitwarden, damit Agenten sie verwenden können. Entferne sie, um die Nutzung zu beenden.",
-  "connector.bitwarden.folderName": "Shared with OpenBot",
+  "connector.bitwarden.folderName": "Shared with PurpleBot",
   "connector.bitwarden.folderKind": "Ordner in Bitwarden",
   "connector.bitwarden.clientId": "API-Schlüssel client_id",
   "connector.bitwarden.clientSecret": "API-Schlüssel client_secret",
@@ -603,19 +607,19 @@ export const messages = {
   "connector.protonPass.keyPlaceholder": "pst_…",
   "connector.protonPass.setupTitle": "Einrichten",
   "connector.protonPass.setupDescription":
-    "Verbinden öffnet die Proton-Anmeldung im Browser. Dann erstellt OpenBot den geteilten Tresor und behält nur einen Schlüssel mit Lesezugriff.",
+    "Verbinden öffnet die Proton-Anmeldung im Browser. Dann erstellt PurpleBot den geteilten Tresor und behält nur einen Schlüssel mit Lesezugriff.",
   "connector.protonPass.setupDescriptionHost":
     "Verbinden öffnet die Proton-Anmeldung im Browser. Dann erstellt {host} den geteilten Tresor und behält nur einen Schlüssel mit Lesezugriff.",
-  "connector.protonPass.vaultName": "Shared with OpenBot",
+  "connector.protonPass.vaultName": "Shared with PurpleBot",
   "connector.protonPass.vaultSetup":
-    "OpenBot erstellt diesen Tresor beim Verbinden. Verschieben Sie Zugangsdaten hinein, um sie zu teilen.",
+    "PurpleBot erstellt diesen Tresor beim Verbinden. Verschieben Sie Zugangsdaten hinein, um sie zu teilen.",
   "connector.protonPass.showSteps": "Schritte zeigen",
   "connector.protonPass.stepsLabel": "Verbindungsschritte",
   "connector.protonPass.stepSignIn": "Anmelden",
   "connector.protonPass.stepVault": "Geteilten Tresor erstellen",
   "connector.protonPass.stepDone": "Fertig",
   "connector.protonPass.signInTitle": "Bei Proton anmelden",
-  "connector.protonPass.signInStarting": "OpenBot startet die Anmeldung. Die Proton-Seite öffnet sich im Browser.",
+  "connector.protonPass.signInStarting": "PurpleBot startet die Anmeldung. Die Proton-Seite öffnet sich im Browser.",
   "connector.protonPass.signInDescription":
     "Die Anmeldung ist im Browser geöffnet. Proton fragt nach Ihrem Passwort und Ihrem zweiten Faktor.",
   "connector.protonPass.signInDescriptionHost":
@@ -626,7 +630,7 @@ export const messages = {
   "connector.protonPass.continue": "Weiter",
   "connector.protonPass.setupStepTitle": "Geteilter Tresor wird erstellt",
   "connector.protonPass.setupStepDescription":
-    "OpenBot erstellt den Tresor „{vault}“ und einen Schlüssel mit Lesezugriff dafür. Dann meldet es Ihre Proton-Sitzung ab.",
+    "PurpleBot erstellt den Tresor „{vault}“ und einen Schlüssel mit Lesezugriff dafür. Dann meldet es Ihre Proton-Sitzung ab.",
   "connector.protonPass.doneTitle": "Proton Pass ist verbunden",
   "connector.protonPass.doneDescription":
     "Verschieben Sie Zugangsdaten nach „{vault}“, damit Agents sich damit anmelden können.",
@@ -656,9 +660,9 @@ export const messages = {
   "connector.protonPass.keyNoExpiry": "Nur Lesezugriff. Läuft nicht ab.",
   "connector.protonPass.disconnectTitle": "Proton Pass trennen",
   "connector.protonPass.disconnectSummary":
-    "OpenBot löscht seinen Zugriffsschlüssel auf diesem Computer. Der Tresor und seine Zugangsdaten bleiben in Ihrem Proton-Konto.",
+    "PurpleBot löscht seinen Zugriffsschlüssel auf diesem Computer. Der Tresor und seine Zugangsdaten bleiben in Ihrem Proton-Konto.",
   "connector.protonPass.disconnectSummaryHost":
-    "OpenBot löscht seinen Zugriffsschlüssel auf {host}. Der Tresor und seine Zugangsdaten bleiben in Ihrem Proton-Konto.",
+    "PurpleBot löscht seinen Zugriffsschlüssel auf {host}. Der Tresor und seine Zugangsdaten bleiben in Ihrem Proton-Konto.",
   "connector.protonPass.disconnect": "Trennen",
-  "connector.protonPass.actionFailed": "OpenBot konnte die Proton-Pass-Verbindung nicht ändern.",
+  "connector.protonPass.actionFailed": "PurpleBot konnte die Proton-Pass-Verbindung nicht ändern.",
 } as const satisfies PartialTranslation<typeof source>;

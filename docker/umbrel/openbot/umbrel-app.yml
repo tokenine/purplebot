@@ -3,21 +3,21 @@ id: __APP_ID__
 storage:
   dataRoot: data
 category: ai
-name: OpenBot
+name: PurpleBot
 version: "__VERSION__"
 tagline: A server for your AI agents
 icon: https://openbot.run/icon-512x512.png
 description: >-
-  OpenBot runs your AI agents on your Umbrel. Each agent has its own workspace, conversation and
+  PurpleBot runs your AI agents on your Umbrel. Each agent has its own workspace, conversation and
   memory, and keeps working when your computer is off.
 
 
-  After the install, open the app and sign in with your OpenBot account. Then use the server from the
-  OpenBot desktop app, the OpenBot phone app or openbot.run/app with the same account, and connect a
+  After the install, open the app and sign in with your PurpleBot account. Then use the server from the
+  PurpleBot desktop app, the PurpleBot phone app or openbot.run/app with the same account, and connect a
   provider such as Claude Code or Codex.
 
 
-  Your conversations, files and agent workspaces stay on your Umbrel. OpenBot connects out to the
+  Your conversations, files and agent workspaces stay on your Umbrel. PurpleBot connects out to the
   account service, to the providers that you connect, and to the relay that lets your devices
   reach the server.
 

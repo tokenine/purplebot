@@ -52,7 +52,8 @@ export const messages = {
   "agentSettings.folders.inWorkspace": "Folder {folder} jest w obszarze roboczym, więc {agent} już może go zmieniać",
   "agentSettings.folders.inShared": "Folder {folder} jest w folderze współdzielonym, więc {agent} już może go zmieniać",
   "agentSettings.folders.inFolder": "Folder {folder} jest w folderze {parent}, który jest już dodany",
-  "agentSettings.folders.protected": "Nie możesz dodać folderu {folder}: zawiera dane OpenBot lub pliki innych agentów",
+  "agentSettings.folders.protected":
+    "Nie możesz dodać folderu {folder}: zawiera dane PurpleBot lub pliki innych agentów",
   "agentSettings.folders.missing": "{folder} nie jest folderem na tym komputerze",
   "agentSettings.folders.limit": {
     one: "Możesz dodać maksymalnie {count} folder",
@@ -176,7 +177,7 @@ export const messages = {
   "agentSettings.runtime.fullAccessNote":
     "Agent działa z pełnym dostępem do komputera ze swojego obszaru roboczego i folderu współdzielonego.",
   "agentSettings.runtime.askNote":
-    "Pyta cię, zanim użyje narzędzia OpenBot lub opublikuje witrynę, oraz gdy jego dostawca prosi o zgodę.",
+    "Pyta cię, zanim użyje narzędzia PurpleBot lub opublikuje witrynę, oraz gdy jego dostawca prosi o zgodę.",
   "agentSettings.runtime.fullNote": "Działa bez pytania, z wyjątkiem pytań, które ci zadaje.",
   "agentSettings.access.workspace": "Tylko obszar roboczy",
   "agentSettings.access.ask": "Najpierw pytaj",
@@ -209,11 +210,12 @@ export const messages = {
   "agentSettings.deleteHistory.button": "Usuń",
   "agentSettings.deleteHistory.confirmTitle": "Usunąć historię czatu z {name}?",
   "agentSettings.deleteHistory.confirmDescription":
-    "Wszystkie wiadomości i pliki tego czatu znikną z OpenBot, a agent o nich zapomni. Nie można tego cofnąć. Wątki poboczne, instrukcje, model, narzędzia, wspomnienia, przestrzeń robocza i przeglądarka się nie zmienią.",
+    "Wszystkie wiadomości i pliki tego czatu znikną z PurpleBot, a agent o nich zapomni. Nie można tego cofnąć. Wątki poboczne, instrukcje, model, narzędzia, wspomnienia, przestrzeń robocza i przeglądarka się nie zmienią.",
   "agentSettings.deleteHistory.confirm": "Usuń historię",
   "agentSettings.deleteHistory.failed": "Nie udało się usunąć historii.",
   "agentSettings.deleteAgent.title": "Usuń agenta",
-  "agentSettings.deleteAgent.description": "Agent, jego czat, wspomnienia, rutyny i obszar roboczy znikają z OpenBot.",
+  "agentSettings.deleteAgent.description":
+    "Agent, jego czat, wspomnienia, rutyny i obszar roboczy znikają z PurpleBot.",
   "agentSettings.deleteAgent.button": "Usuń",
   "agentSettings.fullAccess.title": "Dać temu agentowi pełny dostęp?",
   "agentSettings.fullAccess.askTitle": "Pozwolić temu agentowi pracować poza obszarem roboczym?",
@@ -262,7 +264,7 @@ export const messages = {
   "agentSettings.runtime.workspaceEnforcedClaude":
     "Edycja pliku poza tymi folderami najpierw zapyta cię o zgodę. Polecenie nie może zapisać poza nimi.",
   "agentSettings.runtime.workspaceUnlimited":
-    "Sterowanie komputerem i przeglądarka OpenBot nie są ograniczone; Sterowanie komputerem możesz wyłączyć poniżej.",
+    "Sterowanie komputerem i przeglądarka PurpleBot nie są ograniczone; Sterowanie komputerem możesz wyłączyć poniżej.",
   "agentSettings.computerUse.title": "Sterowanie komputerem",
   "agentSettings.computerUse.description": "Pozwól temu agentowi sterować aplikacjami na tym komputerze",
   "agentSettings.automation.title": "Lokalne skrypty",
@@ -273,7 +275,7 @@ export const messages = {
     "Agent może rozpocząć nowy czat, gdy jego czat staje się długi. Najpierw zapisuje notatki.",
   "agentSettings.quickAcknowledgement.title": "Pokaż plan przed długimi zadaniami",
   "agentSettings.quickAcknowledgement.description": "Przed długim zadaniem agent pokazuje swój plan.",
-  "agentSettings.builtinMemory.title": "Pamięć OpenBot",
+  "agentSettings.builtinMemory.title": "Pamięć PurpleBot",
   "agentSettings.builtinMemory.description":
     "Agent zapisuje i czyta własne wspomnienia. Wyłącz, aby używać tylko aplikacji pamięci, takiej jak Mem0. Zapisane wspomnienia zostają.",
   "agentSettings.browserProfile.label": "Profil przeglądarki",

@@ -68,7 +68,7 @@ export async function makeGitWorkspace(workspace: string): Promise<(...args: str
   await writeFile(join(workspace, "count.txt"), "42\n");
   const git = (...args: string[]) => execFileSync("git", args, { cwd: workspace, encoding: "utf8" });
   git("init", "-q", "-b", "main");
-  git("config", "user.name", "OpenBot Bench");
+  git("config", "user.name", "PurpleBot Bench");
   git("config", "user.email", "bench@example.invalid");
   git("config", "commit.gpgsign", "false");
   git("add", ".");
@@ -145,7 +145,7 @@ export async function startCodexAgent(
   const request = (method: string, params: unknown) =>
     runCauseEffect(client.request(method, params, decodeRecordResponse));
   await request("initialize", {
-    clientInfo: { name: "openbot", title: "OpenBot", version: "0.0.0" },
+    clientInfo: { name: "openbot", title: "PurpleBot", version: "0.0.0" },
     capabilities: { experimentalApi: true },
   });
   client.notify("initialized");

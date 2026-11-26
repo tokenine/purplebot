@@ -549,7 +549,7 @@ try {
     githubTools,
   );
   assert.equal(githubTested.success, false);
-  assert.match(githubTested.result.error ?? "", /part of OpenBot/u);
+  assert.match(githubTested.result.error ?? "", /part of PurpleBot/u);
   const githubRemoved = await call(
     "the GitHub connection is not removed",
     "remove_mcp_server",

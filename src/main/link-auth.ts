@@ -7,7 +7,7 @@ import { LinkOperationError, linkCall, linkDecode } from "./link-effects";
 const LINK_AUTH_URL = "https://login.link.com";
 export const LINK_API_URL = "https://api.link.com";
 const LINK_CLIENT_ID = "lwlpk_U7Qy7ThG69STZk";
-const LINK_CLIENT_HINT = "OpenBot";
+const LINK_CLIENT_HINT = "PurpleBot";
 const LINK_SCOPE = "userinfo:read payment_methods.agentic";
 const DEVICE_GRANT = "urn:ietf:params:oauth:grant-type:device_code";
 const SLOW_DOWN_MS = 5_000;

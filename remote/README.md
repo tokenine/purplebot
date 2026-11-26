@@ -1,8 +1,8 @@
-# OpenBot Remote
+# PurpleBot Remote
 
 This directory holds our own control plane for WebRTC connections. The Remote API relays SDP and ICE.
 Team files, chats, commands and video never pass through the Remote API or Cloudflare. The exceptions
-are the OpenBot Slack app, the OpenBot Discord bot and the OpenBot Telegram bot: see
+are the PurpleBot Slack app, the PurpleBot Discord bot and the PurpleBot Telegram bot: see
 [Slack requests](#slack-requests), [Discord](#discord) and [Telegram updates](#telegram-updates).
 
 ## Flow
@@ -34,11 +34,11 @@ validation window.
 
 ## Slack requests
 
-The OpenBot Slack app sends the events and button presses of every workspace to one request URL,
+The PurpleBot Slack app sends the events and button presses of every workspace to one request URL,
 `https://signal.openbot.run/v1/slack/events`. Signal checks Slack's signature with the app's signing
 secret, answers Slack's `url_verification` challenge, and reads only the app ID (`api_app_id`), the
 workspace ID, and the event's type, channel type, thread and bot ID (to know whether it addresses
-OpenBot, not its text). `SLACK_SIGNING_SECRET` is a comma-separated list of `<app ID>:<signing secret>`,
+PurpleBot, not its text). `SLACK_SIGNING_SECRET` is a comma-separated list of `<app ID>:<signing secret>`,
 because the production and development apps share Signal. A request must name the app whose secret
 signed it, so one app's secret cannot reach the other app's hosts; a malformed value turns off only
 the Slack route. Then Signal passes the exact request body to the `ingress` socket of the host that
@@ -56,7 +56,7 @@ must be in the ticket JWKS that Signal loads (`REMOTE_TICKET_PUBLIC_JWKS` on the
 
 ## GitHub events
 
-The OpenBot GitHub App sends the events of every installation to one webhook URL,
+The PurpleBot GitHub App sends the events of every installation to one webhook URL,
 `https://signal.openbot.run/v1/github/events`. Signal checks GitHub's `X-Hub-Signature-256` with the
 App's webhook secret (`GITHUB_WEBHOOK_SECRET`, at least 32 bytes), and reads only the event name, the
 delivery ID, the installation ID and the repository ID. Then it passes the exact body to the `ingress`
@@ -73,13 +73,13 @@ log the body. Without `GITHUB_WEBHOOK_SECRET`, the GitHub route answers 503.
 
 ## Discord
 
-The OpenBot Discord bot is one bot for every guild that installs it. Signal holds its bot token
+The PurpleBot Discord bot is one bot for every guild that installs it. Signal holds its bot token
 (`DISCORD_BOT_TOKEN`) and its application ID (`DISCORD_APPLICATION_ID`). Without both, or with a
 malformed value, Discord is off: Signal logs one line without the value, keeps no Gateway
 connection, and `POST /v1/discord/api` answers 503. The remote sessions and the Slack route keep
 running.
 
-Signal asks for the privileged Message Content intent, so that OpenBot gets the text of the message
+Signal asks for the privileged Message Content intent, so that PurpleBot gets the text of the message
 a person replies to and of the conversation history. Turn on **Message Content Intent** in the
 Developer Portal. When Discord refuses the intent (close code 4014), Signal logs one line and connects
 without it. `DISCORD_MESSAGE_CONTENT=false` stops Signal asking for it.
@@ -95,7 +95,7 @@ still passes on only the messages that mention the bot. From the Gateway, Signal
   channel, author, the author's role IDs, text without the bot's mention, the replied message (with
   its author, text and time when a person wrote it and Discord gave its text), the Discord CDN
   addresses of the attachments and the time to the `ingress` socket of the host that the guild is linked to;
-- each press of an OpenBot button. Signal acknowledges it to Discord at once and passes it on;
+- each press of an PurpleBot button. Signal acknowledges it to Discord at once and passes it on;
 - the removal of the bot from a guild, which ends that guild's connection on the host.
 
 A direct message to the bot gets one fixed answer, at most once an hour for each user. Signal does not
@@ -127,7 +127,7 @@ guild. So a link goes also when its host is off and the first unlink failed, or 
 
 ## Telegram updates
 
-One OpenBot bot serves every user, and only Signal has its token. `TELEGRAM_BOT_TOKENS` is a
+One PurpleBot bot serves every user, and only Signal has its token. `TELEGRAM_BOT_TOKENS` is a
 comma-separated list of bot tokens (`<bot ID>:<secret>`), because the production and development
 bots share Signal. `TELEGRAM_WEBHOOK_SECRET` (at least 32 bytes) is required with them: the webhook
 secret of each bot is the base64url HMAC-SHA256 of `telegram-webhook:<bot ID>` with it. A malformed
@@ -154,7 +154,7 @@ for the sealed queue of a hosted server that sleeps.
 
 All messaging platforms share one path (`src/ingress-queue.ts`). For an event whose route has no
 `ingress` socket, Signal asks the account service (`/v2/remote/route-wake`, signed), at most once a
-minute for each route. An event that addresses OpenBot starts a hosted server that sleeps. Signal
+minute for each route. An event that addresses PurpleBot starts a hosted server that sleeps. Signal
 then keeps the event's delivery frame, sealed with the host's queue key (`queueKey` in the `ingress`
 hello) and the host ID, for at most 10 minutes, 64 events and 192 KB for each host. When the host's
 socket holds the route again, Signal sends each kept event in order as `queued-delivery`, and keeps it
@@ -175,7 +175,7 @@ service before Signal.
 - A static public IPv4 address.
 - `signal.openbot.run` and `turn.openbot.run` records in DNS only mode.
 - Open ports TCP 443, TCP/UDP 3478, TCP 5349 and UDP 16384-65535 (the coturn relay range). With
-  ufw: `ufw allow 16384:65535/udp comment 'OpenBot TURN relay UDP'`. coturn uses host networking,
+  ufw: `ufw allow 16384:65535/udp comment 'PurpleBot TURN relay UDP'`. coturn uses host networking,
   so ufw applies to it. Without this rule, the firewall drops the first packets that a peer sends to
   a relay address, and relay connections become slow or fail.
 - A Cloudflare token scoped to DNS edit for the `openbot.run` zone.

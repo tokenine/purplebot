@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { type CpuProfile, isProfileFrame, isProfileStack, summarizeCpuProfile } from "./main-loop-profile";
 
-const APP = "/Users/alice/Applications/OpenBot.app/Contents/Resources/app.asar";
+const APP = "/Users/alice/Applications/PurpleBot.app/Contents/Resources/app.asar";
 
 function profile(frames: { functionName: string; url: string; lineNumber?: number }[]): CpuProfile {
   const nodes = [
@@ -49,9 +49,9 @@ describe("summarizeCpuProfile", () => {
   it("matches a Windows application path with another drive letter case", () => {
     const summary = summarizeCpuProfile(
       profile([
-        { functionName: "kept", url: "file:///c:/Program%20Files/OpenBot/resources/app.asar/out/main/index.js" },
+        { functionName: "kept", url: "file:///c:/Program%20Files/PurpleBot/resources/app.asar/out/main/index.js" },
       ]),
-      "C:\\Program Files\\OpenBot\\resources\\app.asar",
+      "C:\\Program Files\\PurpleBot\\resources\\app.asar",
     );
     expect(summary.top.map((entry) => entry.frame)).toEqual(["kept app:index.js:1"]);
   });
@@ -59,7 +59,7 @@ describe("summarizeCpuProfile", () => {
   it("replaces other code and unsafe names with a fixed label", () => {
     const summary = summarizeCpuProfile(
       profile([
-        { functionName: "secretPlugin", url: "file:///Users/alice/OpenBot/Bots/acme/tool.js" },
+        { functionName: "secretPlugin", url: "file:///Users/alice/PurpleBot/Bots/acme/tool.js" },
         { functionName: "run", url: "https://alice:hunter2@example.com/app.js?token=sk-live-abcdefgh1234" },
         { functionName: "", url: "" },
         { functionName: "token=sk-live-abcdefgh1234", url: `file://${APP}/out/main/index.js` },

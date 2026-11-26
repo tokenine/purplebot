@@ -37,7 +37,7 @@ export const Loading: Story = {
 };
 
 export const QuietLoading: Story = {
-  render: () => <AppLoadingScreen scene="quiet" title="Loading OpenBot" />,
+  render: () => <AppLoadingScreen scene="quiet" title="Loading PurpleBot" />,
 };
 
 export const QuietStartingServer: Story = {

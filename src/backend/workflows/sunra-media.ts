@@ -30,7 +30,7 @@ export const SUNRA_MCP_HOST = "mcp.sunra.ai";
 
 const SUNRA_MEDIA_HOSTS: ReadonlySet<string> = new Set(["cdn.sunra.ai", "cdn.ponpon.ai", "assets.sunra.ai"]);
 
-const SUNRA_PROJECT_NAME = "OpenBot";
+const SUNRA_PROJECT_NAME = "PurpleBot";
 
 const SUNRA_DEADLINE = { image: Duration.minutes(5), video: Duration.minutes(20) } as const;
 const SUNRA_POLL = { image: Duration.seconds(3), video: Duration.seconds(6) } as const;

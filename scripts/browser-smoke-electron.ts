@@ -531,7 +531,7 @@ async function main(): Promise<void> {
   const temporaryRoot = configuredRoot ?? (await mkdtemp(join(tmpdir(), "openbot-browser-smoke-")));
   const userDataPath = join(temporaryRoot, "user-data");
   await mkdir(userDataPath, { recursive: true });
-  app.setName("OpenBot");
+  app.setName("PurpleBot");
   app.setPath("userData", userDataPath);
   app.setPath("sessionData", userDataPath);
   const hardTimeout = setTimeout(() => {
@@ -4353,7 +4353,7 @@ async function checkBrowserIdentity(browser: BrowserHost, tabId: string): Promis
   if (
     !navigatorUserAgent?.includes(`Chrome/${chromiumMajorVersion}`) ||
     navigatorUserAgent.includes("Electron/") ||
-    navigatorUserAgent.includes("OpenBot/") ||
+    navigatorUserAgent.includes("PurpleBot/") ||
     getString(identity.requestHeaders, "user-agent") !== navigatorUserAgent ||
     identity.navigatorWebdriver !== false ||
     getString(identity.requestHeaders, "sec-ch-ua-platform") !== `"${getString(identity, "navigatorPlatform")}"` ||
@@ -4361,7 +4361,7 @@ async function checkBrowserIdentity(browser: BrowserHost, tabId: string): Promis
     !navigatorBrands.some(
       (brand) => getString(brand, "brand") === "Chromium" && getString(brand, "version") === chromiumMajorVersion,
     ) ||
-    /Electron|OpenBot/u.test(clientHintBrands) ||
+    /Electron|PurpleBot/u.test(clientHintBrands) ||
     clientHintBrands !==
       navigatorBrands.map((brand) => `"${getString(brand, "brand")}";v="${getString(brand, "version")}"`).join(", ")
   ) {

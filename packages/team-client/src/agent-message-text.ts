@@ -32,6 +32,6 @@ function fileCitationLink(attributes: string): string | null {
       .replace(/[\\/]+$/u, "")
       .split(/[\\/]/u)
       .pop() || path;
-  const target = /(?:^|\/)OpenBot\/Shared\//u.test(path.replaceAll("\\", "/")) ? path : path.replaceAll("%", "%25");
+  const target = /(?:^|\/)PurpleBot\/Shared\//u.test(path.replaceAll("\\", "/")) ? path : path.replaceAll("%", "%25");
   return `[${(label || name).replace(LABEL_MARKDOWN, "\\$&")}](<${target.replaceAll("\\", "\\\\")}>)`;
 }

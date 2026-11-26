@@ -457,7 +457,7 @@ const update = (chatId: string, text: string) =>
 const postAuthEvent = (body: string, timestamp: string, signature: string) =>
   fetch(`${base}/internal/auth-events`, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "OpenBot-Timestamp": timestamp, "OpenBot-Signature": signature },
+    headers: { "Content-Type": "application/json", "PurpleBot-Timestamp": timestamp, "PurpleBot-Signature": signature },
     body,
   });
 const postSlack = (body: string, timestamp: string, signature: string) =>
@@ -668,7 +668,7 @@ try {
     return "the next socket got the kept link with linked=true, and the next update of the chat";
   });
 
-  await check("Only a Telegram update that can address OpenBot asks to start a hosted server", async () => {
+  await check("Only a Telegram update that can address PurpleBot asks to start a hosted server", async () => {
     const message = <Fields extends object>(fields: Fields) => ({ message_id: 1, from: { id: 5 }, ...fields });
     const cases: Array<{ chatId: string; wake: boolean; body: object }> = [
       { chatId: "-600", wake: false, body: { message: message({ chat: { id: -600, type: "group" }, text: "hi" }) } },
@@ -1102,8 +1102,8 @@ try {
       withDeadline(fetch(`${base}${path}`, { method: "POST", headers, body: endless() }), path);
     const event = await post("/internal/auth-events", {
       "Content-Type": "application/json",
-      "OpenBot-Timestamp": nowSeconds(),
-      "OpenBot-Signature": "v1=bad",
+      "PurpleBot-Timestamp": nowSeconds(),
+      "PurpleBot-Signature": "v1=bad",
     });
     const slack = await post(SLACK_EVENTS_PATH, {
       "Content-Type": "application/json",

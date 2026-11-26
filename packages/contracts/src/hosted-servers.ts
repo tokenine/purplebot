@@ -98,9 +98,9 @@ export function parseHostedServerName(value: string): string | null {
   return slugifyTeamServerName(name).length >= INPUT_LIMITS.serverNameMin ? name : null;
 }
 
-const HOSTED_SERVER_CONTACT_SUBJECT = "Custom OpenBot setup";
+const HOSTED_SERVER_CONTACT_SUBJECT = "Custom PurpleBot setup";
 const HOSTED_SERVER_CONTACT_BODY = [
-  "I’d like to discuss a custom OpenBot setup for my needs. Please get in touch so we can explore the available options.",
+  "I’d like to discuss a custom PurpleBot setup for my needs. Please get in touch so we can explore the available options.",
   "",
   "Here’s some additional context:",
   "",
@@ -110,7 +110,7 @@ const HOSTED_SERVER_CONTACT_BODY = [
 export const HOSTED_SERVER_CONTACT_URL = `mailto:hello@openbot.run?subject=${encodeURIComponent(
   HOSTED_SERVER_CONTACT_SUBJECT,
 )}&body=${encodeURIComponent(HOSTED_SERVER_CONTACT_BODY)}`;
-export const HOSTING_DEVELOPER_KEY_HEADER = "OpenBot-Hosting-Developer-Key";
+export const HOSTING_DEVELOPER_KEY_HEADER = "PurpleBot-Hosting-Developer-Key";
 
 export interface HostedServerSummary {
   deletionScheduledAt?: number | null;

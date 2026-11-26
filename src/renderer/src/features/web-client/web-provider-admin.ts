@@ -146,13 +146,13 @@ const CODE_LOGIN_POLL_MS = 3000;
 
 const WEB_EXTERNAL_DESTINATIONS: Partial<Record<ExternalDestination, string>> = {
   "opencode-auth": "https://opencode.ai/auth",
-  feedback: "https://x.com/intent/post?text=Feedback%20for%20OpenBot%20%40norbertbodziony%3A%20",
+  feedback: "https://github.com/tokenine/purplebot/issues/new?template=feature_request.yml",
   "report-problem": bugReportFormUrl({ platform: "Web client" }),
-  message: "https://x.com/norbertbodziony",
-  changelog: "https://openbot.run/changelog",
-  guides: "https://openbot.run/guides",
-  discord: "https://discord.openbot.run",
-  x: "https://x.com/OpenBot_",
+  message: "https://github.com/tokenine/purplebot/issues",
+  changelog: "https://github.com/tokenine/purplebot/blob/selfhost/CHANGELOG.md",
+  guides: "https://github.com/tokenine/purplebot/tree/selfhost/selfhost",
+  discord: "https://github.com/tokenine/purplebot/issues",
+  x: "https://github.com/tokenine/purplebot",
 };
 
 export function openWebDestination(destination: ExternalDestination): Promise<void> {
@@ -528,7 +528,7 @@ export function createWebProviderSettings(options: WebProviderSettingsOptions) {
     },
     place: () => ({ kind: "web-server", server: options.server() }),
     openVerificationUrl: (url) => void window.open(url, "_blank", "noopener"),
-    openAppDownload: () => void window.open("/download", "_blank", "noopener"),
+    openAppDownload: () => void window.open("https://github.com/tokenine/purplebot/releases", "_blank", "noopener"),
   });
   function accountSignIn(id: string) {
     return {

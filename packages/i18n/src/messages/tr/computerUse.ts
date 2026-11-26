@@ -3,14 +3,14 @@ import type { messages as source } from "../en/computerUse";
 
 export const messages = {
   "computerUse.permission.screenRecording.title": "Ekran Kaydı",
-  "computerUse.permission.screenRecording.description": "OpenBot'un uygulama pencerelerini görmesini sağlar.",
+  "computerUse.permission.screenRecording.description": "PurpleBot'un uygulama pencerelerini görmesini sağlar.",
   "computerUse.permission.screenRecording.pane": "Ekran ve Sistem Sesi Kaydı",
   "computerUse.permission.accessibility.title": "Erişilebilirlik",
-  "computerUse.permission.accessibility.description": "OpenBot'un tıklamasını ve yazmasını sağlar.",
+  "computerUse.permission.accessibility.description": "PurpleBot'un tıklamasını ve yazmasını sağlar.",
   "computerUse.permission.accessibility.pane": "Erişilebilirlik",
-  "computerUse.error.check": "OpenBot, Bilgisayar Kullanımını denetleyemedi.",
-  "computerUse.error.openSettings": "OpenBot, Sistem Ayarlarını açamadı.",
-  "computerUse.error.startDriver": "OpenBot, Bilgisayar Kullanımı sürücüsünü başlatamadı.",
+  "computerUse.error.check": "PurpleBot, Bilgisayar Kullanımını denetleyemedi.",
+  "computerUse.error.openSettings": "PurpleBot, Sistem Ayarlarını açamadı.",
+  "computerUse.error.startDriver": "PurpleBot, Bilgisayar Kullanımı sürücüsünü başlatamadı.",
   "computerUse.checkAgain": "Tekrar kontrol et",
   "computerUse.checking": "Bilgisayar Kullanımı denetleniyor",
   "computerUse.unavailable.title": "Bilgisayar Kullanımı henüz mevcut değil",
@@ -18,16 +18,16 @@ export const messages = {
   "computerUse.permissions.description": "İzinler macOS tarafından yönetilir.",
   "computerUse.ready.title": "Bilgisayar Kullanımı hazır",
   "computerUse.ready.description":
-    "OpenBot bu bilgisayardaki uygulamaları görebilir ve onlarla etkileşime girebilir. Bu sistem fazladan izin istemez.",
+    "PurpleBot bu bilgisayardaki uygulamaları görebilir ve onlarla etkileşime girebilir. Bu sistem fazladan izin istemez.",
   "computerUse.limited.title": "Bilgisayar Kullanımı bu masaüstünde sınırlı",
   "computerUse.openSettingsFailed.title": "Sistem Ayarları açılamadı",
   "computerUse.restartRequired.title": "Yeniden başlatma gerekli",
   "computerUse.restartRequired.description":
-    "macOS hâlâ tıklamayı ve yazmayı engelliyor. Yeniden başlattıktan sonra yine olursa OpenBot'u Erişilebilirlik'ten kaldırıp yeniden ekleyin.",
-  "computerUse.restartRequired.action": "OpenBot'u yeniden başlat",
+    "macOS hâlâ tıklamayı ve yazmayı engelliyor. Yeniden başlattıktan sonra yine olursa PurpleBot'u Erişilebilirlik'ten kaldırıp yeniden ekleyin.",
+  "computerUse.restartRequired.action": "PurpleBot'u yeniden başlat",
   "computerUse.compact.title": "Bilgisayar Kullanımını etkinleştir",
   "computerUse.compact.description":
-    "OpenBot'un bu bilgisayardaki uygulamaları görmesine ve etkileşime girmesine izin verin.",
+    "PurpleBot'un bu bilgisayardaki uygulamaları görmesine ve etkileşime girmesine izin verin.",
   "computerUse.granted": "Verildi",
   "computerUse.opening": "Açılıyor…",
   "computerUse.manage": "Yönet",
@@ -44,5 +44,5 @@ export const messages = {
   "computerUse.help.showInFinder": "Finder'da göster",
   "computerUse.help.revealFailed": "Uygulama Finder'da gösterilemedi.",
   "computerUse.help.dragFailed": "Uygulama sürüklenemedi.",
-  "computerUse.highlight.working": "OpenBot {title} içinde çalışıyor",
+  "computerUse.highlight.working": "PurpleBot {title} içinde çalışıyor",
 } as const satisfies PartialTranslation<typeof source>;

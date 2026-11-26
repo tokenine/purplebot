@@ -56,4 +56,4 @@ for (const [system, assetName] of Object.entries(assetNames)) {
 
 const sources: NixSources = { version, assets };
 await writeFile(sourcesPath, `${JSON.stringify(sources, null, 2)}\n`);
-process.stdout.write(`nix/sources.json names OpenBot ${version}.\n`);
+process.stdout.write(`nix/sources.json names PurpleBot ${version}.\n`);

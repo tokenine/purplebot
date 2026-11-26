@@ -255,7 +255,7 @@ try {
     };
     report.cases.push(result);
     assert.equal(result.finalStatus, entry.status, `${entry.name}: ${result.finalError ?? result.finalStatus}`);
-    assert.equal(result.turnStarts, 1, `${entry.name}: OpenBot started the turn again`);
+    assert.equal(result.turnStarts, 1, `${entry.name}: PurpleBot started the turn again`);
     assert.ok(
       result.errorEvents.every((event) => !event.message.includes(FALLBACK)),
       `${entry.name}: the transport warning reached the banner`,

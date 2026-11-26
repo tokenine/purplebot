@@ -16,8 +16,8 @@ import {
 } from "./server-setup-port";
 
 const APP_URL = "https://openbot.run/app";
-const PRODUCT_NAME = "OpenBot";
-const DEFAULT_SERVER_NAME = "OpenBot";
+const PRODUCT_NAME = "PurpleBot";
+const DEFAULT_SERVER_NAME = "PurpleBot";
 const STATUS_POLL_MS = 2_000;
 const ERROR_POLL_MS = 10_000;
 

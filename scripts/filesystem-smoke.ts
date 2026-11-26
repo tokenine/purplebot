@@ -556,7 +556,7 @@ async function initialize(client: AgentClient): Promise<void> {
       {
         clientInfo: {
           name: "openbot_filesystem_smoke",
-          title: "OpenBot Filesystem Smoke",
+          title: "PurpleBot Filesystem Smoke",
           version: "0.1.0",
         },
         capabilities: { experimentalApi: true },

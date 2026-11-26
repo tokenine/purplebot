@@ -448,7 +448,7 @@ try {
   const others = report.requests.filter(
     (request) => request.auth === undefined && request.model !== null && !known.has(request.model),
   );
-  assert.deepEqual(others, [], "Each request must name a model OpenBot configured.");
+  assert.deepEqual(others, [], "Each request must name a model PurpleBot configured.");
   for (const [model, budget] of budgets) {
     const seen = report.requests.filter((request) => request.model === model);
     assert.ok(seen.length > 0, `The endpoint got no request for ${model}.`);
@@ -456,7 +456,7 @@ try {
       assert.equal(
         request.maxCompletionTokens,
         budget,
-        `${model} must ask for the ${budget}-token budget OpenBot wrote, not ${request.maxCompletionTokens}.`,
+        `${model} must ask for the ${budget}-token budget PurpleBot wrote, not ${request.maxCompletionTokens}.`,
       );
     }
   }

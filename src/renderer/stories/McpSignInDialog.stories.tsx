@@ -72,5 +72,5 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {};
 
 export const RemoteHost: Story = {
-  args: { hostName: "OpenBot team" },
+  args: { hostName: "PurpleBot team" },
 };

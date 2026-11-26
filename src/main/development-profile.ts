@@ -55,7 +55,7 @@ function hslToHex(hue: number, saturation: number, lightness: number): string {
 }
 
 export function developmentUserDataName(profile: DevelopmentProfile, instanceId: string | null = null): string {
-  const base = profile === "test-client" ? "OpenBot Dev Test Client" : "OpenBot Dev";
+  const base = profile === "test-client" ? "PurpleBot Dev Test Client" : "PurpleBot Dev";
   return instanceId ? `${base} ${instanceId}` : base;
 }
 

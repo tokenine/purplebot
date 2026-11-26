@@ -304,7 +304,7 @@ try {
   assert.deepEqual(fellBack.events, ["email_sent:rate_limited", "email_fallback_sent:accepted"]);
   const [fallbackMessage] = fallbackMessages;
   assert(fallbackMessage);
-  assert.deepEqual(fallbackMessage.from, { name: "OpenBot", email: CONFIG.from });
+  assert.deepEqual(fallbackMessage.from, { name: "PurpleBot", email: CONFIG.from });
   assert.equal(fallbackMessage.to, "user@example.com");
   assert(fallbackMessage.text?.includes("ABCD-EFGH"), "the fallback must carry the sign-in code");
   assert(fallbackMessage.html?.includes("ABCD-EFGH"), "the fallback must carry the sign-in code");

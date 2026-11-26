@@ -284,6 +284,7 @@ async function harness(welcome: WelcomeStart = "used") {
       DB: sqliteD1(database),
       STRIPE_SECRET_KEY: "sk_test_credits",
       STRIPE_WEBHOOK_SECRET: WEBHOOK_SECRET,
+      OPENPANEL_API_URL: "https://analytics.example.com/api",
       OPENPANEL_CLIENT_ID: "openpanel-test",
       OPENPANEL_CLIENT_SECRET: "openpanel-test-secret",
     },
@@ -323,6 +324,7 @@ async function harness(welcome: WelcomeStart = "used") {
   const purchaseStatus = (id: string) =>
     database.prepare("SELECT status FROM credit_purchases WHERE checkout_session_id = ?").get(id)?.status;
   const analytics = createAccountAnalytics({
+    apiUrl: "https://analytics.example.com/api",
     clientId: "openpanel-test",
     clientSecret: "openpanel-test-secret",
     fetch: stripe.fetch,
@@ -1303,7 +1305,7 @@ async function creditActivity(database: DatabaseSync, credits: CreditService) {
   setActor.run(MEMBER.id);
   const refund = kinds(owner.entries, "refund")[0];
   check(
-    "a generation of a deleted account shows a member, and only OpenBot entries show OpenBot",
+    "a generation of a deleted account shows a member, and only PurpleBot entries show PurpleBot",
     afterDelete?.actor === "member" &&
       afterDelete.actorName === undefined &&
       refund?.actor === "openbot" &&

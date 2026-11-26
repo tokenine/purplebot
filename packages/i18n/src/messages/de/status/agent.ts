@@ -36,7 +36,7 @@ export const messages = {
   "status.agent.creditsHoldBalance": "Das kostet {credits} Credits, und das Guthaben beträgt {balance} Credits.",
   "status.agent.creditsHoldAgentsOff": "Agenten auf diesem Server können keine Credits verwenden.",
   "status.agent.screenCapturePermissionNext":
-    "macOS kann dich danach bitten, OpenBot die Bildschirmaufnahme zu erlauben.",
+    "macOS kann dich danach bitten, PurpleBot die Bildschirmaufnahme zu erlauben.",
   "status.agent.screenCaptureDisplay": "Den Bildschirm {name} aufnehmen und das Bild an das Modell des Agenten senden.",
   "status.agent.screenCaptureWindow": "Das Fenster {name} aufnehmen und das Bild an das Modell des Agenten senden.",
   "status.agent.screenCaptureRegion":
@@ -48,39 +48,39 @@ export const messages = {
   "status.agent.sendIdea": "Daraus wird ein öffentliches GitHub-Issue. Dein Name wird nicht angezeigt.",
   "status.agent.feedbackRecentErrors": "Letzte Fehler im Chat:",
   "status.agent.feedbackSameAs": "Wird zu Issue #{issue} hinzugefügt",
-  "status.agent.feedbackSent": "An das OpenBot-Team gesendet: {title}",
+  "status.agent.feedbackSent": "An das PurpleBot-Team gesendet: {title}",
   "status.agent.feedbackWithdrawn": "Von GitHub entfernt: {title}",
   "status.agent.feedbackWithdrawCommand": "Bericht #{issue} von GitHub entfernen",
   "status.agent.feedbackWithdrawReason":
     "Niemand kann diesen Bericht auf GitHub mehr sehen. Das kannst du nicht rückgängig machen. Zum Korrigieren kann der Agent einen korrigierten Bericht senden.",
   "status.agent.feedbackWithdrawing": "Dein Bericht wird von GitHub entfernt…",
   "status.agent.serverInstallCommand":
-    "Einen einmaligen Befehl erstellen, der OpenBot auf einem anderen Computer als Server {name} installiert und bei deinem Konto anmeldet. Der Agent führt ihn dort aus.",
+    "Einen einmaligen Befehl erstellen, der PurpleBot auf einem anderen Computer als Server {name} installiert und bei deinem Konto anmeldet. Der Agent führt ihn dort aus.",
   "status.agent.serverInstallCard": "Installationsbefehl für den Server {name}",
   "status.agent.browserProfileNamed":
     "{agents} in das Browser-Profil {profile} verschieben. Sie erhalten seine Anmeldungen und Cookies. Ihre offenen Tabs werden geschlossen.",
-  "status.agent.commitCoAuthorOff": "OpenBot nicht mehr als Mitautor in die Commits aller Agenten eintragen.",
-  "status.agent.commitCoAuthorOn": "OpenBot wieder als Mitautor in die Commits aller Agenten eintragen.",
+  "status.agent.commitCoAuthorOff": "PurpleBot nicht mehr als Mitautor in die Commits aller Agenten eintragen.",
+  "status.agent.commitCoAuthorOn": "PurpleBot wieder als Mitautor in die Commits aller Agenten eintragen.",
   "status.agent.browserProfileNew":
     "Das neue Browser-Profil {profile} erstellen und {agents} dorthin verschieben. Es hat keine Anmeldungen. Ihre offenen Tabs werden geschlossen.",
   "status.agent.browserProfileShared":
     "{agents} in das gemeinsame Browser-Profil verschieben. Sie erhalten seine Anmeldungen und Cookies. Ihre offenen Tabs werden geschlossen.",
   "status.agent.browserProfileOwn":
     "{agents} jeweils ein eigenes Browser-Profil geben. Ihre offenen Tabs werden geschlossen.",
-  "status.agent.feedbackSending": "Dein Feedback wird an das OpenBot-Team gesendet…",
+  "status.agent.feedbackSending": "Dein Feedback wird an das PurpleBot-Team gesendet…",
   "status.agent.workflowDelete":
     "Den Workflow {title} mit seinen Ausführungen und Versionen löschen. Seine offenen Schritte werden beendet.",
   "status.agent.deleteAgents": "{agents} mit ihren Chats und Dateien löschen. Das lässt sich nicht rückgängig machen.",
-  "status.agent.nearSignatureReceived": "OpenBot hat die Signatur erhalten. Du kannst diesen Tab schließen.",
-  "status.agent.nearSignatureUnknown": "OpenBot wartet nicht auf diese Signatur. Starte sie in OpenBot erneut.",
+  "status.agent.nearSignatureReceived": "PurpleBot hat die Signatur erhalten. Du kannst diesen Tab schließen.",
+  "status.agent.nearSignatureUnknown": "PurpleBot wartet nicht auf diese Signatur. Starte sie in PurpleBot erneut.",
   "status.agent.nearPayment": "{amount} {symbol} aus der Krypto-Wallet an {recipient} zahlen, für {domain}: {reason}",
   "status.agent.nearSummaryCreate":
-    "Alle Agenten können bis zu {amount} USD pro Tag zahlen. Du kannst das später in OpenBot ändern.",
+    "Alle Agenten können bis zu {amount} USD pro Tag zahlen. Du kannst das später in PurpleBot ändern.",
   "status.agent.nearSummaryGrant":
-    "Diese OpenBot-App {days} Tage lang im Rahmen deiner Regeln aus der Wallet zahlen lassen.",
+    "Diese PurpleBot-App {days} Tage lang im Rahmen deiner Regeln aus der Wallet zahlen lassen.",
   "status.agent.nearSummaryBudget": "Das Tagesbudget der Wallet auf {amount} USD ändern.",
   "status.agent.nearSummaryAutoPay":
-    "OpenBot ohne deine Signatur zahlen lassen, wenn eine Zahlungsregel es erlaubt. Bei anderen Zahlungen wirst du weiterhin im Chat gefragt.",
+    "PurpleBot ohne deine Signatur zahlen lassen, wenn eine Zahlungsregel es erlaubt. Bei anderen Zahlungen wirst du weiterhin im Chat gefragt.",
   "status.agent.nearSummaryPayment": "Die Zahlung von {amount} an {recipient} genehmigen.",
   "status.agent.nearSummaryFreeze": "Agenten können nicht aus dieser Wallet zahlen, bis du die Zahlungen fortsetzt.",
   "status.agent.nearSummaryUnfreeze": "Agenten können wieder im Rahmen deiner Regeln aus dieser Wallet zahlen.",

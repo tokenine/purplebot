@@ -5,7 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/solid-start/plugin/vite";
 import { defineConfig, type Plugin } from "vite";
 import { lazyLanguageCatalogs } from "../../packages/i18n/src/vite-plugin";
-import { contentImages } from "./content-images";
 import { DEVELOPMENT_APNS_PATH, developmentApnsProxy } from "./dev-apns-proxy";
 import { developmentNetworkRequestAllowed } from "./dev-network-access";
 import { rendererPreviewAlias, rendererWebAlias } from "./renderer-preview-alias";
@@ -59,7 +58,6 @@ export default defineConfig(({ command }) => {
       tanstackStart(),
       solidPlugin({ ssr: true }),
       tailwindcss({ optimize: false }),
-      contentImages(),
     ],
   };
 });

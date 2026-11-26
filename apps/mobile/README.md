@@ -1,4 +1,4 @@
-# OpenBot Mobile
+# PurpleBot Mobile
 
 React Native app built with Expo SDK 58, Expo Router, TypeScript 7, Biome, and Bun. The app uses Expo Continuous Native Generation, so native `ios/` and `android/` directories are intentionally not committed.
 
@@ -309,7 +309,7 @@ chat on screen is not marked as read. A refresh sends no connection analytics.
   number of servers that loaded, or why the run did nothing (`Background refresh skipped: ...`). On
   iOS, the device log (subsystem `run.openbot.mobile`, category `BackgroundRefresh`) shows when iOS
   started the task and when it ended.
-- Test on a device. iOS has no background tasks in the Simulator. Attach Xcode to `OpenBot`, put
+- Test on a device. iOS has no background tasks in the Simulator. Attach Xcode to `PurpleBot`, put
   the app in the background and pause it. Select a thread that is not the main thread
   (`thread select <n>`): on the main thread the command does not return. Then run
   `e -l objc -- @import Foundation`, `e -l objc -- @import BackgroundTasks` and
@@ -319,7 +319,7 @@ chat on screen is not marked as read. A refresh sends no connection analytics.
 
 ## iOS shortcuts
 
-The Shortcuts app of iOS 26 and later has three OpenBot shortcuts: List Agents, Send Message and
+The Shortcuts app of iOS 26 and later has three PurpleBot shortcuts: List Agents, Send Message and
 Open Agent. An older iOS has none: their cards need `SnippetIntent`.
 
 The shortcuts run in native code, with no JavaScript of the app. iOS runs a shortcut in the
@@ -482,7 +482,7 @@ One-time setup:
 1. In GitHub repository settings, create the `release-ios` environment. Under deployment branches
    and tags, select only the `main` branch.
 2. Add environment secrets `EXPO_TOKEN`, `ASC_KEY_ID`, `ASC_ISSUER_ID`, and `ASC_PRIVATE_KEY`.
-   The Expo token needs access to the OpenBot project. The Apple secrets are the Key ID, Issuer ID,
+   The Expo token needs access to the PurpleBot project. The Apple secrets are the Key ID, Issuer ID,
    and full `.p8` contents of an App Store Connect team API key with the App Manager role.
 3. Keep the iOS distribution certificate and provisioning profiles configured in EAS. CI downloads
    these existing credentials. If they expire or need repair, update them interactively through
@@ -643,7 +643,7 @@ The APK is not public after the build. It becomes public when the version is mar
 2. `scripts/android-apk-release.ts stage` reads the package, the version and the build number in
    the file and checks its signature. It stops when the file is not that build.
 3. The script puts the file on the draft GitHub release `android-v<version>` as
-   `OpenBot-<version>.apk`. Only people who can write to the repository see a draft. A second build
+   `PurpleBot-<version>.apk`. Only people who can write to the repository see a draft. A second build
    of a version replaces the file of the first. The release notes have the SHA-256 of the file and
    of the signing certificate.
 
@@ -701,7 +701,7 @@ See [Fastlane universal APK download](https://docs.fastlane.tools/actions/downlo
 
 ### Discord announcement
 
-Each store gets its own post in the OpenBot Discord when users of that store can see the version.
+Each store gets its own post in the PurpleBot Discord when users of that store can see the version.
 The source is `apps/mobile/CHANGELOG.md`; the gate is production. The `Announce mobile release on
 Discord` workflow (`mobile-release-announcement.yml`) runs after each CI run on `main`, at minutes
 17 and 47 of each hour, and on a manual dispatch. It posts a version for a store only when the
@@ -718,10 +718,10 @@ has its own post and its own workflow (`docs/RELEASING.md#discord-announcement`)
 
 | Event | Title | Line under the title |
 | --- | --- | --- |
-| The first store | `OpenBot vx.y.z is out on iOS` | `The Android version comes out later.` |
-| The second store | `OpenBot vx.y.z is out on Android` | `It is already out on iOS.` |
-| Both stores in the same run | `OpenBot vx.y.z is out on iOS and Android` | none |
-| The other store skipped the version | `OpenBot vx.y.z is out on iOS` | none |
+| The first store | `PurpleBot vx.y.z is out on iOS` | `The Android version comes out later.` |
+| The second store | `PurpleBot vx.y.z is out on Android` | `It is already out on iOS.` |
+| Both stores in the same run | `PurpleBot vx.y.z is out on iOS and Android` | none |
+| The other store skipped the version | `PurpleBot vx.y.z is out on iOS` | none |
 
 The message mentions the `Mobile Release Pings` role, then has the title, the highlights, and one
 line of links to each store that has the version and to `Full Changelog`, the version on the Mobile
@@ -751,7 +751,7 @@ One-time setup:
 1. In GitHub repository settings, create the `release-mobile` environment. Under deployment branches
    and tags, select only the `main` branch.
 2. In Discord, open the settings of the announcement channel, then Integrations > Webhooks. Make a
-   webhook named `OpenBot` with the OpenBot icon. Add its URL as the environment secret
+   webhook named `PurpleBot` with the PurpleBot icon. Add its URL as the environment secret
    `DISCORD_MOBILE_RELEASE_WEBHOOK_URL`. It can be the same channel as the desktop post.
 3. In Discord, turn on Developer Mode, open Server Settings > Roles, right-click `Mobile Release Pings`
    and select Copy Role ID. Add the ID as the environment variable `DISCORD_MOBILE_RELEASE_ROLE_ID`.
@@ -760,7 +760,7 @@ One-time setup:
 ## Over-the-air updates
 
 An over-the-air (OTA) update sends a new JavaScript bundle to the phones that have a store binary.
-It needs no store review. The phones get it from OpenBot's own update server,
+It needs no store review. The phones get it from PurpleBot's own update server,
 [`apps/mobile-updates`](../mobile-updates/README.md) at `https://updates.openbot.run`, not from EAS
 Update. `expo-updates` is the client in the app.
 
@@ -858,7 +858,7 @@ that its store build accepts.
 The app asks the server at a cold start, and again when it comes back to the foreground, at most
 one time in 15 minutes (`src/features/app-update/model/app-update.ts`). The cold start counts as a
 check, so to see a new update or a rollback at once, close the app fully and open it. It downloads a new bundle in
-the background. The home header then shows **A new OpenBot is ready**, and **Update** restarts the
+the background. The home header then shows **A new PurpleBot is ready**, and **Update** restarts the
 app with the new bundle. Without the tap, the next cold start uses it. The bundle is about 25 MB;
 the server sends it compressed, and the phone downloads only the assets that it does not have.
 
@@ -946,7 +946,7 @@ The endpoint is fixed to `https://analytics.openbot.run/api`. No analytics crede
 
 1. In the self-hosted OpenPanel dashboard, open the existing **Openbot** project used by desktop and the website.
    Do not create or select a separate **Openbot Mobile** project.
-   Create a separate client for OpenBot Mobile with **write** access only. Copy its Client ID and
+   Create a separate client for PurpleBot Mobile with **write** access only. Copy its Client ID and
    Client Secret. Do not use an organization/root client or a client with read access.
 2. In the Expo dashboard, open the **openbot** project → **Environment variables**, select the
    **production** environment, and add:
@@ -972,7 +972,7 @@ The endpoint is fixed to `https://analytics.openbot.run/api`. No analytics crede
 React Native requires a Client Secret according to OpenPanel's native SDK guide. In this direct
 native integration it is an **embedded write credential**, not a confidential server secret.
 Expo's `EXPO_PUBLIC_` values are visible in the shipped bundle. Use only a dedicated write client;
-never embed a key for Export, Insights, Manage, or an OpenBot account/session. EAS visibility can hide
+never embed a key for Export, Insights, Manage, or an PurpleBot account/session. EAS visibility can hide
 values in its UI but does not hide them in the app. See [OpenPanel client access levels](https://openpanel.dev/docs/api/authentication)
 and [Expo environment variables](https://docs.expo.dev/guides/environment-variables/).
 
@@ -1022,7 +1022,7 @@ where available, `duration_ms`. Failure codes are fixed categories, never raw er
 | `analytics_preference_changed` | `enabled=false`, sent once before collection stops when the user turns analytics off; the app waits at most 2 seconds for it |
 
 Use a mobile activation funnel from open → successful QR redemption → successful connection →
-conversation load or message send. Measure signed-in D1/D7 retention by OpenBot account ID. Eligible
+conversation load or message send. Measure signed-in D1/D7 retention by PurpleBot account ID. Eligible
 pre-session events join that account after sign-in. Unclaimed and expired attempts are not sent, so
 this funnel does not measure all abandoned pairing attempts.
 A message receipt means the host accepted the message, not that the agent finished its work.

@@ -126,7 +126,7 @@ export class IdleRestart {
 
   readonly #restart = Effect.fn("IdleRestart.restart")(function* (this: IdleRestart, status: IdleRestartStatus) {
     if (status.target === "relaunch") {
-      this.#log("Restarting OpenBot.");
+      this.#log("Restarting PurpleBot.");
       this.#relaunch();
       return;
     }

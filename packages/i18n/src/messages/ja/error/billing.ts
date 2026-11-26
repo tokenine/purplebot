@@ -24,7 +24,7 @@ export const messages = {
     "このライセンスはそのプランに変更できません。解約してから新しいプランを購入してください。",
   "error.billing.noLicense": "このアカウントにはライセンスがありません。",
   "error.billing.countryRequired":
-    "お支払いの前に請求先の国を入力してください。OpenBot を更新してから、もう一度お試しください。",
+    "お支払いの前に請求先の国を入力してください。PurpleBot を更新してから、もう一度お試しください。",
   "error.billing.detailsInvalid": "国と VAT ID を確認してください。VAT ID は選択した国のものである必要があります。",
   "error.billing.vatIdInvalid":
     "EU の VAT システムにこの VAT ID がありません。番号を確認するか、VAT ID なしで続行してください。",

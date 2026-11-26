@@ -48,7 +48,7 @@ export const messages = {
   "error.skill.ownSkillExists":
     "このエージェントには {slug} という名前の独自のスキルがすでにあります。エージェントにそのスキルの名前の変更か削除を頼んでから、このスキルをもう一度追加してください。",
   "error.skill.managedSlug":
-    "OpenBot はすべてのエージェントに独自の {slug} スキルを提供します。このスキルには別の名前を付けてください。",
+    "PurpleBot はすべてのエージェントに独自の {slug} スキルを提供します。このスキルには別の名前を付けてください。",
   "error.skill.templateMarkdownTooLarge": "{name}: SKILL.md が 64 KB を超えています。公開する前に短くしてください。",
   "error.skill.localNoRevisions": "ローカルスキルに公開済みのリビジョンがありません。",
   "error.skill.localNotFound": "このローカルスキルは存在しません。ローカルスキルの一覧で ID を確認してください。",
@@ -67,13 +67,13 @@ export const messages = {
   "error.skill.folderNotRead":
     "{provider} は {folder} を読み込みません。このフォルダーを {target} にコピーしてください。",
   "error.skill.githubLinkInvalid": "GitHub のリポジトリかフォルダーへのリンクを貼り付けてください。",
-  "error.skill.githubNotFound": "OpenBot は {repository} を開けません。リポジトリが非公開か、存在しません。",
+  "error.skill.githubNotFound": "PurpleBot は {repository} を開けません。リポジトリが非公開か、存在しません。",
   "error.skill.githubNoSkills": "{folder} に SKILL.md がありません。",
-  "error.skill.githubUnavailable": "OpenBot は現在 GitHub を読み込めません。しばらくしてからもう一度お試しください。",
+  "error.skill.githubUnavailable": "PurpleBot は現在 GitHub を読み込めません。しばらくしてからもう一度お試しください。",
   "error.skill.githubRateLimited":
-    "GitHub はアカウントなしで OpenBot が読み込める回数を制限しています。1 時間後にもう一度お試しください。",
+    "GitHub はアカウントなしで PurpleBot が読み込める回数を制限しています。1 時間後にもう一度お試しください。",
   "error.skill.githubTooLarge":
-    "OpenBot は {repository} のすべてのファイルを読み取れません。リポジトリが大きすぎます。",
+    "PurpleBot は {repository} のすべてのファイルを読み取れません。リポジトリが大きすぎます。",
   "error.skill.githubHostTooOld": "GitHub からスキルを追加するには、このサーバーを更新してください。",
   "error.skill.publishGithub": "{name} は GitHub のスキルです。公開できるのは自分で作成したスキルだけです。",
 } as const satisfies PartialTranslation<typeof source>;

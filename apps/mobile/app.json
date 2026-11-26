@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "OpenBot",
+    "name": "PurpleBot",
     "slug": "openbot",
     "platforms": ["ios", "android"],
     "version": "1.4.14",
@@ -14,7 +14,7 @@
       "supportsTablet": true,
       "associatedDomains": ["applinks:openbot.run"],
       "infoPlist": {
-        "NSLocalNetworkUsageDescription": "Allow OpenBot to connect to your desktop during local development.",
+        "NSLocalNetworkUsageDescription": "Allow PurpleBot to connect to your desktop during local development.",
         "NSAppTransportSecurity": {
           "NSAllowsLocalNetworking": true
         },
@@ -55,7 +55,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#CDADEC",
+          "backgroundColor": "#8B5CF6",
           "image": "./assets/splash/eyes.png",
           "imageWidth": 240,
           "resizeMode": "contain",
@@ -71,8 +71,8 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow OpenBot to use your camera to scan QR codes.",
-          "microphonePermission": "Allow OpenBot to use the microphone to dictate messages.",
+          "cameraPermission": "Allow PurpleBot to use your camera to scan QR codes.",
+          "microphonePermission": "Allow PurpleBot to use the microphone to dictate messages.",
           "recordAudioAndroid": false,
           "barcodeScannerEnabled": true
         }
@@ -80,16 +80,16 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Allow OpenBot to access the photos you choose to share.",
-          "cameraPermission": "Allow OpenBot to use your camera to add photos.",
-          "microphonePermission": "Allow OpenBot to use the microphone to dictate messages."
+          "photosPermission": "Allow PurpleBot to access the photos you choose to share.",
+          "cameraPermission": "Allow PurpleBot to use your camera to add photos.",
+          "microphonePermission": "Allow PurpleBot to use the microphone to dictate messages."
         }
       ],
       [
         "expo-media-library",
         {
-          "photosPermission": "Allow OpenBot to access the photos you choose to share.",
-          "savePhotosPermission": "Allow OpenBot to save images and videos you download from a chat to your photo library.",
+          "photosPermission": "Allow PurpleBot to access the photos you choose to share.",
+          "savePhotosPermission": "Allow PurpleBot to save images and videos you download from a chat to your photo library.",
           "granularPermissions": ["photo"]
         }
       ],
@@ -116,13 +116,13 @@
       [
         "expo-local-authentication",
         {
-          "faceIDPermission": "Allow OpenBot to use Face ID to unlock the app."
+          "faceIDPermission": "Allow PurpleBot to use Face ID to unlock the app."
         }
       ],
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "Allow OpenBot to send your current location to an agent when you tap Share once, so it can answer questions about places near you.",
+          "locationWhenInUsePermission": "Allow PurpleBot to send your current location to an agent when you tap Share once, so it can answer questions about places near you.",
           "locationAlwaysAndWhenInUsePermission": false,
           "locationAlwaysPermission": false,
           "locationFullAccuracyPermission": false,
@@ -225,15 +225,15 @@
       [
         "expo-speech-recognition",
         {
-          "microphonePermission": "Allow OpenBot to use the microphone to dictate messages.",
-          "speechRecognitionPermission": "Allow OpenBot to turn your speech into message text."
+          "microphonePermission": "Allow PurpleBot to use the microphone to dictate messages.",
+          "speechRecognitionPermission": "Allow PurpleBot to turn your speech into message text."
         }
       ],
       [
         "@config-plugins/react-native-webrtc",
         {
-          "cameraPermission": "Allow OpenBot to use your camera to scan QR codes.",
-          "microphonePermission": "Allow OpenBot to use the microphone to dictate messages."
+          "cameraPermission": "Allow PurpleBot to use your camera to scan QR codes.",
+          "microphonePermission": "Allow PurpleBot to use the microphone to dictate messages."
         }
       ],
       [

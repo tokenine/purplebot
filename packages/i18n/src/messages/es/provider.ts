@@ -40,7 +40,7 @@ export const messages = {
   "provider.status.checking": "Comprobando",
   "provider.status.off": "Desactivado",
   "provider.gemini.hostSignIn":
-    "Para conectar Gemini, abre OpenBot en el host y selecciona Conectar en Ajustes del servidor > Proveedores. El inicio de sesión de Google necesita un navegador en ese host. No se admite el inicio de sesión remoto.",
+    "Para conectar Gemini, abre PurpleBot en el host y selecciona Conectar en Ajustes del servidor > Proveedores. El inicio de sesión de Google necesita un navegador en ese host. No se admite el inicio de sesión remoto.",
   "provider.key.free": "Gratis",
   "provider.action.connect": "Conectar",
   "provider.action.reconnect": "Reconectar",
@@ -66,20 +66,20 @@ export const messages = {
   "provider.aria.cancelSignIn": "Cancelar el inicio de sesión en {name}",
   "provider.aria.apiKey": "Clave de API de {name}",
   "provider.connecting.browserHint": "Completa el inicio de sesión si se abre una página del navegador.",
-  "provider.connecting.cancelFailed": "OpenBot no pudo cancelar el inicio de sesión en {name}. Inténtalo de nuevo.",
+  "provider.connecting.cancelFailed": "PurpleBot no pudo cancelar el inicio de sesión en {name}. Inténtalo de nuevo.",
   "provider.aria.install": "Instalar {name}",
   "provider.aria.signIn": "Iniciar sesión en {name}",
   "provider.aria.codeFallback": "Iniciar sesión en {name} con un código",
   "provider.aria.addressFallback": "Pegar la dirección de inicio de sesión de {name}",
   "provider.aria.moreActions": "Más acciones para {name}",
-  "provider.aria.use": "Usar {name} en OpenBot",
+  "provider.aria.use": "Usar {name} en PurpleBot",
   "provider.use.inUseOne": "{agent} usa {name}. Cambia el modelo de este agente y después desactiva {name}.",
   "provider.use.inUse": {
     one: "{count} agente usa {name}. Cambia el modelo de este agente y después desactiva {name}.",
     other: "{count} agentes usan {name}. Cambia el modelo de estos agentes y después desactiva {name}.",
   },
   "provider.codeLogin.title": "Iniciar sesión en {name} con un código",
-  "provider.codeLogin.description": "Termina en tu teléfono u otro navegador. OpenBot espera aquí.",
+  "provider.codeLogin.description": "Termina en tu teléfono u otro navegador. PurpleBot espera aquí.",
   "provider.codeLogin.starting": "Obteniendo un código de {name}…",
   "provider.codeLogin.qrLabel": "Código QR para la página de inicio de sesión de {name}",
   "provider.codeLogin.open": "Abrir",
@@ -102,15 +102,15 @@ export const messages = {
   "provider.codeLogin.pageDescription": "Esta página está abierta en el navegador de {host}. Inicia sesión aquí.",
   "provider.codeLogin.relayStarting": "Empezando el inicio de sesión de {name} en {host}…",
   "provider.codeLogin.pageOpening": "Abriendo la página de inicio de sesión de {name} en {host}…",
-  "provider.codeLogin.linkStep": "Inicia sesión en {name}. OpenBot continúa automáticamente.",
+  "provider.codeLogin.linkStep": "Inicia sesión en {name}. PurpleBot continúa automáticamente.",
   "provider.codeLogin.thisComputerDescription":
-    "Abre este enlace en un navegador de este ordenador. OpenBot espera aquí.",
+    "Abre este enlace en un navegador de este ordenador. PurpleBot espera aquí.",
   "provider.codeLogin.copyLink": "Copiar enlace",
   "provider.codeLogin.chatgptDeviceSetting":
     "En ChatGPT en un ordenador, abre la configuración de seguridad y activa el inicio de sesión con código de dispositivo para Codex. En una cuenta de trabajo, lo activa el administrador del espacio de trabajo.",
-  "provider.useApp.title": "Conecta {name} en la app de OpenBot",
+  "provider.useApp.title": "Conecta {name} en la app de PurpleBot",
   "provider.useApp.description":
-    "El inicio de sesión de {name} vuelve al equipo que lo inició, y una pestaña del navegador no puede recibirlo. Conecta {name} en la app de OpenBot. La app termina el inicio de sesión sola.",
+    "El inicio de sesión de {name} vuelve al equipo que lo inició, y una pestaña del navegador no puede recibirlo. Conecta {name} en la app de PurpleBot. La app termina el inicio de sesión sola.",
   "provider.useApp.download": "Descargar la app",
   "provider.picker.noEndpoints": "Aún no hay endpoints",
   "provider.picker.customCounts": "{endpoints} · {agents}",
@@ -120,7 +120,7 @@ export const messages = {
   "provider.picker.providers": "Proveedores de modelos",
   "provider.picker.downloading": "Descargando {percent}",
   "provider.picker.unavailable": "{name} no está disponible.",
-  "provider.picker.updateToUse": "Actualiza OpenBot para usar {name}",
+  "provider.picker.updateToUse": "Actualiza PurpleBot para usar {name}",
   "provider.picker.models": "Modelos de {name}",
   "provider.picker.addProvider": "Añadir proveedor",
   "provider.picker.download": "Descarga de {name}",
@@ -201,21 +201,21 @@ export const messages = {
   "provider.cursorKey.label": "Clave de API de Cursor",
   "provider.inceptionKey.title": "Clave de API de Inception",
   "provider.inceptionKey.description":
-    "Guarda una clave de API de Inception en este equipo para usar los modelos Mercury. OpenBot los ejecuta en la CLI de Pi que descarga.",
+    "Guarda una clave de API de Inception en este equipo para usar los modelos Mercury. PurpleBot los ejecuta en la CLI de Pi que descarga.",
   "provider.inceptionKey.descriptionHost":
-    "Guarda una clave de API de Inception en el host para usar los modelos Mercury. OpenBot los ejecuta en la CLI de Pi que descarga.",
+    "Guarda una clave de API de Inception en el host para usar los modelos Mercury. PurpleBot los ejecuta en la CLI de Pi que descarga.",
   "provider.inceptionKey.label": "Clave de API de Inception",
   "provider.deepseekKey.title": "Clave de API de DeepSeek",
   "provider.deepseekKey.description":
-    "Guarda una clave de API de DeepSeek en este equipo para usar los modelos de DeepSeek. OpenBot los ejecuta en la CLI de Pi que descarga.",
+    "Guarda una clave de API de DeepSeek en este equipo para usar los modelos de DeepSeek. PurpleBot los ejecuta en la CLI de Pi que descarga.",
   "provider.deepseekKey.descriptionHost":
-    "Guarda una clave de API de DeepSeek en el host para usar los modelos de DeepSeek. OpenBot los ejecuta en la CLI de Pi que descarga.",
+    "Guarda una clave de API de DeepSeek en el host para usar los modelos de DeepSeek. PurpleBot los ejecuta en la CLI de Pi que descarga.",
   "provider.deepseekKey.label": "Clave de API de DeepSeek",
   "provider.openrouterKey.title": "Clave de API de OpenRouter",
   "provider.openrouterKey.description":
-    "Guarda una clave de API de OpenRouter en este equipo para usar los modelos que ofrece OpenRouter. OpenBot los ejecuta en la CLI de Pi que descarga.",
+    "Guarda una clave de API de OpenRouter en este equipo para usar los modelos que ofrece OpenRouter. PurpleBot los ejecuta en la CLI de Pi que descarga.",
   "provider.openrouterKey.descriptionHost":
-    "Guarda una clave de API de OpenRouter en el host para usar los modelos que ofrece OpenRouter. OpenBot los ejecuta en la CLI de Pi que descarga.",
+    "Guarda una clave de API de OpenRouter en el host para usar los modelos que ofrece OpenRouter. PurpleBot los ejecuta en la CLI de Pi que descarga.",
   "provider.openrouterKey.label": "Clave de API de OpenRouter",
   "provider.openCodeKey.title": "Iniciar sesión en OpenCode Go",
   "provider.openCodeKey.description":
@@ -276,20 +276,20 @@ export const messages = {
   "provider.settings.disconnectOthers":
     "Las otras cuentas de {provider} esperan hasta que vuelvas a conectar {provider}.",
   "provider.settings.disconnectLocal":
-    "OpenBot cierra la sesión de {provider} en este ordenador. La CLI de {provider} de tu terminal también cierra la sesión.",
-  "provider.settings.disconnectHost": "OpenBot cierra la sesión de {provider} en el servidor.",
+    "PurpleBot cierra la sesión de {provider} en este ordenador. La CLI de {provider} de tu terminal también cierra la sesión.",
+  "provider.settings.disconnectHost": "PurpleBot cierra la sesión de {provider} en el servidor.",
   "provider.settings.geminiKeyReplacesAccount":
     "Se usa una clave de API de Gemini guardada en lugar de un inicio de sesión de Google. Para usar un plan de Google y sus modelos, elimina la clave.",
   "provider.settings.museKeyInUse":
     "Muse usa esta clave, no tu inicio de sesión. Para usar tu inicio de sesión, elimina la clave.",
   "provider.settings.versionInstalledByUser": "{version} · instalada por ti",
-  "provider.settings.versionDownloaded": "{version} · descargada por OpenBot",
+  "provider.settings.versionDownloaded": "{version} · descargada por PurpleBot",
   "provider.settings.otherVersionInstalledByUser": "Sin usar: {version} · instalada por ti",
-  "provider.settings.otherVersionDownloaded": "Sin usar: {version} · descargada por OpenBot",
+  "provider.settings.otherVersionDownloaded": "Sin usar: {version} · descargada por PurpleBot",
   "provider.settings.installedVersionIncomplete":
-    "Algunos modelos necesitan una parte que esta versión no tiene. Descarga la versión de OpenBot para usarlos.",
+    "Algunos modelos necesitan una parte que esta versión no tiene. Descarga la versión de PurpleBot para usarlos.",
   "provider.settings.useInstalledVersion": "Usar la instalada",
-  "provider.settings.useDownloadedVersion": "Usar la de OpenBot",
+  "provider.settings.useDownloadedVersion": "Usar la de PurpleBot",
   "provider.settings.cache": "Caché",
   "provider.settings.promptCache": "Caché de prompts",
   "provider.settings.promptCacheDescription":
@@ -352,11 +352,11 @@ export const messages = {
   "provider.settings.modelsLoadFailed": "No se pudieron cargar los modelos de este servidor.",
   "provider.settings.deleteTitle": "Eliminar {name}",
   "provider.settings.deleteOn":
-    "Desactiva {name} y elimina la CLI que descargó OpenBot. Las cuentas, los inicios de sesión y los agentes se mantienen.",
+    "Desactiva {name} y elimina la CLI que descargó PurpleBot. Las cuentas, los inicios de sesión y los agentes se mantienen.",
   "provider.settings.deleteOff":
-    "Elimina la CLI que OpenBot descargó para {name} ({size}). Las cuentas, los inicios de sesión y los agentes se mantienen.",
+    "Elimina la CLI que PurpleBot descargó para {name} ({size}). Las cuentas, los inicios de sesión y los agentes se mantienen.",
   "provider.settings.removeDownloadFailed": "No se pudo quitar la descarga.",
   "provider.settings.disconnectLocalOnly":
-    "OpenBot cierra la sesión de {provider} en este ordenador. La CLI de {provider} en tu terminal mantiene su propia sesión.",
+    "PurpleBot cierra la sesión de {provider} en este ordenador. La CLI de {provider} en tu terminal mantiene su propia sesión.",
   "provider.settings.updateAll": "Actualizar todo",
 } as const satisfies PartialTranslation<typeof source>;

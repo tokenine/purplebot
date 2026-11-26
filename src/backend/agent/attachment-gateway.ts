@@ -327,7 +327,7 @@ export class AttachmentGateway {
       ),
     );
     const normalized = value.replaceAll("\\", "/");
-    const sharedReference = ["~/OpenBot/Shared/", "OpenBot/Shared/", "Shared/"].some((prefix) =>
+    const sharedReference = ["~/PurpleBot/Shared/", "PurpleBot/Shared/", "Shared/"].some((prefix) =>
       normalized.startsWith(prefix),
     );
     const candidates = isAbsolute(value)
@@ -392,8 +392,8 @@ export class AttachmentGateway {
       new Error(
         `${
           scope.allowAnyReadablePath
-            ? "Upload files must exist, be regular files, and be readable by OpenBot."
-            : "Attachment files must exist inside this agent's workspace or the OpenBot shared directory."
+            ? "Upload files must exist, be regular files, and be readable by PurpleBot."
+            : "Attachment files must exist inside this agent's workspace or the PurpleBot shared directory."
         } Reason: ${[...new Set(reasons)].join("; ")}.`,
       ),
     );

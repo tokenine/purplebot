@@ -10,8 +10,8 @@ export const messages = {
   "error.voice.modelUnavailable": "O modelo de voz está indisponível.",
   "error.voice.transcriptionTimedOut": "O tempo para transcrever a voz esgotou.",
   "error.voice.prepareRequired":
-    "A transcrição de voz local está indisponível. Execute `bun run voice:prepare` e reinicie o OpenBot.",
-  "error.voice.transcriptionFailed": "O OpenBot não conseguiu transcrever esta gravação.",
+    "A transcrição de voz local está indisponível. Execute `bun run voice:prepare` e reinicie o PurpleBot.",
+  "error.voice.transcriptionFailed": "O PurpleBot não conseguiu transcrever esta gravação.",
   "error.voice.videoModelMissing":
     "Nenhum modelo de reconhecimento de fala para gravações está configurado em Configurações → Voz.",
   "error.voice.videoModelMissingServer":
@@ -27,9 +27,9 @@ export const messages = {
   "error.voice.speech.runtimeUnavailable": "A voz local não está disponível nesta plataforma.",
   "error.voice.speech.modelRequired": "Baixe o modelo de voz em Configurações → Voz.",
   "error.voice.speech.timedOut": "A leitura da resposta em voz alta expirou.",
-  "error.voice.speech.failed": "O OpenBot não conseguiu ler a resposta em voz alta.",
+  "error.voice.speech.failed": "O PurpleBot não conseguiu ler a resposta em voz alta.",
   "error.voice.speech.providerRefused": "{provider} recusou-se a criar o áudio: {reason}",
-  "error.voice.recordingNotKept": "O OpenBot não conseguiu guardar a gravação de voz.",
+  "error.voice.recordingNotKept": "O PurpleBot não conseguiu guardar a gravação de voz.",
   "error.voice.live.timedOut": "A voz ao vivo do Codex não começou a tempo. Tente novamente.",
   "error.voice.live.failed": "A voz ao vivo parou: {reason}",
   "error.voice.live.disconnected": "A voz ao vivo foi desligada.",

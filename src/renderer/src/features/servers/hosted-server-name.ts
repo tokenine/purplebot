@@ -1,6 +1,6 @@
 import { parseHostedServerName } from "@openbot/contracts/hosted-servers";
 
-export const FALLBACK_SERVER_NAME = "OpenBot";
+export const FALLBACK_SERVER_NAME = "PurpleBot";
 
 export function hostedServerDefaultName(translated: string): string {
   return (

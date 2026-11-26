@@ -1,3 +1,3 @@
 #!/bin/sh
 set -eu
-exec '/Library/Application Support/OpenBot/HostManager/host-manager' --relaunch
+exec '/Library/Application Support/PurpleBot/HostManager/host-manager' --relaunch

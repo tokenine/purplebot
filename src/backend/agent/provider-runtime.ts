@@ -3182,7 +3182,7 @@ export class ProviderRuntime implements ProviderPort {
       .request(
         "initialize",
         {
-          clientInfo: { name: "openbot", title: "OpenBot", version: "0.1.0" },
+          clientInfo: { name: "openbot", title: "PurpleBot", version: "0.1.0" },
           capabilities: { experimentalApi: true, mcpServerOpenaiFormElicitation: true },
         },
         decodeRecordResponse,
@@ -3442,12 +3442,12 @@ export class ProviderRuntime implements ProviderPort {
     keepsReleased = false,
   ): void {
     const hasActiveClient = this.#clients.has(provider) || (keepsReleased && this.#released.has(provider));
-    const fallbackMessage = `OpenBot could not connect ${providerLabel(provider)}. Try again.`;
+    const fallbackMessage = `PurpleBot could not connect ${providerLabel(provider)}. Try again.`;
     const rawMessage = error instanceof Error ? error.message : String(error);
     const readable =
       matchingSourceKeys(rawMessage).length > 0 ||
       error instanceof ProviderSignInError ||
-      /^(ChatGPT connection|OpenBot)/u.test(rawMessage);
+      /^(ChatGPT connection|PurpleBot)/u.test(rawMessage);
     if (isProviderTimeout(error) || !readable) this.#recordProviderError(provider, error);
     const message = readable ? redactText(rawMessage) : fallbackMessage;
     const status = hasActiveClient
@@ -3952,7 +3952,7 @@ export class ProviderRuntime implements ProviderPort {
       const redacted = this.#redactMcp(raw);
       const message = shortenDiagnostic(redacted);
       if (origin?.duringStop) {
-        stderrLogger.warn("A provider wrote an error while OpenBot stopped it.", {
+        stderrLogger.warn("A provider wrote an error while PurpleBot stopped it.", {
           provider: client.provider,
           message,
         });
@@ -4131,7 +4131,7 @@ export class ProviderRuntime implements ProviderPort {
               capabilities: { ...this.#status.capabilities, chat: "unavailable" },
               message: startStopped
                 ? this.#startStoppedMessage(client.provider, error.message)
-                : `${providerLabel(client.provider)} stopped repeatedly. Restart OpenBot after checking the CLI.`,
+                : `${providerLabel(client.provider)} stopped repeatedly. Restart PurpleBot after checking the CLI.`,
             },
       );
       return;
@@ -4201,7 +4201,7 @@ export class ProviderRuntime implements ProviderPort {
     if (waitsForUser) this.#startWaitsForUser.add(provider);
     else this.#startWaitsForUser.delete(provider);
     if (failures === START_FAILURE_LIMIT || waitsForUser)
-      logger.warn("OpenBot stopped starting a provider by itself.", { provider, failures, waitsForUser });
+      logger.warn("PurpleBot stopped starting a provider by itself.", { provider, failures, waitsForUser });
     return true;
   }
 
@@ -4220,7 +4220,7 @@ export class ProviderRuntime implements ProviderPort {
       this.#installedFallback.has(cliProvider)
     )
       return false;
-    logger.warn("OpenBot's provider CLI did not start, so the installed CLI runs.", {
+    logger.warn("PurpleBot's provider CLI did not start, so the installed CLI runs.", {
       provider,
       version: cli.version,
       installedVersion: installed.version,
@@ -4577,7 +4577,7 @@ export class ProviderRuntime implements ProviderPort {
       Effect.tap((routesToOpenai) => Effect.sync(() => this.#codexRoutesToOpenai.set(client, routesToOpenai))),
       Effect.catch(() =>
         Effect.sync(() => {
-          logger.warn("Codex did not give its model route. OpenBot reads the ChatGPT usage.");
+          logger.warn("Codex did not give its model route. PurpleBot reads the ChatGPT usage.");
           return this.#codexRoutesToOpenai.get(client) ?? true;
         }),
       ),

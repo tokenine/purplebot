@@ -96,13 +96,13 @@ const VISUAL_PAGE_RULES = [
   "The page runs in a sandbox: it cannot use cookies, storage or pop-up windows. A click on an http(s) link opens the link in the user's browser.",
   "The frame has no border and sits on the chat background, as wide as the reply column (about 360px on phones). Leave html and body with no background, use a fluid width and no outer card or banner title: the page is part of your reply.",
   "Give charts fixed pixel heights. Let the content set the page height; do not use 100vh or height:100% on html or body. The frame cuts what is outside the page box, so highlight a box with its border, not an outline or an outer shadow.",
-  "OpenBot sets these CSS variables on :root from the app theme, which is dark on the desktop: --background (transparent), --foreground, --muted-foreground, --muted, --card, --card-foreground, --border, --accent, --destructive, --success, --chart-1 to --chart-6, --radius, --font-sans, --font-mono. The base style sets the body font and color from them.",
+  "PurpleBot sets these CSS variables on :root from the app theme, which is dark on the desktop: --background (transparent), --foreground, --muted-foreground, --muted, --card, --card-foreground, --border, --accent, --destructive, --success, --chart-1 to --chart-6, --radius, --font-sans, --font-mono. The base style sets the body font and color from them.",
 ].join(" ");
 
 const VISUAL_PAGE_ACTIONS = [
-  "For a choice, a form or a game, call openbotPage.sendMessage(text) from a click: OpenBot puts the text in the user's message box, and the user sends it.",
+  "For a choice, a form or a game, call openbotPage.sendMessage(text) from a click: PurpleBot puts the text in the user's message box, and the user sends it.",
   `openbotPage.setContext(text) from a click keeps the page state as a quote in the user's message box, so you read it with the next message; up to ${CHAT_VISUAL_CONTEXT_LIMIT} characters, and empty text removes it.`,
-  "OpenBot gives each page a full-screen button and opens a clicked image large, so do not build them. The mobile app runs page scripts but has no openbotPage, so check that window.openbotPage exists before you call it.",
+  "PurpleBot gives each page a full-screen button and opens a clicked image large, so do not build them. The mobile app runs page scripts but has no openbotPage, so check that window.openbotPage exists before you call it.",
 ].join(" ");
 
 export const htmlRenderToolSchema = z.object({
@@ -202,7 +202,7 @@ export const acknowledgeRequestToolSchema = z.object({
 });
 
 export const askUiToolSchema = z.object({
-  blockId: uiBlockIdSchema.optional().describe("Your id for this block. OpenBot makes one when you omit it."),
+  blockId: uiBlockIdSchema.optional().describe("Your id for this block. PurpleBot makes one when you omit it."),
   block: z.strictObject({
     type: z.literal("confirm"),
     title: uiTextSchema(UI_BLOCK_LIMITS.title),
@@ -296,13 +296,13 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "list_sites",
     description:
-      "List the static sites of this OpenBot server, with its site limit and the slots in use. Use this before retrying a hosting mutation.",
+      "List the static sites of this PurpleBot server, with its site limit and the slots in use. Use this before retrying a hosting mutation.",
     shape: {},
   },
   {
     name: "publish_site",
     description:
-      "Publish a new static site after the user explicitly asks to publish it. The source must be inside this agent's workspace or OpenBot Shared.",
+      "Publish a new static site after the user explicitly asks to publish it. The source must be inside this agent's workspace or PurpleBot Shared.",
     shape: {
       sourcePath: z.string().min(1).max(INPUT_LIMITS.path),
       title: z.string().min(1).max(120),
@@ -330,7 +330,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "attach_files_to_response",
     description:
-      'Attach existing local files, such as screenshots, charts, reports or ZIP archives, to the current response for the user. OpenBot copies each file and shows image previews in the conversation. Pass folder, such as "Reports/2026", only when the user or your instructions name a Library folder; a missing folder is made.',
+      'Attach existing local files, such as screenshots, charts, reports or ZIP archives, to the current response for the user. PurpleBot copies each file and shows image previews in the conversation. Pass folder, such as "Reports/2026", only when the user or your instructions name a Library folder; a missing folder is made.',
     shape: {
       paths: z.array(z.string().min(1).max(INPUT_LIMITS.path)).min(1).max(INPUT_LIMITS.attachments),
       folder: libraryFolderArgument.optional(),
@@ -355,12 +355,12 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   },
   {
     name: "html_render",
-    description: `Show a finished HTML page (chart, table, diagram, collage, mockup) in this conversation, above your final text reply; call it before you write that reply. The user already sees the page, so the reply must not announce it or restate it: add only what the page does not say. In a channel, each member who reads the channel sees it. OpenBot fits the frame to the page height. A height lower than the page caps the frame, and the rest scrolls in it. ${VISUAL_PAGE_RULES} ${VISUAL_PAGE_ACTIONS}`,
+    description: `Show a finished HTML page (chart, table, diagram, collage, mockup) in this conversation, above your final text reply; call it before you write that reply. The user already sees the page, so the reply must not announce it or restate it: add only what the page does not say. In a channel, each member who reads the channel sees it. PurpleBot fits the frame to the page height. A height lower than the page caps the frame, and the rest scrolls in it. ${VISUAL_PAGE_RULES} ${VISUAL_PAGE_ACTIONS}`,
     shape: htmlRenderToolSchema.shape,
   },
   {
     name: "set_backdrop",
-    description: `Put a full-screen HTML scene behind the user's whole OpenBot window. Use it only when the user asks to set or change the backdrop. Each call replaces your last page, so send the whole new page. It runs in the html_render sandbox with no clicks or keys: build no controls. Fill the frame and follow resize. Keep the center plain because the chat shows over it, and draw no text. Animate with requestAnimationFrame and stop for prefers-reduced-motion. The user can undo it. Do not repeat the page in your reply.`,
+    description: `Put a full-screen HTML scene behind the user's whole PurpleBot window. Use it only when the user asks to set or change the backdrop. Each call replaces your last page, so send the whole new page. It runs in the html_render sandbox with no clicks or keys: build no controls. Fill the frame and follow resize. Keep the center plain because the chat shows over it, and draw no text. Animate with requestAnimationFrame and stop for prefers-reduced-motion. The user can undo it. Do not repeat the page in your reply.`,
     shape: setBackdropToolSchema.shape,
   },
   {
@@ -384,7 +384,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "create_server_install_command",
     description:
-      'Make a one-time command that installs OpenBot as a server on a Linux computer or VPS, signed in to the user\'s account. Get the SSH address from the user. Run it as root over SSH; it asks nothing and ends with "OpenBot is connected to your account." It works once, for 15 minutes: never save, show or share it.',
+      'Make a one-time command that installs PurpleBot as a server on a Linux computer or VPS, signed in to the user\'s account. Get the SSH address from the user. Run it as root over SSH; it asks nothing and ends with "PurpleBot is connected to your account." It works once, for 15 minutes: never save, show or share it.',
     shape: serverInstallCommandToolSchema.shape,
   },
   {
@@ -453,7 +453,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "list_agents",
     description:
-      "List local OpenBot agents: name, title, description (300 characters; read_agent has all), status (working, queued or ready), queuedMessages, turnStartedAt, waitingFor (approval, answer, browser) while working, lastActivityAt, openWaits. Changed files are not tracked.",
+      "List local PurpleBot agents: name, title, description (300 characters; read_agent has all), status (working, queued or ready), queuedMessages, turnStartedAt, waitingFor (approval, answer, browser) while working, lastActivityAt, openWaits. Changed files are not tracked.",
     shape: {},
   },
   {
@@ -471,25 +471,25 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "read_agent",
     description:
-      "Read the setup of one local OpenBot agent, or your own when you omit agentId: profile, provider, model, reasoning effort, account, backup models, the model it returns to after a usage limit or a provider error, access, permissions, Computer Use, notifications, browser profile, installed skills, routines, and the MCP servers it gets. Read-only. Call it before you change another agent.",
+      "Read the setup of one local PurpleBot agent, or your own when you omit agentId: profile, provider, model, reasoning effort, account, backup models, the model it returns to after a usage limit or a provider error, access, permissions, Computer Use, notifications, browser profile, installed skills, routines, and the MCP servers it gets. Read-only. Call it before you change another agent.",
     shape: readAgentToolSchema.shape,
   },
   {
     name: "create_agent",
     description:
-      "Create a persistent local OpenBot agent when the user asks for a new teammate. Choose its profile from the user's request and supply its first task. The new agent gets your provider, model, effort and account. Set provider, model, or reasoningEffort only when the user asks for different ones; call list_models first. Use update_profile for an existing agent. After it exists, add skills with install_local_skill and routines with create_routine as needed. A new agent gets your own access and Computer Use limits.",
+      "Create a persistent local PurpleBot agent when the user asks for a new teammate. Choose its profile from the user's request and supply its first task. The new agent gets your provider, model, effort and account. Set provider, model, or reasoningEffort only when the user asks for different ones; call list_models first. Use update_profile for an existing agent. After it exists, add skills with install_local_skill and routines with create_routine as needed. A new agent gets your own access and Computer Use limits.",
     shape: createAgentToolSchema.shape,
   },
   {
     name: "update_profile",
     description:
-      "Update a local OpenBot agent’s name, title, description, avatar, provider, model, reasoning effort, account, backup models, access, Computer Use, or notifications from the user’s request. You can restrict access to workspace and turn Computer Use off; only the user can widen them again. For an avatar color, use avatarHue. For an image, use avatarPath with a PNG, JPEG, or WebP copy up to 512 KB. Call list_models before you change a model, an account, or the backup models. A new model, provider or account applies from the agent's next turn; other fields apply now. While it works, access with a provider change fails. backupModels replaces the whole list. To give several agents the same settings, use update_agents.",
+      "Update a local PurpleBot agent’s name, title, description, avatar, provider, model, reasoning effort, account, backup models, access, Computer Use, or notifications from the user’s request. You can restrict access to workspace and turn Computer Use off; only the user can widen them again. For an avatar color, use avatarHue. For an image, use avatarPath with a PNG, JPEG, or WebP copy up to 512 KB. Call list_models before you change a model, an account, or the backup models. A new model, provider or account applies from the agent's next turn; other fields apply now. While it works, access with a provider change fails. backupModels replaces the whole list. To give several agents the same settings, use update_agents.",
     shape: updateProfileToolSchema.shape,
   },
   {
     name: "update_agents",
     description:
-      "Give several local OpenBot agents the same provider, model, reasoning effort, access, Computer Use, or notifications setting in one call, from the user's request. Each agent gets the checks of update_profile and its own change, one after the other. A failure for one agent does not stop the others and does not undo the earlier changes. The result has updated and failed counts and, for each agent id, ok with its new settings or the error. A provider or model that list_models does not list fails the whole call. Tell the user which agents failed and why. You can restrict access to workspace and turn Computer Use off; only the user can widen them again. Call list_models before you change a model.",
+      "Give several local PurpleBot agents the same provider, model, reasoning effort, access, Computer Use, or notifications setting in one call, from the user's request. Each agent gets the checks of update_profile and its own change, one after the other. A failure for one agent does not stop the others and does not undo the earlier changes. The result has updated and failed counts and, for each agent id, ok with its new settings or the error. A provider or model that list_models does not list fails the whole call. Tell the user which agents failed and why. You can restrict access to workspace and turn Computer Use off; only the user can widen them again. Call list_models before you change a model.",
     shape: updateAgentsToolSchema.shape,
   },
   {
@@ -501,7 +501,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "set_commit_co_author",
     description:
-      "Turn the OpenBot co-author trailer in the git commits of all agents off or on, when the user asks. The owner approves a card.",
+      "Turn the PurpleBot co-author trailer in the git commits of all agents off or on, when the user asks. The owner approves a card.",
     shape: setCommitCoAuthorToolSchema.shape,
   },
   {
@@ -555,7 +555,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
         .min(1)
         .max(INPUT_LIMITS.routineInstruction)
         .describe(
-          `What to do with each request. OpenBot adds the request body to the run as untrusted data. ${ROUTINE_INSTRUCTION_RULE}`,
+          `What to do with each request. PurpleBot adds the request body to the run as untrusted data. ${ROUTINE_INSTRUCTION_RULE}`,
         ),
       eventType: webhookEventTypeZodSchema.optional(),
       filters: webhookFiltersZodSchema.optional(),
@@ -616,19 +616,19 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: ROUTINE_NO_UPDATE_TOOL,
     description:
-      "Only when nothing is for the user: a scheduled, script or webhook routine run with nothing to report, or a teammate's update that wants no answer. Write no text before or with it; OpenBot sends no notification. A requested reminder or message is a report, unless the task's notification conditions say to send nothing. A manual Test run shows your answer.",
+      "Only when nothing is for the user: a scheduled, script or webhook routine run with nothing to report, or a teammate's update that wants no answer. Write no text before or with it; PurpleBot sends no notification. A requested reminder or message is a report, unless the task's notification conditions say to send nothing. A manual Test run shows your answer.",
     shape: {},
   },
   {
     name: ROUTINE_REPORT_FAILURE_TOOL,
     description:
-      "Only in a routine run whose task could not be done, such as when a server, file or service it needs is not available. OpenBot ends the run as failed with your reason. Still give your answer. Not when the task was done, also when its result is bad news.",
+      "Only in a routine run whose task could not be done, such as when a server, file or service it needs is not available. PurpleBot ends the run as failed with your reason. Still give your answer. Not when the task was done, also when its result is bad news.",
     shape: routineReportFailureToolSchema.shape,
   },
   {
     name: AWAIT_EVENT_TOOL,
     description:
-      "Open a wait when the current request waits for something outside this turn that takes over about 15 minutes, such as a long build or a later check. OpenBot shows the wait to the user until you close it. The next run of one of your routines wakes the wait, or a local script event that names its waitId. The run that wakes it repeats the request and your note. Give routineId to let only that routine wake it. Then tell the user what you wait for and end your turn.",
+      "Open a wait when the current request waits for something outside this turn that takes over about 15 minutes, such as a long build or a later check. PurpleBot shows the wait to the user until you close it. The next run of one of your routines wakes the wait, or a local script event that names its waitId. The run that wakes it repeats the request and your note. Give routineId to let only that routine wake it. Then tell the user what you wait for and end your turn.",
     shape: awaitEventToolSchema.shape,
   },
   {
@@ -739,7 +739,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "request_api_key",
     description: [
-      "Ask the user for an API key, token or password that your task needs, and wait. The user enters it in a secure form; OpenBot saves it outside your workspace, for all agents or only you; you never get the value.",
+      "Ask the user for an API key, token or password that your task needs, and wait. The user enters it in a secure form; PurpleBot saves it outside your workspace, for all agents or only you; you never get the value.",
       'Result JSON: {"status":"saved","name","path"}; {"status":"skipped"} when the user closed the form; or {"status":"expired"} when the turn ended first.',
       "Read the key from the file in your command, and quote the path, which can hold spaces: OPENAI_API_KEY=\"$(cat '<path>')\" python script.py. Never print, log or copy the value, or write it into the workspace.",
       "Call list_api_keys first: do not ask again for a saved key. A new answer replaces the saved key. Only the server owner or an admin can answer. Not in an external chat.",
@@ -761,9 +761,9 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "save_api_key",
     description: [
-      "Save a key, token or password that you have, such as one the user pasted, in the OpenBot Vault for every agent; list_api_keys gives its path.",
+      "Save a key, token or password that you have, such as one the user pasted, in the PurpleBot Vault for every agent; list_api_keys gives its path.",
       "It replaces a Vault key with this name and deletes your own key with this name.",
-      'Returns {"status":"added"|"updated","name","path"}, never the key. Do not repeat the key. Only for a request of a person in your OpenBot chat.',
+      'Returns {"status":"added"|"updated","name","path"}, never the key. Do not repeat the key. Only for a request of a person in your PurpleBot chat.',
     ].join(" "),
     shape: saveApiKeyToolSchema.shape,
   },
@@ -784,7 +784,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "show_setting",
     description:
-      "When the user asks how to do something in OpenBot or for a feature, find the setting that does it and show a card that opens it: a row of OpenBot Settings or your agent settings, or the steps of a server action. Only the user changes it. Words return matches; then call again with one id.",
+      "When the user asks how to do something in PurpleBot or for a feature, find the setting that does it and show a card that opens it: a row of PurpleBot Settings or your agent settings, or the steps of a server action. Only the user changes it. Words return matches; then call again with one id.",
     shape: {
       setting: z
         .string()
@@ -796,12 +796,12 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "send_feedback",
     description:
-      "Send a bug report or a feature idea for OpenBot itself as a public GitHub issue. OpenBot adds the version, system, model and errors. The user reads the text and approves it before it is sent.",
+      "Send a bug report or a feature idea for PurpleBot itself as a public GitHub issue. PurpleBot adds the version, system, model and errors. The user reads the text and approves it before it is sent.",
     shape: {
       kind: z
         .enum(["bug", "idea"])
         .describe(
-          "bug: something in OpenBot does not work. idea: a feature request or another change that the user wants.",
+          "bug: something in PurpleBot does not work. idea: a feature request or another change that the user wants.",
         ),
       title: z.string().min(1).max(200).describe("A short summary in English, no prefix: the feature and the symptom."),
       text: z
@@ -809,7 +809,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
         .min(1)
         .max(1000)
         .describe(
-          "In one to three plain sentences, always in English. For a bug: what went wrong and what the user expected, with the exact error text. For an idea: what the user wants OpenBot to do.",
+          "In one to three plain sentences, always in English. For a bug: what went wrong and what the user expected, with the exact error text. For an idea: what the user wants PurpleBot to do.",
         ),
       details: z
         .string()
@@ -825,7 +825,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
       found_by: z
         .enum(FEEDBACK_FINDERS)
         .describe(
-          "Default user. agent: you found it yourself; send that unasked only when OpenBot fails again after one retry, not for the user's code, network, accounts or provider limits.",
+          "Default user. agent: you found it yourself; send that unasked only when PurpleBot fails again after one retry, not for the user's code, network, accounts or provider limits.",
         )
         .optional(),
       surface: z.enum(FEEDBACK_SURFACES).describe("Where the user saw it, when the chat makes it clear.").optional(),
@@ -868,7 +868,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
   {
     name: "send_message",
     description:
-      "Queue an asynchronous message and optional local files for one or more OpenBot agents. On a reply, pass the original message id as replyToMessageId.",
+      "Queue an asynchronous message and optional local files for one or more PurpleBot agents. On a reply, pass the original message id as replyToMessageId.",
     shape: {
       recipientAgentIds: z.array(z.string()).min(1).max(32),
       text: z.string().min(1).max(100_000),
@@ -877,7 +877,7 @@ export const OPENBOT_TOOL_DEFINITIONS: readonly OpenBotToolDefinition[] = [
       expectsReply: z
         .boolean()
         .describe(
-          "True, the default, for a request, question or delegated task: OpenBot sends the recipient's result back. False for information that the recipient must not answer, such as a status or your own reply to a task; it ends the exchange.",
+          "True, the default, for a request, question or delegated task: PurpleBot sends the recipient's result back. False for information that the recipient must not answer, such as a status or your own reply to a task; it ends the exchange.",
         )
         .optional(),
     },
@@ -888,7 +888,7 @@ export const OPENBOT_DYNAMIC_TOOLS = {
   type: "namespace",
   name: "openbot",
   description:
-    "Attach files to the current response, keep structured data in the shared SQLite database, and work with persistent OpenBot teammates.",
+    "Attach files to the current response, keep structured data in the shared SQLite database, and work with persistent PurpleBot teammates.",
   tools: OPENBOT_TOOL_DEFINITIONS.map((definition) => ({
     type: "function" as const,
     name: definition.name,

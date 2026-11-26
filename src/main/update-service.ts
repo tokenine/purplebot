@@ -73,9 +73,9 @@ export async function loadElectronUpdater(): Promise<UpdateAdapter | null> {
         Effect.runPromise(verifyWindowsUpdateSignature(publisherNames, file));
     }
     if (adapter) return adapter;
-    logger.warn("OpenBot updates are disabled: electron-updater did not export autoUpdater");
+    logger.warn("PurpleBot updates are disabled: electron-updater did not export autoUpdater");
   } catch {
-    logger.warn("OpenBot updates are disabled: electron-updater failed to load");
+    logger.warn("PurpleBot updates are disabled: electron-updater failed to load");
   }
   return null;
 }
@@ -226,7 +226,7 @@ export class UpdateService extends EventEmitter<UpdateServiceEvents> {
       },
     };
     if (options.notInstalledVersion)
-      logger.warn(`The last update restart did not install OpenBot ${options.notInstalledVersion}.`);
+      logger.warn(`The last update restart did not install PurpleBot ${options.notInstalledVersion}.`);
     this.#status = {
       phase: options.enabled ? "idle" : "unsupported",
       currentVersion: options.currentVersion,
@@ -280,7 +280,7 @@ export class UpdateService extends EventEmitter<UpdateServiceEvents> {
       if (this.#operation === "install" && this.#installHandedOver && this.#isInstallLive()) {
         this.#installGeneration += 1;
         this.#activeInstall = null;
-        logUpdateFailure("OpenBot update install failed.", error);
+        logUpdateFailure("PurpleBot update install failed.", error);
         this.#setError("install_failed", INSTALL_FAILED_MESSAGE);
         return;
       }
@@ -517,7 +517,7 @@ export class UpdateService extends EventEmitter<UpdateServiceEvents> {
           ),
         );
         if (Result.isFailure(result) && this.#downloadGeneration === generation) {
-          logUpdateFailure("OpenBot update download failed.", result.failure.cause);
+          logUpdateFailure("PurpleBot update download failed.", result.failure.cause);
           this.#activeDownload = null;
           this.#setError("download_failed", downloadFailureMessage(result.failure.cause));
         }
@@ -579,17 +579,17 @@ export class UpdateService extends EventEmitter<UpdateServiceEvents> {
       const bundle = this.#options.platform === "darwin" ? this.#options.appBundlePath : undefined;
       if (bundle && (yield* isOnReadOnlyVolume(bundle))) {
         if (yield* this.#restartFromInstalledCopy(bundle)) return;
-        logger.warn("OpenBot update install refused: the application runs from a read-only volume.");
+        logger.warn("PurpleBot update install refused: the application runs from a read-only volume.");
         return yield* new UpdateOperationFailure({ cause: new Error(sourceText("error.update.readOnlyLocation")) });
       }
       const appImage = this.#options.platform === "linux" ? this.#options.appImagePath : undefined;
       const appImageProblem = appImage ? yield* findAppImageInstallProblem(appImage) : null;
       if (appImageProblem === "missing") {
-        logger.warn("OpenBot update install refused: the AppImage file is missing.");
+        logger.warn("PurpleBot update install refused: the AppImage file is missing.");
         return yield* new UpdateOperationFailure({ cause: new Error(sourceText("error.update.appImageMissing")) });
       }
       if (appImageProblem === "readOnly") {
-        logger.warn("OpenBot update install refused: the AppImage folder is not writable.");
+        logger.warn("PurpleBot update install refused: the AppImage folder is not writable.");
         return yield* new UpdateOperationFailure({ cause: new Error(sourceText("error.update.appImageReadOnly")) });
       }
       if (this.#managedByHost) return yield* new UpdateOperationFailure({ cause: new Error(MANAGED_HOST_MESSAGE) });
@@ -632,7 +632,7 @@ export class UpdateService extends EventEmitter<UpdateServiceEvents> {
         }),
       );
       if (Result.isFailure(installed) && this.#installGeneration === generation) {
-        logUpdateFailure("OpenBot update install failed.", installed.failure.cause);
+        logUpdateFailure("PurpleBot update install failed.", installed.failure.cause);
         this.#setError("install_failed", INSTALL_FAILED_MESSAGE);
         return yield* new UpdateOperationFailure({ cause: new Error(sourceText("error.update.restartFailed")) });
       }
@@ -662,7 +662,7 @@ export class UpdateService extends EventEmitter<UpdateServiceEvents> {
       this.#checkRequest = request;
       this.#rolloutMiss = null;
       return yield* updateIO(() => this.#updater.checkForUpdates()).pipe(
-        Effect.tapError(({ cause }) => Effect.sync(() => logUpdateFailure("OpenBot update check failed.", cause))),
+        Effect.tapError(({ cause }) => Effect.sync(() => logUpdateFailure("PurpleBot update check failed.", cause))),
         Effect.onExit((exit) =>
           Effect.gen({ self: this }, function* () {
             yield* Deferred.done(request, exit);
@@ -713,7 +713,7 @@ export class UpdateService extends EventEmitter<UpdateServiceEvents> {
     return Effect.gen({ self: this }, function* () {
       if (this.#cancellationToken && !this.#cancellationToken.cancelled) return this.#cancellationToken;
       const checked = yield* Effect.result(updateIO(() => this.#updater.checkForUpdates()));
-      if (Result.isFailure(checked)) logUpdateFailure("OpenBot update check failed.", checked.failure.cause);
+      if (Result.isFailure(checked)) logUpdateFailure("PurpleBot update check failed.", checked.failure.cause);
       this.#cancellationToken = Result.isSuccess(checked) ? (checked.success?.cancellationToken ?? null) : null;
       return this.#cancellationToken;
     });

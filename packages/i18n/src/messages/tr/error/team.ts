@@ -2,13 +2,13 @@ import type { PartialTranslation } from "../../../message";
 import type { messages as source } from "../../en/error/team";
 
 export const messages = {
-  "error.team.ownerNotLinked": "Bu ana makine bir OpenBot sahibi hesabına bağlı değil.",
-  "error.team.ownerEmailRequired": "Bu ana makineyi oluşturan OpenBot e-postası ile oturum açın.",
+  "error.team.ownerNotLinked": "Bu ana makine bir PurpleBot sahibi hesabına bağlı değil.",
+  "error.team.ownerEmailRequired": "Bu ana makineyi oluşturan PurpleBot e-postası ile oturum açın.",
   "error.team.hostNotConfigured": "Ekip ana makinesi yapılandırılmamış.",
   "error.team.alreadyConfigured": "Ekip sunucusu zaten yapılandırılmış.",
   "error.team.identityCreateFailed": "Ekip kimliği oluşturulamadı.",
   "error.team.accountChangedDuringCreate": "Bu sunucu oluşturulurken oturum açmış hesap değişti.",
-  "error.team.notConfigured": "Bu OpenBot yapılandırılmamış.",
+  "error.team.notConfigured": "Bu PurpleBot yapılandırılmamış.",
   "error.team.keyRotationMissing": "Bekleyen bir sunucu anahtarı değişikliği yok.",
   "error.team.serverNotActive": "Bu sunucu artık oturum açmış hesap için etkin olan sunucu değil.",
   "error.team.logoInvalid": "512 KB'a kadar geçerli bir PNG, JPEG veya WebP görseli seçin.",
@@ -21,9 +21,9 @@ export const messages = {
   "error.team.inviteEmailMismatch": "Bu davet farklı bir e-posta adresine ait.",
   "error.team.memberDisabled": "Bu ekip üyesi devre dışı bırakılmış.",
   "error.team.memberLimit": "Bir ana makine en fazla {limit} üyeye sahip olabilir.",
-  "error.team.accountNotMember": "Bu OpenBot hesabı ekibin bir üyesi değil.",
+  "error.team.accountNotMember": "Bu PurpleBot hesabı ekibin bir üyesi değil.",
   "error.team.usernameTaken": "Bu kullanıcı adı zaten kullanımda.",
-  "error.team.inviteRequiresAccount": "Bu davet doğrulanmış bir OpenBot hesabı gerektirir.",
+  "error.team.inviteRequiresAccount": "Bu davet doğrulanmış bir PurpleBot hesabı gerektirir.",
   "error.team.loginIncorrect": "Kullanıcı adı veya şifre yanlış.",
   "error.team.currentPasswordIncorrect": "Mevcut şifre yanlış.",
   "error.team.memberNotFound": "Ekip üyesi bulunamadı.",
@@ -44,22 +44,22 @@ export const messages = {
   "error.team.usernameInvalid": "Kullanıcı adı 3 ila 32 harf, rakam, nokta, kısa çizgi veya alt çizgi içermelidir.",
   "error.team.passwordLength": "Şifre 12 ila 256 karakter içermelidir.",
   "error.team.bindFailed": "Ekip API'si bağlanamadı.",
-  "error.team.signInRequired": "OpenBot oturumu açılması gereklidir.",
+  "error.team.signInRequired": "PurpleBot oturumu açılması gereklidir.",
   "error.team.authenticationRequired": "Kimlik doğrulaması gereklidir.",
   "error.team.agentNotFound": "Ajan bulunamadı.",
   "error.team.routeNotFound": "Rota bulunamadı.",
   "error.team.requestFailed": "İstek başarısız oldu.",
   "error.team.tooManySignInAttempts": "Çok fazla oturum açma denemesi. Daha sonra tekrar deneyin.",
-  "error.team.clientUpdateRequired": "Bu ana makineye bağlanmadan önce bu OpenBot istemcisini güncelleyin.",
-  "error.team.hostUpdateRequired": "Bağlanmadan önce ana makinedeki OpenBot'u güncelleyin.",
-  "error.team.serverSafeMode": "OpenBot bu sunucuda başlamadığı için sunucu güvenli moddadır.",
+  "error.team.clientUpdateRequired": "Bu ana makineye bağlanmadan önce bu PurpleBot istemcisini güncelleyin.",
+  "error.team.hostUpdateRequired": "Bağlanmadan önce ana makinedeki PurpleBot'u güncelleyin.",
+  "error.team.serverSafeMode": "PurpleBot bu sunucuda başlamadığı için sunucu güvenli moddadır.",
   "error.team.serverSafeModeNewerDatabase":
-    "Bu sunucudaki OpenBot {version}, verilerini açamıyor çünkü onları daha yeni bir OpenBot sürümü kaydetti. Sunucudaki daha yeni bir OpenBot sürümü bunu düzeltir.",
+    "Bu sunucudaki PurpleBot {version}, verilerini açamıyor çünkü onları daha yeni bir PurpleBot sürümü kaydetti. Sunucudaki daha yeni bir PurpleBot sürümü bunu düzeltir.",
   "error.team.serverSafeModeStartFailed":
-    "Bu sunucudaki OpenBot {version}, birçok kez başlatılamadıktan sonra durdu. Sunucudaki daha yeni bir OpenBot sürümü bunu düzeltir.",
+    "Bu sunucudaki PurpleBot {version}, birçok kez başlatılamadıktan sonra durdu. Sunucudaki daha yeni bir PurpleBot sürümü bunu düzeltir.",
   "error.team.sidebarLayoutUnavailable": "Kenar çubuğu düzeni kullanılamıyor.",
   "error.team.providersUnsupported": "Sağlayıcı ayarları bu bağlantı tarafından desteklenmiyor.",
-  "error.team.providerNotManaged": "OpenBot bu sağlayıcının CLI aracını yönetmiyor.",
+  "error.team.providerNotManaged": "PurpleBot bu sağlayıcının CLI aracını yönetmiyor.",
   "error.team.channelsUnsupported": "Kanal sohbetleri bu bağlantı tarafından desteklenmiyor.",
   "error.team.channelContextUnsupported": "Bu bağlantı kanalda yeni konuşmayı veya sıkıştırmayı desteklemiyor.",
   "error.team.channelPictureUnsupported": "Kanal resimleri bu bağlantı tarafından desteklenmiyor.",
@@ -94,9 +94,9 @@ export const messages = {
   "error.team.libraryFoldersUnsupported": "Kitaplık klasörleri bu bağlantı tarafından desteklenmiyor.",
   "error.team.workflowFoldersUnsupported": "Bu bağlantı iş akışı klasörlerini desteklemiyor.",
   "error.team.agentNotificationLevelsUnsupported":
-    "Bu sunucu her ajan için kendi bildirim düzeyinizi saklayamıyor. Sunucuyu çalıştıran bilgisayarda OpenBot'u güncelleyin.",
+    "Bu sunucu her ajan için kendi bildirim düzeyinizi saklayamıyor. Sunucuyu çalıştıran bilgisayarda PurpleBot'u güncelleyin.",
   "error.team.sidebarPinsUnsupported":
-    "Bu sunucu sabitlenmiş sohbetlerinizi tüm cihazlarınız için saklayamaz. Sunucuyu çalıştıran bilgisayarda OpenBot'u güncelleyin.",
+    "Bu sunucu sabitlenmiş sohbetlerinizi tüm cihazlarınız için saklayamaz. Sunucuyu çalıştıran bilgisayarda PurpleBot'u güncelleyin.",
   "error.team.agentInstructionsUnsupported": "Ajan talimatlarını düzenleme bu bağlantı tarafından desteklenmiyor.",
   "error.team.agentPublishUnsupported": "Ajan yayımlama bu bağlantı tarafından desteklenmiyor.",
   "error.team.agentUpdateUnsupported": "Ajan güncelleme bu bağlantı tarafından desteklenmiyor.",
@@ -108,9 +108,9 @@ export const messages = {
   "error.team.threadMessageSearchUnsupported": "Yan konularda arama bu bağlantı tarafından desteklenmiyor.",
   "error.team.sideQuestionUnsupported": "Yan sorular bu bağlantı tarafından desteklenmiyor.",
   "error.team.liveVoiceUnsupported":
-    "Bu sunucu Codex canlı sesi desteklemiyor. Sunucuyu çalıştıran bilgisayardaki OpenBot'u güncelleyin.",
+    "Bu sunucu Codex canlı sesi desteklemiyor. Sunucuyu çalıştıran bilgisayardaki PurpleBot'u güncelleyin.",
   "error.team.routineFlowsUnsupported":
-    "Bu sunucu rutin akışlarını desteklemiyor. Sunucuyu çalıştıran bilgisayardaki OpenBot'u güncelleyin.",
+    "Bu sunucu rutin akışlarını desteklemiyor. Sunucuyu çalıştıran bilgisayardaki PurpleBot'u güncelleyin.",
   "error.team.routineCanvasTooLarge":
     "Bu rutin tuvali bu cihaza gönderilemeyecek kadar büyük. Sunucuyu çalıştıran bilgisayarda rutin talimatlarını kısaltın.",
   "error.team.conversationPageTooLarge":
@@ -156,14 +156,14 @@ export const messages = {
   "error.team.browserSessionNotFound": "Tarayıcı görünümü oturumu bulunamadı.",
   "error.team.mcpUnsupported": "MCP sunucuları bu bağlantı tarafından desteklenmiyor.",
   "error.team.mcpServerListNeedsUpdate":
-    "Bu sunucuda {limit} sayısından fazla MCP sunucusu kullanmak için bu cihazdaki OpenBot'u güncelleyin.",
+    "Bu sunucuda {limit} sayısından fazla MCP sunucusu kullanmak için bu cihazdaki PurpleBot'u güncelleyin.",
   "error.team.providerAccountListNeedsUpdate":
-    "Bu sunucuda bir sağlayıcının {limit} sayısından fazla hesabını kullanmak için bu cihazdaki OpenBot'u güncelleyin.",
+    "Bu sunucuda bir sağlayıcının {limit} sayısından fazla hesabını kullanmak için bu cihazdaki PurpleBot'u güncelleyin.",
   "error.team.storageUnsupported": "Depolama bu bağlantı tarafından desteklenmiyor.",
   "error.team.machineResourcesUnsupported": "Makine kullanımı bu bağlantı tarafından desteklenmiyor.",
   "error.team.machineAlertMemberInvalid": "Makine uyarılarını yalnızca bu sunucunun sahibi veya yöneticisi alabilir.",
   "error.team.hostedSitesUnsupported": "Siteler bu bağlantı tarafından desteklenmiyor.",
-  "error.team.hostedSitesUnregistered": "Bu sunucu OpenBot'a kayıtlı değil, bu nedenle sitesi yok.",
+  "error.team.hostedSitesUnregistered": "Bu sunucu PurpleBot'a kayıtlı değil, bu nedenle sitesi yok.",
   "error.team.hostedSiteNotFound": "Site bulunamadı.",
   "error.team.markUnreadUnsupported": "Bu istemci konuşmaları okunmadı olarak işaretlemeyi desteklemiyor.",
   "error.team.inviteServiceUnavailable": "Davet hizmeti kullanılamıyor.",
@@ -187,11 +187,12 @@ export const messages = {
   "error.team.mcpServerNotYours": "Bu MCP sunucusunu yalnızca onu ekleyen kişi veya bir yönetici değiştirebilir.",
   "error.team.ownerRequired": "Bunu yalnızca bu sunucunun sahibi yapabilir.",
   "error.team.requestTooLarge": "İstek gövdesi çok büyük.",
-  "error.team.signInRelayUnsupported": "Bu sunucu oturum açmaları aktaramaz. Ana makinedeki OpenBot'u güncelleyin.",
+  "error.team.signInRelayUnsupported": "Bu sunucu oturum açmaları aktaramaz. Ana makinedeki PurpleBot'u güncelleyin.",
   "error.team.connectorsUnsupported":
-    "Bu sunucunun bağlantıları buradan yönetilemez. Ana makinedeki OpenBot'u güncelleyin.",
-  "error.team.discordAccessUnsupported": "Bu sunucu Discord rollerini ayarlayamıyor. Sunucudaki OpenBot'u güncelleyin.",
-  "error.team.connectorPageRefused": "Sunucu, OpenBot'un açmadığı bir sayfa gönderdi.",
+    "Bu sunucunun bağlantıları buradan yönetilemez. Ana makinedeki PurpleBot'u güncelleyin.",
+  "error.team.discordAccessUnsupported":
+    "Bu sunucu Discord rollerini ayarlayamıyor. Sunucudaki PurpleBot'u güncelleyin.",
+  "error.team.connectorPageRefused": "Sunucu, PurpleBot'un açmadığı bir sayfa gönderdi.",
   "error.team.signInRelayUnknown": "Bu oturum açma sona erdi veya mevcut değil.",
   "error.team.signInRelayUsed": "Bu oturum açma zaten gönderildi.",
   "error.team.signInRelayMismatch": "Bu adres bu oturum açmaya ait değil.",
@@ -208,6 +209,6 @@ export const messages = {
   "error.team.providerUseUnsupported": "Bu bağlantı sağlayıcıları açıp kapatmayı desteklemiyor.",
   "error.team.providerUseInvalid": "Bu sağlayıcının açma/kapatma anahtarı yok.",
   "error.team.mediaApprovalChoiceUnsupported":
-    "Bu sunucu medya onaylarında model seçimini desteklemiyor. Sunucudaki OpenBot'u güncelleyin.",
+    "Bu sunucu medya onaylarında model seçimini desteklemiyor. Sunucudaki PurpleBot'u güncelleyin.",
   "error.team.mediaApprovalChoiceInvalid": "Medya onayı seçimi geçerli değil.",
 } as const satisfies PartialTranslation<typeof source>;

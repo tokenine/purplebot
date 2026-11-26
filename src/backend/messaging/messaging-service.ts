@@ -1065,7 +1065,9 @@ export class MessagingService {
       yield* live.adapter
         .post(
           { platformChannelId: chatId, replyThreadId: null },
-          { text: sourceText("status.messaging.telegramLinked", { bot: botUsername ? `@${botUsername}` : "OpenBot" }) },
+          {
+            text: sourceText("status.messaging.telegramLinked", { bot: botUsername ? `@${botUsername}` : "PurpleBot" }),
+          },
         )
         .pipe(Effect.catch((failure) => Effect.sync(() => this.#warn(failure.cause))));
   }, Effect.uninterruptible);
@@ -1524,9 +1526,9 @@ export class MessagingService {
   }
 
   #pingAuthor(record: MessagingConnectionRecord, agentId: string): string {
-    if (agentId === (this.#orchestrator(record) ?? agentId)) return "OpenBot, a post of yours";
+    if (agentId === (this.#orchestrator(record) ?? agentId)) return "PurpleBot, a post of yours";
     const name = this.#agents.listAgents().find((agent) => agent.id === agentId)?.name;
-    return name ? `OpenBot, a post by your teammate ${name}` : "OpenBot";
+    return name ? `PurpleBot, a post by your teammate ${name}` : "PurpleBot";
   }
 
   #orchestrator(record: MessagingConnectionRecord): string | null {
@@ -2429,7 +2431,7 @@ function redactEmbed(embed: DiscordEmbed): DiscordEmbed {
 }
 
 const WHATSAPP_ALLOWED_PLACES =
-  "This list has only the WhatsApp chats that the user allowed, not all chats of this number. For a chat that is not in it, tell the user to open Marketplace, then Apps, then WhatsApp, and to use Add contact or Add group for this number. A place with readOnly is read only: read its history, but OpenBot cannot post in it.";
+  "This list has only the WhatsApp chats that the user allowed, not all chats of this number. For a chat that is not in it, tell the user to open Marketplace, then Apps, then WhatsApp, and to use Add contact or Add group for this number. A place with readOnly is read only: read its history, but PurpleBot cannot post in it.";
 
 const WHATSAPP_NOT_CONNECTED =
   "WhatsApp is not connected on this number now. Tell the user to open Marketplace, then Apps, then WhatsApp, and to use Reconnect or Link again for this number.";
@@ -2437,35 +2439,35 @@ const WHATSAPP_NOT_CONNECTED =
 const WHATSAPP_LOCAL_REFUSALS = new Map([
   [
     "place_not_allowed",
-    "OpenBot sent nothing: the user did not allow this WhatsApp chat. Tell the user to open Marketplace, then Apps, then WhatsApp, and to use Add contact or Add group for this chat. Then the post can go to it.",
+    "PurpleBot sent nothing: the user did not allow this WhatsApp chat. Tell the user to open Marketplace, then Apps, then WhatsApp, and to use Add contact or Add group for this chat. Then the post can go to it.",
   ],
   [
     "place_read_only",
-    "OpenBot sent nothing: the user made this WhatsApp chat read only. OpenBot reads it but never posts in it. Do not post it again: give the result in the conversation that you answer.",
+    "PurpleBot sent nothing: the user made this WhatsApp chat read only. PurpleBot reads it but never posts in it. Do not post it again: give the result in the conversation that you answer.",
   ],
   [
     "no_account",
-    `OpenBot sent nothing: WhatsApp has no account for the number of this contact. Tell the user to open Marketplace, then Apps, then WhatsApp, and to check the number of this contact. ${sourceText("error.messaging.whatsappNumberNotFound")} When the number is not correct, the user must remove the contact and add it again.`,
+    `PurpleBot sent nothing: WhatsApp has no account for the number of this contact. Tell the user to open Marketplace, then Apps, then WhatsApp, and to check the number of this contact. ${sourceText("error.messaging.whatsappNumberNotFound")} When the number is not correct, the user must remove the contact and add it again.`,
   ],
   ["not_connected", WHATSAPP_NOT_CONNECTED],
   ["not_linked", WHATSAPP_NOT_CONNECTED],
   [
     "not_confirmed",
-    "The WhatsApp connection dropped before WhatsApp confirmed the message, also after OpenBot sent it again. It can be in the chat already. Do not post it again only because of this error: tell the user to check the chat.",
+    "The WhatsApp connection dropped before WhatsApp confirmed the message, also after PurpleBot sent it again. It can be in the chat already. Do not post it again only because of this error: tell the user to check the chat.",
   ],
 ]);
 
 const DISCORD_NOT_LINKED =
-  "This Discord server is not linked to this OpenBot server now. Another OpenBot server of the user may answer there. Tell the user to open Marketplace, then Apps, then Discord, and to select Reconnect for this Discord server if this server must answer there.";
+  "This Discord server is not linked to this PurpleBot server now. Another PurpleBot server of the user may answer there. Tell the user to open Marketplace, then Apps, then Discord, and to select Reconnect for this Discord server if this server must answer there.";
 
 const TELEGRAM_RELAY_REFUSALS = new Map([
   [
     "telegram_503 relay_unavailable",
-    "OpenBot on this computer is not connected to the OpenBot service now. Telegram calls go through that service, so Telegram did not refuse this call, and the connection and place ids are not the cause. OpenBot connects again by itself. When a Telegram call fails again in a few minutes, tell the user that OpenBot on this computer cannot connect to its service, and that the computer must be online and signed in to OpenBot.",
+    "PurpleBot on this computer is not connected to the PurpleBot service now. Telegram calls go through that service, so Telegram did not refuse this call, and the connection and place ids are not the cause. PurpleBot connects again by itself. When a Telegram call fails again in a few minutes, tell the user that PurpleBot on this computer cannot connect to its service, and that the computer must be online and signed in to PurpleBot.",
   ],
   [
     "telegram_504 timeout",
-    "The OpenBot service did not answer this Telegram call in time. Telegram did not refuse it, and the connection and place ids are not the cause.",
+    "The PurpleBot service did not answer this Telegram call in time. Telegram did not refuse it, and the connection and place ids are not the cause.",
   ],
 ]);
 

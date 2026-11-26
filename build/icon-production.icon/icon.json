@@ -2,7 +2,8 @@
   "fill-specializations": [
     {
       "value": {
-        "linear-gradient": ["display-p3:0.86726,0.73451,1.00000,1.00000", "display-p3:0.66522,0.56340,0.76704,1.00000"],
+        "linear-gradient": ["display-p3:0.51831,0.36881,0.93156,1.00000",
+          "display-p3:0.39525,0.17407,0.81867,1.00000"],
         "orientation": {
           "start": {
             "x": 0.5,
@@ -66,7 +67,7 @@
           "name": "eyes",
           "opacity": 1,
           "position": {
-            "scale": 0.21,
+            "scale": 0.35,
             "translation-in-points": [0, 0]
           }
         }

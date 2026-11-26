@@ -11,7 +11,7 @@ import { runTurn, startThread, stopClients } from "./provider-fakes/host";
 
 const OUT = resolve(import.meta.dirname, "../.openbot-build/pi-custom-endpoint-cache-retention-e2e");
 const PI =
-  process.env.OPENBOT_REAL_PI_PATH ?? join(homedir(), ".config/OpenBot/provider-runtimes/pi/linux-x64/1.6.0/bin/pi");
+  process.env.OPENBOT_REAL_PI_PATH ?? join(homedir(), ".config/PurpleBot/provider-runtimes/pi/linux-x64/1.6.0/bin/pi");
 const MODEL = "lab-model";
 
 interface CaseReport {

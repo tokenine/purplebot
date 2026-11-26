@@ -20,7 +20,7 @@
           f (
             import nixpkgs {
               inherit system;
-              config.allowUnfreePredicate = pkg: lib.getName pkg == "openbot";
+              config.allowUnfreePredicate = pkg: lib.getName pkg == "purplebot";
             }
           )
         );

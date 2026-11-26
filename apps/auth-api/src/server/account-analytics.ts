@@ -37,7 +37,6 @@ import {
 } from "./credit-codes";
 import type { HostedPoolGroup } from "./hosted-pool-snapshot";
 
-const OPENPANEL_API_URL = "https://analytics.openbot.run/api";
 export const ACCOUNT_ANALYTICS_SCHEMA_VERSION = 20;
 const SEND_TIMEOUT_MS = 5_000;
 const ACCOUNT_ID_PATTERN = /^[A-Za-z0-9_-]{1,128}$/u;
@@ -198,6 +197,7 @@ export interface AccountAnalytics {
 export const NO_ACCOUNT_ANALYTICS: AccountAnalytics = { track: () => undefined };
 
 export interface AccountAnalyticsOptions {
+  apiUrl: string | undefined;
   clientId: string | undefined;
   clientSecret: string | undefined;
   fetch: (input: string, init: RequestInit) => Promise<Response>;
@@ -219,18 +219,25 @@ export async function readAccountEmail(database: D1Database, accountId: string):
   return typeof row?.email === "string" ? normalizeEmailAddress(row.email) : null;
 }
 
-type OpenPanelTarget = Pick<AccountAnalyticsOptions, "fetch"> & { clientId: string; clientSecret: string };
+type AnalyticsTargetOptions = Pick<AccountAnalyticsOptions, "apiUrl" | "clientId" | "clientSecret" | "fetch">;
 
-function openPanelTarget(options: Pick<AccountAnalyticsOptions, "clientId" | "clientSecret" | "fetch">) {
+type OpenPanelTarget = Pick<AccountAnalyticsOptions, "fetch"> & {
+  apiUrl: string;
+  clientId: string;
+  clientSecret: string;
+};
+
+function openPanelTarget(options: AnalyticsTargetOptions) {
+  const apiUrl = options.apiUrl?.trim().replace(/\/+$/u, "");
   const clientId = options.clientId?.trim();
   const clientSecret = options.clientSecret?.trim();
-  return clientId && clientSecret ? { fetch: options.fetch, clientId, clientSecret } : null;
+  return apiUrl && clientId && clientSecret ? { apiUrl, clientId, clientSecret, fetch: options.fetch } : null;
 }
 
 const postToOpenPanel = Effect.fn("AccountAnalytics.post")(function* (target: OpenPanelTarget, body: OpenPanelBody) {
   const response = yield* Effect.tryPromise({
     try: (signal) =>
-      target.fetch(`${OPENPANEL_API_URL}/track`, {
+      target.fetch(`${target.apiUrl}/track`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -252,9 +259,7 @@ const postToOpenPanel = Effect.fn("AccountAnalytics.post")(function* (target: Op
 
 export type AccountEventDelivery = (event: AccountAnalyticsEvent) => Effect.Effect<boolean>;
 
-export function createAccountEventDelivery(
-  options: Pick<AccountAnalyticsOptions, "clientId" | "clientSecret" | "fetch">,
-): AccountEventDelivery {
+export function createAccountEventDelivery(options: AnalyticsTargetOptions): AccountEventDelivery {
   const target = openPanelTarget(options);
   return (event) => {
     const properties = accountEventProperties(event);

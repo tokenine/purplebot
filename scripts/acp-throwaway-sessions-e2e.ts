@@ -102,13 +102,13 @@ try {
   assert.equal(deleted.prompted.length, 1, "The tool-less turn prompts one session.");
   assert.ok(
     deleted.prompted.every((id) => deleted.deleted.includes(id)),
-    "OpenBot deletes the session of the tool-less turn.",
+    "PurpleBot deletes the session of the tool-less turn.",
   );
 
   const kept = await toolless("tool-less turn on an agent without session/delete", "keeps");
   assert.equal(kept.answer?.trim(), '{"verdict":"done"}', "The tool-less turn answers.");
   assert.equal(kept.prompted.length, 1, "The tool-less turn prompts one session.");
-  assert.deepEqual(kept.deleted, [], "OpenBot sends no session/delete to an agent that does not support it.");
+  assert.deepEqual(kept.deleted, [], "PurpleBot sends no session/delete to an agent that does not support it.");
 
   {
     const agent: AgentName = "deletes";
@@ -131,7 +131,7 @@ try {
     assert.equal(result.prompted.length, 1, "The chat prompts one session.");
     assert.ok(
       result.prompted.every((id) => !result.deleted.includes(id)),
-      "OpenBot keeps the chat session when the client stops.",
+      "PurpleBot keeps the chat session when the client stops.",
     );
   }
 

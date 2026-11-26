@@ -66,7 +66,7 @@ export const applyDevelopmentRemoteAccount = Effect.fn("DevelopmentRemote.applyA
   const user = yield* ensureDevelopmentAccount(centralAuth, email);
   yield* teamStore.activateAccount(user);
   if (role === "host" && !teamStore.configured) {
-    yield* teamStore.configureWithAccount("OpenBot Local Dev Host", user);
+    yield* teamStore.configureWithAccount("PurpleBot Local Dev Host", user);
   }
   if (role === "client" && !setupCompleted) {
     yield* writeSetupState(setupFile, { preferredProvider: "codex", preferredModel: null }).pipe(toRemoteWorkflowError);

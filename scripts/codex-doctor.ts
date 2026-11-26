@@ -15,7 +15,7 @@ try {
     client.request(
       "initialize",
       {
-        clientInfo: { name: "openbot_doctor", title: "OpenBot Doctor", version: "0.1.0" },
+        clientInfo: { name: "openbot_doctor", title: "PurpleBot Doctor", version: "0.1.0" },
         capabilities: { experimentalApi: true },
       },
       decodeRecordResponse,

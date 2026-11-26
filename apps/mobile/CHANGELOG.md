@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the OpenBot iPhone app will be documented here. The project follows
+All notable changes to the PurpleBot iPhone app will be documented here. The project follows
 [Semantic Versioning](https://semver.org/). Notes for the next release are in
 [`changelog.d/`](changelog.d/README.md). The changes of the desktop app and the web client are in
 the [root changelog](../../CHANGELOG.md).
@@ -23,7 +23,7 @@ the [root changelog](../../CHANGELOG.md).
   the chat opens the system camera, with zoom and all lenses, instead of the small camera in the chat.
 - The small camera in the chat shows a tip one time. It tells you about the full-screen camera, and
   one tap turns it on.
-- Owners and admins can turn "Agents can use credits" on or off in Server Settings > Agents. While it is off, the agents of the server cannot spend OpenBot credits. **The server must also be on the new version to show the switch.**
+- Owners and admins can turn "Agents can use credits" on or off in Server Settings > Agents. While it is off, the agents of the server cannot spend PurpleBot credits. **The server must also be on the new version to show the switch.**
 - Owners and admins can turn "Ask when credits are needed" on or off in Server Settings > Agents. While it is on, an agent that needs credits waits and asks in the chat; Allow continues when the balance is enough, and Decline skips the step. **The server must also be on the new version to show the switch.**
 - When a page in an agent's browser asks for your location, the app now asks you with Block, Allow always and Allow, on the browser screen and in the agent's chat. Allow sends the location of your phone to that tab only. Allow always gives it to that site in all tabs of the same agent until the server restarts. The server must be on the latest desktop version.
 
@@ -50,11 +50,11 @@ the [root changelog](../../CHANGELOG.md).
   its microphone, as a phone call does. Before, the reply and your music moved to the phone speaker
   when live voice started.
 - A file that you tap in the Library or in a chat now opens quickly. Before, it waited until all pictures on the screen were downloaded.
-- The Claude plan limits on the Usage screen no longer disappear for some minutes and then come back. The computer or server that the phone connects to must be on the new OpenBot version.
+- The Claude plan limits on the Usage screen no longer disappear for some minutes and then come back. The computer or server that the phone connects to must be on the new PurpleBot version.
 - An agent that you create on the phone with "Server default" no longer starts on a model that you
   hid in model visibility. It starts on a visible model, if the server is on the new version.
 - In GPT live voice, your message in the chat now shows what you just said. Before, it could show your
-  previous sentence. The computer or server that runs the agent must also be on the new OpenBot version.
+  previous sentence. The computer or server that runs the agent must also be on the new PurpleBot version.
 - With VoiceOver or TalkBack on, the Home and Chat screens can be used again. The hidden "Close server drawer" button no longer covers the screen while the server list is closed.
 - When you open a thread from a notification, or go back to the app, the thread now shows the replies that came while the app was in the background.
 - When the connection to a server stops sending data, for example after a change from Wi-Fi to mobile data, the app now connects again by itself. Before, the server stayed online, but chats did not load and replies did not come.
@@ -66,14 +66,14 @@ the [root changelog](../../CHANGELOG.md).
 - On iPhone, Save to Files for a chat file now opens the share sheet, where you tap Save to Files or Save Video. Before, after the app went to the background, each save could fail with "File picking is already in progress" until you closed the app.
 - You can now save an ElevenLabs key on a free plan when your ElevenLabs account has Voice Library voices. When you set up the key, the app selects the built-in voice Alice, as the desktop app does. When you replace a key, the app keeps the voice that you chose. You can choose a different voice at any time.
 - When live voice cannot start on the server, or stops with a reason, an alert now shows the full message, not only "Request failed.". It tells you to update Codex and sign in with ChatGPT on that computer. A server on the new version also gives the reason. The voice bar keeps a short status.
-- The steps to connect your computer now name the buttons that OpenBot on the computer shows: Add phone, then
+- The steps to connect your computer now name the buttons that PurpleBot on the computer shows: Add phone, then
   Yes, sign in. Before, they named a Generate QR code button that no longer exists. When your account has no
   servers, the phone now tells you to turn on Publish this server on your computer.
 - A page from an agent that is too tall for its card in the chat now shows "Tap to see all" at the bottom
   of the card. Before, the card cut the page and did not show that there was more.
 - Long channels with many agents no longer stutter and use less data. Before, each update of a
   channel sent all its earlier tasks to the phone again. The server must also be on the new version.
-- Changing only the model of an agent now saves when another provider lists a model with the same name. Before, the app showed "Request failed" and did not save the model. The server must also be on the new OpenBot version.
+- Changing only the model of an agent now saves when another provider lists a model with the same name. Before, the app showed "Request failed" and did not save the model. The server must also be on the new PurpleBot version.
 - In your own message, a pair of `*` that touches a letter or a number now shows as you typed it, as
   in the chat list. For example, `100*200*300mm` no longer shows as `100200300mm` with italic text.
   `*text*` with spaces around it is still italic, and agent replies do not change.
@@ -98,12 +98,12 @@ the [root changelog](../../CHANGELOG.md).
 - A question card that asks you to fill in a field now shows the question of the agent above the field. Before, the card showed only the field name, such as "Website", so you could not tell what to type.
 - A large photo or file on a very slow connection no longer stops after one minute while it still uploads. Before, a file of more than 4 MB stopped when the connection sent less than about 50 KB each second, and the message showed "Not sent". Now the upload continues while data moves, and it stops only when no data moves for one minute.
 - A personal WhatsApp number no longer shows "This message was deleted" in a contact's chat or in a
-  group when the agent does not answer there. OpenBot no longer posts the "Working on it…" or waiting
+  group when the agent does not answer there. PurpleBot no longer posts the "Working on it…" or waiting
   message in those chats, and the description of the "“Working on it…” message" switch now says so.
   The server must also be on the new version.
 - Show the app connect card in your chat when an agent asks a teammate to connect an app. Before, the
   card went to the teammate's chat, and the agent said that the card was in your chat. The server
-  must be on the new OpenBot version.
+  must be on the new PurpleBot version.
 - On Home with a backdrop, the ring around the badge of a pinned agent or channel shows the backdrop.
   Before, it was a solid dark circle.
 - On Android, the Sort menu of the chat list shows all its orders again: "Manual", "Recent activity" and the two unread orders. Before, it showed only "Manual".
@@ -117,7 +117,7 @@ the [root changelog](../../CHANGELOG.md).
 - A message to a Hermes agent no longer fails at random with "Internal error: revision_conflict". The message now starts by itself a short time later, so you do not have to send it again. The server must be on the new version.
 - A chat video now starts to download sooner. When a waiting download of a picture or a video is no longer in a chat that you see, for example after you leave the chat or scroll far away from it, the app skips that download.
 - While a chat video waits to download, its card shows a spinner. Before, it showed a Play button that did nothing.
-- When the model service of an OpenCode agent fails in a way that OpenCode does not know, the chat now says that the model provider failed and tells you to try again later or choose another model. Before, the chat showed only the provider's technical error text. The server must also be on the new OpenBot version.
+- When the model service of an OpenCode agent fails in a way that OpenCode does not know, the chat now says that the model provider failed and tells you to try again later or choose another model. Before, the chat showed only the provider's technical error text. The server must also be on the new PurpleBot version.
 - Show workflow notifications on the phone. A "Notification" output and a step that waits for
   approval now send a notification, and a tap opens that workflow. Before, no
   notification came. The server must also be on the new version.
@@ -155,13 +155,13 @@ the [root changelog](../../CHANGELOG.md).
 - The queue of an agent now shows a routine run by its routine name. Before, it showed the full routine instructions, and for a webhook run also the raw event data.
 - An answered, cancelled or waiting confirm card in the chat now uses the full card width. Long field values no longer wrap one word on each line or go over the next message.
 - A failed task card that you swipe away on the iPhone Lock Screen no longer comes back. Before, the app showed the same failure again when it opened. Now the swiped failure stays hidden, also after the app restarts, and the phone marks it as seen on the computer, so the computer's Dynamic Island and other phones stop showing it too. A new failure shows a new card.
-- The Send Message shortcut and the Action button now send the message while OpenBot is open. Before,
+- The Send Message shortcut and the Action button now send the message while PurpleBot is open. Before,
   the app showed "Reconnecting" and the message did not go. This fix needs the new app version from the
   App Store.
 - Refresh connection in Server Settings now starts a new connection at once when the server is not
   connected. Before, it waited for the current try to end, and sometimes only a force-quit of the app
   connected it again.
-- A Pi agent that uses a ChatGPT sign-in model now continues when its chat becomes too long for the model. The server starts a new Pi session with the chat history and sends the message again. Before, the agent stopped responding. The server must be on the new OpenBot version.
+- A Pi agent that uses a ChatGPT sign-in model now continues when its chat becomes too long for the model. The server starts a new Pi session with the chat history and sends the message again. Before, the agent stopped responding. The server must be on the new PurpleBot version.
 - When you open a chat from a notification after the app was in the background, the chat now shows "Checking for new messages" while the app connects to the server again and gets the newest messages. Before, the chat showed the older messages with no sign that the reply was still on its way.
 - When the reply voice cannot read the language of a reply, for example Chinese with Supertonic 3, the
   message now tells you to choose another reply voice. Read aloud also shows a Voice settings button
@@ -212,10 +212,10 @@ the [root changelog](../../CHANGELOG.md).
 
 - The list of hosted servers shows "Restoring data" while a renewed server gets its data back from
   its archive, and shows until which date the data of a server with an ended plan is kept.
-- Give a server to another OpenBot account from Server settings › People › Transfer ownership. The
+- Give a server to another PurpleBot account from Server settings › People › Transfer ownership. The
   new owner gets an email and a message in the app, and accepts or declines it. The previous owner
   loses access; agents, routines and data stay on the server. Only a server that you run yourself
-  can change its owner, not a server that OpenBot hosts.
+  can change its owner, not a server that PurpleBot hosts.
 - Settings > Account > Invite friends shows your invite link as a ticket. Tear the stub along the
   line to send the link, or copy it with the button at the top. A friend who joins with it gets
   10% off their plan, and you get 10% of each of their payments as credit.
@@ -232,7 +232,7 @@ the [root changelog](../../CHANGELOG.md).
 - Choose the ChatGPT account that GPT live voice uses. In Settings → Voice → GPT live voice, a
   server with more than one Codex account shows an account choice. The server must be on the new
   version.
-- Agent settings › Advanced has an "OpenBot memory" switch for owners and admins. Turn it off to let
+- Agent settings › Advanced has an "PurpleBot memory" switch for owners and admins. Turn it off to let
   an agent use only a memory app, such as Mem0. Saved memories stay. The server must be on the new
   version.
 - An owner or an admin can add up to 8 folders to a channel. All agents in the channel can then change files and run commands in these folders. The server must also be on the new version.
@@ -245,20 +245,20 @@ the [root changelog](../../CHANGELOG.md).
   of videos that have no captions. The server must be on the new version.
 - You can pause and resume a workflow. Open the workflow, open its menu and select Pause or Resume. The
   workflow list shows "Paused" for a paused workflow. The server must be on the new version of
-  OpenBot.
+  PurpleBot.
 - When an agent needs to know where you are, such as for "restaurants near me", it asks with a card in
   the chat. Tap **Share once** to send this phone's current location one time, **Always allow** to
   let that agent get it without asking while you use the app and the request is yours, or **Don't share**. The app reads the
-  location only while you use it. The server must also be on the latest OpenBot version.
+  location only while you use it. The server must also be on the latest PurpleBot version.
 - Server settings shows the Signal server row to each member, with the latency of the Signal server
   that the server uses, in green, yellow or red. An owner or an admin opens the row to choose a Signal
   server; the list shows the colored latency of each one, and "Automatic" keeps the nearest one. The
   server must also be on the new version.
-- Settings > Credits shows your OpenBot credits, the credits of your servers, and the recent credit activity. You add credits in OpenBot on your computer.
+- Settings > Credits shows your PurpleBot credits, the credits of your servers, and the recent credit activity. You add credits in PurpleBot on your computer.
 - In the workflow editor, you can add Image, Video and Asset nodes and change them on the phone. An Asset node uses a picture from the server library or a photo that you upload. For a model that uses credits, the Image and Video nodes show the price per run, and they tell you when you do not have enough credits. The workflow page shows the price as a badge on each node, and the total price per run under the workflow name.
 - You can connect Gemini on a joined server from your phone. The server shows a Google link; open it, then paste the code or the address of the page where you land. The server must have the new version.
 - You can make an allowed WhatsApp contact or group read only in Marketplace › Apps › WhatsApp: tap the
-  chat, then **Make read only**. OpenBot saves its messages for your agents and never writes in it.
+  chat, then **Make read only**. PurpleBot saves its messages for your agents and never writes in it.
   The server must also be on the new version.
 
 ### Changed
@@ -279,7 +279,7 @@ the [root changelog](../../CHANGELOG.md).
   applies to Pi agents. The other choice is now called "Provider default". The server must be on the
   new version.
 - The "Add a node" sheet of the workflow editor shows the nodes in the groups Inputs, Steps and Flow, as on the computer.
-- A workflow Image or Video step whose OpenBot credits model is not available now shows the name of
+- A workflow Image or Video step whose PurpleBot credits model is not available now shows the name of
   that model with "not available". The server must also be on the new version.
 - The server drawer shows your credits above your name. A bar shows your credits and the credits of the open server. Tap it to see all your credits, the credits of each server and the credit activity.
 - The server drawer has aligned edges: the server list and your name line up with the tools, and the buttons line up with the tool values.
@@ -319,7 +319,7 @@ the [root changelog](../../CHANGELOG.md).
   Model page showed only "No models match your search".
 - Usage now shows the provider that you selected, for example DeepSeek or ChatGPT, and not the program that runs it, for example Pi CLI. A model that has no price shows "No cost estimate" and not "Unavailable".
 - You can sign in to Devin on a server from its Providers page. Before, the page had no sign-in for
-  Devin. The server must run Linux and be on the new OpenBot version.
+  Devin. The server must run Linux and be on the new PurpleBot version.
 - Messages from the channel Coordinator now show in your interface language, in the chat and the
   channel list. Before, they always showed in English.
 - You can now answer a question card that stays open after the agent ends its turn. Before, the app showed "Couldn't send your answers" each time you sent the answer.
@@ -327,7 +327,7 @@ the [root changelog](../../CHANGELOG.md).
 - Choose more than one answer when an agent asks a question that takes more than one, then tap
   Done. Before, the first tap sent only that one answer.
 - A chat file from 10 MB to 100 MB, such as an Android app (APK) or a long video, now opens, plays, saves and shares on Android phones. Before, the app could show "errno/ERR_UNEXPECTED" and the file did not open. The app now saves the file on the phone part by part while it downloads, so it uses much less memory.
-- When a site refuses a sign-in from a server, the sign-in card no longer shows **Open**. Before, **Open** showed the server's page, and a site such as Instagram showed only a blank white page there. The card still tells you to sign in from the OpenBot desktop app on your computer.
+- When a site refuses a sign-in from a server, the sign-in card no longer shows **Open**. Before, **Open** showed the server's page, and a site such as Instagram showed only a blank white page there. The card still tells you to sign in from the PurpleBot desktop app on your computer.
 - A large attachment on a slow connection no longer stops at the same point with "The attachment upload timed out." Before, a file of about 14 MB on an upload of less than about 2 Mbit/s stopped after one minute, and each retry stopped again. Now the upload continues while the server reports that it receives the file, and it stops only when the server reports no progress for one minute.
 - On Android, a file that the app could not read was sent to the agent as a 14-byte "File not found" file, with no error. The app now shows "The attachment is unavailable. Try again." and does not send the file.
 - A custom provider now accepts a model ID that has `@` or other punctuation, such as the
@@ -339,7 +339,7 @@ the [root changelog](../../CHANGELOG.md).
 - An OpenCode agent that cannot take a message into its running turn no longer shows Steer. Before, each steer failed and the message waited in the queue.
 - In a channel, the "new messages" line no longer moves up by one message when an agent shows you a setting. The phone does not show setting cards, so it does not count them as new messages.
 - When **Personal number** is off for a WhatsApp number, the WhatsApp screen now says that your
-  “Message yourself” chat still reaches OpenBot. Before, it said that only the people you allow can
+  “Message yourself” chat still reaches PurpleBot. Before, it said that only the people you allow can
   write.
 - Datadog accounts on the EU site can now connect from Marketplace with the new Datadog EU app.
   Before, the Datadog app connected only to the US1 site.
@@ -396,8 +396,8 @@ the [root changelog](../../CHANGELOG.md).
 - The iPhone app has a new Open Agent shortcut. It opens the chat of the agent that you chose in
   Settings > Shortcuts. You can put it on the Home Screen or on the Action button. It needs iOS 26
   or later.
-- When OpenBot on a server cannot start, the app now shows why, with the version of the server.
-  Before, the app could not connect and did not show a reason. This needs a server with the OpenBot
+- When PurpleBot on a server cannot start, the app now shows why, with the version of the server.
+  Before, the app could not connect and did not show a reason. This needs a server with the PurpleBot
   release that adds this.
 - An agent can now get the signing secret of its webhook routine, so you do not have to copy it.
   In the routine of an agent, tap the agent button next to the signing secret. The agent gets a new
@@ -414,8 +414,8 @@ the [root changelog](../../CHANGELOG.md).
 
 - The description of the WhatsApp "“Working on it…” message" switch now says that the switch also
   turns off the waiting message.
-- When your app is older than the oldest version that OpenBot supports, it shows **Update required**
-  with a link to the App Store or Google Play. OpenBot supports at least the app versions of the last
+- When your app is older than the oldest version that PurpleBot supports, it shows **Update required**
+  with a link to the App Store or Google Play. PurpleBot supports at least the app versions of the last
   2 months. An app that is offline or cannot reach the account service is never blocked.
 - While agents write, the app reads the unread counts from the server at most once a second. Before,
   each streamed piece of text started a new read, and a server with many agents used much CPU on it.
@@ -461,11 +461,11 @@ the [root changelog](../../CHANGELOG.md).
 
 ### Fixed
 
-- The app connects again to a server on OpenBot v0.34.1 or older. Before, the first request sent too
+- The app connects again to a server on PurpleBot v0.34.1 or older. Before, the first request sent too
   many feature names for these servers: a server on v0.20 to v0.34.1 refused each request over a
   direct connection, and an older server ignored the features that the app asked for.
 - The app compares the protocols of a server with the protocols that it speaks. A server that stops
-  support for old protocols stays available. A server that is too old now tells you to update OpenBot
+  support for old protocols stays available. A server that is too old now tells you to update PurpleBot
   on the server, not the app.
 - The server schedule now shows one-time routines, as the desktop app and the web client do.
 - The back button of a chat, a channel or a thread closes it again. Before, sometimes it did nothing
@@ -537,7 +537,7 @@ the [root changelog](../../CHANGELOG.md).
 - Over-the-air updates use less memory while they download.
 - Typing in a thread with many messages is smoother. Before, each key drew the whole message list
   again, and the chat above the composer could stop for a moment on Android.
-- Tell the user to turn off Lockdown Mode for OpenBot when the phone cannot connect to a server
+- Tell the user to turn off Lockdown Mode for PurpleBot when the phone cannot connect to a server
   because of it. Before, the app showed only a technical error and tried again with no result.
 - When a provider on your server waits to update or restart until its running tasks end, the message queue of each agent on that provider now says so. Before, the queued messages waited with no reason. The server must have the desktop version with this fix.
 - With solid message bubbles, question, approval, vault request and app suggestion cards are now
@@ -596,11 +596,11 @@ the [root changelog](../../CHANGELOG.md).
   when it is full. You can turn this off in Settings > Conversations.
 - In Server settings > Vault, choose the agents that can use each login, card, contact and API key,
   as on the desktop. The Vault list shows the agents of an item that is not for all agents. The
-  server must be on OpenBot 0.70.0 or later.
+  server must be on PurpleBot 0.70.0 or later.
 - A queued message to an agent that cannot steer its running turn now shows **Send now**, as on
   desktop. Send now moves the message to the start of the queue and stops the agent, so the agent
   reads the message next.
-- Send a bug report about the phone app with the data that the OpenBot team needs. When an agent offers such a report, the card shows what the phone adds: the app version, your system and device, your kind of network with the name of the VPN or mesh network that is on (such as Tailscale), and the last warnings, errors and connection events of the support log. The log lines have no server ID, network address, host name of your server or record ID: the app masks them, and it leaves out console lines. Before, the report had only the data of the computer or server. The server must run the newest OpenBot version.
+- Send a bug report about the phone app with the data that the PurpleBot team needs. When an agent offers such a report, the card shows what the phone adds: the app version, your system and device, your kind of network with the name of the VPN or mesh network that is on (such as Tailscale), and the last warnings, errors and connection events of the support log. The log lines have no server ID, network address, host name of your server or record ID: the app masks them, and it leaves out console lines. Before, the report had only the data of the computer or server. The server must run the newest PurpleBot version.
 - Sort the chat list by "Recent activity": each folder shows its most recent chat first. Pins and
   "Needs you" stay on top, and your manual order does not change. Choose it in "Sort chats".
 - An owner or admin can set the environment variables of Claude, ChatGPT (Codex) and Gemini in Server
@@ -623,7 +623,7 @@ the [root changelog](../../CHANGELOG.md).
   it when you can manage the agent.
 - Start a new conversation in a channel, compact the channel context, and delete the channel history
   in the channel settings, as on the desktop. Only owners and admins can delete the history. The
-  server must run an OpenBot version that has these actions on the desktop.
+  server must run an PurpleBot version that has these actions on the desktop.
 - Swipe left on a message to move the chat and show the time of each message, as in Messages on
   iPhone. The times hide when you let go.
 - Turn off the swipe that opens threads or the browser in an agent's chat, in Settings >
@@ -650,13 +650,13 @@ the [root changelog](../../CHANGELOG.md).
 - Run a queued message in a new thread, as on desktop: tap the branch button on the queued message
   bar, or choose "Run in new thread" in the message options. The message leaves the queue, starts
   in a new thread beside the chat, and the thread opens.
-- After you use OpenBot on several days, home asks once for a rating. The lilac header reacts to
-  each star. For any rating, you can rate OpenBot on the App Store or Google Play, or open X with a
+- After you use PurpleBot on several days, home asks once for a rating. The lilac header reacts to
+  each star. For any rating, you can rate PurpleBot on the App Store or Google Play, or open X with a
   post to the maker that you can edit. "Not now" asks again after 60 days, and an answer ends the
   asks.
 - Choose the actions of the app icon menu in Settings > App icon menu. By default the menu shows your
   latest chat, Schedule, Search and "Wait, don't delete me!", which opens Support. You can also add
-  Share OpenBot and your second latest chat.
+  Share PurpleBot and your second latest chat.
 
 ### Changed
 
@@ -680,7 +680,7 @@ the [root changelog](../../CHANGELOG.md).
   shine.
 - On Android, the settings button at the bottom of the sidebar has the same round fill as the "+"
   button at the top.
-- The support log now also has the screens that you open (by name only), each step of the notification setup, the notification, microphone and camera permissions, the free storage range and low memory warnings. This helps the OpenBot team find the cause of a problem such as missing notifications.
+- The support log now also has the screens that you open (by name only), each step of the notification setup, the notification, microphone and camera permissions, the free storage range and low memory warnings. This helps the PurpleBot team find the cause of a problem such as missing notifications.
 - "Report a problem on GitHub" in Settings > Support opens the form for the phone app with your app version and device filled in.
 - You can now attach files of up to 100 MB in a chat, as on desktop. Before, the phone refused files
   larger than 10 MB. A file larger than 10 MB goes to the server in parts, so it does not fill the
@@ -699,8 +699,8 @@ the [root changelog](../../CHANGELOG.md).
   do. Before, iPhone switches were green, and some Android switches (agent skills, a routine's
   "Enabled" and "All day") used the Material default colors.
 - When you link a WhatsApp number to a server, the two number choices now say what other people get.
-  On "My personal number", people you did not allow get no reply. On "A number only for OpenBot",
-  OpenBot replies from the number to each unknown person with a code. The "Personal number" switch
+  On "My personal number", people you did not allow get no reply. On "A number only for PurpleBot",
+  PurpleBot replies from the number to each unknown person with a code. The "Personal number" switch
   says the same.
 - A server with no logo shows a felt plush squircle in its own colour instead of its initials, as on
   the desktop app.
@@ -730,7 +730,7 @@ the [root changelog](../../CHANGELOG.md).
 ### Removed
 
 - Remove MongoDB Atlas from the Marketplace. MongoDB lets only the AI clients that it registered
-  sign in, and OpenBot is not one of them. Before, the MongoDB sign-in page said "This
+  sign in, and PurpleBot is not one of them. Before, the MongoDB sign-in page said "This
   Authorization request is invalid", and the app never connected.
 
 ### Fixed
@@ -739,7 +739,7 @@ the [root changelog](../../CHANGELOG.md).
   worked in another channel, or when the channel already ran 2 tasks. Now the channel says which
   channel the agent works in, or that the agent starts when a running task ends. The server must be
   on the new desktop version.
-- Show why a Discord server needs attention when it moved to another OpenBot server. The page now
+- Show why a Discord server needs attention when it moved to another PurpleBot server. The page now
   tells you to tap Reconnect to link it again. The server must be on the new desktop version.
 - A WhatsApp number whose saved keys the server cannot read now shows Link again in place of
   Reconnect, which did nothing. The server must be on the new desktop version for Disconnect to
@@ -751,13 +751,13 @@ the [root changelog](../../CHANGELOG.md).
   occurred when the teammate finished after many new messages in the chat.
 - A new HTML file that you attach, or a file that a message names, opens as a page in the file
   preview. Before, the preview showed only the HTML source.
-- When OpenBot does not fill a saved login, the password or code card now says why, for example
+- When PurpleBot does not fill a saved login, the password or code card now says why, for example
   because the agent ran a script on the page or chose the wrong field. The server must also be on the
   new version.
 - Connect HighLevel from the Apps marketplace with a Private Integration token and the location ID of your sub-account. Before, the browser sign-in always stopped on a HighLevel page with an "Invalid scope(s)" error, and the connection was not made.
 - You can now connect Mistral on a server from the phone. Before, the Mistral provider had no Connect
   button. Now Connect gives you a Mistral page to open, and the server connects when you finish
-  there. The server must also run the new OpenBot version.
+  there. The server must also run the new PurpleBot version.
 - When a queued thread waits for a short time with no known reason, it no longer says "Waiting for a
   free thread". Before, it showed the thread limit also when none of the agent's threads ran.
 - Dictation with the phone's speech recognition puts the text in the chat box once. Before, on an
@@ -767,20 +767,20 @@ the [root changelog](../../CHANGELOG.md).
   app stop responding. Above about 300 colored parts, Android shows the code in one color.
 - On Android, the rail of the chat list, the server Library and the day strip of a routine no longer
   close the app when a row comes back into view.
-- Connect Tessie from the Apps marketplace with an access token from Tessie's Developer Settings, and Omnisend with an Omnisend API key. Before, the browser sign-in of both apps always failed, because these services do not accept OpenBot for it.
+- Connect Tessie from the Apps marketplace with an access token from Tessie's Developer Settings, and Omnisend with an Omnisend API key. Before, the browser sign-in of both apps always failed, because these services do not accept PurpleBot for it.
 - The app no longer closes at launch on early iOS 27 beta versions.
 - Agent info > Advanced no longer says that a custom agent cannot steer when the agent reports
   that it can steer. The server must have the latest version.
 - When the agent receives a queued message while you edit it, closing the edit screen now puts the
   text that you typed in the message box. Before, that text was lost.
 - When a site such as X refuses a sign-in from the server, the browser card now says to sign in
-  from the OpenBot desktop app on your computer. Before, it asked you to finish the step in the
+  from the PurpleBot desktop app on your computer. Before, it asked you to finish the step in the
   browser, and I'm done left the server browser signed out.
 - Show the plan storage of a hosted server in the disk ring of the Usage screen. Before, the ring
   showed the whole disk of the server machine, which is much larger than the plan.
 - The Model page of a Workspace only agent now tells you when the chosen provider does not work with
   Workspace only on the server. Before, you learned this only from an error when you saved. The
-  server must also be on the newest OpenBot version.
+  server must also be on the newest PurpleBot version.
 - Steer is off for a queued message while the agent runs a routine. The message waits for the next
   turn. Before, Steer showed the error "A routine is running now".
 - A task list that stopped now loses its "Stopped" title when the agent continues the work in a later
@@ -789,7 +789,7 @@ the [root changelog](../../CHANGELOG.md).
   chat showed "1024 × 1024" and a square frame. The server must be on the new version.
 - In the Marketplace, Apple apps now shows "Mac only" and cannot be added when the server is not a
   Mac. Before, it showed "No sign-in" and could be added, but it did not work there. The server must
-  also be on the newest OpenBot version.
+  also be on the newest PurpleBot version.
 - After the Send Message shortcut or the share sheet sends a message, the agent's reply arrives
   as a notification again. Before, the reply showed only when you opened the app.
 - WhatsApp, Telegram, Slack and Discord show **Paused**, not **Connected**, when all their numbers,
@@ -807,8 +807,8 @@ the [root changelog](../../CHANGELOG.md).
 - With the Natural response style, a chat no longer shows a filler progress note, such as one "x"
   before each step of a routine run, or a note that repeats an earlier note of the same turn. The
   note stays in the turn's steps.
-- When OpenBot could not enter a password or code from the secure card, the browser card now says
-  that OpenBot could not finish and that you must enter what is missing on the page.
+- When PurpleBot could not enter a password or code from the secure card, the browser card now says
+  that PurpleBot could not finish and that you must enter what is missing on the page.
 - In the step list of a workflow, a long step text was cut off at the edge of the screen. It now shows
   on up to four lines.
 - A GitHub trigger with more than one repository showed only the first one. When you chose a
@@ -836,7 +836,7 @@ the [root changelog](../../CHANGELOG.md).
 - Connect Honcho or Hindsight from the Apps marketplace with browser sign-in or an API key, so agents can save and recall long-term memory that other AI tools you connect can share.
 - Choose when Claude compacts the chats of a server's agents. On the Claude page of a server's
   Providers, set "Compact chats at" to a size from 100K to 1M tokens, or keep "Claude Code default".
-  The server must also be on the new version of OpenBot.
+  The server must also be on the new version of PurpleBot.
 - The Apps marketplace has 207 new apps, for example monday.com, Miro, Dropbox, Zapier, Datadog,
   Intercom, Granola and Webflow. Connect each one with browser sign-in to your own account. Some apps,
   such as Exa, DeepWiki and CoinGecko, need no account.
@@ -844,14 +844,14 @@ the [root changelog](../../CHANGELOG.md).
   **Unmute** gives it the notification level of the server again. The mute applies to you only, on
   each of your devices.
 - You can turn off the “Working on it…” message of a WhatsApp number in Marketplace › Apps ›
-  WhatsApp. OpenBot then posts only the answer. The server must also be on the new version.
+  WhatsApp. PurpleBot then posts only the answer. The server must also be on the new version.
 - On a server with more than one account for a provider, you can turn on **Pool accounts** on the
   provider page. Agents then use one account until it nears a usage limit, then the account whose
   limit resets first. **In use** shows the account that agents use now. On an account page, **Leave
   out of pool** and **Put back in pool** remove the account from the pool or add it again. The server
-  must also be on the new OpenBot version.
+  must also be on the new PurpleBot version.
 - Disconnect a server's first Gemini account in the server's provider settings. The server must be on
-  the new OpenBot version.
+  the new PurpleBot version.
 - When an agent suggests an app, such as Canva or GitHub, the chat shows a card for it. Tap Connect to connect the app, or Skip to fold the card. The card says when only the server owner or an admin can connect the app.
 - Server settings has an Agent personality page, as on desktop. An owner or admin can set the response style of the server's agents to Natural or Classic.
 - On a server with the Natural style, the short updates that an agent writes while it works show as their own messages in agent chats, threads and channels.
@@ -862,46 +862,46 @@ the [root changelog](../../CHANGELOG.md).
   and audio up to 100 MB download when the chat shows them. It is off, so large files use mobile
   data only when you tap them.
 - The chat shows a video that an agent makes. The video shows in its frame while the agent makes it,
-  and then plays in the chat player. The server must also be on the new OpenBot version; with an
+  and then plays in the chat player. The server must also be on the new PurpleBot version; with an
   older server, the video shows as a file.
 - An owner or admin can choose who gets each MCP server on the page of that server: the agents that get it, and the access (No access, Can use or Can manage) of Everyone and of each role. The server must also be on the new version.
 - Copy an image from a chat: the image viewer has a Copy button next to Share and Save.
 - Touch and hold a message with files to copy, share or save them. Copy puts an image on the clipboard as a picture and a text file as text. Save puts an image in Photos and another file in a folder that you pick in Files. A message with more than one file opens a menu that names each file, with Share all, Save all to Files and Save images to Photos.
 - You can pin and unpin messages in an agent's chat and in its threads. Touch and hold a message and tap Pin.
-- Pinned messages opens a sheet with the pins of all chats of the agent, with the chat of each pin and who pinned it. Tap a pin to go to its message, or swipe left to unpin it. The server must also be on the OpenBot version that adds pinned messages on desktop.
-- Server settings has a new Agents page, under Timezone. It has Personality, Memories per agent, and the new Memory review, Skill learning and Learn from my browsing settings, as on the desktop. Owners and admins see the new settings when the server runs an OpenBot version that has them.
+- Pinned messages opens a sheet with the pins of all chats of the agent, with the chat of each pin and who pinned it. Tap a pin to go to its message, or swipe left to unpin it. The server must also be on the PurpleBot version that adds pinned messages on desktop.
+- Server settings has a new Agents page, under Timezone. It has Personality, Memories per agent, and the new Memory review, Skill learning and Learn from my browsing settings, as on the desktop. Owners and admins see the new settings when the server runs an PurpleBot version that has them.
 - The Everyone page and the page of a role have "Set all", which gives one level to all agents.
 - Chats with unread replies now show first in the chat list, as on the desktop. Choose "Sort chats" in the menu at the top right: "Unread in a group" (the default) puts them in an "Unread" group under "Needs you", "Unread first in folders" puts them first in each folder, and "Manual" keeps your saved order. Each phone keeps its own choice.
 - Restart a server that you host yourself from the phone: as an owner or admin, open Server settings and
-  select Restart. Before, only an OpenBot-hosted server had this row. The server must also be on the new
-  version of OpenBot.
+  select Restart. Before, only an PurpleBot-hosted server had this row. The server must also be on the new
+  version of PurpleBot.
 - You can change the app icon in Settings › Appearance › App icon. Swipe through the logo colors of
   the desktop app and tap Use this icon. On Android, the icon changes when you leave the app.
 - Settings has a Billing page that shows the plan, the billing period, the next renewal or end date and the price of each cloud server. It shows only where cloud servers are available in the app.
-- Set up two-step codes for the Vault logins of a server from the mobile app. Scan the QR code of the site with the camera, choose a screenshot of it, or paste the setup key, then check the first code on the site before you save. The Vault list shows the live code of each login with a key; tap it to copy the code. The server must be on OpenBot 0.66.0 or later.
-- Settings has an Agents page for an owner or admin of a server, as the Agents tab of the desktop Settings. It shows the defaults for local scripts, new chats, the plan card and steering, which agents have each one on, and the OpenBot co-author line of git commits. You can change a default, the plan start time and the local script limit, and set each agent to follow the default or to its own value. The page also lists the background processes that agents left running on the server, such as dev servers, and you can stop one. The server must also be on the new version.
+- Set up two-step codes for the Vault logins of a server from the mobile app. Scan the QR code of the site with the camera, choose a screenshot of it, or paste the setup key, then check the first code on the site before you save. The Vault list shows the live code of each login with a key; tap it to copy the code. The server must be on PurpleBot 0.66.0 or later.
+- Settings has an Agents page for an owner or admin of a server, as the Agents tab of the desktop Settings. It shows the defaults for local scripts, new chats, the plan card and steering, which agents have each one on, and the PurpleBot co-author line of git commits. You can change a default, the plan start time and the local script limit, and set each agent to follow the default or to its own value. The page also lists the background processes that agents left running on the server, such as dev servers, and you can stop one. The server must also be on the new version.
 - An owner or admin can now edit a custom provider of a server in Server Settings > Providers: its
   name, base URL, models, API key and headers. Agents on a kept model stay on it. Leave the API key
-  or the value of a saved header empty to keep the saved value. The server must also be on OpenBot
+  or the value of a saved header empty to keep the saved value. The server must also be on PurpleBot
   0.66.0 or later; on an older server, you can still only remove the provider and add it again.
-- Agent info > Model has a Speed choice in place of the Fast mode switch: Standard, Fast and, for a model that has it, Ultrafast. Claude agents can now use fast mode too: the app asks you to confirm the higher price first. Ultrafast and Claude fast mode need a server on the next OpenBot release; an older server keeps Standard and Fast.
+- Agent info > Model has a Speed choice in place of the Fast mode switch: Standard, Fast and, for a model that has it, Ultrafast. Claude agents can now use fast mode too: the app asks you to confirm the higher price first. Ultrafast and Claude fast mode need a server on the next PurpleBot release; an older server keeps Standard and Fast.
 - Connect Sunra from the Apps marketplace with browser sign-in, so agents can make images, videos,
   audio and 3D models with your Sunra credits.
 - Connect TryPost from the Apps marketplace with browser sign-in, so agents can list your social media
   channels, draft, schedule, queue and publish posts, and read analytics.
 - Server settings › Transfer has "Copy to another server" in the mobile app. Choose the server to copy to, select the agents, and copy them in one step, with no file to save and open. The agents keep their workspace files, and their channels and the Shared folder are copied too. API keys, sign-ins, connectors, and chat history are not copied. It shows when you are an owner or admin of two or more online servers. A server does not need a new version.
-- The Library has folders. The folder button at the bottom of the screen shows where you are. Tap it to choose all files, an agent, a folder, or the files of deleted agents. Make, rename and delete folders, and move a file into a folder from its menu. A change on the desktop app, on another phone or by an agent shows at once. The server must run an OpenBot version with Library folders; live changes need this version on the server.
+- The Library has folders. The folder button at the bottom of the screen shows where you are. Tap it to choose all files, an agent, a folder, or the files of deleted agents. Make, rename and delete folders, and move a file into a folder from its menu. A change on the desktop app, on another phone or by an agent shows at once. The server must run an PurpleBot version with Library folders; live changes need this version on the server.
 - Settings > Haptics has a Reply haptics switch. Turn it off to stop the taps while an agent's reply appears, and keep the other haptics.
 - On an iPad or a phone with a hardware keyboard, Return sends the message. Shift+Return adds a new
   line. The screen keyboard does not change: its Return key still adds a new line.
-- Read and allow long approvals on the phone. The app loads the full request from the server, and a bug report or an idea for the OpenBot team shows its full text in a box that scrolls. Before, the phone showed only the start and offered only Deny. The server must run the newest OpenBot version.
-- OpenBot has two shortcuts in the iPhone Shortcuts app, for iOS 26 and later: List Agents and Send
+- Read and allow long approvals on the phone. The app loads the full request from the server, and a bug report or an idea for the PurpleBot team shows its full text in a box that scrolls. Before, the phone showed only the start and offered only Deny. The server must run the newest PurpleBot version.
+- PurpleBot has two shortcuts in the iPhone Shortcuts app, for iOS 26 and later: List Agents and Send
   Message. You can also run them from the Action button, Siri or an automation.
   - List Agents shows your agents. A tap on an agent opens its chat.
   - Send Message asks for the text and sends it to your agent. The app does not open, and it does
     not need to be in the background. A card shows the result, and the reply comes as a notification.
   - **Choose the agent for Send Message in Settings > Shortcuts.**
-  - With the app lock on, a shortcut opens OpenBot and asks for the lock.
+  - With the app lock on, a shortcut opens PurpleBot and asks for the lock.
 - An owner or admin can add more than one Cursor account to a server in Server settings › Providers ›
   Cursor. Each account after the first uses a Cursor API key. The server must also be on the new version.
 - Connect Adobe Analytics from the Apps marketplace with browser sign-in, so agents can find report
@@ -914,26 +914,26 @@ the [root changelog](../../CHANGELOG.md).
 ### Changed
 
 - The marketplace shows Productivity, Documents and Design first, and Coding near the end.
-- Hidden chats of a server on the new OpenBot version keep working. The Hidden chats screen says so;
+- Hidden chats of a server on the new PurpleBot version keep working. The Hidden chats screen says so;
   for an older server it says, as before, that a hidden chat does not run.
 - Main buttons are now white in dark mode and black in light mode, as on desktop. They no longer flash blue when you tap them.
 - Settings › Profile on the mobile app keeps its layout while your activity loads. The values and the
   year of days then animate into place.
 - While a server is not connected, the drawer and Server Settings keep the rows of its last connection, such as Control computer, Library and Providers, and show them disabled. The rows no longer go away and come back.
 - The top right button of a chat is now a More menu with the browser, the actions that a channel needs, and the pinned messages. The button has an orange dot when a channel needs your action.
-- On Android, some launchers remove the OpenBot icon from the home screen once after this update.
+- On Android, some launchers remove the PurpleBot icon from the home screen once after this update.
   Add it again from the app list.
 - If you have a cloud server, the plus button in the server list opens your cloud servers, also where the app does not show plans.
 - A Vault login shows the user name and the password in one card.
 - An agent's question now shows as a message, with its answers as buttons under it, as in the approval cards. "Reply in the chat" and "Skip" are buttons there too.
-- When an Android phone cannot open a store for the update, Update opens the OpenBot download page.
+- When an Android phone cannot open a store for the update, Update opens the PurpleBot download page.
   Before, it opened the Google Play website.
 - The app reads its feature settings from the account service at most each 10 minutes, not each minute.
 - The app now sends a smaller copy of each photo, up to 2048 pixels on the long side. A photo
   arrives faster, also on a slow connection. To send the original photo, turn on "Send photos at
   full quality" in Settings → Conversations.
 - An agent chat or a channel with unread messages now opens at the top of the NEW section, as on desktop. Channels now also show the NEW line.
-- When a server cannot send the full request, the card names the server and tells you to update it or open the chat in the OpenBot desktop app.
+- When a server cannot send the full request, the card names the server and tells you to update it or open the chat in the PurpleBot desktop app.
 - The button that goes to the latest message now keeps the chat at the end while a reply arrives.
   Before, the button came back after each new line of the reply. A drag, or a message that you send,
   stops this.
@@ -942,13 +942,13 @@ the [root changelog](../../CHANGELOG.md).
 
 - The model picker of a second Gemini (or other provider) account now shows the models of that
   account's plan, such as Gemini 4 Argon on an Ultra plan. Before, it showed only the models of the
-  first account. The server must also be on the new version of OpenBot.
+  first account. The server must also be on the new version of PurpleBot.
 - Restart server no longer shows for a hosted server that the app cannot restart. Before, the action
   showed and then failed.
 - Replies in Italian are read aloud with the Italian voice. Before, a reply with "è", "più" or
   "città" was read with the French voice.
 - Settings rows show their full value again, such as the update status, the timezone and the member count, and the chevron is at the end of the row.
-- On Android, sharing to OpenBot from another app opens a sheet again. In it you choose the server and the agent, add an optional message, and send the shared text, links, images or files from the sheet. The chat then opens. Files that the server does not take, or that are too large, show an error before anything is sent.
+- On Android, sharing to PurpleBot from another app opens a sheet again. In it you choose the server and the agent, add an optional message, and send the shared text, links, images or files from the sheet. The chat then opens. Files that the server does not take, or that are too large, show an error before anything is sent.
 - The page of a role in Server settings › Roles now shows the access that its members really get.
   Before, an agent showed "No access" even when Everyone gave all members "Can manage". When Everyone
   gives more, the agent shows that level with "· Everyone", and lower levels are off. "Change in
@@ -989,8 +989,8 @@ the [root changelog](../../CHANGELOG.md).
 - **Search models** in agent settings and in Create agent. The Model row now opens a list of the
   provider's models with a search bar. Type a name or a model id to find a model without a scroll
   through the full list, such as the OpenRouter list (#6503).
-- OpenBot can now get fixes between store versions. When a fix is ready, the home screen shows
-  **A new OpenBot is ready**. Tap **Update** and the app restarts with the fix, with no visit to the
+- PurpleBot can now get fixes between store versions. When a fix is ready, the home screen shows
+  **A new PurpleBot is ready**. Tap **Update** and the app restarts with the fix, with no visit to the
   App Store or Google Play. This works from this version on.
 - **Settings → About** shows a short update ID after the version when the app runs such a fix.
 - **API key for ChatGPT and Claude** in Server settings > Providers. When the server can read the
@@ -1002,18 +1002,18 @@ the [root changelog](../../CHANGELOG.md).
 - Give a channel its own picture in Channel info: upload a photo, or choose an icon and a color, as
   on the desktop. The channel list, the chat header and search show it in place of the member
   faces. A channel picture that you set on the desktop now shows on the phone too. The server must
-  run this OpenBot version.
+  run this PurpleBot version.
 - Connect Postiz from the Apps marketplace with browser sign-in or your Postiz API key, so agents can list your social media channels, and draft, schedule and publish posts.
 - Get a notification when an agent finishes or stops with an error in a thread. Settings >
   Notifications > Thread replies turns these notifications off on this phone. The server must run
-  the next OpenBot version.
+  the next PurpleBot version.
 
 ### Changed
 
-- **Open the export agent** in the Grok Bot import guide now opens the new Migrator by OpenBot page
+- **Open the export agent** in the Grok Bot import guide now opens the new Migrator by PurpleBot page
   in Grok Bot.
 - The app now also looks for a fix when you come back to it, not only when it starts. It asks
-  OpenBot's own update server, and it accepts only updates that OpenBot signed.
+  PurpleBot's own update server, and it accepts only updates that PurpleBot signed.
 - The provider page has a new layout: a header with the provider logo, its status and its agents,
   then the Sign-in, Use, API key and Runtime sections. Each action, such as Reconnect, Update and
   Disconnect, has an icon, as in Settings. The API key opens on its own page.
@@ -1021,7 +1021,7 @@ the [root changelog](../../CHANGELOG.md).
   on each action, such as Open sign-in page, Cancel, Add and Remove.
 - The Models page of a provider shows the selected models in their own section, above the other
   models. Select all, Deselect all and Reset to default are in the menu at the top right.
-- The provider page shows if the server runs the CLI that you installed or the one that OpenBot
+- The provider page shows if the server runs the CLI that you installed or the one that PurpleBot
   downloaded. The Disconnect question names the agents that stop until you sign in again.
 - Channel info is shorter. The Agents row opens a list of the server's agents with a search and a
   menu to select or deselect all. The Lead agent row has a menu to choose the lead.
@@ -1043,18 +1043,18 @@ the [root changelog](../../CHANGELOG.md).
   turn ended, and a chat whose newest messages were only that thinking showed no rows, also after
   Load older messages.
 - On Android, you can now share an audio file, a video, an email or a file of another type, such as
-  a Garmin `.fit` activity, from another app to an agent. Before, the OpenBot share target showed
+  a Garmin `.fit` activity, from another app to an agent. Before, the PurpleBot share target showed
   only for text, images and documents when you shared one file (#6583).
 - With large text, a settings row with a menu value, such as Reasoning on an agent's Model page, no longer flickers after you change its value.
 - You can now import a Grok Bot export of more than 100 MB into a server from your phone. The app
-  sends the export in parts. The server must be on the new OpenBot version.
+  sends the export in parts. The server must be on the new PurpleBot version.
 - Messages no longer move while you scroll up through older messages of the same day.
 - A tap on a notification of a thread opens that thread, and so does a tap on the Live Activity
   while it shows the work, a question or an approval of a thread. Before, both opened the main chat
   of the agent.
 - A tap on the expanded Live Activity in the Dynamic Island that shows one agent opens the chat of
   that agent. Before, the app opened on the screen that it had.
-- When OpenBot takes a fix back, the Android app now shows **A new OpenBot is ready**, as the iPhone
+- When PurpleBot takes a fix back, the Android app now shows **A new PurpleBot is ready**, as the iPhone
   app does. Before, it went back to the earlier version at its next start with no message.
 
 ## [1.4.8] - 2026-11-10
@@ -1064,7 +1064,7 @@ the [root changelog](../../CHANGELOG.md).
 - Type `@` in an agent's chat or side thread to tag one of the agent's browser tabs or side threads,
   as on the desktop. The agent gets the tab and can use it, and it can read the tagged thread. A tagged
   browser tab shows as a badge in the message. Tap it to open that tab. The host computer must have
-  OpenBot 0.62.0 or later.
+  PurpleBot 0.62.0 or later.
 - A tap on a file name in a chat message now opens the file from the agent's workspace or the shared
   folder. Text, Markdown, code, PDF and spreadsheet files open in the preview, and images open in a
   sheet. Other files open in the share sheet, where you can save them to Files or open them in
@@ -1086,8 +1086,8 @@ the [root changelog](../../CHANGELOG.md).
   ••• menu has Trackpad mode, Fit to screen, the computer's displays, the quality (Fast at 120 fps,
   Smooth at 60 fps or Data saver) and connection stats, and the help button shows each gesture.
   The phone asks for Face ID, Touch ID or the phone unlock first, and stops the stream when you
-  leave the app. The computer must run OpenBot with remote desktop set up.
-- On iPhone, the OpenBot share sheet has a message field. Type a message to send with the link,
+  leave the app. The computer must run PurpleBot with remote desktop set up.
+- On iPhone, the PurpleBot share sheet has a message field. Type a message to send with the link,
   text or file that you share. The message goes before the shared content. If the share sheet
   cannot send and you open the app, the message is in the chat's message field.
 - A server admin can select which models of a provider the model picker shows. Open **Server
@@ -1102,8 +1102,8 @@ the [root changelog](../../CHANGELOG.md).
 - Connect GitLab.com from the Apps marketplace with browser sign-in, so agents can work with projects, issues, merge requests, repositories and CI pipelines. For a self-hosted GitLab, add its MCP server address in the MCP servers settings.
 - Connect Omnisend from the Apps marketplace with browser sign-in, so agents can read campaign reports and work with contacts, segments, campaigns and automations. Select read-only access on the Omnisend consent screen when agents only need reports.
 - Connect ElevenLabs from the Apps marketplace with browser sign-in to turn text into speech, work with voices, and manage ElevenLabs voice agents. Each generation uses ElevenLabs credits.
-- Use OpenBot in Hebrew. The layout mirrors from right to left when Hebrew is the language.
-- A workflow output that posts into an OpenBot channel shows as "OpenBot channel". Choose the channel in OpenBot on the computer.
+- Use PurpleBot in Hebrew. The layout mirrors from right to left when Hebrew is the language.
+- A workflow output that posts into an PurpleBot channel shows as "PurpleBot channel". Choose the channel in PurpleBot on the computer.
 - **Settings > Profile** now shows your activity on your paired desktop, as the desktop Profile tab
   does: tokens, peak day, messages, streaks, a year of days, insights, your most active teammates
   and model usage.
@@ -1123,9 +1123,9 @@ the [root changelog](../../CHANGELOG.md).
   in Settings > Voice and choose its voice. A voice conversation in an agent chat then uses OpenAI's
   live voice with the Codex (ChatGPT) sign-in of the computer that runs the server. Your voice goes
   between the phone and OpenAI, and the chat shows your requests and the agent's answers as usual. The
-  computer that runs the server must have a version of OpenBot that supports GPT live voice; other
+  computer that runs the server must have a version of PurpleBot that supports GPT live voice; other
   servers keep the voice of the phone. Settings > Voice lists each server as ready, offline, in need
-  of a newer OpenBot, or in need of a Codex sign-in, and an owner or admin can open the server's Codex
+  of a newer PurpleBot, or in need of a Codex sign-in, and an owner or admin can open the server's Codex
   page from there. When a start fails, the call bar shows the reason that the server gives. It needs
   this new version of the app from the App Store or Google Play: an update over the air does not add
   it.
@@ -1171,7 +1171,7 @@ the [root changelog](../../CHANGELOG.md).
   bottom. General and Maintenance are not separate pages any more. A row that is not available for your role does not
   show.
 - The top of Server settings shows the server logo beside its name, with the connection status and
-  the OpenBot version under the name. Owners and admins tap the logo to change it, and tap the name
+  the PurpleBot version under the name. Owners and admins tap the logo to change it, and tap the name
   to edit it in place.
 - The rows of Server settings and Settings have icons. Where the desktop app has a tab for the same
   setting, the row uses its icon.
@@ -1185,7 +1185,7 @@ the [root changelog](../../CHANGELOG.md).
   in its list. The agent gets the file and reads it with its own tools.
 - A voice conversation reads the agent's progress updates aloud while it works, and then the answer.
 - A new agent now opens with its own short welcome, in your language, as a question with three first
-  tasks that you can choose or answer in your own words. The setup message that OpenBot sends to the agent no longer shows in the chat.
+  tasks that you can choose or answer in your own words. The setup message that PurpleBot sends to the agent no longer shows in the chat.
   The first task that you write during setup still goes to the agent after its welcome.
 - Connect Composio with a sign-in when your server can relay sign-ins. Otherwise, type only your
   Composio API key. You no longer type an MCP URL.
@@ -1266,7 +1266,7 @@ the [root changelog](../../CHANGELOG.md).
 - You can delete a message in a chat. Touch and hold the message, then select Delete. This works in
   agent chats, tasks and channels. The message goes from the chat for everyone. The agent can still
   remember it. You can delete your own messages. Admins, and members who can manage the agent, can
-  delete any message. The server must have the latest version of OpenBot.
+  delete any message. The server must have the latest version of PurpleBot.
 - You can send the text of a message in an agent chat to a channel. Touch and hold the message,
   select Send to channel, then select the channel. The channel opens with the text in its composer.
 - A task thread shows the name of each other member who wrote a message in it.
@@ -1278,7 +1278,7 @@ the [root changelog](../../CHANGELOG.md).
 - Add Download to the Hermes Agent page of a server. The server runs the official Hermes installer
   and shows its progress. Then Connect signs in with the Nous Portal code.
 - Connect TickTick from the Apps marketplace with browser sign-in to see and add tasks, organize lists and tags, and track habits and focus records.
-- **Settings → Support** has a link to open a ticket on the OpenBot Discord, the fastest way to get help.
+- **Settings → Support** has a link to open a ticket on the PurpleBot Discord, the fastest way to get help.
 - Add Mark unread to the actions of an agent's message. That message and the messages after it
   become unread, and the chat stays unread until you open it again. The server must have the
   latest version.
@@ -1286,11 +1286,11 @@ the [root changelog](../../CHANGELOG.md).
   With chat colors on, the line has the agent's color. The line grows in from the NEW label.
 - Owners and admins can add and change Telegram and Slack triggers and outputs in the workflow editor.
   Choose the chat, the Slack workspace and channel, the text filter, the action and the emoji, as on
-  the desktop. The server must run a new OpenBot version and have a linked Telegram chat or Slack
+  the desktop. The server must run a new PurpleBot version and have a linked Telegram chat or Slack
   workspace.
 - Owners and admins can link and manage the WhatsApp numbers of a server from the phone. Link a
   number with a pairing code, add the WhatsApp Orchestrator, choose the contacts and groups that can
-  write, and approve pairing requests. The server must run a new OpenBot version.
+  write, and approve pairing requests. The server must run a new PurpleBot version.
 - The Marketplace shows the connectors of the server under Apps, as on the desktop: Slack, Discord,
   Telegram, WhatsApp, GitHub, 1Password and Bitwarden, with the status of each. It also shows the MCP
   servers that you added. Owners and admins see them; a tap opens the settings of the connector or
@@ -1300,7 +1300,7 @@ the [root changelog](../../CHANGELOG.md).
   paste an access key. Agents on the server can then sign in to sites with the logins of one shared
   vault. The Proton Pass CLI needs a paid Proton plan.
 - Settings > Voice has a "Pause before sending" slider, from 1 to 10 seconds. A voice conversation sends your words when it recognizes no new words for this long. The default is 1.5 seconds. (#5006)
-- Settings > Voice > Speaking has a "Reply speed" choice for the replies that OpenBot reads aloud.
+- Settings > Voice > Speaking has a "Reply speed" choice for the replies that PurpleBot reads aloud.
 - Connect Higgsfield from the Apps marketplace with browser sign-in to generate images, videos and audio, and check credits and assets. Each generation uses Higgsfield credits.
 
 ### Changed
@@ -1351,8 +1351,8 @@ the [root changelog](../../CHANGELOG.md).
   frame rate. Before, it scrolled faster or slower when the frame rate changed.
 - With Reduce Motion on, the group of characters fades away when you continue from the welcome
   screen. Before, it flew off the screen.
-- The blinking OpenBot logo uses less battery: it draws no frames between blinks.
-- When another app, such as a keyboard or Safari, opens `openbot://` while OpenBot runs, the app
+- The blinking PurpleBot logo uses less battery: it draws no frames between blinks.
+- When another app, such as a keyboard or Safari, opens `openbot://` while PurpleBot runs, the app
   comes back on the same screen. Before, every server connected again and again until the
   connection service stopped the app for 60 seconds.
 - Each chat and channel keeps its unsent text. Go to another agent and come back, and the text you typed is still in the message box.
@@ -1432,12 +1432,12 @@ the [root changelog](../../CHANGELOG.md).
 - A step of a workflow can run from that step, or alone. The workflow page shows the newest result of each step that ran alone.
 - A step that runs has a Stop step button.
 - Version history: open a saved version of a workflow, read its steps and make it current.
-- A workflow with a Discord trigger or a Discord output shows its settings. Change them in OpenBot on the computer that runs it.
+- A workflow with a Discord trigger or a Discord output shows its settings. Change them in PurpleBot on the computer that runs it.
 - Turn on Fast mode for an agent whose model has a fast tier, such as GPT-6.1-Sol, in the agent's Model page.
 - Owners and admins can edit an agent's instructions file (`AGENTS.md`) on its server. When the agent changes the file during your edit, the app tells you, and a second Save replaces the agent's version.
 - Compact the context of an agent's chat from the agent's Advanced page. The messages stay.
-- Create a server on a computer that runs OpenBot: tap + in the server list, then "New local server on the computer". The server has its own agents, chats and files. The servers that OpenBot runs on that computer now show in the server list, with notifications.
-- Hold a server that runs on a computer beside its own server and choose Delete server. OpenBot on that computer moves the server's data to its Trash. The server of the desktop app itself no longer shows Remove server.
+- Create a server on a computer that runs PurpleBot: tap + in the server list, then "New local server on the computer". The server has its own agents, chats and files. The servers that PurpleBot runs on that computer now show in the server list, with notifications.
+- Hold a server that runs on a computer beside its own server and choose Delete server. PurpleBot on that computer moves the server's data to its Trash. The server of the desktop app itself no longer shows Remove server.
 - Dictate in a chat with the mic to the left of the main button. The words go into the message box
   while you speak, and you can edit them before you send. A wave shows your voice next to the time.
   Tap the mic again, now Stop, to keep the text. With an empty message box, the main button starts a
@@ -1451,16 +1451,16 @@ the [root changelog](../../CHANGELOG.md).
   "Mon, Nov 1 9:12 AM", as on desktop.
 - Branch from here: touch and hold the last agent answer of a finished turn, in an agent chat or a
   thread, and choose Branch from here. A new thread opens with a copy of the conversation through
-  that turn, as on desktop. The server must have OpenBot with thread branches. While a turn runs, no
+  that turn, as on desktop. The server must have PurpleBot with thread branches. While a turn runs, no
   message shows the action.
 - A branch thread shows "Branched from …" after the copied messages, also for a branch made on
   another device. A tap opens the source chat or thread at the message that the branch came from.
-- Workflows show their Telegram triggers and outputs. Change them in OpenBot on the computer that runs them.
+- Workflows show their Telegram triggers and outputs. Change them in PurpleBot on the computer that runs them.
 
 ### Changed
 
 - An agent notification on iPhone, Apple Watch and Android now shows the agent picture, its photo
-  or its bloub, in place of the OpenBot app icon. A notification whose picture is not ready yet
+  or its bloub, in place of the PurpleBot app icon. A notification whose picture is not ready yet
   looks as before.
 - On iPhone, you can swipe right anywhere in a chat, a task or a channel to go back, and the chat
   follows your finger. Before, the swipe started only at the left edge of the screen. A swipe to the
@@ -1552,7 +1552,7 @@ the [root changelog](../../CHANGELOG.md).
 
 - The server plans show how many hosted sites each plan has.
 - Owners and admins can set how many threads of an agent run at the same time in **Agent info → Advanced → Parallel threads**, as on desktop. **Default (2)** uses the host default. When the provider runs one turn at a time, the control shows 1, and the threads of the agent wait for each other.
-- Agent info › Advanced now has **Agent starts new chats**, as on desktop. When it is on, the agent starts a new chat when its chat gets long, and saves notes first. Only an owner or admin of the server sees it, and the server's computer must have the latest OpenBot version. A change on the phone shows at once on the computer, and a change on the computer shows at once on the phone.
+- Agent info › Advanced now has **Agent starts new chats**, as on desktop. When it is on, the agent starts a new chat when its chat gets long, and saves notes first. Only an owner or admin of the server sees it, and the server's computer must have the latest PurpleBot version. A change on the phone shows at once on the computer, and a change on the computer shows at once on the phone.
 - Manage the browser profiles of a server in Server settings > Browser profiles: add a profile with
   its name and color, rename it, change the color, choose its agents, clear the data and delete it.
 - Choose the browser profile of an agent in Agent info > Advanced > Browser profile, or add a new
@@ -1564,12 +1564,12 @@ the [root changelog](../../CHANGELOG.md).
 - **Agent settings → Folders** shows the folders that the agent can change besides its workspace.
   An owner or admin can add a folder of the host computer, remove it, exclude a folder in it, or
   include it again. The folder browser goes to the home folder or to a disk in one step, and the
-  page opens Permissions. Changes from the desktop show at once. The host needs the latest OpenBot.
+  page opens Permissions. Changes from the desktop show at once. The host needs the latest PurpleBot.
 - **Server settings → Server key** shows when the server last changed its key. The owner can change
   the key there, after the app lock when it is on. The server signs the change with the current key
   and the new key, and the app uses the new key only after it checks both signatures.
 - Server settings has an Import agents page. Any member can bring agents from a Grok Bot or Hermes Agent export: the page shows how to make the export, sends the .zip file from your phone to the server, and lists its agents and channels before anything changes.
-- Server settings has a Transfer page for an owner or admin. Export the server's agents and server settings to a transfer file and share it from your phone, or import a transfer file from another OpenBot server. A file from a phone must be under 100 MB.
+- Server settings has a Transfer page for an owner or admin. Export the server's agents and server settings to a transfer file and share it from your phone, or import a transfer file from another PurpleBot server. A file from a phone must be under 100 MB.
 - A speaker button under each agent message reads the message aloud with the reply voice from Settings > Voice. Tap it again to stop. When another message starts or a voice conversation opens, the reading stops.
 - Show provider plan limits on the server Usage screen: how much of each limit window is left, when
   it resets, and the provider's rings.
@@ -1577,7 +1577,7 @@ the [root changelog](../../CHANGELOG.md).
 - Add a custom provider to a server from the mobile app: Server settings > Providers > Add custom provider. Start from Ollama, LM Studio or any OpenAI-compatible endpoint, then give its address, an optional API key, its models and headers. You can also see and remove the custom providers of the server.
 - Install, update and remove agents from the ACP registry on a server from the mobile app: Server settings > Providers > ACP registry.
 - Manage the accounts of a provider that can hold more than one: add an account, sign it in again, rename it or remove it on the provider's page in Server settings > Providers.
-- Add, change and remove the custom ACP agents of a server: Server settings > Providers > Agents. Start from Goose, Qwen Code, GitHub Copilot or Oh My Pi, or give your own command, arguments and environment variables. The server must run the newest OpenBot.
+- Add, change and remove the custom ACP agents of a server: Server settings > Providers > Agents. Start from Goose, Qwen Code, GitHub Copilot or Oh My Pi, or give your own command, arguments and environment variables. The server must run the newest PurpleBot.
 
 ### Changed
 
@@ -1628,10 +1628,10 @@ the [root changelog](../../CHANGELOG.md).
 - On a wide screen, such as iPad, an open iPhone Duo or an open Android foldable, the chat list stays beside the open chat.
 - On a wide screen, you can drag the edge of the chat list to make it wider or narrower. Drag it to the left to show only avatars.
 - iPhone Duo support. When you open iPhone Duo, the chat list and the chat show on each side of the fold. When you fold it, the open chat stays open.
-- When a new version of the app is available, home shows a header with the OpenBot eyes. Tap Update to open the store page, or Later to hide it until the next version.
-- An update that does not need the store installs in the app: Update restarts OpenBot with the new version.
+- When a new version of the app is available, home shows a header with the PurpleBot eyes. Tap Update to open the store page, or Later to hide it until the next version.
+- An update that does not need the store installs in the app: Update restarts PurpleBot with the new version.
 - Tap What's new under the update buttons to read the release notes of each new version. The notes slide down from under the header, over the chat list.
-- Settings › Notifications is now the one place for notifications: choose a server, then All, Needs me, or Off for the whole server and for each of its agents. These choices apply on all your devices, and a change shows at once on the others; a mute applies to this phone only. The agent screen shows the level and opens Settings › Notifications; the server settings no longer have a Notifications row. The agent screen no longer has its own Notifications switch, and "Notify me about" opens the Notifications view inside the agent sheet. An agent that was switched off for everyone shows "Turn on". The server needs the latest OpenBot.
+- Settings › Notifications is now the one place for notifications: choose a server, then All, Needs me, or Off for the whole server and for each of its agents. These choices apply on all your devices, and a change shows at once on the others; a mute applies to this phone only. The agent screen shows the level and opens Settings › Notifications; the server settings no longer have a Notifications row. The agent screen no longer has its own Notifications switch, and "Notify me about" opens the Notifications view inside the agent sheet. An agent that was switched off for everyone shows "Turn on". The server needs the latest PurpleBot.
 
 ### Changed
 
@@ -1657,7 +1657,7 @@ the [root changelog](../../CHANGELOG.md).
 - A sign-in code request waits up to 35 seconds for the account server, as on desktop. Before, the app showed that the account service was not reachable after 10 seconds while the server still sent the code.
 - The Live Activity in the Apple Watch Smart Stack fits its card: the agent photo, the name, two lines of text and the unread count, with a margin at each edge. Before, the watch showed the Lock Screen layout made smaller, with the content at the edges and the unread count outside the card.
 - The Live Activity starts again when you open the app after iOS or the computer ended it. Before, it could stay frozen on the Lock Screen and in the Dynamic Island for hours. An activity that is almost 8 hours old also starts again, so iOS does not stop it while you are away.
-- Notifications show the agent name and the text also after the app starts without network. Before, they showed only "OpenBot", and a tap opened nothing.
+- Notifications show the agent name and the text also after the app starts without network. Before, they showed only "PurpleBot", and a tap opened nothing.
 - Notifications start to work when Apple or Google gave no push token at the first try. Before, the phone got no notifications until you opened the app again.
 - Notifications and Live Activity updates reach an iPhone app that is not from the App Store, such as a build that Xcode installs or an ad hoc build. Before, the app could name the wrong Apple push environment, and Apple refused every notification and update for it.
 - Show the full names in the chat + menu. Before, a long name, such as "Use skill or app" in Polish, was cut off.
@@ -1667,7 +1667,7 @@ the [root changelog](../../CHANGELOG.md).
 ### Added
 
 - The Marketplace now lists Neon, Prisma, Netlify, Railway, Atlassian (Jira and Confluence), Todoist and Hugging Face.
-- Attach MP4 videos in chat when the host runs a version of OpenBot that accepts them.
+- Attach MP4 videos in chat when the host runs a version of PurpleBot that accepts them.
 - The sidebar has Workflows. See the workflows of a server, the status of each last run, and the runs that wait for you.
 - Pin a workflow to the sidebar. A pinned workflow shows its last run, and its button runs it or opens the run that waits for you.
 - Open a run to see the status and output of each step. Approve or decline a step that waits, retry a step that failed, or stop the run.
@@ -1686,13 +1686,13 @@ the [root changelog](../../CHANGELOG.md).
 - Server settings > Providers shows the mark of each provider, and a Default provider choice for
   the new agents of the server. The choice needs an updated server.
 - An owner or admin can add, change and delete the API keys in a server's Vault from the iPhone app,
-  when the server has the OpenBot version that keeps API keys. The phone sends a new key once and
+  when the server has the PurpleBot version that keeps API keys. The phone sends a new key once and
   cannot show a saved key.
 - An agent's chat has threads, as on desktop. Tap the agent's name in the chat header to open the thread menu: switch to the main chat or to an open thread, start a new thread, see all threads, or open the agent's info. A dot in the agent's color on the name, and beside each thread in the menu, shows a thread with messages that you have not read, on the phone or on desktop.
 - Start a new thread from the thread menu, or with + on an agent's Threads page. Your first message starts it, and the main chat does not change. The + on the Threads page of the server asks which agent starts the thread.
-- Send files in a thread, as in the agent's chat: tap + in the thread composer. The server must have the newest version of OpenBot.
+- Send files in a thread, as in the agent's chat: tap + in the thread composer. The server must have the newest version of PurpleBot.
 - Rename, archive, restore or delete a thread from its ⋯ menu, or touch and hold a row on the Threads page. A thread that runs cannot be deleted until you stop it.
-- On iPhone, you can send a share to an agent without opening the app. Tap Share in another app, tap OpenBot, choose the agent and tap Send. The iOS share sheet also shows the agents that you send messages to, so you can tap one of them directly. When the share cannot be sent, such as with the app lock on, OpenBot opens with the share as before.
+- On iPhone, you can send a share to an agent without opening the app. Tap Share in another app, tap PurpleBot, choose the agent and tap Send. The iOS share sheet also shows the agents that you send messages to, so you can tap one of them directly. When the share cannot be sent, such as with the app lock on, PurpleBot opens with the share as before.
 - You can now talk with an agent by voice, as on the desktop. In an agent chat or a channel, tap the microphone in the message field. The message field turns into a call bar with the agent's glow, and the chat stays in view. The agent listens until you stop speaking, sends what you said, and reads its answer aloud while it writes it. Then it listens again. In a channel, the call bar shows the leader. When the leader gives the task to a member, the bar changes to that member, and it reads the first agent that answers. The call bar mutes the microphone, interrupts the answer, and ends the conversation.
 - A new Voice page in Settings, with a Listening tab and a Speaking tab. Choose the voice that reads replies: Supertonic 3, the same voice as on the desktop, which you download once and which runs on your phone, or ElevenLabs with your own API key. You can choose a voice, listen to a sample, and remove the model or the key.
 - Speech recognition in more languages, as on the desktop. In Settings > Voice, choose what recognizes your speech: the phone recognizer, which hears one language; Parakeet v3, which you download once (670 MB), runs on your phone and finds the language you speak in 25 European languages; or ElevenLabs Scribe with your own API key, which finds more than 90 languages. The choice applies to voice conversations and to dictation. Parakeet needs a phone with 6 GB of memory or more.
@@ -1788,7 +1788,7 @@ the [root changelog](../../CHANGELOG.md).
 - A Markdown file in a chat opens in a preview that shows the formatted text. The menu shows the source, copies it, or shares the file. Before, you could only download it.
 - Tap any image in a chat to open it, then swipe left or right to see all the other images of the loaded conversation, in chat order. The top bar shows the position, such as "3 of 8". ([#2426](https://github.com/nightly-labs/openbot/issues/2426))
 - When an agent sends two or more images in one reply, the chat shows them together in a compact grid, as on desktop. Before, each image took the full width of the chat.
-- Channels are back in the mobile app, on a computer whose OpenBot has channels again. A channel
+- Channels are back in the mobile app, on a computer whose PurpleBot has channels again. A channel
   shows in the home list beside your agents, and you can pin it, hide it, put it in a section, and
   search it. It opens in the same chat as an agent, with the author of each message, plan cards,
   questions, approvals and browser steps of its work. To make one, open the menu at the top of the
@@ -1851,18 +1851,18 @@ the [root changelog](../../CHANGELOG.md).
   how it ended. A finished task stays until you close it with its close button. Tap a task to open
   it. A task opens as a chat, with the agent's messages, voice input and a text composer. In a
   task, you can answer the agent's questions and see what it does now.
-- Attach ZIP archives in chat when the host runs a version of OpenBot that accepts them.
-- Server settings has a General section for owners and admins: Timezone sets the zone of new routines when the message does not give one, and Memories per agent sets how many memories each agent can keep. The server must have an OpenBot version that supports these settings.
-- Server settings has a Storage page, as on desktop. A ring chart shows how much space OpenBot uses on the server by type, with the size and share of each type. Tap a type to highlight it in the chart. The page also shows the agents and the largest chats, and the free disk space. Tap All files to open, share or delete a stored file. Owners and admins can clear cached server files and logs. The server must have an OpenBot version that supports storage.
-- Server settings has a Sites page, as on desktop. It shows the sites that agents on the server published to openbot.site, the number of sites and the limit of your plan, and when each site expires. Tap a site to open it. Owners and admins can also delete a site. The server must have an OpenBot version that supports sites.
-- Server settings has an Updates page, as on the desktop. It shows the OpenBot version of the server and the update status. You can check for updates and start an update. Owners and admins can also restart the server now, cancel a scheduled restart, and turn automatic downloads and automatic installs on or off. Members can start an update that waits until the agents are idle, when the server permits it.
-- Server settings has Providers for owners and admins, as in OpenBot on the computer. It shows each AI provider of the computer that runs the server and its status. Tap a provider to connect it, download it, check for updates and update it, or save its API key. The server must have an OpenBot version that supports provider management.
-- Server settings has Connectors for owners and admins, as on the desktop. Connect Slack, Discord, Telegram, GitHub and 1Password on the server, see the status of each connection, pause or resume it, reconnect or disconnect it, and add the orchestrator agent that answers. GitHub shows the repositories that agents can use. Bitwarden shows as a desktop-only connector. The server must have an OpenBot version that supports connectors.
-- Server settings has MCP servers for owners and admins. Add an MCP server that runs a command or connects to a URL, change it, turn it on or off for the agents, test the connection, sign out, or remove it. Each argument, environment variable and header has its own field, as on desktop. The server must have an OpenBot version that supports MCP servers. To sign in to an MCP server, use OpenBot on a computer.
-- App lock: in Settings > App lock, turn on a 4-digit PIN, Face ID, Touch ID or the phone's unlock, or a PIN and one of the others. OpenBot then locks when you leave it for the time that you choose, from immediately to 1 hour, when the phone locks, and each time the app starts. A notification or a link that you open while the app is locked opens after you unlock it.
-- While the app lock is on, the app switcher shows the OpenBot logo instead of your chats. On Android this needs Android 13 or later.
-- After 4 incorrect PINs, each new attempt waits longer. After 10 incorrect PINs, OpenBot signs you out on the phone. If you forget the PIN, sign out from the lock screen and scan a new code from OpenBot on your desktop.
-- Server settings has Roles, below Members. An owner or admin creates roles, sets the access of Everyone and of each role to each agent (no access, view, chat or manage), and gives roles to members on the member page. The members list shows the roles of each member. The server must run an OpenBot version with roles.
+- Attach ZIP archives in chat when the host runs a version of PurpleBot that accepts them.
+- Server settings has a General section for owners and admins: Timezone sets the zone of new routines when the message does not give one, and Memories per agent sets how many memories each agent can keep. The server must have an PurpleBot version that supports these settings.
+- Server settings has a Storage page, as on desktop. A ring chart shows how much space PurpleBot uses on the server by type, with the size and share of each type. Tap a type to highlight it in the chart. The page also shows the agents and the largest chats, and the free disk space. Tap All files to open, share or delete a stored file. Owners and admins can clear cached server files and logs. The server must have an PurpleBot version that supports storage.
+- Server settings has a Sites page, as on desktop. It shows the sites that agents on the server published to openbot.site, the number of sites and the limit of your plan, and when each site expires. Tap a site to open it. Owners and admins can also delete a site. The server must have an PurpleBot version that supports sites.
+- Server settings has an Updates page, as on the desktop. It shows the PurpleBot version of the server and the update status. You can check for updates and start an update. Owners and admins can also restart the server now, cancel a scheduled restart, and turn automatic downloads and automatic installs on or off. Members can start an update that waits until the agents are idle, when the server permits it.
+- Server settings has Providers for owners and admins, as in PurpleBot on the computer. It shows each AI provider of the computer that runs the server and its status. Tap a provider to connect it, download it, check for updates and update it, or save its API key. The server must have an PurpleBot version that supports provider management.
+- Server settings has Connectors for owners and admins, as on the desktop. Connect Slack, Discord, Telegram, GitHub and 1Password on the server, see the status of each connection, pause or resume it, reconnect or disconnect it, and add the orchestrator agent that answers. GitHub shows the repositories that agents can use. Bitwarden shows as a desktop-only connector. The server must have an PurpleBot version that supports connectors.
+- Server settings has MCP servers for owners and admins. Add an MCP server that runs a command or connects to a URL, change it, turn it on or off for the agents, test the connection, sign out, or remove it. Each argument, environment variable and header has its own field, as on desktop. The server must have an PurpleBot version that supports MCP servers. To sign in to an MCP server, use PurpleBot on a computer.
+- App lock: in Settings > App lock, turn on a 4-digit PIN, Face ID, Touch ID or the phone's unlock, or a PIN and one of the others. PurpleBot then locks when you leave it for the time that you choose, from immediately to 1 hour, when the phone locks, and each time the app starts. A notification or a link that you open while the app is locked opens after you unlock it.
+- While the app lock is on, the app switcher shows the PurpleBot logo instead of your chats. On Android this needs Android 13 or later.
+- After 4 incorrect PINs, each new attempt waits longer. After 10 incorrect PINs, PurpleBot signs you out on the phone. If you forget the PIN, sign out from the lock screen and scan a new code from PurpleBot on your desktop.
+- Server settings has Roles, below Members. An owner or admin creates roles, sets the access of Everyone and of each role to each agent (no access, view, chat or manage), and gives roles to members on the member page. The members list shows the roles of each member. The server must run an PurpleBot version with roles.
 
 ### Changed
 
@@ -1915,7 +1915,7 @@ the [root changelog](../../CHANGELOG.md).
 - The Live Activity now follows the notification choices of each server. Before, it showed the
   agents of a server that you muted or set to Nothing. Now it stops showing that server at once when
   you mute it or turn its notifications off, and it shows the server again when the mute ends.
-- The app can now read the queue of an agent with a long history. Before, after some weeks of use, the queue answer was too large for the connection, and the chat showed a "response too large" error. The server must also run the version of OpenBot with this fix (#2368).
+- The app can now read the queue of an agent with a long history. Before, after some weeks of use, the queue answer was too large for the connection, and the chat showed a "response too large" error. The server must also run the version of PurpleBot with this fix (#2368).
 - Live Activities show a link that an agent reply writes in angle brackets, such as
   `<https://example.com>`. Before, the Live Activity removed the link.
 - Agents and sections stay in the home list when you go back from a chat. Before, some or all
@@ -1941,7 +1941,7 @@ the [root changelog](../../CHANGELOG.md).
 - An open chat no longer renders again when another agent or server changes.
 - The server drawer, the chat header and the chat list no longer render again for workspace changes that they do not show, so the phone does less work while you use any screen.
 - The model list of an agent loads when the server has a provider that the app does not know. An
-  agent on that provider shows "Update OpenBot to use" and the provider name, and its provider
+  agent on that provider shows "Update PurpleBot to use" and the provider name, and its provider
   and model choices are disabled.
 - The phone screen stays on while voice mode listens, so the screen lock no longer stops the voice input when you do not touch the phone.
 - A task that has no messages yet, for example a task that waits for the provider usage limit to reset, now shows why it waits and its queued messages. Before, the task screen was empty. A new chat with no messages shows its starter card again.
@@ -1949,7 +1949,7 @@ the [root changelog](../../CHANGELOG.md).
 ### Security
 
 - Show the account service address on the Mobile Connect screen when a link uses a service that is
-  not the OpenBot account service. Before, the screen did not show where the phone connects.
+  not the PurpleBot account service. Before, the screen did not show where the phone connects.
 
 ## [1.3.2] - 2026-10-17
 
@@ -1965,15 +1965,15 @@ the [root changelog](../../CHANGELOG.md).
 - Hold the app icon to open a recent agent, Routines or Search. The recent agents are the chats that
   you opened last on this phone. Hidden chats do not show. The actions go away when you sign out, and
   a shortcut that you pinned on Android then opens only the sign-in screen.
-- Share a link, text, a photo or a file from another app to an agent. Choose OpenBot in the share
+- Share a link, text, a photo or a file from another app to an agent. Choose PurpleBot in the share
   sheet, then choose the agent. The agent that got your last share is selected first. The chat opens
   with the shared content in the message field, so you can add a message before you send it. This
-  works when OpenBot is closed and when it is open. A file that is too large or of a type that agents
+  works when PurpleBot is closed and when it is open. A file that is too large or of a type that agents
   cannot read shows an error with its name. An image that you share from a web page comes as an
   image, not as its link. iPhone photos in HEIC format are sent as JPEG.
 - Get agent notifications on Android: when an agent finishes, stops with an error, or needs your
   input, an approval, or a step in the browser. Choose them in Settings > Notifications, with a
-  sound and the events of each server. The server must run the newest OpenBot desktop app.
+  sound and the events of each server. The server must run the newest PurpleBot desktop app.
 - When you create an agent, you can select its provider, model and reasoning level. The choice shows when the server supports it. "Host default" keeps the provider that the server selects for new agents.
 
 ### Changed
@@ -1981,7 +1981,7 @@ the [root changelog](../../CHANGELOG.md).
 - Copy, React, Reply and the time are now in a row under each message. Before, they were in a sheet that opened only when you touched and held a message.
 - On iPhone, touch and hold a word in a message to select it, as in other apps. The formatting of the message stays while you select. Before, the text opened in a separate sheet as plain text. On Android, tap Select text under the message.
 - The home of a server with no agents now has the layout of the welcome: its group of characters, the text under it, and the Add agent button at the bottom. Before, smaller characters stood in a ring around the text and the button.
-- After you sign in, the OpenBot logo moves to the middle of the screen and turns into the loading animation, and your agents come in while it leaves. Before, the screen faded, the loader grew from a dot, and the list waited until the loader was gone.
+- After you sign in, the PurpleBot logo moves to the middle of the screen and turns into the loading animation, and your agents come in while it leaves. Before, the screen faded, the loader grew from a dot, and the list waited until the loader was gone.
 - When you open the app while signed in, the splash logo turns into the loading animation. Before, the loader showed on top of the splash logo.
 - Signing out now fades to the sign-in screen. Before, the sign-in screen slid in from the side.
 - While the app connects to a server, the home screen no longer shows the server, search and options buttons. They come in with your agents.
@@ -2004,7 +2004,7 @@ the [root changelog](../../CHANGELOG.md).
 - A long reply streams more smoothly. Before, the app read the full reply again for each new part of it.
 - While a server reconnects, the app does less work each second. Before, the countdown made all of the open screens draw again.
 - When the server supports it and you are an owner or an admin, an agent that you hide on the phone is hidden on each device that shows the server, and an agent that you hide on the computer is hidden on the phone. The server does not run the routines of a hidden agent and does not send new messages to it. Restore removes the hide on the phone and on the server. A member hides an agent on the phone only.
-- On Android, popup menus have the OpenBot design: rounded corners, app colors, and icons. Before, they used the default Android menu with the colors of the device wallpaper.
+- On Android, popup menus have the PurpleBot design: rounded corners, app colors, and icons. Before, they used the default Android menu with the colors of the device wallpaper.
 - The Android app is a smaller download.
 
 ### Fixed
@@ -2021,12 +2021,12 @@ the [root changelog](../../CHANGELOG.md).
 - On iPhone, agent avatars get their colors back when the server connects again. Before, some avatars stayed gray.
 - A hosted server no longer stops soon after it starts while you read it with the app in the foreground. Before, it stopped about 15 minutes after a wake when you did not type. The app in the foreground now keeps it on for at most 30 minutes after your last message, change or typing, or after you open the app again.
 - The app keeps starting a hosted server while the server starts. Before, it stopped after 5 minutes.
-  It now stops only when the machine runs and OpenBot on it does not connect in 15 minutes.
+  It now stops only when the machine runs and PurpleBot on it does not connect in 15 minutes.
 - On iPhone, a long agent reply shows word by word for one second. Then, if the full reply is available, all its text shows at once, with a strong, a light and a strong knock. Before, the words continued to show one by one for a long time after desktop showed the full reply.
 - On Android, a message that waits for the server stays at the right edge of the chat. Before, it moved to the left.
 - On Android, file names and code in a reply paragraph align with the text. Before, they were too high, and a long file path was cut at the edge of the message.
 - On Android, screens with animations scroll more smoothly. Before, scrolling could stutter after an animated item closed.
-- On Android, a share from another app that starts OpenBot shows the share sheet with its Close and Share buttons. Before, the sheet filled the screen and the status bar covered the buttons.
+- On Android, a share from another app that starts PurpleBot shows the share sheet with its Close and Share buttons. Before, the sheet filled the screen and the status bar covered the buttons.
 - When you swipe to close the server list, the agent list behind it does not respond. Before, the swipe could pin an agent, open a chat or press the server list button.
 
 ## [1.3.1] - 2026-10-14 (Android), 2026-10-15 (iOS)
@@ -2038,15 +2038,15 @@ the [root changelog](../../CHANGELOG.md).
 - Italian interface. Choose Italiano in Settings > App language, or keep System default on an
   iPhone that uses Italian.
 - Get a notification when an agent finishes, stops with an error, or needs your input, an approval,
-  or a step in the browser while OpenBot is not on screen. It shows the agent name and the start of
-  the reply, the question, or the action to approve, and a tap opens the chat. Apple and the OpenBot
+  or a step in the browser while PurpleBot is not on screen. It shows the agent name and the start of
+  the reply, the question, or the action to approve, and a tap opens the chat. Apple and the PurpleBot
   account service cannot read the text. An answer or an error does not come while you use the
   desktop app. While the Live Activity shows, no notification comes: the Live Activity shows the
   event, and with Play sound on it lights up the screen and plays the sound, also with notifications
-  off. The server must run an OpenBot version with this change.
+  off. The server must run an PurpleBot version with this change.
 - Settings > Notifications now has the notification and Live Activity settings on one screen. It
   turns notifications on or off, hides the reply preview, and sets the one sound of notifications
-  and the Live Activity: Play sound on or off, and the OpenBot sound of the desktop app, one of the
+  and the Live Activity: Play sound on or off, and the PurpleBot sound of the desktop app, one of the
   four sounds of the desktop sound themes, or the iOS sound. The app plays a sound when you choose
   it. For each server you can choose all activity, only the events that need you, or nothing, and
   mute the server for a time, as in the desktop app. Server settings have the same choices.
@@ -2062,7 +2062,7 @@ the [root changelog](../../CHANGELOG.md).
 
 ### Removed
 
-- The app no longer shows channels, with any version of OpenBot on your computer. You cannot make a new channel, and Settings no longer has Deleted channels. Search and the routine calendar show only agents. To make agents work together, put them in one sidebar section.
+- The app no longer shows channels, with any version of PurpleBot on your computer. You cannot make a new channel, and Settings no longer has Deleted channels. Search and the routine calendar show only agents. To make agents work together, put them in one sidebar section.
 
 ### Fixed
 
@@ -2099,26 +2099,26 @@ the [root changelog](../../CHANGELOG.md).
 - The arrows in the bottom bar of the browser go to the previous and the next page. Reload page is
   in the ··· menu. The tabs button shows the agent's tabs: select a tab to show it, or open a new
   tab or close the tab on screen.
-- The page in the browser keeps the same size on your phone when the window of OpenBot on the
-  server changes size. The server needs this version of OpenBot.
+- The page in the browser keeps the same size on your phone when the window of PurpleBot on the
+  server changes size. The server needs this version of PurpleBot.
 - When an agent asks you to take over its browser, the request has an Open browser button. In the
   browser, choose I'm done in the ··· menu to give control back to the agent.
 - You can allow or deny an agent's approval request in the chat. The card shows the command, files or permissions, and says what each answer does on the computer. Before, the chat only showed "Waiting for your input on desktop".
-- When a request is too long to show on the phone, the card lets you deny it and tells you to open OpenBot on the computer to allow it.
+- When a request is too long to show on the phone, the card lets you deny it and tells you to open PurpleBot on the computer to allow it.
 - Mark agents that wait for you in the agent list, with an icon for a question, an approval, or a browser takeover. A "Needs you" group shows them above the sections.
 - When an agent waits for you, the compact Dynamic Island shows an amber mark on the agent's photo, and the agent's name has the agent color.
 - Mark all agent chats and channels on a server as read from the home screen chat options menu. If a chat cannot be marked read, it stays unread and the app tells you.
 - Agent info groups the agent settings as the desktop app does: **Brain**, **Knows**, **Does**, and **Rules**. **Rules** has **Permissions**, **Notifications**, and **Advanced**.
 - **Advanced** shows the workspace folder of the agent and can start a **New chat**. A new chat shows a "New chat started" divider in the chat.
-- Owners and admins can turn **Computer Use** and **Local scripts** on or off for an agent, and select what a message does while the agent works (**Queue** or **Steer**). A change made on the computer or on another device shows at once. The computer that runs the agent must have the newest OpenBot desktop version.
-- Owners and admins can see and delete the **Tables** that the agents share, and **Publish** an agent as a link template. The link preview of a template that you publish from the phone shows the general OpenBot image, not an agent card.
+- Owners and admins can turn **Computer Use** and **Local scripts** on or off for an agent, and select what a message does while the agent works (**Queue** or **Steer**). A change made on the computer or on another device shows at once. The computer that runs the agent must have the newest PurpleBot desktop version.
+- Owners and admins can see and delete the **Tables** that the agents share, and **Publish** an agent as a link template. The link preview of a template that you publish from the phone shows the general PurpleBot image, not an agent card.
 - Support Pi and Muse agents on hosts with Team API v7.
 - Add provider session settings and reset on hosts that support this feature.
 - Choose which agent memories enter every prompt on updated hosts. Keep other memories saved for search, and let the agent manage the selection when needed.
 - Polish interface. Choose Polski in Settings > App language, or keep System default on an iPhone
   that uses Polish.
 - Write and send messages while your server is offline. Waiting messages are drawn lighter, one line under them says they send when the server is online, and you touch and hold a message to edit it or not send it. They send on their own when the server is back. The phone keeps waiting messages and their files when you close the app.
-- Search finds the same kinds of results as the desktop search: agents, channels, messages, files and routines. It also finds the settings pages of the app and of the server. The filter button next to the search field shows one kind of result. Files show when the computer has the latest OpenBot.
+- Search finds the same kinds of results as the desktop search: agents, channels, messages, files and routines. It also finds the settings pages of the app and of the server. The filter button next to the search field shows one kind of result. Files show when the computer has the latest PurpleBot.
 - A search result opens what it names. A message or a file opens the chat at its message. A channel opens the channel, a routine opens its settings, and a settings result opens its page.
 - Settings > Animations has "Animate search results". It turns off the blur when search results change.
 
@@ -2128,7 +2128,7 @@ the [root changelog](../../CHANGELOG.md).
 - The screen that creates an agent now has a soft glow in the color of the agent. When you select a different color, the glow and the avatar change to the new color smoothly.
 - Settings has no General page. Appearance, Animations, Language, Haptics, Live Activities and
   Privacy each have their own page. Hidden chats and deleted channels are on the Settings page.
-- Show what a hosted server gives at the top of the plans sheet: it runs OpenBot 24/7 on an external
+- Show what a hosted server gives at the top of the plans sheet: it runs PurpleBot 24/7 on an external
   server, keeps agents and routines running when the computer is off, and needs no technical setup.
 - Like on desktop, consecutive messages between agents show as one line in the chat, such as "3 messages with 2 agents". Tap it to see each message.
 - A message to several agents shows their avatars and the number of agents. Tap it to see their names.
@@ -2162,7 +2162,7 @@ the [root changelog](../../CHANGELOG.md).
 - The agent's browser follows the light or dark appearance of the app.
 - Live Activity answer buttons show as one capsule each and share the full width.
 - The owner of a server can now remove it from the account in server settings, also when its computer is offline or gone. Before, an owner could not remove such a server. The removal applies to all members and all devices. Members lose access, and connected Slack, Discord, Telegram and webhook routes stop. If you add the server again, invite its members again and set up its connections again. Old webhook URLs do not work again.
-- Open a chat of an agent on a connected server that is not the active one, for example from a Live Activity, and OpenBot now loads the messages, loads older messages and marks them read on the agent's own server. Before, it asked the active server.
+- Open a chat of an agent on a connected server that is not the active one, for example from a Live Activity, and PurpleBot now loads the messages, loads older messages and marks them read on the agent's own server. Before, it asked the active server.
 - Report failed browser Live View connections and input as failures instead of normal view termination. Release failed sessions so the view can be opened again.
 - Tasks card. The step in progress shows all its lines at each text size. Before, a larger text
   size cut off the bottom of the step, and the next step touched it.
@@ -2174,7 +2174,7 @@ the [root changelog](../../CHANGELOG.md).
 - A browser request in a chat stays visible, with the typed value, while Notification Center or another system overlay is open.
 - In Settings > Support, the recent log scrolls in its own box, so a long log does not make the page very long.
 - After 45 minutes on one server connection, and on each return to the app after that, the app asked the signalling service for new relay credentials many times a second, until the service closed the socket for a minute. A lost connection could not recover in that minute. The app now asks once every 45 minutes.
-- A remote connection that Signal refuses for a reason other than a rate limit, such as an invalid ticket, reconnects at once. Before, OpenBot waited 60 seconds as if Signal had limited its rate.
+- A remote connection that Signal refuses for a reason other than a rate limit, such as an invalid ticket, reconnects at once. Before, PurpleBot waited 60 seconds as if Signal had limited its rate.
 - A server is usable sooner after you return to the app. Before, "Reconnecting" stayed until every chat that you had opened before had loaded again, one after another. Now it ends when the agents and the unread counts load, and the chats load after it, the open chat first.
 - After more than 30 seconds away, the app waited 3 seconds for a dead connection before it connected again. Now it repairs the connection at once, or replaces it at once when the server has already dropped it. After more than about 3 minutes away, it shows at once that it connects, instead of a server that looked online but did not answer.
 - On a return to the app, the selected server connects first, and your other servers follow when it is online.
@@ -2191,7 +2191,7 @@ the [root changelog](../../CHANGELOG.md).
 - Routines for a server. Touch and hold a server in the server list, then select Routines. The week view shows the runs of each day with the agents that do them. Swipe the days to change the week. Select Day in the header to see one day; today also shows the next runs. Select a run to open its routine.
 - Buy a cloud server from the iPhone app. Tap + in the server list, choose a plan, and pay on a secure Stripe page. The app shows the setup until the server is ready, and the server shows on your computer too.
 - Usage for a server. Touch and hold a server in the server list, then select Usage. The report shows the processed tokens and the estimated cost of all agents on the server, with the share of each agent. Select an agent in the list, or in the Agent row at the top, to see the usage of one agent.
-- Settings → Support. It shows how to get help: report a problem on GitHub or message us on X. It also shows a support log of recent app events, connection steps, requests and errors. Select Save log file to save the log or attach it to a message. The log stays on your phone and OpenBot never sends it. It does not record messages or files, and it masks passwords and tokens. Select Clear log to remove it.
+- Settings → Support. It shows how to get help: report a problem on GitHub or message us on X. It also shows a support log of recent app events, connection steps, requests and errors. Select Save log file to save the log or attach it to a message. The log stays on your phone and PurpleBot never sends it. It does not record messages or files, and it masks passwords and tokens. Select Clear log to remove it.
 - Cursor and Cline agents on a server now show in the app. Before, the server kept them hidden.
 - HTML pages and Mermaid diagrams in a reply. A code block marked `html` or `mermaid` shows as a
   card with a header and a small picture of the page or the diagram. Tap the card to open it on its
@@ -2206,7 +2206,7 @@ the [root changelog](../../CHANGELOG.md).
 - A routine run in a chat shows as one short line with the routine name and its state. The chat no
   longer shows the routine instruction as your message.
 - The routine schedule is easier to set. Select how often it repeats (hourly, daily, weekly, monthly or yearly), then the days and the time, as on desktop. A cron expression is now the last choice, for advanced schedules only.
-- The OpenBot logo no longer turns when you turn your phone, and the app no longer uses motion access.
+- The PurpleBot logo no longer turns when you turn your phone, and the app no longer uses motion access.
 - Settings → About shows the build number after the version, such as "1.1.0 (17)".
 - The agent Usage page has a clearer period control. Select 7 days, 30 days, 90 days, 1 year or Custom. For Custom, set the start and end dates with the date pickers. The report changes at once. The daily chart is now the chart of the desktop app: one area for each provider, in its color, with the values on a grid. Touch or drag across the chart to see a day, with the value of each provider under it. When you change the period or the agent, the report stays on screen and its numbers and chart move to the new values.
 - On Android, the app no longer asks for access to all photos and videos. You still choose photos and files with the system picker, and you can still save images from a chat.
@@ -2302,10 +2302,10 @@ the [root changelog](../../CHANGELOG.md).
 - When you open a hosted server that stopped after it was not in use, the app starts it again and connects when it is ready.
 - The Lock Screen and the Dynamic Island show what your agents do, as the desktop Dynamic Island
   does: work, new replies, questions, approvals, browser steps, and failed tasks. You can answer an
-  approval or a short question from the Lock Screen. OpenBot asks again before it approves a command.
+  approval or a short question from the Lock Screen. PurpleBot asks again before it approves a command.
   When several agents have new replies, the activity lists them. Settings > General > Live Activities
-  turns this off. When iOS stops OpenBot in the background, the host keeps the activity current
-  through Apple. The update is encrypted for your phone, so Apple and OpenBot cannot read it.
+  turns this off. When iOS stops PurpleBot in the background, the host keeps the activity current
+  through Apple. The update is encrypted for your phone, so Apple and PurpleBot cannot read it.
 
 ### Changed
 

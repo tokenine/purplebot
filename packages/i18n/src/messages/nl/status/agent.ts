@@ -34,7 +34,7 @@ export const messages = {
     "Het resultaat verschijnt in het kanaal {channel}, en elk lid van deze server dat het kanaal leest, kan het zien.",
   "status.agent.creditsHoldBalance": "Dit gebruikt {credits} credits en het saldo is {balance} credits.",
   "status.agent.creditsHoldAgentsOff": "Agents op deze server kunnen geen credits gebruiken.",
-  "status.agent.screenCapturePermissionNext": "macOS kan je daarna vragen om schermopname toe te staan voor OpenBot.",
+  "status.agent.screenCapturePermissionNext": "macOS kan je daarna vragen om schermopname toe te staan voor PurpleBot.",
   "status.agent.screenCaptureDisplay":
     "Het beeldscherm {name} vastleggen en de afbeelding naar het model van de agent sturen.",
   "status.agent.screenCaptureWindow":
@@ -50,37 +50,37 @@ export const messages = {
   "status.agent.sendIdea": "Dit wordt een openbaar GitHub-issue. Je naam wordt niet getoond.",
   "status.agent.feedbackRecentErrors": "Recente fouten in de chat:",
   "status.agent.feedbackSameAs": "Wordt toegevoegd aan issue #{issue}",
-  "status.agent.feedbackSent": "Naar het OpenBot-team gestuurd: {title}",
+  "status.agent.feedbackSent": "Naar het PurpleBot-team gestuurd: {title}",
   "status.agent.feedbackWithdrawn": "Verwijderd van GitHub: {title}",
   "status.agent.feedbackWithdrawCommand": "Melding #{issue} van GitHub verwijderen",
   "status.agent.feedbackWithdrawReason":
     "Niemand kan deze melding nog op GitHub zien. Je kunt dit niet ongedaan maken. Om de melding te verbeteren, kan de agent een verbeterde melding sturen.",
   "status.agent.feedbackWithdrawing": "Je melding wordt van GitHub verwijderd…",
   "status.agent.serverInstallCommand":
-    "Een eenmalige opdracht maken die OpenBot op een andere computer installeert als de server {name} en die aanmeldt bij je account. De agent voert hem daar uit.",
+    "Een eenmalige opdracht maken die PurpleBot op een andere computer installeert als de server {name} en die aanmeldt bij je account. De agent voert hem daar uit.",
   "status.agent.serverInstallCard": "Installatieopdracht voor de server {name}",
   "status.agent.browserProfileNamed":
     "Verplaats {agents} naar het browserprofiel {profile}. Ze krijgen de aanmeldingen en cookies ervan. Hun open tabbladen sluiten.",
-  "status.agent.commitCoAuthorOff": "Stop met OpenBot als co-auteur toevoegen aan de commits van alle agenten.",
-  "status.agent.commitCoAuthorOn": "Voeg OpenBot weer als co-auteur toe aan de commits van alle agenten.",
+  "status.agent.commitCoAuthorOff": "Stop met PurpleBot als co-auteur toevoegen aan de commits van alle agenten.",
+  "status.agent.commitCoAuthorOn": "Voeg PurpleBot weer als co-auteur toe aan de commits van alle agenten.",
   "status.agent.browserProfileNew":
     "Maak het nieuwe browserprofiel {profile} en verplaats {agents} ernaartoe. Het heeft geen aanmeldingen. Hun open tabbladen sluiten.",
   "status.agent.browserProfileShared":
     "Verplaats {agents} naar het gedeelde browserprofiel. Ze krijgen de aanmeldingen en cookies ervan. Hun open tabbladen sluiten.",
   "status.agent.browserProfileOwn": "Geef {agents} elk een eigen browserprofiel. Hun open tabbladen sluiten.",
-  "status.agent.feedbackSending": "Je feedback wordt naar het OpenBot-team gestuurd…",
+  "status.agent.feedbackSending": "Je feedback wordt naar het PurpleBot-team gestuurd…",
   "status.agent.workflowDelete": "Verwijder de workflow {title} met zijn runs en versies. Zijn open stappen stoppen.",
   "status.agent.deleteAgents": "Verwijder {agents} met hun chats en bestanden. Je kunt dit niet ongedaan maken.",
   "status.agent.vaultCardFillFrames": "De kaartvelden staan in frames van {origins}.",
-  "status.agent.nearSignatureReceived": "OpenBot heeft de handtekening ontvangen. Je kunt dit tabblad sluiten.",
-  "status.agent.nearSignatureUnknown": "OpenBot wacht niet op deze handtekening. Start het opnieuw in OpenBot.",
+  "status.agent.nearSignatureReceived": "PurpleBot heeft de handtekening ontvangen. Je kunt dit tabblad sluiten.",
+  "status.agent.nearSignatureUnknown": "PurpleBot wacht niet op deze handtekening. Start het opnieuw in PurpleBot.",
   "status.agent.nearPayment": "Betaal {amount} {symbol} aan {recipient} uit de cryptowallet, voor {domain}: {reason}",
   "status.agent.nearSummaryCreate":
-    "Alle agents kunnen tot {amount} USD per dag betalen. Je kunt dit later wijzigen in OpenBot.",
-  "status.agent.nearSummaryGrant": "Laat deze OpenBot-app {days} dagen uit de wallet betalen, binnen je regels.",
+    "Alle agents kunnen tot {amount} USD per dag betalen. Je kunt dit later wijzigen in PurpleBot.",
+  "status.agent.nearSummaryGrant": "Laat deze PurpleBot-app {days} dagen uit de wallet betalen, binnen je regels.",
   "status.agent.nearSummaryBudget": "Wijzig het dagbudget van de wallet naar {amount} USD.",
   "status.agent.nearSummaryAutoPay":
-    "Laat OpenBot zonder je handtekening betalen als een betaalregel dat toestaat. Voor andere betalingen krijg je nog steeds een vraag in de chat.",
+    "Laat PurpleBot zonder je handtekening betalen als een betaalregel dat toestaat. Voor andere betalingen krijg je nog steeds een vraag in de chat.",
   "status.agent.nearSummaryPayment": "Keur de betaling van {amount} aan {recipient} goed.",
   "status.agent.nearSummaryFreeze": "Agents kunnen niet uit deze wallet betalen tot je de betalingen hervat.",
   "status.agent.nearSummaryUnfreeze": "Agents kunnen weer uit deze wallet betalen, binnen je regels.",
@@ -135,9 +135,9 @@ export const messages = {
   "status.agent.memoryChangesWithConflicts":
     "Geheugen: {saved} opgeslagen, {updated} bijgewerkt, {forgotten} vergeten, {notChanged} niet gewijzigd omdat een andere thread ze eerst heeft gewijzigd.",
   "status.agent.mcpServerAdd":
-    "De MCP-server {name} toevoegen: {target}. Elke agent op deze server krijgt de tools ervan. OpenBot maakt verbinding om hem te testen.",
+    "De MCP-server {name} toevoegen: {target}. Elke agent op deze server krijgt de tools ervan. PurpleBot maakt verbinding om hem te testen.",
   "status.agent.mcpServerChange":
-    "De MCP-server {name} wijzigen naar {target}. Elke agent op deze server krijgt de tools ervan. OpenBot maakt verbinding om hem te testen.",
+    "De MCP-server {name} wijzigen naar {target}. Elke agent op deze server krijgt de tools ervan. PurpleBot maakt verbinding om hem te testen.",
   "status.agent.mcpServerHeaders": "Het wijzigt ook deze headers: {names}.",
   "status.agent.mcpServerEnable": "De MCP-server {name} aanzetten voor elke agent op deze server.",
   "status.agent.mcpServerDisable": "De MCP-server {name} uitzetten voor elke agent op deze server.",

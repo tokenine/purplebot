@@ -105,7 +105,7 @@ export function announcementMessage({ highlights, version, stores, dates, roleId
   );
   return [
     roleId === undefined ? "@Mobile Release Pings" : `<@&${roleId}>`,
-    `**OpenBot v${version} is out on ${storeList(stores)}**`,
+    `**PurpleBot v${version} is out on ${storeList(stores)}**`,
     ...others,
     "",
     ...highlights.map((highlight) => `- ${String(highlight).trim()}`),
@@ -310,7 +310,7 @@ async function sendPost(changelog: string, post: PlannedPost, endpoints: Endpoin
   const problems = [...roleProblems, ...("problems" in prepared ? prepared.problems : [])];
   if (problems.length > 0 || !("content" in prepared) || roleId === undefined) {
     fail([
-      `The Discord post for OpenBot mobile ${post.version} is not ready:`,
+      `The Discord post for PurpleBot mobile ${post.version} is not ready:`,
       ...problems.map((problem) => `- ${problem}`),
       "",
       `See ${DOCS}.`,
@@ -369,7 +369,7 @@ if (import.meta.main) {
     for (const message of messages) if ("problems" in message) problems.push(...message.problems);
     if (problems.length > 0) {
       fail([
-        `The Discord announcement for OpenBot mobile ${argument} is not ready:`,
+        `The Discord announcement for PurpleBot mobile ${argument} is not ready:`,
         ...[...new Set(problems)].map((problem) => `- ${problem}`),
         "",
         `See ${DOCS}.`,

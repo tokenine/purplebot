@@ -11,7 +11,7 @@ export const setCommitCoAuthorToolSchema = z.strictObject({
   enabled: z.boolean(),
 });
 
-const SETTING_PLACE = "Server settings > Agent defaults > Git commits > Credit OpenBot in commits";
+const SETTING_PLACE = "Server settings > Agent defaults > Git commits > Credit PurpleBot in commits";
 
 export type SetCommitCoAuthor = (enabled: boolean) => Effect.Effect<unknown, { readonly cause: unknown }>;
 
@@ -31,7 +31,7 @@ export const handleSetCommitCoAuthorTool = Effect.fn("SetCommitCoAuthorTool.hand
     if (options.current() === enabled) return openBotToolResult({ status: "unchanged", enabled });
     if (!options.requestedByPerson)
       return openBotToolFailure(
-        `Only a message from the owner of this OpenBot, in your chat or a thread they opened, can change this setting. When a person asked for it, tell them that the owner can change it in ${SETTING_PLACE}.`,
+        `Only a message from the owner of this PurpleBot, in your chat or a thread they opened, can change this setting. When a person asked for it, tell them that the owner can change it in ${SETTING_PLACE}.`,
       );
     const decision = yield* options.approve(
       sourceText(enabled ? "status.agent.commitCoAuthorOn" : "status.agent.commitCoAuthorOff"),

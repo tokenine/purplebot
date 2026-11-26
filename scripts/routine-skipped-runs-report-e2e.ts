@@ -21,9 +21,9 @@ import { RoutineTimer } from "../src/backend/routine-timer";
 const ROOT = resolve(import.meta.dirname, "..");
 const OUT = join(ROOT, ".openbot-build", "routine-skipped-runs-report-e2e");
 const STEP = 5 * 60_000;
-const NOTE_START = "OpenBot note, not from the user:";
+const NOTE_START = "PurpleBot note, not from the user:";
 const RUN_OPEN_REASON = sourceText("status.agent.routineSkippedRunOpen");
-const CLOSED_REASON = "Skipped: OpenBot was closed at the scheduled time.";
+const CLOSED_REASON = "Skipped: PurpleBot was closed at the scheduled time.";
 
 interface Fixture {
   store: AgentStore;
@@ -218,11 +218,11 @@ async function skippedWhileClosed(): Promise<CaseDetails> {
     const [run] = deliveredRuns(fixture, routine);
     assert.ok(run?.deliveryId, "The first occurrence after the restart starts a run.");
     const skipped = fixture.scheduler.skippedBefore(run);
-    assert.ok(skipped && skipped.count >= 1, "The runs missed while OpenBot was closed are counted.");
+    assert.ok(skipped && skipped.count >= 1, "The runs missed while PurpleBot was closed are counted.");
     assert.deepEqual(skipped.reasons, [CLOSED_REASON]);
     const note = skipNote(routineTaskText(fixture, run));
     assert.ok(note, "The run after the restart gets the skip note.");
-    assert.ok(note.includes(CLOSED_REASON), "The note says OpenBot was closed.");
+    assert.ok(note.includes(CLOSED_REASON), "The note says PurpleBot was closed.");
     assert.deepEqual(fixture.errors, []);
     return { skipped, note };
   } finally {
@@ -250,7 +250,7 @@ async function runCase(name: string, work: () => Promise<CaseDetails>): Promise<
 
 try {
   await runCase("skipped while the last run was open", skippedWhileRunOpen);
-  await runCase("skipped while OpenBot was closed", skippedWhileClosed);
+  await runCase("skipped while PurpleBot was closed", skippedWhileClosed);
 } finally {
   for (const root of ownedRoots) await rm(root, { recursive: true, force: true });
   const passed = cases.length === 2 && cases.every((row) => row.passed);

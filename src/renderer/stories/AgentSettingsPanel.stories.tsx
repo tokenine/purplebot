@@ -68,13 +68,13 @@ export const NotificationLevel: Story = {
 export const WorkspaceOnly: Story = { args: { agent: { ...STORY_AGENT, access: "workspace" } } };
 
 const STORY_FOLDERS: AgentFolderList = {
-  workspace: "/Users/sam/OpenBot/Agents/Chief",
-  shared: "/Users/sam/OpenBot/Shared",
+  workspace: "/Users/sam/PurpleBot/Agents/Chief",
+  shared: "/Users/sam/PurpleBot/Shared",
   folders: [
     { path: "/Users/sam/Projects/Leads", found: true },
     { path: "/Users/sam/Documents/Contracts 2026", found: false },
   ],
-  excluded: ["/Users/sam/Projects/Leads/Clients/Private", "/Users/sam/OpenBot/Agents/Chief/archive"],
+  excluded: ["/Users/sam/Projects/Leads/Clients/Private", "/Users/sam/PurpleBot/Agents/Chief/archive"],
 };
 
 function storyFolderCalls(): AgentFolderCalls {

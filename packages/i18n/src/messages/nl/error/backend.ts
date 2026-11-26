@@ -3,7 +3,7 @@ import type { messages as source } from "../../en/error/backend";
 
 export const messages = {
   "error.backend.eventsUnavailable": "Events zijn niet beschikbaar op deze host.",
-  "error.backend.databaseIntegrity": "De database van OpenBot heeft de integriteitscontrole niet doorstaan.",
+  "error.backend.databaseIntegrity": "De database van PurpleBot heeft de integriteitscontrole niet doorstaan.",
   "error.backend.creditsHoldAdminOnly":
     "Alleen een eigenaar of beheerder van deze server kan agents credits laten gebruiken.",
   "error.backend.creditsHoldShort": "Er zijn nog niet genoeg credits.",
@@ -21,8 +21,8 @@ export const messages = {
   "error.backend.browserViewLimit": "Er zijn te veel browserweergaven open op deze host.",
   "error.backend.browserViewEnded": "De live weergave van deze pagina is beëindigd.",
   "error.backend.browserViewFailed": "De live weergave van deze pagina is mislukt.",
-  "error.backend.windowTemporarilyUnavailable": "Het venster van OpenBot is tijdelijk niet beschikbaar.",
-  "error.backend.windowUnavailable": "Het venster van OpenBot is niet beschikbaar.",
+  "error.backend.windowTemporarilyUnavailable": "Het venster van PurpleBot is tijdelijk niet beschikbaar.",
+  "error.backend.windowUnavailable": "Het venster van PurpleBot is niet beschikbaar.",
   "error.backend.sunshineApiHttp": "Sunshine-API is mislukt met HTTP {status}.",
   "error.backend.sunshinePortsUnavailable": "Kan geen vrije Sunshine-poortgroep reserveren voor extern bureaublad.",
   "error.backend.moonlightPortsUnavailable":
@@ -38,7 +38,7 @@ export const messages = {
   "error.backend.moonlightRejectedPairing": "Moonlight heeft het koppelen met Sunshine geweigerd.",
   "error.backend.moonlightNoPin": "Moonlight heeft geen koppelpincode teruggegeven.",
   "error.backend.moonlightPairingIncomplete": "Koppelen met Moonlight is niet voltooid.",
-  "error.backend.moonlightWebNotEmbedded": "Moonlight Web is geen ingebouwde build van OpenBot.",
+  "error.backend.moonlightWebNotEmbedded": "Moonlight Web is geen ingebouwde build van PurpleBot.",
   "error.backend.moonlightEmptyResponse": "Moonlight gaf een leeg antwoord terug.",
   "error.backend.remoteDesktopTimeout": "Het verzoek voor extern bureaublad duurde te lang.",
   "error.backend.moonlightApiHttp": "Moonlight-API is mislukt met HTTP {status}.",
@@ -59,10 +59,10 @@ export const messages = {
   "error.backend.browserUserControlUnsupported":
     "Deze externe host ondersteunt het overnemen van een browsertabblad niet.",
   "error.backend.browserSignInUnsupported": "Deze externe host kan geen inlog van deze computer overnemen.",
-  "error.backend.browserSignInOpenFailed": "OpenBot kon het inlogvenster niet openen.",
+  "error.backend.browserSignInOpenFailed": "PurpleBot kon het inlogvenster niet openen.",
   "error.backend.browserSignInLoadFailed":
-    "OpenBot kon de pagina in het inlogvenster niet laden. Controleer de internetverbinding en open het inlogvenster daarna opnieuw.",
-  "error.backend.browserSignInReadFailed": "OpenBot kon de inlog niet uit het venster lezen.",
+    "PurpleBot kon de pagina in het inlogvenster niet laden. Controleer de internetverbinding en open het inlogvenster daarna opnieuw.",
+  "error.backend.browserSignInReadFailed": "PurpleBot kon de inlog niet uit het venster lezen.",
   "error.backend.browserStopUnsupported": "Deze externe host kan het laden van een pagina niet stoppen.",
   "error.backend.browserLocationFailed": "Kan de locatie voor de pagina niet instellen.",
   "error.backend.browserPermissionsUnsupported": "Deze externe host kan geen locatieverzoeken beantwoorden.",
@@ -76,23 +76,23 @@ export const messages = {
   "error.backend.sunshineNotReadyReason": "Sunshine is niet klaar geworden. {reason}",
   "error.backend.channelLeadModelUnavailable": "Het model van de kanaalleider is niet beschikbaar.",
   "error.backend.contextCompactionIneffective":
-    "Comprimeren maakt deze chat niet kleiner: na twee keer comprimeren gebruikt hij nog {percent}% van het contextvenster van het model, dus OpenBot stopt met comprimeren. Tools en instructies gebruiken het grootste deel van het venster. Zet de MCP-servers of computerbediening uit die deze agent niet nodig heeft, of kies een model met een groter venster. Start daarna een nieuwe chat.",
+    "Comprimeren maakt deze chat niet kleiner: na twee keer comprimeren gebruikt hij nog {percent}% van het contextvenster van het model, dus PurpleBot stopt met comprimeren. Tools en instructies gebruiken het grootste deel van het venster. Zet de MCP-servers of computerbediening uit die deze agent niet nodig heeft, of kies een model met een groter venster. Start daarna een nieuwe chat.",
   "error.backend.contextCompactionStopped":
-    "Twee compressies van deze chat zijn na elkaar mislukt, dus OpenBot comprimeert hem niet meer automatisch. Elke poging stuurt de hele chat naar het model en gebruikt je abonnementslimiet. Kies ‘Nu comprimeren’ om het opnieuw te proberen, of start een nieuwe chat.",
+    "Twee compressies van deze chat zijn na elkaar mislukt, dus PurpleBot comprimeert hem niet meer automatisch. Elke poging stuurt de hele chat naar het model en gebruikt je abonnementslimiet. Kies ‘Nu comprimeren’ om het opnieuw te proberen, of start een nieuwe chat.",
   "error.backend.contextCompactionRetrying":
-    "De provider kon deze chat niet comprimeren en probeert het opnieuw. Nieuwe berichten in deze chat wachten tot het comprimeren klaar is. Als het niet snel klaar is, stopt OpenBot het en verstuurt je berichten.",
+    "De provider kon deze chat niet comprimeren en probeert het opnieuw. Nieuwe berichten in deze chat wachten tot het comprimeren klaar is. Als het niet snel klaar is, stopt PurpleBot het en verstuurt je berichten.",
   "error.backend.contextCompactionFailed":
     "Het comprimeren van deze chat is mislukt. De chat is niet gewijzigd. Wachtende berichten gaan nu naar de agent.",
   "error.backend.contextCompactionTimedOut":
-    "Het comprimeren van deze chat duurde te lang, dus OpenBot heeft het gestopt. De chat is niet gewijzigd. Wachtende berichten gaan nu naar de agent.",
+    "Het comprimeren van deze chat duurde te lang, dus PurpleBot heeft het gestopt. De chat is niet gewijzigd. Wachtende berichten gaan nu naar de agent.",
   "error.backend.providerModelAtCapacity":
     "Het model zit aan zijn capaciteit. De provider probeert het over een paar minuten opnieuw. Stop de beurt en kies een ander model om nu door te gaan.",
   "error.backend.providerRetrying":
     "De provider kon dit verzoek {attempts} keer niet uitvoeren en probeert het opnieuw. Als de agent niet verdergaat, stop dan de beurt.",
   "error.backend.providerRetryingLargeContext":
-    "De provider kon dit verzoek {attempts} keer niet uitvoeren en probeert het opnieuw. Deze chat gebruikt {percent}% van het contextvenster van het model. Als de agent niet verdergaat, stop dan de beurt: OpenBot comprimeert de chat dan voor het volgende bericht.",
+    "De provider kon dit verzoek {attempts} keer niet uitvoeren en probeert het opnieuw. Deze chat gebruikt {percent}% van het contextvenster van het model. Als de agent niet verdergaat, stop dan de beurt: PurpleBot comprimeert de chat dan voor het volgende bericht.",
   "error.backend.sharedDataUnavailable": "Gedeelde gegevens zijn niet beschikbaar.",
-  "error.backend.shuttingDown": "OpenBot wordt afgesloten.",
+  "error.backend.shuttingDown": "PurpleBot wordt afgesloten.",
   "error.backend.channelUnconfirmedStart":
     "Het kanaal heeft een start van een opdracht die niet is bevestigd. Controleer het resultaat voordat je het verwijdert.",
   "error.backend.channelNotFound": "Kanaal niet gevonden.",
@@ -160,7 +160,7 @@ export const messages = {
     "De run is gestopt met een fout, maar zonder reden. Open de run om te zien wat de agent deed.",
   "error.backend.turnNotStarted": "De aanbieder heeft deze beurt niet gestart.",
   "error.backend.turnStartUnconfirmed":
-    "{provider} heeft niet op tijd bevestigd dat dit bericht is gestart. OpenBot stuurt het niet opnieuw, zodat het werk niet twee keer wordt uitgevoerd. OpenBot wacht tot 5 minuten tot de agent begint.",
+    "{provider} heeft niet op tijd bevestigd dat dit bericht is gestart. PurpleBot stuurt het niet opnieuw, zodat het werk niet twee keer wordt uitgevoerd. PurpleBot wacht tot 5 minuten tot de agent begint.",
   "error.backend.turnStartAbandoned":
     "De agent heeft dit bericht niet binnen 5 minuten gestart. Stuur het bericht opnieuw.",
   "error.backend.routineResultConnectionOff":
@@ -202,7 +202,7 @@ export const messages = {
   "error.backend.fileGone": "Het bestand bestaat niet of is al verwijderd.",
   "error.backend.managedAttachmentChanged": "Beheerde bijlage ontbreekt of is gewijzigd: {name}",
   "error.backend.mailboxStateCorrupt":
-    "De status van de postbus is beschadigd of komt van een nieuwere versie van OpenBot; OpenBot overschrijft deze niet.",
+    "De status van de postbus is beschadigd of komt van een nieuwere versie van PurpleBot; PurpleBot overschrijft deze niet.",
   "error.backend.recipientDeleting": "De ontvanger wordt verwijderd. Probeer het opnieuw als dit klaar is.",
   "error.backend.recipientHidden": "Deze agent is verborgen. Herstel de agent om berichten te sturen.",
   "error.backend.agentIdUnknown":
@@ -217,7 +217,7 @@ export const messages = {
   "error.backend.videoGenerationNoVideo": "Het maken van de video gaf geen video terug.",
   "error.backend.videoGenerationInterrupted": "Het maken van de video is onderbroken.",
   "error.backend.attachmentNotRegularFile": "Alleen gewone bestanden kunnen worden bijgevoegd: {name}",
-  "error.backend.attachmentCopyFailed": "OpenBot kon {name} niet kopiëren.",
+  "error.backend.attachmentCopyFailed": "PurpleBot kon {name} niet kopiëren.",
   "error.backend.routineNameRequired": "Een naam voor de routine is verplicht.",
   "error.backend.routineNameTooLong": "De naam van de routine is te lang.",
   "error.backend.routineInstructionRequired": "Een instructie voor de routine is verplicht.",
@@ -240,7 +240,7 @@ export const messages = {
   "error.backend.routineWaitForAgent": "Wacht tot de bewerking van de agent klaar is voordat je een routine uitvoert.",
   "error.backend.routineRunStarting": "Deze run van de routine start nog. Probeer het opnieuw als de beurt is gestart.",
   "error.backend.routineRunNoSession":
-    "OpenBot kan de actieve run van de routine niet onderbreken, omdat de sessie bij de aanbieder niet beschikbaar is.",
+    "PurpleBot kan de actieve run van de routine niet onderbreken, omdat de sessie bij de aanbieder niet beschikbaar is.",
   "error.backend.interruptSelf": "Een agent kan zichzelf niet onderbreken.",
   "error.backend.interruptOtherWork":
     "Deze agent werkt aan een taak die jouw bericht niet heeft gestart. Alleen de gebruiker of de afzender van die taak kan deze stoppen.",
@@ -248,7 +248,7 @@ export const messages = {
     "De beurt van deze agent werkt aan je bericht en ook aan een bericht van de gebruiker of een andere agent. Alleen de gebruiker kan hem stoppen, met Agent stoppen in de chat van die agent.",
   "error.backend.interruptStarting": "Deze agent start nog een beurt. Probeer het opnieuw als de beurt is gestart.",
   "error.backend.interruptNoSession":
-    "OpenBot kan deze agent niet onderbreken, omdat de sessie bij de aanbieder niet beschikbaar is.",
+    "PurpleBot kan deze agent niet onderbreken, omdat de sessie bij de aanbieder niet beschikbaar is.",
   "error.backend.memoryTextRequired": "Tekst voor de herinnering is verplicht.",
   "error.backend.memoryTextTooLong": "De tekst van de herinnering is te lang.",
   "error.backend.mcpServerGone": "Deze MCP-server bestaat niet meer.",
@@ -283,9 +283,9 @@ export const messages = {
   "error.backend.messagePinLimit":
     "Deze chat heeft 50 vastgemaakte berichten. Maak er één los voordat je een ander vastmaakt.",
   "error.backend.routineFlowHandoffFailed": "De routine kon het werk niet aan deze agent doorgeven.",
-  "error.backend.mcpServerLimit": "OpenBot bewaart maximaal {limit} MCP-servers.",
+  "error.backend.mcpServerLimit": "PurpleBot bewaart maximaal {limit} MCP-servers.",
   "error.backend.mcpServerNameTaken": "Er bestaat al een MCP-server met de naam {name}.",
-  "error.backend.mcpServerInvalid": "OpenBot kan deze MCP-serverconfiguratie niet opslaan.",
+  "error.backend.mcpServerInvalid": "PurpleBot kan deze MCP-serverconfiguratie niet opslaan.",
   "error.backend.mcpHeaderNameInvalid":
     "Headernamen mogen geen spaties of tekens zoals : ( ) / bevatten. Gebruik een naam zoals Authorization en zet de sleutel of het token bij Waarde.",
   "error.backend.mcpServerNoAnswer": "De server reageerde niet binnen {seconds} seconden.",
@@ -295,18 +295,18 @@ export const messages = {
   "error.backend.mcpSignInAccountRefused":
     "De server heeft het account geweigerd waarmee je bent ingelogd. Controleer of dit account de dienst mag gebruiken. Log uit en log opnieuw in om een ander account te gebruiken.",
   "error.backend.mcpSignInClientRefused":
-    "De inlogserver heeft OpenBot niet geaccepteerd bij het voltooien van de aanmelding. Meld je opnieuw aan: OpenBot registreert zich dan opnieuw bij de server.",
+    "De inlogserver heeft PurpleBot niet geaccepteerd bij het voltooien van de aanmelding. Meld je opnieuw aan: PurpleBot registreert zich dan opnieuw bij de server.",
   "error.backend.mcpSignInAppRefused":
     "De inlogserver heeft de inlog-app van deze server niet geaccepteerd. Controleer de client-ID en het clientgeheim van de inlog-app en log daarna opnieuw in.",
   "error.backend.mcpCommandNotFound": "Opdracht niet gevonden: {command}",
   "error.backend.mcpProviderLimit":
     "Deze agent kan maar een beperkt aantal MCP-servers gebruiken. Zet een MCP-server uit die de agent niet nodig heeft om deze server te gebruiken.",
   "error.backend.mcpRegistrationRefused":
-    "De inlogserver accepteert OpenBot nog niet als app. Dit ligt niet aan je account. Gebruik een andere manier om te verbinden, zoals een lokale MCP-server.",
+    "De inlogserver accepteert PurpleBot nog niet als app. Dit ligt niet aan je account. Gebruik een andere manier om te verbinden, zoals een lokale MCP-server.",
   "error.backend.mcpRegistrationUnavailable":
-    "De inlogserver kan OpenBot niet als app registreren. Dit ligt niet aan je account. Sla deze server op in Marktplaats, Apps, en voeg er daarna een inlog-app aan toe om te verbinden.",
+    "De inlogserver kan PurpleBot niet als app registreren. Dit ligt niet aan je account. Sla deze server op in Marktplaats, Apps, en voeg er daarna een inlog-app aan toe om te verbinden.",
   "error.backend.mcpSignInAppNeeded":
-    "De inlogserver kan OpenBot niet als app registreren. Dit ligt niet aan je account. Open deze server in Marktplaats, Apps, klik op Verbinding testen en voeg daarna een inlog-app toe om te verbinden.",
+    "De inlogserver kan PurpleBot niet als app registreren. Dit ligt niet aan je account. Open deze server in Marktplaats, Apps, klik op Verbinding testen en voeg daarna een inlog-app toe om te verbinden.",
   "error.backend.mcpSignInAbandonedGeneric": "Het inloggen is afgebroken.",
   "error.backend.mcpSignInForgotten": "De MCP-inlog is vergeten terwijl deze bezig was.",
   "error.backend.mcpSignInAbandoned": "Het inloggen bij MCP is afgebroken.",
@@ -314,9 +314,9 @@ export const messages = {
   "error.backend.mcpSignInNotWebPage": "Het inlogadres is geen webpagina.",
   "error.backend.mcpSignInRequired":
     "Deze server vraagt je om in te loggen. Kies Inloggen om verder te gaan in je browser.",
-  "error.backend.mcpSignInOnHost": "Deze server vraagt om in te loggen. Log in via OpenBot op de hostcomputer.",
+  "error.backend.mcpSignInOnHost": "Deze server vraagt om in te loggen. Log in via PurpleBot op de hostcomputer.",
   "error.backend.mcpSignInNeedsHttps":
-    "Deze server vraagt om in te loggen, en OpenBot logt alleen in via https. Wijzig de URL in {url}.",
+    "Deze server vraagt om in te loggen, en PurpleBot logt alleen in via https. Wijzig de URL in {url}.",
   "error.backend.mcpSignInOtherAddress":
     "Deze server meldt alleen aan op {url}. Wijzig de URL in dit adres en meld je daarna opnieuw aan.",
   "error.backend.mcpSignInCancelled": "Het inloggen is geannuleerd.",
@@ -324,9 +324,9 @@ export const messages = {
   "error.backend.mcpSignInRefused": "De inlogpagina weigerde de toegang. Log opnieuw in.",
   "error.backend.mcpSignInResponseTimedOut": "Het antwoord op het inloggen kwam niet op tijd.",
   "error.backend.mcpSignInMetadataUnreadable":
-    "OpenBot kon de inloggegevens van deze server niet lezen. Controleer het serveradres en probeer het opnieuw.",
+    "PurpleBot kon de inloggegevens van deze server niet lezen. Controleer het serveradres en probeer het opnieuw.",
   "error.backend.mcpSignInAnswerUnreadable":
-    "De inlogserver stuurde een antwoord dat OpenBot niet kan lezen. Als de dienst je een API-sleutel of token geeft, voeg die dan toe aan de instellingen van deze server en test de verbinding opnieuw.",
+    "De inlogserver stuurde een antwoord dat PurpleBot niet kan lezen. Als de dienst je een API-sleutel of token geeft, voeg die dan toe aan de instellingen van deze server en test de verbinding opnieuw.",
   "error.backend.mcpServerExited":
     "De server is gestopt voordat hij antwoordde. Voer de opdracht uit in een terminal om de fout te zien.",
   "error.backend.mcpServerExitedWithOutput": "De server is gestopt voordat hij antwoordde. Hij schreef: {detail}",
@@ -334,7 +334,7 @@ export const messages = {
     "De server is niet gestart, omdat de download is mislukt. Controleer de internetverbinding en probeer het opnieuw.",
   "error.backend.mcpServerFailedToStart": "De server is niet gestart: {reason}",
   "error.backend.mcpServerProgramMissing":
-    "OpenBot kon de MCP-server {name} niet starten, omdat het programma ervan niet is geïnstalleerd op de computer waarop OpenBot draait. Installeer de app die {name} levert op die computer, of zet {name} uit in Marktplaats, Apps.",
+    "PurpleBot kon de MCP-server {name} niet starten, omdat het programma ervan niet is geïnstalleerd op de computer waarop PurpleBot draait. Installeer de app die {name} levert op die computer, of zet {name} uit in Marktplaats, Apps.",
   "error.backend.mcpServerStartAbandoned":
     "{provider} stopte met wachten voordat de server was gestart, dus de agents ervan krijgen de tools van deze server niet.",
   "error.backend.mcpServerStoppedDuringCall": "De MCP-server stopte voordat hij op deze aanroep antwoordde.",
@@ -347,7 +347,7 @@ export const messages = {
   "error.backend.mcpServerFailedForProvider":
     "{provider} kon de MCP-server {name} niet starten. Open {name} in Marktplaats, Apps, en kies Verbinding testen om de oorzaak te zien.",
   "error.backend.mcpServerFailedInProvider":
-    "{provider} kon de MCP-server {name} niet starten. De tools ervan zijn niet beschikbaar voor {provider}. {provider} start de server zelf, dus de verbindingstest in OpenBot kan slagen. Begin een nieuwe chat om het opnieuw te proberen.",
+    "{provider} kon de MCP-server {name} niet starten. De tools ervan zijn niet beschikbaar voor {provider}. {provider} start de server zelf, dus de verbindingstest in PurpleBot kan slagen. Begin een nieuwe chat om het opnieuw te proberen.",
   "error.backend.mcpServerTimedOutInProvider":
     "{provider} kon de MCP-server {name} niet starten, omdat de server niet op tijd antwoordde. Begin een nieuwe chat om het opnieuw te proberen.",
   "error.backend.mcpServerUnavailableInProvider":
@@ -357,12 +357,12 @@ export const messages = {
   "error.backend.githubToolsNotStarted":
     "{provider} kon de GitHub-tools niet ophalen, omdat GitHub niet antwoordde. Open GitHub in Marktplaats, Apps, en verbind het opnieuw als daarom wordt gevraagd. Begin daarna een nieuwe chat om het opnieuw te proberen.",
   "error.backend.mcpOAuthProxyUnavailable":
-    "OpenBot kon de lokale inlogverbinding voor deze server niet starten. Start OpenBot opnieuw en probeer het nog eens.",
+    "PurpleBot kon de lokale inlogverbinding voor deze server niet starten. Start PurpleBot opnieuw en probeer het nog eens.",
   "error.backend.mcpOAuthSignInNeeded":
-    "De inlog bij deze MCP-server is verlopen. De gebruiker moet opnieuw inloggen in OpenBot.",
+    "De inlog bij deze MCP-server is verlopen. De gebruiker moet opnieuw inloggen in PurpleBot.",
   "error.backend.mcpOAuthRenewalFailed":
-    "OpenBot kon de aanmelding bij deze MCP-server nu niet vernieuwen. De aanmelding blijft bewaard en de volgende aanvraag probeert het opnieuw. Blijft deze fout, dan kan de gebruiker zich in OpenBot afmelden bij de server en opnieuw aanmelden.",
-  "error.backend.mcpServerUnreachable": "OpenBot kan de server niet bereiken. Controleer de URL en je netwerk.",
+    "PurpleBot kon de aanmelding bij deze MCP-server nu niet vernieuwen. De aanmelding blijft bewaard en de volgende aanvraag probeert het opnieuw. Blijft deze fout, dan kan de gebruiker zich in PurpleBot afmelden bij de server en opnieuw aanmelden.",
+  "error.backend.mcpServerUnreachable": "PurpleBot kan de server niet bereiken. Controleer de URL en je netwerk.",
   "error.backend.mcpLocalServerOff":
     "Er reageert geen server op {address} op deze computer. Start de server, of zet hem aan in de app die hem draait, en probeer het opnieuw.",
   "error.backend.mcpServerBlocked":
@@ -370,7 +370,7 @@ export const messages = {
   "error.backend.mcpServerIncompatible":
     "Er reageerde iets op dit adres, maar niet als MCP-server via Streamable HTTP. Controleer de URL en werk de app bij die de server draait.",
   "error.backend.mcpRemoteBridge":
-    "{reason} Deze opdracht draait de mcp-remote-brug. Kies in plaats daarvan Streamable HTTP met de URL {url}, dan logt OpenBot je in.",
+    "{reason} Deze opdracht draait de mcp-remote-brug. Kies in plaats daarvan Streamable HTTP met de URL {url}, dan logt PurpleBot je in.",
   "error.backend.oauthNotHttps": "Het OAuth-endpoint {origin} is geen https, dus de inloggegevens zijn niet verstuurd.",
   "error.backend.oauthTooManyRedirects": "Het OAuth-endpoint heeft te vaak doorgestuurd.",
   "error.backend.oauthRedirectOrigin":
@@ -426,14 +426,14 @@ export const messages = {
   "error.backend.approvalInactive": "Deze goedkeuring is niet meer actief.",
   "error.backend.approvalOwnerOnly": "Alleen de eigenaar van de server kan deze actie goedkeuren.",
   "error.backend.feedbackNeedsPhone":
-    "Alleen de OpenBot-app op de telefoon kan dit rapport sturen, omdat die de versie en het ondersteuningslog van de telefoon toevoegt. Open deze chat op de telefoon. Zie je dit bericht daar, werk dan de telefoon-app bij.",
+    "Alleen de PurpleBot-app op de telefoon kan dit rapport sturen, omdat die de versie en het ondersteuningslog van de telefoon toevoegt. Open deze chat op de telefoon. Zie je dit bericht daar, werk dan de telefoon-app bij.",
   "error.backend.takeoverInactive": "Deze overname van de browser is niet meer actief.",
   "error.backend.authSubmitting": "De verificatie wordt al verstuurd.",
-  "error.backend.apiKeyListFailed": "OpenBot kon de opgeslagen API-sleutels niet lezen.",
-  "error.backend.apiKeySaveFailed": "OpenBot kon de API-sleutel niet opslaan. Probeer het opnieuw.",
+  "error.backend.apiKeyListFailed": "PurpleBot kon de opgeslagen API-sleutels niet lezen.",
+  "error.backend.apiKeySaveFailed": "PurpleBot kon de API-sleutel niet opslaan. Probeer het opnieuw.",
   "error.backend.apiKeySaving": "De API-sleutel wordt al opgeslagen.",
   "error.backend.apiKeyAnswerUnreadable":
-    "OpenBot kon de API-sleutel niet lezen. Voer een sleutel van maximaal 8.000 tekens in en kies wie hem mag gebruiken.",
+    "PurpleBot kon de API-sleutel niet lezen. Voer een sleutel van maximaal 8.000 tekens in en kies wie hem mag gebruiken.",
   "error.backend.vaultItemSaving": "Het Kluis-item wordt al opgeslagen.",
   "error.backend.authRequestInactive": "Dit beveiligde verificatieverzoek is niet meer actief.",
   "error.backend.secureAuthUnavailable": "Beveiligde verificatie is niet beschikbaar.",
@@ -457,9 +457,9 @@ export const messages = {
   "error.backend.browserProxySignInRefused":
     "De proxy {name} heeft de aanmelding geweigerd, dus de pagina is niet geopend.",
   "error.backend.browserSystemProxyFailed":
-    "De proxy in de instellingen van de computer waarop OpenBot draait reageert niet of heeft de verbinding geweigerd, dus de pagina is niet geopend. Controleer de proxy-instellingen van die computer.",
+    "De proxy in de instellingen van de computer waarop PurpleBot draait reageert niet of heeft de verbinding geweigerd, dus de pagina is niet geopend. Controleer de proxy-instellingen van die computer.",
   "error.backend.browserSystemProxyOrSiteClosed":
-    "De site of de proxy in de instellingen van de computer waarop OpenBot draait heeft de verbinding zonder antwoord gesloten, dus de pagina is niet geopend. Als geen enkele site opent, controleer dan de proxy-instellingen van die computer.",
+    "De site of de proxy in de instellingen van de computer waarop PurpleBot draait heeft de verbinding zonder antwoord gesloten, dus de pagina is niet geopend. Als geen enkele site opent, controleer dan de proxy-instellingen van die computer.",
   "error.backend.browserProfileProxyOrSiteClosed":
     "De site of de proxy van dit browserprofiel heeft de verbinding zonder antwoord gesloten, dus de pagina is niet geopend. Als geen enkele site opent, controleer dan de proxy van het profiel.",
   "error.backend.browserProxyComputerUnreachable":
@@ -502,7 +502,7 @@ export const messages = {
   "error.backend.mcpSignInAppUrl": "De inlogapp heeft een geldige server-URL nodig.",
   "error.backend.mcpSignInAppClientId": "Voer de client-ID van de inlogapp in.",
   "error.backend.mcpSignInAppIssuerChanged":
-    "De inlogserver van deze MCP-server is gewijzigd, dus OpenBot heeft de inlogapp niet verstuurd. Als de wijziging klopt, verwijder je de inlogapp en voeg je deze opnieuw toe.",
+    "De inlogserver van deze MCP-server is gewijzigd, dus PurpleBot heeft de inlogapp niet verstuurd. Als de wijziging klopt, verwijder je de inlogapp en voeg je deze opnieuw toe.",
   "error.backend.mcpSignInAppNoServer": "Sla deze MCP-server op als URL-server voordat je een inlogapp toevoegt.",
   "error.backend.mcpSignInAppUnavailable": "Deze computer kan geen inlogapp bewaren.",
   "error.backend.taskMoveRefused":
@@ -535,6 +535,6 @@ export const messages = {
   "error.backend.taskOpenLimitReached":
     "Deze agent heeft {count} open taken. Sluit een taak en start of open dan een andere.",
   "error.backend.taskRemoteUnsupported": "Taken zijn alleen beschikbaar voor agents op deze computer.",
-  "error.backend.taskMessageFailed": "OpenBot kon het bericht niet naar de taak sturen. Probeer het later opnieuw.",
-  "error.backend.taskStartFailed": "OpenBot kon de taak niet starten. Doe het werk in plaats daarvan in deze beurt.",
+  "error.backend.taskMessageFailed": "PurpleBot kon het bericht niet naar de taak sturen. Probeer het later opnieuw.",
+  "error.backend.taskStartFailed": "PurpleBot kon de taak niet starten. Doe het werk in plaats daarvan in deze beurt.",
 } as const satisfies PartialTranslation<typeof source>;

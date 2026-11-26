@@ -111,14 +111,18 @@ export function mockWebRuntimeFor(mock: MockOpenBotControls, events: WebRuntimeE
     },
     cancelUpload: async () => {},
     discard: (id) => agent.discardDraftAttachment(id),
-    download: async () => ({ name: "preview.txt", mimeType: "text/plain", base64: btoa("OpenBot file preview") }),
+    download: async () => ({ name: "preview.txt", mimeType: "text/plain", base64: btoa("PurpleBot file preview") }),
     downloadPreview: async () => ({
       name: "preview.txt",
       mimeType: "text/plain",
-      base64: btoa("OpenBot file preview"),
+      base64: btoa("PurpleBot file preview"),
     }),
-    sharedFile: async () => ({ name: "preview.txt", mimeType: "text/plain", base64: btoa("OpenBot file preview") }),
-    workspaceFile: async () => ({ name: "preview.txt", mimeType: "text/plain", base64: btoa("OpenBot file preview") }),
+    sharedFile: async () => ({ name: "preview.txt", mimeType: "text/plain", base64: btoa("PurpleBot file preview") }),
+    workspaceFile: async () => ({
+      name: "preview.txt",
+      mimeType: "text/plain",
+      base64: btoa("PurpleBot file preview"),
+    }),
     workspaceDirectory: (agentId, path) => agent.listWorkspaceDirectory({ agentId, path }),
     react: (input) => agent.setMessageReaction(input),
     setAvatar: async (agentId, image) => {

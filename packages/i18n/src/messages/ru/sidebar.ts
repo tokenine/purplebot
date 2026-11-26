@@ -211,7 +211,7 @@ export const messages = {
   "sidebar.delete.pending": "Удаление…",
   "sidebar.delete.title": "Удалить «{name}»?",
   "sidebar.delete.agentDescription":
-    "Агент и его диалог в OpenBot будут удалены из приложения вместе с очередью, памятью, регулярными задачами и рабочим пространством. История, которую отдельно хранит подключённый CLI-провайдер, не удаляется.",
+    "Агент и его диалог в PurpleBot будут удалены из приложения вместе с очередью, памятью, регулярными задачами и рабочим пространством. История, которую отдельно хранит подключённый CLI-провайдер, не удаляется.",
   "sidebar.delete.channelDescription":
     "Канал будет остановлен. Его история останется в разделе «Удалённые каналы» только для просмотра. Оттуда канал можно восстановить. Агенты-участники сохранятся.",
   "sidebar.delete.sectionDescription":
@@ -253,6 +253,6 @@ export const messages = {
   "sidebar.community.title": "Присаживайтесь.",
   "sidebar.community.body": "В будущем ИИ есть место для вас. Присоединяйтесь к сообществу в Discord и X.",
   "sidebar.community.joinDiscord": "Войти в Discord",
-  "sidebar.community.followX": "Читать OpenBot в X",
+  "sidebar.community.followX": "Читать PurpleBot в X",
   "sidebar.community.dismiss": "Закрыть приглашение в сообщество",
 } as const satisfies PartialTranslation<typeof source>;

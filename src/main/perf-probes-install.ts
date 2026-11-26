@@ -392,9 +392,9 @@ function explain(limit = EXPLAIN_LIMIT) {
 type UtilityKind = "utility.database" | "utility.network" | "utility.voice" | "utility.other";
 
 function utilityKind(service: string): UtilityKind {
-  if (service === "OpenBot databases") return "utility.database";
+  if (service === "PurpleBot databases") return "utility.database";
   if (service.includes("NetworkService") || service === "Network Service") return "utility.network";
-  if (service.startsWith("OpenBot ")) return "utility.voice";
+  if (service.startsWith("PurpleBot ")) return "utility.voice";
   return "utility.other";
 }
 

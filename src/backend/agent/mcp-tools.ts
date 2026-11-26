@@ -75,17 +75,17 @@ const setEnabledSchema = z.strictObject({ name: serverName, enabled: z.boolean()
 
 const MCP_SCOPE = "The user selects which agents get each server, in Marketplace, Apps.";
 const MCP_APPROVAL =
-  "The user's request is the permission: call the tool without asking first. OpenBot asks the user to approve when your access needs it.";
+  "The user's request is the permission: call the tool without asking first. PurpleBot asks the user to approve when your access needs it.";
 
 export const MCP_SERVER_TOOL_DEFINITIONS = [
   {
     name: "list_mcp_servers",
-    description: `List the MCP servers of this OpenBot server: name, transport, on or off, address or command, the names of its headers and environment variables, sign-in, and forYou: you get its tools when it is on. Values are never shown. ${MCP_SCOPE} Read-only.`,
+    description: `List the MCP servers of this PurpleBot server: name, transport, on or off, address or command, the names of its headers and environment variables, sign-in, and forYou: you get its tools when it is on. Values are never shown. ${MCP_SCOPE} Read-only.`,
     shape: {},
   },
   {
     name: "save_mcp_server",
-    description: `Add an MCP server, or change one by its name, only when the user asks for it. ${MCP_SCOPE} ${MCP_APPROVAL} Then OpenBot connects to the server and saves it when it answers or needs only a sign-in or a key. The result is ready with its tools, needs_sign_in (a Sign in card is in the conversation: wait for the user), needs_key (save again with the key in headers when the user gave it; else the user enters it in Marketplace, Apps; never ask for a key in the chat), or the error. Keep a given address with its query; other keys go in headers. Environment values are not set here: a stdio server that cannot start without a key in its environment is added by the user in Marketplace, Apps. A server keeps the keys it holds only on its transport, address origin, command, arguments and folder. New tools reach the agents from their next turn.`,
+    description: `Add an MCP server, or change one by its name, only when the user asks for it. ${MCP_SCOPE} ${MCP_APPROVAL} Then PurpleBot connects to the server and saves it when it answers or needs only a sign-in or a key. The result is ready with its tools, needs_sign_in (a Sign in card is in the conversation: wait for the user), needs_key (save again with the key in headers when the user gave it; else the user enters it in Marketplace, Apps; never ask for a key in the chat), or the error. Keep a given address with its query; other keys go in headers. Environment values are not set here: a stdio server that cannot start without a key in its environment is added by the user in Marketplace, Apps. A server keeps the keys it holds only on its transport, address origin, command, arguments and folder. New tools reach the agents from their next turn.`,
     shape: saveMcpServerToolSchema.shape,
   },
   {
@@ -412,7 +412,7 @@ const findServer = (servers: AgentMcpServers, name: string) => {
 };
 
 const SIGN_IN_NEXT =
-  "A Sign in card is in this conversation. Only the user sees it: do not check it, and do not test again in this turn. Tell the user to press Sign in on it, end your turn, and test again when the user says it is done. Another needs_sign_in means only that the sign-in is not done; it is not an OpenBot fault. If the user sees no card, tell them to sign in from Marketplace, Apps, the server's page, and end your turn. Do not send openbot.send_feedback about the card unless the user asks for it, or says that the sign-in there failed too.";
+  "A Sign in card is in this conversation. Only the user sees it: do not check it, and do not test again in this turn. Tell the user to press Sign in on it, end your turn, and test again when the user says it is done. Another needs_sign_in means only that the sign-in is not done; it is not an PurpleBot fault. If the user sees no card, tell them to sign in from Marketplace, Apps, the server's page, and end your turn. Do not send openbot.send_feedback about the card unless the user asks for it, or says that the sign-in there failed too.";
 
 function signInNeeded(servers: AgentMcpServers, config: McpServerConfig, when = "") {
   const failure = servers.signInFailure(config);

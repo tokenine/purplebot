@@ -350,7 +350,7 @@ const FIRST_CONNECTION_WAIT_MS = 5_000;
 const STREAM_FLUSH_MS = 100;
 const EMPTY_SERVER: MobileServer = {
   id: "unavailable",
-  name: "OpenBot",
+  name: "PurpleBot",
   logoKey: null,
   kind: "local",
   state: "connecting",
@@ -1303,7 +1303,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
       supportLog.add(
         "info",
         "connection",
-        `${serverId} host OpenBot ${compatibility.appVersion}, protocol ${compatibility.protocol.minimum}-${compatibility.protocol.maximum}, capabilities: ${compatibility.capabilities.join(" ")}`,
+        `${serverId} host PurpleBot ${compatibility.appVersion}, protocol ${compatibility.protocol.minimum}-${compatibility.protocol.maximum}, capabilities: ${compatibility.capabilities.join(" ")}`,
       );
       if (negotiated.update === "client_update_required") {
         throw new Error(sourceText("error.remote.mobileUpdateRequired"));

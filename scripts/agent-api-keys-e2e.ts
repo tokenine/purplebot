@@ -58,7 +58,7 @@ interface AgentAnswer {
 }
 
 function agentAnswer(raw: string | undefined): AgentAnswer {
-  assert.ok(raw, "OpenBot did not answer the agent");
+  assert.ok(raw, "PurpleBot did not answer the agent");
   const parsed: { contentItems?: Array<{ text?: string }> } = JSON.parse(raw);
   const text = parsed.contentItems?.[0]?.text;
   assert.ok(text, "the answer has no text");
@@ -240,7 +240,7 @@ try {
     assert.deepEqual(names, ["OPENAI_API_KEY"]);
   });
 
-  await step("a key saved before a restart is masked once OpenBot registers the saved keys", async () => {
+  await step("a key saved before a restart is masked once PurpleBot registers the saved keys", async () => {
     const earlier = "e2e-key-saved-before-restart-91d2";
     await mkdir(join(root, "agent-api-keys", "agent-2"), { recursive: true, mode: 0o700 });
     await writeFile(join(root, "agent-api-keys", "agent-2", "ANTHROPIC_API_KEY"), earlier, { mode: 0o600 });
@@ -865,7 +865,7 @@ try {
     );
     const respond = (answers: Record<string, string[]>, responder?: PromptResponder) =>
       runCauseEffect(unreadRegistry.respondToPrompt({ requestId: id, answers }, responder));
-    const unreadable = /OpenBot could not read the API key/;
+    const unreadable = /PurpleBot could not read the API key/;
     await assert.rejects(
       respond({ [API_KEY_FIELD_ID]: [KEY], [API_KEY_SCOPE_FIELD_ID]: ["Todos os agentes"] }, MEMBER),
       unreadable,

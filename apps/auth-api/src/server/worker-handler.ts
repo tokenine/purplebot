@@ -1,14 +1,11 @@
 import { Effect, Result } from "effect";
-import { routeRequest as routeHostedSiteRequest } from "../../../site-router/src/index";
-import { passkeyWalletHostResponse } from "../lib/near-sign-csp";
-import { OPENBOT_SITE_URL } from "../lib/site-metadata";
 import { sendAccountActivitySnapshots } from "./account-activity";
 import { createAccountAnalytics, createAccountEventDelivery } from "./account-analytics";
 import { type AuthRetentionResult, pruneExpiredAuthData } from "./auth-data-retention";
 import { BillingSales } from "./billing-sales";
 import { BillingService } from "./billing-service";
 import { captureBillingSnapshot } from "./billing-snapshots";
-import { canonicalHostRedirect, permanentTrailingSlashRedirect } from "./canonical-redirect";
+import { permanentTrailingSlashRedirect } from "./canonical-redirect";
 import { CreditAudit } from "./credit-audit";
 import { CreditGrants } from "./credit-grants";
 import { CreditMediaService } from "./credit-media-service";
@@ -17,11 +14,9 @@ import { createHostedBilling } from "./hosted-billing";
 import { createHostedPoolAlert } from "./hosted-pool-alert";
 import { readHostedPool } from "./hosted-pool-snapshot";
 import type { HostedServerBindings } from "./hosted-server-service";
-import { HostedSiteService } from "./hosted-site-service";
 import { enforceMarketplaceIngress, MarketplaceRateLimitError } from "./marketplace-request-policy";
 import { mediaGatewayFromBinding } from "./media-gateway";
 import { observedD1 } from "./observed-d1";
-import { pageMarkdownResponse } from "./page-markdown";
 import {
   deliverPendingRemoteAuthEvents,
   type RemoteAuthEventBindings,
@@ -47,25 +42,12 @@ export function createWorkerHandler(
   return {
     async fetch(
       request: Request,
-      workerBindings: Pick<WorkerBindings, "MARKETPLACE_INGRESS_RATE_LIMITER"> &
-        Partial<
-          Pick<WorkerBindings, "SITES" | "SITE_LOCAL_ORIGIN" | "DB" | "OPENPANEL_CLIENT_ID" | "OPENPANEL_CLIENT_SECRET">
-        >,
+      workerBindings: Pick<WorkerBindings, "MARKETPLACE_INGRESS_RATE_LIMITER"> & Partial<Pick<WorkerBindings, "DB">>,
       context?: WorkerExecutionContext,
     ) {
       const bindings = workerBindings.DB ? { ...workerBindings, DB: observedD1(workerBindings.DB) } : workerBindings;
-      const hostRedirect = canonicalHostRedirect(request) ?? passkeyWalletHostResponse(request, OPENBOT_SITE_URL);
-      if (hostRedirect) return hostRedirect;
-      if (request.method === "GET" && new URL(request.url).pathname === "/billing/checkout-return") {
-        return runApiEffect(checkoutReturnResponse(request, bindings));
-      }
-      const earlyResponse = await runApiEffect(
-        Effect.gen(function* () {
-          const localSiteResponse = yield* serveLocalHostedSite(request, bindings);
-          if (localSiteResponse) return localSiteResponse;
-          yield* enforceMarketplaceIngress(request, bindings);
-          return null;
-        }).pipe(
+      const limitedResponse = await runApiEffect(
+        enforceMarketplaceIngress(request, bindings).pipe(
           Effect.catchIf(
             (error) => error instanceof MarketplaceRateLimitError,
             (error) =>
@@ -85,9 +67,7 @@ export function createWorkerHandler(
           ),
         ),
       );
-      if (earlyResponse) return earlyResponse;
-      const markdown = await pageMarkdownResponse(request, fetchHandler);
-      if (markdown) return markdown;
+      if (limitedResponse) return limitedResponse;
       const response = Promise.resolve(fetchHandler(request)).then((result) =>
         permanentTrailingSlashRedirect(request, result),
       );
@@ -104,7 +84,7 @@ export function createWorkerHandler(
     async scheduled(
       controller: Pick<ScheduledController, "scheduledTime"> & Partial<Pick<ScheduledController, "cron">>,
       workerBindings: RemoteAuthEventBindings &
-        Partial<Pick<WorkerBindings, "SITES" | HostedServerTickBindingKey> & SignalEntryBindings>,
+        Partial<Pick<WorkerBindings, HostedServerTickBindingKey> & SignalEntryBindings>,
     ) {
       const bindings = { ...workerBindings, DB: observedD1(workerBindings.DB) };
       if (controller.cron === SIGNAL_ENTRY_CRON) {
@@ -119,14 +99,11 @@ export function createWorkerHandler(
         }
         return isDailyRetentionRun(now) ? yield* prune(bindings.DB, now) : null;
       });
-      const [retention, , sites] = await runApiEffect(
+      const [retention] = await runApiEffect(
         Effect.all(
           [
             Effect.exit(hostingThenRetention),
             Effect.exit(deliverRemoteAuthEvents(bindings, now)),
-            Effect.exit(
-              bindings.SITES ? new HostedSiteService(bindings.DB, bindings.SITES).cleanup(now) : Effect.succeed(null),
-            ),
             Effect.exit(tickSalesAnalytics(bindings, now)),
             Effect.exit(tickHostedPool(bindings, now)),
             Effect.exit(tickReferralCredit(bindings)),
@@ -137,21 +114,10 @@ export function createWorkerHandler(
           { concurrency: "unbounded" },
         ).pipe(
           Effect.flatMap(
-            ([
-              retentionExit,
-              deliveryExit,
-              sitesExit,
-              salesExit,
-              poolExit,
-              referralExit,
-              holdsExit,
-              grantsExit,
-              activityExit,
-            ]) =>
+            ([retentionExit, deliveryExit, salesExit, poolExit, referralExit, holdsExit, grantsExit, activityExit]) =>
               Effect.all([
                 retentionExit,
                 deliveryExit,
-                sitesExit,
                 salesExit,
                 poolExit,
                 referralExit,
@@ -163,7 +129,6 @@ export function createWorkerHandler(
         ),
       );
       if (retention) log(retention);
-      if (sites) console.info("Hosted site cleanup completed.", sites);
     },
   } satisfies ExportedHandler<WorkerBindings>;
 }
@@ -185,14 +150,20 @@ type SalesBindings = Pick<WorkerBindings, "DB"> &
   Partial<
     Pick<
       WorkerBindings,
-      "STRIPE_SECRET_KEY" | "OPENPANEL_CLIENT_ID" | "OPENPANEL_CLIENT_SECRET" | "HOSTED_POOL_ALERT_WEBHOOK_URL"
+      | "STRIPE_SECRET_KEY"
+      | "OPENPANEL_API_URL"
+      | "OPENPANEL_CLIENT_ID"
+      | "OPENPANEL_CLIENT_SECRET"
+      | "HOSTED_POOL_ALERT_WEBHOOK_URL"
     >
   >;
 
 const tickSalesAnalytics = Effect.fn("SalesAnalytics.tick")(function* (bindings: SalesBindings, now: number) {
-  if (!bindings.OPENPANEL_CLIENT_ID?.trim() || !bindings.OPENPANEL_CLIENT_SECRET?.trim()) return;
+  const apiUrl = bindings.OPENPANEL_API_URL?.trim();
+  if (!apiUrl || !bindings.OPENPANEL_CLIENT_ID?.trim() || !bindings.OPENPANEL_CLIENT_SECRET?.trim()) return;
   const options = {
     database: bindings.DB,
+    apiUrl,
     clientId: bindings.OPENPANEL_CLIENT_ID,
     clientSecret: bindings.OPENPANEL_CLIENT_SECRET,
     fetch: (input: string, init: RequestInit) => fetch(input, init),
@@ -218,11 +189,13 @@ const tickReferralCredit = Effect.fn("ReferralCredit.tick")(function* (bindings:
   yield* billing.releaseReferralCredit();
 });
 
-type AnalyticsBindings = Pick<WorkerBindings, "DB" | "OPENPANEL_CLIENT_ID" | "OPENPANEL_CLIENT_SECRET">;
+type AnalyticsBindings = Pick<WorkerBindings, "DB"> &
+  Partial<Pick<WorkerBindings, "OPENPANEL_API_URL" | "OPENPANEL_CLIENT_ID" | "OPENPANEL_CLIENT_SECRET">>;
 
 function tickAnalytics(bindings: AnalyticsBindings) {
   const sends: Effect.Effect<void>[] = [];
   const analytics = createAccountAnalytics({
+    apiUrl: bindings.OPENPANEL_API_URL,
     clientId: bindings.OPENPANEL_CLIENT_ID,
     clientSecret: bindings.OPENPANEL_CLIENT_SECRET,
     fetch: (input, init) => fetch(input, init),
@@ -260,6 +233,7 @@ const tickCreditGrants = Effect.fn("CreditGrants.tick")(function* (bindings: Ana
 
 const tickAccountActivity = Effect.fn("AccountActivity.tick")(function* (bindings: AnalyticsBindings, now: number) {
   const deliver = createAccountEventDelivery({
+    apiUrl: bindings.OPENPANEL_API_URL,
     clientId: bindings.OPENPANEL_CLIENT_ID,
     clientSecret: bindings.OPENPANEL_CLIENT_SECRET,
     fetch: (input, init) => fetch(input, init),
@@ -268,48 +242,17 @@ const tickAccountActivity = Effect.fn("AccountActivity.tick")(function* (binding
 });
 
 const tickHostedPool = Effect.fn("HostedPool.tick")(function* (bindings: SalesBindings, now: number) {
-  if (!bindings.OPENPANEL_CLIENT_ID?.trim() || !bindings.OPENPANEL_CLIENT_SECRET?.trim()) return;
+  if (
+    !bindings.OPENPANEL_API_URL?.trim() ||
+    !bindings.OPENPANEL_CLIENT_ID?.trim() ||
+    !bindings.OPENPANEL_CLIENT_SECRET?.trim()
+  )
+    return;
   const groups = yield* readHostedPool(bindings.DB, now);
   if (groups.length === 0) return;
   const { analytics, flush } = tickAnalytics(bindings);
   for (const group of groups) analytics.track(null, { name: "hosted_pool_snapshot", group });
   yield* flush;
-});
-
-const checkoutReturnResponse = Effect.fn("BillingSales.returnResponse")(function* (
-  request: Request,
-  bindings: Partial<SalesBindings>,
-) {
-  const url = new URL(request.url);
-  const token = url.searchParams.get("token");
-  let destination = "/billing/return?kind=plan";
-  if (token && bindings.DB && bindings.OPENPANEL_CLIENT_ID && bindings.OPENPANEL_CLIENT_SECRET) {
-    const sales = new BillingSales({
-      database: bindings.DB,
-      clientId: bindings.OPENPANEL_CLIENT_ID,
-      clientSecret: bindings.OPENPANEL_CLIENT_SECRET,
-      fetch: (input, init) => fetch(input, init),
-    });
-    destination =
-      (yield* sales.returned(token).pipe(
-        Effect.catch(() =>
-          Effect.sync(() => {
-            console.warn("Checkout return analytics failed.");
-            return null;
-          }),
-        ),
-      )) ?? destination;
-  }
-  const location = new URL(destination, url.origin);
-  location.searchParams.set("cancelled", "1");
-  return new Response(null, {
-    status: 303,
-    headers: {
-      Location: location.href,
-      "Cache-Control": "no-store",
-      "Referrer-Policy": "no-referrer",
-    },
-  });
 });
 
 type HostedServerTickBindingKey =
@@ -319,6 +262,7 @@ type HostedServerTickBindingKey =
   | "REMOTE_TICKET_KEY_ID"
   | "STRIPE_SECRET_KEY"
   | "STRIPE_WEBHOOK_SECRET"
+  | "OPENPANEL_API_URL"
   | "OPENPANEL_CLIENT_ID"
   | "OPENPANEL_CLIENT_SECRET";
 
@@ -361,34 +305,6 @@ function tickHostedServers(
         return null;
       }),
     ),
-  );
-}
-
-function serveLocalHostedSite(
-  request: Request,
-  bindings: Partial<Pick<WorkerBindings, "SITES" | "SITE_LOCAL_ORIGIN">>,
-) {
-  if (!bindings.SITES || !bindings.SITE_LOCAL_ORIGIN) return Effect.succeed(null);
-  const requestUrl = new URL(request.url);
-  const configuredOrigin = new URL(bindings.SITE_LOCAL_ORIGIN);
-  const suffix = `.${configuredOrigin.hostname}`;
-  if (
-    requestUrl.protocol !== configuredOrigin.protocol ||
-    requestUrl.port !== configuredOrigin.port ||
-    !requestUrl.hostname.endsWith(suffix)
-  ) {
-    return Effect.succeed(null);
-  }
-  const label = requestUrl.hostname.slice(0, -suffix.length);
-  if (!/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/u.test(label)) return Effect.succeed(null);
-  const hostedUrl = new URL(requestUrl);
-  hostedUrl.protocol = "https:";
-  hostedUrl.hostname = `${label}.openbot.site`;
-  hostedUrl.port = "";
-  return routeHostedSiteRequest(
-    new Request(hostedUrl, request),
-    { SITES: bindings.SITES, SITE_SERVE_ENABLED: "true", ACCOUNT_ORIGIN: configuredOrigin.origin },
-    Date.now(),
   );
 }
 

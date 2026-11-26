@@ -60,7 +60,7 @@ export function WebConnectComputer(props: {
           <div class="web-connect-primary-actions">
             <a
               class={`web-connect-download ${buttonVariants({ variant: props.onCreateServer ? "outline" : "default" })}`}
-              href="/download"
+              href="https://github.com/tokenine/purplebot/releases"
               target="_blank"
               rel="noreferrer"
             >

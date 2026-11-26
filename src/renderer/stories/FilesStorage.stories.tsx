@@ -118,7 +118,7 @@ export const StorageError: Story = {
       args={{
         ...overviewArgs(),
         state: "error",
-        error: "OpenBot could not read ~/OpenBot/Agents. Check the folder permissions and try again.",
+        error: "PurpleBot could not read ~/PurpleBot/Agents. Check the folder permissions and try again.",
         scannedAt: null,
         breakdown: [],
         agentUsage: [],
@@ -348,6 +348,6 @@ export const ListLoading: Story = {
 export const ListError: Story = {
   name: "File list: Error",
   render: () => (
-    <ListStage error="The attachment index is not available. Restart OpenBot and try again." onRetry={fn()} />
+    <ListStage error="The attachment index is not available. Restart PurpleBot and try again." onRetry={fn()} />
   ),
 };

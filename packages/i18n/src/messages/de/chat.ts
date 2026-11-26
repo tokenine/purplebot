@@ -178,7 +178,7 @@ export const messages = {
   "chat.usageLimit.failed": "Das Modell konnte nicht geändert werden. Versuche es erneut.",
   "chat.marker.marketplaceSuggestion": "Marketplace-App vorgeschlagen",
   "chat.marker.settingLink": "Einstellung gezeigt",
-  "chat.settingLink.desktopOnly": "Öffne sie in der OpenBot-App auf deinem Computer.",
+  "chat.settingLink.desktopOnly": "Öffne sie in der PurpleBot-App auf deinem Computer.",
   "chat.settingLink.agentChatOnly": "Öffne sie in deinem Chat mit diesem Agenten.",
   "chat.marker.skillSuggestion": "Fähigkeit vorgeschlagen",
   "chat.marker.serverInstall": "Hat einen Befehl zum Installieren eines Servers erstellt",
@@ -501,7 +501,7 @@ export const messages = {
   "chat.suggestion.detailsNamed": "{name} im Marketplace öffnen",
   "chat.suggestion.dismissed": "Vorschlag für {name} ausgeblendet.",
   "chat.suggestion.undo": "Rückgängig",
-  "chat.suggestion.localOnly": "Verbinde {name} in OpenBot auf deinem eigenen Computer.",
+  "chat.suggestion.localOnly": "Verbinde {name} in PurpleBot auf deinem eigenen Computer.",
   "chat.suggestion.unavailable": "Dieser Server kann {name} nicht verbinden.",
   "chat.suggestion.notAllowed": "Nur der Serverbesitzer oder ein Admin kann {name} verbinden.",
   "chat.mcpSignIn.notNeeded": "{name} funktioniert jetzt ohne Anmeldung.",
@@ -522,7 +522,7 @@ export const messages = {
   "chat.reference.open.thread": "Thread {name} öffnen",
   "chat.feedbackSent.title": "Danke für dein Feedback 🙏",
   "chat.feedbackSent.badge": "Gesendet",
-  "chat.feedbackSent.body": "Das OpenBot-Team liest es und kümmert sich darum 💜",
+  "chat.feedbackSent.body": "Das PurpleBot-Team liest es und kümmert sich darum 💜",
   "chat.feedbackSent.openNamed": "Issue #{number} auf GitHub öffnen",
   "chat.feedbackSent.remove": "Entfernen",
   "chat.feedbackSent.removeConfirm":
@@ -540,15 +540,15 @@ export const messages = {
   "chat.feedbackSent.keep": "Behalten",
   "chat.feedbackSent.removing": "Wird entfernt…",
   "chat.feedbackSent.removeFailed":
-    "OpenBot konnte ihn nicht entfernen. Prüfe deine Verbindung und versuche es erneut.",
-  "chat.feedbackSent.removeSignedOut": "Melde dich bei OpenBot an, um ihn zu entfernen.",
+    "PurpleBot konnte ihn nicht entfernen. Prüfe deine Verbindung und versuche es erneut.",
+  "chat.feedbackSent.removeSignedOut": "Melde dich bei PurpleBot an, um ihn zu entfernen.",
   "chat.feedbackSent.removeNotYours":
-    "OpenBot kann diesen Bericht nicht entfernen. Er wurde gesendet, bevor Berichte entfernt werden konnten, oder mit einem anderen Konto.",
-  "chat.feedbackSent.removeUnavailable": "OpenBot kann gerade keine Berichte entfernen. Versuche es später erneut.",
+    "PurpleBot kann diesen Bericht nicht entfernen. Er wurde gesendet, bevor Berichte entfernt werden konnten, oder mit einem anderen Konto.",
+  "chat.feedbackSent.removeUnavailable": "PurpleBot kann gerade keine Berichte entfernen. Versuche es später erneut.",
   "chat.feedbackSent.removeLimited": "Zu viele Versuche. Warte eine Minute und versuche es dann erneut.",
-  "chat.feedbackSent.removeNotFound": "OpenBot findet diesen Bericht nicht im Chat.",
+  "chat.feedbackSent.removeNotFound": "PurpleBot findet diesen Bericht nicht im Chat.",
   "chat.feedbackSent.removeMoved":
-    "OpenBot kann diesen Bericht nicht entfernen. Er wurde an eine andere Stelle auf GitHub verschoben. Bitte das OpenBot-Team, ihn zu entfernen.",
+    "PurpleBot kann diesen Bericht nicht entfernen. Er wurde an eine andere Stelle auf GitHub verschoben. Bitte das PurpleBot-Team, ihn zu entfernen.",
   "chat.feedbackWithdrawn.title": "Bericht entfernt",
   "chat.feedbackWithdrawn.badge": "Entfernt",
   "chat.feedbackWithdrawn.body":

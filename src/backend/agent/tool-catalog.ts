@@ -52,7 +52,7 @@ export const DIRECT_BROWSER_TOOL_DEFINITIONS = BROWSER_TOOL_DEFINITIONS.filter((
 
 const DIRECT_BROWSER_DYNAMIC_TOOLS = BROWSER_DYNAMIC_TOOLS.map((namespace) => ({
   ...namespace,
-  description: "OpenBot's private, persistent browser. Run the other openbot_browser tools with openbot.tool_call.",
+  description: "PurpleBot's private, persistent browser. Run the other openbot_browser tools with openbot.tool_call.",
   tools: namespace.tools.filter((tool) => DIRECT_BROWSER_NAMES.has(tool.name)),
 }));
 
@@ -142,7 +142,7 @@ function dynamicTools(definitions: ReturnType<typeof toolDefinitions>) {
     {
       type: "namespace" as const,
       name: "openbot",
-      description: "OpenBot tools. Search, then call other built-in and browser tools.",
+      description: "PurpleBot tools. Search, then call other built-in and browser tools.",
       tools: definitions.map((definition) => ({
         type: "function" as const,
         name: definition.name,

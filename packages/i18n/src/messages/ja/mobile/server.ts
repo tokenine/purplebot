@@ -14,10 +14,10 @@ export const messages = {
   "mobile.server.drawer.hiddenServers": "非表示のサーバー",
   "mobile.server.drawer.hideFailed": "{name} を非表示にできませんでした",
   "mobile.server.drawer.showFailed": "{name} を表示できませんでした",
-  "mobile.server.drawer.actionFailed": "OpenBot はこの操作を完了できませんでした。もう一度お試しください。",
+  "mobile.server.drawer.actionFailed": "PurpleBot はこの操作を完了できませんでした。もう一度お試しください。",
   "mobile.server.drawer.moveUp": "上へ移動",
   "mobile.server.drawer.moveDown": "下へ移動",
-  "mobile.server.drawer.orderHint": "OpenBot は先頭のサーバーで開きます。順序はこのデバイスに保存されます。",
+  "mobile.server.drawer.orderHint": "PurpleBot は先頭のサーバーで開きます。順序はこのデバイスに保存されます。",
   "mobile.server.drawer.title": "サーバー",
   "mobile.server.drawer.serverSettings": "サーバー設定",
   "mobile.server.drawer.serverListHint": "サーバーの一覧を表示または非表示にします",
@@ -38,8 +38,8 @@ export const messages = {
   "mobile.server.drawer.close": "サーバーパネルを閉じる",
   "mobile.server.invite.noExpiry": "{role} · 有効期限なし",
   "mobile.server.invite.expires": "{role} · 有効期限 {date}",
-  "mobile.server.invite.loadFailed": "OpenBot はこの招待を読み込めませんでした。",
-  "mobile.server.invite.joinFailed": "OpenBot はこのサーバーに参加できませんでした。",
+  "mobile.server.invite.loadFailed": "PurpleBot はこの招待を読み込めませんでした。",
+  "mobile.server.invite.joinFailed": "PurpleBot はこのサーバーに参加できませんでした。",
   "mobile.server.invite.checking": "招待を確認しています…",
   "mobile.server.invite.unavailable": "招待を利用できません",
   "mobile.server.invite.verifying": "サーバーの身元を確認しています。",
@@ -83,7 +83,7 @@ export const messages = {
     "{name} が動作するコンピュータ上で、専用のエージェント、チャット、ファイルを持ちます。",
   "mobile.server.local.title": "新しいサーバー",
   "mobile.server.local.description":
-    "サーバーは {name} が動作するコンピュータで動作し、専用のエージェント、チャット、ファイルを持ちます。そのコンピュータで OpenBot が動作している間に利用できます。",
+    "サーバーは {name} が動作するコンピュータで動作し、専用のエージェント、チャット、ファイルを持ちます。そのコンピュータで PurpleBot が動作している間に利用できます。",
   "mobile.server.local.nameLabel": "サーバー名",
   "mobile.server.local.nameTooShort": "{limit} 文字以上にしてください。",
   "mobile.server.local.create": "作成",
@@ -95,26 +95,26 @@ export const messages = {
   "mobile.server.local.createdOn": "{name} は {computer} と同じコンピュータで動作しています。",
   "mobile.server.local.waiting": "{name} がオンラインになるのを待っています…",
   "mobile.server.local.notPublished":
-    "{name} は動作していますが、このスマートフォンからはまだ開けません。{computer} が動作するコンピュータの OpenBot がサインインしていて、オンラインであることを確認してください。",
+    "{name} は動作していますが、このスマートフォンからはまだ開けません。{computer} が動作するコンピュータの PurpleBot がサインインしていて、オンラインであることを確認してください。",
   "mobile.server.local.open": "サーバーを開く",
   "mobile.server.local.ownerOnly": "このコンピュータにサーバーを作成できるのはオーナーだけです。",
-  "mobile.server.local.unsupported": "ここでサーバーを作成するには、このコンピュータの OpenBot を更新してください。",
+  "mobile.server.local.unsupported": "ここでサーバーを作成するには、このコンピュータの PurpleBot を更新してください。",
   "mobile.server.local.deleteOffline":
-    "このサーバーを削除できるのは、そのコンピュータだけです。そのコンピュータで OpenBot を開いてから、もう一度お試しください。",
+    "このサーバーを削除できるのは、そのコンピュータだけです。そのコンピュータで PurpleBot を開いてから、もう一度お試しください。",
   "mobile.server.hosted.intro.title": "エージェントを常に稼働",
   "mobile.server.hosted.intro.description":
-    "クラウドサーバーは、コンピューターの電源が切れていてもエージェントとルーティンを実行します。セットアップと運用は OpenBot が行います。",
+    "クラウドサーバーは、コンピューターの電源が切れていてもエージェントとルーティンを実行します。セットアップと運用は PurpleBot が行います。",
   "mobile.server.hosted.planFacts": "{members} · {storage} · {sites} · {speed}",
   "mobile.server.hosted.steps.title": "コンピューターで追加",
-  "mobile.server.hosted.steps.open": "コンピューターで OpenBot を開きます。",
+  "mobile.server.hosted.steps.open": "コンピューターで PurpleBot を開きます。",
   "mobile.server.hosted.steps.settings": "「設定」→「ホスト型サーバー」に移動します。",
   "mobile.server.hosted.steps.add": "「サーバーを追加」を選択し、プランを選びます。",
   "mobile.server.hosted.plansToggle": "各プランの内容",
   "mobile.server.hosted.computer.add": "クラウドサーバーを追加",
   "mobile.server.hosted.computer.addHint":
-    "OpenBot で「設定」→「ホスト型サーバー」を開き、「サーバーを追加」を選択します。",
+    "PurpleBot で「設定」→「ホスト型サーバー」を開き、「サーバーを追加」を選択します。",
   "mobile.server.hosted.computer.change": "プランを変更",
-  "mobile.server.hosted.computer.changeHint": "OpenBot で「設定」→「お支払い」を開きます。",
+  "mobile.server.hosted.computer.changeHint": "PurpleBot で「設定」→「お支払い」を開きます。",
   "mobile.server.hosted.yourServers": "あなたのサーバー",
   "mobile.server.hosted.currentPlan": "ご利用中のプラン",
   "mobile.server.hosted.soldOut": "売り切れ",
@@ -132,7 +132,7 @@ export const messages = {
   "mobile.server.hosted.paymentTitle": "支払いを待っています",
   "mobile.server.hosted.paymentDescription": "支払いが確認されると、セットアップが始まります。",
   "mobile.server.hosted.progressTitle": "{name} をセットアップしています",
-  "mobile.server.hosted.progressDescription": "OpenBot が専用のマシンを準備しています。",
+  "mobile.server.hosted.progressDescription": "PurpleBot が専用のマシンを準備しています。",
   "mobile.server.hosted.closeHint":
     "このシートは閉じてもかまいません。セットアップは続き、準備ができるとサーバーが一覧に表示されます。",
   "mobile.server.hosted.readyTitle": "{name} の準備ができました",
@@ -140,21 +140,21 @@ export const messages = {
   "mobile.server.hosted.open": "サーバーを開く",
   "mobile.server.hosted.failedTitle": "サーバーを起動できませんでした",
   "mobile.server.hosted.failedDescription":
-    "もう一度お試しください。再び失敗した場合は、コンピューターの OpenBot の設定でサーバーを削除してください。",
+    "もう一度お試しください。再び失敗した場合は、コンピューターの PurpleBot の設定でサーバーを削除してください。",
   "mobile.server.hosted.retrying": "起動中…",
   "mobile.server.hosted.expiredTitle": "支払いページの有効期限が切れました",
   "mobile.server.hosted.expiredDescription": "サーバーの支払いが完了しなかったため、削除されました。",
   "mobile.server.hosted.step.payment": "支払いを確認",
   "mobile.server.hosted.step.create": "マシンを作成",
-  "mobile.server.hosted.step.start": "OpenBot を起動",
+  "mobile.server.hosted.step.start": "PurpleBot を起動",
   "mobile.server.hosted.step.connect": "アカウントに接続",
   "mobile.server.hosted.detail.payment": "Stripe を待っています",
   "mobile.server.hosted.detail.reserve": "専用のマシンを確保しています",
-  "mobile.server.hosted.detail.copy": "OpenBot をマシンにコピーしています",
+  "mobile.server.hosted.detail.copy": "PurpleBot をマシンにコピーしています",
   "mobile.server.hosted.detail.key": "一度だけ使えるサインインキーを追加しています",
   "mobile.server.hosted.detail.boot": "マシンの電源を入れています",
-  "mobile.server.hosted.detail.app": "OpenBot を起動しています",
-  "mobile.server.hosted.detail.wait": "OpenBot の応答を待っています",
+  "mobile.server.hosted.detail.app": "PurpleBot を起動しています",
+  "mobile.server.hosted.detail.wait": "PurpleBot の応答を待っています",
   "mobile.server.hosted.detail.signIn": "あなたとしてサインインしています",
   "mobile.server.hosted.detail.publish": "サーバーをアカウントに追加しています",
   "mobile.server.hosted.detail.check": "接続を確認しています",
@@ -162,7 +162,7 @@ export const messages = {
   "mobile.server.hosted.stepActive": "進行中",
   "mobile.server.hosted.stepPending": "未開始",
   "mobile.server.hosted.stepFailed": "失敗",
-  "mobile.server.scan.notInvitation": "この QR コードは OpenBot の招待ではありません。",
+  "mobile.server.scan.notInvitation": "この QR コードは PurpleBot の招待ではありません。",
   "mobile.server.scan.title": "招待をスキャン",
   "mobile.server.role.owner": "オーナー",
   "mobile.server.role.admin": "管理者",
@@ -199,7 +199,8 @@ export const messages = {
   "mobile.server.routines.status.paused": "一時停止中",
   "mobile.server.routines.status.failed": "失敗",
   "mobile.server.routines.status.completed": "完了",
-  "mobile.server.threads.unsupported": "このホストはスレッドに対応していません。ホストの OpenBot を更新してください。",
+  "mobile.server.threads.unsupported":
+    "このホストはスレッドに対応していません。ホストの PurpleBot を更新してください。",
   "mobile.server.threads.ask": "何をしてほしいですか？",
   "mobile.server.threads.chooseAgent": "スレッドを始める相手",
   "mobile.server.threads.agentLabel": "{name} とスレッドを始める",
@@ -266,7 +267,7 @@ export const messages = {
     "サーバーを停止してから再び起動します。約 1 分かかります。実行中のエージェントのターンは停止し、サーバーが戻るまでメンバーの接続は切れます。ファイルとチャットは保持されます。",
   "mobile.server.settings.restartConfirm": "再起動",
   "mobile.server.settings.restarted": "{name} を再起動しています",
-  "mobile.server.settings.restartUnsupported": "ここから再起動するには、このサーバーの OpenBot を更新してください。",
+  "mobile.server.settings.restartUnsupported": "ここから再起動するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.leaveTitle": "{name} から退出しますか？",
   "mobile.server.settings.leaveBody": "再度参加するには新しい招待が必要です。",
   "mobile.server.settings.leave": "サーバーから退出",
@@ -278,7 +279,7 @@ export const messages = {
   "mobile.server.settings.show": "サーバーを表示",
   "mobile.server.settings.deleteTitle": "{name} を削除しますか？",
   "mobile.server.settings.deleteBody":
-    "OpenBot はそのコンピュータでサーバーを停止し、エージェント、チャット、ファイルをそのコンピュータのゴミ箱に移動します。サーバーはすべてのデバイスのサーバー一覧から消えます。",
+    "PurpleBot はそのコンピュータでサーバーを停止し、エージェント、チャット、ファイルをそのコンピュータのゴミ箱に移動します。サーバーはすべてのデバイスのサーバー一覧から消えます。",
   "mobile.server.settings.delete": "サーバーを削除",
   "mobile.server.settings.name": "サーバー名",
   "mobile.server.settings.nameLength": "{min}〜{max} 文字で入力してください。",
@@ -290,7 +291,7 @@ export const messages = {
   "mobile.server.settings.identitySaveFailed": "サーバー名とロゴを保存できませんでした。もう一度お試しください。",
   "mobile.server.settings.identityNotAllowed": "サーバー名とロゴを変更できるのはオーナーと管理者だけです。",
   "mobile.server.settings.identityUnsupported":
-    "ここで名前とロゴを変更するには、このサーバーの OpenBot をアップデートしてください。",
+    "ここで名前とロゴを変更するには、このサーバーの PurpleBot をアップデートしてください。",
   "mobile.server.settings.identityOffline": "名前とロゴを変更するには、このサーバーに接続してください。",
   "mobile.server.settings.appearance": "形と色",
   "mobile.server.settings.appearanceShape": "形",
@@ -355,7 +356,7 @@ export const messages = {
   "mobile.server.storage.category.caches": "キャッシュされたサーバーのファイル",
   "mobile.server.storage.category.runtimes": "プロバイダーのランタイム",
   "mobile.server.storage.category.logs": "ログ",
-  "mobile.server.storage.total": "{name} の OpenBot",
+  "mobile.server.storage.total": "{name} の PurpleBot",
   "mobile.server.storage.used": "使用済み",
   "mobile.server.storage.byType": "種類別のストレージ",
   "mobile.server.storage.free": "このディスクの空き容量 {size}",
@@ -377,10 +378,10 @@ export const messages = {
   "mobile.server.storage.clearTitle.caches": "キャッシュされたサーバーのファイルを消去しますか？",
   "mobile.server.storage.clearTitle.logs": "ログを消去しますか？",
   "mobile.server.storage.clearBody.caches":
-    "サーバーのファイルのコピーです。開くと OpenBot がもう一度ダウンロードします。",
+    "サーバーのファイルのコピーです。開くと PurpleBot がもう一度ダウンロードします。",
   "mobile.server.storage.clearBody.logs": "診断ログです。新しいログがすぐに始まります。",
   "mobile.server.storage.clearFailed": "データを消去できませんでした",
-  "mobile.server.storage.clearFailedBody": "OpenBot はサーバー上のこのデータを消去できませんでした。",
+  "mobile.server.storage.clearFailedBody": "PurpleBot はサーバー上のこのデータを消去できませんでした。",
   "mobile.server.storage.noFiles": "このサーバーに保存されているファイルはありません。",
   "mobile.server.library.type.all": "すべて",
   "mobile.server.library.type.images": "画像",
@@ -468,7 +469,7 @@ export const messages = {
   "mobile.server.settings.timezoneUnavailable":
     "タイムゾーンを変更するには、オーナーまたは管理者としてこのサーバーに接続してください。",
   "mobile.server.settings.timezoneUnsupported":
-    "ここでタイムゾーンを変更するには、このサーバーの OpenBot を更新してください。",
+    "ここでタイムゾーンを変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.signalHomeAutomatic": "自動",
   "mobile.server.settings.signalHomeNearest": "最寄りの Signal サーバー",
   "mobile.server.settings.signalHomeInUse": "使用中: {name}",
@@ -477,7 +478,7 @@ export const messages = {
   "mobile.server.settings.signalHomeUnavailable":
     "Signal サーバーを変更するには、オーナーまたは管理者としてこのサーバーに接続してください。",
   "mobile.server.settings.signalHomeUnsupported":
-    "ここで Signal サーバーを変更するには、このサーバーの OpenBot を更新してください。",
+    "ここで Signal サーバーを変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.signalHomeDescription":
     "メンバーはこの Signal サーバーを通じてこのサーバーに接続します。レイテンシの低い Signal サーバーほど接続が速くなります。",
   "mobile.server.settings.signalHomeFallback":
@@ -497,7 +498,7 @@ export const messages = {
   "mobile.server.settings.voiceModelLoadFailed": "サーバーの音声認識モデルを読み込めませんでした。",
   "mobile.server.settings.voiceModelSaveFailed": "音声認識モデルを変更できませんでした。もう一度お試しください。",
   "mobile.server.settings.voiceModelUnsupported":
-    "ここで音声認識を変更するには、このサーバーの OpenBot を更新してください。",
+    "ここで音声認識を変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.voiceModelReady": "準備完了",
   "mobile.server.settings.voiceModelDownloading": "ダウンロード中: {percent}",
   "mobile.server.settings.voiceModelSize": "{size} のダウンロード",
@@ -522,7 +523,7 @@ export const messages = {
   "mobile.server.settings.keyChangeFailed": "サーバーキーを変更できませんでした。もう一度お試しください。",
   "mobile.server.settings.keyOwnerOnly": "サーバーキーを変更できるのはオーナーだけです。",
   "mobile.server.settings.keyUnsupported":
-    "ここでキーを変更するには、このサーバーの OpenBot をアップデートしてください。",
+    "ここでキーを変更するには、このサーバーの PurpleBot をアップデートしてください。",
   "mobile.server.settings.turnLimit": "同時に実行するスレッド",
   "mobile.server.settings.turnLimitDescription":
     "このサーバーで同時に実行できるエージェントのスレッド数です。スレッドが多いほどメモリーを多く使います。",
@@ -532,7 +533,7 @@ export const messages = {
   "mobile.server.settings.turnLimitsLoadFailed": "このサーバーのスレッド上限を読み込めませんでした。",
   "mobile.server.settings.turnLimitsSaveFailed": "スレッド上限を保存できませんでした。もう一度お試しください。",
   "mobile.server.settings.turnLimitsUnsupported":
-    "ここでスレッド上限を変更するには、このサーバーの OpenBot を更新してください。",
+    "ここでスレッド上限を変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.agentTaskLimit": "エージェントごとの並列スレッド",
   "mobile.server.settings.agentTaskLimitDescription":
     "独自の上限がない各エージェントが同時に実行できるスレッド数です。",
@@ -542,14 +543,14 @@ export const messages = {
   "mobile.server.settings.memoryLimitLoadFailed": "このサーバーのメモリー上限を読み込めませんでした。",
   "mobile.server.settings.memoryLimitSaveFailed": "メモリー数の上限を保存できませんでした。もう一度お試しください。",
   "mobile.server.settings.memoryLimitUnsupported":
-    "ここでメモリー数の上限を変更するには、このサーバーの OpenBot を更新してください。",
+    "ここでメモリー数の上限を変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.mediaApprovalCredits": "次の値を超えたら確認",
   "mobile.server.settings.mediaApprovalCreditsUnit": "クレジット",
   "mobile.server.settings.mediaApprovalCreditsLoadFailed": "このサーバーのクレジット確認の上限を読み込めませんでした。",
   "mobile.server.settings.mediaApprovalCreditsSaveFailed":
     "クレジット確認の上限を保存できませんでした。もう一度お試しください。",
   "mobile.server.settings.mediaApprovalCreditsUnsupported":
-    "ここでクレジット確認の上限を変更するには、このサーバーの OpenBot を更新してください。",
+    "ここでクレジット確認の上限を変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.mediaApprovalAgents": "エージェントのクレジット使用を許可",
   "mobile.server.settings.mediaApprovalAgentsSaveFailed":
     "エージェントのクレジット使用を変更できませんでした。もう一度お試しください。",
@@ -575,7 +576,7 @@ export const messages = {
   "mobile.server.settings.browsingMemoryLoadFailed": "閲覧の設定を読み込めませんでした。",
   "mobile.server.settings.learningSaveFailed": "この設定を保存できませんでした。もう一度お試しください。",
   "mobile.server.settings.learningUnsupported":
-    "ここでこの設定を変更するには、このサーバーの OpenBot を更新してください。",
+    "ここでこの設定を変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.responseStyleDescription":
     "ナチュラル: エージェントは作業中に短い進捗を送り、チャットに表示されます。クラシック: エージェントは完了時に一度だけ答えます。",
   "mobile.server.settings.responseStyleNatural": "ナチュラル",
@@ -583,17 +584,17 @@ export const messages = {
   "mobile.server.settings.personalityLoadFailed": "サーバーのパーソナリティを読み込めませんでした。",
   "mobile.server.settings.personalitySaveFailed": "応答スタイルを保存できませんでした。もう一度お試しください。",
   "mobile.server.settings.personalityUnsupported":
-    "ここで応答スタイルを変更するには、このサーバーの OpenBot を更新してください。",
+    "ここで応答スタイルを変更するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.settings.agentsUnavailable":
     "エージェントの設定を変更するには、オーナーまたは管理者としてこのサーバーに接続してください。",
   "mobile.server.route.browserProfiles": "ブラウザープロファイル",
   "mobile.server.browserProfiles.unavailable":
     "オンラインのサーバーのオーナーまたは管理者だけが、そのブラウザープロファイルを管理できます。",
   "mobile.server.browserProfiles.unsupported":
-    "ここでブラウザープロファイルを管理するには、このサーバーの OpenBot を更新してください。",
+    "ここでブラウザープロファイルを管理するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.browserProfiles.loading": "ブラウザープロファイルを読み込み中…",
-  "mobile.server.browserProfiles.loadFailed": "OpenBot はブラウザープロファイルを読み込めませんでした。",
-  "mobile.server.browserProfiles.saveFailed": "OpenBot はブラウザープロファイルを変更できませんでした。",
+  "mobile.server.browserProfiles.loadFailed": "PurpleBot はブラウザープロファイルを読み込めませんでした。",
+  "mobile.server.browserProfiles.saveFailed": "PurpleBot はブラウザープロファイルを変更できませんでした。",
   "mobile.server.browserProfiles.description":
     "各プロファイルは、サーバーを実行するコンピューターに独自のサインイン、Cookie、サイトデータを保持します。同じプロファイルを使うエージェントはサインインを共有します。",
   "mobile.server.browserProfiles.shared": "共有",
@@ -629,13 +630,13 @@ export const messages = {
     "プロファイルのサインイン、Cookie、サイトデータを削除します。開いているタブは閉じます。",
   "mobile.server.browserProfiles.deleteAgents": "これらのエージェントは共有プロファイルに変わります: {agents}。",
   "mobile.server.browserProxies.unsupported":
-    "ここでプロキシを管理するには、このサーバーの OpenBot を更新してください。",
+    "ここでプロキシを管理するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.browserProxies.loading": "プロキシを読み込んでいます…",
-  "mobile.server.browserProxies.loadFailed": "OpenBot はプロキシを読み込めませんでした。",
-  "mobile.server.browserProxies.saveFailed": "OpenBot はプロキシを変更できませんでした。",
+  "mobile.server.browserProxies.loadFailed": "PurpleBot はプロキシを読み込めませんでした。",
+  "mobile.server.browserProxies.saveFailed": "PurpleBot はプロキシを変更できませんでした。",
   "mobile.server.browserProxies.title": "プロキシ",
   "mobile.server.browserProxies.sectionHint":
-    "プロキシを設定したプロファイルは、そのプロキシを通じてページを開きます。メンバーは OpenBot デスクトップアプリからコンピュータを共有します。",
+    "プロキシを設定したプロファイルは、そのプロキシを通じてページを開きます。メンバーは PurpleBot デスクトップアプリからコンピュータを共有します。",
   "mobile.server.browserProxies.limit": "1 つのサーバーに作れるプロキシは最大 {limit} 個です。",
   "mobile.server.browserProxies.add": "プロキシを追加",
   "mobile.server.browserProxies.new": "新しいプロキシ",
@@ -663,7 +664,7 @@ export const messages = {
   "mobile.server.browserProxies.addressInvalid":
     "プロキシのアドレスではありません。socks5://host:1080、http://user:password@host:3128、または host:port:user:password を使用してください。",
   "mobile.server.browserProxies.computerHint":
-    "このコンピュータを使用するプロファイルのページは、メンバーが OpenBot デスクトップアプリで共有している間、このコンピュータのインターネット接続を通じて送信されます。このコンピュータは公開インターネット上のアドレスだけを開きます。",
+    "このコンピュータを使用するプロファイルのページは、メンバーが PurpleBot デスクトップアプリで共有している間、このコンピュータのインターネット接続を通じて送信されます。このコンピュータは公開インターネット上のアドレスだけを開きます。",
   "mobile.server.browserProxies.profilesTitle": "プロファイル",
   "mobile.server.browserProxies.delete": "プロキシを削除",
   "mobile.server.browserProxies.deleteHint": "削除すると、このプロキシのプロファイルは「自動」に切り替わります。",
@@ -679,11 +680,12 @@ export const messages = {
   "mobile.server.browserProxies.choiceHint":
     "「自動」は、サーバーを実行しているコンピューターのプロキシ設定を使用します。変更するとプロファイルの開いているタブは閉じます。",
   "mobile.server.browserProxies.shareHint":
-    "あなたのコンピュータを使用するには、OpenBot デスクトップアプリで共有してください。",
+    "あなたのコンピュータを使用するには、PurpleBot デスクトップアプリで共有してください。",
   "mobile.server.route.connectors": "コネクター",
   "mobile.server.connectors.unavailable":
     "コネクターを管理するには、オーナーまたは管理者としてこのサーバーに接続してください。",
-  "mobile.server.connectors.unsupported": "ここでコネクターを管理するには、このサーバーの OpenBot を更新してください。",
+  "mobile.server.connectors.unsupported":
+    "ここでコネクターを管理するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.connectors.loading": "コネクターを読み込んでいます…",
   "mobile.server.connectors.localOnly": "デスクトップアプリのみ",
   "mobile.server.connectors.statusConnected": "接続済み",
@@ -707,7 +709,7 @@ export const messages = {
   "mobile.server.connectors.bitwarden.description":
     "{host} のブラウザーのログインを Bitwarden または Vaultwarden から入力します。",
   "mobile.server.connectors.bitwarden.howItWorks":
-    "{host} は自分の Bitwarden CLI でサインインします。保管庫に Shared with OpenBot という名前のフォルダーを作成し、エージェントが使ってよいログインだけを入れてください。ウェブ保管庫で 設定 › セキュリティ › キー を開き、API キーを表示します。",
+    "{host} は自分の Bitwarden CLI でサインインします。保管庫に Shared with PurpleBot という名前のフォルダーを作成し、エージェントが使ってよいログインだけを入れてください。ウェブ保管庫で 設定 › セキュリティ › キー を開き、API キーを表示します。",
   "mobile.server.connectors.bitwarden.serverUrl": "サーバーのアドレス",
   "mobile.server.connectors.bitwarden.serverUrlHint":
     "Bitwarden、または Vaultwarden サーバーのアドレスです。{host} は HTTPS でこのアドレスに接続できる必要があります。",
@@ -721,7 +723,7 @@ export const messages = {
   "mobile.server.connectors.bitwarden.connectingBody":
     "{host} が Bitwarden にサインインしています。最初のサインインには数分かかることがあります。",
   "mobile.server.connectors.bitwarden.folderTitle": "共有フォルダ",
-  "mobile.server.connectors.bitwarden.folderName": "Shared with OpenBot",
+  "mobile.server.connectors.bitwarden.folderName": "Shared with PurpleBot",
   "mobile.server.connectors.bitwarden.folderKind": "Bitwarden のフォルダー",
   "mobile.server.connectors.bitwarden.folderFooter":
     "エージェントにログイン情報でサインインさせるには、Bitwarden でそのログイン情報をこのフォルダに移動してください。やめるには削除してください。",
@@ -732,7 +734,7 @@ export const messages = {
   "mobile.server.connectors.github.title": "GitHub",
   "mobile.server.connectors.github.description":
     "{host} のすべてのエージェントが、GitHub のリポジトリ、Issue、プルリクエスト、gh と git を使えます。",
-  "mobile.server.connectors.github.unavailable": "このサーバーの OpenBot は GitHub を接続できません。",
+  "mobile.server.connectors.github.unavailable": "このサーバーの PurpleBot は GitHub を接続できません。",
   "mobile.server.connectors.github.connect": "GitHub を接続",
   "mobile.server.connectors.github.codeTitle": "このコードを GitHub に入力してください",
   "mobile.server.connectors.github.codeFooter":
@@ -742,12 +744,12 @@ export const messages = {
   "mobile.server.connectors.github.connectedAs": "@{login} として接続済み",
   "mobile.server.connectors.github.chooseRepositories": "リポジトリを選ぶ",
   "mobile.server.connectors.github.repositoriesFooter":
-    "エージェントが使えるのは、OpenBot GitHub App がインストールされたリポジトリだけです。",
+    "エージェントが使えるのは、PurpleBot GitHub App がインストールされたリポジトリだけです。",
   "mobile.server.connectors.github.repositoriesTitle": "リポジトリ",
   "mobile.server.connectors.github.repositoriesLoading": "GitHub からリポジトリを読み込んでいます",
-  "mobile.server.connectors.github.repositoriesFailed": "OpenBot は GitHub からリポジトリを読み込めませんでした。",
+  "mobile.server.connectors.github.repositoriesFailed": "PurpleBot は GitHub からリポジトリを読み込めませんでした。",
   "mobile.server.connectors.github.noRepositories":
-    "OpenBot GitHub App はまだどのリポジトリにもインストールされていません。",
+    "PurpleBot GitHub App はまだどのリポジトリにもインストールされていません。",
   "mobile.server.connectors.github.moreRepositories": { other: "ほか {count} 件のリポジトリ" },
   "mobile.server.connectors.github.private": "非公開",
   "mobile.server.connectors.github.filterLabel": "リポジトリを絞り込む",
@@ -758,12 +760,12 @@ export const messages = {
   "mobile.server.connectors.github.disconnect": "GitHub を切断",
   "mobile.server.connectors.github.disconnectTitle": "GitHub を切断しますか？",
   "mobile.server.connectors.github.disconnectBody":
-    "{host} から @{login} のサインインが削除され、すべてのエージェントが GitHub のツール、gh、git を使えなくなります。その後 GitHub が開き、OpenBot のアクセスを取り消せます。",
+    "{host} から @{login} のサインインが削除され、すべてのエージェントが GitHub のツール、gh、git を使えなくなります。その後 GitHub が開き、PurpleBot のアクセスを取り消せます。",
   "mobile.server.connectors.onePassword.title": "1Password",
   "mobile.server.connectors.onePassword.description":
-    "サービスアカウントを通じて専用の 1Password 保管庫を {host} 上の OpenBot と共有すると、{host} のエージェントがそのブラウザーでサイトにサインインできます。",
+    "サービスアカウントを通じて専用の 1Password 保管庫を {host} 上の PurpleBot と共有すると、{host} のエージェントがそのブラウザーでサイトにサインインできます。",
   "mobile.server.connectors.onePassword.howItWorks":
-    "1Password.com で、OpenBot と共有する保管庫だけを読み取れるサービスアカウントを作成し、そのトークンをここに貼り付けてください。{host} がトークンを確認して保存します。このスマートフォンには保存されません。エージェントがパスワードを見ることはありません。",
+    "1Password.com で、PurpleBot と共有する保管庫だけを読み取れるサービスアカウントを作成し、そのトークンをここに貼り付けてください。{host} がトークンを確認して保存します。このスマートフォンには保存されません。エージェントがパスワードを見ることはありません。",
   "mobile.server.connectors.onePassword.token": "サービスアカウントのトークン",
   "mobile.server.connectors.onePassword.tokenPlaceholder": "ops_…",
   "mobile.server.connectors.onePassword.connect": "1Password を接続",
@@ -780,9 +782,9 @@ export const messages = {
     "{host} はトークンを削除します。保管庫とサービスアカウントは 1Password に残ります。不要になった場合は 1Password で削除してください。",
   "mobile.server.connectors.protonPass.title": "Proton Pass",
   "mobile.server.connectors.protonPass.description":
-    "Proton Pass の保管庫を 1 つ {host} の OpenBot と共有すると、{host} のエージェントがそのブラウザでサイトにサインインできます。",
+    "Proton Pass の保管庫を 1 つ {host} の PurpleBot と共有すると、{host} のエージェントがそのブラウザでサイトにサインインできます。",
   "mobile.server.connectors.protonPass.keyHelp":
-    "Proton Pass で、OpenBot と共有する保管庫だけを読み取れるアクセスキーを作成し、ここに貼り付けてください。キーは {host} が保持し、この電話には保存されません。",
+    "Proton Pass で、PurpleBot と共有する保管庫だけを読み取れるアクセスキーを作成し、ここに貼り付けてください。キーは {host} が保持し、この電話には保存されません。",
   "mobile.server.connectors.protonPass.keyPlaceholder": "pst_…",
   "mobile.server.connectors.protonPass.plan":
     "ご利用の Proton プランには Proton Pass のコマンドラインツールが含まれていません。Pass Plus を含む Proton プランが必要です。Mail Plus などのほかの有料プランには含まれません。アカウントのプランを変更してから、もう一度接続してください。",
@@ -824,25 +826,25 @@ export const messages = {
     "{host} はアクセスキーを削除します。保管庫とそのログインは {name} アカウントに残ります。",
   "mobile.server.connectors.slack.title": "Slack",
   "mobile.server.connectors.slack.description":
-    "Slack で @OpenBot をメンションするか、ダイレクトメッセージを送ります。Slack Orchestrator が適切なエージェントに依頼して回答します。",
+    "Slack で @PurpleBot をメンションするか、ダイレクトメッセージを送ります。Slack Orchestrator が適切なエージェントに依頼して回答します。",
   "mobile.server.connectors.slack.attention": { other: "{count} 件のワークスペースに対応が必要です" },
   "mobile.server.connectors.slack.connect": "Slack を接続",
   "mobile.server.connectors.slack.connectFooter":
-    "ブラウザーで Slack が開きます。右上でワークスペースを選び、「許可する」を押します。OpenBot は OpenBot という名前のアプリを 1 つインストールし、そのアプリはすべての公開チャンネルに参加します。",
+    "ブラウザーで Slack が開きます。右上でワークスペースを選び、「許可する」を押します。PurpleBot は PurpleBot という名前のアプリを 1 つインストールし、そのアプリはすべての公開チャンネルに参加します。",
   "mobile.server.connectors.slack.add": "ワークスペースを追加",
   "mobile.server.connectors.slack.limit": { other: "接続できるワークスペースは最大 {count} 件です。" },
   "mobile.server.connectors.slack.workspaceTitle": "ワークスペース",
   "mobile.server.connectors.slack.workspaceDescription":
-    "@OpenBot をメンションするか、ダイレクトメッセージを送ります。",
+    "@PurpleBot をメンションするか、ダイレクトメッセージを送ります。",
   "mobile.server.connectors.slack.missingScopes":
-    "OpenBot には Slack で次の権限がありません: {scopes}。ワークスペースを切断してから、もう一度接続してください。",
+    "PurpleBot には Slack で次の権限がありません: {scopes}。ワークスペースを切断してから、もう一度接続してください。",
   "mobile.server.connectors.slack.retryAt": "Slack から待機するよう求められました。{time} に再試行します。",
   "mobile.server.connectors.slack.helpInvalidToken":
-    "Slack はこのワークスペースで OpenBot を受け付けなくなりました。アンインストールされた可能性があります。ワークスペースをもう一度接続してください。",
+    "Slack はこのワークスペースで PurpleBot を受け付けなくなりました。アンインストールされた可能性があります。ワークスペースをもう一度接続してください。",
   "mobile.server.connectors.slack.helpSecretStorage":
-    "OpenBot は {host} に保存されたトークンを読み取れません。ワークスペースを切断してから、もう一度接続してください。",
+    "PurpleBot は {host} に保存されたトークンを読み取れません。ワークスペースを切断してから、もう一度接続してください。",
   "mobile.server.connectors.slack.helpRelay":
-    "{host} の OpenBot は Slack のイベントを受信できません。{host} でサインインし、サーバー設定でサーバーに名前を付けて、OpenBot を開いたままにしてください。",
+    "{host} の PurpleBot は Slack のイベントを受信できません。{host} でサインインし、サーバー設定でサーバーに名前を付けて、PurpleBot を開いたままにしてください。",
   "mobile.server.connectors.slack.helpNotLinked":
     "このワークスペースは {host} にリンクされていません。リンクするには「再接続」をタップしてください。",
   "mobile.server.connectors.slack.orchestratorTitle": "Slack Orchestrator",
@@ -852,37 +854,37 @@ export const messages = {
     "Slack Orchestrator を追加してください。追加しないと、Slack に回答が届きません。",
   "mobile.server.connectors.slack.addAgent": "Slack Orchestrator を追加",
   "mobile.server.connectors.slack.note":
-    "OpenBot はすべての公開チャンネルと新しいチャンネルに自動で参加します。非公開チャンネルには招待してください: /invite @OpenBot",
+    "PurpleBot はすべての公開チャンネルと新しいチャンネルに自動で参加します。非公開チャンネルには招待してください: /invite @PurpleBot",
   "mobile.server.connectors.slack.disconnectTitle": "{workspace} を切断しますか？",
   "mobile.server.connectors.slack.disconnectBody":
-    "OpenBot は {workspace} での回答を停止し、Slack のトークンを {host} から削除します。",
-  "mobile.server.connectors.slack.disconnectKept": "会話と Slack Orchestrator は OpenBot に残ります。",
-  "mobile.server.connectors.slack.disconnectDeleted": "Slack Orchestrator とその会話は OpenBot から削除されます。",
+    "PurpleBot は {workspace} での回答を停止し、Slack のトークンを {host} から削除します。",
+  "mobile.server.connectors.slack.disconnectKept": "会話と Slack Orchestrator は PurpleBot に残ります。",
+  "mobile.server.connectors.slack.disconnectDeleted": "Slack Orchestrator とその会話は PurpleBot から削除されます。",
   "mobile.server.connectors.slack.agentPromptTitle": "Slack Orchestrator を追加しますか？",
   "mobile.server.connectors.slack.agentPromptBody":
-    "この新しいエージェントは、{workspace} で @OpenBot に送られたすべてのメッセージに回答します。",
+    "この新しいエージェントは、{workspace} で @PurpleBot に送られたすべてのメッセージに回答します。",
   "mobile.server.connectors.slack.installFailed": "Slack でインストールが完了しませんでした。もう一度お試しください。",
   "mobile.server.connectors.discord.title": "Discord",
   "mobile.server.connectors.discord.description":
-    "Discord サーバーのチャンネルで @OpenBot をメンションします。Discord Orchestrator が適切なエージェントに依頼して回答します。",
+    "Discord サーバーのチャンネルで @PurpleBot をメンションします。Discord Orchestrator が適切なエージェントに依頼して回答します。",
   "mobile.server.connectors.discord.attention": { other: "{count} 件の Discord サーバーに対応が必要です" },
   "mobile.server.connectors.discord.connect": "Discord を接続",
   "mobile.server.connectors.discord.connectFooter":
-    "ブラウザーで Discord が開きます。Discord サーバーを選び、「認証」を押します。OpenBot は OpenBot という名前のボットを 1 つ追加します。",
+    "ブラウザーで Discord が開きます。Discord サーバーを選び、「認証」を押します。PurpleBot は PurpleBot という名前のボットを 1 つ追加します。",
   "mobile.server.connectors.discord.add": "Discord サーバーを追加",
   "mobile.server.connectors.discord.limit": { other: "接続できる Discord サーバーは最大 {count} 件です。" },
   "mobile.server.connectors.discord.workspaceTitle": "Discord サーバー",
   "mobile.server.connectors.discord.workspaceDescription":
-    "チャンネルで @OpenBot をメンションします。続けるには OpenBot に返信します。",
+    "チャンネルで @PurpleBot をメンションします。続けるには PurpleBot に返信します。",
   "mobile.server.connectors.discord.missingScopes":
-    "OpenBot には Discord で次の権限がありません: {scopes}。Discord サーバーを切断してから、もう一度接続してください。",
+    "PurpleBot には Discord で次の権限がありません: {scopes}。Discord サーバーを切断してから、もう一度接続してください。",
   "mobile.server.connectors.discord.retryAt": "Discord から待機するよう求められました。{time} に再試行します。",
   "mobile.server.connectors.discord.helpInvalidToken":
-    "Discord はこの Discord サーバーで OpenBot を受け付けなくなりました。削除された可能性があります。Discord サーバーをもう一度接続してください。",
+    "Discord はこの Discord サーバーで PurpleBot を受け付けなくなりました。削除された可能性があります。Discord サーバーをもう一度接続してください。",
   "mobile.server.connectors.discord.helpSecretStorage":
-    "OpenBot は {host} に保存されたトークンを読み取れません。Discord サーバーを切断してから、もう一度接続してください。",
+    "PurpleBot は {host} に保存されたトークンを読み取れません。Discord サーバーを切断してから、もう一度接続してください。",
   "mobile.server.connectors.discord.helpRelay":
-    "{host} の OpenBot は Discord のイベントを受信できません。{host} でサインインし、サーバー設定でサーバーに名前を付けて、OpenBot を開いたままにしてください。",
+    "{host} の PurpleBot は Discord のイベントを受信できません。{host} でサインインし、サーバー設定でサーバーに名前を付けて、PurpleBot を開いたままにしてください。",
   "mobile.server.connectors.discord.helpNotLinked":
     "この Discord サーバーは {host} にリンクされていません。リンクするには「再接続」をタップしてください。",
   "mobile.server.connectors.discord.orchestratorTitle": "Discord Orchestrator",
@@ -891,19 +893,20 @@ export const messages = {
   "mobile.server.connectors.discord.orchestratorNone":
     "Discord Orchestrator を追加してください。追加しないと、Discord に回答が届きません。",
   "mobile.server.connectors.discord.addAgent": "Discord Orchestrator を追加",
-  "mobile.server.connectors.discord.note": "OpenBot には、そのロールが閲覧できるチャンネルが見えます。",
+  "mobile.server.connectors.discord.note": "PurpleBot には、そのロールが閲覧できるチャンネルが見えます。",
   "mobile.server.connectors.discord.disconnectTitle": "{workspace} を切断しますか？",
   "mobile.server.connectors.discord.disconnectBody":
-    "OpenBot は {workspace} での回答を停止し、Discord の接続を {host} から削除します。",
-  "mobile.server.connectors.discord.disconnectKept": "会話と Discord Orchestrator は OpenBot に残ります。",
-  "mobile.server.connectors.discord.disconnectDeleted": "Discord Orchestrator とその会話は OpenBot から削除されます。",
+    "PurpleBot は {workspace} での回答を停止し、Discord の接続を {host} から削除します。",
+  "mobile.server.connectors.discord.disconnectKept": "会話と Discord Orchestrator は PurpleBot に残ります。",
+  "mobile.server.connectors.discord.disconnectDeleted":
+    "Discord Orchestrator とその会話は PurpleBot から削除されます。",
   "mobile.server.connectors.discord.agentPromptTitle": "Discord Orchestrator を追加しますか？",
   "mobile.server.connectors.discord.agentPromptBody":
-    "この新しいエージェントは、{workspace} で @OpenBot に送られたすべてのメッセージに回答します。",
+    "この新しいエージェントは、{workspace} で @PurpleBot に送られたすべてのメッセージに回答します。",
   "mobile.server.connectors.discord.installFailed": "Discord で認証が完了しませんでした。もう一度お試しください。",
   "mobile.server.connectors.telegram.title": "Telegram",
   "mobile.server.connectors.telegram.description":
-    "OpenBot ボットを Telegram グループに追加するか、ボットとのダイレクトチャットを開きます。Telegram Orchestrator が適切なエージェントに依頼して回答します。",
+    "PurpleBot ボットを Telegram グループに追加するか、ボットとのダイレクトチャットを開きます。Telegram Orchestrator が適切なエージェントに依頼して回答します。",
   "mobile.server.connectors.telegram.attention": { other: "{count} 件のチャットに対応が必要です" },
   "mobile.server.connectors.telegram.groupTitle": "グループ",
   "mobile.server.connectors.telegram.directTitle": "ダイレクトチャット",
@@ -911,11 +914,11 @@ export const messages = {
   "mobile.server.connectors.telegram.directDescription":
     "このチャットのすべてのメッセージが Telegram Orchestrator に届きます。",
   "mobile.server.connectors.telegram.helpRemoved":
-    "OpenBot ボットはこのチャットにいません。チャットを切断してから、ボットをもう一度追加してください。",
+    "PurpleBot ボットはこのチャットにいません。チャットを切断してから、ボットをもう一度追加してください。",
   "mobile.server.connectors.telegram.helpRelay":
-    "{host} の OpenBot は Telegram のメッセージを受信できません。{host} でサインインし、サーバー設定でサーバーに名前を付けて、OpenBot を開いたままにしてください。",
+    "{host} の PurpleBot は Telegram のメッセージを受信できません。{host} でサインインし、サーバー設定でサーバーに名前を付けて、PurpleBot を開いたままにしてください。",
   "mobile.server.connectors.telegram.helpError":
-    "OpenBot はこのチャットに接続できません。再接続するか、チャットを切断してください。",
+    "PurpleBot はこのチャットに接続できません。再接続するか、チャットを切断してください。",
   "mobile.server.connectors.telegram.helpNotLinked":
     "このチャットは {host} にリンクされていません。リンクするには「再接続」をタップしてください。",
   "mobile.server.connectors.telegram.retryAt": "Telegram から待機するよう求められました。{time} に再試行します。",
@@ -928,16 +931,16 @@ export const messages = {
   "mobile.server.connectors.telegram.openDirectChat": "ダイレクトチャットを開く",
   "mobile.server.connectors.telegram.orchestratorTitle": "Telegram Orchestrator",
   "mobile.server.connectors.telegram.orchestratorDescription":
-    "このエージェントは、すべての Telegram チャットから OpenBot 宛てのメッセージを受け取ります。短いものには自分で回答し、その他の作業は適切なエージェントに任せて、回答をチャットに投稿します。",
+    "このエージェントは、すべての Telegram チャットから PurpleBot 宛てのメッセージを受け取ります。短いものには自分で回答し、その他の作業は適切なエージェントに任せて、回答をチャットに投稿します。",
   "mobile.server.connectors.telegram.orchestratorNone":
     "Telegram Orchestrator を追加してください。追加しないと、Telegram に回答が届きません。",
   "mobile.server.connectors.telegram.addAgent": "Telegram Orchestrator を追加",
   "mobile.server.connectors.telegram.disconnectTitle": "{chat} を切断しますか？",
   "mobile.server.connectors.telegram.disconnectBody":
-    "OpenBot ボットは {chat} から退出し、OpenBot はそこでの回答を停止します。",
-  "mobile.server.connectors.telegram.disconnectKept": "会話と Telegram Orchestrator は OpenBot に残ります。",
+    "PurpleBot ボットは {chat} から退出し、PurpleBot はそこでの回答を停止します。",
+  "mobile.server.connectors.telegram.disconnectKept": "会話と Telegram Orchestrator は PurpleBot に残ります。",
   "mobile.server.connectors.telegram.disconnectDeleted":
-    "これが最後のチャットのため、Telegram Orchestrator とその会話は OpenBot から削除されます。",
+    "これが最後のチャットのため、Telegram Orchestrator とその会話は PurpleBot から削除されます。",
   "mobile.server.connectors.whatsapp.title": "WhatsApp",
   "mobile.server.connectors.whatsapp.description":
     "WhatsApp の番号をこのサーバーにリンクします。WhatsApp Orchestrator が適切なエージェントに依頼して回答します。",
@@ -947,29 +950,29 @@ export const messages = {
   "mobile.server.connectors.whatsapp.numbersTitle": "番号",
   "mobile.server.connectors.whatsapp.linkNumber": "番号をリンク",
   "mobile.server.connectors.whatsapp.ownNumberNote":
-    "あなたの「自分にメッセージ」チャットと、許可した人が OpenBot に連絡できます。",
+    "あなたの「自分にメッセージ」チャットと、許可した人が PurpleBot に連絡できます。",
   "mobile.server.connectors.whatsapp.dedicatedNote":
-    "あなたの「自分にメッセージ」チャットと、許可した人が OpenBot に連絡できます。ほかの人には、あなたに伝えるためのコードが届きます。",
+    "あなたの「自分にメッセージ」チャットと、許可した人が PurpleBot に連絡できます。ほかの人には、あなたに伝えるためのコードが届きます。",
   "mobile.server.connectors.whatsapp.helpLoggedOut":
     "WhatsApp がこのサーバーをリンク済みデバイスから削除しました。番号をもう一度リンクしてください。",
   "mobile.server.connectors.whatsapp.helpError":
-    "OpenBot はこの番号で WhatsApp に接続できません。再接続するか、番号を切断してください。",
+    "PurpleBot はこの番号で WhatsApp に接続できません。再接続するか、番号を切断してください。",
   "mobile.server.connectors.whatsapp.helpKeysUnreadable":
-    "OpenBot はこの番号の保存済みキーを読み取れません。番号をもう一度リンクしてください。",
+    "PurpleBot はこの番号の保存済みキーを読み取れません。番号をもう一度リンクしてください。",
   "mobile.server.connectors.whatsapp.retryAt": "WhatsApp から待機するよう求められました。{time} に再試行します。",
   "mobile.server.connectors.whatsapp.linkAgain": "再リンク",
   "mobile.server.connectors.whatsapp.ownNumber": "個人の番号",
   "mobile.server.connectors.whatsapp.ownNumberDescription":
-    "あなたの「自分にメッセージ」チャットと、許可した人だけが書き込めます。それ以外の人には返信しません。オフにすると、OpenBot は知らない人にコードを返信します。",
+    "あなたの「自分にメッセージ」チャットと、許可した人だけが書き込めます。それ以外の人には返信しません。オフにすると、PurpleBot は知らない人にコードを返信します。",
   "mobile.server.connectors.whatsapp.workingMessage": "「対応しています…」メッセージ",
   "mobile.server.connectors.whatsapp.workingMessageDescription":
-    "エージェントの作業中に OpenBot が送信し、その後、回答に置き換えます。前のリクエストを待っているリクエストには、待機中のメッセージも送信します。個人の番号では、あなたの「自分にメッセージ」チャットだけがこれらのメッセージを受け取ります。回答だけを送信するにはオフにしてください。",
+    "エージェントの作業中に PurpleBot が送信し、その後、回答に置き換えます。前のリクエストを待っているリクエストには、待機中のメッセージも送信します。個人の番号では、あなたの「自分にメッセージ」チャットだけがこれらのメッセージを受け取ります。回答だけを送信するにはオフにしてください。",
   "mobile.server.connectors.whatsapp.statusReactions": "ステータスのリアクション",
   "mobile.server.connectors.whatsapp.statusReactionsDescription":
-    "メッセージが届くと OpenBot が 👀 で、回答の準備ができると ✅ でリアクションします。リアクションを送信しないにはオフにしてください。",
+    "メッセージが届くと PurpleBot が 👀 で、回答の準備ができると ✅ でリアクションします。リアクションを送信しないにはオフにしてください。",
   "mobile.server.connectors.whatsapp.orchestratorTitle": "WhatsApp Orchestrator",
   "mobile.server.connectors.whatsapp.orchestratorDescription":
-    "このエージェントは、リンクしたすべての番号から OpenBot 宛てのメッセージを受け取ります。短いものには自分で回答し、その他の作業は適切なエージェントに任せて、WhatsApp で回答します。",
+    "このエージェントは、リンクしたすべての番号から PurpleBot 宛てのメッセージを受け取ります。短いものには自分で回答し、その他の作業は適切なエージェントに任せて、WhatsApp で回答します。",
   "mobile.server.connectors.whatsapp.orchestratorNone":
     "WhatsApp Orchestrator を追加してください。追加しないと、WhatsApp に回答が届きません。",
   "mobile.server.connectors.whatsapp.addAgent": "WhatsApp Orchestrator を追加",
@@ -979,14 +982,14 @@ export const messages = {
   "mobile.server.connectors.whatsapp.linkDescription":
     "番号を選んでから、スマートフォンの WhatsApp でこのサーバーをリンクします。",
   "mobile.server.connectors.whatsapp.codeOnly":
-    "スマートフォンではペアリングコードでリンクします。QR コードを読み取るには、コンピューターの OpenBot を使用してください。",
+    "スマートフォンではペアリングコードでリンクします。QR コードを読み取るには、コンピューターの PurpleBot を使用してください。",
   "mobile.server.connectors.whatsapp.kindLabel": "番号",
   "mobile.server.connectors.whatsapp.kindPersonal": "自分の個人番号",
   "mobile.server.connectors.whatsapp.kindPersonalDescription":
-    "OpenBot は、あなたの「自分にメッセージ」チャットと、許可した人にだけ回答します。それ以外の人には返信しません。",
-  "mobile.server.connectors.whatsapp.kindDedicated": "OpenBot 専用の番号",
+    "PurpleBot は、あなたの「自分にメッセージ」チャットと、許可した人にだけ回答します。それ以外の人には返信しません。",
+  "mobile.server.connectors.whatsapp.kindDedicated": "PurpleBot 専用の番号",
   "mobile.server.connectors.whatsapp.kindDedicatedDescription":
-    "OpenBot はこの番号から、知らない人それぞれに、あなたに伝えるためのコードを返信します。ここでその人を承認します。",
+    "PurpleBot はこの番号から、知らない人それぞれに、あなたに伝えるためのコードを返信します。ここでその人を承認します。",
   "mobile.server.connectors.whatsapp.phoneLabel": "電話番号",
   "mobile.server.connectors.whatsapp.phoneDescription": "国番号を含めて入力します（例: +44 7700 900123）。",
   "mobile.server.connectors.whatsapp.phoneInvalid": "電話番号を国番号付きで入力してください。",
@@ -1006,19 +1009,19 @@ export const messages = {
   "mobile.server.connectors.whatsapp.failedBusy":
     "別のリンクを実行中です。終わるのを待ってから、もう一度お試しください。",
   "mobile.server.connectors.whatsapp.failedUnavailable":
-    "OpenBot は WhatsApp に接続できません。インターネット接続を確認してください。",
+    "PurpleBot は WhatsApp に接続できません。インターネット接続を確認してください。",
   "mobile.server.connectors.whatsapp.tryAgain": "もう一度試す",
   "mobile.server.connectors.whatsapp.agentStepDescription":
-    "この新しいエージェントは、{number} と、あとでリンクする各番号で、OpenBot 宛てのメッセージに回答します。",
-  "mobile.server.connectors.whatsapp.doneTitle": "OpenBot が {number} にリンクされました",
+    "この新しいエージェントは、{number} と、あとでリンクする各番号で、PurpleBot 宛てのメッセージに回答します。",
+  "mobile.server.connectors.whatsapp.doneTitle": "PurpleBot が {number} にリンクされました",
   "mobile.server.connectors.whatsapp.done": "完了",
   "mobile.server.connectors.whatsapp.disconnectTitle": "{number} を切断しますか？",
   "mobile.server.connectors.whatsapp.disconnectBody":
-    "OpenBot は {number} の WhatsApp からログアウトします。OpenBot がオフだった場合は、WhatsApp の「リンク済みデバイス」からもデバイスを削除してください。",
+    "PurpleBot は {number} の WhatsApp からログアウトします。PurpleBot がオフだった場合は、WhatsApp の「リンク済みデバイス」からもデバイスを削除してください。",
   "mobile.server.connectors.whatsapp.disconnectEffect": "{number} からあなたのエージェントに連絡できなくなります。",
-  "mobile.server.connectors.whatsapp.removeEffectKept": "会話と WhatsApp Orchestrator は OpenBot に残ります。",
+  "mobile.server.connectors.whatsapp.removeEffectKept": "会話と WhatsApp Orchestrator は PurpleBot に残ります。",
   "mobile.server.connectors.whatsapp.removeEffectDeleted":
-    "これが最後の番号のため、WhatsApp Orchestrator とその会話は OpenBot から削除されます。",
+    "これが最後の番号のため、WhatsApp Orchestrator とその会話は PurpleBot から削除されます。",
   "mobile.server.connectors.whatsapp.keep": "リンクを維持",
   "mobile.server.connectors.whatsapp.sendersTitle": "{number} に書き込める人",
   "mobile.server.connectors.whatsapp.sendersDescription":
@@ -1032,7 +1035,7 @@ export const messages = {
   "mobile.server.connectors.whatsapp.makeReadOnly": "読み取り専用にする",
   "mobile.server.connectors.whatsapp.allowWork": "仕事を頼めるようにする",
   "mobile.server.connectors.whatsapp.readOnlyDetail":
-    "読み取り専用: エージェントはこのチャットを読めますが、OpenBot がここに書き込むことはありません。",
+    "読み取り専用: エージェントはこのチャットを読めますが、PurpleBot がここに書き込むことはありません。",
   "mobile.server.connectors.whatsapp.addContact": "連絡先を追加",
   "mobile.server.connectors.whatsapp.addGroup": "グループを追加",
   "mobile.server.connectors.whatsapp.contactTitle": "連絡先を追加",
@@ -1046,7 +1049,7 @@ export const messages = {
     "このグループのメンバーは、この番号をメンションするか、そのメッセージに返信すると、エージェントに作業を依頼できます。",
   "mobile.server.connectors.whatsapp.groupSearch": "グループを検索",
   "mobile.server.connectors.whatsapp.groupsLoading": "グループを読み込んでいます…",
-  "mobile.server.connectors.whatsapp.groupsLoadFailed": "OpenBot はグループを読み込めませんでした",
+  "mobile.server.connectors.whatsapp.groupsLoadFailed": "PurpleBot はグループを読み込めませんでした",
   "mobile.server.connectors.whatsapp.groupsEmpty": "この番号はどのグループにも参加していません。",
   "mobile.server.connectors.whatsapp.groupsNoMatch": "この名前のグループはありません。",
   "mobile.server.connectors.whatsapp.groupAdded": "追加済み",
@@ -1071,10 +1074,10 @@ export const messages = {
   "mobile.server.providers.unavailable":
     "プロバイダーを管理するには、オーナーまたは管理者としてこのサーバーに接続してください。",
   "mobile.server.providers.unsupported":
-    "ここでプロバイダーを管理するには、このサーバーの OpenBot を更新してください。",
+    "ここでプロバイダーを管理するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.providers.signInUnsupported":
     "このサーバーでは、スマートフォンからこのプロバイダーにサインインできません。",
-  "mobile.server.providers.actionFailed": "OpenBot はこの操作を完了できませんでした。もう一度お試しください。",
+  "mobile.server.providers.actionFailed": "PurpleBot はこの操作を完了できませんでした。もう一度お試しください。",
   "mobile.server.providers.openFailed": "サインインページを開けませんでした。",
   "mobile.server.providers.copyFailed": "コードをコピーできませんでした。",
   "mobile.server.providers.statusLabel": "状態",
@@ -1083,10 +1086,10 @@ export const messages = {
   "mobile.server.providers.connect": "接続",
   "mobile.server.providers.reconnect": "再接続",
   "mobile.server.providers.connectHint":
-    "サーバーがサインインを開始します。続いて OpenBot が手順を表示するので、このスマートフォンで完了してください。",
+    "サーバーがサインインを開始します。続いて PurpleBot が手順を表示するので、このスマートフォンで完了してください。",
   "mobile.server.providers.relayHint":
-    "OpenBot がこのスマートフォンでプロバイダーのサインインページを開きます。何かをコピーして戻す必要がある場合は、先に手順を表示します。",
-  "mobile.server.providers.connectOnComputer": "コンピューターの OpenBot でこのプロバイダーを接続してください。",
+    "PurpleBot がこのスマートフォンでプロバイダーのサインインページを開きます。何かをコピーして戻す必要がある場合は、先に手順を表示します。",
+  "mobile.server.providers.connectOnComputer": "コンピューターの PurpleBot でこのプロバイダーを接続してください。",
   "mobile.server.providers.signInTo": "{name} にサインイン",
   "mobile.server.providers.starting": "サーバーでサインインを開始しています…",
   "mobile.server.providers.openPage": "サインインページを開く",
@@ -1097,15 +1100,15 @@ export const messages = {
     "パソコンの ChatGPT でセキュリティ設定を開き、Codex のデバイスコードによるサインインをオンにします。仕事用アカウントでは、ワークスペースの管理者がオンにします。",
   "mobile.server.providers.codeStepCopy": "コードをコピーします。",
   "mobile.server.providers.codeStepEnter": "サインインページを開き、コードを入力します。",
-  "mobile.server.providers.codeStepReturn": "OpenBot に戻ります。サインインは自動で完了します。",
+  "mobile.server.providers.codeStepReturn": "PurpleBot に戻ります。サインインは自動で完了します。",
   "mobile.server.providers.pasteStepSignIn": "サインインページを開いてサインインします。",
   "mobile.server.providers.pasteStepCopy": "ページに表示されたコードをコピーします。",
-  "mobile.server.providers.pasteStepReturn": "OpenBot に戻り、下にコードを貼り付けます。",
+  "mobile.server.providers.pasteStepReturn": "PurpleBot に戻り、下にコードを貼り付けます。",
   "mobile.server.providers.relayStepSignIn": "サインインページを開いてサインインします。",
   "mobile.server.providers.relayStepBlank": "最後のページは読み込まれません。これは正常です。",
   "mobile.server.providers.relayStepCopy": "アドレスバーをタップし、アドレス全体をコピーします。",
-  "mobile.server.providers.relayStepReturn": "OpenBot に戻り、下にアドレスを貼り付けます。",
-  "mobile.server.providers.linkHint": "ページでサインインしてください。OpenBot が自動で続行します。",
+  "mobile.server.providers.relayStepReturn": "PurpleBot に戻り、下にアドレスを貼り付けます。",
+  "mobile.server.providers.linkHint": "ページでサインインしてください。PurpleBot が自動で続行します。",
   "mobile.server.providers.relayWaiting": "サーバーからのサインインページを待っています…",
   "mobile.server.providers.code": "ページのコード",
   "mobile.server.providers.codePlaceholder": "ここにコードを貼り付け",
@@ -1170,7 +1173,7 @@ export const messages = {
   "mobile.server.providers.accountsPooledHint":
     "エージェントはこれらのアカウントを共有します。新しいアカウントは、このスマートフォンでそのページからサインインします。",
   "mobile.server.providers.accountsPooledOnComputer":
-    "エージェントはこれらのアカウントを共有します。アカウントはコンピュータの OpenBot で追加してください。",
+    "エージェントはこれらのアカウントを共有します。アカウントはコンピュータの PurpleBot で追加してください。",
   "mobile.server.providers.inUse": "使用中",
   "mobile.server.providers.notInPool": "プール外",
   "mobile.server.providers.leaveOutOfPool": "プールから外す",
@@ -1228,7 +1231,7 @@ export const messages = {
   "mobile.server.providers.disconnect": "接続を解除",
   "mobile.server.providers.disconnectTitle": "{name} の接続を解除しますか？",
   "mobile.server.providers.disconnectBody":
-    "OpenBot はサーバー上で {provider} からサインアウトします。エージェントは {provider} を再接続するまで待機します。",
+    "PurpleBot はサーバー上で {provider} からサインアウトします。エージェントは {provider} を再接続するまで待機します。",
   "mobile.server.providers.resetUsage": "使用量をリセット",
   "mobile.server.providers.resettingUsage": "リセット中…",
   "mobile.server.providers.resetUsageTitle": "{name} の使用量をリセットしますか？",
@@ -1246,7 +1249,7 @@ export const messages = {
   "mobile.server.providers.sectionRuntime": "ランタイム",
   "mobile.server.providers.updateTo": "{version} にアップデート",
   "mobile.server.providers.versionInstalledByUser": "{version} · 自分でインストール",
-  "mobile.server.providers.versionDownloaded": "{version} · OpenBot がダウンロード",
+  "mobile.server.providers.versionDownloaded": "{version} · PurpleBot がダウンロード",
   "mobile.server.providers.keyFree": "無料",
   "mobile.server.providers.keyOptional": "任意です。キーを追加すると有料モデルを使えます。",
   "mobile.server.providers.geminiKeyInUse":
@@ -1265,18 +1268,18 @@ export const messages = {
   "mobile.server.providers.defaultForNew": "新しいエージェントの既定",
   "mobile.server.providers.startsWith": "新しいエージェントは {name} で開始します。",
   "mobile.server.providers.connectFirst": "先に {name} を接続してください。",
-  "mobile.server.mcp.unsupported": "ここで MCP サーバーを管理するには、このサーバーの OpenBot を更新してください。",
+  "mobile.server.mcp.unsupported": "ここで MCP サーバーを管理するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.mcp.unavailable":
     "MCP サーバーを管理するには、オーナーまたは管理者としてこのサーバーに接続してください。",
   "mobile.server.mcp.accessUnsupported":
-    "MCP サーバーを受け取る相手を選ぶには、このサーバーの OpenBot を更新してください。",
+    "MCP サーバーを受け取る相手を選ぶには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.mcp.loading": "MCP サーバーを読み込み中…",
   "mobile.server.mcp.gone": "この MCP サーバーはもうこのサーバーにありません。",
   "mobile.server.mcp.addTitle": "MCP サーバーを追加",
   "mobile.server.mcp.addConfirm": "追加",
   "mobile.server.mcp.name": "名前",
   "mobile.server.mcp.namePlaceholder": "MCP サーバー名",
-  "mobile.server.mcp.nameReserved": "名前 {name} は OpenBot がすでに使っています。",
+  "mobile.server.mcp.nameReserved": "名前 {name} は PurpleBot がすでに使っています。",
   "mobile.server.mcp.transport": "トランスポート",
   "mobile.server.mcp.stdio": "コマンド (STDIO)",
   "mobile.server.mcp.http": "URL (HTTP)",
@@ -1287,12 +1290,12 @@ export const messages = {
   "mobile.server.mcp.command": "コマンド",
   "mobile.server.mcp.commandHint": "プログラムだけを入力します。続く語は引数に入力してください。",
   "mobile.server.mcp.arguments": "引数",
-  "mobile.server.mcp.argumentsHint": "OpenBot は各引数を 1 つの語としてプログラムに渡します。",
+  "mobile.server.mcp.argumentsHint": "PurpleBot は各引数を 1 つの語としてプログラムに渡します。",
   "mobile.server.mcp.addArgument": "引数を追加",
   "mobile.server.mcp.argument": "引数 {position}",
   "mobile.server.mcp.removeArgument": "引数 {position} を削除",
   "mobile.server.mcp.environment": "環境変数",
-  "mobile.server.mcp.environmentHint": "OpenBot は MCP サーバーの起動時にこれらの変数を渡します。",
+  "mobile.server.mcp.environmentHint": "PurpleBot は MCP サーバーの起動時にこれらの変数を渡します。",
   "mobile.server.mcp.addVariable": "変数を追加",
   "mobile.server.mcp.variableKey": "変数 {position} の名前",
   "mobile.server.mcp.variableValue": "変数 {position} の値",
@@ -1307,7 +1310,7 @@ export const messages = {
   "mobile.server.mcp.url": "サーバー URL",
   "mobile.server.mcp.urlInvalid": "http または https のアドレスを入力してください。",
   "mobile.server.mcp.headers": "ヘッダー",
-  "mobile.server.mcp.headersHint": "OpenBot はリクエストごとにこれらのヘッダーを送信します。",
+  "mobile.server.mcp.headersHint": "PurpleBot はリクエストごとにこれらのヘッダーを送信します。",
   "mobile.server.mcp.addHeader": "ヘッダーを追加",
   "mobile.server.mcp.headerName": "ヘッダー {position} の名前",
   "mobile.server.mcp.headerValue": "ヘッダー {position} の値",
@@ -1323,7 +1326,7 @@ export const messages = {
   "mobile.server.mcp.testFailed": "MCP サーバーが応答しませんでした。",
   "mobile.server.mcp.connected": { other: "接続済み · ツール {count} 個" },
   "mobile.server.mcp.signInOnComputer":
-    "この MCP サーバーはサインインを求めています。コンピューターの OpenBot からサインインして、もう一度テストしてください。",
+    "この MCP サーバーはサインインを求めています。コンピューターの PurpleBot からサインインして、もう一度テストしてください。",
   "mobile.server.mcp.signIn": "サインイン",
   "mobile.server.mcp.signInHere":
     "この MCP サーバーはサインインを求めています。サインインをタップしてから、もう一度テストしてください。",
@@ -1381,8 +1384,8 @@ export const messages = {
   "mobile.server.settings.updates": "アップデート",
   "mobile.server.settings.updateAvailable": "アップデートあり",
   "mobile.server.route.updates": "アップデート",
-  "mobile.server.update.hostTitle": "{name} の OpenBot",
-  "mobile.server.update.version": "OpenBot {version}",
+  "mobile.server.update.hostTitle": "{name} の PurpleBot",
+  "mobile.server.update.version": "PurpleBot {version}",
   "mobile.server.update.status.idle": "アップデートを確認して最新のリリースを見つけます。",
   "mobile.server.update.status.checking": "アップデートを確認しています…",
   "mobile.server.update.status.available": "{version} を利用できます。",
@@ -1390,29 +1393,29 @@ export const messages = {
   "mobile.server.update.status.downloadingUnknown": "{version} をダウンロードしています…",
   "mobile.server.update.status.ready": "{version} をダウンロードしました。",
   "mobile.server.update.status.installing": "{name} はアップデートをインストールするため再起動しています。",
-  "mobile.server.update.status.upToDate": "{name} の OpenBot は最新です。",
+  "mobile.server.update.status.upToDate": "{name} の PurpleBot は最新です。",
   "mobile.server.update.status.checkFailed": "{name} はアップデートを確認できませんでした。もう一度お試しください。",
   "mobile.server.update.status.downloadFailed":
     "{name} はアップデートをダウンロードできませんでした。もう一度お試しください。",
   "mobile.server.update.status.installFailed":
-    "{name} はアップデートをインストールできませんでした。そのコンピューターで他のユーザーが OpenBot を実行していないことを確認してから、もう一度お試しください。",
+    "{name} はアップデートをインストールできませんでした。そのコンピューターで他のユーザーが PurpleBot を実行していないことを確認してから、もう一度お試しください。",
   "mobile.server.update.releaseCheckFailed":
     "{name} はリリースフィードを読み取れませんでした。ホストのネットワーク接続を確認してから、もう一度お試しください。",
   "mobile.server.update.releaseUnavailable":
     "このビルドではリリースを確認できません。互換性のあるリリースを確認するよう、ホストの管理者に依頼してください。",
   "mobile.server.update.externalTitle": "インストールはホストが管理します",
   "mobile.server.update.path.hostManager":
-    "OpenBot Host Manager は、すべてのユーザーがアイドル状態のときにアップデートをインストールします。アップデートが始まらない場合は、Host Manager の状態を確認するようホストの管理者に依頼してください。",
+    "PurpleBot Host Manager は、すべてのユーザーがアイドル状態のときにアップデートをインストールします。アップデートが始まらない場合は、Host Manager の状態を確認するようホストの管理者に依頼してください。",
   "mobile.server.update.path.hosted":
     "ホスティングサービスはバックグラウンドでアップデートをダウンロードします。ダウンロードしたアップデートは、次にサーバーが起動したときに適用されます。サーバーを停止して再開する前に、実行中の作業が終わるのを待ってください。古いバージョンのままの場合は、ホストの管理者に連絡してください。",
   "mobile.server.update.path.system":
-    "ホストで sudo openbot update を実行して、最新のリリースをインストールしてください。このコマンドは OpenBot を停止します。先に実行中の作業が終わるのを待ってください。自動ダウンロードされたアップデートは次回の起動時にインストールされます。",
+    "ホストで sudo purplebot update を実行して、最新のリリースをインストールしてください。このコマンドは PurpleBot を停止します。先に実行中の作業が終わるのを待ってください。自動ダウンロードされたアップデートは次回の起動時にインストールされます。",
   "mobile.server.update.path.container":
-    "Docker ホストで新しい OpenBot イメージを pull し、同じデータボリュームでコンテナーを再作成してください。先に実行中の作業が終わるのを待ってください。データを保持するため、既存のボリュームはそのまま残してください。",
+    "Docker ホストで新しい PurpleBot イメージを pull し、同じデータボリュームでコンテナーを再作成してください。先に実行中の作業が終わるのを待ってください。データを保持するため、既存のボリュームはそのまま残してください。",
   "mobile.server.update.path.manual":
-    "このインストールは自分自身を置き換えられません。github.com/nightly-labs/openbot/releases から互換性のあるリリースをインストールするよう、ホストの管理者に依頼してください。既存の OpenBot のデータは残してください。",
+    "このインストールは自分自身を置き換えられません。github.com/nightly-labs/openbot/releases から互換性のあるリリースをインストールするよう、ホストの管理者に依頼してください。既存の PurpleBot のデータは残してください。",
   "mobile.server.update.path.unavailable":
-    "これは開発ビルドです。アップデートを確認するには、インストール済みの OpenBot リリースを使用してください。",
+    "これは開発ビルドです。アップデートを確認するには、インストール済みの PurpleBot リリースを使用してください。",
   "mobile.server.update.check": "アップデートを確認",
   "mobile.server.update.start": "アイドル時にアップデート",
   "mobile.server.update.restartNow": "今すぐ再起動",
@@ -1423,27 +1426,27 @@ export const messages = {
   "mobile.server.update.automatic": "{name} はアップデートを自動的にインストールします。",
   "mobile.server.update.autoDownloadTitle": "アップデートを自動的にダウンロードする",
   "mobile.server.update.autoDownloadDescription":
-    "{name} は OpenBot の新しいバージョンが公開されるたびにダウンロードします。",
+    "{name} は PurpleBot の新しいバージョンが公開されるたびにダウンロードします。",
   "mobile.server.update.autoInstallTitle": "アップデートを自動的にインストールする",
   "mobile.server.update.autoInstallDescription":
     "{name} は、エージェントがアイドル状態になると、ダウンロードしたアップデートを適用して再起動します。メンバーの接続は短時間切れ、自動的に再接続されます。",
   "mobile.server.update.waitingFor": "{reasons} を待っています。",
   "mobile.server.update.disabledTitle": "リモートアップデートはオフです",
   "mobile.server.update.disabledDescription":
-    "{name} のユーザーが、サーバーメンバーからのアップデートをオフにしました。OpenBot をアップデートするか、そのコンピューターで「設定」>「アップデート」を開いて「サーバーのメンバーからのアップデートを許可する」をオンにするよう依頼してください。",
+    "{name} のユーザーが、サーバーメンバーからのアップデートをオフにしました。PurpleBot をアップデートするか、そのコンピューターで「設定」>「アップデート」を開いて「サーバーのメンバーからのアップデートを許可する」をオンにするよう依頼してください。",
   "mobile.server.update.managedTitle": "アップデートは Host Manager が管理しています",
   "mobile.server.update.managedDescription":
-    "OpenBot Host Manager が {name} をアップデートします。ホストの管理者に連絡してください。",
+    "PurpleBot Host Manager が {name} をアップデートします。ホストの管理者に連絡してください。",
   "mobile.server.update.unsupportedTitle": "{name} は自身をアップデートできません",
   "mobile.server.update.unsupportedDescription":
-    "この OpenBot ビルドにはアップデーターがありません。{name} に新しいバージョンをインストールしてください。",
+    "この PurpleBot ビルドにはアップデーターがありません。{name} に新しいバージョンをインストールしてください。",
   "mobile.server.update.restarting": "再起動中…",
   "mobile.server.update.loadFailed": "{name} のアップデート状態を読み込めませんでした。",
-  "mobile.server.update.dialog.offerTitle": "{name} を OpenBot {version} にアップデート",
+  "mobile.server.update.dialog.offerTitle": "{name} を PurpleBot {version} にアップデート",
   "mobile.server.update.dialog.offerDescription":
-    "{name} は OpenBot {current} を使用しています。まずアップデートをダウンロードしてから再起動します。",
+    "{name} は PurpleBot {current} を使用しています。まずアップデートをダウンロードしてから再起動します。",
   "mobile.server.update.dialog.offerReadyDescription":
-    "{name} は OpenBot {current} を使用しています。アップデートはダウンロード済みです。{name} はインストールのため再起動します。",
+    "{name} は PurpleBot {current} を使用しています。アップデートはダウンロード済みです。{name} はインストールのため再起動します。",
   "mobile.server.update.dialog.waitIdleDescription":
     "再起動は、エージェントのターンとルーティンの実行が終わるまで待機します。",
   "mobile.server.update.dialog.updateNow": "今すぐアップデート",
@@ -1459,10 +1462,10 @@ export const messages = {
   "mobile.server.update.reason.fileTransfer": "ファイル転送",
   "mobile.server.update.reason.browserControl": "エージェントによるブラウザー操作",
   "mobile.server.update.reason.updateOperation": "別のアップデート手順",
-  "mobile.server.update.reason.initialization": "OpenBot の起動",
+  "mobile.server.update.reason.initialization": "PurpleBot の起動",
   "mobile.server.update.reason.other": "その他の作業",
   "mobile.server.update.actionFailed": "サーバーの操作に失敗しました。",
-  "mobile.server.update.unavailable": "OpenBot のアップデートを確認するには、このサーバーに接続してください。",
+  "mobile.server.update.unavailable": "PurpleBot のアップデートを確認するには、このサーバーに接続してください。",
   "mobile.server.update.loading": "アップデートを読み込み中…",
   "mobile.server.route.sites": "サイト",
   "mobile.server.settings.sites": "サイト",
@@ -1481,13 +1484,13 @@ export const messages = {
   "mobile.server.sites.deleteDescription": "このアドレスはすぐに 410 Gone を返すようになります。",
   "mobile.server.sites.deleteFailed": "サイトを削除できませんでした。",
   "mobile.server.sites.openFailed": "サイトを開けませんでした。",
-  "mobile.server.sites.unsupported": "ここでサイトを表示するには、このサーバーの OpenBot を更新してください。",
+  "mobile.server.sites.unsupported": "ここでサイトを表示するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.sites.offline": "このサーバーに接続するとサイトが表示されます。",
   "mobile.server.route.roles": "権限",
   "mobile.server.route.role": "ロール",
   "mobile.server.roles.description":
     "メンバーが使えるエージェントを選びます。オーナーと管理者はすべてのエージェントを使えます。",
-  "mobile.server.roles.unsupported": "ロールを管理するには、このサーバーの OpenBot を更新してください。",
+  "mobile.server.roles.unsupported": "ロールを管理するには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.roles.unavailable": "ロールを管理できるのは、オンラインのサーバーのオーナーまたは管理者だけです。",
   "mobile.server.roles.loading": "ロールを読み込み中…",
   "mobile.server.roles.loadFailed": "このサーバーのロールを読み込めませんでした。",
@@ -1527,7 +1530,7 @@ export const messages = {
   "mobile.server.route.audit": "監査ログ",
   "mobile.server.audit.description":
     "このサーバーのメンバー、ロール、エージェントアクセスの変更を新しい順に表示します。ホストは最新の500件を保持します。",
-  "mobile.server.audit.unsupported": "監査ログを見るには、このサーバーの OpenBot を更新してください。",
+  "mobile.server.audit.unsupported": "監査ログを見るには、このサーバーの PurpleBot を更新してください。",
   "mobile.server.audit.unavailable": "監査ログを見られるのは、オンラインのサーバーのオーナーか管理者だけです。",
   "mobile.server.audit.loading": "変更を読み込み中…",
   "mobile.server.audit.loadFailed": "このサーバーの監査ログを読み込めませんでした。",
@@ -1555,7 +1558,7 @@ export const messages = {
   "mobile.server.settings.importAgents": "エージェントをインポート",
   "mobile.server.route.import": "エージェントをインポート",
   "mobile.server.import.unsupported":
-    "ここでエージェントをインポートするには、このサーバーの OpenBot をアップデートしてください。",
+    "ここでエージェントをインポートするには、このサーバーの PurpleBot をアップデートしてください。",
   "mobile.server.import.unavailable": "エージェントをインポートするには、このサーバーに接続してください。",
   "mobile.server.import.count.agent": { other: "{count} 個のエージェント" },
   "mobile.server.import.count.channel": { other: "{count} 個のチャンネル" },
@@ -1565,11 +1568,11 @@ export const messages = {
   "mobile.server.import.count.file": { other: "{count} 個のファイル" },
   "mobile.server.import.sourceTitle": "エージェントは今どこにありますか？",
   "mobile.server.import.sourceLede":
-    "OpenBot がこのサーバーにコピーします。何かが変わる前に、すべての項目を確認できます。",
+    "PurpleBot がこのサーバーにコピーします。何かが変わる前に、すべての項目を確認できます。",
   "mobile.server.import.hermesNote": "Hermes から .zip ファイルをエクスポートします。",
   "mobile.server.import.grokNote":
     "クラウドにあります。そこにあるエクスポート用エージェントが .zip ファイルを作成します。",
-  "mobile.server.import.transfer": "別の OpenBot サーバー",
+  "mobile.server.import.transfer": "別の PurpleBot サーバー",
   "mobile.server.import.transferNote": "エージェントと設定をまとめて移動するには「移行」を使います。",
   "mobile.server.import.grokLede":
     "Grok Bot のエクスポート用エージェントが、名前、指示、アバター、スキル、ルーティン、メモリー、含めるファイルを 1 つの .zip ファイルにまとめます。",
@@ -1634,7 +1637,7 @@ export const messages = {
   "mobile.server.route.transferExport": "エクスポート",
   "mobile.server.route.transferImport": "インポート",
   "mobile.server.route.transferCopy": "別のサーバーにコピー",
-  "mobile.server.transfer.unsupported": "ここで移行するには、このサーバーの OpenBot をアップデートしてください。",
+  "mobile.server.transfer.unsupported": "ここで移行するには、このサーバーの PurpleBot をアップデートしてください。",
   "mobile.server.transfer.unavailable": "移行するには、オーナーまたは管理者としてこのサーバーに接続してください。",
   "mobile.server.transfer.title": "このサーバーを別のコンピューターに移動",
   "mobile.server.transfer.lede":
@@ -1678,8 +1681,8 @@ export const messages = {
   "mobile.server.transfer.reading": "ファイルを読み込んでいます…",
   "mobile.server.transfer.sending": "ファイルを送信しています… {percent}%",
   "mobile.server.transfer.openFailed": "ファイルを開けませんでした。",
-  "mobile.server.transfer.source": "OpenBot {version} · {date} にエクスポート",
-  "mobile.server.transfer.sourceNoDate": "OpenBot {version}",
+  "mobile.server.transfer.source": "PurpleBot {version} · {date} にエクスポート",
+  "mobile.server.transfer.sourceNoDate": "PurpleBot {version}",
   "mobile.server.transfer.importWarnings": "インポートを始める前に",
   "mobile.server.transfer.importAgents": "ファイル内のエージェント",
   "mobile.server.transfer.nameExists": "名前が重複",
@@ -1718,7 +1721,7 @@ export const messages = {
     "エージェントをコピーするには、オーナーまたは管理者として別のサーバーに接続してください。",
   "mobile.server.route.ownerTransfer": "所有権を移す",
   "mobile.server.ownerTransfer.unavailable": "所有権を移すには、所有者としてこのサーバーに接続してください。",
-  "mobile.server.ownerTransfer.hosted": "このサーバーは OpenBot がホストしているため、所有者を変更できません。",
+  "mobile.server.ownerTransfer.hosted": "このサーバーは PurpleBot がホストしているため、所有者を変更できません。",
   "mobile.server.ownerTransfer.lede":
     "新しい所有者にメールが届きます。そのメールアドレスでサインインした状態で承認する必要があります。その後、あなたはこのサーバーから削除されます。",
   "mobile.server.ownerTransfer.email": "新しい所有者のメールアドレス",
@@ -1744,7 +1747,7 @@ export const messages = {
   "mobile.server.ownerTransfer.cancelFailed": "移行を取り消せませんでした。",
   "mobile.server.ownerTransfer.incomingTitle": "{server} の所有者になりますか？",
   "mobile.server.ownerTransfer.incomingBody":
-    "{name} があなたを {server} の所有者にしようとしています。サーバーを完全に管理でき、エージェント、チャット、ルーティン、保存したサインインはそのまま残ります。{name} はアクセスできなくなります。 サーバーを動かしているコンピューターにまだサインインできる人は、あなたの OpenBot アカウントを使えます。そのコンピューターのパスワードと SSH キーを変更してください。",
+    "{name} があなたを {server} の所有者にしようとしています。サーバーを完全に管理でき、エージェント、チャット、ルーティン、保存したサインインはそのまま残ります。{name} はアクセスできなくなります。 サーバーを動かしているコンピューターにまだサインインできる人は、あなたの PurpleBot アカウントを使えます。そのコンピューターのパスワードと SSH キーを変更してください。",
   "mobile.server.ownerTransfer.accept": "承認",
   "mobile.server.ownerTransfer.decline": "拒否",
   "mobile.server.ownerTransfer.accepted": "あなたは {server} の所有者になりました。",

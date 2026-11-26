@@ -335,7 +335,7 @@ export class MailboxStore {
         this.#state = normalizeStoredState(persisted.state);
         for (const row of persisted.skippedRows) if (row.kind === "draft" && row.id) skippedDraftIds.push(row.id);
         if (persisted.skippedRows.length > 0) {
-          logger.warn("Stored mailbox rows that OpenBot cannot read were left out.", {
+          logger.warn("Stored mailbox rows that PurpleBot cannot read were left out.", {
             skippedRows: persisted.skippedRows,
           });
         } else if (JSON.stringify(this.#state) !== JSON.stringify(stored)) {
@@ -2613,10 +2613,10 @@ export class MailboxStore {
       text: [
         "Status: blocked",
         outcome === "failed"
-          ? `Result: OpenBot note, not written by this teammate: the request failed before the teammate answered. ${(delivery.error ?? "The provider gave no reason.").slice(0, FAILED_REQUEST_REASON_LIMIT)}`
+          ? `Result: PurpleBot note, not written by this teammate: the request failed before the teammate answered. ${(delivery.error ?? "The provider gave no reason.").slice(0, FAILED_REQUEST_REASON_LIMIT)}`
           : steered
-            ? "Result: OpenBot note, not written by this teammate: the request went into a running turn of the teammate, and that turn ended before the teammate answered."
-            : "Result: OpenBot note, not written by this teammate: the teammate's turn stopped when OpenBot or its provider restarted, before the teammate answered. Part of the work can be done.",
+            ? "Result: PurpleBot note, not written by this teammate: the request went into a running turn of the teammate, and that turn ended before the teammate answered."
+            : "Result: PurpleBot note, not written by this teammate: the teammate's turn stopped when PurpleBot or its provider restarted, before the teammate answered. Part of the work can be done.",
         "Evidence: none",
         outcome === "failed" && temporary
           ? "Unblock: The failure can be temporary. Send the request again one time if you still need the result. If it fails again, tell the user."

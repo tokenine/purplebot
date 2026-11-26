@@ -144,6 +144,7 @@ async function main() {
   const sent: SentBody[] = [];
   let openPanelStatus = 200;
   const deliver = createAccountEventDelivery({
+    apiUrl: "https://analytics.example.com/api",
     clientId: "client",
     clientSecret: "secret",
     fetch: async (_input, init) => {

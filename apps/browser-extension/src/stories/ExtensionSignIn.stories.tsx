@@ -64,7 +64,7 @@ export const AccountServiceDown: Story = {
     <SignIn
       login={{
         status: "error",
-        issue: { code: "auth_api_unavailable", message: "OpenBot cannot reach its sign-in service. Try again." },
+        issue: { code: "auth_api_unavailable", message: "PurpleBot cannot reach its sign-in service. Try again." },
       }}
     />
   ),

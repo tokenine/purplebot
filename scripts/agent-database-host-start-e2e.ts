@@ -289,7 +289,7 @@ try {
     const listed = await Effect.runPromise(tables.list());
     assert.ok(listed.ok, "the tables could not be listed");
     const owner = listed.value.find((table) => table.name === "b_table")?.ownerAgentId;
-    assert.equal(owner, "B", "a trigger in OpenBot's own DROP TABLE reassigned the owner of another agent's table");
+    assert.equal(owner, "B", "a trigger in PurpleBot's own DROP TABLE reassigned the owner of another agent's table");
   } finally {
     tables.dispose();
   }

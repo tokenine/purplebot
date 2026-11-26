@@ -4,9 +4,9 @@ import type { messages as source } from "../en/vault";
 export const messages = {
   "vault.items.title": "Opgeslagen items",
   "vault.items.description":
-    "Elke agent op deze server kan deze items gebruiken. OpenBot typt wachtwoorden, kaartnummers en beveiligingscodes zelf in de pagina, zodat agents ze nooit zien. Agents lezen API-sleutels uit een bestand, niet uit de chat.",
+    "Elke agent op deze server kan deze items gebruiken. PurpleBot typt wachtwoorden, kaartnummers en beveiligingscodes zelf in de pagina, zodat agents ze nooit zien. Agents lezen API-sleutels uit een bestand, niet uit de chat.",
   "vault.items.scopedDescription":
-    "Elk item is voor de agents die je kiest. OpenBot typt wachtwoorden, kaartnummers en beveiligingscodes zelf in de pagina, zodat agents ze nooit zien. Agents lezen API-sleutels uit een bestand, niet uit de chat. Alle agents draaien als dezelfde systeemgebruiker, dus een agent kan ook een API-sleutelbestand lezen dat voor andere agents is.",
+    "Elk item is voor de agents die je kiest. PurpleBot typt wachtwoorden, kaartnummers en beveiligingscodes zelf in de pagina, zodat agents ze nooit zien. Agents lezen API-sleutels uit een bestand, niet uit de chat. Alle agents draaien als dezelfde systeemgebruiker, dus een agent kan ook een API-sleutelbestand lezen dat voor andere agents is.",
   "vault.agents.label": "Agents",
   "vault.agents.all": "Alle agents",
   "vault.agents.some": "{chosen} van {total}",
@@ -89,18 +89,19 @@ export const messages = {
   "vault.importMenu": "Importeren uit CSV",
   "vault.importTitle": "Importeren uit een CSV-bestand",
   "vault.importDescription":
-    "Importeer logins uit een CSV-bestand dat 1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Wachtwoorden, LastPass of Proton Pass exporteert. OpenBot leest het bestand op deze computer en uploadt het niet.",
+    "Importeer logins uit een CSV-bestand dat 1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Wachtwoorden, LastPass of Proton Pass exporteert. PurpleBot leest het bestand op deze computer en uploadt het niet.",
   "vault.importChoose": "CSV-bestand kiezen",
   "vault.importDone": "Geïmporteerd: {imported}. Overgeslagen: {skipped}.",
   "vault.unavailableTitle": "Deze computer kan geen geheimen bewaren",
   "vault.unavailableDescription":
-    "OpenBot versleutelt de kluis met de geheimenopslag van het systeem. Stel een sleutelhanger in en open deze pagina daarna opnieuw.",
-  "vault.unreadableTitle": "OpenBot kan de kluis niet lezen",
+    "PurpleBot versleutelt de kluis met de geheimenopslag van het systeem. Stel een sleutelhanger in en open deze pagina daarna opnieuw.",
+  "vault.unreadableTitle": "PurpleBot kan de kluis niet lezen",
   "vault.unreadableDescription":
-    "Het kluisbestand staat op deze computer, maar OpenBot kan het niet ontsleutelen. Dit kan gebeuren als de sleutelhanger van het systeem verandert. Reset de kluis om opnieuw te beginnen zonder items.",
+    "Het kluisbestand staat op deze computer, maar PurpleBot kan het niet ontsleutelen. Dit kan gebeuren als de sleutelhanger van het systeem verandert. Reset de kluis om opnieuw te beginnen zonder items.",
   "vault.reset": "Kluis resetten",
   "vault.resetTitle": "De kluis resetten?",
-  "vault.resetDescription": "OpenBot verwijdert het kluisbestand en alle items erin. Je kunt dit niet ongedaan maken.",
+  "vault.resetDescription":
+    "PurpleBot verwijdert het kluisbestand en alle items erin. Je kunt dit niet ongedaan maken.",
   "vault.request.private": "Gaat naar je Kluis. {agent} ziet het nooit.",
   "vault.request.privateUnnamed": "Gaat naar je Kluis. De agent ziet het nooit.",
   "vault.request.addLogin": "Login toevoegen",
@@ -120,7 +121,7 @@ export const messages = {
   },
   "vault.twoStep.setupTitle": "Verificatiecode instellen",
   "vault.twoStep.setupIntro":
-    "Zet op {site} verificatie in twee stappen aan met een authenticator-app. Als de site een QR-code toont, geef OpenBot de sleutel.",
+    "Zet op {site} verificatie in twee stappen aan met een authenticator-app. Als de site een QR-code toont, geef PurpleBot de sleutel.",
   "vault.twoStep.keyLabel": "Instelsleutel of otpauth://-link",
   "vault.twoStep.keyHint":
     "De meeste sites tonen hem onder de QR-code, als “Kun je niet scannen?” of “Sleutel handmatig invoeren”.",
@@ -138,7 +139,7 @@ export const messages = {
   "vault.near.name": "Cryptowallet",
   "vault.near.open": "Cryptowallet openen",
   "vault.near.connect": "Verbinden",
-  "vault.near.signedOut": "Log in bij OpenBot om de cryptowallet in te stellen.",
+  "vault.near.signedOut": "Log in bij PurpleBot om de cryptowallet in te stellen.",
   "vault.near.paused": "Gepauzeerd",
   "vault.near.failed": "Kan de cryptowallet niet wijzigen.",
   "vault.near.waiting": "Wachten op je handtekening in de browser…",
@@ -146,7 +147,7 @@ export const messages = {
   "vault.near.openAgain": "Opnieuw openen",
   "vault.near.signature.label": "Handtekeningen in de browser",
   "vault.near.signature.register": "Je toegangssleutel maken",
-  "vault.near.signature.registerDetail": "Alleen op je apparaten. OpenBot heeft hem nooit.",
+  "vault.near.signature.registerDetail": "Alleen op je apparaten. PurpleBot heeft hem nooit.",
   "vault.near.signature.create": "De nieuwe wallet goedkeuren",
   "vault.near.signature.createDetail": "Alle agents kunnen tot {amount} per dag betalen. Later te wijzigen.",
   "vault.near.signature.count": "Handtekening {step} van {count} in je browser",
@@ -171,7 +172,7 @@ export const messages = {
     "Je browser heeft ons niet verteld of deze toegangssleutel een back-up heeft. Controleer of je wachtwoordbeheerder hem synchroniseert.",
   "vault.near.backup.notChecked": "Back-up niet gecontroleerd",
   "vault.near.backup.noCopy":
-    "OpenBot bewaart geen kopie van je toegangssleutel. Alleen jij kunt ondertekenen voor deze wallet.",
+    "PurpleBot bewaart geen kopie van je toegangssleutel. Alleen jij kunt ondertekenen voor deze wallet.",
   "vault.near.backup.checked": "Gecontroleerd op {date}",
   "vault.near.backup.check": "Back-up controleren",
   "vault.near.backup.checkAgain": "Opnieuw controleren",
@@ -246,7 +247,7 @@ export const messages = {
   "vault.near.disconnect": "Ontkoppelen",
   "vault.near.disconnectTitle": "Cryptowallet ontkoppelen?",
   "vault.near.disconnectDescription":
-    "Agents kunnen niet meer uit deze wallet betalen, en OpenBot vergeet hem. Het geld blijft in de wallet op NEAR Intents.",
+    "Agents kunnen niet meer uit deze wallet betalen, en PurpleBot vergeet hem. Het geld blijft in de wallet op NEAR Intents.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "Boven de daglimiet",
   "vault.near.approve": "Goedkeuren",

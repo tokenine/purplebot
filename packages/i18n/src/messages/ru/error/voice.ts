@@ -10,8 +10,8 @@ export const messages = {
   "error.voice.modelUnavailable": "Голосовая модель недоступна.",
   "error.voice.transcriptionTimedOut": "Время расшифровки голоса истекло.",
   "error.voice.prepareRequired":
-    "Локальная расшифровка голоса недоступна. Выполните `bun run voice:prepare` и перезапустите OpenBot.",
-  "error.voice.transcriptionFailed": "OpenBot не смог расшифровать эту запись.",
+    "Локальная расшифровка голоса недоступна. Выполните `bun run voice:prepare` и перезапустите PurpleBot.",
+  "error.voice.transcriptionFailed": "PurpleBot не смог расшифровать эту запись.",
   "error.voice.videoModelMissing":
     "В разделе «Настройки» → «Голос» не настроена модель распознавания речи для записей.",
   "error.voice.videoModelMissingServer":
@@ -27,9 +27,9 @@ export const messages = {
   "error.voice.speech.runtimeUnavailable": "Локальный синтез речи недоступен на этой платформе.",
   "error.voice.speech.modelRequired": "Скачайте модель синтеза речи в разделе «Настройки» → «Голос».",
   "error.voice.speech.timedOut": "Время чтения ответа вслух истекло.",
-  "error.voice.speech.failed": "OpenBot не смог прочитать ответ вслух.",
+  "error.voice.speech.failed": "PurpleBot не смог прочитать ответ вслух.",
   "error.voice.speech.providerRefused": "{provider} отказался создать аудио: {reason}",
-  "error.voice.recordingNotKept": "OpenBot не смог сохранить голосовую запись.",
+  "error.voice.recordingNotKept": "PurpleBot не смог сохранить голосовую запись.",
   "error.voice.live.timedOut": "Живой голос Codex не запустился вовремя. Попробуйте ещё раз.",
   "error.voice.live.failed": "Живой голос остановлен: {reason}",
   "error.voice.live.disconnected": "Живой голос отключён.",

@@ -9,7 +9,7 @@
       {
         "type": "added",
         "items": [
-          "Agenci mogą tworzyć obrazy i filmy za kredyty OpenBot oraz edytować twoje zdjęcia. Karta zatwierdzenia pokazuje model, cenę i prompt. Zanim zezwolisz, możesz wybrać inny model. Pozycja Credits w lewym pasku pokazuje twoje saldo. Właściciel lub administrator może włączyć albo wyłączyć opcję „Agenci mogą używać kredytów”.",
+          "Agenci mogą tworzyć obrazy i filmy za kredyty PurpleBot oraz edytować twoje zdjęcia. Karta zatwierdzenia pokazuje model, cenę i prompt. Zanim zezwolisz, możesz wybrać inny model. Pozycja Credits w lewym pasku pokazuje twoje saldo. Właściciel lub administrator może włączyć albo wyłączyć opcję „Agenci mogą używać kredytów”.",
           "Agenci mogą płacić na stronach kryptowalutami z portfela NEAR Intents. Połącz go w Ustawienia serwera › Sejf › Krypto za pomocą klucza dostępu, a potem dodaj środki. Każda płatność czeka na twoje zatwierdzenie w czacie, chyba że dla danej strony wybierzesz „Zawsze zezwalaj”. Budżet dzienny ogranicza wydatki agentów. Portfel działa tylko na tym komputerze, a płatności używają prawdziwych środków.",
           "Każde konto dostaje 10 darmowych kredytów powitalnych. Na stronie Credits możesz też zrealizować kod kredytowy przyciskiem Redeem code.",
           "Karta przeglądarki agenta może poprosić o twoją lokalizację. Czat najpierw cię pyta, a ty wybierasz Blokuj, Zawsze zezwalaj albo Zezwól. Wcześniej przeglądarka zawsze blokowała prośbę.",
@@ -30,8 +30,8 @@
           "Aplikacja zamarza rzadziej, głównie w Windows. Przez krótki czas zachowuje wyniki wolnych sprawdzeń i wykonuje wolną pracę w tle.",
           "Gdy agent Claude kończy plan w trybie planowania, czat pokazuje teraz plan z przyciskami Zatwierdź i Stop planning. Wcześniej nie pojawiało się zatwierdzenie i agent zaczynał budować.",
           "Wiadomość od innego agenta lub rutyny nie zatrzymuje już pracy zajętego agenta Claude.",
-          "Alert ze strony w karcie przeglądarki agenta nie zasłania już okna OpenBot, dopóki nie klikniesz OK. Alert zamyka się sam, a agent dostaje jego tekst.",
-          "Na pulpicie Linux X11 pisanie w OpenBot nie zatrzymuje się już po tym, jak agent użyje Sterowania komputerem w innej aplikacji. Jeśli pisanie już się zatrzymało, wyloguj się i zaloguj ponownie."
+          "Alert ze strony w karcie przeglądarki agenta nie zasłania już okna PurpleBot, dopóki nie klikniesz OK. Alert zamyka się sam, a agent dostaje jego tekst.",
+          "Na pulpicie Linux X11 pisanie w PurpleBot nie zatrzymuje się już po tym, jak agent użyje Sterowania komputerem w innej aplikacji. Jeśli pisanie już się zatrzymało, wyloguj się i zaloguj ponownie."
         ]
       }
     ]
@@ -60,7 +60,7 @@
       {
         "type": "fixed",
         "items": [
-          "Na Macu przyciski Połącz i Dodaj konto dla Claude otwierają teraz stronę logowania Claude z poziomu OpenBot.",
+          "Na Macu przyciski Połącz i Dodaj konto dla Claude otwierają teraz stronę logowania Claude z poziomu PurpleBot.",
           "Gdy połączenie z dołączonym serwerem przestaje przesyłać dane, aplikacja sama łączy się ponownie.",
           "Długie kanały na dołączonym serwerze otwierają się i aktualizują szybciej.",
           "Wynik przepływu pracy „Powiadomienie” albo krok czekający na zatwierdzenie wysyła teraz powiadomienie na telefon.",
@@ -73,19 +73,19 @@
     "version": "0.77.0",
     "date": "2026-11-23",
     "notices": [
-      "Zaktualizuj także do tej wersji każdy serwer, do którego dołączyłeś. Na serwerze modele płatne kredytami OpenBot, wstrzymane i wyeksportowane przepływy pracy, czaty WhatsApp tylko do odczytu, prośby o lokalizację oraz wybór serwera Signal działają tylko wtedy, gdy serwer ma tę wersję.",
-      "Po tej aktualizacji starsza wersja OpenBot nie może otworzyć twoich danych."
+      "Zaktualizuj także do tej wersji każdy serwer, do którego dołączyłeś. Na serwerze modele płatne kredytami PurpleBot, wstrzymane i wyeksportowane przepływy pracy, czaty WhatsApp tylko do odczytu, prośby o lokalizację oraz wybór serwera Signal działają tylko wtedy, gdy serwer ma tę wersję.",
+      "Po tej aktualizacji starsza wersja PurpleBot nie może otworzyć twoich danych."
     ],
     "groups": [
       {
         "type": "added",
         "items": [
-          "Kup kredyty OpenBot dla siebie lub dla serwera przyciskiem „Credits” w pasku stron albo w Ustawienia → Rozliczenia. Płatna licencja daje też darmowe kredyty co miesiąc.",
-          "Kroki z obrazami i wideo w przepływie pracy mogą używać modeli OpenBot opłacanych twoimi kredytami, bez dodatkowego logowania. Ustaw w kroku opcję „Liczba”, aby uzyskać jednocześnie do 4 wyników.",
+          "Kup kredyty PurpleBot dla siebie lub dla serwera przyciskiem „Credits” w pasku stron albo w Ustawienia → Rozliczenia. Płatna licencja daje też darmowe kredyty co miesiąc.",
+          "Kroki z obrazami i wideo w przepływie pracy mogą używać modeli PurpleBot opłacanych twoimi kredytami, bez dodatkowego logowania. Ustaw w kroku opcję „Liczba”, aby uzyskać jednocześnie do 4 wyników.",
           "Wstrzymaj przepływ pracy z jego menu. Możesz też wyeksportować przepływ pracy do pliku i zaimportować go na innym komputerze lub serwerze.",
           "Wpisz {{ w kroku przepływu pracy, aby dodać pole z wcześniejszego kroku. Wyzwalacze Harmonogram, GitHub, Discord, Telegram i Slack też teraz podają pola.",
           "Agent może poprosić o twoją lokalizację, gdy prośba jej wymaga, na przykład „restauracje w pobliżu”. Nic nie jest wysyłane, dopóki nie odpowiesz.",
-          "Ustaw dozwolony kontakt lub grupę WhatsApp jako tylko do odczytu. Twoi agenci mogą czytać czat, a OpenBot nigdy w nim nie pisze."
+          "Ustaw dozwolony kontakt lub grupę WhatsApp jako tylko do odczytu. Twoi agenci mogą czytać czat, a PurpleBot nigdy w nim nie pisze."
         ]
       },
       {
@@ -93,7 +93,7 @@
         "items": [
           "Bezczynny czat Claude lub Pi z 200K lub więcej tokenów kontekstu sam się kompaktuje, zanim wygaśnie jego 1-godzinna pamięć podręczna promptu. Kosztuje to mniej niż ponowne odczytanie pełnego kontekstu. Wyłącz to w Ustawienia serwera → Dostawcy.",
           "Wybierz serwer Signal danego serwera w Ustawienia serwera → Ogólne. „Automatycznie” zachowuje najbliższy.",
-          "Agenci Gemini z „Pełnym dostępem” używają narzędzi OpenBot, takich jak pamięć, przeglądarka i kanały, bez karty zatwierdzenia."
+          "Agenci Gemini z „Pełnym dostępem” używają narzędzi PurpleBot, takich jak pamięć, przeglądarka i kanały, bez karty zatwierdzenia."
         ]
       },
       {
@@ -102,7 +102,7 @@
           "Wiadomość wysłana do agenta Claude podczas jego pracy trafia do niego od razu, także gdy uruchamia subagenta lub długie narzędzie.",
           "Agent ChatGPT (Codex) ustawiony na „Najpierw pytaj” pyta cię teraz, zanim uruchomi polecenie lub zmieni plik.",
           "Hostowany lub samodzielnie hostowany serwer, który przestaje odpowiadać, uruchamia się znowu sam po 10 minutach.",
-          "Na macOS dok agentów nie spowalnia już OpenBot ani całego komputera.",
+          "Na macOS dok agentów nie spowalnia już PurpleBot ani całego komputera.",
           "Długie czaty przewijają się płynnie. Wcześniej czat z ponad 100 wiadomościami szarpał podczas przewijania."
         ]
       }
@@ -112,8 +112,8 @@
     "version": "0.76.0",
     "date": "2026-11-21",
     "notices": [
-      "Zaktualizuj także do tej wersji każdy serwer, do którego dołączyłeś. Na serwerze zadania uruchamiane równocześnie, konto głosu na żywo, przełącznik pamięci OpenBot, foldery przepływów pracy, typowane odpowiedzi w przepływach pracy i więcej niż 10 kont jednego dostawcy działają tylko wtedy, gdy serwer ma tę wersję.",
-      "Po tej aktualizacji starsza wersja OpenBot nie może otworzyć twoich danych."
+      "Zaktualizuj także do tej wersji każdy serwer, do którego dołączyłeś. Na serwerze zadania uruchamiane równocześnie, konto głosu na żywo, przełącznik pamięci PurpleBot, foldery przepływów pracy, typowane odpowiedzi w przepływach pracy i więcej niż 10 kont jednego dostawcy działają tylko wtedy, gdy serwer ma tę wersję.",
+      "Po tej aktualizacji starsza wersja PurpleBot nie może otworzyć twoich danych."
     ],
     "groups": [
       {
@@ -152,23 +152,23 @@
     "date": "2026-11-20",
     "notices": [
       "Zaktualizuj także do tej wersji każdy serwer, do którego dołączyłeś. Na serwerze ustawienia kroków przepływu pracy, Uruchom od tego kroku, przekazanie właściciela, przycisk Aktualizuj wszystkie i wiele poprawek dla agentów działają tylko wtedy, gdy serwer ma tę wersję.",
-      "Po tej aktualizacji starsza wersja OpenBot nie może otworzyć twoich danych."
+      "Po tej aktualizacji starsza wersja PurpleBot nie może otworzyć twoich danych."
     ],
     "groups": [
       {
         "type": "added",
         "items": [
-          "Rozmawiaj z agentem w trybie „Naciśnij, aby mówić”. Przytrzymaj przycisk mówienia albo klawisz mówienia, gdy mówisz. OpenBot wysyła to, co powiedziałeś, gdy puścisz. Zmień klawisz w Ustawienia > Głos.",
+          "Rozmawiaj z agentem w trybie „Naciśnij, aby mówić”. Przytrzymaj przycisk mówienia albo klawisz mówienia, gdy mówisz. PurpleBot wysyła to, co powiedziałeś, gdy puścisz. Zmień klawisz w Ustawienia > Głos.",
           "Uruchom przepływ pracy ponownie od jednego kroku. W menu kroku wybierz Uruchom od tego kroku. Kroki przed nim zachowują swoje odpowiedzi i nie uruchamiają się ponownie.",
           "Zobacz ustawienia i dane wejściowe, które dały wynik kroku przepływu pracy. Wybierz Ustawienia przy kroku, a potem Użyj tych ustawień, aby uruchomić go ponownie w ten sam sposób.",
-          "Przekaż swój serwer innemu kontu OpenBot. W sekcji Ustawienia serwera > Członkowie wpisz e-mail nowego właściciela. Serwer zmienia właściciela, gdy on go przyjmie.",
+          "Przekaż swój serwer innemu kontu PurpleBot. W sekcji Ustawienia serwera > Członkowie wpisz e-mail nowego właściciela. Serwer zmienia właściciela, gdy on go przyjmie.",
           "Zaktualizuj wszystkich dostawców naraz. Ustawienia > Dostawcy pokazuje przycisk Aktualizuj wszystkie, gdy jeden lub więcej dostawców ma aktualizację."
         ]
       },
       {
         "type": "changed",
         "items": [
-          "OpenBot co godzinę aktualizuje CLI dostawców, które pobrał, gdy dostępna jest nowa wersja. Aktualizacja czeka, aż agenci będą bezczynni.",
+          "PurpleBot co godzinę aktualizuje CLI dostawców, które pobrał, gdy dostępna jest nowa wersja. Aktualizacja czeka, aż agenci będą bezczynni.",
           "Każdy wątek agenta może używać kart przeglądarki, które otworzył główny czat albo inny wątek tego agenta.",
           "Karta Rutyny zniknęła z paska bocznego. Rutyny nadal działają. Zarządzaj nimi w ustawieniach agenta, na stronie Harmonogram i w sekcji Ustawienia serwera > Rutyny."
         ]
@@ -176,7 +176,7 @@
       {
         "type": "fixed",
         "items": [
-          "Restart po pobraniu aktualizacji czeka teraz, aż agenci będą bezczynni, z przyciskiem Anuluj restart. Wcześniej OpenBot zamykał się od razu i zatrzymywał zadanie agenta.",
+          "Restart po pobraniu aktualizacji czeka teraz, aż agenci będą bezczynni, z przyciskiem Anuluj restart. Wcześniej PurpleBot zamykał się od razu i zatrzymywał zadanie agenta.",
           "Agent nie zostaje już w stanie „pracuje” z czekającymi wiadomościami po restarcie ani po limicie użycia. Zatrzymana tura jest pokazywana jako przerwana, a czekające wiadomości zaczynają działać.",
           "Zajęty serwer z wieloma agentami i dołączonymi urządzeniami nie wyczerpuje już pamięci i nie zawiesza się, gdy wybiera następną turę.",
           "Wiadomość wysłana po przerwie nie zostaje już w stanie „Nie wysłano” z komunikatem „Połącz Claude, aby kontynuować.”, gdy Claude jest zalogowany.",
@@ -190,7 +190,7 @@
     "date": "2026-11-19",
     "notices": [
       "Zaktualizuj także do tej wersji każdy serwer, do którego dołączyłeś. Na serwerze małe kopie obrazów na kanwie przepływu pracy, własne długości wideo oraz agenci, którzy kończą żądanie bez twojego „kontynuuj”, działają tylko wtedy, gdy serwer ma tę wersję.",
-      "W systemie Linux, jeśli OpenBot nadal działa wolno po aktualizacji, usuń plik `~/.config/OpenBot/gpu-crash.json` i uruchom OpenBot ponownie.",
+      "W systemie Linux, jeśli PurpleBot nadal działa wolno po aktualizacji, usuń plik `~/.config/PurpleBot/gpu-crash.json` i uruchom PurpleBot ponownie.",
       "Jeśli w ustawieniach dostawcy ustawiłeś Myślenie dla agenta Mistral, wybierz poziom ponownie w menu Wysiłek i zresetuj stary wiersz Myślenie."
     ],
     "groups": [
@@ -216,9 +216,9 @@
       {
         "type": "fixed",
         "items": [
-          "Agent Claude lub ChatGPT nie zostaje już godzinami w stanie „pracuje”, gdy dostawca przestaje odpowiadać. Po 15 minutach bez wyniku (60 minut, gdy działa narzędzie) OpenBot kończy turę, a wiadomości w kolejce są kontynuowane.",
+          "Agent Claude lub ChatGPT nie zostaje już godzinami w stanie „pracuje”, gdy dostawca przestaje odpowiadać. Po 15 minutach bez wyniku (60 minut, gdy działa narzędzie) PurpleBot kończy turę, a wiadomości w kolejce są kontynuowane.",
           "Gdy opcja „Używaj mojej konfiguracji Claude Code” jest wyłączona, agenci Claude nie wczytują już twoich globalnych instrukcji i reguł Claude Code. Każda tura jest szybsza i kosztuje mniej. Aby je zachować, włącz „Używaj mojej konfiguracji Claude Code”.",
-          "Agenci dalej pracują, gdy OpenBot pobiera aktualizację dostawcy. Pobieranie, które przez minutę nie dostaje danych, zatrzymuje się i wznawia od miejsca, w którym przerwało, gdy spróbujesz ponownie.",
+          "Agenci dalej pracują, gdy PurpleBot pobiera aktualizację dostawcy. Pobieranie, które przez minutę nie dostaje danych, zatrzymuje się i wznawia od miejsca, w którym przerwało, gdy spróbujesz ponownie.",
           "Agenci znów wysyłają wiadomości bezpośrednio do swoich agentów z zespołu. Wcześniej karta prosiła cię o zatwierdzenie każdego przekazania i praca stała, dopóki nie zatwierdziłeś.",
           "Agent z automatycznymi zapasowymi modelami przechodzi do następnego zapasowego modelu w większej liczbie przypadków, na przykład po limicie zapytań albo gdy Gemini traci połączenie z Google."
         ]
@@ -229,7 +229,7 @@
     "version": "0.73.0",
     "date": "2026-11-18",
     "notices": [
-      "Po zainstalowaniu tej wersji nie będziesz mógł wrócić do starszej wersji OpenBot na tym komputerze lub serwerze. Ta wersja zmniejsza bazę danych, a starsza wersja nie może jej otworzyć.",
+      "Po zainstalowaniu tej wersji nie będziesz mógł wrócić do starszej wersji PurpleBot na tym komputerze lub serwerze. Ta wersja zmniejsza bazę danych, a starsza wersja nie może jej otworzyć.",
       "Zaktualizuj także do tej wersji każdy serwer, do którego dołączyłeś. Na serwerze niestandardowe rozmiary obrazów, modele i ceny Sunra oraz Higgsfield, a także szybsze ładowanie wielu agentów działają tylko wtedy, gdy serwer ma tę wersję."
     ],
     "groups": [
@@ -240,14 +240,14 @@
           "Filtruj pasek boczny przyciskiem filtra na końcu pola wyszukiwania. Pokaż tylko agentów lub kanały, tylko nieprzeczytane czaty albo agentów w pracy, albo tylko czaty w wybranych folderach.",
           "Nadaj krokowi obrazu na kanwie przepływu pracy własny rozmiar w pikselach albo użyj proporcji 4:5 lub 5:4.",
           "Kanwa przepływu pracy pokazuje wszystkie modele obrazów i wideo Sunra oraz Higgsfield, a przycisk Uruchom pokazuje cenę w kredytach.",
-          "Wyłącz Rozmycie tła i Ruchome twarze agentów w Ustawienia → Wygląd → Ruch, aby OpenBot działał szybciej na wolnym komputerze."
+          "Wyłącz Rozmycie tła i Ruchome twarze agentów w Ustawienia → Wygląd → Ruch, aby PurpleBot działał szybciej na wolnym komputerze."
         ]
       },
       {
         "type": "changed",
         "items": [
           "Kilka osób może jednocześnie edytować jeden przepływ pracy. Kanwa dodaje zmiany innych osób, gdy je zapisują.",
-          "OpenBot zużywa dużo mniej CPU, gdy pracuje wielu agentów, a ty możesz pisać bez opóźnień.",
+          "PurpleBot zużywa dużo mniej CPU, gdy pracuje wielu agentów, a ty możesz pisać bez opóźnień.",
           "Agenci kończą płatność, gdy bank prosi o kod 3-D Secure. Gdy kod jest w e-mailu lub SMS-ie, który agent może odczytać, agent go wpisuje.",
           "Ustawienia serwera → Przeniesienie → Kopiuj na inny serwer kopiuje teraz także przepływy pracy i przepływy rutyn agentów."
         ]
@@ -255,11 +255,11 @@
       {
         "type": "fixed",
         "items": [
-          "Baza danych OpenBot zajmuje dużo mniej miejsca. Po aktualizacji OpenBot w małych krokach usuwa stare kopie wiadomości czatu.",
+          "Baza danych PurpleBot zajmuje dużo mniej miejsca. Po aktualizacji PurpleBot w małych krokach usuwa stare kopie wiadomości czatu.",
           "W systemie Windows aktualizacja znów pokazuje postęp.",
           "Serwer, do którego dołączyłeś, z wieloma agentami oraz duży kanał otwierają się szybciej.",
           "Czaty Gemini z dużą liczbą obrazów lub długą historią nie przestają działać, a Gemini nie prosi już o ponowne logowanie, gdy zaczyna się nowy czat.",
-          "Aplikacja na komputer znów łączy się z serwerem z OpenBot v0.34.1 lub starszym."
+          "Aplikacja na komputer znów łączy się z serwerem z PurpleBot v0.34.1 lub starszym."
         ]
       }
     ]
@@ -285,7 +285,7 @@
       {
         "type": "changed",
         "items": [
-          "Ustawienia mają nowy układ. Sekcje są w opisanych grupach, a Ustawienia serwera mają nowe sekcje Pamięć i Ustawienia domyślne agentów. Na macOS OpenBot używa czcionki systemowej.",
+          "Ustawienia mają nowy układ. Sekcje są w opisanych grupach, a Ustawienia serwera mają nowe sekcje Pamięć i Ustawienia domyślne agentów. Na macOS PurpleBot używa czcionki systemowej.",
           "Dodawaj i edytuj własne serwery MCP w Marketplace → Aplikacje. Ustawienia serwera nie mają już sekcji MCP.",
           "W czacie z agentem twoje dymki przyjmują teraz kolor awatara agenta. Zmień to w Ustawienia → Wygląd → Twoje dymki.",
           "Rozmowa głosowa nie otwiera już panelu bocznego. Mały pasek u góry czatu pokazuje sterowanie głosem."
@@ -298,7 +298,7 @@
           "Więcej agentów przechodzi na model zapasowy, gdy limit użycia albo błąd dostawcy zatrzyma turę, w tym agenci Grok, Hermes i Claude.",
           "Agenci mogą używać zapisanego logowania w większej liczbie miejsc, na przykład w formularzu logowania w ramce.",
           "Rutyna pozostaje włączona po nieudanym uruchomieniu, a uruchomienie zaplanowane wtedy, gdy dostawca nie może wystartować, zostaje wykonane później.",
-          "OpenBot zużywa mniej CPU i baterii: filmy w czacie i w ukrytych kartach przeglądarki wstrzymują się, gdy ich nie widzisz."
+          "PurpleBot zużywa mniej CPU i baterii: filmy w czacie i w ukrytych kartach przeglądarki wstrzymują się, gdy ich nie widzisz."
         ]
       }
     ]
@@ -336,7 +336,7 @@
           "Agent Claude zachowuje model w swoim profilu, gdy Claude Code zmienia swój model domyślny.",
           "Gdy Claude zatrzyma turę na miesięcznym limicie wydatków, agent z modelami zapasowymi kontynuuje na następnym modelu.",
           "Agenci dostają pełną transkrypcję filmu z napisami, na przykład filmu z YouTube.",
-          "OpenBot zużywa mniej CPU: karty przeglądarki, których nie widzisz, działają wolniej, a ruchome światło na linii aktywności agenta jest lżejsze."
+          "PurpleBot zużywa mniej CPU: karty przeglądarki, których nie widzisz, działają wolniej, a ruchome światło na linii aktywności agenta jest lżejsze."
         ]
       }
     ]
@@ -372,8 +372,8 @@
       {
         "type": "fixed",
         "items": [
-          "OpenBot otwiera się szybciej, gdy twoje czaty są długie.",
-          "W systemach Windows i Linux OpenBot pyta przed zamknięciem, gdy agenci pracują. Wybierz Nie zamykaj, aby ukryć okno i pozwolić agentom skończyć.",
+          "PurpleBot otwiera się szybciej, gdy twoje czaty są długie.",
+          "W systemach Windows i Linux PurpleBot pyta przed zamknięciem, gdy agenci pracują. Wybierz Nie zamykaj, aby ukryć okno i pozwolić agentom skończyć.",
           "Urządzenia ponownie łączą się z serwerem, gdy połączenie jednego urządzenia zostanie przerwane podczas konfiguracji. Podgląd na żywo przeglądarki agenta na dołączonym serwerze również pozostaje otwarty przy wolnym połączeniu.",
           "Gdy poprosisz agenta o zrzut ekranu strony internetowej, dołącza teraz obraz do swojej odpowiedzi.",
           "Darmowe modele OpenCode znów odpowiadają, gdy zapisany jest klucz OpenCode Go."
@@ -385,7 +385,7 @@
     "version": "0.69.0",
     "date": "2026-11-12",
     "notices": [
-      "Ukryci agenci nadal pracują. OpenBot wyłączył rutyny agentów ukrytych przed tą wersją, więc włącz rutyny, które chcesz."
+      "Ukryci agenci nadal pracują. PurpleBot wyłączył rutyny agentów ukrytych przed tą wersją, więc włącz rutyny, które chcesz."
     ],
     "groups": [
       {
@@ -406,15 +406,15 @@
           "Wiadomość, którą wyślesz do agenta, gdy pracuje, kieruje teraz bieżącą turą. Aby ustawić ją w kolejce jak dawniej, wyłącz Kieruj agentami podczas pracy w Ustawienia → Agenci.",
           "Ukryty agent działa dalej. Uruchamia swoje rutyny i pojawia się w Potrzebują cię, gdy czeka na twoją odpowiedź.",
           "Otwarty serwer pokazuje się jako logo na dole paska stron. Przycisk Nowy jest na końcu pola wyszukiwania paska bocznego.",
-          "OpenBot używa Electron 45.3.0 z Chromium 156, a więcej stron z weryfikacją antybotową ładuje się w przeglądarce agenta."
+          "PurpleBot używa Electron 45.3.0 z Chromium 156, a więcej stron z weryfikacją antybotową ładuje się w przeglądarce agenta."
         ]
       },
       {
         "type": "fixed",
         "items": [
-          "OpenBot uruchamia się szybciej, przede wszystkim na Windows, a wolny komputer pozostaje używalny po starcie.",
-          "OpenBot pozostaje responsywny po ponownym uruchomieniu, gdy masz wiele zadań lub wątków.",
-          "Na Linuxie i Windows OpenBot kończy zamykanie, gdy zamkniesz główne okno.",
+          "PurpleBot uruchamia się szybciej, przede wszystkim na Windows, a wolny komputer pozostaje używalny po starcie.",
+          "PurpleBot pozostaje responsywny po ponownym uruchomieniu, gdy masz wiele zadań lub wątków.",
+          "Na Linuxie i Windows PurpleBot kończy zamykanie, gdy zamkniesz główne okno.",
           "Rutyny uruchamiają się o czasie po poprawieniu zegara komputera.",
           "Tekst skopiowany z czatu nie ma już pustych linii na początku ani na końcu."
         ]
@@ -466,7 +466,7 @@
         "items": [
           "Gemini znów instaluje się i aktualizuje w systemie Windows. W wersji 0.67.0 zatrzymywał się z błędem dotyczącym linku lub pliku specjalnego.",
           "Agent, który wysyła wiadomość do zajętego członka zespołu, wie teraz, czy wiadomość trafiła do uruchomionego zadania tego członka. Gdy wiadomość czeka, agent może ci powiedzieć dlaczego.",
-          "Podczas Sterowania komputerem agenci nie mówią już, że kursor jest niedostępny. OpenBot rysuje kursor tam, gdzie agent klika, przewija lub przesuwa."
+          "Podczas Sterowania komputerem agenci nie mówią już, że kursor jest niedostępny. PurpleBot rysuje kursor tam, gdzie agent klika, przewija lub przesuwa."
         ]
       }
     ]
@@ -494,7 +494,7 @@
         "items": [
           "Czaty z nieprzeczytanymi odpowiedziami pokazują się na początku, w grupie Nieprzeczytane. Aby zmienić kolejność, wybierz Sortuj czaty w menu listy czatów.",
           "Na serwerze, do którego należysz, na przykład na VPS, aplikacja desktopowa i aplikacja w przeglądarce mają teraz większość funkcji tego komputera.",
-          "Agenci dodają OpenBot jako współautora swoich commitów git. Ty pozostajesz autorem. Wyłącz to w Twoje ustawienia → Agenci.",
+          "Agenci dodają PurpleBot jako współautora swoich commitów git. Ty pozostajesz autorem. Wyłącz to w Twoje ustawienia → Agenci.",
           "Agenci kończą zadania w przeglądarce w mniejszej liczbie kroków i z około 18% mniejszym zużyciem tokenów.",
           "Gemini działa teraz na Antigravity CLI. Twoje logowanie Google zostaje."
         ]
@@ -503,8 +503,8 @@
         "type": "fixed",
         "items": [
           "Agent Claude, którego zatrzymasz, zatrzymuje się teraz w około 10 sekund, a wiadomości z jego kolejki się uruchamiają.",
-          "W systemie Windows agenci mogą używać przeglądarki, gdy okno OpenBot jest zminimalizowane lub w zasobniku systemowym.",
-          "W macOS „Uruchom ponownie” nie zamyka już OpenBot, gdy działa on z obrazu dysku. Zamiast tego prosi o przeniesienie OpenBot do folderu Aplikacje.",
+          "W systemie Windows agenci mogą używać przeglądarki, gdy okno PurpleBot jest zminimalizowane lub w zasobniku systemowym.",
+          "W macOS „Uruchom ponownie” nie zamyka już PurpleBot, gdy działa on z obrazu dysku. Zamiast tego prosi o przeniesienie PurpleBot do folderu Aplikacje.",
           "W rozmowie głosowej kaszlnięcie lub naciśnięcie klawisza nie przerywa już odpowiedzi agenta."
         ]
       }
@@ -523,7 +523,7 @@
           "W systemie Windows Dynamic Island i dok agentów pokazują twoich agentów, tak jak na Macu. Dok agentów może też zawierać kanały.",
           "Agenci mogą oglądać publiczne filmy w sieci, na przykład linki z YouTube lub TikToka.",
           "Zaznacz wiele plików w Bibliotece, aby pobrać lub usunąć je naraz.",
-          "Agenci mogą wysłać za ciebie zgłoszenie błędu lub pomysł na funkcję do zespołu OpenBot."
+          "Agenci mogą wysłać za ciebie zgłoszenie błędu lub pomysł na funkcję do zespołu PurpleBot."
         ]
       },
       {
@@ -541,7 +541,7 @@
         "items": [
           "Kolejka agenta nie uruchamia już w kółko tej samej wiadomości, gdy agent czeka na odpowiedź na własne pytanie.",
           "Agent ChatGPT nie kompaktuje już kontekstu w kółko i nie zostaje bez końca na „Kompaktowanie kontekstu”.",
-          "Agenci w Cursor i kilku innych dostawcach zachowują swoje narzędzia OpenBot po ponownym uruchomieniu OpenBot.",
+          "Agenci w Cursor i kilku innych dostawcach zachowują swoje narzędzia PurpleBot po ponownym uruchomieniu PurpleBot.",
           "Agenci mogą używać zdalnego serwera MCP, na którym masz zalogowane konto, na przykład n8n, w najnowszej wersji MCP."
         ]
       }
@@ -567,7 +567,7 @@
         "type": "changed",
         "items": [
           "Agenci zużywają mniej tokenów w każdym zapytaniu w Claude, Codex, Pi, OpenCode, Grok i Hermes.",
-          "OpenBot zużywa mniej pamięci na karty przeglądarki, bezczynnych agentów i okna aplikacji.",
+          "PurpleBot zużywa mniej pamięci na karty przeglądarki, bezczynnych agentów i okna aplikacji.",
           "Karty przeglądarki agentów czekają na weryfikacje antybotowe, które przechodzą same, i kończą krótkie zadania w mniejszej liczbie kroków.",
           "Powiadomienia mają nowy wygląd."
         ]
@@ -598,7 +598,7 @@
           "Rozpocznij nową rozmowę albo skompaktuj kontekst kanału w jego ustawieniach.",
           "Członkowie dołączonego serwera mogą dodawać własne serwery MCP i łączyć aplikacje, takie jak Trello.",
           "Wybierz, kto może sterować tym komputerem przez zdalny pulpit, w Ustawienia serwera → Zdalny pulpit.",
-          "Używaj OpenBot po hebrajsku i połącz GitLab, Omnisend oraz ElevenLabs w Marketplace."
+          "Używaj PurpleBot po hebrajsku i połącz GitLab, Omnisend oraz ElevenLabs w Marketplace."
         ]
       },
       {
@@ -616,8 +616,8 @@
           "Wzmianki w postach na Slacku, Discordzie, Telegramie i WhatsAppie powiadamiają teraz oznaczoną osobę.",
           "Gdy limit dostawcy się wyczerpie, agent kontynuuje pracę na pierwszym gotowym modelu zapasowym.",
           "Czat, który kompaktował się ponownie po każdej turze, teraz zatrzymuje automatyczne kompaktowanie po 2 razach z rzędu.",
-          "OpenBot nie zamyka się już, gdy akcja agenta w przeglądarce czeka na stronę, która przechodzi pod inny adres.",
-          "Dane logowania z Proton Pass działają po ponownym uruchomieniu OpenBot."
+          "PurpleBot nie zamyka się już, gdy akcja agenta w przeglądarce czeka na stronę, która przechodzi pod inny adres.",
+          "Dane logowania z Proton Pass działają po ponownym uruchomieniu PurpleBot."
         ]
       }
     ]
@@ -648,7 +648,7 @@
       {
         "type": "fixed",
         "items": [
-          "Claude pozostaje zalogowany po ponownym uruchomieniu lub aktualizacji OpenBot, a agenci Claude zużywają mniej z 5-godzinnego okna użycia.",
+          "Claude pozostaje zalogowany po ponownym uruchomieniu lub aktualizacji PurpleBot, a agenci Claude zużywają mniej z 5-godzinnego okna użycia.",
           "Starsze wiadomości, które wczytasz w długim czacie, pozostają wczytane. Czat nie przeskakuje już z powrotem do najnowszych wiadomości.",
           "Automatyczne kompaktowanie czatu ChatGPT (Codex), Muse, Pi lub Antigravity zatrzymuje się po 2 nieudanych próbach z rzędu, więc czat nie zużywa już limitu planu.",
           "Głos GPT działa z każdym agentem, także gdy agent używa modelu Codex.",
@@ -666,7 +666,7 @@
         "type": "added",
         "items": [
           "Nadaj profilowi przeglądarki własne proxy w Ustawienia serwera → Profile przeglądarki albo użyj swojego komputera jako proxy na dołączonym serwerze.",
-          "Połącz Proton Pass w Marketplace. Przeglądarka wypełnia dane logowania z sejfu, który udostępniasz OpenBot.",
+          "Połącz Proton Pass w Marketplace. Przeglądarka wypełnia dane logowania z sejfu, który udostępniasz PurpleBot.",
           "Wpisz @ w czacie agenta, aby oznaczyć jedną z jego kart przeglądarki lub wątków pobocznych.",
           "Ustawienia → Głos mają dwa nowe lokalne modele dyktowania: Parakeet Unified EN i Cohere Transcribe.",
           "Wątek pokazuje niebieską kropkę, gdy agent coś w nim napisał, a wiadomość jest jeszcze nieprzeczytana.",
@@ -686,9 +686,9 @@
       {
         "type": "fixed",
         "items": [
-          "OpenBot zużywa mniej energii, gdy jest otwarty bez zadania.",
+          "PurpleBot zużywa mniej energii, gdy jest otwarty bez zadania.",
           "Długie czaty przewijają się bez zatrzymań i otwierają się szybciej.",
-          "OpenBot nie zatrzymuje się już przy starcie na „Łączenie z OpenBot” ani na ekranie ładowania serwera.",
+          "PurpleBot nie zatrzymuje się już przy starcie na „Łączenie z PurpleBot” ani na ekranie ładowania serwera.",
           "Uruchomienia rutyn znów mają Sterowanie komputerem, gdy jest ono włączone dla agenta."
         ]
       }
@@ -724,9 +724,9 @@
         "type": "fixed",
         "items": [
           "Kanał z długą historią znów otwiera się szybko.",
-          "W systemie Linux OpenBot nie prosi już o ponowne logowanie po każdym restarcie, gdy pęk kluczy nie zachowuje swojego klucza.",
+          "W systemie Linux PurpleBot nie prosi już o ponowne logowanie po każdym restarcie, gdy pęk kluczy nie zachowuje swojego klucza.",
           "W systemie Windows liderzy kanałów znów kierują wiadomości, a na tym komputerze można utworzyć serwer.",
-          "Gdy starszy OpenBot otwiera dane zapisane przez nowszą wersję, instaluje najnowszą wersję."
+          "Gdy starszy PurpleBot otwiera dane zapisane przez nowszą wersję, instaluje najnowszą wersję."
         ]
       }
     ]
@@ -740,8 +740,8 @@
         "type": "added",
         "items": [
           "Rozmawiaj z agentami przez WhatsApp. Połącz numer w Marketplace → Aplikacje → WhatsApp. Osobny numer jest bezpieczniejszy, bo WhatsApp może blokować numery, które uzna za zautomatyzowane.",
-          "Uruchom przepływ pracy, gdy ktoś oznaczy OpenBot na Slacku lub w grupie na Telegramie, i odeślij tam jego wynik.",
-          "Używaj OpenBot po arabsku. Układ odwraca się na kierunek od prawej do lewej.",
+          "Uruchom przepływ pracy, gdy ktoś oznaczy PurpleBot na Slacku lub w grupie na Telegramie, i odeślij tam jego wynik.",
+          "Używaj PurpleBot po arabsku. Układ odwraca się na kierunek od prawej do lewej.",
           "Wyłączaj modele w Ustawienia serwera → Dostawcy. Wybór modelu pokazuje najpierw najnowsze modele, a starsze są zwinięte.",
           "Ustawienia serwera mają Dziennik audytu ze zmianami członków, ról i dostępu agentów.",
           "Logowanie firmowe: właściciel serwera może połączyć Microsoft Entra ID, Okta, Google Workspace lub innego dostawcę OpenID Connect w Członkowie → Logowanie firmowe. Osoby z firmowym adresem e-mail dołączają wtedy bez zaproszenia.",
@@ -757,7 +757,7 @@
           "Wiadomości czatu wykorzystują więcej miejsca w szerokim oknie.",
           "Każdy plik otwarty z czatu dostaje własną kartę w panelu bocznym.",
           "Wklejony tekst dłuższy niż 4000 znaków staje się załącznikiem pasted-text.txt, więc wiadomość zachowuje cały tekst.",
-          "OpenBot jest darmowy do użytku osobistego, o czym mówi pierwsze uruchomienie."
+          "PurpleBot jest darmowy do użytku osobistego, o czym mówi pierwsze uruchomienie."
         ]
       },
       {
@@ -779,10 +779,10 @@
       {
         "type": "added",
         "items": [
-          "Kimi to nowy dostawca. OpenBot pobiera Kimi Code CLI, a ty logujesz się kontem Kimi Code.",
+          "Kimi to nowy dostawca. PurpleBot pobiera Kimi Code CLI, a ty logujesz się kontem Kimi Code.",
           "Używaj Hermes Agent od Nous Research jako dostawcy z własnymi wspomnieniami, umiejętnościami i logowaniami.",
-          "Na Macu OpenBot ma ikonę na pasku menu. Po zamknięciu okna ikona w Docku znika, a zadania działają dalej.",
-          "Uruchom przepływ pracy, gdy ktoś oznaczy OpenBot na Discordzie, i odeślij wynik jako odpowiedź, post lub reakcję.",
+          "Na Macu PurpleBot ma ikonę na pasku menu. Po zamknięciu okna ikona w Docku znika, a zadania działają dalej.",
+          "Uruchom przepływ pracy, gdy ktoś oznaczy PurpleBot na Discordzie, i odeślij wynik jako odpowiedź, post lub reakcję.",
           "Foldery na pasku bocznym mogą zawierać foldery, do trzech poziomów. Przeciągnij czat lub folder do folderu.",
           "Wybieraj poziomy rozumowania Brak, Minimalny i Ultra, gdy model je oferuje.",
           "Przypięci agenci i kanały są takie same na każdym urządzeniu, które łączy się z serwerem.",
@@ -803,10 +803,10 @@
       {
         "type": "fixed",
         "items": [
-          "Wzmianki i wiadomości bezpośrednie ze Slacka znów docierają do OpenBot, gdy komputer z obszarem roboczym Slack jest wyłączony.",
+          "Wzmianki i wiadomości bezpośrednie ze Slacka znów docierają do PurpleBot, gdy komputer z obszarem roboczym Slack jest wyłączony.",
           "Telefony i inne urządzenia mogą od razu łączyć się z twoimi serwerami po wybudzeniu komputera.",
           "Wysyłanie pliku w jednym czacie nie blokuje już przycisku Wyślij w innych czatach.",
-          "Tekst skopiowany z OpenBot wkleja się do innych aplikacji bez kolorów aplikacji."
+          "Tekst skopiowany z PurpleBot wkleja się do innych aplikacji bez kolorów aplikacji."
         ]
       }
     ]
@@ -820,8 +820,8 @@
         "type": "added",
         "items": [
           "Uruchom przepływ pracy z GitHub: wyzwalacz GitHub działa przy nowych zgłoszeniach, komentarzach, pull requestach, recenzjach, nieudanych testach lub wzmiance o @openbotgit.",
-          "Zmieniaj GitHub z przepływu pracy: komentuj, dodawaj etykiety, przypisuj, recenzuj, zamykaj lub twórz zgłoszenia jako OpenBot GitHub App.",
-          "Marketplace ma 17 nowych agentów OpenBot, takich jak QA Tester, PR Shepherd i Chief of Staff, oraz 15 nowych umiejętności dla nich.",
+          "Zmieniaj GitHub z przepływu pracy: komentuj, dodawaj etykiety, przypisuj, recenzuj, zamykaj lub twórz zgłoszenia jako PurpleBot GitHub App.",
+          "Marketplace ma 17 nowych agentów PurpleBot, takich jak QA Tester, PR Shepherd i Chief of Staff, oraz 15 nowych umiejętności dla nich.",
           "Użycie pokazuje miesięczny limit OpenCode Go jako trzeci pasek."
         ]
       },
@@ -896,7 +896,7 @@
       {
         "type": "changed",
         "items": [
-          "Dostawca używa zainstalowanego przez ciebie CLI, gdy ma tę samą wersję co kopia OpenBot lub nowszą.",
+          "Dostawca używa zainstalowanego przez ciebie CLI, gdy ma tę samą wersję co kopia PurpleBot lub nowszą.",
           "Twoja odpowiedź w sprawie analityki przechodzi z kontem na inne urządzenia. Jeśli analityka była wyłączona przed tą wersją, pozostaje wyłączona na tym komputerze, dopóki tego tu nie zmienisz.",
           "Przeciągnij uchwyt pola Instrukcje, aby je powiększyć."
         ]
@@ -905,7 +905,7 @@
         "type": "fixed",
         "items": [
           "Weryfikacje Cloudflare przechodzą we wbudowanej przeglądarce.",
-          "CLI każdego dostawcy zajmuje około połowy miejsca na dysku: OpenBot zachowuje jedną wersję.",
+          "CLI każdego dostawcy zajmuje około połowy miejsca na dysku: PurpleBot zachowuje jedną wersję.",
           "Wiadomość wysłana do agenta przy osiągniętym limicie użycia od razu ponawia próbę u dostawcy.",
           "Na pasku bocznym przeciągnięty czat trafia do sekcji pod wskaźnikiem."
         ]

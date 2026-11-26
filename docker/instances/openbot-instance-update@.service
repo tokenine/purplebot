@@ -1,5 +1,5 @@
 [Unit]
-Description=Update OpenBot instance %i
+Description=Update PurpleBot instance %i
 After=docker.service
 
 [Service]

@@ -4,9 +4,9 @@ import type { messages as source } from "../en/vault";
 export const messages = {
   "vault.items.title": "Zapisane elementy",
   "vault.items.description":
-    "Każdy agent na tym serwerze może używać tych elementów. OpenBot sam wpisuje na stronie hasła, numery kart i kody zabezpieczające, więc agenci nigdy ich nie widzą. Agenci odczytują klucze API z pliku, a nie z czatu.",
+    "Każdy agent na tym serwerze może używać tych elementów. PurpleBot sam wpisuje na stronie hasła, numery kart i kody zabezpieczające, więc agenci nigdy ich nie widzą. Agenci odczytują klucze API z pliku, a nie z czatu.",
   "vault.items.scopedDescription":
-    "Każdy element jest dla wybranych przez Ciebie agentów. OpenBot sam wpisuje na stronie hasła, numery kart i kody zabezpieczające, więc agenci nigdy ich nie widzą. Agenci odczytują klucze API z pliku, a nie z czatu. Wszyscy agenci działają jako ten sam użytkownik systemu, więc agent może odczytać także plik klucza API przeznaczony dla innych agentów.",
+    "Każdy element jest dla wybranych przez Ciebie agentów. PurpleBot sam wpisuje na stronie hasła, numery kart i kody zabezpieczające, więc agenci nigdy ich nie widzą. Agenci odczytują klucze API z pliku, a nie z czatu. Wszyscy agenci działają jako ten sam użytkownik systemu, więc agent może odczytać także plik klucza API przeznaczony dla innych agentów.",
   "vault.agents.label": "Agenci",
   "vault.agents.all": "Wszyscy agenci",
   "vault.agents.some": "{chosen} z {total}",
@@ -103,15 +103,15 @@ export const messages = {
   "vault.importMenu": "Importuj z pliku CSV",
   "vault.importTitle": "Importuj z pliku CSV",
   "vault.importDescription":
-    "Importuj loginy z pliku CSV wyeksportowanego z 1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Passwords, LastPass lub Proton Pass. OpenBot odczytuje plik na tym komputerze i go nie wysyła.",
+    "Importuj loginy z pliku CSV wyeksportowanego z 1Password, Bitwarden, Chrome, Edge, Firefox, Safari, Apple Passwords, LastPass lub Proton Pass. PurpleBot odczytuje plik na tym komputerze i go nie wysyła.",
   "vault.importChoose": "Wybierz plik CSV",
   "vault.importDone": "Zaimportowano: {imported}. Pominięto: {skipped}.",
   "vault.unavailableTitle": "Ten komputer nie może przechowywać sekretów",
   "vault.unavailableDescription":
-    "OpenBot szyfruje Sejf za pomocą systemowego magazynu sekretów. Skonfiguruj pęk kluczy, a potem otwórz tę stronę ponownie.",
-  "vault.unreadableTitle": "OpenBot nie może odczytać Sejfu",
+    "PurpleBot szyfruje Sejf za pomocą systemowego magazynu sekretów. Skonfiguruj pęk kluczy, a potem otwórz tę stronę ponownie.",
+  "vault.unreadableTitle": "PurpleBot nie może odczytać Sejfu",
   "vault.unreadableDescription":
-    "Plik Sejfu jest na tym komputerze, ale OpenBot nie może go odszyfrować. Może się tak zdarzyć po zmianie systemowego pęku kluczy. Zresetuj Sejf, aby zacząć od nowa bez żadnych elementów.",
+    "Plik Sejfu jest na tym komputerze, ale PurpleBot nie może go odszyfrować. Może się tak zdarzyć po zmianie systemowego pęku kluczy. Zresetuj Sejf, aby zacząć od nowa bez żadnych elementów.",
   "vault.link.group": "Konta płatności",
   "vault.link.name": "Link",
   "vault.link.connect": "Połącz",
@@ -125,7 +125,7 @@ export const messages = {
     "Agenci nie będą już mogli prosić o płatność przez Link. Twoje konto Link i jego karty pozostaną bez zmian.",
   "vault.reset": "Resetuj Sejf",
   "vault.resetTitle": "Zresetować Sejf?",
-  "vault.resetDescription": "OpenBot usunie plik Sejfu i wszystkie zapisane w nim elementy. Nie możesz tego cofnąć.",
+  "vault.resetDescription": "PurpleBot usunie plik Sejfu i wszystkie zapisane w nim elementy. Nie możesz tego cofnąć.",
   "vault.request.private": "Trafi do twojego Sejfu. {agent} nigdy tego nie zobaczy.",
   "vault.request.privateUnnamed": "Trafi do twojego Sejfu. Agent nigdy tego nie zobaczy.",
   "vault.request.addLogin": "Dodaj login",
@@ -147,7 +147,7 @@ export const messages = {
   },
   "vault.twoStep.setupTitle": "Konfiguracja kodu dwuetapowego",
   "vault.twoStep.setupIntro":
-    "Na {site} włącz weryfikację dwuetapową z aplikacją uwierzytelniającą. Gdy strona pokaże kod QR, podaj OpenBot jego klucz.",
+    "Na {site} włącz weryfikację dwuetapową z aplikacją uwierzytelniającą. Gdy strona pokaże kod QR, podaj PurpleBot jego klucz.",
   "vault.twoStep.keyLabel": "Klucz konfiguracji lub link otpauth://",
   "vault.twoStep.keyHint":
     "Większość stron pokazuje go pod kodem QR, jako „Nie możesz zeskanować?” lub „Wpisz klucz ręcznie”.",
@@ -167,7 +167,7 @@ export const messages = {
   "vault.near.name": "Portfel kryptowalut",
   "vault.near.open": "Otwórz portfel kryptowalut",
   "vault.near.connect": "Połącz",
-  "vault.near.signedOut": "Zaloguj się do OpenBot, aby skonfigurować portfel kryptowalut.",
+  "vault.near.signedOut": "Zaloguj się do PurpleBot, aby skonfigurować portfel kryptowalut.",
   "vault.near.paused": "Wstrzymane",
   "vault.near.failed": "Nie udało się zmienić portfela kryptowalut.",
   "vault.near.waiting": "Czekam na twój podpis w przeglądarce…",
@@ -175,7 +175,7 @@ export const messages = {
   "vault.near.openAgain": "Otwórz ponownie",
   "vault.near.signature.label": "Podpisy w przeglądarce",
   "vault.near.signature.register": "Utwórz klucz dostępu",
-  "vault.near.signature.registerDetail": "Tylko na twoich urządzeniach. OpenBot nigdy go nie ma.",
+  "vault.near.signature.registerDetail": "Tylko na twoich urządzeniach. PurpleBot nigdy go nie ma.",
   "vault.near.signature.create": "Zatwierdź nowy portfel",
   "vault.near.signature.createDetail": "Wszyscy agenci mogą płacić do {amount} dziennie. Zmienisz to później.",
   "vault.near.signature.count": "Podpis {step} z {count} w przeglądarce",
@@ -200,7 +200,7 @@ export const messages = {
     "Twoja przeglądarka nie podała, czy ten klucz dostępu ma kopię zapasową. Sprawdź, czy menedżer haseł go synchronizuje.",
   "vault.near.backup.notChecked": "Kopia niesprawdzona",
   "vault.near.backup.noCopy":
-    "OpenBot nie przechowuje kopii twojego klucza dostępu. Tylko ty możesz podpisywać operacje tego portfela.",
+    "PurpleBot nie przechowuje kopii twojego klucza dostępu. Tylko ty możesz podpisywać operacje tego portfela.",
   "vault.near.backup.checked": "Sprawdzono {date}",
   "vault.near.backup.check": "Sprawdź kopię",
   "vault.near.backup.checkAgain": "Sprawdź ponownie",
@@ -281,7 +281,7 @@ export const messages = {
   "vault.near.disconnect": "Odłącz",
   "vault.near.disconnectTitle": "Odłączyć portfel kryptowalut?",
   "vault.near.disconnectDescription":
-    "Agenci nie będą już mogli płacić z tego portfela, a OpenBot go zapomni. Środki zostaną w portfelu w NEAR Intents.",
+    "Agenci nie będą już mogli płacić z tego portfela, a PurpleBot go zapomni. Środki zostaną w portfelu w NEAR Intents.",
   "vault.near.payment": "{amount} {symbol}",
   "vault.near.overLimit": "Ponad dzienny limit",
   "vault.near.approve": "Zatwierdź",

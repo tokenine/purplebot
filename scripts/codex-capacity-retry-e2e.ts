@@ -285,7 +285,7 @@ try {
     report.cases.push(result);
     assert.notEqual(result.statusDuringRetries, "ended", `${entry.name}: the turn ended before the check`);
     assert.equal(result.finalStatus, "completed", `${entry.name}: the turn did not complete`);
-    assert.equal(result.turnStarts, 1, `${entry.name}: OpenBot started the turn again`);
+    assert.equal(result.turnStarts, 1, `${entry.name}: PurpleBot started the turn again`);
     assert.deepEqual(
       result.retryLogLines.map((line) => line.includes('"atCapacity":true')),
       entry.retries.filter(isRetry).map((retry) => retry !== reset),

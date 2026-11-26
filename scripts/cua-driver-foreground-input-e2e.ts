@@ -17,7 +17,7 @@ const DRIVER =
   process.env.OPENBOT_CUA_DRIVER_PATH ?? join(ROOT, "build/cua-driver", process.platform, process.arch, "cua-driver");
 const ELECTRON = join(ROOT, "node_modules/electron/dist/electron");
 const WINDOW_MANAGER = join(ROOT, "scripts/cua-driver-foreground-input-e2e-wm.py");
-const WINDOW_TITLE = "OpenBot foreground input e2e";
+const WINDOW_TITLE = "PurpleBot foreground input e2e";
 const DEADLINE_MS = 20_000;
 
 const PROBE_MAIN = `

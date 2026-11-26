@@ -280,25 +280,25 @@ const siteErrors = {
     status: 503,
     text: "Site hosting is temporarily unavailable",
     title: "Site hosting is paused",
-    detail: "OpenBot sites are temporarily unavailable. Try again later.",
+    detail: "PurpleBot sites are temporarily unavailable. Try again later.",
   },
   siteNotFound: {
     status: 404,
     text: "Site not found",
     title: "Site not found",
-    detail: "No OpenBot site uses this address. Make sure that the address is correct.",
+    detail: "No PurpleBot site uses this address. Make sure that the address is correct.",
   },
   siteBlocked: {
     status: 451,
     text: "Site unavailable",
     title: "Site unavailable",
-    detail: "OpenBot blocked this site. You cannot open it.",
+    detail: "PurpleBot blocked this site. You cannot open it.",
   },
   siteFailed: {
     status: 500,
     text: "Site unavailable",
     title: "Site unavailable",
-    detail: "OpenBot could not load this site. Try again in a few minutes.",
+    detail: "PurpleBot could not load this site. Try again in a few minutes.",
   },
   siteGone: {
     status: 410,
@@ -357,7 +357,7 @@ const errorPageStyle = `
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#1a1a1a;color:#fff;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 main{width:100%;max-width:440px;padding:32px;border:1px solid rgba(255,255,255,.07);border-radius:18px;background:#212121}
-.brand{margin:0 0 24px;color:#d6adf2;font-weight:600;letter-spacing:-.01em}
+.brand{margin:0 0 24px;color:#7c3aed;font-weight:600;letter-spacing:-.01em}
 .meta{margin:0 0 8px;color:#979797;font-size:13px;overflow-wrap:anywhere}
 h1{margin:0 0 8px;font-size:24px;line-height:1.25;letter-spacing:-.02em}
 p{margin:0;color:#dcdcdc}
@@ -372,7 +372,7 @@ function errorPage(request: Request, env: SiteRouterEnv, error: SiteError, nonce
   const home = accountUrl(env, "/");
   const links = [
     error === "pageNotFound" ? `<a href="/">Open the site home page</a>` : "",
-    home ? `<a href="${escapeHtml(home.toString())}">Go to OpenBot</a>` : "",
+    home ? `<a href="${escapeHtml(home.toString())}">Go to PurpleBot</a>` : "",
   ].join("");
   return `<!doctype html>
 <html lang="en">
@@ -380,12 +380,12 @@ function errorPage(request: Request, env: SiteRouterEnv, error: SiteError, nonce
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>${escapeHtml(title)} - OpenBot</title>
+<title>${escapeHtml(title)} - PurpleBot</title>
 <style nonce="${nonce}">${errorPageStyle}</style>
 </head>
 <body>
 <main>
-<p class="brand">OpenBot</p>
+<p class="brand">PurpleBot</p>
 <p class="meta">Error ${status} - ${escapeHtml(hostname)}</p>
 <h1>${escapeHtml(title)}</h1>
 <p>${escapeHtml(detail)}</p>

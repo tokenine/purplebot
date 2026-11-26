@@ -50,7 +50,7 @@ import { withTimeout } from "./with-timeout";
 
 const MCP_CLIENT_METADATA_URL = "https://openbot.run/oauth/mcp-client.json";
 
-const MCP_CLIENT_NAME = "OpenBot";
+const MCP_CLIENT_NAME = "PurpleBot";
 
 export const MCP_OAUTH_RELAY_URL = "https://openbot.run/oauth/mcp-callback";
 

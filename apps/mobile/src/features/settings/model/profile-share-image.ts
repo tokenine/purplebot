@@ -1,4 +1,4 @@
-import { APP_LOGO_CORNER, APP_LOGO_EYE_POINTS, APP_LOGO_SIZE } from "@openbot/brand/app-logo-shape";
+import { APP_LOGO_CORNER, APP_LOGO_FACE, APP_LOGO_SIZE } from "@openbot/brand/app-logo-shape";
 import { heatLevel, heatmapMonths, heatmapWeeks, type ProfileStats } from "@openbot/team-client/profile-stats";
 import {
   ClipOp,
@@ -95,11 +95,12 @@ function drawLogo(canvas: SkCanvas, x: number, y: number, colors: ProfileShareCo
   );
   const stroke = fill(colors.logoEye);
   stroke.setStyle(PaintStyle.Stroke);
-  stroke.setStrokeWidth(9.5);
   stroke.setStrokeCap(StrokeCap.Round);
   stroke.setStrokeJoin(StrokeJoin.Round);
-  canvas.drawPath(eyePath(APP_LOGO_EYE_POINTS.left), stroke);
-  canvas.drawPath(eyePath(APP_LOGO_EYE_POINTS.right), stroke);
+  for (const shape of APP_LOGO_FACE) {
+    stroke.setStrokeWidth(shape.stroke);
+    canvas.drawPath(eyePath(shape.points), stroke);
+  }
   canvas.restore();
 }
 

@@ -304,7 +304,7 @@ function antigravitySettingsUnreadable(appDataDir: string): boolean {
   }
 }
 
-const ANTIGRAVITY_ENV = { WSL_DISTRO_NAME: "OpenBot", ...ANTIGRAVITY_UPDATE_ENV };
+const ANTIGRAVITY_ENV = { WSL_DISTRO_NAME: "PurpleBot", ...ANTIGRAVITY_UPDATE_ENV };
 
 const ANTIGRAVITY_APP_DATA = "antigravity-acp";
 
@@ -480,7 +480,7 @@ function codexVariableOverrides(variables: Readonly<Record<string, string>>): st
   if (!baseUrl || !/^https?:\/\/[^/\s]+/.test(baseUrl) || /\s/.test(baseUrl)) return [];
   return [
     `model_provider=${CODEX_VARIABLE_PROVIDER}`,
-    `model_providers.${CODEX_VARIABLE_PROVIDER}.name=OpenBot`,
+    `model_providers.${CODEX_VARIABLE_PROVIDER}.name=PurpleBot`,
     `model_providers.${CODEX_VARIABLE_PROVIDER}.base_url=${baseUrl}`,
     `model_providers.${CODEX_VARIABLE_PROVIDER}.wire_api=responses`,
     ...("OPENAI_API_KEY" in variables ? [`model_providers.${CODEX_VARIABLE_PROVIDER}.env_key=OPENAI_API_KEY`] : []),

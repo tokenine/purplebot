@@ -34,7 +34,8 @@ export const messages = {
     "結果はチャンネル {channel} に表示され、このサーバーでチャンネルを読むすべてのメンバーが見られます。",
   "status.agent.creditsHoldBalance": "{credits} クレジットを使い、残高は {balance} クレジットです。",
   "status.agent.creditsHoldAgentsOff": "このサーバーのエージェントはクレジットを使えません。",
-  "status.agent.screenCapturePermissionNext": "その後、macOS が OpenBot に画面収録を許可するよう求めることがあります。",
+  "status.agent.screenCapturePermissionNext":
+    "その後、macOS が PurpleBot に画面収録を許可するよう求めることがあります。",
   "status.agent.screenCaptureDisplay":
     "ディスプレイ {name} をキャプチャし、その画像をエージェントのモデルに送信します。",
   "status.agent.screenCaptureWindow": "ウィンドウ {name} をキャプチャし、その画像をエージェントのモデルに送信します。",
@@ -47,40 +48,41 @@ export const messages = {
   "status.agent.sendIdea": "公開の GitHub issue になります。あなたの名前は表示されません。",
   "status.agent.feedbackRecentErrors": "チャットの最近のエラー:",
   "status.agent.feedbackSameAs": "issue #{issue} に追加します",
-  "status.agent.feedbackSent": "OpenBot チームに送信しました: {title}",
+  "status.agent.feedbackSent": "PurpleBot チームに送信しました: {title}",
   "status.agent.feedbackWithdrawn": "GitHub から削除しました: {title}",
   "status.agent.feedbackWithdrawCommand": "レポート #{issue} を GitHub から削除",
   "status.agent.feedbackWithdrawReason":
     "このレポートは GitHub で誰も見られなくなります。元に戻せません。修正するには、エージェントが修正したレポートを送信できます。",
   "status.agent.feedbackWithdrawing": "レポートを GitHub から削除しています…",
   "status.agent.serverInstallCommand":
-    "別のコンピューターに OpenBot をサーバー {name} としてインストールし、あなたのアカウントにサインインさせる 1 回限りのコマンドを作成します。エージェントがそこで実行します。",
+    "別のコンピューターに PurpleBot をサーバー {name} としてインストールし、あなたのアカウントにサインインさせる 1 回限りのコマンドを作成します。エージェントがそこで実行します。",
   "status.agent.serverInstallCard": "サーバー {name} のインストールコマンド",
   "status.agent.browserProfileNamed":
     "{agents} をブラウザープロファイル {profile} に移動します。そのログイン情報と Cookie を使えるようになります。開いているタブは閉じます。",
-  "status.agent.commitCoAuthorOff": "すべてのエージェントのコミットに OpenBot を共同作成者として追加するのをやめます。",
-  "status.agent.commitCoAuthorOn": "すべてのエージェントのコミットに OpenBot を共同作成者として再び追加します。",
+  "status.agent.commitCoAuthorOff":
+    "すべてのエージェントのコミットに PurpleBot を共同作成者として追加するのをやめます。",
+  "status.agent.commitCoAuthorOn": "すべてのエージェントのコミットに PurpleBot を共同作成者として再び追加します。",
   "status.agent.browserProfileNew":
     "新しいブラウザープロファイル {profile} を作成し、{agents} を移動します。ログイン情報はありません。開いているタブは閉じます。",
   "status.agent.browserProfileShared":
     "{agents} を共有のブラウザープロファイルに移動します。そのログイン情報と Cookie を使えるようになります。開いているタブは閉じます。",
   "status.agent.browserProfileOwn":
     "{agents} にそれぞれ専用のブラウザープロファイルを与えます。開いているタブは閉じます。",
-  "status.agent.feedbackSending": "フィードバックを OpenBot チームに送信しています…",
+  "status.agent.feedbackSending": "フィードバックを PurpleBot チームに送信しています…",
   "status.agent.workflowDelete":
     "ワークフロー {title} を実行履歴とバージョンごと削除します。実行中のステップは停止します。",
   "status.agent.deleteAgents": "{agents} をチャットとファイルごと削除します。元に戻せません。",
-  "status.agent.nearSignatureReceived": "OpenBot が署名を受け取りました。このタブは閉じてかまいません。",
-  "status.agent.nearSignatureUnknown": "OpenBot はこの署名を待っていません。OpenBot でもう一度始めてください。",
+  "status.agent.nearSignatureReceived": "PurpleBot が署名を受け取りました。このタブは閉じてかまいません。",
+  "status.agent.nearSignatureUnknown": "PurpleBot はこの署名を待っていません。PurpleBot でもう一度始めてください。",
   "status.agent.nearPayment":
     "{domain} のため、暗号資産ウォレットから {recipient} に {amount} {symbol} を支払います: {reason}",
   "status.agent.nearSummaryCreate":
-    "すべてのエージェントが 1 日あたり最大 {amount} USD まで支払えます。あとで OpenBot で変更できます。",
+    "すべてのエージェントが 1 日あたり最大 {amount} USD まで支払えます。あとで PurpleBot で変更できます。",
   "status.agent.nearSummaryGrant":
-    "この OpenBot アプリが、あなたのルールの範囲内で {days} 日間ウォレットから支払えるようにします。",
+    "この PurpleBot アプリが、あなたのルールの範囲内で {days} 日間ウォレットから支払えるようにします。",
   "status.agent.nearSummaryBudget": "ウォレットの 1 日の予算を {amount} USD に変更します。",
   "status.agent.nearSummaryAutoPay":
-    "支払いルールで許可されている場合は、OpenBot があなたの署名なしで支払えるようにします。その他の支払いは引き続きチャットで確認します。",
+    "支払いルールで許可されている場合は、PurpleBot があなたの署名なしで支払えるようにします。その他の支払いは引き続きチャットで確認します。",
   "status.agent.nearSummaryPayment": "{recipient} への {amount} の支払いを承認します。",
   "status.agent.nearSummaryFreeze": "支払いを再開するまで、エージェントはこのウォレットから支払えません。",
   "status.agent.nearSummaryUnfreeze":

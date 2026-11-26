@@ -622,7 +622,7 @@ const EXTERNAL_TAB = (tab: { url: string } | null) =>
   (tab
     ? `The page is already open in a tab whose URL is ${tab.url}. Select that tab first. `
     : "Open the page in a new tab. ") +
-  "Never use or change a page whose URL starts with openbot-app://: it is the OpenBot app window.";
+  "Never use or change a page whose URL starts with openbot-app://: it is the PurpleBot app window.";
 const OWN_TAB = (tab: { id: string; url: string } | null) =>
   tab ? `The page is already open in tab ${tab.id} at ${tab.url}; use that tab.` : "No browser tab is open.";
 

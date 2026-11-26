@@ -15,7 +15,7 @@ const userData = join(root, "user-data");
 const home = join(root, "home");
 const fakeCodex = join(root, "codex");
 const fakeLog = join(root, "codex.jsonl");
-const NOTE_MARKER = "OpenBot note, not a message from the user";
+const NOTE_MARKER = "PurpleBot note, not a message from the user";
 const CODEX_ERROR = "Error running remote compact task: Connection failed: error sending request";
 const COMPACTION_TIMEOUT_MS = 200;
 
@@ -319,7 +319,7 @@ try {
   await check("a compaction that sends nothing is stopped at the deadline, then continues", async () => {
     const result = await request("Stalled", ["stall", "ok"]);
     assert.equal(result.status, "completed", "The request did not complete.");
-    assert.deepEqual(result.interrupts, [{ stalled: true }], "OpenBot did not stop the stalled turn.");
+    assert.deepEqual(result.interrupts, [{ stalled: true }], "PurpleBot did not stop the stalled turn.");
     assert.deepEqual(result.turns, [
       { kind: "stall", note: false },
       { kind: "ok", note: true },
@@ -345,8 +345,8 @@ try {
   await check("a turn that compacts again and again is stopped and does not continue", async () => {
     const result = await request("Looping", ["loop", "ok"]);
     assert.equal(result.status, "failed", "The request did not fail.");
-    assert.equal(result.compactions, 3, "OpenBot did not stop the loop at its third compaction.");
-    assert.equal(result.interrupts.length, 1, "OpenBot did not stop the turn once.");
+    assert.equal(result.compactions, 3, "PurpleBot did not stop the loop at its third compaction.");
+    assert.equal(result.interrupts.length, 1, "PurpleBot did not stop the turn once.");
     assert.deepEqual(result.turns, [{ kind: "loop", note: false }], "The stopped turn continued.");
     assert.deepEqual(result.errors, [loopError], "The error is not the plain text.");
     assert.equal(result.deliveryError, loopError);

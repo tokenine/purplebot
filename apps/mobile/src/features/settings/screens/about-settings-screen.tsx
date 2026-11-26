@@ -13,7 +13,7 @@ import {
 import { nativeBuildVersion } from "@/shared/lib/native-application";
 import { useText } from "@/shared/lib/text";
 
-const PRODUCT_NAME = "OpenBot";
+const PRODUCT_NAME = "PurpleBot";
 
 export function AboutSettingsScreen() {
   const { t } = useText();

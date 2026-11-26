@@ -106,6 +106,8 @@ const config = {
   },
   vars: {
     AUTH_EXPOSE_DEVELOPMENT_CODE: "false",
+    // The account service builds its absolute links (emails, MCP metadata) from this origin.
+    SITE_ORIGIN: apiDomain,
     ...(emailDeliveryMode === "webhook"
       ? { EMAIL_DELIVERY_WEBHOOK_URL: emailDeliveryWebhookUrl }
       : {

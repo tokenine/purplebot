@@ -1,6 +1,6 @@
 # @openbot/whatsapp
 
-The WhatsApp client of the WhatsApp connector: a fork of Baileys without its copyleft parts, OpenBot's
+The WhatsApp client of the WhatsApp connector: a fork of Baileys without its copyleft parts, PurpleBot's
 own Signal-protocol code, and the encrypted store of one linked device. The connector itself
 (`src/backend/messaging/whatsapp/`) uses this package; see [docs/messaging.md](../../docs/messaging.md).
 
@@ -17,7 +17,7 @@ own Signal-protocol code, and the encrypted store of one linked device. The conn
 
 Upstream Baileys imports `libsignal` (GPL-3.0) for Signal sessions and sender keys, and
 `whatsapp-rust-bridge`, whose WebAssembly build contains `wacore-libsignal` (files marked
-`AGPL-3.0-only`). OpenBot is PolyForm Noncommercial 1.0.0 and cannot ship either. The fork removes
+`AGPL-3.0-only`). PurpleBot is PolyForm Noncommercial 1.0.0 and cannot ship either. The fork removes
 both and gets its Signal code from `src/signal/`. Every other dependency is MIT, BSD-3-Clause,
 Apache-2.0, ISC or BlueOak-1.0.0.
 

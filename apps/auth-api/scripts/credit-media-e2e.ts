@@ -344,6 +344,7 @@ async function gatewayFlow() {
   const tracked: DynamicRecord[] = [];
   const sends: Promise<void>[] = [];
   const analytics = createAccountAnalytics({
+    apiUrl: "https://analytics.example.com/api",
     clientId: "openpanel-test",
     clientSecret: "openpanel-test-secret",
     fetch: async (_input, init) => {

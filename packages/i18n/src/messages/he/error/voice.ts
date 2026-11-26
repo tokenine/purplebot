@@ -9,8 +9,9 @@ export const messages = {
   "error.voice.runtimeUnavailable": "תמלול קול מקומי אינו זמין בפלטפורמה הזו.",
   "error.voice.modelUnavailable": "מודל הקול אינו זמין.",
   "error.voice.transcriptionTimedOut": "תמלול הקול חרג מהזמן המותר.",
-  "error.voice.prepareRequired": "תמלול קול מקומי אינו זמין. יש להריץ `bun run voice:prepare` ולהפעיל מחדש את OpenBot.",
-  "error.voice.transcriptionFailed": "OpenBot לא הצליח לתמלל את ההקלטה הזו.",
+  "error.voice.prepareRequired":
+    "תמלול קול מקומי אינו זמין. יש להריץ `bun run voice:prepare` ולהפעיל מחדש את PurpleBot.",
+  "error.voice.transcriptionFailed": "PurpleBot לא הצליח לתמלל את ההקלטה הזו.",
   "error.voice.videoModelMissing": "לא הוגדר מודל זיהוי דיבור להקלטות בהגדרות ← קול.",
   "error.voice.videoModelMissingServer":
     "לא הוגדר מודל זיהוי דיבור בשרת הזה. בעלים או מנהל יכולים להגדיר מודל בהגדרות השרת, בזיהוי דיבור.",
@@ -25,9 +26,9 @@ export const messages = {
   "error.voice.speech.runtimeUnavailable": "דיבור מקומי אינו זמין בפלטפורמה הזו.",
   "error.voice.speech.modelRequired": "יש להוריד את מודל הדיבור בהגדרות ← קול.",
   "error.voice.speech.timedOut": "הקראת התשובה חרגה מהזמן המותר.",
-  "error.voice.speech.failed": "OpenBot לא הצליח להקריא את התשובה.",
+  "error.voice.speech.failed": "PurpleBot לא הצליח להקריא את התשובה.",
   "error.voice.speech.providerRefused": "{provider} סירבה ליצור את השמע: {reason}",
-  "error.voice.recordingNotKept": "OpenBot לא הצליח לשמור את הקלטת הקול.",
+  "error.voice.recordingNotKept": "PurpleBot לא הצליח לשמור את הקלטת הקול.",
   "error.voice.live.timedOut": "הקול החי של Codex לא התחיל בזמן. יש לנסות שוב.",
   "error.voice.live.failed": "הקול החי נעצר: {reason}",
   "error.voice.live.disconnected": "הקול החי התנתק.",
@@ -45,7 +46,7 @@ export const messages = {
   "error.voice.server.routeOff": "שרת הקול לא הוגדר לכך. יש לבדוק את הגדרות ← קול.",
   "error.voice.server.keyRefused": "{host} דחה את מפתח ה-API.",
   "error.voice.server.invalidAnswer": "{host} לא שלח תשובה תואמת OpenAI.",
-  "error.voice.server.invalidAudio": "{host} שלח אודיו ש-OpenBot לא יכול להשמיע. יש להשתמש בשרת ששולח WAV.",
+  "error.voice.server.invalidAudio": "{host} שלח אודיו ש-PurpleBot לא יכול להשמיע. יש להשתמש בשרת ששולח WAV.",
   "error.voice.server.tooLarge": "התשובה מ-{host} גדולה מדי.",
   "error.voice.server.modelUnsupported":
     "{host} לא יכול לתמלל עם {model}. יש לבחור מודל הכתבה אחר לשרת הקול בהגדרות ← קול.",

@@ -10,7 +10,7 @@ shift
 HELPER=$1
 shift
 ASSETS=$(cd "$(dirname "$0")/../build/macos/host-updates" && pwd)
-ROOT='/Library/Application Support/OpenBot/HostManager'
+ROOT='/Library/Application Support/PurpleBot/HostManager'
 
 check_dir() {
   [ ! -L "$1" ] && [ -d "$1" ] && [ "$(stat -f %u "$1")" = 0 ] || exit 1
@@ -22,7 +22,7 @@ check_dir() {
   fi
 }
 for path in / /Library '/Library/Application Support' /Library/LaunchAgents /Library/LaunchDaemons; do check_dir "$path"; done
-for path in '/Library/Application Support/OpenBot' "$ROOT"; do
+for path in '/Library/Application Support/PurpleBot' "$ROOT"; do
   if [ ! -e "$path" ] && [ ! -L "$path" ]; then mkdir -m 755 "$path"; fi
   check_dir "$path"
 done
@@ -69,4 +69,4 @@ for tenant in "$@"; do
     echo "LaunchAgent for $tenant will load at the next GUI login."
   fi
 done
-ls -ld /Applications/OpenBot.app "$ROOT"
+ls -ld /Applications/PurpleBot.app "$ROOT"
