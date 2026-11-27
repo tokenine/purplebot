@@ -1,4 +1,5 @@
 import { Effect, Result } from "effect";
+import { OPENBOT_SECURITY_HEADERS } from "../lib/site-metadata";
 import { sendAccountActivitySnapshots } from "./account-activity";
 import { createAccountAnalytics, createAccountEventDelivery } from "./account-analytics";
 import { type AuthRetentionResult, pruneExpiredAuthData } from "./auth-data-retention";
@@ -9,6 +10,7 @@ import { permanentTrailingSlashRedirect } from "./canonical-redirect";
 import { CreditAudit } from "./credit-audit";
 import { CreditGrants } from "./credit-grants";
 import { CreditMediaService } from "./credit-media-service";
+import { withD1RequestSession } from "./d1-request-session";
 import { runApiEffect } from "./effect-runtime";
 import { createHostedBilling } from "./hosted-billing";
 import { createHostedPoolAlert } from "./hosted-pool-alert";
@@ -16,7 +18,7 @@ import { readHostedPool } from "./hosted-pool-snapshot";
 import type { HostedServerBindings } from "./hosted-server-service";
 import { enforceMarketplaceIngress, MarketplaceRateLimitError } from "./marketplace-request-policy";
 import { mediaGatewayFromBinding } from "./media-gateway";
-import { observedD1 } from "./observed-d1";
+import { d1OverloadedRecently, observedD1 } from "./observed-d1";
 import {
   deliverPendingRemoteAuthEvents,
   type RemoteAuthEventBindings,
@@ -33,6 +35,30 @@ type RetentionLogger = (result: AuthRetentionResult) => void;
 type WorkerExecutionContext = Pick<ExecutionContext, "waitUntil">;
 type RemoteAuthEventDelivery = typeof deliverPendingRemoteAuthEvents;
 
+const OVERLOAD_RETRY_AFTER_MIN_SECONDS = 10;
+const OVERLOAD_RETRY_AFTER_SPREAD_SECONDS = 20;
+
+function withOverloadRetryAfter(response: Response): Response {
+  if (response.status !== 500 || response.headers.has("Retry-After") || !d1OverloadedRecently(Date.now())) {
+    return response;
+  }
+  const delayed = new Response(response.body, response);
+  delayed.headers.set(
+    "Retry-After",
+    String(OVERLOAD_RETRY_AFTER_MIN_SECONDS + Math.floor(Math.random() * (OVERLOAD_RETRY_AFTER_SPREAD_SECONDS + 1))),
+  );
+  return delayed;
+}
+
+const STRICT_TRANSPORT_SECURITY = "Strict-Transport-Security";
+
+function withStrictTransportSecurity(response: Response): Response {
+  if (response.status === 101 || response.headers.has(STRICT_TRANSPORT_SECURITY)) return response;
+  const copy = new Response(response.body, response);
+  copy.headers.set(STRICT_TRANSPORT_SECURITY, OPENBOT_SECURITY_HEADERS[STRICT_TRANSPORT_SECURITY]);
+  return copy;
+}
+
 export function createWorkerHandler(
   fetchHandler: WorkerFetch,
   prune: AuthDataPruner = pruneExpiredAuthData,
@@ -46,40 +72,43 @@ export function createWorkerHandler(
       context?: WorkerExecutionContext,
     ) {
       const bindings = workerBindings.DB ? { ...workerBindings, DB: observedD1(workerBindings.DB) } : workerBindings;
-      const limitedResponse = await runApiEffect(
-        enforceMarketplaceIngress(request, bindings).pipe(
-          Effect.catchIf(
-            (error) => error instanceof MarketplaceRateLimitError,
-            (error) =>
-              Effect.succeed(
-                Response.json(
-                  { error: { code: error.code, message: error.message } },
-                  {
-                    status: error.status,
-                    headers: {
-                      "Cache-Control": "no-store",
-                      "Retry-After": String(error.retryAfterSeconds),
-                      "X-Content-Type-Options": "nosniff",
+      const handle = async (): Promise<Response> => {
+        const limitedResponse = await runApiEffect(
+          enforceMarketplaceIngress(request, bindings).pipe(
+            Effect.catchIf(
+              (error) => error instanceof MarketplaceRateLimitError,
+              (error) =>
+                Effect.succeed(
+                  Response.json(
+                    { error: { code: error.code, message: error.message } },
+                    {
+                      status: error.status,
+                      headers: {
+                        "Cache-Control": "no-store",
+                        "Retry-After": String(error.retryAfterSeconds),
+                        "X-Content-Type-Options": "nosniff",
+                      },
                     },
-                  },
+                  ),
                 ),
-              ),
-          ),
-        ),
-      );
-      if (limitedResponse) return limitedResponse;
-      const response = Promise.resolve(fetchHandler(request)).then((result) =>
-        permanentTrailingSlashRedirect(request, result),
-      );
-      if (context && isEmailSignInStart(request)) {
-        context.waitUntil(
-          response.then(
-            () => undefined,
-            () => undefined,
+            ),
           ),
         );
-      }
-      return response;
+        if (limitedResponse) return withOverloadRetryAfter(limitedResponse);
+        const response = Promise.resolve(fetchHandler(request)).then((result) =>
+          withOverloadRetryAfter(permanentTrailingSlashRedirect(request, result)),
+        );
+        if (context && isEmailSignInStart(request)) {
+          context.waitUntil(
+            response.then(
+              () => undefined,
+              () => undefined,
+            ),
+          );
+        }
+        return response;
+      };
+      return withStrictTransportSecurity(await withD1RequestSession(request, workerBindings.DB, handle));
     },
     async scheduled(
       controller: Pick<ScheduledController, "scheduledTime"> & Partial<Pick<ScheduledController, "cron">>,

@@ -50,8 +50,7 @@ export const messages = {
   "error.provider.credentialFileTooLarge": "Sağlayıcı kimlik bilgisi dosyası çok büyük.",
   "error.provider.environmentNameInvalid":
     "{name} geçerli bir değişken adı değil. Harf, rakam ve _ kullanın ve rakamla başlamayın.",
-  "error.provider.environmentNameReserved":
-    "PurpleBot bu sağlayıcı için {name} değerini ayarlar. Bu değişkeni kaldırın.",
+  "error.provider.environmentNameReserved": "PurpleBot bu sağlayıcı için {name} değerini ayarlar. Bu değişkeni kaldırın.",
   "error.provider.environmentNameDuplicate": "{name} listede birden fazla kez var.",
   "error.provider.environmentValueTooLong": "{name} değeri çok uzun.",
   "error.provider.environmentTooMany": "Bir sağlayıcının en fazla {limit} değişkeni olabilir.",
@@ -455,6 +454,8 @@ export const messages = {
     "Görsel çok büyük olduğu için model bu sohbetteki bir görseli kabul etmedi. PurpleBot, sohbet geçmişiyle yeni bir {provider} oturumu başlattı. Tekrar deneyin.",
   "error.provider.imageCountLimit":
     "Sohbette çok fazla görsel olduğu için model bu sohbeti kabul etmedi. PurpleBot, sohbet geçmişiyle yeni bir {provider} oturumu başlattı. Tekrar deneyin.",
+  "error.provider.imageCountLimitRepeated":
+    "Model bu sohbeti yine kabul etmedi: sohbette çok fazla görsel var. Bir görev bu modelin kabul ettiğinden fazla görsel açıyor, bu yüzden yeni bir oturum işe yaramaz. Yeni sohbet'i seçin ve ajandan her adımda daha az görsel açmasını isteyin ya da daha fazla görsel kabul eden bir model seçin.",
   "error.provider.imageUnreadable":
     "Model bu sohbetteki bir görseli okuyamadı. PurpleBot, sohbet geçmişiyle yeni bir {provider} oturumu başlattı. Tekrar deneyin. Bir görsel gönderdiyseniz, başka bir görsel gönderin.",
   "error.provider.requestTooLarge":

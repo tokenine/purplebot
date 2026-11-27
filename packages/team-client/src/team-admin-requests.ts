@@ -96,6 +96,7 @@ import {
   decodeHostProviderAccounts,
   decodeHostProviderAccountUsage,
   decodeHostReleaseStatus,
+  decodeHostRemoteChatContent,
   decodeHostSignalHomeSettings,
   decodeHostSkillLearning,
   decodeHostTimezoneSettings,
@@ -148,6 +149,7 @@ import {
   type HostPersonality,
   type HostProviderAccounts,
   type HostReleaseStatus,
+  type HostRemoteChatContent,
   type HostSetDiscordAccessInput,
   type HostSetMessagingEnabledInput,
   type HostSignalHomeSettings,
@@ -377,6 +379,11 @@ import { PROMPT_CACHE_TTL_ROUTES } from "@openbot/contracts/team-protocol/prompt
 import { PROVIDER_ACCOUNT_CODE_ROUTES } from "@openbot/contracts/team-protocol/provider-account-code-v1";
 import { PROVIDER_ACCOUNT_KEYS_ROUTES } from "@openbot/contracts/team-protocol/provider-account-keys-v1";
 import { PROVIDER_ACCOUNT_MODELS_ROUTES } from "@openbot/contracts/team-protocol/provider-account-models-v1";
+import {
+  decodeProviderAccountPoolStrategies,
+  PROVIDER_ACCOUNT_POOL_STRATEGY_ROUTES,
+  withProviderAccountPoolStrategies,
+} from "@openbot/contracts/team-protocol/provider-account-pool-strategy-v1";
 import { PROVIDER_ACCOUNT_POOL_ROUTES } from "@openbot/contracts/team-protocol/provider-account-pool-v1";
 import type {
   ProviderAccountRelay,
@@ -402,6 +409,7 @@ import { PROVIDERS_SIGN_IN_V3_ROUTES } from "@openbot/contracts/team-protocol/pr
 import type { PROVIDERS_V4_ROUTES } from "@openbot/contracts/team-protocol/providers-v4";
 import type { PROVIDERS_V5_ROUTES } from "@openbot/contracts/team-protocol/providers-v5";
 import { PROVIDERS_V8_ROUTES } from "@openbot/contracts/team-protocol/providers-v8";
+import { REMOTE_CHAT_CONTENT_ROUTES } from "@openbot/contracts/team-protocol/remote-chat-content-v1";
 import { ROUTINE_RECOVERY_ROUTES } from "@openbot/contracts/team-protocol/routine-recovery-v1";
 import { ROUTINE_RESULTS_ROUTES } from "@openbot/contracts/team-protocol/routine-results-v1";
 import {
@@ -1025,6 +1033,19 @@ export function setHostBrowsingMemory(
   return adminCall(() => request("POST", BROWSING_MEMORY_ROUTES.update, decodeHostBrowsingMemory, { enabled }));
 }
 
+export function getHostRemoteChatContent(
+  request: TeamApiRequest,
+): Effect.Effect<HostRemoteChatContent, TeamAdminRequestError> {
+  return adminCall(() => request("POST", REMOTE_CHAT_CONTENT_ROUTES.settings, decodeHostRemoteChatContent, {}));
+}
+
+export function setHostRemoteChatContent(
+  request: TeamApiRequest,
+  enabled: boolean,
+): Effect.Effect<HostRemoteChatContent, TeamAdminRequestError> {
+  return adminCall(() => request("POST", REMOTE_CHAT_CONTENT_ROUTES.update, decodeHostRemoteChatContent, { enabled }));
+}
+
 export function getHostAgentAccess(request: TeamApiRequest): Effect.Effect<AgentAccessSnapshot, TeamAdminRequestError> {
   return adminCall(() => request("POST", AGENT_ACCESS_ROUTES.read, decodeAgentAccessSnapshot, {}));
 }
@@ -1484,6 +1505,7 @@ export function listProviderAccountsWithModels(
   withModels: boolean,
   withPools: boolean,
   withLiveVoice = false,
+  withPoolStrategy = false,
 ): Effect.Effect<HostProviderAccounts, TeamAdminRequestError> {
   if (!withModels && !withPools && !withLiveVoice) return listProviderAccounts(request);
   return Effect.all(
@@ -1505,12 +1527,19 @@ export function listProviderAccountsWithModels(
             Effect.orElseSucceed(() => null),
           )
         : Effect.succeed(null),
+      withPools && withPoolStrategy
+        ? adminCall(() =>
+            request("POST", PROVIDER_ACCOUNT_POOL_STRATEGY_ROUTES.list, decodeProviderAccountPoolStrategies, {}),
+          ).pipe(Effect.orElseSucceed(() => null))
+        : Effect.succeed(null),
     ],
     { concurrency: "unbounded" },
   ).pipe(
-    Effect.map(([accounts, models, pools, liveVoice]) => {
+    Effect.map(([accounts, models, pools, liveVoice, strategies]) => {
       const withAccountModels = models ? withHostProviderAccountModels(accounts, models) : accounts;
-      const withPools = pools ? { ...withAccountModels, pools } : withAccountModels;
+      const withPools = pools
+        ? { ...withAccountModels, pools: strategies ? withProviderAccountPoolStrategies(pools, strategies) : pools }
+        : withAccountModels;
       return liveVoice ? { ...withPools, liveVoiceAccount: liveVoice.accountId } : withPools;
     }),
   );
@@ -1557,9 +1586,21 @@ export function cancelProviderAccountCodeLogin(
 
 export function setProviderAccountPool(
   request: TeamApiRequest,
-  input: SetProviderAccountPoolInput,
+  { strategy, ...input }: SetProviderAccountPoolInput,
+  withStrategy = false,
 ): Effect.Effect<void, TeamAdminRequestError> {
-  return adminCall(() => request("POST", PROVIDER_ACCOUNT_POOL_ROUTES.update, ignoreResponse, { ...input }));
+  const update = adminCall(() => request("POST", PROVIDER_ACCOUNT_POOL_ROUTES.update, ignoreResponse, { ...input }));
+  if (!strategy || !withStrategy || !input.enabled) return update;
+  return update.pipe(
+    Effect.andThen(
+      adminCall(() =>
+        request("POST", PROVIDER_ACCOUNT_POOL_STRATEGY_ROUTES.update, ignoreResponse, {
+          provider: input.provider,
+          strategy,
+        }),
+      ),
+    ),
+  );
 }
 
 export function setLiveVoiceAccount(

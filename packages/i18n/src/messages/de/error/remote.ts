@@ -98,6 +98,8 @@ export const messages = {
     "PurpleBot konnte die Verbindung zu diesem Server nicht starten. Wenn das weiter passiert, beende PurpleBot und öffne es erneut.",
   "error.remote.connectionServiceUnreachable":
     "Dieser Computer erreicht den Verbindungsdienst von PurpleBot nicht. Prüfe seine Internetverbindung. PurpleBot verbindet sich automatisch wieder.",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "Dieses Gerät erreicht den Verbindungsdienst von PurpleBot nicht. Prüfe seine Internetverbindung und das VPN. PurpleBot verbindet sich automatisch wieder.",
   "error.remote.serverAnswerTimeout":
     "Der Server hat nicht rechtzeitig geantwortet. PurpleBot verbindet sich automatisch wieder.",
   "error.remote.signInConnectionClosed":

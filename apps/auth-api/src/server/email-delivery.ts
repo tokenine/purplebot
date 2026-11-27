@@ -170,7 +170,7 @@ const deliver = Effect.fn("EmailDelivery.deliver")(function* (
 ): Effect.fn.Return<void, SmtpFailure | EmailDeliveryError> {
   const prepared = yield* Effect.result(prepare);
   if (Result.isFailure(prepared)) {
-    analytics.track(null, { name: "email_sent", kind, result: "failed" });
+    analytics.track(null, { name: "email_sent", kind, result: "failed", mailbox: "primary" });
     return yield* prepared.failure;
   }
   const message = withInboxReply(senders, prepared.success);
@@ -253,7 +253,11 @@ function tracked<E extends { message: string }>(
   send: Effect.Effect<void, E>,
 ): Effect.Effect<void, E> {
   return Effect.onExit(send, (exit) =>
-    Effect.sync(() => analytics.track(null, { name, kind, result: sendResult(exit) })),
+    Effect.sync(() =>
+      name === "email_sent"
+        ? analytics.track(null, { name, kind, result: sendResult(exit), mailbox: "primary" })
+        : analytics.track(null, { name, kind, result: sendResult(exit) }),
+    ),
   );
 }
 

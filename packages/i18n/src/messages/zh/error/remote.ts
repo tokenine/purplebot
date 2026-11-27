@@ -37,8 +37,7 @@ export const messages = {
   "error.remote.runtimeUnavailable": "远程桌面运行时不可用。",
   "error.remote.sunshineStartFailed": "Sunshine 未能在主机上启动。请检查主机上的远程桌面日志后重试。",
   "error.remote.moonlightStartFailed": "Moonlight Web 未能在主机上启动。请检查主机上的远程桌面日志后重试。",
-  "error.remote.pairingFailed":
-    "Moonlight 无法与主机上的 Sunshine 配对。请重试；若问题持续，请重启主机上的 PurpleBot。",
+  "error.remote.pairingFailed": "Moonlight 无法与主机上的 Sunshine 配对。请重试；若问题持续，请重启主机上的 PurpleBot。",
   "error.remote.runtimeStartFailed": "远程桌面运行时未能在主机上启动。请检查主机上的远程桌面日志后重试。",
   "error.remote.hostUnreachable": "无法连接该主机。",
   "error.remote.signInToHostAgain": "请重新登录该主机。",
@@ -86,6 +85,8 @@ export const messages = {
   "error.remote.connectionNotStarted": "PurpleBot 无法开始连接此服务器。如果问题持续，请退出 PurpleBot 并重新打开。",
   "error.remote.connectionServiceUnreachable":
     "此电脑无法连接 PurpleBot 连接服务。请检查网络连接。PurpleBot 会自动重新连接。",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "此设备无法连接 PurpleBot 连接服务。请检查网络连接和 VPN。PurpleBot 会自动重新连接。",
   "error.remote.serverAnswerTimeout": "服务器未及时响应。PurpleBot 会自动重新连接。",
   "error.remote.signInConnectionClosed":
     "登录时与服务器的连接已关闭。如果反复出现，请确认服务器和此设备的日期和时间正确。",

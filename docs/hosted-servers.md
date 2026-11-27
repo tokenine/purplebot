@@ -335,7 +335,7 @@ a Claude subscription on a server, read [provider terms](provider-terms.md#claud
 
 The plan sets the number of active members, owner included: Starter 1, Standard 5 and Pro 10
 (`BILLING_PLANS`). A host with no plan, such as a self-hosted server, takes the users of its owner's
-license (`ownerLicenseForHost`): Starter 1, Team 2 to 10. Only a license that is `active`, `trialing`, or
+license (`ownerLicenseForHost`): Starter 1, Team 2 to 25. Only a license that is `active`, `trialing`, or
 `past_due` until the end of its period gives these seats. A host with no plan and no such license has 3
 (`DEFAULT_TEAM_MEMBER_LIMIT`). The Worker reads the limit in this order: a `server_member_limits` row,
 a hosted plan, the license, the default. A self-hosted host can keep a plan from before the license; it
@@ -802,8 +802,9 @@ background. Main rewrites `~/.config/OpenBot/openbot-run-marker-v1.json` every 6
 loop (`src/main/run-marker.ts`). The watchdog reads the file every 30 s. When the content does not
 change in 20 reads (10 minutes) after it changed once in this run, the watchdog logs "OpenBot did not
 update its heartbeat for 600 seconds" and sends `SIGKILL` to the process in
-`/run/openbot/openbot.pid`. `Restart=always` starts the service again 10 s later. The watchdog does
-nothing:
+`/run/openbot/openbot.pid`. `Restart=always` starts the service again 10 s later. The Docker
+entrypoint (`scripts/hosting/openbot-container`) starts the same watchdog; there the container exits
+and its restart policy starts it again. The watchdog does nothing:
 
 - before the first change of the file in this run;
 - until the start finishes: `openbot-start-attempts-v1.json` in the same folder has
@@ -1535,7 +1536,9 @@ still uses the sandbox. The downtime is the export, the copy, the import and the
    The move also does not copy files of the customer in other folders outside the home, such as
    Obsidian vaults in `/srv` (issue #8871). `packages` names each folder, one level below the top
    (`/srv/vaults`) or two in `/var` (`/var/lib/syncthing`), that has a file of `user` outside the paths
-   above, `/usr`, `/tmp`, `/var/log`, `/var/cache` and `/var/crash`, also on another mount.
+   above, `/usr`, `/tmp`, `/var/log`, `/var/cache`, `/var/crash`, `/var/lib/docker` and
+   `/var/lib/containerd`, also on another mount. The two Docker folders hold images and containers,
+   which the move does not copy (see below).
    `leaseweb-pool.ts move` then stops before the downtime, and the server stays on boat. It also stops
    when the search fails. With `--folders=<folder>,...`, the move copies these folders too: `export`
    archives them, and `import` makes each one as a new folder of `user` and restores it as `user`, as it

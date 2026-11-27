@@ -71,8 +71,7 @@ export const messages = {
   "error.remote.inviteAcceptedOtherHost": "Usługa kont zaakceptowała inny host.",
   "error.remote.inviteIdentityChanged": "Tożsamość hosta zaproszenia zmieniła się podczas akceptacji.",
   "error.remote.localServerRemove": "Nie można usunąć lokalnego serwera.",
-  "error.remote.desktopSetupHostUpdate":
-    "Zaktualizuj PurpleBot na hoście, aby sprawdzić konfigurację zdalnego pulpitu.",
+  "error.remote.desktopSetupHostUpdate": "Zaktualizuj PurpleBot na hoście, aby sprawdzić konfigurację zdalnego pulpitu.",
   "error.remote.desktopTestHostUpdate":
     "Zaktualizuj PurpleBot na hoście, aby przetestować konfigurację zdalnego pulpitu.",
   "error.remote.viewerProxyUnavailable": "Lokalny serwer proxy zdalnego podglądu jest niedostępny.",
@@ -98,6 +97,8 @@ export const messages = {
     "PurpleBot nie mógł nawiązać połączenia z tym serwerem. Jeśli problem się powtarza, zamknij PurpleBot i otwórz go ponownie.",
   "error.remote.connectionServiceUnreachable":
     "Ten komputer nie może połączyć się z usługą połączeń PurpleBot. Sprawdź jego połączenie z internetem. PurpleBot połączy się ponownie automatycznie.",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "To urządzenie nie może połączyć się z usługą połączeń PurpleBot. Sprawdź jego połączenie z internetem i VPN. PurpleBot połączy się ponownie automatycznie.",
   "error.remote.serverAnswerTimeout": "Serwer nie odpowiedział na czas. PurpleBot połączy się ponownie automatycznie.",
   "error.remote.signInConnectionClosed":
     "Połączenie z serwerem zostało zamknięte podczas logowania. Jeśli to się powtarza, sprawdź datę i godzinę na serwerze i na tym urządzeniu.",

@@ -20,7 +20,7 @@ const CREDENTIAL_ASSIGNMENT = new RegExp(
   "giu",
 );
 const KNOWN_SECRET_PREFIXES =
-  /(?<![A-Za-z0-9_-])(?:(?:sk-ant|sk-|sk_|xai-|ghp_|gho_|ghu_|ghr_|ghs_|github_pat_|AKIA|xox[abeoprs]-|xapp-|glpat-|rk_live_|rk_test_)[A-Za-z0-9._-]{8,}|whsec_[A-Za-z0-9+/=._-]{8,}|AIza[A-Za-z0-9_-]{30,}|(?:npm|hf|gsk)_[A-Za-z0-9]{30,}|ASIA[A-Z0-9]{16}(?![A-Za-z0-9])|ya29\.[A-Za-z0-9_-]{20,}|GOCSPX-[A-Za-z0-9_-]{20,}|(?:bot)?\d{6,12}:[A-Za-z0-9_-]{35}(?![A-Za-z0-9_-]))/g;
+  /(?<![A-Za-z0-9_-])(?:(?:sk-ant|sk-|sk_|xai-|ghp_|gho_|ghu_|ghr_|ghs_|github_pat_|AKIA|xox[abeoprs]-|xapp-|glpat-|rk_live_|rk_test_)[A-Za-z0-9._-]{8,}|whsec_[A-Za-z0-9+/=._-]{8,}|AIza[A-Za-z0-9_-]{30,}|(?:npm|hf|gsk)_[A-Za-z0-9]{30,}|ASIA[A-Z0-9]{16}(?![A-Za-z0-9])|ya29\.[A-Za-z0-9_-]{20,}|1\/\/0[A-Za-z0-9_-]{20,}|GOCSPX-[A-Za-z0-9_-]{20,}|(?:bot)?\d{6,12}:[A-Za-z0-9_-]{35}(?![A-Za-z0-9_-]))/g;
 const WEBHOOK_URL_SECRET =
   /(https:\/\/(?:hooks\.slack\.com\/(?:services|workflows|triggers)\/|(?:(?:canary|ptb)\.)?discord(?:app)?\.com\/api\/(?:v\d+\/)?webhooks\/))(?!\[redacted\])[^\s"'<>?#)\]]+/giu;
 const JSON_WEB_TOKEN = /(?<![A-Za-z0-9_-])eyJ[A-Za-z0-9_-]{8,}\.eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]*/g;
@@ -73,17 +73,41 @@ export function registerSecretValue(value: string, options: { allowShort?: boole
 
 export function registerSecretValues(values: Iterable<string>, options: { allowShort?: boolean } = {}): void {
   const size = registeredSecrets.size;
+  addSecretForms(registeredSecrets, values, options);
+  if (registeredSecrets.size !== size) rebuildRegisteredSecretPattern();
+}
+
+export interface SecretValueSet {
+  values: Iterable<string>;
+  allowShort?: boolean;
+}
+
+const secretGroups = new Map<string, Set<string>>();
+
+export function replaceSecretValueGroup(group: string, sets: readonly SecretValueSet[]): void {
+  const forms = new Set<string>();
+  for (const set of sets) addSecretForms(forms, set.values, set);
+  if (forms.size > 0) secretGroups.set(group, forms);
+  else if (!secretGroups.delete(group)) return;
+  rebuildRegisteredSecretPattern();
+}
+
+function addSecretForms(forms: Set<string>, values: Iterable<string>, options: { allowShort?: boolean }): void {
   for (const value of values) {
     if (!value || (!options.allowShort && value.length < MIN_REGISTERED_SECRET_LENGTH)) continue;
     for (const form of [value, JSON.stringify(value).slice(1, -1), uriEncoded(value)]) {
-      if (form !== null) registeredSecrets.add(form);
+      if (form) forms.add(form);
     }
   }
-  if (registeredSecrets.size === size) return;
-  const alternatives = [...registeredSecrets]
+}
+
+function rebuildRegisteredSecretPattern(): void {
+  const secrets = new Set(registeredSecrets);
+  for (const forms of secretGroups.values()) for (const form of forms) secrets.add(form);
+  const alternatives = [...secrets]
     .sort((left, right) => right.length - left.length)
     .map((secret) => secret.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&"));
-  registeredSecretPattern = new RegExp(alternatives.join("|"), "gu");
+  registeredSecretPattern = alternatives.length === 0 ? null : new RegExp(alternatives.join("|"), "gu");
 }
 
 function uriEncoded(value: string): string | null {

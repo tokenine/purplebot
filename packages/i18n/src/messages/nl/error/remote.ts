@@ -77,8 +77,7 @@ export const messages = {
   "error.remote.localServerRemove": "De lokale server kan niet worden verwijderd.",
   "error.remote.desktopSetupHostUpdate":
     "Werk PurpleBot bij op de host om de instelling van extern bureaublad te controleren.",
-  "error.remote.desktopTestHostUpdate":
-    "Werk PurpleBot bij op de host om de instelling van extern bureaublad te testen.",
+  "error.remote.desktopTestHostUpdate": "Werk PurpleBot bij op de host om de instelling van extern bureaublad te testen.",
   "error.remote.viewerProxyUnavailable": "De lokale proxy voor de externe viewer is niet beschikbaar.",
   "error.remote.viewerTransportInvalid": "Het transport van de externe viewer is ongeldig.",
   "error.remote.viewerProxyNoPort": "De lokale proxy voor de externe viewer heeft geen poort gekregen.",
@@ -101,8 +100,9 @@ export const messages = {
     "PurpleBot kon de verbinding met deze server niet starten. Als dit blijft gebeuren, sluit PurpleBot af en open het opnieuw.",
   "error.remote.connectionServiceUnreachable":
     "Deze computer kan de verbindingsdienst van PurpleBot niet bereiken. Controleer de internetverbinding. PurpleBot verbindt automatisch opnieuw.",
-  "error.remote.serverAnswerTimeout":
-    "De server heeft niet op tijd geantwoord. PurpleBot verbindt automatisch opnieuw.",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "Dit apparaat kan de verbindingsdienst van PurpleBot niet bereiken. Controleer de internetverbinding en de vpn. PurpleBot verbindt automatisch opnieuw.",
+  "error.remote.serverAnswerTimeout": "De server heeft niet op tijd geantwoord. PurpleBot verbindt automatisch opnieuw.",
   "error.remote.signInConnectionClosed":
     "De verbinding met de server is tijdens het inloggen verbroken. Gebeurt dit vaker, controleer dan de datum en tijd op de server en op dit apparaat.",
   "error.remote.connectionCancelled": "De externe verbinding is geannuleerd.",

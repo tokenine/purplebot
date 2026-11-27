@@ -556,6 +556,10 @@ export const messages = {
   "mobile.server.settings.browsingMemoryDescription":
     "에이전트의 브라우저를 조작하면 에이전트가 사용한 페이지와 버튼에서 사이트 사용법을 학습합니다. 입력한 텍스트는 저장되지 않습니다.",
   "mobile.server.settings.browsingMemoryLoadFailed": "브라우징 설정을 불러올 수 없습니다.",
+  "mobile.server.settings.remoteChatContent": "채팅에서 외부 콘텐츠 불러오기",
+  "mobile.server.settings.remoteChatContentDescription":
+    "채팅에서 다른 웹사이트의 사진과 사이트 아이콘을 표시합니다. 끄면 링크로 표시되며, 다이어그램과 페이지는 탭할 때만 불러옵니다. 이 서버의 모든 사람에게 적용됩니다.",
+  "mobile.server.settings.remoteChatContentLoadFailed": "외부 콘텐츠 설정을 불러올 수 없습니다.",
   "mobile.server.settings.learningSaveFailed": "이 설정을 저장하지 못했어요. 다시 시도해 주세요.",
   "mobile.server.settings.learningUnsupported":
     "여기에서 이 설정을 변경하려면 이 서버의 PurpleBot을 업데이트해 주세요.",
@@ -1141,6 +1145,11 @@ export const messages = {
   "mobile.server.providers.pool": "계정 풀 사용",
   "mobile.server.providers.poolHint":
     "에이전트는 사용량 한도에 가까워질 때까지 한 계정을 쓰고, 그다음 한도가 가장 먼저 초기화되는 계정을 써요.",
+  "mobile.server.providers.poolStrategy": "계정 사용 방식",
+  "mobile.server.providers.poolFillFirst": "먼저 채우기",
+  "mobile.server.providers.poolSpread": "분산",
+  "mobile.server.providers.poolSpreadHint":
+    "에이전트가 사용량이 가장 많이 남은 계정에 나뉘어요. 다른 계정에 여유가 훨씬 많을 때만 에이전트가 계정을 바꿔요.",
   "mobile.server.providers.accountsPooledHint":
     "에이전트가 이 계정들을 함께 써요. 새 계정은 이 휴대폰에서 계정 페이지로 로그인해요.",
   "mobile.server.providers.accountsPooledOnComputer":

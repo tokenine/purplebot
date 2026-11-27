@@ -4,8 +4,8 @@ export function Terms() {
   return (
     <>
       <p>
-        PurpleBot is a noncommercial fork of OpenBot (<a href={UPSTREAM_REPOSITORY_URL}>{UPSTREAM_REPOSITORY_URL}</a>),
-        licensed under the PolyForm Noncommercial License 1.0.0.
+        PurpleBot is a noncommercial fork of PurpleBot (<a href={UPSTREAM_REPOSITORY_URL}>{UPSTREAM_REPOSITORY_URL}</a>
+        ), licensed under the PolyForm Noncommercial License 1.0.0.
       </p>
       <p>
         This account service is operated by the person or organization that deployed it, not by the upstream project.

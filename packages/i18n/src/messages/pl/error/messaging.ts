@@ -10,16 +10,16 @@ export const messages = {
   "error.messaging.discordUnsupported": "Ten komputer nie może połączyć się z Discordem.",
   "error.messaging.discordRelayUnavailable":
     "PurpleBot nie może odbierać zdarzeń Discord na tym komputerze. Zaloguj się, nadaj temu komputerowi nazwę i spróbuj ponownie.",
-  "error.messaging.discordRolesUnsupported":
-    "PurpleBot nie może jeszcze pokazać ról Discorda. Spróbuj ponownie później.",
+  "error.messaging.discordRolesUnsupported": "PurpleBot nie może jeszcze pokazać ról Discorda. Spróbuj ponownie później.",
   "error.messaging.telegramNotConnected": "Ten czat Telegram nie jest połączony.",
   "error.messaging.telegramUnsupported": "Ten komputer nie może połączyć się z Telegramem.",
   "error.messaging.telegramRelayUnavailable":
     "PurpleBot nie może połączyć się z Telegramem na tym komputerze. Zaloguj się, nadaj temu komputerowi nazwę i spróbuj ponownie.",
   "error.messaging.telegramRelayUnreachable":
     "PurpleBot nie może połączyć się ze swoją usługą z tego komputera. Sprawdź połączenie z internetem, VPN, serwer proxy lub zaporę sieciową i spróbuj ponownie.",
-  "error.messaging.telegramServiceUnavailable":
-    "PurpleBot nie może teraz połączyć Telegrama. Spróbuj ponownie później.",
+  "error.messaging.telegramRelayCertificate":
+    "PurpleBot nie może nawiązać bezpiecznego połączenia ze swoją usługą z tego komputera. Przyczyną może być oprogramowanie zabezpieczające, które skanuje ruch HTTPS, albo błędna data i godzina na tym komputerze. Sprawdź je i spróbuj ponownie.",
+  "error.messaging.telegramServiceUnavailable": "PurpleBot nie może teraz połączyć Telegrama. Spróbuj ponownie później.",
   "error.messaging.whatsappNotConnected": "Ten numer WhatsApp nie jest połączony.",
   "error.messaging.whatsappUnsupported": "Ten komputer nie może połączyć się z WhatsApp.",
   "error.messaging.whatsappTooManySenders": "Numer WhatsApp może dopuścić maksymalnie 200 kontaktów i grup.",

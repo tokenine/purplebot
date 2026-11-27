@@ -1,6 +1,11 @@
 import type { AgentProviderId } from "@openbot/contracts/agent-providers";
 import { chatVisualReply } from "@openbot/contracts/chat-visual";
-import type { AgentApproval, ConversationMessageSender, MessageReaction } from "@openbot/contracts/ipc";
+import {
+  type AgentApproval,
+  type ConversationMessageSender,
+  LOCAL_SERVER_ID,
+  type MessageReaction,
+} from "@openbot/contracts/ipc";
 import { speechTextFromMarkdown } from "@openbot/contracts/speech-text";
 import { FEEDBACK_WITHDRAW_CAPABILITY } from "@openbot/contracts/team-protocol/feedback-withdraw-v1";
 import type { ConversationUiBlock } from "@openbot/contracts/ui-blocks";
@@ -45,12 +50,14 @@ import { MAIN_THREAD_ID } from "@openbot/ui/features/conversation/threads/thread
 import { UnreadMessagesBanner, UnreadMessagesDivider } from "@openbot/ui/features/conversation/UnreadMessages";
 import { VoicePlayer } from "@openbot/ui/features/conversation/VoicePlayer";
 import { teamMemberName } from "@openbot/ui/features/team/TeamPersonAvatar";
+import { NearPaymentRecordCard } from "@openbot/ui/features/vault/NearPaymentRecordCard";
 import { useText } from "@openbot/ui/text";
 import { createEffect, createMemo, createSignal, For, Loading, onSettled, Show, untrack } from "solid-js";
 import { useShowAgentSteps } from "../../agent-steps-preference";
 import { planItems, planTitle, replacedPlanIds } from "../../app-message-projection";
 import { useChatBubbleStyle } from "../../chat-bubble-style-preference";
 import { useCompactMessageActions } from "../../compact-message-actions-preference";
+import { useRemoteChatContent } from "../servers/remote-chat-content";
 import {
   remoteRoutineRecovery,
   serverRoleCanAdminister,
@@ -118,6 +125,7 @@ function rowDrawsTime(message: AgentMessage): boolean {
     message.kind !== "plan" &&
     message.kind !== "subagents" &&
     message.kind !== "memory-changes" &&
+    message.kind !== "near-payment" &&
     message.kind !== "thinking" &&
     chatVisualReply(message) === null
   );
@@ -236,6 +244,8 @@ export function ConversationTimeline() {
   } = useConversationViewScope();
   const { t, format } = useText();
   const controller = useConversationController();
+  const remoteChatContent = useRemoteChatContent();
+  const remoteContentShown = () => remoteChatContent.enabled(props.server?.id ?? LOCAL_SERVER_ID);
   const waitingProviderName = () => {
     const waiting = providerSilentMinutes() !== null || providerOffline();
     return waiting ? agentProviderName() : undefined;
@@ -506,6 +516,7 @@ export function ConversationTimeline() {
               onOpenQuote={openQuote}
               onOpenTag={openTaggedReference}
               macWindowControls={props.platform === "darwin"}
+              remoteContent={remoteContentShown()}
             />
           )}
         </Show>
@@ -525,6 +536,7 @@ export function ConversationTimeline() {
               onOpenQuote={openQuote}
               onOpenTag={openTaggedReference}
               macWindowControls={props.platform === "darwin"}
+              remoteContent={remoteContentShown()}
             />
           )}
         </For>
@@ -708,6 +720,7 @@ export function ConversationTimeline() {
       next.kind === "plan" ||
       next.kind === "subagents" ||
       next.kind === "memory-changes" ||
+      next.kind === "near-payment" ||
       next.kind === "thinking" ||
       shownVisualReply(next, runtime.visualPage)
     )
@@ -852,6 +865,11 @@ export function ConversationTimeline() {
           }
         >
           <ReplyReturnButton onBack={() => void replyJump.returnToReply()} onStay={replyJump.stayHere} />
+        </Show>
+        <Show when={!props.loaded && channel?.loading?.()}>
+          <div class="conversation-history-status" role="status">
+            {t("conversation.direct.loading")}
+          </div>
         </Show>
         <Show when={props.loaded}>
           <Show when={props.loadingOlder || props.olderError}>
@@ -1323,6 +1341,56 @@ export function ConversationTimeline() {
                     </div>
                   );
                 }
+                if (untrack(() => initialMessage.kind === "near-payment")) {
+                  const nearPayment = () => message()?.nearPayment ?? initialMessage.nearPayment;
+                  return (
+                    <div
+                      data-index={virtualRow.index}
+                      ref={messageVirtualizer.measureElement}
+                      class="virtual-chat-row"
+                      style={{
+                        transform: messageVirtualizer.isVirtualized()
+                          ? `translateY(${virtualRow.start - messageVirtualizer.scrollMargin()}px)`
+                          : "none",
+                      }}
+                    >
+                      <Show when={message()?.id === compactionBefore()}>
+                        <CompactionMarker />
+                      </Show>
+                      <Show when={dayMarker()}>
+                        {(label) => (
+                          <div class="time-marker">
+                            <span>{label()}</span>
+                          </div>
+                        )}
+                      </Show>
+                      <Show when={message()?.id === unreadBoundaryMessageId()}>
+                        <UnreadMessagesDivider
+                          animateIn={unreadDividerArrives}
+                          elementRef={(element) => {
+                            setUnreadMessagesDividerElement(element);
+                            scheduleUnreadDividerVisibilityUpdate();
+                          }}
+                        />
+                      </Show>
+                      <ChatRowBoundary>
+                        <article
+                          data-chat-search-message={message()?.id}
+                          class={{ "message-entry-animated": animateEntrance }}
+                        >
+                          <Show when={nearPayment()}>
+                            {(current) => (
+                              <NearPaymentRecordCard
+                                payment={current()}
+                                onOpenLink={(url) => void openExternalMessageUrl(url)}
+                              />
+                            )}
+                          </Show>
+                        </article>
+                      </ChatRowBoundary>
+                    </div>
+                  );
+                }
                 if (untrack(() => initialMessage.kind === "memory-changes" || initialMessage.kind === "thinking")) {
                   return (
                     <div
@@ -1573,6 +1641,7 @@ export function ConversationTimeline() {
                             imageCopies={imageCopies()}
                             downloads={attachmentDownloads}
                             macWindowControls={props.platform === "darwin"}
+                            remoteContent={remoteContentShown()}
                             loadImageFile={messageImageFiles && loadImageFile}
                             onDownloadImageFile={
                               messageImageFiles &&

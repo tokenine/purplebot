@@ -666,6 +666,10 @@ export const messages = defineMessages("mobile.server", {
   "mobile.server.settings.browsingMemoryDescription":
     "When you control an agent's browser, the agent learns how sites work from the pages and buttons you use. Typed text is not kept.",
   "mobile.server.settings.browsingMemoryLoadFailed": "Could not load the browsing setting.",
+  "mobile.server.settings.remoteChatContent": "Load remote content in chats",
+  "mobile.server.settings.remoteChatContentDescription":
+    "Show pictures and site icons from other websites in chats. When this is off, they show as links, and diagrams and pages load only when you tap. This applies to everyone on this server.",
+  "mobile.server.settings.remoteChatContentLoadFailed": "Could not load the remote content setting.",
   "mobile.server.settings.learningSaveFailed": "Could not save this setting. Try again.",
   "mobile.server.settings.learningUnsupported": "Update PurpleBot on this server to change this setting here.",
   "mobile.server.settings.responseStyleDescription":
@@ -1431,6 +1435,11 @@ export const messages = defineMessages("mobile.server", {
   "mobile.server.providers.pool": "Pool accounts",
   "mobile.server.providers.poolHint":
     "Agents use one account until it nears a usage limit, then the account whose limit resets first.",
+  "mobile.server.providers.poolStrategy": "Use accounts",
+  "mobile.server.providers.poolFillFirst": "Fill first",
+  "mobile.server.providers.poolSpread": "Spread",
+  "mobile.server.providers.poolSpreadHint":
+    "Agents spread over the accounts with the most usage left. An agent changes accounts only when another account has much more room.",
   "mobile.server.providers.accountsPooledHint":
     "Agents share these accounts. A new account signs in on its page on this phone.",
   "mobile.server.providers.accountsPooledOnComputer":

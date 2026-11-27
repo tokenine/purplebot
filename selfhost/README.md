@@ -137,9 +137,11 @@ To connect:
 
 - Browser: open `https://purple-api.example.com/app`, sign in with an email code,
   and add your server.
-- Phone: the phone app is the OpenBot app of upstream from the App Store and Google
-  Play. Scan the connection QR code of a desktop app that uses your service. Email
-  sign-in on the phone always uses `openbot.run`, so it cannot reach your service.
+- Phone: build the app of this repository with
+  `EXPO_PUBLIC_OPENBOT_API_URL=https://purple-api.example.com` (see
+  `apps/mobile/README.md`), or use the OpenBot app of upstream from the stores
+  and scan the connection QR code of a desktop app that uses your service. The
+  store app signs in at `openbot.run`, so only the QR pairing works there.
 - Desktop app: start it with two variables, each time:
 
   ```sh

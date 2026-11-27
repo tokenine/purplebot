@@ -451,6 +451,8 @@ export const messages = {
     "Het model accepteerde een afbeelding in deze chat niet, omdat de afbeelding te groot is. PurpleBot heeft een nieuwe {provider}-sessie gestart met de chatgeschiedenis. Probeer het opnieuw.",
   "error.provider.imageCountLimit":
     "Het model accepteerde deze chat niet, omdat de chat te veel afbeeldingen bevat. PurpleBot heeft een nieuwe {provider}-sessie gestart met de chatgeschiedenis. Probeer het opnieuw.",
+  "error.provider.imageCountLimitRepeated":
+    "Het model accepteerde deze chat opnieuw niet: de chat bevat te veel afbeeldingen. Een taak opent meer afbeeldingen dan dit model accepteert, dus een nieuwe sessie helpt niet. Kies Nieuwe chat en vraag de agent per stap minder afbeeldingen te openen, of kies een model voor meer afbeeldingen.",
   "error.provider.imageUnreadable":
     "Het model kon een afbeelding in deze chat niet lezen. PurpleBot heeft een nieuwe {provider}-sessie gestart met de chatgeschiedenis. Probeer het opnieuw. Stuurde je een afbeelding, stuur dan een andere.",
   "error.provider.requestTooLarge":
@@ -521,8 +523,7 @@ export const messages = {
   "error.provider.customAgentArgsInvalid": "Een argument mag geen regeleinde bevatten. Gebruik maximaal 32 argumenten.",
   "error.provider.customAgentWindowsScript":
     "Een .cmd- of .bat-opdracht accepteert alleen letters, cijfers en - _ . , : = @ + / \\ in de argumenten.",
-  "error.provider.customAgentNotFound":
-    "PurpleBot kan {command} niet vinden. Voer het volledige pad van de opdracht in.",
+  "error.provider.customAgentNotFound": "PurpleBot kan {command} niet vinden. Voer het volledige pad van de opdracht in.",
   "error.provider.customAgentCheckTimedOut": "De agent reageerde niet binnen 20 seconden.",
   "error.provider.customAgentCheckStopped": "De agent is gestopt voordat hij antwoordde.",
   "error.provider.customAgentProtocolVersion": "De agent gebruikt ACP-versie {version}. PurpleBot gebruikt versie 1.",

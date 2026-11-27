@@ -17,8 +17,9 @@ export const messages = {
     "PurpleBot не может связаться с Telegram на этом компьютере. Войдите в аккаунт, задайте компьютеру имя и повторите попытку.",
   "error.messaging.telegramRelayUnreachable":
     "PurpleBot не может подключиться к своему сервису с этого компьютера. Проверьте подключение к интернету, VPN, прокси или брандмауэр и повторите попытку.",
-  "error.messaging.telegramServiceUnavailable":
-    "PurpleBot сейчас не может подключить Telegram. Повторите попытку позже.",
+  "error.messaging.telegramRelayCertificate":
+    "PurpleBot не может установить защищённое соединение со своим сервисом с этого компьютера. Причиной может быть защитная программа, которая проверяет HTTPS-трафик, или неверные дата и время на этом компьютере. Проверьте их и повторите попытку.",
+  "error.messaging.telegramServiceUnavailable": "PurpleBot сейчас не может подключить Telegram. Повторите попытку позже.",
   "error.messaging.whatsappNotConnected": "Этот номер WhatsApp не подключён.",
   "error.messaging.whatsappUnsupported": "Этот компьютер не может подключиться к WhatsApp.",
   "error.messaging.whatsappTooManySenders": "Номер WhatsApp может разрешить не более 200 контактов и групп.",

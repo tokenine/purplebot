@@ -177,6 +177,7 @@ export const messages = {
   "chat.marker.settingLink": "Toonde een instelling",
   "chat.settingLink.desktopOnly": "Open hem in de PurpleBot-app op je computer.",
   "chat.settingLink.agentChatOnly": "Open hem in je chat met deze agent.",
+  "chat.settingLink.adminOnly": "Alleen de servereigenaar of een beheerder kan deze instelling wijzigen.",
   "chat.marker.skillSuggestion": "Stelde een vaardigheid voor",
   "chat.marker.mcpSignIn": "Vroeg je in te loggen bij een MCP-server",
   "chat.marker.serverInstall": "Heeft een opdracht gemaakt om een server te installeren",
@@ -542,4 +543,13 @@ export const messages = {
   "chat.feedbackWithdrawn.badge": "Verwijderd",
   "chat.feedbackWithdrawn.body":
     "Je melding staat niet meer op GitHub. Vraag de agent om een verbeterde melding te sturen.",
+  "chat.remoteContent.pictureNotLoaded":
+    "Afbeelding van {host}. Niet geladen, omdat externe inhoud uit staat op deze server.",
+  "chat.remoteContent.loadPicture": "Afbeelding laden",
+  "chat.remoteContent.diagramNotDrawn":
+    "Dit diagram kan een afbeelding van een andere website laden. Het is niet getekend, omdat externe inhoud uit staat op deze server.",
+  "chat.remoteContent.loadDiagram": "Diagram laden",
+  "chat.remoteContent.pageStatic":
+    "Getoond zonder scripts en externe inhoud, omdat externe inhoud uit staat op deze server.",
+  "chat.remoteContent.runPage": "Pagina starten",
 } as const satisfies PartialTranslation<typeof source>;

@@ -32,6 +32,7 @@ import {
   requiredNumberColumn,
   requiredStringColumn,
 } from "./database/database-rows";
+import { currentConversationMessage } from "./database/legacy-conversation-message";
 import { withTransaction } from "./database/sqlite-transaction";
 import { cachedStatement } from "./database/statement-cache";
 import type { OpenBotDatabase } from "./openbot-database";
@@ -79,6 +80,14 @@ const UNREAD_COUNT_SQL = `SELECT COUNT(*) AS unread FROM projection_channel_mess
     AND COALESCE(json_extract(m.message_json, '$.message.itemType'), '') NOT LIKE ?
     AND COALESCE(json_extract(m.message_json, '$.message.itemType'), '') NOT LIKE ?
     AND COALESCE(json_extract(m.message_json, '$.message.itemType'), '') NOT LIKE ?`;
+
+const MESSAGES_AFTER_READ_SQL = `SELECT COUNT(*) AS messages FROM (
+  SELECT 1 FROM projection_channel_messages
+  WHERE channel_id = ?
+    AND sequence > COALESCE(
+      (SELECT through_sequence FROM projection_channel_reads WHERE channel_id = ? AND member_id = ?), 0)
+    AND ${SHOWN_MESSAGE_SQL}
+  LIMIT ?)`;
 
 function deletedChannelMessage(entry: ChannelMessage): ChannelMessage & { deleted: true } {
   return {
@@ -159,6 +168,18 @@ function parsedJsonColumn<T>(value: DynamicRecord[string], parse: (decoded: unkn
   } catch {
     return fallback;
   }
+}
+
+function repairedChannelMessage(decoded: unknown): ChannelMessage | undefined {
+  if (isChannelMessage(decoded)) return decoded;
+  if (!isDynamicRecord(decoded)) return undefined;
+  const message = currentConversationMessage(decoded.message);
+  const repaired = message ? { ...decoded, message } : decoded;
+  return isChannelMessage(repaired) ? repaired : undefined;
+}
+
+function listedChannelMessage(value: DynamicRecord[string]): ChannelMessage | undefined {
+  return parsedJsonColumn(value, repairedChannelMessage, undefined);
 }
 
 function storedFolders(value: DynamicRecord[string]): readonly string[] | undefined {
@@ -261,6 +282,13 @@ export class ChannelStore {
     return true;
   }
 
+  messagesAfterRead(channelId: string, memberId: string, limit: number): number {
+    const row = databaseRow(
+      cachedStatement(this.database.connection, MESSAGES_AFTER_READ_SQL).get(channelId, channelId, memberId, limit),
+    );
+    return Number(row?.messages ?? 0);
+  }
+
   #unreadCount(channelId: string, memberId: string, excludedId: string, keep: boolean): number {
     const key = `${memberId}\n${excludedId}`;
     const kept = keep ? this.#unreadCounts.get(channelId)?.get(key) : undefined;
@@ -340,15 +368,7 @@ export class ChannelStore {
     }
     return rows.map((row) => {
       const channel = decodeChannel(JSON.parse(requiredStringColumn(row, "channel_json")));
-      const latestJson = row.latest_json;
-      const latest =
-        typeof latestJson === "string" && latestJson.length > 0
-          ? (() => {
-              const value = JSON.parse(latestJson);
-              if (!isChannelMessage(value)) throw new Error("Invalid stored channel message.");
-              return value;
-            })()
-          : undefined;
+      const latest = listedChannelMessage(row.latest_json);
       const tasks = this.#taskCountsOf(channel.id, keepsCounts);
       return {
         ...channel,

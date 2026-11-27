@@ -97,6 +97,8 @@ export const messages = {
     "PurpleBot не удалось начать подключение к этому серверу. Если проблема повторяется, закройте PurpleBot и откройте его снова.",
   "error.remote.connectionServiceUnreachable":
     "Этот компьютер не может подключиться к сервису соединений PurpleBot. Проверьте его подключение к интернету. PurpleBot подключится снова автоматически.",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "Это устройство не может подключиться к сервису соединений PurpleBot. Проверьте его подключение к интернету и VPN. PurpleBot подключится снова автоматически.",
   "error.remote.serverAnswerTimeout": "Сервер не ответил вовремя. PurpleBot подключится снова автоматически.",
   "error.remote.signInConnectionClosed":
     "Соединение с сервером закрылось при входе. Если это повторяется, проверьте дату и время на сервере и на этом устройстве.",

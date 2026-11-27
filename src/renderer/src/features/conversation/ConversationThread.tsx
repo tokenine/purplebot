@@ -1,4 +1,4 @@
-import { canPreviewAttachment } from "@openbot/contracts/ipc";
+import { canPreviewAttachment, LOCAL_SERVER_ID } from "@openbot/contracts/ipc";
 import type { AppTextKey } from "@openbot/i18n";
 import { classifyFailure } from "@openbot/telemetry";
 import { Input } from "@openbot/ui";
@@ -18,6 +18,7 @@ import { useCompactMessageActions } from "../../compact-message-actions-preferen
 import { usePlatform } from "../../platform";
 import { deviceQuoteShortcut, deviceSendShortcut } from "../../send-shortcut-preference";
 import { remoteAgentError } from "../agents/agent-error-text";
+import { useRemoteChatContent } from "../servers/remote-chat-content";
 import { useThreadVisualReplyCard } from "./ChatVisualReply";
 import { ConversationBrowserLocation } from "./ConversationBrowserLocation";
 import { ConversationBrowserTakeover } from "./ConversationBrowserTakeover";
@@ -30,6 +31,7 @@ import type { ConversationThreads } from "./conversation-types";
 import { useThreadMarketplaceSuggestionCard } from "./MarketplaceSuggestionChatCard";
 import { useThreadMcpSignInCard } from "./McpSignInChatCard";
 import { useMessageBackdropAction } from "./message-backdrop";
+import { useThreadNearPaymentCard } from "./NearPaymentThreadCard";
 import { narrationRows, naturalThreadRows } from "./narration-rows";
 import { useNearPaymentApproval } from "./near-payment-approval";
 import { useThreadSettingLinkCard } from "./SettingLinkChatCard";
@@ -77,6 +79,7 @@ export function ConversationThread() {
     toggleSubagentPanel,
     browserTabs,
   } = useConversationViewScope();
+  const remoteChatContent = useRemoteChatContent();
   const backdropAction = useMessageBackdropAction(conversationRuntime(props));
   const threadBackgroundWorkSince = (taskId: string | undefined) =>
     taskId === undefined ? undefined : props.backgroundWorkSince?.(taskId);
@@ -217,6 +220,7 @@ export function ConversationThread() {
   );
   const marketplaceCard = useThreadMarketplaceSuggestionCard();
   const settingLinkCard = useThreadSettingLinkCard();
+  const paymentRecordCard = useThreadNearPaymentCard();
   const visualReplyCard = useThreadVisualReplyCard(threadComposer.openDraftKey, requestThreadFocus);
   const attention = () => {
     if (!hasAttention()) return undefined;
@@ -303,6 +307,7 @@ export function ConversationThread() {
             imageCopies={imageCopies()}
             downloads={attachmentDownloads}
             macWindowControls={props.platform === "darwin"}
+            remoteContent={remoteChatContent.enabled(props.server?.id ?? LOCAL_SERVER_ID)}
             approval={current().threads.approval}
             media={props.mediaApproval}
             onRespondApproval={(decision) =>
@@ -323,7 +328,8 @@ export function ConversationThread() {
               visualReplyCard(message, quote) ??
               mcpSignInCard(message) ??
               marketplaceCard(message) ??
-              settingLinkCard(message)
+              settingLinkCard(message) ??
+              paymentRecordCard(message)
             }
             olderMessages={current().threads.olderMessages}
             newerMessages={current().threads.newerMessages}

@@ -13,6 +13,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { request as httpRequest } from "node:http";
+import { connect } from "node:net";
 import { homedir, tmpdir } from "node:os";
 import { join, parse, resolve } from "node:path";
 import { isDeepStrictEqual } from "node:util";
@@ -284,6 +285,7 @@ import {
   CHANNEL_PAGE_TASKS_CAPABILITY,
   decodeTeamProtocolSupportExpanded,
   TEAM_CURRENT_CAPABILITIES,
+  TEAM_HISTORY_EXTENT_CAPABILITY,
   TEAM_USAGE_GROUPS_CAPABILITY,
   TEAM_USAGE_READ_FAILED_CAPABILITY,
   teamCapabilitiesForProtocol,
@@ -442,6 +444,11 @@ import {
   PROVIDER_ACCOUNT_MODELS_ROUTES,
 } from "@openbot/contracts/team-protocol/provider-account-models-v1";
 import {
+  decodeProviderAccountPoolStrategies,
+  PROVIDER_ACCOUNT_POOL_STRATEGY_CAPABILITY,
+  PROVIDER_ACCOUNT_POOL_STRATEGY_ROUTES,
+} from "@openbot/contracts/team-protocol/provider-account-pool-strategy-v1";
+import {
   PROVIDER_ACCOUNT_POOL_CAPABILITY,
   PROVIDER_ACCOUNT_POOL_ROUTES,
 } from "@openbot/contracts/team-protocol/provider-account-pool-v1";
@@ -476,6 +483,11 @@ import { PROVIDERS_V5_CAPABILITY, PROVIDERS_V5_ROUTES } from "@openbot/contracts
 import { PROVIDERS_V8_CAPABILITY, PROVIDERS_V8_ROUTES } from "@openbot/contracts/team-protocol/providers-v8";
 import { QueueEditRejectedError, TEAM_QUEUE_EDIT_CAPABILITY } from "@openbot/contracts/team-protocol/queue-edit-v1";
 import { QUEUE_HOLD_CAPABILITY, QUEUE_HOLD_SIGN_IN_CAPABILITY } from "@openbot/contracts/team-protocol/queue-hold-v1";
+import {
+  REMOTE_CHAT_CONTENT_CAPABILITY,
+  REMOTE_CHAT_CONTENT_EVENT,
+  REMOTE_CHAT_CONTENT_ROUTES,
+} from "@openbot/contracts/team-protocol/remote-chat-content-v1";
 import {
   ROUTINE_PAUSE_REASONS_CAPABILITY,
   ROUTINE_PAUSE_REASONS_ROUTES,
@@ -660,6 +672,7 @@ import {
   providerEnvironmentControl,
   providerEnvironmentSecret,
 } from "../src/main/provider-environment-store";
+import { RemoteChatContentPreferenceStore } from "../src/main/remote-chat-content-preference-store";
 import { downloadTransferInParts, uploadTransferInParts } from "../src/main/remote-instance-transfer-chunks";
 import { RemoteRequestError } from "../src/main/remote-server-errors";
 import { RemoteWorkflowError } from "../src/main/remote-service-effects";
@@ -2755,6 +2768,8 @@ const skillLearningFile = join(root, "skill-learning.json");
 const skillLearning = new SkillLearningPreferenceStore(skillLearningFile);
 const browsingMemoryFile = join(root, "browsing-memory.json");
 const browsingMemory = new BrowsingMemoryPreferenceStore(browsingMemoryFile);
+const remoteChatContentFile = join(root, "remote-chat-content.json");
+const remoteChatContent = new RemoteChatContentPreferenceStore(remoteChatContentFile);
 const agentLevelsFile = join(root, "agent-notification-levels.json");
 const agentLevels = new AgentNotificationLevelStore(agentLevelsFile);
 const sidebarPinsFile = join(root, "sidebar-pins.json");
@@ -3025,6 +3040,7 @@ try {
       memoryReview,
       skillLearning,
       browsingMemory,
+      remoteChatContent,
       hostKey: {
         rotate: () =>
           refuseHostKeyRotation
@@ -3356,13 +3372,18 @@ try {
     providerAccounts: new ProviderAccountsHost({
       service: {
         getStatus: accountModelsStatus,
-        setProviderAccountPool: (provider, enabled, leftOut) =>
+        setProviderAccountPool: (provider, enabled, leftOut, strategy) =>
           Effect.sync(() => {
-            record("setProviderAccountPool", { provider, enabled, leftOut });
+            record("setProviderAccountPool", { provider, enabled, leftOut, ...(strategy ? { strategy } : {}) });
             const known = ["default", ULTRA_ACCOUNT, FREE_ACCOUNT];
             const out = leftOut.filter((id) => known.includes(id));
+            const kept = strategy ?? antigravityPool?.strategy;
             antigravityPool = enabled
-              ? { leftOut: out, inUse: known.find((id) => !out.includes(id)) ?? null }
+              ? {
+                  leftOut: out,
+                  inUse: known.find((id) => !out.includes(id)) ?? null,
+                  ...(kept && kept !== "fillFirst" ? { strategy: kept } : {}),
+                }
               : undefined;
             return accountModelsStatus();
           }),
@@ -3566,6 +3587,89 @@ try {
 
   function summary(reply: Reply): ReplySummary {
     return { status: reply.status, body: reply.body ?? reply.text.slice(0, 200) };
+  }
+
+  function rawUpgradeStatusLine(target: string): Promise<string> {
+    return new Promise((resolveLine, rejectLine) => {
+      const socket = connect(port, "127.0.0.1", () => {
+        socket.write(
+          [
+            `GET ${target} HTTP/1.1`,
+            `Host: 127.0.0.1:${port}`,
+            "Connection: Upgrade",
+            "Upgrade: websocket",
+            "Sec-WebSocket-Version: 13",
+            `Sec-WebSocket-Key: ${randomBytes(16).toString("base64")}`,
+            `Sec-WebSocket-Protocol: ${TEAM_PROTOCOL_V1_WEBSOCKET}`,
+            "",
+            "",
+          ].join("\r\n"),
+        );
+      });
+      const deadline = setTimeout(() => {
+        socket.destroy();
+        resolveLine("no answer");
+      }, 5_000);
+      let received = "";
+      socket.on("data", (chunk: Buffer) => {
+        received += chunk.toString("utf8");
+      });
+      socket.on("close", () => {
+        clearTimeout(deadline);
+        resolveLine(received.split("\r\n")[0] ?? "");
+      });
+      socket.on("error", (error) => {
+        clearTimeout(deadline);
+        rejectLine(error);
+      });
+    });
+  }
+
+  function rawPathGet(path: string): Promise<ReplySummary> {
+    return new Promise((resolveCall, rejectCall) => {
+      const request = httpRequest({ host: "127.0.0.1", port, method: "GET", path }, (response) => {
+        const chunks: Buffer[] = [];
+        response.on("data", (chunk: Buffer) => chunks.push(chunk));
+        response.on("end", () => {
+          const text = Buffer.concat(chunks).toString("utf8");
+          resolveCall({ status: response.statusCode ?? 0, body: text ? parseJson(text) : null });
+        });
+      });
+      request.setTimeout(5_000, () => request.destroy(new Error("The host did not answer.")));
+      request.on("error", rejectCall);
+      request.end();
+    });
+  }
+
+  {
+    const uncaught: string[] = [];
+    const recordUncaught = (error: Error) => uncaught.push(error.message);
+    process.on("uncaughtException", recordUncaught);
+    try {
+      const unparsable = await rawUpgradeStatusLine("//[");
+      const afterwards = await rawUpgradeStatusLine(TEAM_API_ROUTES.events);
+      check(
+        "an upgrade with a target that is not a URL gets 400 before the token check, and the next upgrade gets 401",
+        unparsable === "HTTP/1.1 400 Bad Request" &&
+          afterwards === "HTTP/1.1 401 Unauthorized" &&
+          uncaught.length === 0,
+        { unparsable, afterwards, uncaught },
+      );
+      const loggedBefore = logged.length;
+      const plain = await rawPathGet("//[");
+      const compatibility = await call("GET", TEAM_API_ROUTES.compatibility, { protocol: null });
+      check(
+        "a request with a target that is not a URL gets 400 with the request error, writes no error log line, and the host keeps answering",
+        plain.status === 400 &&
+          field(plain.body, "error") === sourceText("error.team.requestFailed") &&
+          logged.slice(loggedBefore).every((line) => !line.includes("Team API request failed")) &&
+          compatibility.status === 200 &&
+          uncaught.length === 0,
+        { plain, compatibility: compatibility.status, uncaught },
+      );
+    } finally {
+      process.off("uncaughtException", recordUncaught);
+    }
   }
 
   {
@@ -5227,6 +5331,109 @@ try {
       "an admin turns the pool off again",
       offAgain.status === 200 && isDeepStrictEqual(cleared.body, { pools: [] }),
       [summary(offAgain), summary(cleared)],
+    );
+  }
+
+  {
+    const route = PROVIDER_ACCOUNT_POOL_STRATEGY_ROUTES;
+    const pool = PROVIDER_ACCOUNT_POOL_ROUTES;
+    const v10 = {
+      capabilities: [PROVIDER_ACCOUNT_POOL_CAPABILITY, PROVIDER_ACCOUNT_POOL_STRATEGY_CAPABILITY],
+      protocol: TEAM_PROTOCOL_V10,
+    };
+    const v9 = { capabilities: [PROVIDER_ACCOUNT_POOL_CAPABILITY], protocol: TEAM_PROTOCOL_V9 };
+    const compatibility = await call("GET", TEAM_API_ROUTES.compatibility, { protocol: TEAM_PROTOCOL_V10 });
+    const older = await call("GET", TEAM_API_ROUTES.compatibility, { protocol: TEAM_PROTOCOL_V9 });
+    check(
+      "the host advertises provider-account-pool-strategy-v1 to a protocol 10 peer only",
+      list(field(compatibility.body, "capabilities")).includes(PROVIDER_ACCOUNT_POOL_STRATEGY_CAPABILITY) &&
+        older.status === 200 &&
+        !list(field(older.body, "capabilities")).includes(PROVIDER_ACCOUNT_POOL_STRATEGY_CAPABILITY),
+      [summary(compatibility), summary(older)],
+    );
+    const unsupported = await call("POST", route.list, { token: adaToken, json: {}, ...v9 });
+    check(
+      "the strategy route without the capability gets 400 providersUnsupported",
+      errorIs(unsupported, 400, sourceText("error.team.providersUnsupported")),
+      summary(unsupported),
+    );
+    const writes = callsOf("setProviderAccountPool").length;
+    const memberRead = await call("POST", route.list, { token: bobToken, json: {}, ...v10 });
+    const memberUpdate = await call("POST", route.update, {
+      token: bobToken,
+      json: { provider: "antigravity", strategy: "spread" },
+      ...v10,
+    });
+    const offUpdate = await call("POST", route.update, {
+      token: adaToken,
+      json: { provider: "antigravity", strategy: "spread" },
+      ...v10,
+    });
+    const offList = await call("POST", route.list, { token: adaToken, json: {}, ...v10 });
+    check(
+      "a member cannot read or change the strategy, and with the pool off an admin change writes nothing",
+      errorIs(memberRead, 403, sourceText("error.team.adminRequired")) &&
+        errorIs(memberUpdate, 403, sourceText("error.team.adminRequired")) &&
+        offUpdate.status === 200 &&
+        isDeepStrictEqual(offList.body, { strategies: [] }) &&
+        callsOf("setProviderAccountPool").length === writes,
+      [summary(memberRead), summary(memberUpdate), summary(offUpdate), summary(offList)],
+    );
+    const badStrategy = await call("POST", route.update, {
+      token: adaToken,
+      json: { provider: "antigravity", strategy: "roundRobin" },
+      ...v10,
+    });
+    check(
+      "a strategy that is not one gets 400, and the host writes nothing",
+      badStrategy.status === 400 && callsOf("setProviderAccountPool").length === writes,
+      summary(badStrategy),
+    );
+    await call("POST", pool.update, {
+      token: adaToken,
+      json: { provider: "antigravity", enabled: true, leftOut: [FREE_ACCOUNT] },
+      ...v10,
+    });
+    const fillFirst = await call("POST", route.list, { token: adaToken, json: {}, ...v10 });
+    const spread = await call("POST", route.update, {
+      token: adaToken,
+      json: { provider: "antigravity", strategy: "spread" },
+      ...v10,
+    });
+    const spreadList = await call("POST", route.list, { token: adaToken, json: {}, ...v10 });
+    const v1List = await call("POST", pool.list, { token: adaToken, json: {}, ...v9 });
+    check(
+      "an admin sets Spread, the host keeps the left-out account, and the v1 pool list keeps its shape",
+      isDeepStrictEqual(fillFirst.body, { strategies: [{ provider: "antigravity", strategy: "fillFirst" }] }) &&
+        spread.status === 200 &&
+        isDeepStrictEqual(callsOf("setProviderAccountPool").at(-1), [
+          { provider: "antigravity", enabled: true, leftOut: [FREE_ACCOUNT], strategy: "spread" },
+        ]) &&
+        isDeepStrictEqual(decodeProviderAccountPoolStrategies(spreadList.body), [
+          { provider: "antigravity", strategy: "spread" },
+        ]) &&
+        isDeepStrictEqual(v1List.body, {
+          pools: [{ provider: "antigravity", leftOut: [FREE_ACCOUNT], inUse: "default" }],
+        }),
+      [summary(fillFirst), summary(spread), summary(spreadList), summary(v1List)],
+    );
+    await call("POST", pool.update, {
+      token: adaToken,
+      json: { provider: "antigravity", enabled: true, leftOut: [] },
+      ...v9,
+    });
+    const keptList = await call("POST", route.list, { token: adaToken, json: {}, ...v10 });
+    await call("POST", pool.update, {
+      token: adaToken,
+      json: { provider: "antigravity", enabled: false, leftOut: [] },
+      ...v9,
+    });
+    const clearedList = await call("POST", route.list, { token: adaToken, json: {}, ...v10 });
+    check(
+      "a v1 pool change from an older client keeps Spread, and turning the pool off drops it",
+      isDeepStrictEqual(keptList.body, { strategies: [{ provider: "antigravity", strategy: "spread" }] }) &&
+        isDeepStrictEqual(clearedList.body, { strategies: [] }),
+      [summary(keptList), summary(clearedList)],
     );
   }
 
@@ -8373,6 +8580,128 @@ try {
   }
 
   {
+    const capabilities = [REMOTE_CHAT_CONTENT_CAPABILITY];
+    const compatibility = await call("GET", TEAM_API_ROUTES.compatibility, { protocol: TEAM_PROTOCOL_V10 });
+    const older = await call("GET", TEAM_API_ROUTES.compatibility, { protocol: TEAM_PROTOCOL_V9 });
+    check(
+      "the host advertises remote-chat-content-v1 on protocol 10 and not on protocol 9",
+      list(field(compatibility.body, "capabilities")).includes(REMOTE_CHAT_CONTENT_CAPABILITY) &&
+        !list(field(older.body, "capabilities")).includes(REMOTE_CHAT_CONTENT_CAPABILITY),
+      [summary(compatibility), summary(older)],
+    );
+    const memberRead = await call("POST", REMOTE_CHAT_CONTENT_ROUTES.settings, {
+      token: bobToken,
+      json: {},
+      capabilities,
+    });
+    const unsupported = await call("POST", REMOTE_CHAT_CONTENT_ROUTES.settings, { token: bobToken, json: {} });
+    check(
+      "a member reads the default: remote content in chats is off; without the capability the route gets 400",
+      memberRead.status === 200 &&
+        isDeepStrictEqual(memberRead.body, { enabled: false }) &&
+        errorIs(unsupported, 400, sourceText("error.team.remoteChatContentUnsupported")),
+      [summary(memberRead), summary(unsupported)],
+    );
+
+    const socket = new WebSocket(`ws://127.0.0.1:${port}${TEAM_API_ROUTES.events}`, [
+      TEAM_PROTOCOL_V1_WEBSOCKET,
+      `openbot-token.${bobToken}`,
+    ]);
+    const seen: boolean[] = [];
+    const waiters = new Set<() => void>();
+    socket.addEventListener("message", (message) => {
+      const value = JSON.parse(String(message.data));
+      if (!isDynamicRecord(value) || value.type !== REMOTE_CHAT_CONTENT_EVENT || value.serverId !== serverId) return;
+      if (typeof value.enabled === "boolean") seen.push(value.enabled);
+      for (const wake of waiters) wake();
+    });
+    await new Promise<void>((resolveOpen, reject) => {
+      socket.addEventListener("open", () => resolveOpen(), { once: true });
+      socket.addEventListener("error", () => reject(new Error("The event socket did not open.")), { once: true });
+    });
+    const until = (count: number) =>
+      new Promise<boolean>((resolveReady) => {
+        if (seen.length >= count) return resolveReady(true);
+        const timer = setTimeout(() => {
+          waiters.delete(wake);
+          resolveReady(false);
+        }, 5_000);
+        const wake = () => {
+          if (seen.length < count) return;
+          clearTimeout(timer);
+          waiters.delete(wake);
+          resolveReady(true);
+        };
+        waiters.add(wake);
+      });
+    socket.send(JSON.stringify({ type: "agent-event-scope", includeConversations: false, capabilities }));
+    const atConnect = await until(1);
+    check(
+      "a member's event socket that declares remote-chat-content-v1 gets the setting at once",
+      atConnect && isDeepStrictEqual(seen, [false]),
+      seen,
+    );
+
+    const memberSet = await call("POST", REMOTE_CHAT_CONTENT_ROUTES.update, {
+      token: bobToken,
+      json: { enabled: true },
+      capabilities,
+    });
+    const invalid = await call("POST", REMOTE_CHAT_CONTENT_ROUTES.update, {
+      token: adaToken,
+      json: { enabled: "yes" },
+      capabilities,
+    });
+    check(
+      "a member cannot turn remote content on, a bad value gets 400, and nothing is saved",
+      errorIs(memberSet, 403, sourceText("error.team.adminRequired")) &&
+        invalid.status === 400 &&
+        !remoteChatContent.get().enabled &&
+        !existsSync(remoteChatContentFile),
+      [summary(memberSet), summary(invalid)],
+    );
+    const on = await call("POST", REMOTE_CHAT_CONTENT_ROUTES.update, {
+      token: adaToken,
+      json: { enabled: true },
+      capabilities,
+    });
+    const pushed = await until(2);
+    const reloaded = new RemoteChatContentPreferenceStore(remoteChatContentFile);
+    await runCauseEffect(reloaded.load());
+    const memberAfter = await call("POST", REMOTE_CHAT_CONTENT_ROUTES.settings, {
+      token: bobToken,
+      json: {},
+      capabilities,
+    });
+    check(
+      "an admin turns remote content on: the host saves it, a restart reads it, and the member sees it at once",
+      on.status === 200 &&
+        isDeepStrictEqual(on.body, { enabled: true }) &&
+        reloaded.get().enabled &&
+        pushed &&
+        isDeepStrictEqual(seen, [false, true]) &&
+        isDeepStrictEqual(memberAfter.body, { enabled: true }),
+      [summary(on), seen, summary(memberAfter)],
+    );
+    const off = await call("POST", REMOTE_CHAT_CONTENT_ROUTES.update, {
+      token: adaToken,
+      json: { enabled: false },
+      capabilities,
+    });
+    const pushedOff = await until(3);
+    socket.close();
+    check(
+      "an admin turns remote content off again, and the member's socket gets it",
+      off.status === 200 &&
+        isDeepStrictEqual(off.body, { enabled: false }) &&
+        !remoteChatContent.get().enabled &&
+        pushedOff &&
+        isDeepStrictEqual(seen, [false, true, false]),
+      [summary(off), seen],
+    );
+  }
+
+  {
     const capabilities = [HOST_KEY_ROTATION_CAPABILITY];
     const compatibility = await call("GET", TEAM_API_ROUTES.compatibility, { protocol: TEAM_PROTOCOL_V9 });
     const older = await call("GET", TEAM_API_ROUTES.compatibility, { protocol: 8 });
@@ -11045,6 +11374,55 @@ try {
         taskIds(fullTasks).join() === "task-history,task-open,task-shown" &&
         taskIds(windowTasks).join() === "task-open,task-shown",
       [taskIds(fullTasks), taskIds(windowTasks)],
+    );
+
+    for (let index = 1; index <= 60; index += 1) postAlert(`page-cap-${index}`, alertMember);
+    const pageReadAll = await markRead(pictures.store.page(channelId).throughSequence, "page-cap-read-all");
+    const extentUse = { ...use, capabilities: [...pictured, TEAM_HISTORY_EXTENT_CAPABILITY] };
+    const firstChannelPage = await call("POST", CHANNEL_ROUTES.read, { ...extentUse, json: { channelId } });
+    const firstCursor = field(firstChannelPage.body, "olderCursor");
+    const olderChannelPage = await call("POST", CHANNEL_ROUTES.read, {
+      ...extentUse,
+      json: { channelId, beforeSequence: firstCursor },
+    });
+    check(
+      "a read channel opens on 24 messages with olderCursor and olderCount, and older pages still return up to 100 messages",
+      pageReadAll.status === 200 &&
+        firstChannelPage.status === 200 &&
+        list(field(firstChannelPage.body, "messages")).length === 24 &&
+        typeof firstCursor === "number" &&
+        Number(field(firstChannelPage.body, "olderCount")) >= 36 &&
+        olderChannelPage.status === 200 &&
+        list(field(olderChannelPage.body, "messages")).length > 24,
+      [
+        summary(pageReadAll),
+        list(field(firstChannelPage.body, "messages")).length,
+        firstCursor,
+        field(firstChannelPage.body, "olderCount"),
+        list(field(olderChannelPage.body, "messages")).length,
+      ],
+    );
+    const pageMessageIds = (reply: Reply) => list(field(reply.body, "messages")).map((item) => field(item, "id"));
+    for (let index = 1; index <= 30; index += 1) postAlert(`page-unread-${index}`, alertMember);
+    const unreadChannelPage = await call("POST", CHANNEL_ROUTES.read, { ...extentUse, json: { channelId } });
+    for (let index = 31; index <= 120; index += 1) postAlert(`page-unread-${index}`, alertMember);
+    const cappedChannelPage = await call("POST", CHANNEL_ROUTES.read, { ...extentUse, json: { channelId } });
+    check(
+      "a channel with unread messages opens on the messages after the last read one and one read message, up to 100 messages",
+      unreadChannelPage.status === 200 &&
+        pageMessageIds(unreadChannelPage).length === 31 &&
+        pageMessageIds(unreadChannelPage)[0] === "page-cap-60" &&
+        pageMessageIds(unreadChannelPage)[1] === "page-unread-1" &&
+        cappedChannelPage.status === 200 &&
+        pageMessageIds(cappedChannelPage).length === 100 &&
+        pageMessageIds(cappedChannelPage)[0] === "page-unread-21" &&
+        typeof field(cappedChannelPage.body, "olderCursor") === "number",
+      [
+        pageMessageIds(unreadChannelPage).slice(0, 2),
+        pageMessageIds(unreadChannelPage).length,
+        pageMessageIds(cappedChannelPage)[0],
+        pageMessageIds(cappedChannelPage).length,
+      ],
     );
   }
 

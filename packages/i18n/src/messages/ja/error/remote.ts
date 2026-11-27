@@ -100,6 +100,8 @@ export const messages = {
     "PurpleBot はこのサーバーへの接続を開始できませんでした。問題が続く場合は、PurpleBot を終了してもう一度開いてください。",
   "error.remote.connectionServiceUnreachable":
     "このコンピューターから PurpleBot の接続サービスに接続できません。インターネット接続を確認してください。PurpleBot は自動で再接続します。",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "このデバイスから PurpleBot の接続サービスに接続できません。インターネット接続と VPN を確認してください。PurpleBot は自動で再接続します。",
   "error.remote.serverAnswerTimeout": "サーバーが時間内に応答しませんでした。PurpleBot は自動で再接続します。",
   "error.remote.signInConnectionClosed":
     "サインイン中にサーバーとの接続が切れました。繰り返し起きる場合は、サーバーとこのデバイスの日付と時刻が正しいか確認してください。",
@@ -204,8 +206,7 @@ export const messages = {
   "error.remote.iceDisconnected": "ホストへの直接接続が切れました。",
   "error.remote.webrtcBlocked":
     "このデバイスは PurpleBot に必要な接続をブロックしています。ロックダウンモードがオンの場合は、設定 > プライバシーとセキュリティ > ロックダウンモードで PurpleBot に対してオフにしてください。",
-  "error.remote.directoryUnreachable":
-    "PurpleBot は PurpleBot サービスに接続できませんでした。接続を確認してください。",
+  "error.remote.directoryUnreachable": "PurpleBot は PurpleBot サービスに接続できませんでした。接続を確認してください。",
   "error.remote.directoryTimeout": "PurpleBot サービスが時間内に応答しませんでした。もう一度お試しください。",
   "error.remote.inviteAlreadyUsed": "この招待はすでに使用されています。新しい招待を依頼してください。",
   "error.remote.inviteNotFound": "この招待は存在しないか、期限が切れています。新しい招待を依頼してください。",

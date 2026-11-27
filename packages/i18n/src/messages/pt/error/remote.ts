@@ -102,6 +102,8 @@ export const messages = {
     "O PurpleBot não conseguiu iniciar a conexão com este servidor. Se isso continuar, feche o PurpleBot e abra-o novamente.",
   "error.remote.connectionServiceUnreachable":
     "Este computador não consegue acessar o serviço de conexão do PurpleBot. Verifique a conexão com a internet. O PurpleBot se reconecta automaticamente.",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "Este dispositivo não consegue acessar o serviço de conexão do PurpleBot. Verifique a conexão com a internet e a VPN. O PurpleBot se reconecta automaticamente.",
   "error.remote.serverAnswerTimeout": "O servidor não respondeu a tempo. O PurpleBot se reconecta automaticamente.",
   "error.remote.signInConnectionClosed":
     "A conexão com o servidor foi fechada durante o início da sessão. Se isso continuar, verifique se a data e a hora estão corretas no servidor e neste dispositivo.",
@@ -209,8 +211,7 @@ export const messages = {
   "error.remote.iceDisconnected": "A conexão direta com o computador anfitrião foi perdida.",
   "error.remote.webrtcBlocked":
     "Este dispositivo bloqueia a conexão de que o PurpleBot precisa. Se o Modo de Isolamento estiver ativado, desative-o para o PurpleBot em Ajustes > Privacidade e Segurança > Modo de Isolamento.",
-  "error.remote.directoryUnreachable":
-    "O PurpleBot não conseguiu acessar o serviço do PurpleBot. Verifique sua conexão.",
+  "error.remote.directoryUnreachable": "O PurpleBot não conseguiu acessar o serviço do PurpleBot. Verifique sua conexão.",
   "error.remote.directoryTimeout": "O serviço do PurpleBot não respondeu a tempo. Tente novamente.",
   "error.remote.inviteAlreadyUsed": "Este convite já foi usado. Peça um novo convite.",
   "error.remote.inviteNotFound": "Este convite não existe ou expirou. Peça um novo convite.",

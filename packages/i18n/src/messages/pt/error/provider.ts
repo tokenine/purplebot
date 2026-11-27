@@ -255,8 +255,7 @@ export const messages = {
     "O OpenCode Go recusou a solicitação. Uma nova chave de API não resolve isso. Seu plano do OpenCode Go pode não estar ativo, ou o OpenCode Go pode bloquear sua rede: alguns serviços bloqueiam VPNs, proxies ou alguns países. Verifique se o seu plano está ativo no OpenCode Console ou desative a VPN e tente novamente. Você também pode escolher outro modelo.",
   "error.provider.opencodeServiceFailure":
     "O OpenCode não conseguiu concluir este turno porque seu serviço local falhou. Tente novamente. Se o erro continuar, reconecte o OpenCode em Configurações.",
-  "error.provider.opencodeStillStarting":
-    "O OpenCode não terminou de carregar a tempo. O PurpleBot vai tentar de novo.",
+  "error.provider.opencodeStillStarting": "O OpenCode não terminou de carregar a tempo. O PurpleBot vai tentar de novo.",
   "error.provider.opencodeRateLimited":
     "O provedor do modelo recusou a solicitação por causa do limite de requisições. Aguarde alguns minutos ou escolha outro modelo e tente novamente.\n{detail}",
   "error.provider.opencodeBilling":
@@ -453,6 +452,8 @@ export const messages = {
     "O modelo não aceitou uma imagem deste chat porque a imagem é grande demais. O PurpleBot iniciou uma nova sessão do {provider} com o histórico do chat. Tente novamente.",
   "error.provider.imageCountLimit":
     "O modelo não aceitou este chat porque ele tem imagens demais. O PurpleBot iniciou uma nova sessão do {provider} com o histórico do chat. Tente novamente.",
+  "error.provider.imageCountLimitRepeated":
+    "O modelo de novo não aceitou este chat: ele tem imagens demais. Uma tarefa abre mais imagens do que este modelo aceita, então uma nova sessão não ajuda. Selecione Novo chat e peça ao agente para abrir menos imagens em cada etapa, ou selecione um modelo que aceite mais imagens.",
   "error.provider.imageUnreadable":
     "O modelo não conseguiu ler uma imagem deste chat. O PurpleBot iniciou uma nova sessão do {provider} com o histórico do chat. Tente novamente. Se você enviou uma imagem, envie outra.",
   "error.provider.requestTooLarge":
@@ -511,8 +512,7 @@ export const messages = {
     "O serviço do modelo recusou a solicitação. Escolha outro modelo ou verifique seu acesso a este modelo no serviço.",
   "error.provider.modelServiceRefusedReason":
     "O serviço do modelo recusou a solicitação: {reason}. Escolha outro modelo ou verifique seu acesso a este modelo no serviço.",
-  "error.provider.messageTooLarge":
-    "O PurpleBot interrompeu {provider} porque enviou uma mensagem maior que {limit} MB.",
+  "error.provider.messageTooLarge": "O PurpleBot interrompeu {provider} porque enviou uma mensagem maior que {limit} MB.",
   "error.provider.customAgentIdInvalid":
     "Um ID de agente deve conter letras minúsculas, dígitos ou `-`, e não pode ser o ID de um provedor integrado.",
   "error.provider.customAgentEnvInvalid":

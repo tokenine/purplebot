@@ -75,12 +75,18 @@ export const messages = {
   "status.agent.nearSignatureReceived": "PurpleBot heeft de handtekening ontvangen. Je kunt dit tabblad sluiten.",
   "status.agent.nearSignatureUnknown": "PurpleBot wacht niet op deze handtekening. Start het opnieuw in PurpleBot.",
   "status.agent.nearPayment": "Betaal {amount} {symbol} aan {recipient} uit de cryptowallet, voor {domain}: {reason}",
+  "status.agent.nearPaymentSending": "{amount} betalen voor {domain}: {reason}",
+  "status.agent.nearPaymentPaid": "{amount} betaald voor {domain}: {reason}",
+  "status.agent.nearPaymentNotPaid": "Niet betaald: {amount} voor {domain}: {reason}",
+  "status.agent.nearPaymentUncertain": "Niet bevestigd: {amount} voor {domain}: {reason}",
   "status.agent.nearSummaryCreate":
     "Alle agents kunnen tot {amount} USD per dag betalen. Je kunt dit later wijzigen in PurpleBot.",
   "status.agent.nearSummaryGrant": "Laat deze PurpleBot-app {days} dagen uit de wallet betalen, binnen je regels.",
   "status.agent.nearSummaryBudget": "Wijzig het dagbudget van de wallet naar {amount} USD.",
   "status.agent.nearSummaryAutoPay":
     "Laat PurpleBot zonder je handtekening betalen als een betaalregel dat toestaat. Voor andere betalingen krijg je nog steeds een vraag in de chat.",
+  "status.agent.nearSummaryManualPay":
+    "Er is geen betaalregel meer. PurpleBot vraagt weer voor elke betaling om je handtekening.",
   "status.agent.nearSummaryPayment": "Keur de betaling van {amount} aan {recipient} goed.",
   "status.agent.nearSummaryFreeze": "Agents kunnen niet uit deze wallet betalen tot je de betalingen hervat.",
   "status.agent.nearSummaryUnfreeze": "Agents kunnen weer uit deze wallet betalen, binnen je regels.",

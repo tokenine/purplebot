@@ -94,6 +94,8 @@ export const messages = defineMessages("error.remote", {
     "PurpleBot could not start the connection to this server. If this continues, quit PurpleBot and open it again.",
   "error.remote.connectionServiceUnreachable":
     "This computer cannot reach the PurpleBot connection service. Check its internet connection. PurpleBot connects again automatically.",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "This device cannot reach the PurpleBot connection service. Check its internet connection and VPN. PurpleBot connects again automatically.",
   "error.remote.serverAnswerTimeout": "The server did not answer in time. PurpleBot connects again automatically.",
   "error.remote.signInConnectionClosed":
     "The connection to the server closed during sign-in. If this continues, make sure that the date and time are correct on the server and on this device.",

@@ -639,6 +639,10 @@ export const messages = {
   "mobile.server.settings.browsingMemoryDescription":
     "Gdy sterujesz przeglądarką agenta, agent uczy się działania stron z używanych przez Ciebie stron i przycisków. Wpisany tekst nie jest zapisywany.",
   "mobile.server.settings.browsingMemoryLoadFailed": "Nie udało się wczytać ustawienia przeglądania.",
+  "mobile.server.settings.remoteChatContent": "Wczytuj treści zewnętrzne w czatach",
+  "mobile.server.settings.remoteChatContentDescription":
+    "Pokazuj obrazy i ikony stron z innych witryn w czatach. Gdy to jest wyłączone, są widoczne jako linki, a diagramy i strony wczytują się dopiero po dotknięciu. Dotyczy to wszystkich na tym serwerze.",
+  "mobile.server.settings.remoteChatContentLoadFailed": "Nie udało się wczytać ustawienia treści zewnętrznych.",
   "mobile.server.settings.learningSaveFailed": "Nie udało się zapisać tego ustawienia. Spróbuj ponownie.",
   "mobile.server.settings.learningUnsupported": "Zaktualizuj PurpleBot na tym serwerze, aby zmienić tu to ustawienie.",
   "mobile.server.settings.responseStyleDescription":
@@ -1302,6 +1306,11 @@ export const messages = {
   "mobile.server.providers.pool": "Łącz konta w pulę",
   "mobile.server.providers.poolHint":
     "Agenci używają jednego konta, aż zbliży się do limitu użycia, a potem konta, którego limit odnowi się najwcześniej.",
+  "mobile.server.providers.poolStrategy": "Używanie kont",
+  "mobile.server.providers.poolFillFirst": "Najpierw zapełniaj",
+  "mobile.server.providers.poolSpread": "Rozkładaj",
+  "mobile.server.providers.poolSpreadHint":
+    "Agenci rozkładają się na konta z największym pozostałym użyciem. Agent zmienia konto tylko wtedy, gdy inne konto ma dużo więcej zapasu.",
   "mobile.server.providers.accountsPooledHint":
     "Agenci współdzielą te konta. Nowe konto loguje się na swojej stronie na tym telefonie.",
   "mobile.server.providers.accountsPooledOnComputer":

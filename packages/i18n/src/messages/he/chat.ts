@@ -175,6 +175,7 @@ export const messages = {
   "chat.marker.settingLink": "הציג הגדרה",
   "chat.settingLink.desktopOnly": "יש לפתוח אותה באפליקציית PurpleBot במחשב שלך.",
   "chat.settingLink.agentChatOnly": "יש לפתוח אותה בצ'אט שלך עם הסוכן הזה.",
+  "chat.settingLink.adminOnly": "רק הבעלים או מנהל של השרת יכולים לשנות את ההגדרה הזו.",
   "chat.marker.skillSuggestion": "הציע מיומנות",
   "chat.marker.mcpSignIn": "ביקש להתחבר לשרת MCP",
   "chat.marker.serverInstall": "יצר פקודה להתקנת שרת",
@@ -544,4 +545,11 @@ export const messages = {
   "chat.feedbackWithdrawn.title": "הדיווח הוסר",
   "chat.feedbackWithdrawn.badge": "הוסר",
   "chat.feedbackWithdrawn.body": "הדיווח שלך כבר לא ב-GitHub. כדי לשלוח דיווח מתוקן, בקשו זאת מהסוכן.",
+  "chat.remoteContent.pictureNotLoaded": "תמונה מ-{host}. היא לא נטענה כי תוכן מרוחק כבוי בשרת הזה.",
+  "chat.remoteContent.loadPicture": "טען תמונה",
+  "chat.remoteContent.diagramNotDrawn":
+    "התרשים הזה יכול לטעון תמונה מאתר אחר. הוא לא צויר כי תוכן מרוחק כבוי בשרת הזה.",
+  "chat.remoteContent.loadDiagram": "טען תרשים",
+  "chat.remoteContent.pageStatic": "מוצג בלי סקריפטים ובלי תוכן מרוחק כי תוכן מרוחק כבוי בשרת הזה.",
+  "chat.remoteContent.runPage": "הפעל דף",
 } as const satisfies PartialTranslation<typeof source>;

@@ -51,6 +51,9 @@
     "EMAIL_SMTP_HOST": "mail.privateemail.com",
     "EMAIL_SMTP_PORT": "465",
     "EMAIL_SMTP_USERNAME": "no_reply@openbot.run",
+    "EMAIL_SMTP_OVERFLOW_USERNAME": "hello@openbot.run",
+    "EMAIL_SMTP_OVERFLOW_2_USERNAME": "signin@openbot.run",
+    "EMAIL_SMTP_OVERFLOW_3_USERNAME": "sign@openbot.run",
     "EMAIL_FROM": "no_reply@openbot.run",
     "EMAIL_REPLY_TO": "hello@openbot.run",
     "EMAIL_LICENSE_REPLY_TO": "licenses@openbot.run",
@@ -69,6 +72,8 @@
     "BILLING_COUNTRY_REQUIRED": "true",
     "GITHUB_APP_CLIENT_ID": "Iv23lik5pzHz70cb0RUL",
     "FEEDBACK_WITHDRAWN_REPOSITORY": "",
+    "CF_ACCESS_TEAM_DOMAIN": "",
+    "CF_ACCESS_ADMIN_AUD": "",
     "APNS_TEAM_ID": "8A47NKRZSJ",
     "APNS_TOPIC": "run.openbot.mobile"
   },
@@ -148,6 +153,11 @@
       "name": "FEEDBACK_RATE_LIMITER",
       "namespace_id": "2026110801",
       "simple": { "limit": 3, "period": 60 }
+    },
+    {
+      "name": "WATCH_TICKET_RATE_LIMITER",
+      "namespace_id": "2026112501",
+      "simple": { "limit": 30, "period": 60 }
     }
   ],
   "env": {
@@ -167,6 +177,9 @@
         "EMAIL_SMTP_HOST": "mail.privateemail.com",
         "EMAIL_SMTP_PORT": "465",
         "EMAIL_SMTP_USERNAME": "no_reply@openbot.run",
+        "EMAIL_SMTP_OVERFLOW_USERNAME": "hello@openbot.run",
+        "EMAIL_SMTP_OVERFLOW_2_USERNAME": "signin@openbot.run",
+        "EMAIL_SMTP_OVERFLOW_3_USERNAME": "sign@openbot.run",
         "EMAIL_FROM": "no_reply@openbot.run",
         "EMAIL_REPLY_TO": "hello@openbot.run",
         "EMAIL_LICENSE_REPLY_TO": "licenses@openbot.run",
@@ -178,7 +191,9 @@
         "REMOTE_SIGNAL_HOMES": "",
         "REMOTE_AUTH_WEBHOOK_URL": "http://127.0.0.1:8081/internal/auth-events",
         "REMOTE_AUTH_WEBHOOK_URLS": "",
-        "SIGNAL_ENTRY_ZONE_ID": ""
+        "SIGNAL_ENTRY_ZONE_ID": "",
+        "CF_ACCESS_TEAM_DOMAIN": "",
+        "CF_ACCESS_ADMIN_AUD": ""
       },
       "d1_databases": [
         {
@@ -237,6 +252,11 @@
           "name": "FEEDBACK_RATE_LIMITER",
           "namespace_id": "2026110802",
           "simple": { "limit": 3, "period": 60 }
+        },
+        {
+          "name": "WATCH_TICKET_RATE_LIMITER",
+          "namespace_id": "2026112502",
+          "simple": { "limit": 30, "period": 60 }
         }
       ]
     },
@@ -263,6 +283,9 @@
         "EMAIL_SMTP_HOST": "mail.privateemail.com",
         "EMAIL_SMTP_PORT": "465",
         "EMAIL_SMTP_USERNAME": "no_reply@openbot.run",
+        "EMAIL_SMTP_OVERFLOW_USERNAME": "hello@openbot.run",
+        "EMAIL_SMTP_OVERFLOW_2_USERNAME": "signin@openbot.run",
+        "EMAIL_SMTP_OVERFLOW_3_USERNAME": "sign@openbot.run",
         "EMAIL_FROM": "no_reply@openbot.run",
         "EMAIL_REPLY_TO": "hello@openbot.run",
         "EMAIL_LICENSE_REPLY_TO": "licenses@openbot.run",
@@ -276,6 +299,8 @@
         "REMOTE_AUTH_WEBHOOK_URLS": "",
         "SIGNAL_ENTRY_ZONE_ID": "",
         "HOSTED_SERVERS_ENABLED": "true",
+        "CF_ACCESS_TEAM_DOMAIN": "",
+        "CF_ACCESS_ADMIN_AUD": "",
         "GITHUB_APP_CLIENT_ID": "Iv23lik5pzHz70cb0RUL",
         "APNS_TEAM_ID": "8A47NKRZSJ",
         "APNS_TOPIC": "run.openbot.mobile"
@@ -337,6 +362,11 @@
           "name": "FEEDBACK_RATE_LIMITER",
           "namespace_id": "2026110803",
           "simple": { "limit": 3, "period": 60 }
+        },
+        {
+          "name": "WATCH_TICKET_RATE_LIMITER",
+          "namespace_id": "2026112503",
+          "simple": { "limit": 30, "period": 60 }
         }
       ]
     }

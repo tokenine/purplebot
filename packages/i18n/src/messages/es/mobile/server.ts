@@ -585,6 +585,10 @@ export const messages = {
   "mobile.server.settings.browsingMemoryDescription":
     "Cuando controlas el navegador de un agente, el agente aprende cómo funcionan los sitios a partir de las páginas y los botones que usas. El texto que escribes no se guarda.",
   "mobile.server.settings.browsingMemoryLoadFailed": "No se pudo cargar el ajuste de navegación.",
+  "mobile.server.settings.remoteChatContent": "Cargar contenido externo en los chats",
+  "mobile.server.settings.remoteChatContentDescription":
+    "Muestra imágenes e iconos de otros sitios web en los chats. Si está desactivado, se muestran como enlaces, y los diagramas y las páginas solo se cargan al tocarlos. Se aplica a todos en este servidor.",
+  "mobile.server.settings.remoteChatContentLoadFailed": "No se pudo cargar el ajuste de contenido externo.",
   "mobile.server.settings.learningSaveFailed": "No se pudo guardar este ajuste. Inténtalo de nuevo.",
   "mobile.server.settings.learningUnsupported": "Actualiza PurpleBot en este servidor para cambiar aquí este ajuste.",
   "mobile.server.settings.responseStyleDescription":
@@ -1212,6 +1216,11 @@ export const messages = {
   "mobile.server.providers.pool": "Agrupar cuentas",
   "mobile.server.providers.poolHint":
     "Los agentes usan una cuenta hasta que se acerca a un límite de uso y luego la cuenta cuyo límite se restablece antes.",
+  "mobile.server.providers.poolStrategy": "Usar cuentas",
+  "mobile.server.providers.poolFillFirst": "Llenar primero",
+  "mobile.server.providers.poolSpread": "Repartir",
+  "mobile.server.providers.poolSpreadHint":
+    "Los agentes se reparten entre las cuentas con más uso disponible. Un agente cambia de cuenta solo cuando otra cuenta tiene mucho más margen.",
   "mobile.server.providers.accountsPooledHint":
     "Los agentes comparten estas cuentas. Una cuenta nueva inicia sesión en su página en este teléfono.",
   "mobile.server.providers.accountsPooledOnComputer":

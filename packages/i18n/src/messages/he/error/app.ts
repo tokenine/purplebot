@@ -11,4 +11,6 @@ export const messages = {
   "error.app.remoteIdentityUnavailable": "זהות המארח המרוחק אינה זמינה.",
   "error.app.iceServersMissing": "Remote Signal עדיין לא סיפק שרתי ICE.",
   "error.app.finishLocalTest": "יש לסיים את הבדיקה המקומית לפני החלפת תצוגות.",
+  "error.app.windowBlockedBySecuritySoftware":
+    "כנראה שתוכנת אבטחה במחשב הזה עצרה את החלון של PurpleBot. בתוכנת האבטחה, למשל Kaspersky, יש להוסיף את PurpleBot.exe כאפליקציה מהימנה. לאחר מכן יש להפעיל את PurpleBot שוב.",
 } as const satisfies PartialTranslation<typeof source>;

@@ -9,6 +9,7 @@ export {
   APP_LOGO_SIZE,
 } from "./app-logo-shape";
 export {
+  type BrowserLogoVariant,
   type MobilePlatformLogoVariant,
   PlatformLogo,
   type PlatformLogoProps,

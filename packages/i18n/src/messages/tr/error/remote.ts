@@ -97,6 +97,8 @@ export const messages = {
     "PurpleBot bu sunucuyla bağlantıyı başlatamadı. Sorun devam ederse PurpleBot'tan çıkın ve yeniden açın.",
   "error.remote.connectionServiceUnreachable":
     "Bu bilgisayar PurpleBot bağlantı hizmetine ulaşamıyor. İnternet bağlantısını kontrol edin. PurpleBot otomatik olarak yeniden bağlanır.",
+  "error.remote.deviceConnectionServiceUnreachable":
+    "Bu cihaz PurpleBot bağlantı hizmetine ulaşamıyor. İnternet bağlantısını ve VPN'i kontrol edin. PurpleBot otomatik olarak yeniden bağlanır.",
   "error.remote.serverAnswerTimeout": "Sunucu zamanında yanıt vermedi. PurpleBot otomatik olarak yeniden bağlanır.",
   "error.remote.signInConnectionClosed":
     "Oturum açılırken sunucu bağlantısı kapandı. Bu devam ederse sunucuda ve bu cihazda tarih ve saatin doğru olduğundan emin olun.",

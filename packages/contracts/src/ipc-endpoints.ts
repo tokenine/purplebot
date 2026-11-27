@@ -5,6 +5,7 @@ import type { AppLanguagePreference, SetAppLanguagePreferenceInput } from "./app
 import type { AppLogoColorPreference, SetAppLogoColorPreferenceInput } from "./app-logo-color";
 import type { BillingPortalRequest, BillingState, BillingStorageRequest } from "./billing";
 import type { BillingDetails, BillingDetailsRequest } from "./billing-details";
+import type { CreditMediaCatalog } from "./credit-media";
 import type {
   CreditActivity,
   CreditCheckoutRequest,
@@ -536,6 +537,7 @@ import type {
   SteerQueuedMessageInput,
   UpdateQueuedMessageInput,
 } from "./ipc-queue";
+import type { HostRemoteChatContent, RemoteChatContentChange } from "./ipc-remote-chat-content";
 import type {
   RemoteDesktopSetupAction,
   RemoteDesktopSetupStatus,
@@ -717,6 +719,7 @@ import type { AcceptedOwnerTransfer, OwnerTransfer } from "./owner-transfer";
 import type { ReferralPageRequest, ReferralState } from "./referral";
 import type { AgentActiveQueues } from "./team-protocol/agent-active-queues-v1";
 import type { ChannelCompactAvailability } from "./team-protocol/channel-compact-availability-v1";
+import type { WorkflowSpotInput } from "./team-protocol/workflow-presence-v1";
 
 declare const payloadType: unique symbol;
 declare const resultType: unique symbol;
@@ -1278,6 +1281,11 @@ export const IPC_ENDPOINTS = {
     setSkillLearning: scopedRequest<string, HostSkillLearning, "required">()("host-admin:set-skill-learning"),
     getBrowsingMemory: scopedQuery<HostBrowsingMemory, "required">()("host-admin:get-browsing-memory"),
     setBrowsingMemory: scopedRequest<boolean, HostBrowsingMemory, "required">()("host-admin:set-browsing-memory"),
+    getRemoteChatContent: scopedQuery<HostRemoteChatContent, "required">()("host-admin:get-remote-chat-content"),
+    setRemoteChatContent: scopedRequest<boolean, HostRemoteChatContent, "required">()(
+      "host-admin:set-remote-chat-content",
+    ),
+    remoteChatContent: event<RemoteChatContentChange>()("host-admin:remote-chat-content"),
     getMachineAlerts: scopedQuery<MachineAlertSettings, "required">()("host-admin:get-machine-alerts"),
     setMachineAlerts: scopedRequest<MachineAlertSettings, MachineAlertSettings, "required">()(
       "host-admin:set-machine-alerts",
@@ -1454,6 +1462,7 @@ export const IPC_ENDPOINTS = {
   credits: {
     getState: request<undefined, CreditsState>()("credits:get-state"),
     getActivity: request<undefined, CreditActivity>()("credits:get-activity"),
+    getCatalog: request<undefined, CreditMediaCatalog>()("credits:get-catalog"),
     openCheckout: request<CreditCheckoutRequest, void>()("credits:open-checkout"),
     transfer: request<CreditTransferRequest, CreditsState>()("credits:transfer"),
     redeem: request<CreditRedeemRequest, CreditRedeemResult>()("credits:redeem"),
@@ -1769,6 +1778,7 @@ export const IPC_ENDPOINTS = {
     mediaPrice: scopedRequest<WorkflowMediaPriceRequest, WorkflowMediaPrice>()("workflows:media-price"),
     folders: scopedQuery<WorkflowFoldersSnapshot>()("workflows:folders"),
     folderAction: scopedRequest<WorkflowFolderAction, WorkflowFoldersSnapshot>()("workflows:folder-action"),
+    setSpot: scopedRequest<WorkflowSpotInput, void>()("workflows:set-spot"),
   },
   crm: {
     overview: scopedQuery<CrmOverview>()("crm:overview"),

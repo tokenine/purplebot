@@ -17,6 +17,8 @@ export const messages = {
     "لا يمكن لـ PurpleBot الوصول إلى Telegram على هذا الحاسوب. سجّل الدخول، وأعطِ هذا الحاسوب اسمًا، ثم أعد المحاولة.",
   "error.messaging.telegramRelayUnreachable":
     "لا يستطيع PurpleBot الاتصال بخدمته من هذا الكمبيوتر. تحقق من الاتصال بالإنترنت أو الشبكة الافتراضية الخاصة (VPN) أو الوكيل أو جدار الحماية، ثم حاول مرة أخرى.",
+  "error.messaging.telegramRelayCertificate":
+    "لا يستطيع PurpleBot إنشاء اتصال آمن بخدمته من هذا الكمبيوتر. قد يسبب ذلك برنامج أمان يفحص حركة HTTPS، أو تاريخ ووقت غير صحيحين على هذا الكمبيوتر. تحقق منهما، ثم حاول مرة أخرى.",
   "error.messaging.telegramServiceUnavailable": "لا يمكن لـ PurpleBot ربط Telegram الآن. أعد المحاولة لاحقًا.",
   "error.messaging.whatsappNotConnected": "رقم WhatsApp هذا غير متصل.",
   "error.messaging.whatsappUnsupported": "لا يمكن لهذا الحاسوب الاتصال بـ WhatsApp.",

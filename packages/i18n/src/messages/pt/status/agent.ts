@@ -72,6 +72,10 @@ export const messages = {
   "status.agent.nearSignatureReceived": "O PurpleBot recebeu a assinatura. Você pode fechar esta aba.",
   "status.agent.nearSignatureUnknown": "O PurpleBot não está aguardando esta assinatura. Comece de novo no PurpleBot.",
   "status.agent.nearPayment": "Pagar {amount} {symbol} para {recipient} pela carteira cripto, para {domain}: {reason}",
+  "status.agent.nearPaymentSending": "Pagando {amount} para {domain}: {reason}",
+  "status.agent.nearPaymentPaid": "Pago {amount} para {domain}: {reason}",
+  "status.agent.nearPaymentNotPaid": "Não pago: {amount} para {domain}: {reason}",
+  "status.agent.nearPaymentUncertain": "Não confirmado: {amount} para {domain}: {reason}",
   "status.agent.nearSummaryCreate":
     "Todos os agentes podem pagar até {amount} USD por dia. Você pode alterar isso depois no PurpleBot.",
   "status.agent.nearSummaryGrant":
@@ -79,6 +83,8 @@ export const messages = {
   "status.agent.nearSummaryBudget": "Alterar o orçamento diário da carteira para {amount} USD.",
   "status.agent.nearSummaryAutoPay":
     "Permitir que o PurpleBot pague sem sua assinatura quando uma regra de pagamento permitir. Outros pagamentos continuam pedindo sua aprovação no chat.",
+  "status.agent.nearSummaryManualPay":
+    "Não resta nenhuma regra de pagamento. O PurpleBot voltará a pedir sua assinatura para cada pagamento.",
   "status.agent.nearSummaryPayment": "Aprovar o pagamento de {amount} para {recipient}.",
   "status.agent.nearSummaryFreeze": "Os agentes não podem pagar por esta carteira até você retomar os pagamentos.",
   "status.agent.nearSummaryUnfreeze": "Os agentes podem pagar por esta carteira de novo, dentro das suas regras.",

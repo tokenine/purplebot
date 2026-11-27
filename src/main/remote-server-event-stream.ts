@@ -30,6 +30,7 @@ import {
   type TeamProtocolV1CurrentClientEvent,
 } from "@openbot/contracts/team-protocol/v1-adapter";
 import { decodeTeamProtocolV8BaseCurrentEvent } from "@openbot/contracts/team-protocol/v8-base-adapter";
+import type { WorkflowSpotControl } from "@openbot/contracts/team-protocol/workflow-presence-v1";
 import { sourceText } from "@openbot/i18n/source";
 import { referenceFrom } from "@openbot/user-errors";
 import { Effect, Exit, Result, Scope } from "effect";
@@ -97,6 +98,7 @@ export interface RemoteEventStreamOptions {
   onDirectTyping: (serverId: string, event: DirectTypingRealtimeEvent) => void;
   onHostRestart: (serverId: string, event: HostRestartEvent) => void;
   onHostAppearance: (serverId: string, event: HostAppearanceEvent) => void;
+  onRemoteChatContent: (serverId: string, enabled: boolean) => void;
   onMachineAlert: (serverId: string, event: MachineAlertEvent) => void;
   onLiveVoice: (serverId: string, event: LiveVoiceEvent) => void;
   onOffline: (serverId: string) => void;
@@ -118,6 +120,7 @@ export class RemoteEventStream {
   readonly #onDirectTyping: RemoteEventStreamOptions["onDirectTyping"];
   readonly #onHostRestart: RemoteEventStreamOptions["onHostRestart"];
   readonly #onHostAppearance: RemoteEventStreamOptions["onHostAppearance"];
+  readonly #onRemoteChatContent: RemoteEventStreamOptions["onRemoteChatContent"];
   readonly #onMachineAlert: RemoteEventStreamOptions["onMachineAlert"];
   readonly #onLiveVoice: RemoteEventStreamOptions["onLiveVoice"];
   readonly #onOffline: RemoteEventStreamOptions["onOffline"];
@@ -149,6 +152,7 @@ export class RemoteEventStream {
     this.#onDirectTyping = options.onDirectTyping;
     this.#onHostRestart = options.onHostRestart;
     this.#onHostAppearance = options.onHostAppearance;
+    this.#onRemoteChatContent = options.onRemoteChatContent;
     this.#onMachineAlert = options.onMachineAlert;
     this.#onLiveVoice = options.onLiveVoice;
     this.#onOffline = options.onOffline;
@@ -215,6 +219,12 @@ export class RemoteEventStream {
     const socket = this.#sockets.get(serverId);
     if (!socket || socket.readyState !== WebSocket.OPEN) return;
     socket.send(encodeTeamProtocolV1CurrentClientEvent(event));
+  }
+
+  sendWorkflowSpot(serverId: string, control: WorkflowSpotControl): void {
+    const socket = this.#sockets.get(serverId);
+    if (!socket || socket.readyState !== WebSocket.OPEN) return;
+    socket.send(JSON.stringify(control));
   }
 
   syncScopes(): void {
@@ -563,6 +573,8 @@ export class RemoteEventStream {
               this.#onHostRestart(serverId, event);
             } else if (event.type === "host-appearance") {
               this.#onHostAppearance(serverId, event);
+            } else if (event.type === "remote-chat-content") {
+              this.#onRemoteChatContent(serverId, event.enabled);
             } else if (event.type === "machine-alert") {
               this.#onMachineAlert(serverId, event);
             } else if (event.type === "live-voice") {

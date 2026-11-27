@@ -179,6 +179,7 @@ export const messages = {
   "chat.marker.settingLink": "Bir ayar gösterildi",
   "chat.settingLink.desktopOnly": "Bilgisayarınızdaki PurpleBot uygulamasında açın.",
   "chat.settingLink.agentChatOnly": "Bu ajanla sohbetinizde açın.",
+  "chat.settingLink.adminOnly": "Bu ayarı yalnızca sunucu sahibi veya bir yönetici değiştirebilir.",
   "chat.marker.skillSuggestion": "Bir beceri önerildi",
   "chat.marker.serverInstall": "Sunucu kurmak için bir komut oluşturdu",
   "chat.marker.skill.created": "Beceri oluşturuldu",
@@ -540,4 +541,13 @@ export const messages = {
   "chat.feedbackWithdrawn.badge": "Kaldırıldı",
   "chat.feedbackWithdrawn.body":
     "Raporunuz artık GitHub'da değil. Düzeltilmiş bir rapor göndermek için ajandan isteyin.",
+  "chat.remoteContent.pictureNotLoaded":
+    "{host} kaynağından görsel. Bu sunucuda uzak içerik kapalı olduğu için yüklenmedi.",
+  "chat.remoteContent.loadPicture": "Görseli yükle",
+  "chat.remoteContent.diagramNotDrawn":
+    "Bu diyagram başka bir siteden görsel yükleyebilir. Bu sunucuda uzak içerik kapalı olduğu için çizilmedi.",
+  "chat.remoteContent.loadDiagram": "Diyagramı yükle",
+  "chat.remoteContent.pageStatic":
+    "Bu sunucuda uzak içerik kapalı olduğu için betikler ve uzak içerik olmadan gösteriliyor.",
+  "chat.remoteContent.runPage": "Sayfayı çalıştır",
 } as const satisfies PartialTranslation<typeof source>;

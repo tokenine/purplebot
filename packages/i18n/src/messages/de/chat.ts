@@ -180,6 +180,7 @@ export const messages = {
   "chat.marker.settingLink": "Einstellung gezeigt",
   "chat.settingLink.desktopOnly": "Öffne sie in der PurpleBot-App auf deinem Computer.",
   "chat.settingLink.agentChatOnly": "Öffne sie in deinem Chat mit diesem Agenten.",
+  "chat.settingLink.adminOnly": "Nur der Serverbesitzer oder ein Admin kann diese Einstellung ändern.",
   "chat.marker.skillSuggestion": "Fähigkeit vorgeschlagen",
   "chat.marker.serverInstall": "Hat einen Befehl zum Installieren eines Servers erstellt",
   "chat.marker.skill.created": "Fähigkeit erstellt",
@@ -553,4 +554,13 @@ export const messages = {
   "chat.feedbackWithdrawn.badge": "Entfernt",
   "chat.feedbackWithdrawn.body":
     "Dein Bericht ist nicht mehr auf GitHub. Um einen korrigierten Bericht zu senden, bitte den Agenten darum.",
+  "chat.remoteContent.pictureNotLoaded":
+    "Bild von {host}. Es wurde nicht geladen, weil externe Inhalte auf diesem Server aus sind.",
+  "chat.remoteContent.loadPicture": "Bild laden",
+  "chat.remoteContent.diagramNotDrawn":
+    "Dieses Diagramm kann ein Bild von einer anderen Website laden. Es wurde nicht gezeichnet, weil externe Inhalte auf diesem Server aus sind.",
+  "chat.remoteContent.loadDiagram": "Diagramm laden",
+  "chat.remoteContent.pageStatic":
+    "Ohne Skripte und externe Inhalte angezeigt, weil externe Inhalte auf diesem Server aus sind.",
+  "chat.remoteContent.runPage": "Seite starten",
 } as const satisfies PartialTranslation<typeof source>;

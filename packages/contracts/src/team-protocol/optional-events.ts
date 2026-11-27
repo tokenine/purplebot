@@ -23,6 +23,7 @@ import { type MachineAlertEvent, machineAlertEvent } from "./machine-resources-v
 import { type MessagePinsEvent, messagePinsEvent } from "./message-pins-v1";
 import { type OpenBotCreditsEvent, openBotCreditsEvent } from "./openbot-credits-events-v1";
 import { type QuietTurnCompletedEvent, quietTurnEvent } from "./quiet-turn-v1";
+import { type RemoteChatContentEvent, remoteChatContentEvent } from "./remote-chat-content-v1";
 import { type RoutineFlowsEvent, routineFlowsEvent } from "./routine-flows-v1";
 import { type SidebarFoldersEvent, sidebarFoldersEvent } from "./sidebar-folders-v1";
 import { type SidebarPinsEvent, sidebarPinsEvent } from "./sidebar-pins-v1";
@@ -30,6 +31,7 @@ import { type SkillsEvent, skillsEvent } from "./skills-events-v1";
 import { type UsageCreditsEvent, usageCreditsEvent } from "./usage-credits-v1";
 import { type VaultEvent, vaultEvent } from "./vault-v1";
 import { type WorkflowFoldersEvent, workflowFoldersEvent } from "./workflow-folders-v1";
+import { type WorkflowSpotEvent, workflowSpotEvent } from "./workflow-presence-v1";
 import { type WorkflowsEvent, workflowsEvent } from "./workflows-v1";
 
 export type OptionalTeamEvent =
@@ -48,6 +50,7 @@ export type OptionalTeamEvent =
   | AgentTasksEvent
   | ChannelEvent
   | HostAppearanceEvent
+  | RemoteChatContentEvent
   | HostRestartEvent
   | HostTurnLimitsEvent
   | LibraryFoldersEvent
@@ -64,6 +67,7 @@ export type OptionalTeamEvent =
   | VaultEvent
   | WorkflowsEvent
   | WorkflowFoldersEvent
+  | WorkflowSpotEvent
   | CrmEvent;
 
 export interface OptionalTeamEventOptions {
@@ -87,6 +91,7 @@ export function optionalTeamEvent(value: unknown, options?: OptionalTeamEventOpt
     agentTasksEvent(value) ??
     channelEvent(value) ??
     hostAppearanceEvent(value) ??
+    remoteChatContentEvent(value) ??
     hostRestartEvent(value) ??
     hostTurnLimitsEvent(value) ??
     libraryFoldersEvent(value) ??
@@ -103,6 +108,7 @@ export function optionalTeamEvent(value: unknown, options?: OptionalTeamEventOpt
     vaultEvent(value) ??
     workflowsEvent(value) ??
     workflowFoldersEvent(value) ??
+    workflowSpotEvent(value) ??
     crmEvent(value);
   return event && options?.agentTaskUiBlocks ? withAgentTaskEventUiBlocks(event, value) : event;
 }

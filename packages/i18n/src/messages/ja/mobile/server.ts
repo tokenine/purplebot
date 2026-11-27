@@ -574,6 +574,10 @@ export const messages = {
   "mobile.server.settings.browsingMemoryDescription":
     "エージェントのブラウザーを操作すると、使ったページとボタンからエージェントがサイトの使い方を学習します。入力したテキストは保存されません。",
   "mobile.server.settings.browsingMemoryLoadFailed": "閲覧の設定を読み込めませんでした。",
+  "mobile.server.settings.remoteChatContent": "チャットで外部コンテンツを読み込む",
+  "mobile.server.settings.remoteChatContentDescription":
+    "チャットで他のウェブサイトの画像とサイトアイコンを表示します。オフのときはリンクとして表示され、図とページはタップしたときだけ読み込まれます。このサーバーの全員に適用されます。",
+  "mobile.server.settings.remoteChatContentLoadFailed": "外部コンテンツの設定を読み込めませんでした。",
   "mobile.server.settings.learningSaveFailed": "この設定を保存できませんでした。もう一度お試しください。",
   "mobile.server.settings.learningUnsupported":
     "ここでこの設定を変更するには、このサーバーの PurpleBot を更新してください。",
@@ -1170,6 +1174,11 @@ export const messages = {
   "mobile.server.providers.pool": "アカウントをプール",
   "mobile.server.providers.poolHint":
     "エージェントは使用量の上限に近づくまで 1 つのアカウントを使い、その後は上限が最初にリセットされるアカウントを使います。",
+  "mobile.server.providers.poolStrategy": "アカウントの使い方",
+  "mobile.server.providers.poolFillFirst": "順番に使い切る",
+  "mobile.server.providers.poolSpread": "分散",
+  "mobile.server.providers.poolSpreadHint":
+    "エージェントは使用量が最も残っているアカウントに分散します。エージェントは、別のアカウントにずっと多くの余裕があるときだけアカウントを変えます。",
   "mobile.server.providers.accountsPooledHint":
     "エージェントはこれらのアカウントを共有します。新しいアカウントは、このスマートフォンでそのページからサインインします。",
   "mobile.server.providers.accountsPooledOnComputer":

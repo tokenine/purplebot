@@ -1,6 +1,7 @@
 import {
   type AvatarColor,
   canAdministerServer,
+  type HostRemoteChatContent,
   isQueuedMessageReceipt,
   MCP_SERVERS_CAPABILITY,
   type RespondToApprovalInput,
@@ -91,6 +92,10 @@ import { PROVIDERS_ADMIN_CAPABILITY } from "@openbot/contracts/team-protocol/pro
 import { PUSH_NOTIFICATION_THREADS_CAPABILITY } from "@openbot/contracts/team-protocol/push-notification-threads-v1";
 import { ANDROID_PUSH_NOTIFICATIONS_CAPABILITY } from "@openbot/contracts/team-protocol/push-notifications-android-v1";
 import { PUSH_NOTIFICATIONS_CAPABILITY } from "@openbot/contracts/team-protocol/push-notifications-v1";
+import {
+  REMOTE_CHAT_CONTENT_CAPABILITY,
+  remoteChatContentEvent,
+} from "@openbot/contracts/team-protocol/remote-chat-content-v1";
 import { ROUTINE_RECOVERY_CAPABILITY } from "@openbot/contracts/team-protocol/routine-recovery-v1";
 import { ROUTINE_RESULTS_CAPABILITY } from "@openbot/contracts/team-protocol/routine-results-v1";
 import { ROUTINES_ONCE_CAPABILITY } from "@openbot/contracts/team-protocol/routines-once-v1";
@@ -199,6 +204,8 @@ import { ShortcutsSync } from "@/features/shortcuts/shortcuts-sync";
 import { fetch } from "@/features/support/model/logged-fetch";
 import { supportLog } from "@/features/support/model/support-log";
 import { forgetPhoneFeedback, shownPhoneFeedback } from "@/features/support/model/support-log-capture";
+import { useWatchAwake } from "@/features/watch/model/watch-awake";
+import { WatchSync } from "@/features/watch/watch-sync";
 import { OwnerTransferPrompts } from "@/features/workspace/components/owner-transfer-prompts";
 import type { RemoteTeamTransportRef } from "@/features/workspace/components/remote-team-transport";
 import {
@@ -274,6 +281,7 @@ import { createDownloadQueue } from "@/features/workspace/model/request-lanes";
 import {
   hasCapability,
   requireCapability,
+  requireSidebarLayout,
   type ServerCapabilities,
   SIDEBAR_LAYOUT_CAPABILITY,
   supportsBrowserView,
@@ -348,6 +356,8 @@ const OTHER_SERVERS_RETURN_DELAY_MS = 3_000;
 const STARTUP_SERVER_WAIT_MS = 4_000;
 const FIRST_CONNECTION_WAIT_MS = 5_000;
 const STREAM_FLUSH_MS = 100;
+const LATEST_PAGE_SIZE = 50;
+const READ_LATEST_PAGE_SIZE = 24;
 const EMPTY_SERVER: MobileServer = {
   id: "unavailable",
   name: "PurpleBot",
@@ -448,6 +458,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
   const loadGeneration = useRef(0);
   const directoryGeneration = useRef(0);
   const foreground = useAppForeground();
+  const watchAwake = useWatchAwake();
   const [servers, setServers] = useState<MobileServer[]>([]);
   const [serverDirectoryState, setServerDirectoryState] = useState<MobileServerDirectoryState>("loading");
   const [serverDirectoryError, setServerDirectoryError] = useState<string | null>(null);
@@ -462,7 +473,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
     loaded: () => allSettled(serverLoads.current),
     saved: () => allSettled(cacheWrites.current),
   });
-  const live = foreground || backgroundRefreshing;
+  const live = foreground || backgroundRefreshing || watchAwake;
   const firstConnectionTimers = useRef(new Map<string, ReturnType<typeof setTimeout>>());
   const [sidebarByServer, setSidebarByServer] = useState<
     Record<string, { layout: SidebarLayoutSnapshot | null; error: string | null }>
@@ -1142,6 +1153,14 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
     },
     [request, conversationStore],
   );
+  const latestPageSize = useCallback(
+    (agentId: string) => {
+      const live = liveState.get();
+      const unread = live.unreadAgentIds.includes(agentId) || (live.unreadCounts[agentId] ?? 0) > 0;
+      return unread ? LATEST_PAGE_SIZE : READ_LATEST_PAGE_SIZE;
+    },
+    [liveState],
+  );
   const loadConversation = useCallback(
     async (agentId: string, serverId = activeServerIdRef.current, refresh = false, attach = false) => {
       const generation = loadGeneration.current;
@@ -1150,7 +1169,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
         () =>
           request(
             "GET",
-            `${TEAM_API_ROUTES.agent.conversationPage(agentId)}?limit=50`,
+            `${TEAM_API_ROUTES.agent.conversationPage(agentId)}?limit=${latestPageSize(agentId)}`,
             decodeConversationPage,
             undefined,
             serverId,
@@ -1162,7 +1181,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
       refreshOpenExchanges(agentId, serverId);
       return page;
     },
-    [request, conversationStore, refreshOpenExchanges],
+    [request, conversationStore, refreshOpenExchanges, latestPageSize],
   );
   const loadLatestMessages = useCallback(
     async (agentId: string, serverId?: string) => {
@@ -1235,7 +1254,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
               () =>
                 client.request(
                   "GET",
-                  `${TEAM_API_ROUTES.agent.conversationPage(agentId)}?limit=50`,
+                  `${TEAM_API_ROUTES.agent.conversationPage(agentId)}?limit=${latestPageSize(agentId)}`,
                   decodeConversationPage,
                 ),
               context.isCurrent,
@@ -1247,7 +1266,7 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
       })();
       trackUntilSettled(serverLoads.current, loads);
     },
-    [conversationStore, persistServer],
+    [conversationStore, persistServer, latestPageSize],
   );
 
   const loadServer = useCallback(
@@ -1701,6 +1720,13 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
         applyHostHidden(serverId, event.agents);
         return;
       }
+      const chatContent = remoteChatContentEvent(event);
+      if (chatContent) {
+        queryClient.setQueryData<HostRemoteChatContent>(queryKeys.remoteChatContent(queryScope, serverId), {
+          enabled: chatContent.enabled,
+        });
+        return;
+      }
       const colors = agentColorsEvent(event);
       if (colors) {
         applyHostColors(serverId, colors.agents);
@@ -1979,11 +2005,10 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
       answerBrowserPermission: browser.answerBrowserPermission,
       answerBrowserHttpSignIn: browser.answerBrowserHttpSignIn,
       mutateSidebarLayout: async (serverId, action) => {
-        requireCapability(
+        requireSidebarLayout(
           serverCapabilities.current,
           serverId,
-          SIDEBAR_LAYOUT_CAPABILITY,
-          "mobile.workspace.error.sectionsUnsupported",
+          serversRef.current.find((server) => server.id === serverId),
         );
         const layout = await request(
           "POST",
@@ -1997,11 +2022,10 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
         applySidebarLayout(serverId, layout);
       },
       moveSidebarChat: async (serverId, action) => {
-        requireCapability(
+        requireSidebarLayout(
           serverCapabilities.current,
           serverId,
-          SIDEBAR_LAYOUT_CAPABILITY,
-          "mobile.workspace.error.sectionsUnsupported",
+          serversRef.current.find((server) => server.id === serverId),
         );
         const previous = sidebarByServerRef.current[serverId]?.layout;
         const moved = previous ? moveSidebarChat(previous, action) : null;
@@ -2009,7 +2033,9 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
         try {
           const layout = await request(
             "POST",
-            TEAM_API_ROUTES.sidebarLayout.actions,
+            action.type === "assign" && hasCapability(serverCapabilities.current, serverId, SIDEBAR_FOLDERS_CAPABILITY)
+              ? SIDEBAR_FOLDERS_ROUTES.actions
+              : TEAM_API_ROUTES.sidebarLayout.actions,
             decodeSidebarLayout,
             action,
             serverId,
@@ -2694,6 +2720,13 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
         canManageMemoryReview: (serverId) => administers(serverId, MEMORY_REVIEW_CAPABILITY),
         canManageSkillLearning: (serverId) => administers(serverId, SKILL_LEARNING_CAPABILITY),
         canManageBrowsingMemory: (serverId) => administers(serverId, BROWSING_MEMORY_CAPABILITY),
+        canManageRemoteChatContent: (serverId) => administers(serverId, REMOTE_CHAT_CONTENT_CAPABILITY),
+        servesRemoteChatContent: (serverId) => {
+          const server = servers.find((candidate) => candidate.id === serverId);
+          return Boolean(
+            server && online(server) && hasCapability(capabilities, serverId, REMOTE_CHAT_CONTENT_CAPABILITY),
+          );
+        },
         canManageServerPersonality: (serverId) => administers(serverId, HOST_PERSONALITY_CAPABILITY),
         servesServerPersonality: (serverId) => {
           const server = servers.find((candidate) => candidate.id === serverId);
@@ -2879,6 +2912,14 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
             active={foreground}
             onAccepted={refreshMemberships}
           />
+          <WatchSync
+            servers={orderedServers}
+            serversReady={serverDirectoryState === "ready"}
+            agents={directoryAgents}
+            preferences={visiblePreferences}
+            capabilities={serverCapabilities.current}
+            teamApi={teamApi}
+          />
           <NotificationAvatarSync
             servers={servers}
             serversReady={serverDirectoryState === "ready"}
@@ -2889,7 +2930,9 @@ export function MobileWorkspaceProvider({ children }: PropsWithChildren) {
               key={server.id}
               hostId={server.id}
               publicKey={server.publicKey}
-              active={(foreground && (!othersHeld || server.id === activeServerId)) || backgroundRefreshing}
+              active={
+                (foreground && (!othersHeld || server.id === activeServerId)) || backgroundRefreshing || watchAwake
+              }
               background={!foreground}
               directory={directory}
               register={registerConnection}

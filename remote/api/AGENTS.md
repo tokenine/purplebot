@@ -2,17 +2,17 @@
 
 The Remote API is the Signal service. It verifies remote tickets, issues resume tokens and TURN
 credentials, and relays WebRTC signalling between peers. It does not carry team chats, files, or
-commands. The exceptions are Slack, Discord, Telegram and GitHub. `POST /v1/slack/events` checks the PurpleBot Slack
+commands. The exceptions are Slack, Discord, Telegram and GitHub. `POST /v1/slack/events` checks the OpenBot Slack
 app's signature, reads only the app ID (`api_app_id`), the workspace ID (`team_id`), the
 `url_verification` challenge, and the event's `type`, `channel_type`, `thread_ts`, `bot_id` and
-`subtype` (to know whether it addresses PurpleBot, never the text), and passes the body to the `ingress`
+`subtype` (to know whether it addresses OpenBot, never the text), and passes the body to the `ingress`
 socket of the workspace's host in transit. `POST /v1/telegram/updates/<bot ID>` checks the bot's secret header, reads only the chat ID,
 the callback query ID, a `/start <code>` link code, and the chat type, the entity types and whether the
 message replies, is in a thread, or renames or leaves the chat (to know whether it can address
-PurpleBot, never the text), and passes the body to the `ingress` socket of
+OpenBot, never the text), and passes the body to the `ingress` socket of
 the chat's host in the same way. When the account service answers that no host has the chat, a
 direct message, a mention or a command gets one notice from Signal that the chat is not linked, at
-most once a day for each chat (`status.messaging.telegramNotLinked`). `POST /v1/github/events` checks the PurpleBot GitHub App's signature,
+most once a day for each chat (`status.messaging.telegramNotLinked`). `POST /v1/github/events` checks the OpenBot GitHub App's signature,
 reads only the installation ID and the repository ID, and passes the body to the `ingress` socket of
 every host whose GitHub route names the repository. Do not log these bodies, and do not read more of them. The one store
 is `src/ingress-queue.ts`: for a hosted server that sleeps, and for the `/start` update of a Telegram
@@ -30,7 +30,13 @@ and an answer only to a callback query delivered to it. A result has only the re
 `TelegramCallResult`. Files go through short signed tokens (`TelegramFileTokens`); an upload token
 works once.
 
-Signal also holds the PurpleBot Discord bot. `src/discord-gateway.ts` holds the bot token and the
+Signal also relays Apple Watch requests. `POST /v1/watch/request` reads only the watch ticket
+claims, the timestamp and the proof, and passes the request to the `ingress` socket of the ticket's
+host in transit (`watch-delivery`). The request and the reply are sealed between the watch and the
+host. Signal never opens them, never queues, keeps or logs them, and never logs a watch ticket or a
+proof. Keep the ticket, clock, proof and revoked epoch checks before a delivery.
+
+Signal also holds the OpenBot Discord bot. `src/discord-gateway.ts` holds the bot token and the
 Gateway connection; `src/discord-events.ts` turns a Gateway event into a delivery for the `ingress`
 socket of the guild's host; `src/discord-api.ts` makes the typed Discord calls of `POST
 /v1/discord/api` for a host, only in the guilds routed to its socket. Never log the bot token, a

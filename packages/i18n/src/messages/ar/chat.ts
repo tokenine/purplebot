@@ -273,6 +273,7 @@ export const messages = {
   "chat.marker.settingLink": "عرض إعدادًا",
   "chat.settingLink.desktopOnly": "افتحه في تطبيق PurpleBot على حاسوبك.",
   "chat.settingLink.agentChatOnly": "افتحه في محادثتك مع هذا الوكيل.",
+  "chat.settingLink.adminOnly": "يمكن لمالك الخادم أو المسؤول فقط تغيير هذا الإعداد.",
   "chat.marker.skillSuggestion": "اقترح مهارة",
   "chat.marker.mcpSignIn": "طلب منك تسجيل الدخول إلى خادم MCP",
   "chat.marker.serverInstall": "أنشأ أمرًا لتثبيت خادم",
@@ -689,4 +690,11 @@ export const messages = {
   "chat.feedbackWithdrawn.title": "أُزيل البلاغ",
   "chat.feedbackWithdrawn.badge": "أُزيل",
   "chat.feedbackWithdrawn.body": "لم يعد بلاغك على GitHub. لإرسال بلاغ مصحَّح، اطلب ذلك من الوكيل.",
+  "chat.remoteContent.pictureNotLoaded": "صورة من {host}. لم يتم تحميلها لأن المحتوى البعيد متوقف على هذا الخادم.",
+  "chat.remoteContent.loadPicture": "تحميل الصورة",
+  "chat.remoteContent.diagramNotDrawn":
+    "قد يحمّل هذا المخطط صورة من موقع آخر. لم يتم رسمه لأن المحتوى البعيد متوقف على هذا الخادم.",
+  "chat.remoteContent.loadDiagram": "تحميل المخطط",
+  "chat.remoteContent.pageStatic": "معروضة بدون نصوص برمجية ومحتوى بعيد لأن المحتوى البعيد متوقف على هذا الخادم.",
+  "chat.remoteContent.runPage": "تشغيل الصفحة",
 } as const satisfies PartialTranslation<typeof source>;

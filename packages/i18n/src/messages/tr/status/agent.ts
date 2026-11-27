@@ -33,8 +33,7 @@ export const messages = {
     "Sonuç {channel} kanalında görünür ve bu sunucuda kanalı okuyan her üye onu görebilir.",
   "status.agent.creditsHoldBalance": "Bu işlem {credits} kredi kullanır, bakiye {balance} kredidir.",
   "status.agent.creditsHoldAgentsOff": "Bu sunucudaki ajanlar kredi kullanamaz.",
-  "status.agent.screenCapturePermissionNext":
-    "Ardından macOS, PurpleBot için Ekran Kaydı'na izin vermenizi isteyebilir.",
+  "status.agent.screenCapturePermissionNext": "Ardından macOS, PurpleBot için Ekran Kaydı'na izin vermenizi isteyebilir.",
   "status.agent.screenCaptureDisplay": "{name} ekranını yakala ve görüntüyü ajanın modeline gönder.",
   "status.agent.screenCaptureWindow": "{name} penceresini yakala ve görüntüyü ajanın modeline gönder.",
   "status.agent.screenCaptureRegion":
@@ -72,6 +71,10 @@ export const messages = {
   "status.agent.nearSignatureReceived": "PurpleBot imzayı aldı. Bu sekmeyi kapatabilirsiniz.",
   "status.agent.nearSignatureUnknown": "PurpleBot bu imzayı beklemiyor. PurpleBot'ta yeniden başlatın.",
   "status.agent.nearPayment": "{domain} için kripto cüzdandan {recipient} alıcısına {amount} {symbol} öde: {reason}",
+  "status.agent.nearPaymentSending": "{domain} için {amount} ödeniyor: {reason}",
+  "status.agent.nearPaymentPaid": "{domain} için {amount} ödendi: {reason}",
+  "status.agent.nearPaymentNotPaid": "Ödenmedi: {domain} için {amount}: {reason}",
+  "status.agent.nearPaymentUncertain": "Onaylanmadı: {domain} için {amount}: {reason}",
   "status.agent.nearSummaryCreate":
     "Tüm ajanlar günde en fazla {amount} USD ödeyebilir. Bunu daha sonra PurpleBot'ta değiştirebilirsiniz.",
   "status.agent.nearSummaryGrant":
@@ -79,6 +82,7 @@ export const messages = {
   "status.agent.nearSummaryBudget": "Cüzdanın günlük bütçesini {amount} USD olarak değiştir.",
   "status.agent.nearSummaryAutoPay":
     "Bir ödeme kuralı izin verdiğinde PurpleBot'un imzanız olmadan ödeme yapmasına izin ver. Diğer ödemeler için yine sohbette size sorulur.",
+  "status.agent.nearSummaryManualPay": "Hiç ödeme kuralı kalmadı. PurpleBot her ödeme için yeniden imzanızı ister.",
   "status.agent.nearSummaryPayment": "{recipient} alıcısına {amount} ödemesini onayla.",
   "status.agent.nearSummaryFreeze": "Siz ödemeleri sürdürene kadar ajanlar bu cüzdandan ödeme yapamaz.",
   "status.agent.nearSummaryUnfreeze": "Ajanlar kurallarınız dahilinde bu cüzdandan yeniden ödeme yapabilir.",

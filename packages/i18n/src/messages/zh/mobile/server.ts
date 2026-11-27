@@ -537,6 +537,10 @@ export const messages = {
   "mobile.server.settings.browsingMemoryDescription":
     "当你控制智能体的浏览器时，智能体会从你使用的页面和按钮中学习网站的用法。不会保存你输入的文字。",
   "mobile.server.settings.browsingMemoryLoadFailed": "无法加载浏览设置。",
+  "mobile.server.settings.remoteChatContent": "在聊天中加载外部内容",
+  "mobile.server.settings.remoteChatContentDescription":
+    "在聊天中显示来自其他网站的图片和网站图标。关闭时，它们显示为链接，图表和页面只在你点按时加载。此设置适用于此服务器上的所有人。",
+  "mobile.server.settings.remoteChatContentLoadFailed": "无法加载外部内容设置。",
   "mobile.server.settings.learningSaveFailed": "无法保存此设置，请重试。",
   "mobile.server.settings.learningUnsupported": "请更新该服务器上的 PurpleBot，才能在此更改此设置。",
   "mobile.server.settings.responseStyleDescription":
@@ -1070,6 +1074,11 @@ export const messages = {
   "mobile.server.providers.accountKeyAddFailed": "无法添加账号，请重试。",
   "mobile.server.providers.pool": "账号池",
   "mobile.server.providers.poolHint": "助手先用一个账号，直到接近用量限额，再换到限额最先重置的账号。",
+  "mobile.server.providers.poolStrategy": "账号用法",
+  "mobile.server.providers.poolFillFirst": "先用满",
+  "mobile.server.providers.poolSpread": "分散",
+  "mobile.server.providers.poolSpreadHint":
+    "助手分散到剩余用量最多的账号。只有当另一个账号的余量多很多时，助手才会换账号。",
   "mobile.server.providers.accountsPooledHint": "助手共用这些账号。新账号在本手机上它的页面中登录。",
   "mobile.server.providers.accountsPooledOnComputer": "助手共用这些账号。请在电脑上的 PurpleBot 中添加账号。",
   "mobile.server.providers.inUse": "使用中",

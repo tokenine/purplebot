@@ -677,6 +677,10 @@ export const messages = {
   "mobile.server.settings.browsingMemoryDescription":
     "כשאתה שולט בדפדפן של סוכן, הסוכן לומד איך אתרים עובדים מהדפים והכפתורים שאתה משתמש בהם. טקסט שהקלדת לא נשמר.",
   "mobile.server.settings.browsingMemoryLoadFailed": "לא ניתן לטעון את הגדרת הגלישה.",
+  "mobile.server.settings.remoteChatContent": "טעינת תוכן חיצוני בצ'אטים",
+  "mobile.server.settings.remoteChatContentDescription":
+    "הצגת תמונות וסמלי אתרים מאתרים אחרים בצ'אטים. כשהאפשרות כבויה, הם מוצגים כקישורים, ותרשימים ודפים נטענים רק בהקשה. ההגדרה חלה על כולם בשרת הזה.",
+  "mobile.server.settings.remoteChatContentLoadFailed": "לא ניתן לטעון את הגדרת התוכן החיצוני.",
   "mobile.server.settings.learningSaveFailed": "לא ניתן לשמור את ההגדרה הזו. אפשר לנסות שוב.",
   "mobile.server.settings.learningUnsupported": "יש לעדכן את PurpleBot בשרת הזה כדי לשנות כאן את ההגדרה הזו.",
   "mobile.server.settings.responseStyleDescription":
@@ -1453,6 +1457,11 @@ export const messages = {
   "mobile.server.providers.pool": "איגום חשבונות",
   "mobile.server.providers.poolHint":
     "הסוכנים משתמשים בחשבון אחד עד שהוא מתקרב למגבלת שימוש, ואז בחשבון שהמגבלה שלו מתאפסת ראשונה.",
+  "mobile.server.providers.poolStrategy": "שימוש בחשבונות",
+  "mobile.server.providers.poolFillFirst": "מילוי ראשון",
+  "mobile.server.providers.poolSpread": "פיזור",
+  "mobile.server.providers.poolSpreadHint":
+    "הסוכנים מתפזרים בין החשבונות שנשאר בהם הכי הרבה שימוש. סוכן מחליף חשבון רק כשלחשבון אחר יש הרבה יותר מקום.",
   "mobile.server.providers.accountsPooledHint": "הסוכנים חולקים את החשבונות האלה. חשבון חדש מתחבר בדף שלו בטלפון הזה.",
   "mobile.server.providers.accountsPooledOnComputer":
     "הסוכנים חולקים את החשבונות האלה. חשבון מוסיפים ב-PurpleBot במחשב.",

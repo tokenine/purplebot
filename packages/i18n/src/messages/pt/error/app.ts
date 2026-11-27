@@ -11,4 +11,6 @@ export const messages = {
   "error.app.remoteIdentityUnavailable": "A identidade do computador anfitrião remoto está indisponível.",
   "error.app.iceServersMissing": "O Remote Signal ainda não forneceu servidores ICE.",
   "error.app.finishLocalTest": "Conclua o teste local antes de trocar de tela.",
+  "error.app.windowBlockedBySecuritySoftware":
+    "Um software de segurança neste computador provavelmente parou a janela do PurpleBot. No seu software de segurança, por exemplo o Kaspersky, adicione o PurpleBot.exe como aplicativo confiável. Depois, abra o PurpleBot de novo.",
 } as const satisfies PartialTranslation<typeof source>;

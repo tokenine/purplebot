@@ -69,12 +69,17 @@ export const messages = {
   "status.agent.nearSignatureReceived": "PurpleBot קיבל את החתימה. אפשר לסגור את הכרטיסייה הזו.",
   "status.agent.nearSignatureUnknown": "PurpleBot לא ממתין לחתימה הזו. יש להתחיל אותה מחדש ב-PurpleBot.",
   "status.agent.nearPayment": "תשלום של {amount} {symbol} ל-{recipient} מארנק הקריפטו, עבור {domain}: {reason}",
+  "status.agent.nearPaymentSending": "משלם {amount} עבור {domain}: {reason}",
+  "status.agent.nearPaymentPaid": "שולם {amount} עבור {domain}: {reason}",
+  "status.agent.nearPaymentNotPaid": "לא שולם: {amount} עבור {domain}: {reason}",
+  "status.agent.nearPaymentUncertain": "לא אושר: {amount} עבור {domain}: {reason}",
   "status.agent.nearSummaryCreate": "כל הסוכנים יכולים לשלם עד {amount} USD ביום. אפשר לשנות זאת אחר כך ב-PurpleBot.",
   "status.agent.nearSummaryGrant":
     "מתן הרשאה לאפליקציית PurpleBot הזו לשלם מהארנק במשך {days} ימים, במסגרת הכללים שלך.",
   "status.agent.nearSummaryBudget": "שינוי התקציב היומי של הארנק ל-{amount} USD.",
   "status.agent.nearSummaryAutoPay":
     "מתן הרשאה ל-PurpleBot לשלם בלי החתימה שלך כשכלל תשלום מאפשר זאת. תשלומים אחרים עדיין ממתינים לאישור שלך בצ'אט.",
+  "status.agent.nearSummaryManualPay": "לא נשאר כלל תשלום. PurpleBot יבקש שוב את החתימה שלך לכל תשלום.",
   "status.agent.nearSummaryPayment": "אישור התשלום של {amount} ל-{recipient}.",
   "status.agent.nearSummaryFreeze": "הסוכנים לא יוכלו לשלם מהארנק הזה עד שהתשלומים יחודשו.",
   "status.agent.nearSummaryUnfreeze": "הסוכנים יכולים שוב לשלם מהארנק הזה, במסגרת הכללים שלך.",

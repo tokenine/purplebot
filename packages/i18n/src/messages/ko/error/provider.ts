@@ -447,6 +447,8 @@ export const messages = {
     "이미지가 너무 커서 모델이 이 채팅의 이미지를 받지 않았습니다. PurpleBot이 채팅 기록으로 새 {provider} 세션을 시작했습니다. 다시 시도하세요.",
   "error.provider.imageCountLimit":
     "이미지가 너무 많아서 모델이 이 채팅을 받지 않았습니다. PurpleBot이 채팅 기록으로 새 {provider} 세션을 시작했습니다. 다시 시도하세요.",
+  "error.provider.imageCountLimitRepeated":
+    "이미지가 너무 많아서 모델이 이 채팅을 다시 받지 않았습니다. 한 작업이 이 모델이 받는 것보다 많은 이미지를 열기 때문에 새 세션으로는 해결되지 않습니다. 새 채팅을 선택하고 에이전트에게 각 단계에서 이미지를 더 적게 열라고 요청하거나, 이미지를 더 많이 받는 모델을 선택하세요.",
   "error.provider.imageUnreadable":
     "모델이 이 채팅의 이미지를 읽지 못했습니다. PurpleBot이 채팅 기록으로 새 {provider} 세션을 시작했습니다. 다시 시도하세요. 이미지를 보냈다면 다른 이미지를 보내세요.",
   "error.provider.requestTooLarge":
@@ -540,8 +542,7 @@ export const messages = {
   "error.provider.inUse":
     "에이전트가 {provider}을(를) 사용 중이에요. 이 제공자를 끄기 전에 에이전트의 모델을 변경하세요.",
   "error.provider.useBusy": "제공자 확인이나 로그인이 끝날 때까지 기다린 후 다시 시도해 주세요.",
-  "error.provider.useSettingsReadOnly":
-    "저장된 제공자 설정을 읽을 수 없어요. 변경하기 전에 PurpleBot을 업데이트하세요.",
+  "error.provider.useSettingsReadOnly": "저장된 제공자 설정을 읽을 수 없어요. 변경하기 전에 PurpleBot을 업데이트하세요.",
   "error.provider.useChangeFailed": "PurpleBot이 제공자 설정을 변경할 수 없었어요.",
   "error.provider.accountsUnsupported": "{provider}은(는) 계정을 하나만 둘 수 있어요.",
   "error.provider.accountNeedsConnection": "다른 계정을 추가하기 전에 {provider}을(를) 연결하세요.",

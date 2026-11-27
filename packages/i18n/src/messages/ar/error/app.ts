@@ -11,4 +11,6 @@ export const messages = {
   "error.app.remoteIdentityUnavailable": "هوية المضيف البعيد غير متاحة.",
   "error.app.iceServersMissing": "لم يقدّم Remote Signal خوادم ICE بعد.",
   "error.app.finishLocalTest": "أكمل الاختبار المحلي قبل تبديل الشاشات.",
+  "error.app.windowBlockedBySecuritySoftware":
+    "من المحتمل أن برنامج الحماية على هذا الكمبيوتر أوقف نافذة PurpleBot. في برنامج الحماية، مثل Kaspersky، أضف PurpleBot.exe كتطبيق موثوق. ثم شغّل PurpleBot مرة أخرى.",
 } as const satisfies PartialTranslation<typeof source>;

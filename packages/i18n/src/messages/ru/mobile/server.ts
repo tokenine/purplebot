@@ -638,6 +638,10 @@ export const messages = {
   "mobile.server.settings.browsingMemoryDescription":
     "Когда вы управляете браузером агента, агент узнаёт, как работают сайты, по страницам и кнопкам, которые вы используете. Введённый текст не сохраняется.",
   "mobile.server.settings.browsingMemoryLoadFailed": "Не удалось загрузить настройку браузинга.",
+  "mobile.server.settings.remoteChatContent": "Загружать внешний контент в чатах",
+  "mobile.server.settings.remoteChatContentDescription":
+    "Показывать в чатах изображения и значки сайтов с других веб-сайтов. Когда это выключено, они показаны как ссылки, а диаграммы и страницы загружаются только по нажатию. Это действует для всех на этом сервере.",
+  "mobile.server.settings.remoteChatContentLoadFailed": "Не удалось загрузить настройку внешнего контента.",
   "mobile.server.settings.learningSaveFailed": "Не удалось сохранить этот параметр. Повторите попытку.",
   "mobile.server.settings.learningUnsupported":
     "Обновите PurpleBot на этом сервере, чтобы изменить здесь этот параметр.",
@@ -1299,6 +1303,11 @@ export const messages = {
   "mobile.server.providers.pool": "Объединить аккаунты",
   "mobile.server.providers.poolHint":
     "Агенты используют один аккаунт, пока он не приблизится к лимиту, а затем аккаунт, чей лимит сбросится раньше всех.",
+  "mobile.server.providers.poolStrategy": "Использование аккаунтов",
+  "mobile.server.providers.poolFillFirst": "Сначала заполнять",
+  "mobile.server.providers.poolSpread": "Распределять",
+  "mobile.server.providers.poolSpreadHint":
+    "Агенты распределяются по аккаунтам, у которых осталось больше всего лимита. Агент меняет аккаунт, только когда у другого аккаунта намного больше запаса.",
   "mobile.server.providers.accountsPooledHint":
     "Агенты используют эти аккаунты вместе. Новый аккаунт входит на своей странице на этом телефоне.",
   "mobile.server.providers.accountsPooledOnComputer":

@@ -9,6 +9,7 @@ import {
   redactValue,
   registerPublicValues,
   registerSecretValue,
+  replaceSecretValueGroup,
   resolveLogLevel,
   toLogValue,
 } from "./index";
@@ -43,6 +44,8 @@ describe("redactText", () => {
       `rk_test_${run(24)}`,
       `whsec_${run(32)}`,
       `whsec_${run(10)}+${run(10)}/${run(10)}=`,
+      `ya29.${run(60)}`,
+      `1//0${run(40)}`,
     ]) {
       expect(redactText(`key ${key} leaked`)).toBe("key [redacted] leaked");
     }
@@ -498,6 +501,29 @@ describe("registerSecretValue", () => {
     registerSecretValue(secret);
 
     expect(redactText(`key ${secret} rejected`)).toBe("key [redacted] rejected");
+  });
+});
+
+describe("replaceSecretValueGroup", () => {
+  it("stops masking a value that the group no longer holds", () => {
+    replaceSecretValueGroup("test-vault", [{ values: ["vlt1", "vaultkey-778899"], allowShort: true }]);
+    expect(redactText("use vlt1 and vaultkey-778899")).toBe("use [redacted] and [redacted]");
+    replaceSecretValueGroup("test-vault", [{ values: ["vaultkey-778899"] }]);
+    expect(redactText("use vlt1 and vaultkey-778899")).toBe("use vlt1 and [redacted]");
+    replaceSecretValueGroup("test-vault", []);
+    expect(redactText("use vlt1 and vaultkey-778899")).toBe("use vlt1 and vaultkey-778899");
+  });
+
+  it("keeps a value that is also registered outside the group", () => {
+    registerSecretValue("shared-secret-5566");
+    replaceSecretValueGroup("test-shared", [{ values: ["shared-secret-5566"] }]);
+    replaceSecretValueGroup("test-shared", []);
+    expect(redactText("token shared-secret-5566")).toBe("token [redacted]");
+  });
+
+  it("skips a short value unless the set allows it", () => {
+    replaceSecretValueGroup("test-short", [{ values: ["shrt"] }]);
+    expect(redactText("shrt")).toBe("shrt");
   });
 });
 

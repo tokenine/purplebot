@@ -17,6 +17,8 @@ export const messages = {
     "PurpleBot non può raggiungere Telegram su questo computer. Accedi, dai un nome a questo computer e riprova.",
   "error.messaging.telegramRelayUnreachable":
     "PurpleBot non riesce a connettersi al suo servizio da questo computer. Controlla la connessione a Internet, la VPN, il proxy o il firewall e riprova.",
+  "error.messaging.telegramRelayCertificate":
+    "PurpleBot non riesce a creare una connessione sicura con il suo servizio da questo computer. La causa può essere un software di sicurezza che analizza il traffico HTTPS, oppure una data e un'ora errate su questo computer. Controllali e riprova.",
   "error.messaging.telegramServiceUnavailable":
     "PurpleBot non può collegare Telegram in questo momento. Riprova più tardi.",
   "error.messaging.whatsappNotConnected": "Questo numero WhatsApp non è collegato.",

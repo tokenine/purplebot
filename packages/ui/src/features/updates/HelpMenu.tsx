@@ -1,3 +1,4 @@
+import type { CreditMediaModel } from "@openbot/contracts/credit-media";
 import { BookOpen, Bug, CircleQuestionMark, DropdownMenu, Gift, MotionTooltip } from "@openbot/ui";
 import { createSignal, For, Show } from "solid-js";
 import { useText } from "../../text";
@@ -19,6 +20,7 @@ export interface HelpMenuProps {
   onReportProblem: () => void;
   onOpenCreditsExplainer?: () => void;
   onOpenCreditPrices?: () => void;
+  creditModels?: readonly CreditMediaModel[] | undefined;
 }
 
 function releaseDate(value: string): Date {
@@ -92,6 +94,7 @@ export function HelpMenu(props: HelpMenuProps) {
         open={explaining()}
         onOpenChange={setExplaining}
         onOpenPrices={props.onOpenCreditPrices}
+        models={props.creditModels}
       />
     </>
   );

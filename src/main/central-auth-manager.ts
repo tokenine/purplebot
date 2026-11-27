@@ -57,12 +57,13 @@ import {
   type RemoteMemberRole,
   type RemoteTicketClaims,
 } from "@openbot/contracts/signal-protocol/ticket";
+import { WATCH_TICKET_AUDIENCE, type WatchTicketClaims } from "@openbot/contracts/signal-protocol/watch-relay";
 import type { ServerAppearance } from "@openbot/contracts/team-protocol/host-appearance-v1";
 import { sourceText } from "@openbot/i18n/source";
 import { createOpenBotLogger, toLogValue } from "@openbot/logging";
 import { referenceFrom, safeReference } from "@openbot/user-errors";
 import { Deferred, Duration, Effect, Exit, type Layer, Result, Schema, Semaphore } from "effect";
-import { createLocalJWKSet, jwtVerify } from "jose";
+import { createLocalJWKSet, type JWTPayload, jwtVerify } from "jose";
 import { z } from "zod";
 import { runCauseEffect } from "../backend/effect-boundary";
 import { isMissingFileError } from "../backend/file-errors";
@@ -156,6 +157,7 @@ const STARTUP_RETRY_DELAYS_MS = [250, 500, 1_000, 2_000] as const;
 const UNAVAILABLE_RETRY_DELAYS_MS = [5_000, 10_000, 20_000, 30_000, 60_000] as const;
 const MAX_UNAVAILABLE_RETRY_AFTER_SECONDS = 60 * 60;
 const EMAIL_CODE_REQUEST_TIMEOUT_MS = 35_000;
+const HOST_CREDENTIAL_REVOKE_TIMEOUT_MS = 5_000;
 const RESEND_FALLBACK_DELAY_MS = 60_000;
 const DEFINITIVE_EMAIL_CODE_REQUEST_FAILURES = new Set([
   "email_delivery_failed",
@@ -1123,25 +1125,7 @@ export class CentralAuthManager extends EventEmitter<CentralAuthEvents> {
       this: CentralAuthManager,
       ticket: string,
     ): Effect.fn.Return<VerifiedRemoteSessionTicket, CentralAuthOperationError, CentralAuthTransport> {
-      const verify = Effect.gen({ self: this }, function* () {
-        if (!this.#remoteTicketJwks)
-          this.#remoteTicketJwks = yield* this.#fetchRemoteTicketJwks().pipe(
-            Effect.cachedWithTTL((exit) => (Exit.isSuccess(exit) ? Duration.infinity : 0)),
-          );
-        const jwks = yield* this.#remoteTicketJwks;
-        const keySet = yield* authDecode(() => createLocalJWKSet(jwks));
-        return yield* authCall(() =>
-          jwtVerify(ticket, keySet, { audience: REMOTE_TICKET_AUDIENCE, algorithms: ["ES256"] }),
-        );
-      });
-      const { payload } = yield* verify.pipe(
-        Effect.catch((failure) => {
-          const error = failure.cause;
-          if (!isDynamicRecord(error) || error.code !== "ERR_JWKS_NO_MATCHING_KEY") return Effect.fail(failure);
-          this.#remoteTicketJwks = null;
-          return verify;
-        }),
-      );
+      const payload = yield* this.#verifyTicketJwt(ticket, REMOTE_TICKET_AUDIENCE);
       if (
         !isString(payload.sessionId) ||
         !isString(payload.hostId) ||
@@ -1171,6 +1155,74 @@ export class CentralAuthManager extends EventEmitter<CentralAuthEvents> {
     },
     (operation) => this.#owned(operation),
   ).bind(this);
+
+  readonly verifyWatchTicket = Effect.fn("CentralAuth.verifyWatchTicket")(
+    function* (
+      this: CentralAuthManager,
+      ticket: string,
+    ): Effect.fn.Return<WatchTicketClaims, CentralAuthOperationError, CentralAuthTransport> {
+      const payload = yield* this.#verifyTicketJwt(ticket, WATCH_TICKET_AUDIENCE);
+      if (
+        payload.aud !== WATCH_TICKET_AUDIENCE ||
+        !isString(payload.jti) ||
+        !isString(payload.watchSessionId) ||
+        !isString(payload.hostId) ||
+        !isString(payload.userId) ||
+        !isString(payload.membershipId) ||
+        (payload.role !== "owner" && payload.role !== "admin" && payload.role !== "member") ||
+        !isNumber(payload.authEpoch) ||
+        !Number.isInteger(payload.authEpoch) ||
+        !isString(payload.clientPublicKey) ||
+        (payload.signal !== undefined && !isString(payload.signal)) ||
+        !isNumber(payload.iat) ||
+        !isNumber(payload.exp)
+      ) {
+        return yield* new CentralAuthOperationError({
+          cause: new Error("The watch ticket has invalid claims."),
+        });
+      }
+      return {
+        aud: WATCH_TICKET_AUDIENCE,
+        jti: payload.jti,
+        watchSessionId: payload.watchSessionId,
+        hostId: payload.hostId,
+        userId: payload.userId,
+        membershipId: payload.membershipId,
+        role: payload.role,
+        authEpoch: payload.authEpoch,
+        clientPublicKey: payload.clientPublicKey,
+        ...(isString(payload.signal) ? { signal: payload.signal } : {}),
+        iat: payload.iat,
+        exp: payload.exp,
+      };
+    },
+    (operation) => this.#owned(operation),
+  ).bind(this);
+
+  readonly #verifyTicketJwt = Effect.fn("CentralAuth.verifyTicketJwt")(function* (
+    this: CentralAuthManager,
+    ticket: string,
+    audience: string,
+  ): Effect.fn.Return<JWTPayload, CentralAuthOperationError, CentralAuthTransport> {
+    const verify = Effect.gen({ self: this }, function* () {
+      if (!this.#remoteTicketJwks)
+        this.#remoteTicketJwks = yield* this.#fetchRemoteTicketJwks().pipe(
+          Effect.cachedWithTTL((exit) => (Exit.isSuccess(exit) ? Duration.infinity : 0)),
+        );
+      const jwks = yield* this.#remoteTicketJwks;
+      const keySet = yield* authDecode(() => createLocalJWKSet(jwks));
+      return yield* authCall(() => jwtVerify(ticket, keySet, { audience, algorithms: ["ES256"] }));
+    });
+    const { payload } = yield* verify.pipe(
+      Effect.catch((failure) => {
+        const error = failure.cause;
+        if (!isDynamicRecord(error) || error.code !== "ERR_JWKS_NO_MATCHING_KEY") return Effect.fail(failure);
+        this.#remoteTicketJwks = null;
+        return verify;
+      }),
+    );
+    return payload;
+  });
 
   readonly #fetchRemoteTicketJwks = Effect.fn("CentralAuth.fetchRemoteTicketJwks")(function* (
     this: CentralAuthManager,
@@ -2237,6 +2289,7 @@ export class CentralAuthManager extends EventEmitter<CentralAuthEvents> {
       this.#endCompanySignIn();
       this.#endCompanySignInTest();
       if (this.#sessionToken) {
+        yield* this.#revokeHostCredentials(this.#sessionToken);
         const attempt8 = yield* Effect.gen({ self: this }, function* () {
           yield* this.#authorizedRequestEffect("/v1/auth/logout", { method: "POST" }, decodeVoid);
         }).pipe(Effect.result);
@@ -2571,6 +2624,24 @@ export class CentralAuthManager extends EventEmitter<CentralAuthEvents> {
       yield* authCall(() => rm(this.#options.storagePath, { force: true }));
       this.#storedSessionToken = null;
     });
+  }
+
+  #revokeHostCredentials(sessionToken: string) {
+    return Effect.forEach(
+      [...this.#teamHostTokens],
+      ([hostId, machineToken]) =>
+        this.#requestEffect(
+          `/v2/remote/hosts/${encodeURIComponent(hostId)}/revoke-credential`,
+          {
+            method: "POST",
+            headers: { Authorization: `Bearer ${sessionToken}`, "Content-Type": "application/json" },
+            body: JSON.stringify({ machineToken }),
+          },
+          decodeVoid,
+          HOST_CREDENTIAL_REVOKE_TIMEOUT_MS,
+        ).pipe(Effect.ignore),
+      { concurrency: "unbounded", discard: true },
+    );
   }
 
   #forgetSession(): void {

@@ -173,6 +173,7 @@ export const messages = {
   "chat.marker.settingLink": "显示了一个设置",
   "chat.settingLink.desktopOnly": "请在你电脑上的 PurpleBot 应用中打开。",
   "chat.settingLink.agentChatOnly": "请在你与这个 agent 的聊天中打开。",
+  "chat.settingLink.adminOnly": "只有服务器所有者或管理员可以更改此设置。",
   "chat.marker.skillSuggestion": "推荐了一个技能",
   "chat.marker.mcpSignIn": "请你登录 MCP 服务器",
   "chat.marker.serverInstall": "创建了安装服务器的命令",
@@ -526,4 +527,10 @@ export const messages = {
   "chat.feedbackWithdrawn.title": "报告已删除",
   "chat.feedbackWithdrawn.badge": "已删除",
   "chat.feedbackWithdrawn.body": "你的报告已不在 GitHub 上。如需发送修正后的报告，请让助手发送。",
+  "chat.remoteContent.pictureNotLoaded": "来自 {host} 的图片。此服务器关闭了远程内容，因此未加载。",
+  "chat.remoteContent.loadPicture": "加载图片",
+  "chat.remoteContent.diagramNotDrawn": "此图表可能会从其他网站加载图片。此服务器关闭了远程内容，因此未绘制。",
+  "chat.remoteContent.loadDiagram": "加载图表",
+  "chat.remoteContent.pageStatic": "此服务器关闭了远程内容，因此在不运行脚本和远程内容的情况下显示。",
+  "chat.remoteContent.runPage": "运行页面",
 } as const satisfies PartialTranslation<typeof source>;

@@ -176,6 +176,7 @@ export const messages = {
   "chat.marker.settingLink": "설정을 표시함",
   "chat.settingLink.desktopOnly": "내 컴퓨터의 PurpleBot 앱에서 열어 주세요.",
   "chat.settingLink.agentChatOnly": "이 에이전트와의 채팅에서 열어 주세요.",
+  "chat.settingLink.adminOnly": "서버 소유자나 관리자만 이 설정을 변경할 수 있습니다.",
   "chat.marker.skillSuggestion": "스킬을 추천함",
   "chat.marker.mcpSignIn": "MCP 서버에 로그인하도록 요청함",
   "chat.marker.serverInstall": "서버를 설치하는 명령을 만들었습니다",
@@ -528,4 +529,12 @@ export const messages = {
   "chat.feedbackWithdrawn.title": "보고서 삭제됨",
   "chat.feedbackWithdrawn.badge": "삭제됨",
   "chat.feedbackWithdrawn.body": "보고서가 더 이상 GitHub에 없어요. 수정한 보고서를 보내려면 에이전트에게 요청하세요.",
+  "chat.remoteContent.pictureNotLoaded":
+    "{host}의 그림입니다. 이 서버에서 원격 콘텐츠가 꺼져 있어 불러오지 않았습니다.",
+  "chat.remoteContent.loadPicture": "그림 불러오기",
+  "chat.remoteContent.diagramNotDrawn":
+    "이 다이어그램은 다른 웹사이트의 그림을 불러올 수 있습니다. 이 서버에서 원격 콘텐츠가 꺼져 있어 그리지 않았습니다.",
+  "chat.remoteContent.loadDiagram": "다이어그램 불러오기",
+  "chat.remoteContent.pageStatic": "이 서버에서 원격 콘텐츠가 꺼져 있어 스크립트와 원격 콘텐츠 없이 표시합니다.",
+  "chat.remoteContent.runPage": "페이지 실행",
 } as const satisfies PartialTranslation<typeof source>;

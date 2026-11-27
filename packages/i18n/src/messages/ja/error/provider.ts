@@ -398,8 +398,7 @@ export const messages = {
   "error.provider.clinePackageMismatch": "Cline のパッケージがランタイムカタログと一致しません。",
   "error.provider.clineChecksum": "Cline ランタイムのチェックサムが一致しません。",
   "error.provider.clineLicenseChecksum": "Cline のライセンスのチェックサムが一致しません。",
-  "error.provider.clineMissing":
-    "Cline はダウンロードされていません。続けるには PurpleBot でダウンロードしてください。",
+  "error.provider.clineMissing": "Cline はダウンロードされていません。続けるには PurpleBot でダウンロードしてください。",
   "error.provider.clineOutdated": "Cline CLI {version} は古すぎます。PurpleBot には 3.0.68 以降が必要です。",
   "error.provider.clineNotStarted": "Cline を起動できませんでした。ターミナルで `cline --version` を実行してください。",
   "error.provider.clineVersionUnreadable": "Cline CLI のバージョンを読み取れません。",
@@ -467,6 +466,8 @@ export const messages = {
     "画像が大きすぎるため、モデルはこのチャットの画像を受け付けませんでした。PurpleBot はチャット履歴を引き継いだ新しい {provider} セッションを開始しました。もう一度お試しください。",
   "error.provider.imageCountLimit":
     "画像が多すぎるため、モデルはこのチャットを受け付けませんでした。PurpleBot はチャット履歴を引き継いだ新しい {provider} セッションを開始しました。もう一度お試しください。",
+  "error.provider.imageCountLimitRepeated":
+    "画像が多すぎるため、モデルはこのチャットをまた受け付けませんでした。1 つのタスクがこのモデルの上限より多くの画像を開くため、新しいセッションでは解決しません。「新しいチャット」を選択し、各ステップで開く画像を減らすようエージェントに頼むか、より多くの画像を受け付けるモデルを選択してください。",
   "error.provider.imageUnreadable":
     "モデルはこのチャット内の画像を読み取れませんでした。PurpleBot はチャット履歴を引き継いだ新しい {provider} セッションを開始しました。もう一度お試しください。画像を送った場合は、別の画像を送ってください。",
   "error.provider.requestTooLarge":
