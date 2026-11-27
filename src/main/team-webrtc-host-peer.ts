@@ -808,7 +808,7 @@ export class TeamWebRtcHostPeer {
             "PurpleBot-App-Version": this.#appVersion,
             "PurpleBot-Capabilities": forwarded.capabilities.join(","),
             ...(forwarded.absent.length ? { [TEAM_ABSENT_CAPABILITIES_HEADER]: forwarded.absent.join(",") } : {}),
-            ...(this.#localSessionId ? { "X-PurpleBot-WebRTC-Session": this.#localSessionId } : {}),
+            ...(this.#localSessionId ? { "X-OpenBot-WebRTC-Session": this.#localSessionId } : {}),
           },
           ...(requestBody === undefined ? {} : { body: requestBody }),
         }),
@@ -1140,7 +1140,7 @@ export class TeamWebRtcHostPeer {
     this.#closeDesktopSocket(streamId);
     const sessionId = this.#localSessionId ?? "";
     const socket = yield* remoteDecode(
-      () => new webSockets.WebSocket(url, { headers: { "X-PurpleBot-WebRTC-Session": sessionId } }),
+      () => new webSockets.WebSocket(url, { headers: { "X-OpenBot-WebRTC-Session": sessionId } }),
     );
     this.#desktopSockets.set(streamId, socket);
     socket.once("open", () => {

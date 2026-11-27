@@ -28,6 +28,9 @@
 
 ### Fixed
 
+- The live browser view and the computer screen of a server stream again. The rename of the
+  `X-OpenBot-WebRTC-Session` header on one side of the host made every stream request answer 401,
+  so a client saw "The host stream socket failed" when it opened the live view.
 - The TURN server relays to public IPv4 peers again. Before, its `denied-peer-ip` rules in IPv6
   notation made coturn 4.17.2 refuse each IPv4 peer, so a client behind NAT could not connect.
 - The account service deploy script no longer stops when the OpenPanel secrets or the home page
