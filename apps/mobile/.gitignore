@@ -37,3 +37,4 @@ example
 /modules/*/android/.cxx/
 
 /targets/*/Assets.xcassets/
+google-services.json

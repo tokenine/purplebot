@@ -25,7 +25,7 @@
       "icon": "./assets/icons/app-icon.icon"
     },
     "android": {
-      "package": "run.openbot.mobile",
+      "package": "app.purplebot.mobile",
       "icon": "./assets/icons/app-icon.png",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icons/android-adaptive-eyes.png",

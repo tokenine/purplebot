@@ -24,7 +24,7 @@ export type AppUpdate =
 
 const IOS_STORE_URL = "itms-apps://apps.apple.com/app/id6807024266";
 const IOS_STORE_WEB_URL = "https://apps.apple.com/app/id6807024266";
-const ANDROID_STORE_URL = "market://details?id=run.openbot.mobile";
+const ANDROID_STORE_URL = "market://details?id=app.purplebot.mobile";
 const ANDROID_STORE_WEB_URL = "https://github.com/tokenine/purplebot/releases";
 
 export const MOBILE_CHANGELOG_URL = "https://github.com/tokenine/purplebot/releases";
