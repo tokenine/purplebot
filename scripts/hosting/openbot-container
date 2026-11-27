@@ -68,4 +68,4 @@ export OPENBOT_SERVER=1
 (bash /opt/PurpleBot/app/resources/hosting/openbot-hosted-server --watchdog "$XDG_RUNTIME_DIR/openbot.pid" \
   "${XDG_CONFIG_HOME:-$HOME/.config}/PurpleBot" 30 20 </dev/null &)
 echo "$$" >"$XDG_RUNTIME_DIR/openbot.pid"
-exec /opt/PurpleBot/app/openbot --password-store=gnome-libsecret "${chromium[@]}"
+exec /opt/PurpleBot/app/purplebot --password-store=gnome-libsecret "${chromium[@]}"

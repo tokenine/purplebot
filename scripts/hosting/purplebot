@@ -5,12 +5,12 @@ source "$(dirname "$(readlink -f "$0")")/openbot-hosted-update"
 umask 077
 
 SOCKET=/run/openbot/control.sock
-UNIT=openbot.service
+UNIT=purplebot.service
 PIN=""
 
 usage() {
   cat <<'EOF'
-Usage: openbot <command>
+Usage: purplebot <command>
 
   status                         Show the account and the server.
   login [<email>] [--name <name>]
@@ -46,22 +46,22 @@ require_host() {
 }
 
 require_root() {
-  [ "$(id -u)" -eq 0 ] || fail "Run this with sudo: sudo openbot $*"
+  [ "$(id -u)" -eq 0 ] || fail "Run this with sudo: sudo purplebot $*"
 }
 
 not_answering() {
   if in_container; then
     fail "PurpleBot does not answer. Read the log on the host with: docker logs <container>"
   fi
-  fail "PurpleBot does not answer. Read the log with: openbot logs"
+  fail "PurpleBot does not answer. Read the log with: purplebot logs"
 }
 
 not_running() {
   if start_loop_stopped; then
-    fail "PurpleBot stopped because its start failed again and again. Read the log with: openbot logs
-Install a new release with: sudo openbot update. Or try again with: sudo openbot restart"
+    fail "PurpleBot stopped because its start failed again and again. Read the log with: purplebot logs
+Install a new release with: sudo purplebot update. Or try again with: sudo purplebot restart"
   fi
-  fail "PurpleBot is not running. Start it with: sudo openbot start"
+  fail "PurpleBot is not running. Start it with: sudo purplebot start"
 }
 
 wait_for_socket() {
@@ -70,8 +70,8 @@ wait_for_socket() {
     [ -S "$SOCKET" ] && return 0
     in_container || systemctl is-active --quiet "$UNIT" || not_running
     if ! in_container && safe_mode_running; then
-      fail "PurpleBot does not start, so it runs its safe mode: members see why. Read the log with: openbot logs
-Install a new release with: sudo openbot update. Or try again with: sudo openbot restart"
+      fail "PurpleBot does not start, so it runs its safe mode: members see why. Read the log with: purplebot logs
+Install a new release with: sudo purplebot update. Or try again with: sudo purplebot restart"
     fi
     if [ -d /run/openbot ] && [ ! -x /run/openbot ]; then
       fail "Run this with sudo, or as the user $(service_user)."
@@ -82,7 +82,7 @@ Install a new release with: sudo openbot update. Or try again with: sudo openbot
 }
 
 foreign_listener() {
-  fail "A program that is not PurpleBot holds the control socket, so this command stops. Restart PurpleBot with: sudo openbot restart"
+  fail "A program that is not PurpleBot holds the control socket, so this command stops. Restart PurpleBot with: sudo purplebot restart"
 }
 
 start_time() {
@@ -218,9 +218,9 @@ check_answer() {
       invalid_email) message="Enter a valid email address." ;;
       invalid_request) message="Enter the sign-in code or the claim." ;;
       invalid_name) message="Enter a server name." ;;
-      signed_in) message="This server is signed in. To use another account, run: openbot logout" ;;
-      account_signed_out | account_code_sent) message="Sign in first with: openbot login" ;;
-      account_error | account_loading) message="PurpleBot could not check the account yet. Run: openbot status" ;;
+      signed_in) message="This server is signed in. To use another account, run: purplebot logout" ;;
+      account_signed_out | account_code_sent) message="Sign in first with: purplebot login" ;;
+      account_error | account_loading) message="PurpleBot could not check the account yet. Run: purplebot status" ;;
       session_not_storable) message="This server cannot store the session securely. The claim was not used." ;;
       *) message="PurpleBot refused the request ($(text_value error))." ;;
     esac
@@ -238,8 +238,8 @@ show_status() {
   echo "PurpleBot $(text_value version)"
   case $account in
     signed_in) echo "Account: $(text_value email)" ;;
-    signed_out) echo "Account: signed out. Sign in with: openbot login" ;;
-    code_sent) echo "Account: waiting for a sign-in code. Run: openbot login" ;;
+    signed_out) echo "Account: signed out. Sign in with: purplebot login" ;;
+    code_sent) echo "Account: waiting for a sign-in code. Run: purplebot login" ;;
     error) echo "Account: the account server does not answer. $(text_value account_message)" ;;
     *) echo "Account: $account" ;;
   esac
@@ -253,7 +253,7 @@ show_status() {
     if [ "$turns" = unlimited ]; then echo "Turns at the same time: no limit"; else echo "Turns at the same time: at most $turns"; fi
   fi
   staged=$(staged_version)
-  if [ -n "$staged" ]; then echo "PurpleBot $staged is ready to install. Run: sudo openbot update"; fi
+  if [ -n "$staged" ]; then echo "PurpleBot $staged is ready to install. Run: sudo purplebot update"; fi
 }
 
 status_command() {
@@ -296,7 +296,7 @@ login_command() {
     check_answer || exit 1
     email=$(text_value email)
   else
-    [ -t 0 ] || fail "Run openbot login in a terminal."
+    [ -t 0 ] || fail "Run purplebot login in a terminal."
     if [ -z "$email" ]; then read -rp "Email: " email; fi
     control POST /v1/login/start "email=$email" ${name:+"name=$name"}
     check_answer || exit 1
@@ -319,7 +319,7 @@ login_command() {
   show_status
   if [ "$(value server)" = online ]; then
     echo "Sign in to PurpleBot with $email on your computer or https://openbot.run/app to use this server."
-    echo "To use it from your phone, run: openbot mobile-connect"
+    echo "To use it from your phone, run: purplebot mobile-connect"
   fi
 }
 
@@ -346,9 +346,9 @@ restart_after_failed_update() {
   trap '' INT TERM HUP
   [ ! -e "$INSTALL/.applying" ] || "$INSTALL/hosted/openbot-hosted-update" apply || true
   if systemctl start "$UNIT"; then
-    echo "The update failed. PurpleBot $(version_of "$INSTALL/app") runs. Try again with: sudo openbot update" >&2
+    echo "The update failed. PurpleBot $(version_of "$INSTALL/app") runs. Try again with: sudo purplebot update" >&2
   else
-    echo "The update failed, and PurpleBot did not start. Read the log with: openbot logs" >&2
+    echo "The update failed, and PurpleBot did not start. Read the log with: purplebot logs" >&2
   fi
   exit "$status"
 }
@@ -378,7 +378,7 @@ update_command() {
 }
 
 uninstall_command() {
-  require_host "run openbot logout, then remove the container on the host. The data stays in its volume"
+  require_host "run purplebot logout, then remove the container on the host. The data stays in its volume"
   require_root uninstall
   local user home reply unit entry
   { [ -r "$INSTALL/hosted/mode" ] && [ "$(<"$INSTALL/hosted/mode")" = self ]; } ||
@@ -425,7 +425,7 @@ case $command in
     echo "Signed out. The server is not available until the next sign-in."
     ;;
   name)
-    [ "$#" -ge 1 ] || fail "Usage: openbot name <name>"
+    [ "$#" -ge 1 ] || fail "Usage: purplebot name <name>"
     control POST /v1/name "name=$*"
     check_answer || exit 1
     show_status
