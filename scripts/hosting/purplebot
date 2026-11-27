@@ -14,20 +14,20 @@ Usage: openbot <command>
 
   status                         Show the account and the server.
   login [<email>] [--name <name>]
-                                 Sign in with a code that OpenBot sends to your email.
+                                 Sign in with a code that PurpleBot sends to your email.
                                  The server then shows in the server list of that account.
-                                 Its name is "OpenBot" when you give no name.
+                                 Its name is "PurpleBot" when you give no name.
   login --claim [--name <name>]  Sign in with a one-time claim that the operator made for
                                  the owner's email. No code is needed. The claim comes from
                                  standard input, or a hidden prompt in a terminal.
-  mobile-connect                 Show a QR code that connects the OpenBot phone app to this
+  mobile-connect                 Show a QR code that connects the PurpleBot phone app to this
                                  account. It works for one sign-in and expires after two minutes.
   logout                         Sign out. The server stops until the next sign-in.
   name <name>                    Change the server name.
-  logs [-f]                      Show the OpenBot log.
-  start | stop | restart         Control the OpenBot service (sudo).
+  logs [-f]                      Show the PurpleBot log.
+  start | stop | restart         Control the PurpleBot service (sudo).
   update                         Install the newest release now (sudo).
-  uninstall                      Sign out and remove OpenBot. The data stays (sudo).
+  uninstall                      Sign out and remove PurpleBot. The data stays (sudo).
   version                        Show the installed version.
 EOF
 }
@@ -51,17 +51,17 @@ require_root() {
 
 not_answering() {
   if in_container; then
-    fail "OpenBot does not answer. Read the log on the host with: docker logs <container>"
+    fail "PurpleBot does not answer. Read the log on the host with: docker logs <container>"
   fi
-  fail "OpenBot does not answer. Read the log with: openbot logs"
+  fail "PurpleBot does not answer. Read the log with: openbot logs"
 }
 
 not_running() {
   if start_loop_stopped; then
-    fail "OpenBot stopped because its start failed again and again. Read the log with: openbot logs
+    fail "PurpleBot stopped because its start failed again and again. Read the log with: openbot logs
 Install a new release with: sudo openbot update. Or try again with: sudo openbot restart"
   fi
-  fail "OpenBot is not running. Start it with: sudo openbot start"
+  fail "PurpleBot is not running. Start it with: sudo openbot start"
 }
 
 wait_for_socket() {
@@ -70,7 +70,7 @@ wait_for_socket() {
     [ -S "$SOCKET" ] && return 0
     in_container || systemctl is-active --quiet "$UNIT" || not_running
     if ! in_container && safe_mode_running; then
-      fail "OpenBot does not start, so it runs its safe mode: members see why. Read the log with: openbot logs
+      fail "PurpleBot does not start, so it runs its safe mode: members see why. Read the log with: openbot logs
 Install a new release with: sudo openbot update. Or try again with: sudo openbot restart"
     fi
     if [ -d /run/openbot ] && [ ! -x /run/openbot ]; then
@@ -82,7 +82,7 @@ Install a new release with: sudo openbot update. Or try again with: sudo openbot
 }
 
 foreign_listener() {
-  fail "A program that is not OpenBot holds the control socket, so this command stops. Restart OpenBot with: sudo openbot restart"
+  fail "A program that is not PurpleBot holds the control socket, so this command stops. Restart PurpleBot with: sudo openbot restart"
 }
 
 start_time() {
@@ -194,7 +194,7 @@ text_value() {
 number_value() {
   local number
   number=$(value "$1")
-  [[ $number =~ ^[0-9]{1,18}$ ]] || fail "OpenBot sent an invalid $2."
+  [[ $number =~ ^[0-9]{1,18}$ ]] || fail "PurpleBot sent an invalid $2."
   echo "$((10#$number))"
 }
 
@@ -220,9 +220,9 @@ check_answer() {
       invalid_name) message="Enter a server name." ;;
       signed_in) message="This server is signed in. To use another account, run: openbot logout" ;;
       account_signed_out | account_code_sent) message="Sign in first with: openbot login" ;;
-      account_error | account_loading) message="OpenBot could not check the account yet. Run: openbot status" ;;
+      account_error | account_loading) message="PurpleBot could not check the account yet. Run: openbot status" ;;
       session_not_storable) message="This server cannot store the session securely. The claim was not used." ;;
-      *) message="OpenBot refused the request ($(text_value error))." ;;
+      *) message="PurpleBot refused the request ($(text_value error))." ;;
     esac
   fi
   echo "$message" >&2
@@ -235,7 +235,7 @@ show_status() {
   server=$(text_value server)
   name=$(text_value server_name)
   message=$(text_value server_message)
-  echo "OpenBot $(text_value version)"
+  echo "PurpleBot $(text_value version)"
   case $account in
     signed_in) echo "Account: $(text_value email)" ;;
     signed_out) echo "Account: signed out. Sign in with: openbot login" ;;
@@ -253,7 +253,7 @@ show_status() {
     if [ "$turns" = unlimited ]; then echo "Turns at the same time: no limit"; else echo "Turns at the same time: at most $turns"; fi
   fi
   staged=$(staged_version)
-  if [ -n "$staged" ]; then echo "OpenBot $staged is ready to install. Run: sudo openbot update"; fi
+  if [ -n "$staged" ]; then echo "PurpleBot $staged is ready to install. Run: sudo openbot update"; fi
 }
 
 status_command() {
@@ -301,7 +301,7 @@ login_command() {
     control POST /v1/login/start "email=$email" ${name:+"name=$name"}
     check_answer || exit 1
     challenge=$(value challenge)
-    echo "OpenBot sent a sign-in code to $email."
+    echo "PurpleBot sent a sign-in code to $email."
     for attempt in 1 2 3; do
       read -rp "Code: " code
       control POST /v1/login/verify "challenge=$challenge" "code=$code" ${name:+"name=$name"}
@@ -318,7 +318,7 @@ login_command() {
   done
   show_status
   if [ "$(value server)" = online ]; then
-    echo "Sign in to OpenBot with $email on your computer or https://openbot.run/app to use this server."
+    echo "Sign in to PurpleBot with $email on your computer or https://openbot.run/app to use this server."
     echo "To use it from your phone, run: openbot mobile-connect"
   fi
 }
@@ -328,10 +328,10 @@ mobile_connect_command() {
   control POST /v1/mobile-connect
   check_answer || exit 1
   expires_at=$(value expires_at)
-  [[ $expires_at =~ ^[0-9]{1,18}$ ]] || fail "OpenBot sent an invalid Mobile Connect code."
-  qr=$(terminal_qr) || fail "OpenBot sent an invalid Mobile Connect code."
+  [[ $expires_at =~ ^[0-9]{1,18}$ ]] || fail "PurpleBot sent an invalid Mobile Connect code."
+  qr=$(terminal_qr) || fail "PurpleBot sent an invalid Mobile Connect code."
   printf '%s\n' "$qr"
-  echo "In the OpenBot phone app, select Scan QR code and scan this code."
+  echo "In the PurpleBot phone app, select Scan QR code and scan this code."
   echo "It works for one sign-in and expires in $((10#$expires_at / 1000 - $(date +%s))) seconds. Run the command again for a new code."
 }
 
@@ -346,9 +346,9 @@ restart_after_failed_update() {
   trap '' INT TERM HUP
   [ ! -e "$INSTALL/.applying" ] || "$INSTALL/hosted/openbot-hosted-update" apply || true
   if systemctl start "$UNIT"; then
-    echo "The update failed. OpenBot $(version_of "$INSTALL/app") runs. Try again with: sudo openbot update" >&2
+    echo "The update failed. PurpleBot $(version_of "$INSTALL/app") runs. Try again with: sudo openbot update" >&2
   else
-    echo "The update failed, and OpenBot did not start. Read the log with: openbot logs" >&2
+    echo "The update failed, and PurpleBot did not start. Read the log with: openbot logs" >&2
   fi
   exit "$status"
 }
@@ -361,11 +361,11 @@ update_command() {
   "$INSTALL/hosted/openbot-hosted-update" stage
   after=$(staged_version)
   if [ -z "$after" ]; then
-    echo "OpenBot $before is the newest release."
+    echo "PurpleBot $before is the newest release."
     return 0
   fi
   if [ -t 0 ]; then
-    read -rp "Install OpenBot $after now? OpenBot stops for about a minute, and running agent turns stop. [y/N] " reply
+    read -rp "Install PurpleBot $after now? PurpleBot stops for about a minute, and running agent turns stop. [y/N] " reply
     [[ $reply == [yY]* ]] || return 0
   fi
   trap restart_after_failed_update EXIT
@@ -374,7 +374,7 @@ update_command() {
   "$INSTALL/hosted/openbot-hosted-update" apply
   trap - EXIT INT TERM HUP
   systemctl start "$UNIT"
-  echo "Installed OpenBot $(version_of "$INSTALL/app")."
+  echo "Installed PurpleBot $(version_of "$INSTALL/app")."
 }
 
 uninstall_command() {
@@ -382,14 +382,14 @@ uninstall_command() {
   require_root uninstall
   local user home reply unit entry
   { [ -r "$INSTALL/hosted/mode" ] && [ "$(<"$INSTALL/hosted/mode")" = self ]; } ||
-    fail "This computer is not a self-hosted OpenBot server."
+    fail "This computer is not a self-hosted PurpleBot server."
   user=$(service_user)
   if [ -t 0 ]; then
-    read -rp "Remove OpenBot from this computer? The data of the user $user stays. [y/N] " reply
+    read -rp "Remove PurpleBot from this computer? The data of the user $user stays. [y/N] " reply
     [[ $reply == [yY]* ]] || return 0
   fi
   if ! (systemctl start "$UNIT" && control POST /v1/logout && check_answer); then
-    echo "OpenBot did not sign out. Remove the server in the app." >&2
+    echo "PurpleBot did not sign out. Remove the server in the app." >&2
   fi
   exec 9>"$LOCK"
   flock 9
@@ -399,8 +399,8 @@ uninstall_command() {
   if [ -f /etc/apparmor.d/openbot-hosted ] && command -v apparmor_parser >/dev/null &&
     [ -d /sys/kernel/security/apparmor ]; then
     apparmor_parser --remove /etc/apparmor.d/openbot-hosted 2>/dev/null || true
-    if grep -qs '^# OpenBot: ' /etc/apparmor.d/local/bwrap-userns-restrict; then
-      sed -i -e '/^# OpenBot: /d' -e '/^priority=1 allow pix \/\*\* -> &bwrap,$/d' \
+    if grep -qs '^# PurpleBot: ' /etc/apparmor.d/local/bwrap-userns-restrict; then
+      sed -i -e '/^# PurpleBot: /d' -e '/^priority=1 allow pix \/\*\* -> &bwrap,$/d' \
         /etc/apparmor.d/local/bwrap-userns-restrict
       apparmor_parser --replace /etc/apparmor.d/bwrap-userns-restrict 2>/dev/null || true
     fi
@@ -409,7 +409,7 @@ uninstall_command() {
   for entry in app hosted staged staged.ready .applying; do rm -rf "${INSTALL:?}/$entry"; done
   rmdir "$INSTALL" 2>/dev/null || true
   home=$(getent passwd "$user" | cut -d: -f6)
-  echo "Removed OpenBot. The data stays in ${home:-the home folder of $user}, /srv/openbot-hosted and /srv/openbot-keyring."
+  echo "Removed PurpleBot. The data stays in ${home:-the home folder of $user}, /srv/openbot-hosted and /srv/openbot-keyring."
   echo "To install again with this data: the install command, with --user $user."
   echo "To delete the data too: sudo userdel --remove $user && sudo rm -rf /srv/openbot-hosted /srv/openbot-keyring"
 }

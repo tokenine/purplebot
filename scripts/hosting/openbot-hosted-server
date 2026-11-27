@@ -56,7 +56,7 @@ if [ "${1:-}" = --watchdog ]; then
       armed=0 misses=0
       continue
     fi
-    echo "OpenBot did not update its heartbeat for $((interval * limit)) seconds. The watchdog stops it, and the restart policy starts it again." >&2
+    echo "PurpleBot did not update its heartbeat for $((interval * limit)) seconds. The watchdog stops it, and the restart policy starts it again." >&2
     kill -KILL "$pid" 2>/dev/null || true
     exit 0
   done
@@ -64,7 +64,7 @@ if [ "${1:-}" = --watchdog ]; then
 fi
 state="$HOME/.config/openbot-hosted"
 mode=hosted
-if [ -r /opt/OpenBot/hosted/mode ] && [ "$(</opt/OpenBot/hosted/mode)" = self ]; then mode=self; fi
+if [ -r /opt/PurpleBot/hosted/mode ] && [ "$(</opt/PurpleBot/hosted/mode)" = self ]; then mode=self; fi
 
 if [ "${1:-}" != --in-session ] && [ "$mode" = self ]; then
   mkdir -p "$state"
@@ -91,13 +91,13 @@ else
   export OPENBOT_SERVER=1
 fi
 requested_size=""
-if [ -r /opt/OpenBot/hosted/openbot.env ]; then
+if [ -r /opt/PurpleBot/hosted/openbot.env ]; then
   while IFS='=' read -r key value || [ -n "$key" ]; do
     case $key in
       OPENBOT_AUTH_API_URL) export "$key=$value" ;;
       OPENBOT_DISPLAY_SIZE) requested_size=$value ;;
     esac
-  done </opt/OpenBot/hosted/openbot.env
+  done </opt/PurpleBot/hosted/openbot.env
 fi
 
 display_size() {
@@ -142,10 +142,10 @@ export GNOME_KEYRING_CONTROL
   done
 ) &
 
-"$0" --watchdog "$XDG_RUNTIME_DIR/openbot.pid" "${XDG_CONFIG_HOME:-$HOME/.config}/OpenBot" 30 20 &
+"$0" --watchdog "$XDG_RUNTIME_DIR/openbot.pid" "${XDG_CONFIG_HOME:-$HOME/.config}/PurpleBot" 30 20 &
 
 openbot=(bash -c 'echo "$$" >"$XDG_RUNTIME_DIR/openbot.pid" && exec "$@"' openbot-hosted-server
-  /opt/OpenBot/app/openbot --password-store=gnome-libsecret)
+  /opt/PurpleBot/app/openbot --password-store=gnome-libsecret)
 if [ "$mode" = hosted ] && [ -e /etc/systemd/system/display-manager.service ]; then
   search=0
   pgrep -u "$(id -u)" -x xauth >/dev/null 2>&1 || search=$?
@@ -157,9 +157,9 @@ if [ "$mode" = hosted ] && [ -e /etc/systemd/system/display-manager.service ]; t
     fi
     sleep 2
   done
-  echo "The boat desktop session did not start. OpenBot uses two virtual displays." >&2
+  echo "The boat desktop session did not start. PurpleBot uses two virtual displays." >&2
 fi
 
 exec xvfb-run -a -s "-screen 0 $(display_size "$requested_size")x24 -nolisten tcp -wr -noreset" \
   bash -c 'command -v xsetroot >/dev/null && xsetroot -cursor_name left_ptr; if [ -r "$1" ]; then bash "$1" </dev/null & fi; shift; export OPENBOT_AGENT_DISPLAY=$DISPLAY; exec xvfb-run -a -f "$XAUTHORITY" -s "-screen 0 1280x800x24 -nolisten tcp" "$@"' \
-  openbot-hosted-server /opt/OpenBot/app/resources/hosting/openbot-desktop "${openbot[@]}"
+  openbot-hosted-server /opt/PurpleBot/app/resources/hosting/openbot-desktop "${openbot[@]}"
