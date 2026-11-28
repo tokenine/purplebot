@@ -11,9 +11,14 @@ in this bundle talks to `openbot.run`.
 | PurpleBot server (Docker) | your Linux server | the agents |
 
 PurpleBot keeps the [PolyForm Noncommercial 1.0.0 license](../LICENSE): use it and
-share it for noncommercial purposes. Sell nothing without a commercial license
-from the upstream owner (see [NOTICE](../NOTICE)). Keep `LICENSE` and `NOTICE`
-with every copy.
+share it for noncommercial purposes. The license names the organizations it
+covers regardless of funding: charitable organizations, educational
+institutions, public research organizations, public safety or health
+organizations, environmental protection organizations, and government
+institutions. A for-profit business that runs the software for its own
+operations needs a commercial license from the upstream owner
+(see [NOTICE](../NOTICE), `licenses@openbot.run`). Sell nothing without such a
+license. Keep `LICENSE` and `NOTICE` with every copy.
 
 ## How a sign-in code reaches an inbox
 
